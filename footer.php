@@ -1,16 +1,16 @@
 	</div><!-- #content -->
 	
 	<?php  
-	$address = get_field("address","option");
-	$phone = get_field("phone","option");
-	$email = get_field("email","option");
-	$social_media = get_social_links();
+	// $address = get_field("address","option");
+	// $phone = get_field("phone","option");
+	// $email = get_field("email","option");
+	// $social_media = get_social_links();
 	$links[] = get_field("group1","option");
-	$links[] = get_field("group2","option");
+	// $links[] = get_field("group2","option");
 	$footLinks = array();
 	if($links) {
 		foreach($links as $n) {
-			if($n['title'] && $n['links']) {
+			if($n['footer_copy'] && $n['links']) {
 				$footLinks[] = $n;
 			}
 		}
@@ -18,6 +18,7 @@
 	$subscribe = get_field("group3","option");
 	?>
 	<footer id="colophon" class="site-footer" role="contentinfo">
+			
 			<div class="wrapper">
 
 				<div class="logo">
@@ -58,10 +59,17 @@
 					<?php } ?>
 
 					
-				</div>
+			</div>
 			
 		
-		
+			<div class="footer-disclaimer">
+				<?php foreach( $footLinks as $e ) { 
+							$footer_copy = $e['footer_copy'];
+
+							echo $footer_copy;
+						}
+					?>
+			</div>
 		
 	</footer><!-- #colophon -->
 	

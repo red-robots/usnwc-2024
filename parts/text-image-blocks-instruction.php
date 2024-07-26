@@ -27,7 +27,7 @@ $textImageData = get_field("textImageCol");
 		
 		$details = get_sub_field('popup_details');
 		$passport_product = get_sub_field('passport_product');
-		$idArray = array('266','267','268','269','270','271','154','152','153','40','41','42','43','58','57','56','55','54','53','59','179','180','38','39');
+		$idArray = array('266','267','268','269','270','271','154','152','153','40','41','42','43','58','57','56','55','54','53','59','179','180','38','39','412');
 		if( $passport_product == 'all' ) {
 			$pp = 'data-accesso-launch';
 		} elseif(in_array($passport_product, $idArray )) {
@@ -61,21 +61,21 @@ $textImageData = get_field("textImageCol");
 
 							<div class="text-center">
 							<?php if ($details) { ?>
-								<div class="button inline">
+								<div class="button inline-btn">
 									<a href="#instr-details<?php echo $i; ?>" class="btn-sm xs instr" id="inline">
 										<span>See Details</span>
 									</a>
 								</div>
 							<?php } ?>
 							<?php if ($passport_product !== 'none') { ?>
-								<div class="button inline">
+								<div class="button inline-btn">
 									<a <?php echo $pp; ?> href="#" class="btn-sm xs instr">
 										<span>Register</span>
 									</a>
 								</div>
 							<?php } ?>
 							<?php if ($inquiry) { ?>
-								<div class="button inline">
+								<div class="button inline-btn">
 									<a href="<?php echo $inquiry['url'] ?>" class="btn-sm xs instr" target="<?php echo $inquiry['target'] ?>">
 										<span><?php echo $inquiry['title'] ?></span>
 									</a>

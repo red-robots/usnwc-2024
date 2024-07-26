@@ -26,7 +26,7 @@ $blank_image = THEMEURI . "images/square.png";
 $status_custom_message = get_field("status_custom_message");
 $passport = get_field('passport_btn');
 $passLabel = get_field('passport_label');
-$idArray = array('266','267','268','269','270','271','154','152','153','40','41','42','43','58','57','56','55','54','53','59','179','180','38','39');
+$idArray = array('266','267','268','269','270','271','154','152','153','40','41','42','43','58','57','56','55','54','53','59','179','180','38','39','412');
 if( $passport == 'all' ) {
 	$pp = 'data-accesso-launch';
 } elseif(in_array($passport, $idArray )) {

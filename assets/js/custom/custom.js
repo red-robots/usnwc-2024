@@ -112,7 +112,7 @@ tl.fromTo(".today", {  }, {  }, 0)
     { opacity: 1, y: "0em", stagger: 0.1 }
   );
 
-document.querySelector(".today").addEventListener("click", () => {
+document.querySelector(".today").addEventListener("mouseover", () => {
   if (!menuOpen) {
     tl.play();
     menuOpen = true;

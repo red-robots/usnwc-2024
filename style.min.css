@@ -1685,8 +1685,8 @@ nav.new-nav .mega-menu .mega-menu-content a:after{content:''}
 .navbar .right{display:-webkit-box;display:-ms-flexbox;display:flex;width:50%;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;font-size:16px;font-family:"Brandon Light";letter-spacing:1px;position:relative}
 .navbar .right span{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:auto;height:100%}
 .navbar .right .cal,.navbar .right .today{display:inline-block;margin-left:20px;width:auto;position:relative;z-index:10;height:100%;color:#fff;text-transform:uppercase;text-decoration:none;display:block;height:100%;line-height:72px;cursor:pointer}
-.navbar .right .cal:after,.navbar .right .today:after{font-family:FontAwesome;content:"\f107";padding-left:8px;font-weight:light}
 .navbar .right .cal a,.navbar .right .today a{color:#fff;text-decoration:none}
+.navbar .right .today:after{font-family:FontAwesome;content:"\f107";padding-left:8px;font-weight:light}
 .navbar .logo{display:inline-block;width:50px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .navbar .logo a,.navbar .logo img{display:inline-block;width:100%}
 .navbar .logo img{height:auto}
@@ -1741,7 +1741,7 @@ nav.new-nav-mobile .menu-col a:after{content:""}
 .today-mobile-dropdown .todayContent .schedules-list-mobile .see-details i{font-size:12px}
 .today-mobile-dropdown .todayContent .schedules-list-mobile .see-details a{color:#ba0d30;text-decoration:none;font-size:12px}
 .today-mobile-dropdown .todayContent .schedules-list-mobile .see-details a:hover{text-decoration:none}
-.today-dropdown{width:700px;position:absolute;top:100%;right:0;z-index:1;padding:20px;visibility:hidden;-webkit-transition:all ease .3s;transition:all ease .3s;overflow:visible;text-align:center;background-color:#fff;border-radius:0 0 20px 20px}
+.today-dropdown{width:auto;position:absolute;top:100%;right:0;z-index:1;padding:20px;visibility:hidden;-webkit-transition:all ease .3s;transition:all ease .3s;overflow:visible;text-align:center;background-color:#fff;border-radius:0 0 20px 20px}
 .today-dropdown.show{-webkit-transform:translateY(40%);transform:translateY(40%);height:auto;max-height:100%;opacity:1}
 .today-dropdown .today-wrap{width:100%;margin:0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .today-dropdown #todayOptions{text-align:left;width:49%;margin:0 auto;display:inline-block}
@@ -1766,56 +1766,6 @@ nav.new-nav-mobile .menu-col a:after{content:""}
 .today-dropdown .todayContent .schedules-list .see-details a{color:#ba0d30;text-decoration:none;font-size:12px}
 .today-dropdown .todayContent .schedules-list .see-details a:hover{text-decoration:none}
 #overlay{width:100%;height:100%;position:fixed;top:0;left:0;z-index:999;background:rgba(0,0,0,0.45);display:none;-webkit-animation-duration:.5s;animation-duration:.5s}
-.corpnav,.pisgahnav,.santeenav,.whitewaternav,.graysonnav{position:fixed;top:30px;right:-485px;max-width:485px;width:100%;height:100%;z-index:-99;-webkit-transform:translateX(120%);transform:translateX(120%);-webkit-transition:all ease .3s;transition:all ease .3s;-webkit-backface-visibility:hidden;backface-visibility:hidden;overflow:hidden;-webkit-animation-duration:1s;animation-duration:1s}
-.corpnav.open,.pisgahnav.open,.santeenav.open,.whitewaternav.open,.graysonnav.open{-webkit-transform:translateX(0);transform:translateX(0);width:100%;-webkit-box-shadow:-1px 4px 30px rgba(0,0,0,0.3);box-shadow:-1px 4px 30px rgba(0,0,0,0.3);overflow:visible;right:0;z-index:9999;-webkit-animation-name:"fadeIn";animation-name:"fadeIn"}
-.corpnav .nav-inner,.pisgahnav .nav-inner,.santeenav .nav-inner,.whitewaternav .nav-inner,.graysonnav .nav-inner{background:rgba(186,13,48,0.95);padding:90px 0 50px;height:100%;overflow-x:hidden;overflow-y:auto;position:relative;z-index:20}
-.corpnav .navigation,.pisgahnav .navigation,.santeenav .navigation,.whitewaternav .navigation,.graysonnav .navigation{display:block;width:100%;text-align:center}
-.corpnav ul,.pisgahnav ul,.santeenav ul,.whitewaternav ul,.graysonnav ul{margin:0;padding:0;list-style:none}
-.corpnav ul.menu,.pisgahnav ul.menu,.santeenav ul.menu,.whitewaternav ul.menu,.graysonnav ul.menu{width:100%;text-align:right;margin-top:0;margin-bottom:30px}
-.corpnav ul.menu>li,.pisgahnav ul.menu>li,.santeenav ul.menu>li,.whitewaternav ul.menu>li,.graysonnav ul.menu>li{position:relative;-webkit-transition:all ease .3s;transition:all ease .3s}
-.corpnav ul.menu>li:after,.pisgahnav ul.menu>li:after,.santeenav ul.menu>li:after,.whitewaternav ul.menu>li:after,.graysonnav ul.menu>li:after{content:"";display:block;width:0;height:100%;background:#9e0b29;position:absolute;top:0;right:0;opacity:0;-webkit-transition:all ease .5s;transition:all ease .5s}
-.corpnav ul.menu>li>a,.pisgahnav ul.menu>li>a,.santeenav ul.menu>li>a,.whitewaternav ul.menu>li>a,.graysonnav ul.menu>li>a{display:block;color:#FFF;font-family:"Lato",sans-serif;font-size:18px;font-weight:400;line-height:1.2;letter-spacing:2px;text-decoration:none;text-transform:uppercase;padding:14px 60px 14px 50px;position:relative;z-index:10}
-.corpnav ul.menu>li>a span,.pisgahnav ul.menu>li>a span,.santeenav ul.menu>li>a span,.whitewaternav ul.menu>li>a span,.graysonnav ul.menu>li>a span{display:inline-block;position:relative}
-.corpnav ul.menu>li>a span:before,.corpnav ul.menu>li>a span:after,.pisgahnav ul.menu>li>a span:before,.pisgahnav ul.menu>li>a span:after,.santeenav ul.menu>li>a span:before,.santeenav ul.menu>li>a span:after,.whitewaternav ul.menu>li>a span:before,.whitewaternav ul.menu>li>a span:after,.graysonnav ul.menu>li>a span:before,.graysonnav ul.menu>li>a span:after{content:"";display:block;background:#FFF;position:absolute;top:10px;right:-15px}
-.corpnav ul.menu>li>a span:before,.pisgahnav ul.menu>li>a span:before,.santeenav ul.menu>li>a span:before,.whitewaternav ul.menu>li>a span:before,.graysonnav ul.menu>li>a span:before{width:9px;height:1px}
-.corpnav ul.menu>li>a span:after,.pisgahnav ul.menu>li>a span:after,.santeenav ul.menu>li>a span:after,.whitewaternav ul.menu>li>a span:after,.graysonnav ul.menu>li>a span:after{height:9px;width:1px;margin-top:-4px;margin-right:4px}
-.corpnav ul.menu>li.active:after,.corpnav ul.menu>li:hover:after,.pisgahnav ul.menu>li.active:after,.pisgahnav ul.menu>li:hover:after,.santeenav ul.menu>li.active:after,.santeenav ul.menu>li:hover:after,.whitewaternav ul.menu>li.active:after,.whitewaternav ul.menu>li:hover:after,.graysonnav ul.menu>li.active:after,.graysonnav ul.menu>li:hover:after{opacity:1;width:100%}
-.navigation-children,.navigation-children-pisgah,.navigation-children-santee,.navigation-children-whitewater,.navigation-children-grayson{position:fixed;top:0;right:485px;width:0;height:100%;-webkit-backface-visibility:hidden;backface-visibility:hidden}
-.navigation-children .navchild-inner,.navigation-children-pisgah .navchild-inner,.navigation-children-santee .navchild-inner,.navigation-children-whitewater .navchild-inner,.navigation-children-grayson .navchild-inner{width:100%;height:100%;position:relative;z-index:99;overflow-x:hidden;overflow-y:auto}
-.navigation-children .children-menu-wrap,.navigation-children-pisgah .children-menu-wrap,.navigation-children-santee .children-menu-wrap,.navigation-children-whitewater .children-menu-wrap,.navigation-children-grayson .children-menu-wrap{-webkit-column-count:2;-moz-column-count:2;column-count:2}
-.navigation-children .children-menu-content,.navigation-children-pisgah .children-menu-content,.navigation-children-santee .children-menu-content,.navigation-children-whitewater .children-menu-content,.navigation-children-grayson .children-menu-content{margin-bottom:10px;padding:15px}
-.navigation-children .submenu-name,.navigation-children-pisgah .submenu-name,.navigation-children-santee .submenu-name,.navigation-children-whitewater .submenu-name,.navigation-children-grayson .submenu-name{font-family:"Lato",sans-serif;font-weight:500;font-size:15px;line-height:1.2;text-transform:uppercase;margin-bottom:10px}
-.navigation-children .submenu-name a.cmenu-link,.navigation-children-pisgah .submenu-name a.cmenu-link,.navigation-children-santee .submenu-name a.cmenu-link,.navigation-children-whitewater .submenu-name a.cmenu-link,.navigation-children-grayson .submenu-name a.cmenu-link{display:inline-block;text-decoration:none;color:#404040}
-.navigation-children .submenu-name a.cmenu-link:hover,.navigation-children-pisgah .submenu-name a.cmenu-link:hover,.navigation-children-santee .submenu-name a.cmenu-link:hover,.navigation-children-whitewater .submenu-name a.cmenu-link:hover,.navigation-children-grayson .submenu-name a.cmenu-link:hover{color:#ba0d30}
-.navigation-children .submenu a,.navigation-children-pisgah .submenu a,.navigation-children-santee .submenu a,.navigation-children-whitewater .submenu a,.navigation-children-grayson .submenu a{display:inline-block;text-decoration:none;color:#191919;font-size:13px;padding:6px 0}
-.navigation-children .submenu a:hover,.navigation-children-pisgah .submenu a:hover,.navigation-children-santee .submenu a:hover,.navigation-children-whitewater .submenu a:hover,.navigation-children-grayson .submenu a:hover{color:#ba0d30}
-.navigation-children .submenu li.current_page_item>a,.navigation-children-pisgah .submenu li.current_page_item>a,.navigation-children-santee .submenu li.current_page_item>a,.navigation-children-whitewater .submenu li.current_page_item>a,.navigation-children-grayson .submenu li.current_page_item>a{color:#ba0d30}
-.navigation-children .children-group,.navigation-children .children-group-pisgah,.navigation-children .children-group-santee,.navigation-children .children-group-whitewater,.navigation-children .children-group-grayson,.navigation-children-pisgah .children-group,.navigation-children-pisgah .children-group-pisgah,.navigation-children-pisgah .children-group-santee,.navigation-children-pisgah .children-group-whitewater,.navigation-children-pisgah .children-group-grayson,.navigation-children-santee .children-group,.navigation-children-santee .children-group-pisgah,.navigation-children-santee .children-group-santee,.navigation-children-santee .children-group-whitewater,.navigation-children-santee .children-group-grayson,.navigation-children-whitewater .children-group,.navigation-children-whitewater .children-group-pisgah,.navigation-children-whitewater .children-group-santee,.navigation-children-whitewater .children-group-whitewater,.navigation-children-whitewater .children-group-grayson,.navigation-children-grayson .children-group,.navigation-children-grayson .children-group-pisgah,.navigation-children-grayson .children-group-santee,.navigation-children-grayson .children-group-whitewater,.navigation-children-grayson .children-group-grayson{position:absolute;top:0;left:0;background:rgba(255,255,255,0.95);-webkit-box-shadow:-1px 4px 30px rgba(0,0,0,0.2);box-shadow:-1px 4px 30px rgba(0,0,0,0.2);padding:75px 30px 80px;width:100%;height:100%;overflow-x:hidden;overflow-y:auto;display:none;-webkit-animation-duration:.5s;animation-duration:.5s}
-.navigation-children .children-group.open,.navigation-children .children-group-pisgah.open,.navigation-children .children-group-santee.open,.navigation-children .children-group-whitewater.open,.navigation-children .children-group-grayson.open,.navigation-children-pisgah .children-group.open,.navigation-children-pisgah .children-group-pisgah.open,.navigation-children-pisgah .children-group-santee.open,.navigation-children-pisgah .children-group-whitewater.open,.navigation-children-pisgah .children-group-grayson.open,.navigation-children-santee .children-group.open,.navigation-children-santee .children-group-pisgah.open,.navigation-children-santee .children-group-santee.open,.navigation-children-santee .children-group-whitewater.open,.navigation-children-santee .children-group-grayson.open,.navigation-children-whitewater .children-group.open,.navigation-children-whitewater .children-group-pisgah.open,.navigation-children-whitewater .children-group-santee.open,.navigation-children-whitewater .children-group-whitewater.open,.navigation-children-whitewater .children-group-grayson.open,.navigation-children-grayson .children-group.open,.navigation-children-grayson .children-group-pisgah.open,.navigation-children-grayson .children-group-santee.open,.navigation-children-grayson .children-group-whitewater.open,.navigation-children-grayson .children-group-grayson.open{display:block;-webkit-animation-name:fadeInRight;animation-name:fadeInRight}
-.navigation-children.open,.navigation-children-pisgah.open,.navigation-children-santee.open,.navigation-children-whitewater.open,.navigation-children-grayson.open{width:585px}
-.navigation-children .parent-name,.navigation-children-pisgah .parent-name,.navigation-children-santee .parent-name,.navigation-children-whitewater .parent-name,.navigation-children-grayson .parent-name{display:none}
-.secondary-menu{padding:35px 50px 20px}
-.secondary-menu ul.menu2{margin:0;padding:0;list-style:none}
-.secondary-menu li{text-align:right}
-.secondary-menu li a{font-family:"Lato",sans-serif;font-weight:300;font-size:14px;line-height:1.2;text-transform:uppercase;letter-spacing:1px;display:inline-block;text-decoration:none;color:#FFF;position:relative;padding:8px 25px 8px 10px}
-.secondary-menu li a .navIcon{position:absolute;top:6px;right:0;font-size:18px}
-.secondary-menu li a .navIcon.fa-calendar-alt{right:3px}
-.secondary-menu li a:hover{opacity:.4}
-.nav__main,.nav__other{height:100%}
-.nav__other.show .navigationz{-webkit-animation-name:"fadeIn";animation-name:"fadeIn"}
-.closeNav{display:block;width:25px;height:25px;color:#FFF;text-align:center;border:1px solid #FFF;border-radius:100px;position:absolute;top:30px;right:30px;-webkit-transition:all ease .3s;transition:all ease .3s;overflow:hidden;z-index:100}
-.closeNav#closeNavChild{display:none}
-.closeNav span{display:block;width:100%;height:100%;text-indent:-999em;position:relative}
-.closeNav span:before,.closeNav span:after{content:"";display:block;width:66%;height:2px;background:#FFF;position:absolute;top:10px;left:4px;-webkit-transition:all ease .3s;transition:all ease .3s}
-.closeNav span:before{-webkit-transform:rotate(45deg);transform:rotate(45deg)}
-.closeNav span:after{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
-.closeNav:hover{background:#950a26}
-.closeNav:hover span:before,.closeNav:hover span:after{background:#FFF !important}
-.childNavCloseBtn{display:none;width:25px;height:25px;background:transparent;color:#FFF;text-align:center;border:1px solid #e40e0e;border-radius:100px;position:absolute;top:30px;right:30px;-webkit-transition:all ease .3s;transition:all ease .3s;overflow:hidden;z-index:100;-webkit-animation-duration:1s;animation-duration:1s}
-.childNavCloseBtn span{display:block;width:100%;height:100%;text-indent:-999em;position:relative}
-.childNavCloseBtn span:before,.childNavCloseBtn span:after{content:"";display:block;width:66%;height:2px;background:#e40e0e;position:absolute;top:10px;left:4px;-webkit-transition:all ease .3s;transition:all ease .3s}
-.childNavCloseBtn span:before{-webkit-transform:rotate(45deg);transform:rotate(45deg)}
-.childNavCloseBtn span:after{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
 .menu-toggle{display:block;width:40px;height:40px;float:right;background:transparent;-webkit-appearance:none;border:0;-webkit-box-shadow:none;box-shadow:none;padding:10px;position:relative;top:-2px;-webkit-transition:all ease .3s;transition:all ease .3s}
 .menu-toggle span.bar{width:25px;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);left:8px}
 .menu-toggle span.bar,.menu-toggle span.bar:before,.menu-toggle span.bar:after{height:4px;background:#000;position:absolute;border-radius:2px}
@@ -1948,6 +1898,7 @@ section.full-bleed-promo .img .grad{width:100%;height:100%;position:absolute;bot
 section.full-bleed-promo .info{width:100%;position:absolute;z-index:12;bottom:0;left:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;padding:10px;color:#fff}
 section.full-bleed-promo .info .words h2{font-size:32px;text-transform:uppercase;font-family:"Brandon Black";line-height:1;margin-bottom:15px}
 section.full-bleed-promo .info .words p{font-size:18px;font-family:"Brandon";margin-bottom:0}
+.footer-disclaimer{width:100%;padding:20px;margin:0 auto;clear:both}
 .homerow .activities{padding:20px;background-color:#242525;width:100%;float:left}
 .homerow .activities .card-flex{margin-left:-5px;margin-right:-5px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;-webkit-box-pack:space-evenly;-ms-flex-pack:space-evenly;justify-content:space-evenly}
 .homerow .activities .imagebox{position:relative;width:100%;margin-bottom:30px}
@@ -1958,6 +1909,7 @@ section.full-bleed-promo .info .words p{font-size:18px;font-family:"Brandon";mar
 .homerow .activities .imagebox .wrap *{-webkit-transition:all ease .3s;transition:all ease .3s}
 .homerow .activities .imagebox .info-flex{z-index:5;position:absolute;top:0;left:0;width:100%;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-radius:20px;background:black;background:-webkit-gradient(linear,left bottom,left top,from(rgba(0,0,0,0.42763)),color-stop(65%,rgba(255,255,255,0)));background:linear-gradient(0,rgba(0,0,0,0.42763) 0,rgba(255,255,255,0) 65%);-webkit-transition:all ease .3s;transition:all ease .3s}
 .homerow .activities .imagebox .info-flex:hover{background:rgba(255,255,255,0.4)}
+.homerow .activities .imagebox .info-flex:hover .title{color:#000}
 .homerow .activities .imagebox .title{display:inline-block;width:100%;font-family:"Brandon Medium";font-size:50px;font-weight:400;line-height:1;text-transform:uppercase;text-align:left;letter-spacing:1px;padding:20px 25px;z-index:5;color:#fff;border-radius:5px}
 .homerow .activities .imagebox .a_desc{padding:20px 20px 0 20px}
 .homerow .activities .imagebox .wrap:hover .bg{-webkit-transform:scale(1.2);transform:scale(1.2)}
@@ -2319,7 +2271,7 @@ h1.page-title span{display:inline-block;position:relative}
 h1.page-title span:after{content:"";display:block;width:30%;height:2px;background:#ba0d30;margin:25px auto 0}
 .intro-text-wrap{width:100%;float:left;text-align:center;padding:70px 40% 70px 40%}
 .intro-text-wrap .btn-sm.btn-cta{margin-top:20px}
-.intro-text{font-size:26px;line-height:1.2;font-family:"Brandon";color:rgba(0,0,0,0.5)}
+.intro-text{font-size:24px;line-height:1.4;font-family:"Brandon Light";color:rgba(0,0,0,0.6);max-width:800px;margin:0 auto}
 .intro-text p:last-child{margin-bottom:0}
 .festival-page{width:100%;float:left}
 .post-type-entries{width:100%;float:left}
@@ -3868,7 +3820,7 @@ ul.items .show{display:block}
 .prenav a{color:#fff;padding:8px 28px;text-decoration:none;font-size:16px;font-weight:bold;text-transform:uppercase;display:block}
 .fs-rest.fs-wrap.multiple .fs-option{float:left;width:100%;padding:0}
 .fs-rest label.chexbox{background-color:white;width:100%;color:#000;text-align:left}
-.text-center .button.inline{width:auto;display:inline-block;margin-top:20px}
+.text-center .button.inline-btn{width:auto;display:inline-block;margin-top:20px}
 .instr-details{padding:20px;background-color:#fff;width:90%}
 body.page-template-page-instruction-single h2.programs{padding:50px 0 20px 0;text-transform:uppercase}
 section.instr-schedule{width:100%;padding:40px 0;float:left}
@@ -3960,6 +3912,16 @@ body.single-whats-new .main-post-text .textcol .inside{font-size:19px}
 .photo-flex{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-ms-flex-wrap:wrap;flex-wrap:wrap}
 .photo{width:47%;margin-bottom:30px;text-align:center}
 .photo img{width:100%}
+section.visit{width:100%;margin:0 auto;max-width:1650px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+section.visit .tile{margin-bottom:50px}
+section.visit .tile.half{width:90%}
+section.visit .tile.full{width:90%}
+section.visit .tile a{color:#000}
+section.visit .img{width:100%;overflow:hidden;border-radius:20px;position:relative}
+section.visit .img h2{width:90%;position:absolute;bottom:20px;left:20px;font-family:"Brandon Black";font-size:30px;text-transform:uppercase;line-height:.9;color:#fff;margin:0}
+section.visit .img img{width:100%}
+section.visit .desc{width:100%;padding:20px;font-size:20px}
+section.visit .link{font-size:18px;width:auto;display:inline-block;color:rgba(0,0,0,0.5);border-bottom:1px solid rgba(0,0,0,0.5);text-transform:uppercase;margin-left:20px;font-family:"Brandon Light"}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#FFF}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -4038,6 +4000,7 @@ section.full-bleed-promo .info{padding:40px}
 section.full-bleed-promo .info .words{width:40%}
 section.full-bleed-promo .info .words h2{font-size:40px}
 section.full-bleed-promo .info .words p{margin-bottom:1rem}
+.footer-disclaimer{width:400px;padding:40px 0}
 .homerow .activities{padding:60px}
 .homerow .activities .imagebox .title{font-size:32px}
 .featured-events-section .postbox{width:33.33%}
@@ -4336,6 +4299,12 @@ body.single-festival .filter-wrapper.filterstyle .select-wrap{width:75%}
 .carousel-item-text h3{font-size:1.75rem}
 .hide-gal{display:block}
 .photo{width:30%}
+section.visit{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}
+section.visit .tile{margin-bottom:60px}
+section.visit .tile.half{width:49%}
+section.visit .img h2{font-size:40px;bottom:30px;left:30px}
+section.visit .desc{padding:30px}
+section.visit .link{margin-left:30px}
 }@media screen and (min-width:820px){#banner.taxonomy-banner .static-banner img.desktop{display:block}
 #banner.taxonomy-banner .static-banner img.mobile{display:none}
 .post-type-entries .imagediv.mobile{display:none}
@@ -4407,6 +4376,8 @@ section.full-bleed-promo .info .words h2{font-size:80px;line-height:.8}
 #timeline-area .horizontal-timeline .timeline{max-width:1100px}
 #timeline-area .horizontal-timeline .events-content{margin-top:10px}
 #timeline-area .history-data .info{min-height:450px}
+section.visit .tile{margin-bottom:120px}
+section.visit .img h2{font-size:50px}
 }@media screen and (min-width:1200px){section.instr-schedule li.slide-item{width:33%;margin:5px}
 }@media(min-width:1300px){.information-tabs-wrap .tabs-info ul a span.arrow:before,.information-tabs-wrap .tabs-info ul a span.arrow:after{top:15px}
 section.homepage-hero .home-info .info h1{font-size:60px}
@@ -4414,7 +4385,6 @@ section.full-bleed-promo .info .words h2{font-size:100px}
 .homerow .activities .imagebox .title{font-size:58px}
 .archive-posts-wrap .entry{width:33.33%}
 }@media screen and (max-width:1230px){.jobs.resetBtn{position:relative;right:12px;top:3px;float:left}
-}@media screen and (max-width:1070px){.navigation__children.open .childNavCloseBtn{display:block;-webkit-animation-name:fadeIn;animation-name:fadeIn}
 }@media screen and (max-width:1000px){.filter-wrapper.non-facetwp.options4 .select-wrap{max-width:50%}
 .filter-wrapper.with-reset-btn .resetBtn{position:relative !important;top:0;right:14px}
 }@media screen and (max-width:999px){.page-activity-passes .pass-types{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
@@ -4497,9 +4467,7 @@ body.logged-in.admin-bar .site-header{top:45px}
 .section-flex-columns .flexcol{width:100% !important;background-image:none !important}
 .section-flex-columns .flexcol img{visibility:visible}
 #primary .upcoming-posts .photo.no-image:before{width:30vw;height:30vw}
-}@media screen and (max-width:480px){.navigation-children .submenu a,.navigation-children-pisgah .submenu a,.navigation-children-santee .submenu a,.navigation-children-whitewater .submenu a,.navigation-children-grayson .submenu a{font-size:15px;padding:8px 0}
-.navigation-children .children-group,.navigation-children .children-group-pisgah,.navigation-children .children-group-santee,.navigation-children .children-group-whitewater,.navigation-children .children-group-grayson,.navigation-children-pisgah .children-group,.navigation-children-pisgah .children-group-pisgah,.navigation-children-pisgah .children-group-santee,.navigation-children-pisgah .children-group-whitewater,.navigation-children-pisgah .children-group-grayson,.navigation-children-santee .children-group,.navigation-children-santee .children-group-pisgah,.navigation-children-santee .children-group-santee,.navigation-children-santee .children-group-whitewater,.navigation-children-santee .children-group-grayson,.navigation-children-whitewater .children-group,.navigation-children-whitewater .children-group-pisgah,.navigation-children-whitewater .children-group-santee,.navigation-children-whitewater .children-group-whitewater,.navigation-children-whitewater .children-group-grayson,.navigation-children-grayson .children-group,.navigation-children-grayson .children-group-pisgah,.navigation-children-grayson .children-group-santee,.navigation-children-grayson .children-group-whitewater,.navigation-children-grayson .children-group-grayson{padding:75px 10px 80px}
-.featured-events-section .postbox{width:100%}
+}@media screen and (max-width:480px){.featured-events-section .postbox{width:100%}
 #pageTabs span.mini-nav{display:block}
 #pageTabs span.mini-nav a{padding-left:0;padding-right:0}
 #pageTabs #tabcontent{padding-left:50px;padding-right:50px}

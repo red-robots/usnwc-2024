@@ -9,6 +9,8 @@
 $placeholder = THEMEURI . 'images/rectangle.png';
 $banner = get_field("flexslider_banner");
 $has_banner = ($banner) ? 'hasbanner':'nobanner';
+$anchor_nav = get_field('anchor_nav');
+
 get_header(); 
 
 if( is_page('waiver') ) {
@@ -35,7 +37,9 @@ if( is_page('waiver') ) {
 				</div>
 			</section>
 
-			<div id="pageTabs"></div>
+			<?php if( $anchor_nav !== 'hide' ) { ?>
+				<div id="pageTabs"></div>
+			<?php } ?>
 
 		<?php endwhile; ?>
 

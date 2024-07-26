@@ -110,7 +110,7 @@ jQuery(document).ready(function ($) {
     y: "0em",
     stagger: 0.1
   });
-  document.querySelector(".today").addEventListener("click", function () {
+  document.querySelector(".today").addEventListener("mouseover", function () {
     if (!menuOpen) {
       tl.play();
       menuOpen = true;

@@ -25,49 +25,49 @@ get_header(); ?>
 
 
 		<section class="stories-whats">
-		<?php
-		// Custom query to get sticky posts first
-		$args = array(
-		    'post_type' => array('post', 'whats-new'),
-		    'meta_key' => 'sticky_post',
-		    'meta_value' => '1',
-		    'orderby' => 'date',
-		    'order' => 'DESC',
-		);
+			<?php
+			// Custom query to get sticky posts first
+			$args = array(
+			    'post_type' => array('post', 'whats-new'),
+			    'meta_key' => 'sticky_post',
+			    'meta_value' => '1',
+			    'orderby' => 'date',
+			    'order' => 'DESC',
+			);
 
-		$sticky_query = new WP_Query($args);
+			$sticky_query = new WP_Query($args);
 
-		if ($sticky_query->have_posts()) :
-		    while ($sticky_query->have_posts()) : $sticky_query->the_post();
-		        // Display sticky post content
-		        get_template_part('parts/whats-new');
-		    endwhile;
-		    wp_reset_postdata();
-		endif;
+			if ($sticky_query->have_posts()) :
+			    while ($sticky_query->have_posts()) : $sticky_query->the_post();
+			        // Display sticky post content
+			        get_template_part('parts/whats-new');
+			    endwhile;
+			    wp_reset_postdata();
+			endif;
 
-		// Regular query to get non-sticky posts
-		$args = array(
-		    'post_type' => array('post', 'whats-new'),
-		    'meta_query' => array(
-		        array(
-		            'key' => 'sticky_post',
-		            'compare' => 'NOT EXISTS',
-		        ),
-		    ),
-		    'orderby' => 'date',
-		    'order' => 'DESC',
-		);
+			// Regular query to get non-sticky posts
+			$args = array(
+			    'post_type' => array('post', 'whats-new'),
+			    'meta_query' => array(
+			        array(
+			            'key' => 'sticky_post',
+			            'compare' => 'NOT EXISTS',
+			        ),
+			    ),
+			    'orderby' => 'date',
+			    'order' => 'DESC',
+			);
 
-		$non_sticky_query = new WP_Query($args);
+			$non_sticky_query = new WP_Query($args);
 
-		if ($non_sticky_query->have_posts()) :
-		    while ($non_sticky_query->have_posts()) : $non_sticky_query->the_post();
-		        // Display non-sticky post content
-		        get_template_part('parts/whats-new');
-		    endwhile;
-		    wp_reset_postdata();
-		endif;
-		?>
+			if ($non_sticky_query->have_posts()) :
+			    while ($non_sticky_query->have_posts()) : $non_sticky_query->the_post();
+			        // Display non-sticky post content
+			        get_template_part('parts/whats-new');
+			    endwhile;
+			    wp_reset_postdata();
+			endif;
+			?>
 		</section>
 
 
