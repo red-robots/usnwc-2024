@@ -48,6 +48,7 @@ get_header(); ?>
 								<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
 									<div class="img">
 										<h2><?php echo $title; ?></h2>
+										<div class="img-overlay"></div>
 										<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
 									</div>
 									<div class="desc">
