@@ -14865,7 +14865,7 @@ body.single-whats-new {
 section.visit {
 	width: 100%;
 	margin: 0 auto;
-	max-width: 1650px;
+	max-width: 1750px;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -14874,6 +14874,7 @@ section.visit {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: flex-start;
+		padding: 0 50px;
 	}
 	.tile {
 		margin-bottom: 50px;
