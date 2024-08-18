@@ -16,9 +16,14 @@ get_header(); ?>
 	<main id="main" class="site-main wrapper" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
+      <header class="page-header">
+        <h1 class="heading-center">Today's Hours + Calendar</h1>
+      </header>
+
+      <?php get_template_part('parts-calendar/todays-snapshot') ?>
 
 			<section class="text-centered-section">
-				<div class="wrapper text-center">
+				<div class="text-center">
 					<div class="page-header">
 						<h1 class="page-title"><?php the_title(); ?></h1>
 					</div>

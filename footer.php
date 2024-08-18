@@ -28,8 +28,8 @@
 
 					<?php if ($footLinks) { ?>
 						<?php foreach ($footLinks as $e) { 
-							$c_title = $e['title'];
-							$c_links = $e['links'];
+							$c_title = ( isset($e['title']) ) ? $e['title'] : '';
+              $c_links = ( isset($e['links']) ) ? $e['links'] : '';
 							$link = (isset($e['foot_parent_link']['url']) && $e['foot_parent_link']['url']) ? $e['foot_parent_link']['url'] : '';
 							$linkTarget = (isset($e['foot_parent_link']['target']) && $e['foot_parent_link']['target']) ? $e['foot_parent_link']['target'] : '_self';
 							$link_open = '';
@@ -38,24 +38,23 @@
 								$link_open = '<a class="pagelink" href="'.$link.'" target="'.$linkTarget.'">';
 								$link_close = '</a>';
 							}
-						?>
-						<div class="footcol footlinks">
-							
-							<?php if ($c_links) { ?>
-								<ul class="flinks">
-									<?php foreach ($c_links as $a) { 
-										$link = $a['link'];
-						                $pageTitle = ( isset($link['title']) && $link['title'] ) ? $link['title'] : '';
-						                $pageLink = ( isset($link['url']) && $link['url'] ) ? $link['url'] : '';
-						                $target = ( isset($link['target']) && $link['target'] ) ? $link['target'] : '_self';  ?>
-						                <?php if ($pageTitle && $pageLink) { ?>
-						                	<li><a href="<?php echo $pageLink ?>" target="<?php echo $target ?>"><?php echo $pageTitle ?></a></li>
-						            	<?php } ?>
-									<?php } ?>
-								</ul>
-							<?php } ?>
-						</div>
+  						if ($c_links) { ?>
+  						  <div class="footcol footlinks">
+  								<ul class="flinks">
+  									<?php foreach ($c_links as $a) { 
+  										$link = $a['link'];
+  						                $pageTitle = ( isset($link['title']) && $link['title'] ) ? $link['title'] : '';
+  						                $pageLink = ( isset($link['url']) && $link['url'] ) ? $link['url'] : '';
+  						                $target = ( isset($link['target']) && $link['target'] ) ? $link['target'] : '_self';  ?>
+  						                <?php if ($pageTitle && $pageLink) { ?>
+  						                	<li><a href="<?php echo $pageLink ?>" target="<?php echo $target ?>"><?php echo $pageTitle ?></a></li>
+  						            	<?php } ?>
+  									<?php } ?>
+  								</ul>
+  						  </div>
+              <?php } ?>
 						<?php } ?>
+
 					<?php } ?>
 
 					

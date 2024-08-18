@@ -1,8 +1,9 @@
+<?php 
+$navigation = get_field('main_menu_item', 'option');
+if($navigation) { ?>
 <nav class="new-nav desktop-navigation">
   <ul>
   <?php 
-  
-    $navigation = get_field('main_menu_item', 'option');
     // echo '<pre>';
     // print_r($navigation);
     $c = 0;
@@ -22,7 +23,8 @@
    ?>
     <li class="menu-item <?php echo $navClass; ?> <?php if( !empty($column)){ echo 'has-children'; } ?>">
       <a class="menu-link" href="<?php echo $main_link['url']; ?>"><?php echo $main_link['title']; ?></a><!-- end main a -->
-      <?php if( $column ) { echo '<div class="mega-menu" ><div class="mega-menu-content">'; } ?>
+      <?php if( $column ) {  ?>
+        <div class="mega-menu" ><div class="mega-menu-content">
         <?php foreach( $column as $col ) { $i++;
                 $links = $col['links'];
                 // echo '<pre>';
@@ -48,11 +50,12 @@
               </ul>
             </div><!-- end col -->
         <?php } ?>
-      <?php if( $column ) { echo '</div></div> <!-- end mega -->'; } ?>
+        </div></div> <!-- end mega -->
+      <?php } ?>
+
     </li><!-- end main -->
    <?php } ?>
    </ul><!-- end main -->
    
 </nav>
-
-
+<?php } ?>

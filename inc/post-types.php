@@ -8,6 +8,15 @@
 add_action('init', 'js_custom_init', 1);
 function js_custom_init() {
     $post_types = array(
+        // array(
+        //     'post_type' => 'whitewater-locations',
+        //     'menu_name' => 'Locations',
+        //     'plural'    => 'Location',
+        //     'single'    => 'Location',
+        //     'menu_icon' => 'dashicons-location-alt',
+        //     'menu_position' => 9,
+        //     'supports'  => array('title','editor', 'author')
+        // ),
         array(
             'post_type' => 'race-forms',
             'menu_name' => 'Form Pages',
