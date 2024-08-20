@@ -3999,6 +3999,8 @@ section.visit .link{font-size:18px;width:auto;display:inline-block;color:rgba(0,
 .customCalendarGrid .date-event-info p em{color:#7f7f7f}
 .customCalendarGrid .tribe-events-calendar-month__multiday-event-wrapper .tribe-events-calendar-month__multiday-event-bar-inner{background-color:#cd0d0d !important}
 .customCalendarGrid .tribe-events-calendar-month__multiday-event-wrapper .tribe-events-calendar-month__multiday-event-bar-inner h3{color:#fff !important;opacity:1 !important;text-transform:uppercase;font-size:14px}
+.customCalendarGrid .tribe-events-calendar-month__day.tribe-events-calendar-month__day--current{border:2px solid #cd0d0d !important}
+.customCalendarGrid .tribe-events-calendar-month__day.tribe-events-calendar-month__day--current h3,.customCalendarGrid .tribe-events-calendar-month__day.tribe-events-calendar-month__day--current h3 *{color:#cd0d0d !important}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}

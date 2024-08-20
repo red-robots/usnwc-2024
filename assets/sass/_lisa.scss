@@ -429,6 +429,12 @@
       }
     }
   }
+  .tribe-events-calendar-month__day.tribe-events-calendar-month__day--current {
+    border: 2px solid #cd0d0d!important;
+    h3, h3 * {
+      color: #cd0d0d!important;
+    }
+  }
 }
 
 
