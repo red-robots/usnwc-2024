@@ -189,8 +189,8 @@ jQuery(document).ready(function ($) {
     $("#todayOptions-mobile li").removeClass('active');
     $(this).parent().addClass('active');
     $(".schedules-list-mobile").removeClass('active');
-    var tabContentMobile = $(this).attr("data-tab");
-    console.log(tabContentMobile);
+    var tabContentMobile = $(this).attr("data-tab"); //console.log(tabContentMobile);
+
     $(tabContentMobile).addClass('active');
   });
   /*
@@ -511,29 +511,28 @@ jQuery(document).ready(function ($) {
       }
     });
   } // When was this added?
+  // $(document).on('click', function (e) {
+  // 	var tag = $(this);
+  // 	var exceptions = ['todayToggle','todayLink','todayTxt','today-options', 'arrow'];
+  // 	var elementId = e.target.id;
+  //   //console.log(e);
+  // 	var is_open = false;
+  // 	if( elementId=='today-options' ) {
+  // 		$(".topinfo .today").addClass("open");
+  // 	} else {
+  // 		if($.inArray(elementId, exceptions) != -1) {
+  // 			if( $(".topinfo .today").hasClass("open") ) {
+  // 				$(".topinfo .today").removeClass("open");
+  // 			} else {
+  // 				$(".topinfo .today").addClass("open");
+  // 			}
+  //  		} else {
+  //  			$(".topinfo .today").removeClass("open");
+  //  		}
+  // 	}
+  // });
 
 
-  $(document).on('click', function (e) {
-    var tag = $(this);
-    var exceptions = ['todayToggle', 'todayLink', 'todayTxt', 'today-options', 'arrow'];
-    var elementId = e.target.id;
-    console.log(e);
-    var is_open = false;
-
-    if (elementId == 'today-options') {
-      $(".topinfo .today").addClass("open");
-    } else {
-      if ($.inArray(elementId, exceptions) != -1) {
-        if ($(".topinfo .today").hasClass("open")) {
-          $(".topinfo .today").removeClass("open");
-        } else {
-          $(".topinfo .today").addClass("open");
-        }
-      } else {
-        $(".topinfo .today").removeClass("open");
-      }
-    }
-  });
   $('a[href*="#"]:not([href="#"])').click(function () {
     var headHeight = $("#masthead").height();
     var offset = headHeight + 80;

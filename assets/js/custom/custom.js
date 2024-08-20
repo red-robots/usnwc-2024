@@ -182,7 +182,7 @@ $(document).on("click","#todayOptions-mobile a",function(e){
     $(this).parent().addClass('active');
     $(".schedules-list-mobile").removeClass('active');
     var tabContentMobile = $(this).attr("data-tab");
-    console.log(tabContentMobile);
+    //console.log(tabContentMobile);
     $(tabContentMobile).addClass('active');
 });
 /*
@@ -546,26 +546,26 @@ var getGridSize = function() {
 
 
  // When was this added?
- 	$(document).on('click', function (e) {
- 		var tag = $(this);
- 		var exceptions = ['todayToggle','todayLink','todayTxt','today-options', 'arrow'];
- 		var elementId = e.target.id;
-    console.log(e);
- 		var is_open = false;
- 		if( elementId=='today-options' ) {
- 			$(".topinfo .today").addClass("open");
- 		} else {
- 			if($.inArray(elementId, exceptions) != -1) {
-				if( $(".topinfo .today").hasClass("open") ) {
-					$(".topinfo .today").removeClass("open");
-				} else {
-					$(".topinfo .today").addClass("open");
-				}
-	 		} else {
-	 			$(".topinfo .today").removeClass("open");
-	 		}
- 		}
-	});
+ 	// $(document).on('click', function (e) {
+ 	// 	var tag = $(this);
+ 	// 	var exceptions = ['todayToggle','todayLink','todayTxt','today-options', 'arrow'];
+ 	// 	var elementId = e.target.id;
+  //   //console.log(e);
+ 	// 	var is_open = false;
+ 	// 	if( elementId=='today-options' ) {
+ 	// 		$(".topinfo .today").addClass("open");
+ 	// 	} else {
+ 	// 		if($.inArray(elementId, exceptions) != -1) {
+	// 			if( $(".topinfo .today").hasClass("open") ) {
+	// 				$(".topinfo .today").removeClass("open");
+	// 			} else {
+	// 				$(".topinfo .today").addClass("open");
+	// 			}
+	//  		} else {
+	//  			$(".topinfo .today").removeClass("open");
+	//  		}
+ 	// 	}
+	// });
 	
 
 	$('a[href*="#"]:not([href="#"])').click(function() {

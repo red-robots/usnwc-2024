@@ -3955,11 +3955,11 @@ section.visit .link{font-size:18px;width:auto;display:inline-block;color:rgba(0,
 .todaySnapshotInfo .mobile-tab-heading span.wloc{margin-top:2px;font-size:15px;font-style:italic;color:#787878}
 .todaySnapshotInfo .location-tabs{margin:0;padding:0;list-style:none;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .todaySnapshotInfo .location-tabs li{padding:5px;position:relative}
-.todaySnapshotInfo .location-tabs li button{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:2px solid #ececec;background-color:#ececec;padding:10px 20px;color:#747474;text-align:center;padding:15px 30px 12px;border-radius:8px}
+.todaySnapshotInfo .location-tabs li button{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:2px solid #ececec;background-color:#ececec;color:#747474;text-align:center;padding:15px 30px 12px;border-radius:8px}
 .todaySnapshotInfo .location-tabs li button span{display:block;width:100%}
 .todaySnapshotInfo .location-tabs li button span.wname{font-size:18px;font-weight:500;line-height:1;color:#747474;text-transform:uppercase}
 .todaySnapshotInfo .location-tabs li button span.wloc{margin-top:2px;font-size:13px;font-style:italic;color:#787878}
-.todaySnapshotInfo .location-tabs li.active:after{content:"";display:block;width:0;height:0;border-top:12px solid #e33333;border-left:7px solid transparent;border-right:7px solid transparent;position:absolute;left:50%;bottom:-14px;-webkit-transform:translateX(-50%);transform:translateX(-50%)}
+.todaySnapshotInfo .location-tabs li.active:after{content:"";display:block;width:0;height:0;border-top:10px solid #e33333;border-left:6px solid transparent;border-right:6px solid transparent;position:absolute;left:50%;bottom:-10px;-webkit-transform:translateX(-50%);transform:translateX(-50%)}
 .todaySnapshotInfo .location-tabs li.active button{border:2px solid #e33333;background-color:#fff;color:#000}
 .todaySnapshotInfo .location-tabs li.active button span.wname{color:#000}
 .todaySnapshotInfo .info-wrapper{display:none;margin-top:40px}
@@ -3980,6 +3980,22 @@ section.visit .link{font-size:18px;width:auto;display:inline-block;color:rgba(0,
 .todaySnapshotInfo .info-wrapper .infocol.is-status .status{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:100px;height:100px;border:2px solid #000;border-radius:100%;text-align:center;position:relative;overflow:hidden;font-family:"Lato",sans-serif;font-size:22px;font-weight:600;text-transform:uppercase;color:#5d5d5d}
 .todaySnapshotInfo .info-wrapper .infocol.is-status .status:before{content:"";display:block;width:100%;height:100%;border-radius:100%;position:absolute;top:0;left:0;border:4px solid #4ed84e}
 .todaySnapshotInfo .info-wrapper .infocol.is-status .status.close:before{border:4px solid #e33333}
+.tabs-calendar-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.tabs-calendar-wrapper div{padding:5px}
+.tabs-calendar-wrapper .tab-item{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:2px solid #ececec;background-color:#ececec;text-align:center;padding:17px 30px 16px;border-radius:8px;font-size:18px;font-weight:500;line-height:1;color:#000;text-transform:uppercase;position:relative}
+.tabs-calendar-wrapper .tab-item:after{content:"";display:block;width:0;height:0;border-top:10px solid #e33333;border-left:6px solid transparent;border-right:6px solid transparent;position:absolute;left:50%;bottom:-16px;-webkit-transform:translateX(-50%);transform:translateX(-50%);-webkit-transition:all ease .3s;transition:all ease .3s;opacity:0}
+.tabs-calendar-wrapper .tab-item.active{border-color:#e33333;background-color:#fff}
+.tabs-calendar-wrapper .tab-item.active:after{opacity:1}
+.tab-calendar-panel{display:none}
+.tab-calendar-panel.active{display:block;-webkit-animation:fadeIn both .3s;animation:fadeIn both .3s}
+.tab-calendar-panel .hide{display:none !important;height:0;overflow:hidden;visibility:hidden}
+.customCalendarGrid [role=gridcell] .tribe-events-calendar-month__day-date{text-align:left;opacity:1 !important;padding:0 15px !important}
+.customCalendarGrid [role=gridcell] .tribe-events-calendar-month__day-date .tribe-events-calendar-month__day-date-daynum{font-family:"Brandon";font-size:16px;color:#000}
+.customCalendarGrid .tribe-events-calendar-month__events{display:none}
+.customCalendarGrid .tribe-events-calendar-month__events:has(article){display:block}
+.customCalendarGrid .date-event-info p{margin:10px 0 !important;font-size:14px;line-height:1.3}
+.customCalendarGrid .tribe-events-calendar-month__multiday-event-wrapper .tribe-events-calendar-month__multiday-event-bar-inner{background-color:#cd0d0d !important}
+.customCalendarGrid .tribe-events-calendar-month__multiday-event-wrapper .tribe-events-calendar-month__multiday-event-bar-inner h3{color:#fff !important;opacity:1 !important;text-transform:uppercase;font-size:14px}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}

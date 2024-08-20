@@ -1639,20 +1639,23 @@ function child_templates($template) {
 
     if ( isset($post->post_parent) && $post->post_parent ) {
         // get top level parent page
-        $parent = get_post(
-            reset(array_reverse(get_post_ancestors($post->ID)))
-        );
+        if( is_array($post->post_parent) ) {
+          $parent = get_post(
+              reset(array_reverse(get_post_ancestors($post->ID)))
+          );
 
-        // find the child template based on parent's slug or ID
-        $child_template = locate_template(
-            [
-                'child-' . $parent->post_name . '.php',
-                'child-' . $parent->ID . '.php',
-                'child.php',
-            ]
-        );
+          // find the child template based on parent's slug or ID
+          $child_template = locate_template(
+              [
+                  'child-' . $parent->post_name . '.php',
+                  'child-' . $parent->ID . '.php',
+                  'child.php',
+              ]
+          );
 
-        if ($child_template) return $child_template;
+          if ($child_template) return $child_template;
+
+        }
     }
 
     return $template;
@@ -2384,6 +2387,13 @@ add_filter( 'get_terms_orderby', function( $orderby, $query_vars ) {
 function is_faqs_visible($postid=null) {
     $faqVisible = ($postid) ? get_field("faqs_visibility",$postid) : get_field("faqs_visibility");
     return ( isset($faqVisible[0]) && $faqVisible[0]=='hide' ) ? false : true;
+}
+
+function getDataBySlug($slug) {
+  global $wpdb;
+  $query = "SELECT * FROM ".$wpdb->prefix."posts p WHERE p.post_name='".$slug."' AND p.post_status='publish' AND p.post_type='tribe_events'";
+  $result = $wpdb->get_row($query);
+  return ($result) ? $result : '';
 }
 
 // remove_filter( 'the_content', 'wpautop' );

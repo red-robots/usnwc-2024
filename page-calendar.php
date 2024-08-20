@@ -29,10 +29,24 @@ get_header(); ?>
 					</div>
 					<?php 
 
-					the_content(); 
-
-					echo do_shortcode('[tribe_events]');
-					?>
+          if( get_the_content() ) { ?>
+          <div class="page-intro-text"><?php the_content(); ?></div>
+          <?php } ?>  
+					
+          <?php if ( do_shortcode('[tribe_events]') ) { ?>
+          <div class="calendar-grid-wrapper">
+            <div class="tabs-calendar-wrapper">
+              <div><button role="tab" aria-selected="true" aria-controls="calendarGrid" class="tab-item active">Calendar</button></div>
+              <div><button role="tab" aria-selected="false" aria-controls="eventsGrid" class="tab-item">Events</button></div>
+            </div>
+            <div id="calendarGrid" class="tab-calendar-panel customCalendarGrid active">
+              <?php echo do_shortcode('[tribe_events]'); ?>
+            </div>
+            <div id="eventsGrid" class="tab-calendar-panel">
+            </div>
+          </div>
+          <?php } ?>
+					
 				</div>
 			</section>
 
