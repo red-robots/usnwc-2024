@@ -3944,12 +3944,14 @@ section.visit .img h2{width:90%;z-index:12;position:absolute;bottom:20px;left:20
 section.visit .img img{width:100%}
 section.visit .desc{width:100%;padding:20px;font-size:20px}
 section.visit .link{font-size:18px;width:auto;display:inline-block;color:rgba(0,0,0,.5);border-bottom:1px solid rgba(0,0,0,.5);text-transform:uppercase;margin-left:20px;font-family:"Brandon Light"}
-.page-template-page-calendar #primary .wrapper{max-width:1400px;width:100%}
+.page-template-page-calendar #primary .wrapper{max-width:1380px;width:100%}
 .heading-center{text-align:center;font-family:"Brandon Bold";font-size:45px;line-height:1.2;letter-spacing:.03em;text-transform:uppercase;margin:0}
-.snapshop-wrapper{padding-top:90px}
+.snapshop-wrapper{padding-top:100px}
 .snapshop-wrapper .titlediv{text-align:center;margin-block:50px}
 .snapshop-wrapper .titlediv h3{font-family:"Brandon";font-size:25px;line-height:1.2;letter-spacing:.03em;text-transform:uppercase;margin:0}
 .snapshop-wrapper .titlediv .dateToday{font-size:18px;margin-top:2px;color:#949494}
+.text-centered-section.calendar-tab-section{padding-top:100px}
+.todaySnapshotInfo{border-bottom:1px solid #ccc;padding-bottom:80px}
 .todaySnapshotInfo .mobile-tab-heading{display:none;width:100%;text-align:center;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:2px solid #e1e1e1;background-color:#e1e1e1;padding:10px 20px;color:#747474;text-align:center;padding:15px 30px 12px;border-radius:8px}
 .todaySnapshotInfo .mobile-tab-heading span{display:block;width:100%}
 .todaySnapshotInfo .mobile-tab-heading span.wname{font-size:20px;font-weight:500;line-height:1;color:#747474;text-transform:uppercase}

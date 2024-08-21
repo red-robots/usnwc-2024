@@ -17,16 +17,13 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
       <header class="page-header">
-        <h1 class="heading-center">Today's Hours + Calendar</h1>
+        <h1 class="heading-center"><?php the_title(); ?></h1>
       </header>
 
       <?php get_template_part('parts-calendar/todays-snapshot') ?>
 
-			<section class="text-centered-section">
+			<section class="text-centered-section calendar-tab-section">
 				<div class="text-center">
-					<div class="page-header">
-						<h1 class="page-title"><?php the_title(); ?></h1>
-					</div>
 					<?php 
 
           if( get_the_content() ) { ?>

@@ -1,6 +1,6 @@
 .page-template-page-calendar {
   #primary .wrapper {
-    max-width: 1400px;
+    max-width: 1380px;
     width: 100%;
   }
 }
@@ -14,7 +14,7 @@
   margin: 0 0;
 }
 .snapshop-wrapper {
-  padding-top: 90px;
+  padding-top: 100px;
   .titlediv {
     text-align: center;
     margin-block: 50px;
@@ -34,7 +34,13 @@
   }
 }
 
+.text-centered-section.calendar-tab-section {
+  padding-top: 100px;
+}
+
 .todaySnapshotInfo {
+  border-bottom: 1px solid #CCC;
+  padding-bottom: 80px;
   .mobile-tab-heading {
     display: none;
     width: 100%;
