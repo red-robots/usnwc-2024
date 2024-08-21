@@ -498,3 +498,11 @@ body.toplevel_page_acf-options-today-options [data-name="whitewaterLocations"] .
 }
 */
 
+
+body.post-type-dining .inside.acf-fields:has(.acf-tab-wrap) .acf-field-date-picker[data-name="start_date"],
+body.post-type-dining .inside.acf-fields:has(.acf-tab-wrap) .acf-field-date-picker[data-name="end_date"] {
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+  clear: none;
+}

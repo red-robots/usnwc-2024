@@ -57,13 +57,13 @@ $num_events_label = sprintf(
 		datetime="<?php echo esc_attr( $day['date'] ); ?>"
 	>
 		<?php if ( ! empty( $day['found_events'] ) ) : ?>
-			<a
-				href="<?php echo esc_url( $day['day_url'] ); ?>"
+			<span
+				data-href="<?php echo esc_url( $day['day_url'] ); ?>"
 				class="tribe-events-calendar-month__day-date-link"
-				data-js="tribe-events-view-link"
+				data-nojs="tribe-events-view-link"
 			>
 				<?php echo esc_html( $day_number ); ?>
-			</a>
+			</span>
 		<?php else : ?>
 			<?php echo esc_html( $day_number ); ?>
 		<?php endif; ?>

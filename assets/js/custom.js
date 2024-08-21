@@ -945,7 +945,27 @@ jQuery(document).ready(function ($) {
       $('.info-wrapper').not('#' + control).slideUp();
       $('.todaySnapshotInfo .mobile-tab-heading').not(target).removeClass('active');
     });
-  }
+  } //Homepage Calendar Tabs
+
+
+  $(document).on("click", ".tabs-calendar-wrapper .tab-item", function (e) {
+    var tab = $(this);
+    var tabPanel = $(this).attr('aria-controls');
+    var currentPanel = '.tab-calendar-panel#' + tabPanel;
+    $('.tabs-calendar-wrapper .tab-item').not(tab).removeClass('active');
+    tab.toggleClass('active');
+
+    if ($(this).attr('aria-selected') == 'true') {
+      $(this).attr('aria-selected', 'false');
+    } else {
+      $(this).attr('aria-selected', 'true');
+    }
+
+    if ($(currentPanel).length) {
+      $(currentPanel).addClass('active');
+      $('.tab-calendar-panel').not(currentPanel).removeClass('active');
+    }
+  });
 }); // END #####################################    END
 "use strict";
 

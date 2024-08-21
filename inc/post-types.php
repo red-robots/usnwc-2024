@@ -535,6 +535,13 @@ function set_custom_cpt_columns($columns) {
     global $wp_query;
     $query = isset($wp_query->query) ? $wp_query->query : '';
     $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
+
+    if($post_type=='dining') {
+      unset($columns['date']);
+      $columns['title'] = __( 'Name', 'bellaworks' );
+      $columns['start_date'] = __( 'Start Date', 'bellaworks' );
+      $columns['date'] = __( 'Published', 'bellaworks' );
+    }
     
     if($post_type=='tribe_events') {
         unset($columns['taxonomy-event-location']);
@@ -642,6 +649,18 @@ function custom_post_column( $column, $post_id ) {
                 } 
                 break;
         }
+    }
+
+    if($post_type=='dining') {
+      switch ( $column ) {
+        case 'start_date' :
+            $date_string = get_field('start_date',$post_id);
+            if($date_string) {
+                $sdate = DateTime::createFromFormat('Y-m-d', $date_string);
+                echo $sdate->format('M j, Y');
+            } 
+            break;
+      }
     }
 
     if($post_type=='post') {

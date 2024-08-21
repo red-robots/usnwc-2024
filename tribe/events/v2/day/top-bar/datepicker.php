@@ -25,6 +25,10 @@ if ( empty( $selected_date_value ) ) {
 $selected_datetime = strtotime( $selected_date_value );
 $selected_date_label = date_i18n( tribe_get_date_format( true ), $selected_datetime );
 
+//Remove Year
+$selected_date_parts = explode(' ', $selected_date_label);
+$selected_date_label = $selected_date_parts[0];
+
 $datepicker_date = Dates::build_date_object( $selected_date_value )->format( $date_formats->compact );
 ?>
 <div class="tribe-events-c-top-bar__datepicker">

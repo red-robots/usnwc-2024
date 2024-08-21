@@ -43,6 +43,7 @@ get_header(); ?>
               <?php echo do_shortcode('[tribe_events]'); ?>
             </div>
             <div id="eventsGrid" class="tab-calendar-panel">
+              <?php get_template_part('parts-calendar/calendar-events-tab'); ?>
             </div>
           </div>
           <?php } ?>

@@ -3944,6 +3944,7 @@ section.visit .img h2{width:90%;z-index:12;position:absolute;bottom:20px;left:20
 section.visit .img img{width:100%}
 section.visit .desc{width:100%;padding:20px;font-size:20px}
 section.visit .link{font-size:18px;width:auto;display:inline-block;color:rgba(0,0,0,.5);border-bottom:1px solid rgba(0,0,0,.5);text-transform:uppercase;margin-left:20px;font-family:"Brandon Light"}
+.page-template-page-calendar #primary .wrapper{max-width:1400px;width:100%}
 .heading-center{text-align:center;font-family:"Brandon Bold";font-size:45px;line-height:1.2;letter-spacing:.03em;text-transform:uppercase;margin:0}
 .snapshop-wrapper{padding-top:90px}
 .snapshop-wrapper .titlediv{text-align:center;margin-block:50px}
@@ -3987,8 +3988,11 @@ section.visit .link{font-size:18px;width:auto;display:inline-block;color:rgba(0,
 .tabs-calendar-wrapper .tab-item.active{border-color:#e33333;background-color:#fff}
 .tabs-calendar-wrapper .tab-item.active:after{opacity:1}
 .tab-calendar-panel{display:none}
-.tab-calendar-panel.active{display:block;-webkit-animation:fadeIn both .3s;animation:fadeIn both .3s}
+.tab-calendar-panel.active{display:block;-webkit-animation:fadeIn both .5s;animation:fadeIn both .5s}
+.tab-calendar-panel#eventsGrid{margin-top:70px}
 .tab-calendar-panel .hide{display:none !important;height:0;overflow:hidden;visibility:hidden}
+.customCalendarGrid{margin-top:70px}
+.customCalendarGrid .tribe-common .tribe-common-l-container{max-width:100% !important;padding:0 0 !important}
 .customCalendarGrid [role=gridcell] .tribe-events-calendar-month__day-date{text-align:left;opacity:1 !important;padding:0 15px !important}
 .customCalendarGrid [role=gridcell] .tribe-events-calendar-month__day-date .tribe-events-calendar-month__day-date-daynum{font-family:"Brandon";font-size:16px;color:#000}
 .customCalendarGrid .tribe-events-calendar-month__events{display:none}
@@ -3997,11 +4001,16 @@ section.visit .link{font-size:18px;width:auto;display:inline-block;color:rgba(0,
 .customCalendarGrid .date-event-info p{margin:10px 0 !important;font-size:14px;line-height:1.3}
 .customCalendarGrid .date-event-info p strong,.customCalendarGrid .date-event-info p b{font-weight:600;letter-spacing:.02em;color:#000}
 .customCalendarGrid .date-event-info p em{color:#7f7f7f}
-.customCalendarGrid .tribe-events-calendar-month__multiday-event-wrapper .tribe-events-calendar-month__multiday-event-bar-inner{background-color:#cd0d0d !important}
+.customCalendarGrid .tribe-events-calendar-month__multiday-event-wrapper .tribe-events-calendar-month__multiday-event-bar-inner{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;background-color:#cd0d0d !important}
 .customCalendarGrid .tribe-events-calendar-month__multiday-event-wrapper .tribe-events-calendar-month__multiday-event-bar-inner h3{color:#fff !important;opacity:1 !important;text-transform:uppercase;font-size:14px}
 .customCalendarGrid .tribe-events-calendar-month__day.tribe-events-calendar-month__day--current{border:2px solid #cd0d0d !important}
 .customCalendarGrid .tribe-events-calendar-month__day.tribe-events-calendar-month__day--current h3,.customCalendarGrid .tribe-events-calendar-month__day.tribe-events-calendar-month__day--current h3 *{color:#cd0d0d !important}
 .customCalendarGrid .tribe-events-header__events-bar{display:none !important}
+.calendar-tab-events-posts .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-12px;margin-right:-12px}
+.calendar-tab-events-posts .infoBox{width:33.333%;padding:12px}
+.calendar-tab-events-posts .infoBox h3{margin:0;text-transform:uppercase;font-weight:500;font-size:18px;line-height:1.2;color:#000}
+.calendar-tab-events-posts .infoBox figure{margin:0;position:relative;width:100%;padding-bottom:65%;overflow:hidden;border-radius:15px}
+.calendar-tab-events-posts .infoBox figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}

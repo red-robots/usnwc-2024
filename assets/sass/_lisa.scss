@@ -1,3 +1,9 @@
+.page-template-page-calendar {
+  #primary .wrapper {
+    max-width: 1400px;
+    width: 100%;
+  }
+}
 .heading-center {
   text-align: center;
   font-family: $font-brandon-bold;
@@ -373,7 +379,10 @@
   display: none;
   &.active {
     display: block;
-    animation: fadeIn both .3s;
+    animation: fadeIn both .5s;
+  }
+  &#eventsGrid {
+    margin-top: 70px;
   }
 }
 
@@ -385,6 +394,11 @@
 }
 
 .customCalendarGrid {
+  margin-top: 70px;
+  .tribe-common .tribe-common-l-container {
+    max-width: 100%!important;
+    padding: 0 0!important;
+  }
   [role="gridcell"] .tribe-events-calendar-month__day-date {
     text-align: left;
     opacity: 1!important;
@@ -420,6 +434,8 @@
   }
   .tribe-events-calendar-month__multiday-event-wrapper {
     .tribe-events-calendar-month__multiday-event-bar-inner {
+      display: flex;
+      justify-content: center;
       background-color: #cd0d0d!important;
       h3 {
         color: #fff !important;
@@ -441,7 +457,47 @@
 }
 
 
-
-
+.calendar-tab-events-posts {
+  .flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  .infoBox {
+    width: 33.333%;
+    padding: 12px;
+    h3 {
+      margin: 0 0;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.2;
+      color: #000;
+    }
+    figure {
+      margin: 0 0;
+      position: relative;
+      width: 100%;
+      padding-bottom: 65%;
+      overflow: hidden;
+      border-radius: 15px;
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+}
+// #eventsGrid.tab-calendar-panel.active {
+//   .infoBox {
+//     animation: fadeIn both .8s;
+//   }
+// }
 
 

@@ -25,6 +25,11 @@ use Tribe__Date_Utils as Dates;
 $default_date        = $now;
 $selected_date_value = $this->get( [ 'bar', 'date' ], $default_date );
 $datepicker_date     = Dates::build_date_object( $selected_date_value )->format( $date_formats->compact );
+
+//Remove Year
+$formatted_grid_date_parts = explode(' ',$formatted_grid_date);
+$formatted_grid_date = $formatted_grid_date_parts[0];
+
 ?>
 <div class="tribe-events-c-top-bar__datepicker">
 	<button
