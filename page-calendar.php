@@ -6,7 +6,10 @@
  *
  * @package bellaworks
  */
-
+$filter_type = ( isset($_GET['type']) && $_GET['type'] ) ? $_GET['type'] : '';
+$is_page = ( isset($_GET['pg']) && $_GET['pg'] ) ? $_GET['pg'] : '';
+$has_filter = [$filter_type, $is_page];
+$has_filter = array_filter($has_filter);
 $placeholder = THEMEURI . 'images/rectangle.png';
 $banner = get_field("flexslider_banner");
 $has_banner = ($banner) ? 'hasbanner':'nobanner';
@@ -33,13 +36,13 @@ get_header(); ?>
           <?php if ( do_shortcode('[tribe_events]') ) { ?>
           <div class="calendar-grid-wrapper">
             <div class="tabs-calendar-wrapper">
-              <div><button role="tab" aria-selected="true" aria-controls="calendarGrid" class="tab-item active">Calendar</button></div>
-              <div><button role="tab" aria-selected="false" aria-controls="eventsGrid" class="tab-item">Events</button></div>
+              <div><button role="tab" aria-selected="true" aria-controls="calendarGrid" class="tab-item<?php echo ($has_filter) ? '':' active'?>">Calendar</button></div>
+              <div><button role="tab" aria-selected="false" aria-controls="eventsGrid" class="tab-item<?php echo ($has_filter) ? ' active':''?>">Events</button></div>
             </div>
-            <div id="calendarGrid" class="tab-calendar-panel customCalendarGrid active">
+            <div id="calendarGrid" class="tab-calendar-panel customCalendarGrid<?php echo ($has_filter) ? '':' active'?>">
               <?php echo do_shortcode('[tribe_events]'); ?>
             </div>
-            <div id="eventsGrid" class="tab-calendar-panel">
+            <div id="eventsGrid" class="tab-calendar-panel<?php echo ($has_filter) ? ' active':''?>">
               <?php get_template_part('parts-calendar/calendar-events-tab'); ?>
             </div>
           </div>

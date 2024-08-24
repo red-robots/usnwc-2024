@@ -4009,10 +4009,32 @@ section.visit .link{font-size:18px;width:auto;display:inline-block;color:rgba(0,
 .customCalendarGrid .tribe-events-calendar-month__day.tribe-events-calendar-month__day--current h3,.customCalendarGrid .tribe-events-calendar-month__day.tribe-events-calendar-month__day--current h3 *{color:#cd0d0d !important}
 .customCalendarGrid .tribe-events-header__events-bar{display:none !important}
 .calendar-tab-events-posts .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-12px;margin-right:-12px}
-.calendar-tab-events-posts .infoBox{width:33.333%;padding:12px}
+.calendar-tab-events-posts .infoBox{width:33.333%;padding:12px;margin-bottom:70px}
 .calendar-tab-events-posts .infoBox h3{margin:0;text-transform:uppercase;font-weight:500;font-size:18px;line-height:1.2;color:#000}
-.calendar-tab-events-posts .infoBox figure{margin:0;position:relative;width:100%;padding-bottom:65%;overflow:hidden;border-radius:15px}
+.calendar-tab-events-posts .infoBox figure{margin:0 0 15px;position:relative;width:100%;padding-bottom:65%;overflow:hidden;border-radius:15px}
 .calendar-tab-events-posts .infoBox figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.calendar-tab-events-posts .infoBox .text{text-align:left}
+.calendar-tab-events-posts .infoBox .text h3{margin:0 0 5px;font-family:"Brandon Bold";font-size:18px;font-weight:600;line-height:1.2;text-transform:uppercase}
+.calendar-tab-events-posts .infoBox .text .event-date{font-size:15px;line-height:1.3;color:#8c8c8c}
+.calendar-tab-events-posts .infoBox .text .buttonwrap{margin-top:20px}
+.calendar-tab-events-posts .infoBox .text .more-btn{display:inline-block;text-decoration:none;padding:7px 25px 5px;border:1px solid #6f6f6f;border-radius:100px;font-size:15px;line-height:1.3;text-transform:uppercase;color:#6f6f6f}
+.calendar-tab-events-posts .infoBox .text .more-btn:hover,.calendar-tab-events-posts .infoBox .text .more-btn:focus{color:#fff;border-color:#ba0c2f;background:#ba0c2f}
+.calendar-tab-events-posts .infoBox .text .short-description{font-size:16px;line-height:1.4;margin-top:8px}
+.calendar-tab-events-posts .infoBox.first{width:100%}
+.custom-dropdown{max-width:300px;width:90%;margin:0 auto;position:relative;z-index:20}
+.custom-dropdown .selectwrap{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.custom-dropdown .selector{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;border-bottom:2px solid #000;padding:5px 0;background-color:transparent;font-family:"Brandon Medium";font-size:14px;line-height:1;letter-spacing:.02em;text-transform:uppercase;min-width:150px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative}
+.custom-dropdown .selector:after{content:"";display:inline-block;width:6px;height:6px;border-left:2px solid #000;border-bottom:2px solid #000;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);position:relative;top:2px;right:2px}
+.custom-dropdown .dropdown-inner{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-top:10px;position:relative}
+.custom-dropdown ul.dropdownlist{min-width:180px;margin:0;padding:10px;list-style:none;border:1px solid #b5b5b5;border-radius:10px;background:#fff;position:absolute;display:none}
+.custom-dropdown ul.dropdownlist li{list-style:none}
+.custom-dropdown ul.dropdownlist li.hidden{display:none}
+.custom-dropdown ul.dropdownlist a{display:block;width:100%;text-decoration:none !important;text-align:center;border-bottom:1px dotted #dedede;font-family:"Brandon Medium";font-size:14px;text-transform:uppercase;line-height:1.2;padding:6px 5px;color:#000}
+.custom-dropdown ul.dropdownlist a:hover,.custom-dropdown ul.dropdownlist a:focus{background-color:#f4f4f4;color:#ba0c2f}
+.custom-dropdown ul.dropdownlist li:last-child a{border-bottom:0}
+.calendar-tab-events-posts .custom-dropdown{margin-bottom:40px}
+.pagination.pagination-links a,.pagination.pagination-links span{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:15px;margin:2px 3px;padding:2px 3px;line-height:1;background:#e8e8e8;min-width:33px;height:32px}
+.pagination.pagination-links span.current{background:#ba0d30;color:#fff}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -4444,6 +4466,7 @@ section.teasers .fullwidth-image .fullwidth-image__text h3.mobile{display:none}
 #timeline-area .horizontal-timeline .events-wrapper{max-width:80%}
 #timeline-area .horizontal-timeline .timeline{max-width:80%}
 #timeline-area .horizontal-timeline .timeline a.prev,#timeline-area .horizontal-timeline .timeline a.next{top:-53px}
+.calendar-tab-events-posts .infoBox.first figure{padding-bottom:50%}
 }@media(min-width:1200px){section.route-details .flexcol{width:25%}
 section.route-map .map-frame{height:60vh}
 .information-tabs-wrap .tabs-info ul a span.arrow:before,.information-tabs-wrap .tabs-info ul a span.arrow:after{top:14px}

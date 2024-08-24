@@ -6,7 +6,7 @@
 
 jQuery(document).ready(function ($) {
 
-
+var params = {}; location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (s, k, v) { params[k] = v });
 
 $('.inline').colorbox({
   inline:true, 
@@ -1036,7 +1036,82 @@ var getGridSize = function() {
       $(currentPanel).addClass('active');
       $('.tab-calendar-panel').not(currentPanel).removeClass('active');
     }
+    if( $('.custom-dropdown').length ) {
+      var baseUrl = $('.custom-dropdown').attr('data-baseUrl');
+      history.replaceState('','',baseUrl);
+    }
   });
+
+
+  //Created: 08.24.2024 [lisa]
+  if( $('.custom-dropdown').length ) {
+    $('.select-event-type').on('click', function(e){
+      e.preventDefault();
+      $(this).toggleClass('open');
+      $(this).parents('.custom-dropdown').find('.dropdownlist').slideToggle();
+      $(this).parents('.custom-dropdown').addClass('open');
+    });
+    $(document).on('click','.select-posttype', function(e){
+      e.preventDefault();
+      var d = new Date();
+      var parent = $(this).parents('.custom-dropdown');
+      var opt = $(this).text();
+      var type = $(this).attr('data-val');
+      var baseUrl = parent.attr('data-baseUrl');
+      parent.find('.select-event-type span').text(opt);
+      parent.attr('data-selected', type);
+      parent.find('.dropdownlist li.default').removeClass('hidden');
+      parent.find('.dropdownlist').slideUp();
+      parent.removeClass('open');
+      var newUrl = baseUrl + '?type=' + type;
+      window.location.href = newUrl;
+      
+      //history.replaceState('','', newUrl);
+      // $('#eventsGrid').load(newUrl+'&d='+d.getTime()+ ' .calendar-tab-events-posts',function(){
+      // });
+    });
+  }
+
+  if( typeof params.type!=undefined || params.type!=null ) {
+    if( $('#eventsGrid').length ) {
+      var target = $('#eventsGrid');
+      setTimeout(function(){
+        scrollToSection(target,100);
+      },200);
+    } 
+  }
+
+
+  function scrollToSection(target,offsetVal) {
+    var adjustment = (offsetVal) ? offsetVal : 0;
+    $('html, body').animate({
+      scrollTop: target.offset().top - adjustment
+    }, 1000, function() {
+      target.focus();
+      if (target.is(":focus")) { 
+        return false;
+      } else {
+        target.attr('tabindex','-1'); 
+        target.focus(); 
+      };
+    });
+  }
+
+  $(document).on('click', function(e){
+    var target = $(e.target);
+    
+    if( target.hasClass('select-event-type') || target.parents('.select-event-type').length || target.parents('.dropdown-inner').length ) {
+      //Do nothing...
+    } else {
+      if( $('.custom-dropdown.open').length ) {
+        $('.select-event-type').trigger('click');
+      }
+    }
+  });
+
+
+
+
 
 
 });// END #####################################    END
