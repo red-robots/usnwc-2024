@@ -69,10 +69,8 @@ $rectangle = THEMEURI . "images/rectangle-narrow.png";
 				            			</div>
 				            			<div class="bg-overlay"></div>
 					            	</div>
-					            	<span class="imgwrap">
-										<span class="bg" style="background-image:url('<?php echo $card_poster['url']; ?>')">
-											<img src="<?php echo $rectangle ?>" alt="" aria-hidden="true">
-										</span>
+
+                        <img class="poster" src="<?php echo $card_poster['url']; ?>" alt="" aria-hidden="true">
 									</span>
 								</a>
 			            	</div>

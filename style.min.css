@@ -4038,6 +4038,21 @@ section.visit .link{font-size:18px;width:auto;display:inline-block;color:rgba(0,
 .pagination.pagination-links a,.pagination.pagination-links span{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:15px;margin:2px 3px;padding:2px 3px;line-height:1;background:#e8e8e8;min-width:33px;height:32px}
 .pagination.pagination-links span.current{background:#ba0d30;color:#fff}
 .hours-of-operation-mobile p{font-size:14px;line-height:1.2;margin:10px 0}
+body.home .homerow{color:#fff;background-color:#414141}
+body.home .homerow .wrappe-full{padding:20px 3.5vw}
+body.home .homerow .card-flex{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-15px;margin-right:-15px}
+body.home .homerow .imagebox{width:25%;padding:15px}
+body.home .homerow .imagebox a{display:block;position:relative;overflow:hidden;background-color:#fff;border-radius:15px;padding-bottom:125%}
+body.home .homerow .imagebox a:before,body.home .homerow .imagebox a:after{content:"";display:block;width:100%;position:absolute;left:0;bottom:0;-webkit-transition:all ease .3s;transition:all ease .3s}
+body.home .homerow .imagebox a:before{height:0;opacity:0;z-index:2;background:-webkit-gradient(linear,left top,left bottom,from(rgba(255,255,255,0)),color-stop(75%,white),to(white)) !important;background:linear-gradient(to bottom,rgba(255,255,255,0) 0,white 75%,white 100%) !important}
+body.home .homerow .imagebox a:after{height:100%;background:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0)),to(rgba(0,0,0,0.65)));background:linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,0.65) 100%)}
+body.home .homerow .imagebox a .info-flex,body.home .homerow .imagebox a .imgwrap{width:100%;position:absolute;left:0}
+body.home .homerow .imagebox a .info-flex{z-index:5;bottom:5%}
+body.home .homerow .imagebox a .title{font-size:2.65vw;line-height:1.1;color:#fff;-webkit-transition:all ease .3s;transition:all ease .3s}
+body.home .homerow .imagebox a img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+body.home .homerow .imagebox a:hover .title,body.home .homerow .imagebox a:focus .title{color:#000}
+body.home .homerow .imagebox a:hover:after,body.home .homerow .imagebox a:focus:after{opacity:0}
+body.home .homerow .imagebox a:hover:before,body.home .homerow .imagebox a:focus:before{height:100%;opacity:.75}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -4516,6 +4531,8 @@ section.full-bleed-promo .info .words h2{font-size:100px}
 .todaySnapshotInfo .info-wrapper .infocol:nth-child(1),.todaySnapshotInfo .info-wrapper .infocol:nth-child(2){border-top:0}
 .todaySnapshotInfo .info-wrapper .infocol:nth-child(2) .inner:after{display:none}
 .todaySnapshotInfo .info-wrapper.active{-webkit-animation:none !important;animation:none !important}
+body.home .homerow .imagebox{width:50%}
+body.home .homerow .imagebox a .title{font-size:5vw}
 }@media screen and (max-width:900px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -4589,6 +4606,9 @@ body.logged-in.admin-bar .site-header{top:45px}
 .section-flex-columns .flexcol{width:100% !important;background-image:none !important}
 .section-flex-columns .flexcol img{visibility:visible}
 #primary .upcoming-posts .photo.no-image:before{width:30vw;height:30vw}
+}@media screen and (max-width:500px){body.home .homerow .imagebox{width:100%}
+body.home .homerow .imagebox a{padding-bottom:105%}
+body.home .homerow .imagebox a .title{font-size:35px}
 }@media screen and (max-width:480px){.featured-events-section .postbox{width:100%}
 #pageTabs span.mini-nav{display:block}
 #pageTabs span.mini-nav a{padding-left:0;padding-right:0}
