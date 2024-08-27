@@ -819,8 +819,10 @@ jQuery(document).ready(function($){
                 var parent = $(this).parents(".layout");
                 parent.addClass('show-title');
                 var str = $(this).find('.acf-input-wrap input').val();
-                var title = ( str.replace(/\s+/g,'').trim() ) ? str.replace(/\s+/g,' ').trim() : '(Blank)';
-                parent.find(".acf-fc-layout-handle").attr("data-title",title);
+                if( $(this).parents('.acf-repeater.-table').length==0 ) {
+                  var title = ( str.replace(/\s+/g,'').trim() ) ? str.replace(/\s+/g,' ').trim() : '(Blank)';
+                  parent.find(".acf-fc-layout-handle").attr("data-title",title);
+                }
             });
         }
     }

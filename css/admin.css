@@ -114,7 +114,7 @@ body.wp-admin.post-type-activity_schedule #poststuff #titlewrap {
     height:auto;   
 }
 
-.acf-flexible-content .layout.show-title > .acf-fc-layout-handle,
+.acf-flexible-content .layout.show-title .acf-fc-layout-handle[data-title],
 .acf-field-flexible-content [data-layout="festivalActivities"] .acf-fc-layout-handle,
 .acf-flexible-content [data-layout="section2"] .acf-fc-layout-handle,
 [data-name="repeater_blocks"] [data-layout="section"] .acf-fc-layout-handle,

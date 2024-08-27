@@ -49,36 +49,54 @@ $classes = [ 'tribe-events-calendar-month-mobile-events__mobile-day' ];
 if ( $today_date === $day_date ) {
 	$classes[] = 'tribe-events-calendar-month-mobile-events__mobile-day--show';
 }
+
+$show_content = false;
 ?>
 
+
 <div <?php tribe_classes( $classes ); ?> id="<?php echo sanitize_html_class( $mobile_day_id ); ?>">
+  
+  	<?php if ( count($events) ) : ?>
 
-	<?php if ( count($events) ) : ?>
+  		<?php foreach ( $events as $event ) : ?>
+        <?php  
+          $event_title = $event->post_title;
+          $event_slug = $event->post_name;
+          $is_hours_operation = (strpos($event_slug, 'hours-of-operation') !== false) ? true : false;
+          $event_content = $event->post_content;
+          $event_content = ($event_content) ? apply_filters('the_content', $event_content) : '';
+        ?>
+  			<?php $event_date = $event->dates->start->format( Dates::DBDATEFORMAT ); ?>
 
-		<?php foreach ( $events as $event ) : ?>
-			<?php $event_date = $event->dates->start->format( Dates::DBDATEFORMAT ); ?>
+  			<?php $this->template( 'month/mobile-events/mobile-day/day-marker', [ 'events' => $events, 'event' => $event, 'request_date' => $day_date ] ); ?>
 
-			<?php $this->template( 'month/mobile-events/mobile-day/day-marker', [ 'events' => $events, 'event' => $event, 'request_date' => $day_date ] ); ?>
+  			<?php $this->setup_postdata( $event ); ?>
 
-			<?php $this->setup_postdata( $event ); ?>
+        <?php if($is_hours_operation) { ?>
+          <?php if($event_content) { ?>
+  			   <div class="hours-of-operation-mobile">
+              <?php echo $event_content ?>
+           </div>
+          <?php } ?>
+        <?php } else { ?>
+          <?php $this->template( 'month/mobile-events/mobile-day/mobile-event', [ 'event' => $event ] ); ?>
+        <?php } ?>
+  		<?php endforeach; ?>
 
-			<?php $this->template( 'month/mobile-events/mobile-day/mobile-event', [ 'event' => $event ] ); ?>
+  		<?php $this->template( 'month/mobile-events/mobile-day/more-events', [ 'more_events' => $day['more_events'], 'more_url' => $day['day_url'] ] ); ?>
 
-		<?php endforeach; ?>
+  	<?php else : ?>
 
-		<?php $this->template( 'month/mobile-events/mobile-day/more-events', [ 'more_events' => $day['more_events'], 'more_url' => $day['day_url'] ] ); ?>
+  		<?php
+  		$this->template(
+  			'components/messages',
+  			[
+  				'classes' => [ 'tribe-events-header__messages--mobile', 'tribe-events-header__messages--day' ],
+  				'messages' => $mobile_messages,
+  			]
+  		);
+  		?>
 
-	<?php else : ?>
+  	<?php endif; ?>
 
-		<?php
-		$this->template(
-			'components/messages',
-			[
-				'classes' => [ 'tribe-events-header__messages--mobile', 'tribe-events-header__messages--day' ],
-				'messages' => $mobile_messages,
-			]
-		);
-		?>
-
-	<?php endif; ?>
 </div>
