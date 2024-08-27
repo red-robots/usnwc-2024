@@ -61,14 +61,14 @@
 			</div>
 			
 		
-			<div class="footer-disclaimer">
-				<?php foreach( $footLinks as $e ) { 
+			<!-- <div class="footer-disclaimer">
+				<?php /*foreach( $footLinks as $e ) { 
 							$footer_copy = $e['footer_copy'];
 
 							echo $footer_copy;
-						}
+						}*/
 					?>
-			</div>
+			</div> -->
 		
 	</footer><!-- #colophon -->
 	
