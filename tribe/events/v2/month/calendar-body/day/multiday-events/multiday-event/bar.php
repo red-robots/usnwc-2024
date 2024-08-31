@@ -24,6 +24,7 @@
  * To keep the calendar accessible, in the context of a week, we only print
  * the event bar on the first day of the event or the first day of the week.
  */
+
 if (
 	! $is_start_of_week
 	&& ! in_array( $day_date, $event->displays_on, true )
@@ -38,3 +39,6 @@ if (
 		<?php $this->template( 'month/calendar-body/day/multiday-events/multiday-event/bar/title', [ 'event' => $event ] ); ?>
 	</div>
 </div>
+
+
+

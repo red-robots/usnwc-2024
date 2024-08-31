@@ -94,6 +94,12 @@ function bellaworks_scripts() {
     array(), '2.37', 
     true 
   );
+  wp_enqueue_script( 
+    'cusom-calendar', 
+    get_template_directory_uri() . '/assets/js/calendar.js', 
+    array(), '1.0.0', 
+    true 
+  );
 
 	wp_localize_script( 'bellaworks-custom', 'frontajax', array(
 		'ajaxurl' => admin_url( 'admin-ajax.php' )

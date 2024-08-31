@@ -35,6 +35,8 @@ $('.loop').owlCarousel({
       }
     }
 });
+
+
 /*
 *
 *     Subnaviagation Animation

@@ -772,5 +772,36 @@ body.home {
   }
 }
 
-
+.tribe-events-calendar-month {
+  .tribe-events-calendar-month__day {
+    .hentry:not(.tribe-events-calendar-month__multiday-event) {
+      margin: 4px 0!important;
+      padding: 3px!important;
+    }
+    // .hentry[data-child-series] {
+    //   opacity: 1;
+    //   background: #cd0d0d;
+    //   .tribe-events-calendar-month__calendar-event-details {
+    //     visibility: hidden;
+    //   }
+    // }
+    .hentry:not([data-child-series]),
+    .hentry[data-child-series],
+    .hentry[data-isparent="true"] {
+      opacity: 1;
+      background: #cd0d0d;
+      color: #FFF!important;
+      font-weight: bold;
+      border-radius: 100px;
+      h3 span, h3 a {
+        color: #FFF!important;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+    .hentry[data-isparent="true"] {
+      z-index: 10;
+    }
+  }
+}
 

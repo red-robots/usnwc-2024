@@ -17,19 +17,16 @@
  */
 
 ?>
-<h3 class="tribe-events-calendar-month__calendar-event-title tribe-common-h8 tribe-common-h--alt">
-	<a
-		href="<?php echo esc_url( $event->permalink ); ?>"
-		title="<?php echo esc_attr( $event->title ); ?>"
-		rel="bookmark"
-		class="tribe-events-calendar-month__calendar-event-title-link tribe-common-anchor-thin"
-		data-js="tribe-events-tooltip"
-		data-tooltip-content="#tribe-events-tooltip-content-<?php echo esc_attr( $event->ID ); ?>"
-		aria-describedby="tribe-events-tooltip-content-<?php echo esc_attr( $event->ID ); ?>"
-	>
-		<?php
-		// phpcs:ignore
-		echo $event->title;
-		?>
-	</a>
+<h3 data-actual-link="<?php echo esc_url( $event->permalink ); ?>" data-slug="<?php echo sanitize_title($event->title); ?>" data-event-id="<?php echo esc_attr( $event->ID ); ?>" class="tribe-events-calendar-month__calendar-event-title tribe-common-h8 tribe-common-h--alt">
+	<?php  
+  $tribeEventLink = tribe_get_event_website_url($event);
+  $eventLink = ($tribeEventLink) ? $tribeEventLink : '';
+  ?>
+  <?php if ($tribeEventLink) { ?>
+  <a href="<?php echo $tribeEventLink ?>" rel="bookmark" class="eventName hasEventLink"><?php echo $event->title; ?></a>
+  <?php } else { ?>
+  <span class="eventName noEventLink"><?php echo $event->title; ?></span>
+  <?php } ?>
 </h3>
+
+

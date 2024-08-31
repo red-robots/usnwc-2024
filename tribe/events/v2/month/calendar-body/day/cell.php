@@ -38,7 +38,7 @@ $day_id = 'tribe-events-calendar-day-' . $day_date;
 ?>
 
 <div
-	id="<?php echo esc_attr( $day_id ); ?>"
+	id="<?php echo esc_attr( $day_id ); ?>" data-date="<?php echo esc_attr( $day_date ); ?>"
 	class="tribe-events-calendar-month__day-cell tribe-events-calendar-month__day-cell--desktop tribe-common-a11y-hidden"
 >
   
@@ -63,7 +63,7 @@ $day_id = 'tribe-events-calendar-day-' . $day_date;
   			'is_start_of_week' => $day['is_start_of_week'],
   		] ); ?>
 
-  		<?php //$this->template( 'month/calendar-body/day/calendar-events', [ 'day_events' => $day['events'], ] ); ?>
+  		<?php $this->template( 'month/calendar-body/day/calendar-events', [ 'day_events' => $day['events'], ] ); ?>
   	</div>
 
     <div style="display:none">

@@ -4053,6 +4053,10 @@ body.home .homerow .imagebox a img{width:100%;height:100%;position:absolute;top:
 body.home .homerow .imagebox a:hover .title,body.home .homerow .imagebox a:focus .title{color:#000}
 body.home .homerow .imagebox a:hover:after,body.home .homerow .imagebox a:focus:after{opacity:0}
 body.home .homerow .imagebox a:hover:before,body.home .homerow .imagebox a:focus:before{height:100%;opacity:.75}
+.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry:not(.tribe-events-calendar-month__multiday-event){margin:4px 0 !important;padding:3px !important}
+.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry:not([data-child-series]),.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry[data-child-series],.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry[data-isparent=true]{opacity:1;background:#cd0d0d;color:#fff !important;font-weight:bold;border-radius:100px}
+.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry:not([data-child-series]) h3 span,.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry:not([data-child-series]) h3 a,.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry[data-child-series] h3 span,.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry[data-child-series] h3 a,.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry[data-isparent=true] h3 span,.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry[data-isparent=true] h3 a{color:#fff !important;font-weight:bold;text-transform:uppercase}
+.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry[data-isparent=true]{z-index:10}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
