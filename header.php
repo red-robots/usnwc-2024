@@ -75,9 +75,6 @@ if($postHeroImage) {
 	<div id="overlay"></div>
 	<a class="skip-link sr" href="#content"><?php esc_html_e( 'Skip to content', 'bellaworks' ); ?></a>
 
-	
-
-
 	<?php //get_template_part('parts/topbar'); ?>
 
 	<header id="masthead" class="site-header start-position" role="banner">
@@ -91,11 +88,11 @@ if($postHeroImage) {
 				</div>
 			</div>
 		</div>
+
 		<div class="navbar">
 			<div class="flexer">
 				<div class="left">
-					
-		            <?php
+		        <?php
 						/* NAVIGATION */
 						get_template_part("parts/navigation");
 					?>
@@ -104,23 +101,19 @@ if($postHeroImage) {
 					<a href="<?php bloginfo('url'); ?>">
 						<img src="<?php bloginfo('template_url'); ?>/images/logo-white.png">
 					</a>
-		        </div>
+		   </div>
 				<div class="right">
 					<div class="cal"><a href="<?php bloginfo('url'); ?>/calendar">Calendar</a></div>
-					<div class="today" data-id="1">
-						Today
-						
-					</div>
+					<div class="today" data-id="1">Today</div>
 					<?php get_template_part('parts/today'); ?>
-					
 				</div>
-		    </div>
+		  </div>
 		</div>
 
 		<nav class="mobile-nav-wrap">
   			<div class="logo">
-            	<img src="<?php bloginfo('template_url'); ?>/images/logo-white.png">
-            </div>
+        	<img src="<?php bloginfo('template_url'); ?>/images/logo-white.png" alt="" />
+        </div>
 		  	<span id="mobile-menu-toggle"><span class="bar"><span></span></span></span>
 		  	<div class="mobile-navigation">
 		  		<?php get_template_part('parts/navigation-mobile'); ?>

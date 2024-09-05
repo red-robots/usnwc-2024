@@ -978,4 +978,14 @@ body.home {
 }
 
 
-
+body.subpage {
+  .site-header.start-position {
+    position: relative!important;
+    z-index: 999999;
+  }
+  nav.new-nav .menu-item a,
+  .site-header .navbar .right .cal a,
+  .site-header .navbar .right .today {
+    color: #000!important;
+  }
+}
