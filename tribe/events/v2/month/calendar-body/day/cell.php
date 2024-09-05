@@ -40,9 +40,18 @@ $day_id = 'tribe-events-calendar-day-' . $day_date;
 <div
 	id="<?php echo esc_attr( $day_id ); ?>" data-date="<?php echo esc_attr( $day_date ); ?>"
 	class="tribe-events-calendar-month__day-cell tribe-events-calendar-month__day-cell--desktop tribe-common-a11y-hidden"
->
+> 
+  <div class="tribe-events-calendar-month__events">
+    <?php $this->template( 'month/calendar-body/day/multiday-events', [
+      'day_date'         => $day['date'],
+      'multiday_events'  => $day['multiday_events'],
+      'is_start_of_week' => $day['is_start_of_week'],
+    ] ); ?>
+    <?php $this->template( 'month/calendar-body/day/calendar-events', [ 'day_events' => $day['events'], ] ); ?>
+  </div>
+
   
-	<?php $this->template( 'month/calendar-body/day/cell-title', [ 'day' => $day, ] ); ?>
+	<?php //$this->template( 'month/calendar-body/day/cell-title', [ 'day' => $day, ] ); ?>
 
     <?php
     $slug = 'hours-of-operation-' . date('m-d-Y', strtotime($day['date']));
@@ -56,19 +65,10 @@ $day_id = 'tribe-events-calendar-day-' . $day_date;
       <?php } ?>
     <?php } ?>
 
-  	<div class="tribe-events-calendar-month__events">
-  		<?php $this->template( 'month/calendar-body/day/multiday-events', [
-  			'day_date'         => $day['date'],
-  			'multiday_events'  => $day['multiday_events'],
-  			'is_start_of_week' => $day['is_start_of_week'],
-  		] ); ?>
+  	
 
-  		<?php $this->template( 'month/calendar-body/day/calendar-events', [ 'day_events' => $day['events'], ] ); ?>
-  	</div>
+  <?php //$this->template( 'month/calendar-body/day/more-events', [ 'more_events' => $day['more_events'], 'more_url' => $day['day_url'] ] ); ?>
 
-    <div style="display:none">
-    	<?php $this->template( 'month/calendar-body/day/more-events', [ 'more_events' => $day['more_events'], 'more_url' => $day['day_url'] ] ); ?>
-    </div>
 
   
 </div>
