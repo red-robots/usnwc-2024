@@ -249,13 +249,21 @@ jQuery(document).ready(function ($) {
     $('.mobile-navigation').removeClass('active');
   });
   $(document).on("click", "a.mobile-parent-link", function (e) {
-    if ($(this).hasClass('toggled')) {
-      window.location.href = $(this).attr('href');
-    } else {
-      e.preventDefault();
-      $(this).next().slideToggle();
-      $(this).addClass('toggled');
-    }
+    e.preventDefault();
+    $(this).parent().toggleClass('show-submenu');
+    $(this).parent().find('.mega-menu-mobile').slideToggle(); // if ($(this).hasClass('toggled')) {
+    //     window.location.href = $(this).attr('href');
+    // } else {
+    //     e.preventDefault();
+    //     $(this).next().slideToggle();
+    //     $(this).addClass('toggled');
+    // }
+  });
+  $(document).on("click", ".mobile-navigation .today-mobile", function (e) {
+    e.preventDefault();
+    $(this).toggleClass('active');
+    $('.today-mobile-dropdown').toggleClass('active');
+    $('.today-mobile-dropdown').slideToggle();
   });
   $("select#diff").change(function () {
     var diffResult = $(this).val();
