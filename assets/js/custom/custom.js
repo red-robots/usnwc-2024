@@ -89,40 +89,42 @@ function menuItemOut() {
 *
 *
 */
-let menuOpen = false;
+// let menuOpen = false;
 
-const tl = gsap.timeline({
-  paused: true,
-  defaults: { duration: 0.3, ease: "power1.inOut" }
-});
+// const tl = gsap.timeline({
+//   paused: true,
+//   defaults: { duration: 0.3, ease: "power1.inOut" }
+// });
 
-tl.fromTo(".today", {  }, {  }, 0)
-  .fromTo(
-    ".today-dropdown",
-    { visibility: "hidden", height: "0", padding: "0" },
-    { visibility: "visible", height: "auto", padding: "40" },
-    0
-  )
-  .fromTo(
-    "li.info",
-    { opacity: 0, y: "0.5em", stagger: 0.1 },
-    { opacity: 1, y: "0em", stagger: 0.1 }
-  )
-  .fromTo(
-    "li.tablink",
-    { opacity: 0, y: "0.5em", stagger: 0.1 },
-    { opacity: 1, y: "0em", stagger: 0.1 }
-  );
+// tl.fromTo(".today", {  }, {  }, 0)
+//   .fromTo(
+//     ".today-dropdown",
+//     { visibility: "hidden", height: "0", padding: "0" },
+//     { visibility: "visible", height: "auto", padding: "40" },
+//     0
+//   )
+//   .fromTo(
+//     "li.info",
+//     { opacity: 0, y: "0.5em", stagger: 0.1 },
+//     { opacity: 1, y: "0em", stagger: 0.1 }
+//   )
+//   .fromTo(
+//     "li.tablink",
+//     { opacity: 0, y: "0.5em", stagger: 0.1 },
+//     { opacity: 1, y: "0em", stagger: 0.1 }
+//   );
 
-document.querySelector(".today").addEventListener("mouseover", () => {
-  if (!menuOpen) {
-    tl.play();
-    menuOpen = true;
-  } else {
-    tl.reverse();
-    menuOpen = false;
-  }
-});
+// document.querySelector(".today").addEventListener("mouseover", () => {
+//   if (!menuOpen) {
+//     tl.play();
+//     menuOpen = true;
+//   } else {
+//     tl.reverse();
+//     menuOpen = false;
+//   }
+// });
+
+
 
 /*
 *
@@ -130,43 +132,72 @@ document.querySelector(".today").addEventListener("mouseover", () => {
 *
 *
 */
-let menuOpenMobile = false;
+// let menuOpenMobile = false;
 
-const tlmobile = gsap.timeline({
-  paused: true,
-  defaults: { duration: 0.3, ease: "power1.inOut" }
-});
+// const tlmobile = gsap.timeline({
+//   paused: true,
+//   defaults: { duration: 0.3, ease: "power1.inOut" }
+// });
 
-tlmobile.fromTo(".today-mobile", {  }, {  }, 0)
-  .fromTo(
-    ".today-mobile-dropdown",
-    { visibility: "hidden", height: "0", padding: "0" },
-    { visibility: "visible", height: "auto", padding: "10" },
-    0
-  )
-  .fromTo(
-    "li.info-mobile",
-    { opacity: 0, y: "0.5em", stagger: 0.1 },
-    { opacity: 1, y: "0em", stagger: 0.1 }
-  )
-  .fromTo(
-    "li.tablink-mobile",
-    { opacity: 0, y: "0.5em", stagger: 0.1 },
-    { opacity: 1, y: "0em", stagger: 0.1 }
-  );
+// tlmobile.fromTo(".today-mobile", {  }, {  }, 0)
+//   .fromTo(
+//     ".today-mobile-dropdown",
+//     { visibility: "hidden", height: "0", padding: "0" },
+//     { visibility: "visible", height: "auto", padding: "10" },
+//     0
+//   )
+//   .fromTo(
+//     "li.info-mobile",
+//     { opacity: 0, y: "0.5em", stagger: 0.1 },
+//     { opacity: 1, y: "0em", stagger: 0.1 }
+//   )
+//   .fromTo(
+//     "li.tablink-mobile",
+//     { opacity: 0, y: "0.5em", stagger: 0.1 },
+//     { opacity: 1, y: "0em", stagger: 0.1 }
+//   );
 
-document.querySelector(".today-mobile").addEventListener("click", () => {
-  if (!menuOpenMobile) {
-    tlmobile.play();
-    menuOpenMobile = true;
-  } else {
-    tlmobile.reverse();
-    menuOpenMobile = false;
-  }
-});
+// document.querySelector(".today-mobile").addEventListener("click", () => {
+//   if (!menuOpenMobile) {
+//     tlmobile.play();
+//     menuOpenMobile = true;
+//   } else {
+//     tlmobile.reverse();
+//     menuOpenMobile = false;
+//   }
+// });
+
 // $('.today').click(function() {
 //   var id = $(this).data('id');
 //   $('.today-dropdown[data-id="' + id + '"]').toggleClass('show');
+// });
+
+$('.site-header .navbar .today').hover(
+  function(){
+    $(this).next('.today-dropdown').addClass('active');
+  }, function() {
+    //$(this).next('.today-dropdown').removeClass('show');
+  }
+);
+$('.navbar .today-dropdown').hover(
+  function(){
+    $(this).addClass('active');
+  }, function() {
+    $(this).addClass('slideUp');
+    
+  }
+);
+
+$('.navbar .today-dropdown').on("mouseleave", function(){
+  setTimeout(function(){
+    $('.today-dropdown').removeClass('active slideUp');
+  },100);
+});
+
+
+// $(document).on("click",".site-header .navbar .today",function(e){
+//   e.preventDefault();
+//   $(this).next('.today-dropdown').toggleClass('active');
 // });
 
 $(document).on("click","#todayOptions a",function(e){

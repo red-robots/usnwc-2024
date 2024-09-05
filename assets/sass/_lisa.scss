@@ -771,8 +771,41 @@ body.home {
     }
   }
 }
+.site-header .navbar:has(.today-dropdown.active) {
+  background-color: rgba(255, 255, 255, .95);
+  ul > li > a.menu-link,
+  .cal a, .today {
+    color: #000!important;
+  }
+}
+.today-dropdown {
+  display: none;
+  &.active {
+    display: block;
+    visibility: visible;
+    animation: fadeInDown both 0.5s;
+    &.slideUp {
+      animation: fadeOutUp both 0.5s;
+    }
+  }
+  .tablink a {
+    &:hover, &:focus {
+      color: #ba0d30!important;
+    }
+  }
+  .see-details a {
+    &:hover, &:focus {
+      text-decoration: underline!important;
+    }
+  }
+}
 
 .tribe-events-calendar-month {
+  .tribe-events-calendar-month__calendar-event-details h3 {
+    padding: 0 5px;
+    font-size: 11px;
+    line-height: 1.2;
+  }
   .tribe-events-calendar-month__day {
     .hentry:not(.tribe-events-calendar-month__multiday-event) {
       margin: 4px 0!important;

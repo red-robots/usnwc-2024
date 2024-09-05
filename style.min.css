@@ -4053,6 +4053,14 @@ body.home .homerow .imagebox a img{width:100%;height:100%;position:absolute;top:
 body.home .homerow .imagebox a:hover .title,body.home .homerow .imagebox a:focus .title{color:#000}
 body.home .homerow .imagebox a:hover:after,body.home .homerow .imagebox a:focus:after{opacity:0}
 body.home .homerow .imagebox a:hover:before,body.home .homerow .imagebox a:focus:before{height:100%;opacity:.75}
+.site-header .navbar:has(.today-dropdown.active){background-color:rgba(255,255,255,.95)}
+.site-header .navbar:has(.today-dropdown.active) ul>li>a.menu-link,.site-header .navbar:has(.today-dropdown.active) .cal a,.site-header .navbar:has(.today-dropdown.active) .today{color:#000 !important}
+.today-dropdown{display:none}
+.today-dropdown.active{display:block;visibility:visible;-webkit-animation:fadeInDown both .5s;animation:fadeInDown both .5s}
+.today-dropdown.active.slideUp{-webkit-animation:fadeOutUp both .5s;animation:fadeOutUp both .5s}
+.today-dropdown .tablink a:hover,.today-dropdown .tablink a:focus{color:#ba0d30 !important}
+.today-dropdown .see-details a:hover,.today-dropdown .see-details a:focus{text-decoration:underline !important}
+.tribe-events-calendar-month .tribe-events-calendar-month__calendar-event-details h3{padding:0 5px;font-size:11px;line-height:1.2}
 .tribe-events-calendar-month .tribe-events-calendar-month__day .hentry:not(.tribe-events-calendar-month__multiday-event){margin:4px 0 !important;padding:3px !important}
 .tribe-events-calendar-month .tribe-events-calendar-month__day .hentry:not([data-child-series]),.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry[data-child-series],.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry[data-isparent=true]{opacity:1;background:#cd0d0d;color:#fff !important;font-weight:bold;border-radius:100px}
 .tribe-events-calendar-month .tribe-events-calendar-month__day .hentry:not([data-child-series]) h3 span,.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry:not([data-child-series]) h3 a,.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry[data-child-series] h3 span,.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry[data-child-series] h3 a,.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry[data-isparent=true] h3 span,.tribe-events-calendar-month .tribe-events-calendar-month__day .hentry[data-isparent=true] h3 a{color:#fff !important;font-weight:bold;text-transform:uppercase}
