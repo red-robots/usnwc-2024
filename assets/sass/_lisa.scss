@@ -988,4 +988,59 @@ body.subpage {
   .site-header .navbar .right .today {
     color: #000!important;
   }
+  @media screen and (min-width: 820px) {
+    
+    .site-header {
+      background: #FFF;
+      height: 75px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99999;
+      transform: none;
+    }
+    .site-header .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      .logo img {
+        filter: invert(1);
+      }
+    }
+    .site-content {
+      padding-top: 10px;
+    }
+  }
+}
+.film-event-status {
+  top: 75px;
+}
+body.logged-in.admin-bar {
+  @media screen and (min-width: 820px) {
+    &.subpage {
+      .site-header {
+        top: 0!important;
+        .navbar {
+          top: 32px!important;
+          background-color: #FFF;
+        }
+      }
+      .film-event-status {
+        top: 105px;
+      }
+    }
+    // .site-header .navbar {
+    //   position: relative;
+    //   top: -32px;
+    //   .logo {
+    //     img {
+    //       filter: invert(1);
+    //     }
+    //   }
+    // }
+    // .film-event-status {
+    //   top: 105px;
+    // }
+  }
 }

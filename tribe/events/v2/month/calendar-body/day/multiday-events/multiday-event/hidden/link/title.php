@@ -19,6 +19,15 @@
  */
 
 ?>
+<?php  
+  $tribeEventLink = tribe_get_event_website_url($event);
+  $eventLink = ($tribeEventLink) ? $tribeEventLink : '';
+?>
+
 <h3 class="tribe-events-calendar-month__multiday-event-hidden-title tribe-common-h8">
-	<?php echo $event->title; // phpcs:ignore  ?>
+  <?php if ($tribeEventLink) { ?>
+  <a href="<?php echo $tribeEventLink ?>" rel="bookmark" class="eventName hasEventLink"><?php echo $event->title; ?></a>
+  <?php } else { ?>
+  <span class="eventName noEventLink"><?php echo $event->title; ?></span>
+  <?php } ?>
 </h3>
