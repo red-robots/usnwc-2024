@@ -2271,7 +2271,7 @@ section.stories-whats .wn-box .wn-box-contents .flex{display:-webkit-box;display
 .explore-other-stuff .entry{width:100%;text-align:center;margin:10px 0;font-size:15px;line-height:1.2}
 .explore-other-stuff .entry a{display:inline-block;text-decoration:none;color:#fff;font-size:14px;line-height:1.2}
 .explore-other-stuff .entry a:hover{opacity:.3}
-#pageTabs{width:100%;float:left;text-align:center;position:relative;top:-30px;margin-top:20px;margin-bottom:30px}
+#pageTabs{width:100%;float:left;text-align:center;position:relative;top:-30px;margin-top:30px;margin-bottom:60px}
 #pageTabs.show-tabs{top:0;margin-top:50px;margin-bottom:50px}
 #pageTabs.fixed-top{z-index:108 !important}
 #pageTabs #tabcontent{display:inline-block;position:relative;padding-left:3vw;padding-right:3vw}
