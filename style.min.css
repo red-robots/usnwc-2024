@@ -4068,6 +4068,8 @@ body.home .homerow .imagebox a:hover:before,body.home .homerow .imagebox a:focus
 body.subpage .site-header.start-position{position:relative !important;z-index:999999}
 body.subpage nav.new-nav .menu-item a,body.subpage .site-header .navbar .right .cal a,body.subpage .site-header .navbar .right .today{color:#000 !important}
 .film-event-status{top:75px}
+.button-element{display:inline-block;text-decoration:none;background-color:#ba0d30;color:#fff;padding:10px 25px;border-radius:8px;font-size:23px;font-weight:500;line-height:1.2;-webkit-transition:all ease .3s;transition:all ease .3s}
+.button-element:hover,.button-element:focus{color:#fff !important;background-color:#191919;text-decoration:none !important}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}

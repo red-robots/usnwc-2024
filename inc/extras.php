@@ -2402,4 +2402,24 @@ function getDataBySlug($slug) {
 // remove_filter( 'the_excerpt', 'wpautop');
 
 
+// add new buttons
+add_filter( 'mce_buttons', 'myplugin_register_buttons' );
+
+function myplugin_register_buttons( $buttons ) {
+  array_push( $buttons,'edbutton1','edbutton2');
+
+  return $buttons;
+}
+ 
+// Load the TinyMCE plugin : editor_plugin.js (wp2.5)
+add_filter( 'mce_external_plugins', 'myplugin_register_tinymce_javascript' );
+function myplugin_register_tinymce_javascript( $plugin_array ) {
+  $plugin_js_url =  get_stylesheet_directory_uri() . '/assets/js/custom-tinymce.js';
+  $plugin_array['BUTTON1'] = $plugin_js_url;
+  $plugin_array['BUTTON2'] = $plugin_js_url;
+  return $plugin_array;
+}
+
+
+
 

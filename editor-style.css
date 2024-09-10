@@ -1,3 +1,26 @@
 .custom-color {
   color: #444;
 }
+.custom-button-element {
+  display: inline-block;
+  margin-right: 15px;
+}
+.custom-button-element a {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  color: #fff!important;
+  background: #DD1E34!important;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  line-height: 1.2;
+  padding: 14px 20px 13px!important;
+  border-radius: 6px!important;
+  text-align: center;
+  transition: all ease .3s;
+  border: none!important;
+}
