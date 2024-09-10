@@ -226,7 +226,7 @@ $post_id = get_the_ID(); ?>
 
 <?php } else { ?>
 
-	<div id="primary" class="content-area-full content-default <?php echo $has_hero;?> post-type-<?php echo $post_type;?>">
+	<div id="primary" class="content-area-full content-default new-layout <?php echo $has_hero;?> post-type-<?php echo $post_type;?>">
 
 		<?php get_template_part('parts/post-type-'.$post_type); ?>
 	

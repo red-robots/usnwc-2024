@@ -37,7 +37,6 @@ while ( have_posts() ) : the_post();
 	<?php 
 	/* INTRO */
 	$galleries = '';
-  $activities = get_field("activities");
 	$galleryData = get_field("gallery_content");
 	if( isset($galleryData['g_images']) && $galleryData['g_images'] ) {
 		$galleries = $galleryData['g_images'];
@@ -53,57 +52,16 @@ while ( have_posts() ) : the_post();
 	<?php if ($left_text || $galleries) { ?>
 	<section id="section-intro" class="section-content intro-galleries <?php echo $introClass ?>"<?php echo $section1 ?>>
 		<div class="flexwrap">
-			<?php if ($left_text || $activities) { ?>
+			<?php if ($left_text) { ?>
 			<div class="leftcol textcol">
 				<div class="wrap">
 					<div class="inner">
-            <?php if ($left_text) { ?>
-            <div class="intro">
-              <?php echo $left_text ?>  
-            </div>
-            <?php } ?>
-						
-            <?php if ($activities) { ?>
-              <div class="options">
-                <div class="legend">
-                  <div class="label">OPTIONS</div>
-                  <div class="label">QUALIFIERS</div>
-                </div>
-                <?php $i=1; foreach ($activities as $a) {
-                  $a_name = $a['name'];
-                  $a_note = ( isset($a['spnote']) && $a['spnote'] ) ? $a['spnote'] : '';
-                  $a_description = $a['description'];
-                  $a_difficulty = $a['difficulty'];
-                  $a_qualifiers = $a['qualifiers'];
-                  $a_show = $a['show']; 
-                  $show_this_option = ($a_show=='yes') ? true : false;
-                  if($show_this_option) { ?>
-                  <div id="item-<?php echo $i?>" class="item">
-                    <?php /* OPTIONS */ ?>
-                    <?php if ($a_name) { ?>
-                    <div class="fxcol left">
-                      <h2 class="type">
-                        <?php echo $a_name ?>
-                        <?php if ($a_note) { ?><em><?php echo $a_note; ?></em><?php } ?>
-                      </h2>
-                      <?php if ($a_description) { ?>
-                      <div class="desc"><?php echo $a_description ?></div>  
-                      <?php } ?>
-                    </div>
-                    <?php } ?>
-
-                    <?php /* AGE */ ?>
-                    <div class="fxcol right">
-                      <?php if ($a_qualifiers) { ?>
-                      <span class="age"><?php echo $a_qualifiers ?></span>
-                      <?php } ?>
-                    </div>
-                  </div>  
-                  <?php $i++; } ?>
-                <?php } ?>
-              </div>
-            <?php } ?>
-
+						<?php if ($left_icon) { ?>
+						<div class="icon-col">
+							<span style="background-image:url('<?php echo $left_icon['url'] ?>')"></span>
+						</div>	
+						<?php } ?>
+						<?php echo $left_text ?>	
 					</div>	
 				</div>
 			</div>	
@@ -130,63 +88,6 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>	
 	<?php } ?>
-
-
-  <?php
-  $pass_price = get_field('price');
-  $single_pass_price = get_field('single_access_price');
-  $monthly_access_price = get_field('monthly_access_price');
-  $reserve = get_field('reservation_data');
-  $res_title = (isset($reserve['title']) && $reserve['title']) ? $reserve['title'] : '';
-  $res_text = (isset($reserve['text']) && $reserve['text']) ? $reserve['text'] : '';
-  $res_button = (isset($reserve['button']) && $reserve['button']) ? $reserve['button'] : '';
-  $rbuttonLink = (isset($res_button['url']) && $res_button['url']) ? $res_button['url'] : '';
-  $rbuttonText = (isset($res_button['text']) && $res_button['text']) ? $res_button['text'] : '';
-  $rbuttonTarget = (isset($res_button['target']) && $res_button['target']) ? $res_button['target'] : '_blank';
-  $has_price_options = array($pass_price, $single_pass_price, $monthly_access_price);
-  if( ($has_price_options && array_filter($has_price_options)) || $res_text ) { ?>
-  <section id="pass-options-section" class="pass-price-options" data-section="Options">
-    <div class="inner">
-      <?php if ($has_price_options && array_filter($has_price_options)) { ?>
-      <div class="col info-left">
-        <h3>PASS OPTIONS</h3>
-        <?php if ($pass_price) { ?>
-        <div class="pass-item">
-          <span class="name"><span>ALL ACCESS PASS</span></span>
-          <span class="price"><span><?php echo $pass_price ?></span></span>
-        </div>  
-        <?php } ?>
-
-        <?php if ($monthly_access_price) { ?>
-        <div class="pass-item">
-          <span class="name"><span>MONTHLY ACTIVITY PASS</span></span>
-          <span class="price"><span><?php echo $monthly_access_price ?></span></span>
-        </div>  
-        <?php } ?>
-
-        <?php if ($single_pass_price) { ?>
-        <div class="pass-item">
-          <span class="name"><span>SINGLE ACTIVITY PASS</span></span>
-          <span class="price"><span><?php echo $single_pass_price ?></span></span>
-        </div>  
-        <?php } ?>
-      </div> 
-      <?php } ?>
-
-      <?php if ($res_text) { ?>
-      <div class="col info-right">
-        <h3>RESERVATIONS</h3>
-        <div class="text">
-          <?php echo $res_text ?>
-        </div>
-        <?php if ($rbuttonLink && $rbuttonText) { ?>
-        <a href="<?php echo $rbuttonLink ?>" target="<?php echo $rbuttonTarget ?>" class="button"><?php echo $rbuttonText ?></a>
-        <?php } ?>
-      </div> 
-      <?php } ?>
-    </div>
-  </section>
-  <?php } ?>
 
 	<?php 
 	/* FLEXIBLE CONTENT */
@@ -279,7 +180,253 @@ while ( have_posts() ) : the_post();
 		</section>
 	<?php } ?>
 
-	
+	<?php  
+	/* OPTIONS */
+	$activities = get_field("activities");
+	$options_class = ($activities && $categories) ? 'half':'full';
+	$legend = get_field("activity_legend","option");
+	$s2_title = get_field("activities_section_title");
+	$section2 = ($s2_title) ? $s2_title : 'Options';
+	if($activities || $categories) { ?>
+	<section id="section-options" data-section="<?php echo $section2 ?>" class="section-content <?php echo $options_class ?>">
+		<div class="wrapper">
+			<?php if ($activities) { ?>
+			<div class="optcol activities">
+			
+				<?php if ($legend) { ?>
+				<div class="legend-for-mobile">
+					<?php foreach ($legend as $e) { 
+						$color = $e['color'];
+						$level = $e['level'];
+						if($color && $level) { ?>
+						<div class="levelblock"><span class="level"><em class="right"><span><?php echo $color ?></span></em><em class="left"><?php echo $level ?></em></span></div>
+						<?php } ?>
+					<?php } ?>
+				</div>
+				<?php } ?>
+
+				<?php 
+					//$options_heading = array('Options','Difficulty','Qualifiers'); 
+					$options_heading = get_field("activity_options_heading","option"); 
+				?>
+
+				<div class="flex-items">
+					<?php if ($options_heading) { ?>
+					<div id="items-head" class="item headings">
+						<?php $h=1; foreach ($options_heading as $opt) { 
+							$optName = $opt['activityOptTitle']; 
+							$optName = ($optName) ? trim(preg_replace('/\s+/',' ', $optName)) : '';
+							if( trim(preg_replace('/\s+/','', $optName)) ) { ?>
+							
+								<?php if ($optName=='Difficulty') { ?>
+								<div class="cell hd<?php echo $h?>">
+									<?php if ($legend) { ?>
+										<span class="txt"><?php echo $optName ?> <i id="legend-info">i</i></span>
+										<span id="legendData" class="legend">
+											<?php foreach ($legend as $e) { 
+												$color = $e['color'];
+												$level = $e['level'];
+												if($color && $level) { ?>
+												<span><em class="right"><?php echo $color ?></em><em class="left"><?php echo $level ?></em></span>
+												<?php } ?>
+											<?php } ?>
+										</span>
+									<?php } else { ?>
+										<?php echo $optName ?>
+									<?php } ?>
+								</div>
+								<?php } else { ?>
+									<div class="cell hd<?php echo $h?>"><?php echo $optName ?></div>
+								<?php } ?>
+
+							<?php } ?>
+
+						<?php $h++; } ?>
+					</div>
+					<?php } ?>
+
+					<?php $i=1; foreach ($activities as $a) {
+						$a_name = $a['name'];
+						$a_note = ( isset($a['spnote']) && $a['spnote'] ) ? $a['spnote'] : '';
+						$a_description = $a['description'];
+						$a_difficulty = $a['difficulty'];
+						$a_qualifiers = $a['qualifiers'];
+						$a_show = $a['show']; 
+						$show_this_option = ($a_show=='yes') ? true : false;
+						if($show_this_option) { ?>
+						<div id="item-<?php echo $i?>" class="item">
+
+							<?php /* OPTIONS */ ?>
+							<?php if ($a_name) { ?>
+								<div class="item-title">
+									<h2 class="type">
+										<?php echo $a_name ?>
+										<?php if ($a_note) { ?>
+										<em><?php echo $a_note; ?></em>	
+										<?php } ?>
+									</h2>
+								</div>
+							<?php } ?>
+							<div class="cell desc-col">
+								<?php if ($a_description) { ?>
+								<div class="desc"><?php echo $a_description ?></div>	
+								<?php } ?>
+							</div>
+							
+							<?php /* DIFFICULTY */ ?>
+							<div class="cell diff-col">
+								<span class="cell-label">Difficulty:</span>
+								<?php if ($a_difficulty) { ?>
+									<?php foreach ($a_difficulty as $diff) { 
+										$dSlug = sanitize_title($diff); ?>
+										<span class="diff <?php echo $dSlug ?>"></span>
+									<?php } ?>
+								<?php } ?>
+							</div>
+
+							<?php /* AGE */ ?>
+							<div class="cell age-col">
+								<span class="cell-label">Age:</span>
+								<?php if ($a_qualifiers) { ?>
+								<span class="age"><?php echo $a_qualifiers ?></span>
+								<?php } ?>
+							</div>
+						</div>	
+						<?php $i++; } ?>
+					<?php } ?>
+				</div>
+
+			</div>	
+			<?php } ?>
+
+			<?php 
+			$purchase_link = get_field("purchase_link");
+			$reservation = get_field("reservation_data");
+			$singleAccPass = get_field('single_access_price');
+			$monthlyAccPass = get_field('monthly_access_price');
+			$passOptionLink = get_field('pass_options_link');
+			$passOptionLabel = get_field('pass_options_btn');
+			$singleSmDesc = get_field('single_act_desc');
+			if( $passOptionLabel == '' ) { $passOptionLabel = 'View all Pass Pricing';}
+			// echo '<pre>';
+			// print_r($categories);
+			// echo '</pre>';
+			?>
+			<?php if ($categories || $reservation) { ?>
+			<div class="optcol categories passOptions">
+				
+				<?php if ($categories) { ?>
+					<div class="inner graybox">
+						<?php if( $passOptionLink ){ ?>
+
+							<a href="<?php echo $passOptionLink; ?>" class="linkbox"></a>
+							<?php } ?>
+						<h2 class="box-title">Pass Options</h2>
+						<div class="box-content">
+							<ul class="cats">
+							<?php foreach ($categories as $cat) {
+								$cat_id = $cat->term_id;
+								$cat_slug = $cat->slug;
+								$pass_types = get_pass_type_category($cat_id); 
+								$pass_types_list = '';
+								if($pass_types) {
+									foreach($pass_types as $k=>$v) {
+										$comma = ($k>0) ? ', ':'';
+										$pass_types_list .= $comma . ucwords( strtolower($v->post_title)); 
+									}
+								}
+								?>
+								<li class="cat-item">
+									<span class="icon"></span>
+									<span class="catName">
+										<?php echo $cat->name; ?>
+										<?php if( $singleSmDesc && $cat->term_id == '3' ) { ?>
+											<small><?php echo $singleSmDesc; ?></small>
+										<?php } ?>
+										<?php if ($pass_types_list) { ?>
+										<small>(<?php echo $pass_types_list ?>)</small>	
+										<?php } ?>
+									</span>
+									<?php if( $cat_slug == 'single-activity-pass' ) { ?>
+										<div class="sap-price"><?php echo '$'.$singleAccPass; ?></div>
+										<?php if( $passOptionLink ){ ?>
+											<div class="buttondiv tothetop">
+												<a href="<?php echo $passOptionLink; ?>" class="btn-sm xs"><?php echo $passOptionLabel; ?></a>
+											</div>
+										<?php } ?>
+									<?php } ?>
+									<?php if( $cat_slug == 'monthly-off-leash-pass' ) { ?>
+										<div class="sap-price"><?php echo '$'.$monthlyAccPass; ?></div>
+										<?php if( $passOptionLink ){ ?>
+											<div class="buttondiv tothetop">
+												<a href="<?php echo $passOptionLink; ?>" class="btn-sm xs"><?php echo $passOptionLabel; ?></a>
+											</div>
+										<?php } ?>
+									<?php } ?>
+								</li>
+							<?php } ?>
+							</ul>
+
+							<?php if ($purchase_link) { 
+								$btn_title = $purchase_link['title'];
+								$btn_link = $purchase_link['url'];
+								$btn_target = $purchase_link['target'];
+								$target = ($btn_target) ? ' target="'.$btn_target.'"':'';
+							?>
+							<div class="button text-center">
+								<a href="<?php echo $btn_link ?>" class="btn-border"<?php echo $target ?>>
+									<span><?php echo $btn_title ?></span>
+								</a>
+							</div>	
+							<?php } ?>
+						</div>
+
+					</div>
+
+				<?php } ?>
+
+				<?php if ($reservation) {
+
+					$res_title =  ( isset($reservation['title']) && $reservation['title'] ) ? $reservation['title']:'';
+					$res_text =  (isset($reservation['text']) && $reservation['text']) ? $reservation['text']:'';
+					$res_button =  ( isset($reservation['button']) && $reservation['button'] ) ? $reservation['button']:'';
+					$res_target = ( isset($res_button['target']) && $res_button['target'] ) ? ' target="'.$res_button['target'].'"':'';
+					$res_link = ( isset($res_button['url']) && $res_button['url'] ) ? $res_button['url']:'';
+					$res_buttonText = ( isset($res_button['title']) && $res_button['title'] ) ? $res_button['title']:'';
+					?>
+					<div class="inner graybox reservationDiv">
+						<div class="wrap">
+							
+							
+							<?php if ($res_text || $res_button || $res_title) { ?>
+								<div class="box-content">
+									<div class="inner-wrap">
+										<?php if ($res_title) { ?>
+											<h2 class="box-title"><?php echo $res_title ?></h2>
+										<?php } ?>
+										<?php if ($res_text) { ?>
+											<div class="text"><?php echo $res_text ?></div>
+										<?php } ?>
+										<?php if ($res_link && $res_buttonText) { ?>
+											<div class="button">
+												<a href="<?php echo $res_link ?>" class="btn-border-white"<?php echo $res_target ?>>
+													<span><?php echo $res_buttonText ?></span>
+												</a>
+											</div>
+										<?php } ?>
+									</div>
+								</div>
+							<?php } ?>
+
+						</div>
+					</div> 
+				<?php } ?>
+				
+			</div>	
+			<?php } ?>
+		</div>
+	</section>
+	<?php } ?>
 
 
 	<?php
