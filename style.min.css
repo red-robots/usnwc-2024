@@ -1975,7 +1975,7 @@ body.nav-open .menu-toggle{opacity:0}
 body.single-activity .intro-galleries .flexwrap{position:relative}
 body.single-activity #subpageSlides{width:100% !important;height:100% !important;padding-left:0 !important;border-radius:0 !important}
 .site-content{width:100%;float:left}
-h2.stitle,.stitle{margin:0;text-transform:uppercase;font-family:"Lato",sans-serif;font-weight:400;font-size:25px;letter-spacing:2px;color:#000}
+h2.stitle,.stitle{margin:0;font-family:"Brandon Bold";font-size:40px;line-height:1.2;text-transform:uppercase;color:#000}
 .buttondiv{margin-top:20px}
 .btn-sm{cursor:pointer;display:inline-block;text-decoration:none !important;color:#5a5959;padding:7px 25px;border:1px solid #a2a2a2;overflow:hidden;position:relative;font-size:20px;font-weight:600;border-radius:0;-webkit-appearance:none;-webkit-box-shadow:none;box-shadow:none;min-width:85px}
 .btn-sm.popdata,.btn-sm.xs{padding:7px 15px 6px;font-size:15px;line-height:1.2}
@@ -2381,6 +2381,48 @@ h1.page-title span:after{content:"";display:block;width:30%;height:2px;backgroun
 .schedule-activities-info.new-layout .status-legend span:before{content:"";display:block;width:10px;height:10px;border-radius:100%;background:#ccc;position:absolute;top:3px;left:0}
 .schedule-activities-info.new-layout .status-legend span.open:before{background:#71c943}
 .schedule-activities-info.new-layout .status-legend span.closed:before{background:#ba0d30}
+#section-whattowear{padding-top:0;padding-bottom:80px;padding-left:10vw;padding-right:10vw;background-color:transparent}
+#section-whattowear .wrapper{max-width:100% !important;width:100% !important;padding:0 0 !important;overflow:hidden;border-radius:15px;border:3px solid #f2f2f2}
+#section-whattowear .wrapper .flexwrap{-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+#section-whattowear h2{font-family:"Brandon Bold";font-size:40px;line-height:1.2;margin:0 0 45px}
+#section-whattowear.half .col{width:50%;padding:70px 5vw}
+#section-whattowear.half .col.options .collapsiblewtw{padding:0;margin:28px 0;border-top:0}
+#section-whattowear.half .col.options .collapsiblewtw:before{display:none !important}
+#section-whattowear.half .col.options .collapsiblewtw .arrow{width:8px;height:8px}
+#section-whattowear.half .col.options .collapsiblewtw .arrow:before,#section-whattowear.half .col.options .collapsiblewtw .arrow:after{height:2px}
+#section-whattowear.half .col.options .collapsiblewtw .arrow:before{-webkit-transform:translateX(0) rotate(45deg);transform:translateX(0) rotate(45deg)}
+#section-whattowear.half .col.options .collapsiblewtw.active .option-name{color:#ba0d30}
+#section-whattowear.half .col.options .collapsiblewtw.active .option-text{color:#000;font-size:17px;line-height:1.5}
+#section-whattowear.half .col.options .collapsiblewtw.active .arrow{-webkit-transform:translateY(14px) scale(-1);transform:translateY(14px) scale(-1)}
+#section-whattowear.half .col.options .collapsiblewtw.active .arrow:before,#section-whattowear.half .col.options .collapsiblewtw.active .arrow:after{background:#ba0d30}
+#section-whattowear.half .col.options .option-name{font-family:"Brandon Bold";text-transform:uppercase}
+#section-whattowear.half .col.model{background-color:#f2f2f2}
+#section-whattowear.half .col.model .default{min-height:500px}
+#section-checkin{margin-top:30px}
+#section-checkin .wrapper-full{padding-left:0;padding-right:0}
+#section-checkin .flexwrap{padding:0 0 !important;margin-left:-8px;margin-right:-8px}
+#section-checkin h2.section-title{text-align:center;font-family:"Brandon Bold";font-size:40px;line-height:1.2;text-transform:uppercase;margin:0 0 45px}
+#section-checkin .col-left .flex-content{height:100% !important}
+#section-checkin .col-right .flex-content{height:50% !important}
+#section-faqs h2.stitle{text-align:center;margin:0 0 30px}
+#section-faqs .faq-item{border-radius:12px;background:#f2f2f2;margin-bottom:20px;-webkit-transition:all ease .3s;transition:all ease .3s}
+#section-faqs .faq-item *{-webkit-transition:height ease .5s;transition:height ease .5s}
+#section-faqs .faq-item h3{font-family:"Brandon Bold";text-transform:uppercase;color:#000 !important;padding-top:28px;padding-bottom:25px}
+#section-faqs .faq-item p{font-size:17px;line-height:1.3;color:#000 !important}
+#section-faqs .faq-item .option-name span.arrow{width:8px;height:8px;right:15px;top:26px}
+#section-faqs .faq-item .option-name span.arrow:before{-webkit-transform:translateX(0) rotate(45deg);transform:translateX(0) rotate(45deg)}
+#section-faqs .faq-item .option-name span.arrow:before,#section-faqs .faq-item .option-name span.arrow:after{height:2px}
+#section-faqs .faq-item.active{border:1px solid #000 !important;background:#fff;padding-bottom:10px}
+#section-faqs .faq-item.active h3{padding-bottom:0}
+#section-faqs .faq-item.active:before{display:none}
+#section-faqs .faq-item.active .option-name span.arrow{top:0;-webkit-transform:translateY(40px) scale(-1);transform:translateY(40px) scale(-1)}
+#section-faqs .faq-item.active .option-name span.arrow:before,#section-faqs .faq-item.active .option-name span.arrow:after{background:#ba0d30}
+#section-faqs .collapsible{border-top:none !important}
+.explore-other-stuff{background-color:#f2f2f2;padding:25px 20px 50px}
+.explore-other-stuff h3{font-family:"Brandon Bold";font-size:40px;line-height:1.2;color:#000 !important;margin:0 0 25px !important}
+.explore-other-stuff .entry{margin:8px 0}
+.explore-other-stuff .entry a{font-size:16px;color:#000 !important}
+.explore-other-stuff .entry a:hover,.explore-other-stuff .entry a:focus{opacity:1 !important;color:#ba0d30 !important}
 li.rdate{width:100%;padding:5px;background-color:#f2f2f2;margin:8px 0;font-weight:bold}
 .post-type-race #section-registration .title-w-icon,.post-type-race #section-schedule .title-w-icon,.post-type-race .section-schedule .title-w-icon{background-color:#000;color:#fff}
 .post-type-race .race-types{background:#000}
@@ -4569,6 +4611,8 @@ section.visit .img h2{font-size:50px}
 section.homepage-hero .home-info .info h1{font-size:60px}
 section.full-bleed-promo .info .words h2{font-size:100px}
 .archive-posts-wrap .entry{width:33.33%}
+}@media screen and (min-width:1400px){#section-faqs .faq-item{padding:0 20px 0 40px}
+}@media screen and (min-width:1500px){#section-whattowear.half .col.options{padding-left:8vw;padding-right:8vw}
 }@media screen and (max-width:1230px){.jobs.resetBtn{position:relative;right:12px;top:3px;float:left}
 }@media screen and (max-width:1070px){.navigation__children.open .childNavCloseBtn{display:block;-webkit-animation-name:fadeIn;animation-name:fadeIn}
 }@media screen and (max-width:1000px){.filter-wrapper.non-facetwp.options4 .select-wrap{max-width:50%}

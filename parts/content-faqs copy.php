@@ -24,6 +24,7 @@ if( is_faqs_visible() ) {
 
 						<?php if ( isset($customFAQTitle) && $customFAQTitle ) { ?>
 						<div class="shead-icon text-center">
+							<div class="icon"><span class="ci-help"></span></div>
 							<h2 class="stitle"><?php echo $customFAQTitle ?></h2>
 						</div>
 						<?php } ?>
@@ -42,6 +43,7 @@ if( is_faqs_visible() ) {
 
 								<?php if ( isset($customFAQTitle) && $customFAQTitle ) { ?>
 								<div class="shead-icon text-center">
+									<div class="icon"><span class="ci-help"></span></div>
 									<h2 class="stitle"><?php echo $customFAQTitle ?></h2>
 								</div>
 								<?php } ?>

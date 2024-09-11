@@ -288,7 +288,8 @@ while ( have_posts() ) : the_post();
 	$wtw_default_image = get_field("wtw_default_image");  
 	$wtw_options = get_field("wtw_options");  
 	$s3_title = get_field("whereto_section_title");
-	$section3 = ($s3_title) ? $s3_title : 'What to wear';
+	//$section3 = ($s3_title) ? $s3_title : 'What to wear';
+  $section3 = 'What to wear';
 	$wtw_class = ($wtw_default_image && $wtw_options) ? 'half':'full';
 	if ($wtw_options) { ?>
 	<section id="section-whattowear" data-section="<?php echo $section3 ?>" class="section-content <?php echo $wtw_class ?>">
@@ -355,7 +356,8 @@ while ( have_posts() ) : the_post();
 	$checkin_images = array();
 	$checkin_rows = array();
 	$s4_title = get_field("whereto_section_title");
-	$section4 = ($s4_title) ? $s4_title : 'Check-In';
+	//$section4 = ($s4_title) ? $s4_title : 'Check-In';
+  $section4 = 'Check-In';
 	if( have_rows('checkin_box') ) { 
 		$ctr=0; while ( have_rows('checkin_box') ) : the_row(); 
 			$has_text = get_sub_field('has_text'); 
@@ -378,8 +380,15 @@ while ( have_posts() ) : the_post();
 	?>
 	<section id="section-checkin" data-section="<?php echo $section4 ?>" class="section-content<?php echo $checkin_classes;?>">
 		<div class="wrapper-full">
+      <?php if ($s4_title) { ?>
+      <h2 class="section-title"><?php echo $s4_title ?></h2>
+      <?php } ?>
+      
+      <?php if ( get_field('checkin_box') ) { ?>
 			<div class="flexwrap">
-				<?php  $i=1; while ( have_rows('checkin_box') ) : the_row(); 
+				<?php  
+          $count_section = count(get_field('checkin_box'));
+          $i=1; while ( have_rows('checkin_box') ) : the_row(); 
 					$has_text = get_sub_field('has_text'); 
 					$has_text = ($has_text=='yes') ? true : false;
 					$image = get_sub_field('flex_image'); 
@@ -405,7 +414,7 @@ while ( have_posts() ) : the_post();
 					<div class="col-left">
 					<?php } ?>
 
-					<?php if($i<3) { ?>
+					<?php if($i==1) { ?>
 					<div class="flex-content largebox <?php echo $flex_class.$classList ?>">
 						<div class="inside">
 						<?php if ($has_text_image) { ?>
@@ -434,14 +443,17 @@ while ( have_posts() ) : the_post();
 					</div>
 					<?php } ?>
 					
-					<?php if($i==2) { ?>
+					<?php if($i==1) { ?>
 					</div>
 					<?php } ?>
 
 					
 					<?php /* RIGHT COLUMN */ ?>
-					<?php if($i==3) { ?>
+					<?php if($i==2) { ?>
 					<div class="col-right">
+          <?php } ?>
+
+            <?php if($i>1) { ?>
 						<div class="flex-content largebox <?php echo $flex_class.$classList ?>">
 							<div class="inside">
 							<?php if ($has_text_image) { ?>
@@ -463,11 +475,15 @@ while ( have_posts() ) : the_post();
 							<?php } ?>
 							</div>
 						</div>
+            <?php } ?>
+
+           <?php if($i==$count_section) { ?>
 					</div>
 					<?php } ?>
 
 				<?php $i++; endwhile; ?>
 			</div>
+      <?php } ?>
 		</div>
 	</section>
 	<?php } ?>
@@ -511,8 +527,8 @@ while ( have_posts() ) : the_post();
 		include( locate_template('parts/content-faqs.php') ); 
 	?>
 
-	<?php /* Featured Articles */ ?>
-	<?php get_template_part("parts/bottom-content-activity"); ?>
+	<?php /* EXPLORE OTHER ACTIVITIES */ ?>
+  <?php get_template_part("parts/similar-posts"); ?>
 
 	<?php
 	/* FAQS JAVASCRIPT */ 
