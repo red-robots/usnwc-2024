@@ -2064,13 +2064,12 @@ body.search .text-col{width:100%;float:left}
 body.search .has-image .image-col{width:100%}
 body.search .has-image .text-col{width:100%}
 input.nav-search{width:100%;border:0;height:30px;border-radius:15px;background-color:rgba(255,255,255,.6);padding:0 10px;margin:10px 0 0 0;background-image:url(images/eyeglass.png);background-position:right 10px top 5px;background-repeat:no-repeat}
+body.subpage h1.pagetitle,body.subpage h1.page-title{font-family:"Brandon Bold";font-size:45px;line-height:1.3;letter-spacing:.01em;text-transform:uppercase;margin:0 0 25px;position:relative}
+body.subpage h1.pagetitle span:after,body.subpage h1.page-title span:after{display:none}
 body.subpage.single .content-default{padding-top:0;padding-bottom:0}
 body.subpage.single .content-default .wrapper{font-size:20px;line-height:1.7;font-weight:400}
 body.subpage.single .content-default .main-description{padding-top:70px;padding-bottom:50px}
 body.subpage.single .content-default .main-text a{text-decoration:none}
-body.subpage.single .content-default h1.pagetitle{font-family:"Lato",sans-serif;font-weight:400;font-size:25px;line-height:1.2;letter-spacing:2px;text-transform:uppercase;margin:0 0 25px;position:relative}
-body.subpage.single .content-default h1.pagetitle span{display:inline-block;position:relative}
-body.subpage.single .content-default h1.pagetitle span:after{content:"";display:block;width:30%;height:2px;background:#ba0d30;margin:25px auto 0}
 body.subpage.single .intro-galleries .textcol .icon-col{margin-bottom:15px}
 body.subpage.single .intro-galleries .textcol p{font-size:14px;line-height:1.3}
 body.subpage.single .intro-galleries.half .leftcol{width:100%;float:left}
@@ -2175,6 +2174,7 @@ section.stories-whats .wn-box .wn-box-contents .flex{display:-webkit-box;display
 #section-whattowear{padding-top:80px;padding-bottom:80px;background:#f2f2f2}
 #section-whattowear .model,#section-whattowear .options{width:100%;float:left;position:relative}
 #section-whattowear.half .model img.model-image{width:100%;height:auto}
+#section-whattowear.half .options{width:100%}
 #section-whattowear .model{min-height:20em;-webkit-transition:all ease .3s;transition:all ease .3s}
 #section-whattowear .model.hide{opacity:0;visibility:hidden}
 #section-whattowear .model .default{position:relative}
@@ -2187,6 +2187,7 @@ section.stories-whats .wn-box .wn-box-contents .flex{display:-webkit-box;display
 .collapsible:before,.collapsiblewtw:before{content:"";display:block;width:100%;height:0;position:absolute;top:0;left:0;background:#ba0d30;-webkit-transition:all ease .3s;transition:all ease .3s}
 .collapsible *,.collapsiblewtw *{-webkit-transition:all ease .3s;transition:all ease .3s}
 .collapsible .option-name,.collapsible .option-text,.collapsiblewtw .option-name,.collapsiblewtw .option-text{position:relative;z-index:100}
+.collapsible .option-text,.collapsiblewtw .option-text{padding-bottom:10px}
 .collapsible .option-name,.collapsiblewtw .option-name{display:block;width:100%;font-family:"Lato",sans-serif;font-size:18px;font-weight:400;line-height:1.3;text-transform:uppercase;letter-spacing:1px;margin:0;position:relative;padding-right:40px}
 .collapsible .option-name span.arrow,.collapsiblewtw .option-name span.arrow{display:block;width:18px;height:18px;position:absolute;top:0;right:5px;-webkit-transition:all ease .3s;transition:all ease .3s}
 .collapsible .option-name span.arrow:before,.collapsible .option-name span.arrow:after,.collapsiblewtw .option-name span.arrow:before,.collapsiblewtw .option-name span.arrow:after{content:"";display:block;width:100%;height:1px;background:#191919;position:absolute;top:10px;left:0;-webkit-transition:all ease .3s;transition:all ease .3s}
@@ -2217,7 +2218,7 @@ section.stories-whats .wn-box .wn-box-contents .flex{display:-webkit-box;display
 #section-checkin.section-content .flex-content.has-text .caption{font-size:14px;font-weight:400;line-height:1.4;padding:30px 30px;margin:0 auto}
 #section-checkin.section-content .flex-content.has-text .caption p:last-child{margin-bottom:0}
 #section-checkin.section-content .inside.has-image{width:100%;float:left}
-#section-checkin.section-content .image-only{width:100%;float:left;background-size:contain;background-position:center;background-repeat:no-repeat}
+#section-checkin.section-content .image-only{width:100%;float:left;background-size:cover;background-position:center;background-repeat:no-repeat}
 #section-checkin.section-content .image-only img{width:100%;height:auto;float:left}
 #section-checkin.section-content .col-left .flex-content .inside{height:100%}
 #section-checkin.section-content .col-left .flex-content.has-text .inside{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
@@ -2356,6 +2357,8 @@ h1.page-title span:after{content:"";display:block;width:30%;height:2px;backgroun
 .title-w-icon{text-align:center;padding-top:30px;padding-bottom:35px}
 .title-w-icon h2{font-family:"Lato",sans-serif;font-weight:400;font-size:25px;line-height:1.2;text-transform:uppercase;letter-spacing:2px;margin:0}
 .title-w-icon .title-icon span{display:inline-block;width:30px;height:30px;background-size:100%;background-position:center;background-repeat:no-repeat}
+.button{display:inline-block;padding:8px 20px;border-radius:6px;background-color:#ba0d30;color:#fff;font-family:"Brandon";font-size:20px;text-decoration:none !important}
+.button:hover,.button:focus{color:#fff !important;background-color:#000}
 .schedule-activities-info.new-layout .subhead .date-hours{background:#ba0d30;color:#fff;padding:20px;margin-top:40px}
 .schedule-activities-info.new-layout .subhead .pass-hours{margin:5px 0;text-transform:none;font-size:16px;font-weight:300}
 .schedule-activities-info.new-layout .subhead .event-date{font-size:25px;letter-spacing:2px;margin:5px 0 0}
@@ -2381,11 +2384,11 @@ h1.page-title span:after{content:"";display:block;width:30%;height:2px;backgroun
 .schedule-activities-info.new-layout .status-legend span:before{content:"";display:block;width:10px;height:10px;border-radius:100%;background:#ccc;position:absolute;top:3px;left:0}
 .schedule-activities-info.new-layout .status-legend span.open:before{background:#71c943}
 .schedule-activities-info.new-layout .status-legend span.closed:before{background:#ba0d30}
-#section-whattowear{padding-top:0;padding-bottom:80px;padding-left:10vw;padding-right:10vw;background-color:transparent}
+#section-whattowear{padding-top:0;padding-bottom:80px;padding-left:30px;padding-right:30px;background-color:transparent}
 #section-whattowear .wrapper{max-width:100% !important;width:100% !important;padding:0 0 !important;overflow:hidden;border-radius:15px;border:3px solid #f2f2f2}
 #section-whattowear .wrapper .flexwrap{-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 #section-whattowear h2{font-family:"Brandon Bold";font-size:40px;line-height:1.2;margin:0 0 45px}
-#section-whattowear.half .col{width:50%;padding:70px 5vw}
+#section-whattowear.half .col{-ms-flex-preferred-size:unset;flex-basis:unset;width:100%;padding:30px 20px}
 #section-whattowear.half .col.options .collapsiblewtw{padding:0;margin:28px 0;border-top:0}
 #section-whattowear.half .col.options .collapsiblewtw:before{display:none !important}
 #section-whattowear.half .col.options .collapsiblewtw .arrow{width:8px;height:8px}
@@ -2397,7 +2400,7 @@ h1.page-title span:after{content:"";display:block;width:30%;height:2px;backgroun
 #section-whattowear.half .col.options .collapsiblewtw.active .arrow:before,#section-whattowear.half .col.options .collapsiblewtw.active .arrow:after{background:#ba0d30}
 #section-whattowear.half .col.options .option-name{font-family:"Brandon Bold";text-transform:uppercase}
 #section-whattowear.half .col.model{background-color:#f2f2f2}
-#section-whattowear.half .col.model .default{min-height:500px}
+#section-whattowear.half .col.model .default{min-height:200px}
 #section-checkin{margin-top:30px}
 #section-checkin .wrapper-full{padding-left:0;padding-right:0}
 #section-checkin .flexwrap{padding:0 0 !important;margin-left:-8px;margin-right:-8px}
@@ -2405,17 +2408,17 @@ h1.page-title span:after{content:"";display:block;width:30%;height:2px;backgroun
 #section-checkin .col-left .flex-content{height:100% !important}
 #section-checkin .col-right .flex-content{height:50% !important}
 #section-faqs h2.stitle{text-align:center;margin:0 0 30px}
-#section-faqs .faq-item{border-radius:12px;background:#f2f2f2;margin-bottom:20px;-webkit-transition:all ease .3s;transition:all ease .3s}
+#section-faqs .faq-item{border-radius:12px;background:#f2f2f2;margin-bottom:20px;-webkit-transition:all ease .3s;transition:all ease .3s;padding-top:0 !important;padding-bottom:0 !important}
 #section-faqs .faq-item *{-webkit-transition:height ease .5s;transition:height ease .5s}
 #section-faqs .faq-item h3{font-family:"Brandon Bold";text-transform:uppercase;color:#000 !important;padding-top:28px;padding-bottom:25px}
 #section-faqs .faq-item p{font-size:17px;line-height:1.3;color:#000 !important}
-#section-faqs .faq-item .option-name span.arrow{width:8px;height:8px;right:15px;top:26px}
+#section-faqs .faq-item .option-name span.arrow{width:8px;height:8px;right:15px;top:26px;-webkit-transition:all ease .2s;transition:all ease .2s}
 #section-faqs .faq-item .option-name span.arrow:before{-webkit-transform:translateX(0) rotate(45deg);transform:translateX(0) rotate(45deg)}
 #section-faqs .faq-item .option-name span.arrow:before,#section-faqs .faq-item .option-name span.arrow:after{height:2px}
 #section-faqs .faq-item.active{border:1px solid #000 !important;background:#fff;padding-bottom:10px}
 #section-faqs .faq-item.active h3{padding-bottom:0}
 #section-faqs .faq-item.active:before{display:none}
-#section-faqs .faq-item.active .option-name span.arrow{top:0;-webkit-transform:translateY(40px) scale(-1);transform:translateY(40px) scale(-1)}
+#section-faqs .faq-item.active .option-name span.arrow{top:0;-webkit-transform:translateX(2px) translateY(40px) rotate(180deg);transform:translateX(2px) translateY(40px) rotate(180deg)}
 #section-faqs .faq-item.active .option-name span.arrow:before,#section-faqs .faq-item.active .option-name span.arrow:after{background:#ba0d30}
 #section-faqs .collapsible{border-top:none !important}
 .explore-other-stuff{background-color:#f2f2f2;padding:25px 20px 50px}
@@ -4112,8 +4115,6 @@ body.subpage nav.new-nav .menu-item a,body.subpage .site-header .navbar .right .
 .film-event-status{top:75px}
 .button-element{display:inline-block;text-decoration:none;background-color:#ba0d30;color:#fff;padding:10px 25px;border-radius:8px;font-size:23px;font-weight:500;line-height:1.2;-webkit-transition:all ease .3s;transition:all ease .3s}
 .button-element:hover,.button-element:focus{color:#fff !important;background-color:#191919;text-decoration:none !important}
-body.subpage.single.single-activity .content-default.new-layout h1.pagetitle{font-family:"Brandon Bold";font-size:40px;line-height:1.3}
-body.subpage.single.single-activity .content-default.new-layout h1.pagetitle span:after{display:none}
 body.subpage.single.single-activity .content-default.new-layout .main-description p{color:#707070;max-width:600px;width:100%;margin:0 auto 20px;font-size:20px;line-height:1.4}
 body.subpage.single.single-activity .content-default.new-layout #pageTabs #tabcontent{border:1px solid #707070;padding:0 0 !important;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;border-radius:100px;overflow:hidden}
 body.subpage.single.single-activity .content-default.new-layout #pageTabs #tabcontent:before,body.subpage.single.single-activity .content-default.new-layout #pageTabs #tabcontent:after{display:none}
@@ -4133,14 +4134,13 @@ body.subpage.single.single-activity .content-default.new-layout .intro-galleries
 body.subpage.single.single-activity .content-default.new-layout .intro-galleries .leftcol .options .item .left h2{font-family:"Brandon Bold";font-size:18px;line-height:1.2;text-transform:uppercase;margin:0 0 8px}
 body.subpage.single.single-activity .content-default.new-layout .intro-galleries .leftcol .options .item .left .desc{color:#191919;font-size:16px;line-height:1.5}
 body.subpage.single.single-activity .content-default.new-layout .intro-galleries .leftcol .options .item .right{width:30%;text-align:right}
-body.subpage.single.single-activity .content-default.new-layout .intro-galleries.half .rightcol,body.subpage.single.single-activity .content-default.new-layout .intro-galleries.half .leftcol{width:50%;overflow:hidden}
+body.subpage.single.single-activity .content-default.new-layout .intro-galleries.half .rightcol,body.subpage.single.single-activity .content-default.new-layout .intro-galleries.half .leftcol{width:100%;overflow:hidden}
 body.subpage.single.single-activity .content-default.new-layout .intro-galleries.half .rightcol{padding-left:0;border-top-left-radius:15px;border-bottom-left-radius:15px}
-body.subpage.single.single-activity .content-default.new-layout .pass-price-options{width:100%;float:left;padding:120px 5vw}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options{width:100%;float:left;padding:25px 30px 20px}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options h3{font-family:"Brandon Bold";font-size:40px;line-height:1.2;margin:0 0 25px}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options p{font-size:16px;line-height:1.5}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .inner{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative}
-body.subpage.single.single-activity .content-default.new-layout .pass-price-options .inner:after{content:"";display:block;width:1px;height:100%;background:#000;position:absolute;top:0;right:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}
-body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left,body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-right{width:50%;padding:50px 10vw}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left,body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-right{width:100%;padding:50px 20px;-ms-flex-preferred-size:unset;flex-basis:unset}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left strong,body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-right strong{font-family:"Brandon Medium"}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .name{font-family:"Brandon Bold";font-size:18px;text-transform:uppercase}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .price{font-size:18px;color:#191919}
@@ -4148,6 +4148,18 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .name span,body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .price span{background:#fff;padding:0 5px}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item{margin:0 0 18px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item:after{content:"";display:block;width:100%;border-bottom:1px dashed #707070;position:absolute;left:0;bottom:6px}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .button{margin-top:10px}
+#primary.buy-page.buy-page-new .intro-text-wrap{padding:80px 20px 90px}
+#primary.buy-page.buy-page-new .intro-text-wrap .intro-text{max-width:100%}
+#primary.buy-page.buy-page-new .access-pass-options{width:100%;float:left;padding-left:5vw;padding-right:5vw}
+#primary.buy-page.buy-page-new .access-pass-options .flexwrap{margin-left:-15px;margin-right:-15px}
+#primary.buy-page.buy-page-new .access-pass-options .infobox{width:50%;padding:15px}
+#primary.buy-page.buy-page-new .access-pass-options .text{margin-top:15px}
+#primary.buy-page.buy-page-new .access-pass-options .text p{font-size:18px;line-height:1.5}
+#primary.buy-page.buy-page-new .access-pass-options figure{margin:0;position:relative;padding-bottom:65%;overflow:hidden;border-radius:15px}
+#primary.buy-page.buy-page-new .access-pass-options figure h2{position:absolute;left:0;bottom:0;z-index:5;width:100%;margin:0;padding:20px 30px;font-family:"Brandon Bold";font-size:2.75rem;line-height:1.2;color:#fff;text-transform:uppercase}
+#primary.buy-page.buy-page-new .access-pass-options figure:before{content:"";display:block;width:100%;height:100%;position:absolute;bottom:0;left:0;z-index:2;-webkit-box-shadow:3px 3px 280px #000 inset;box-shadow:3px 3px 280px #000 inset}
+#primary.buy-page.buy-page-new .access-pass-options figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -4254,8 +4266,9 @@ body.subpage.single .intro-galleries.half .rightcol{width:70%;padding-left:15px}
 .section-content#section-options .flex-items .item.headings{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 .section-content#section-options .categories{width:30%}
 .section-content#section-options .categories .box-content li{padding-left:28px;display:inline-block;width:auto}
-#section-whattowear.half .model{width:35%;padding-right:10vw}
+#section-whattowear.half .model{padding-right:10vw;width:100%}
 #section-whattowear.half .options{width:65%}
+.collapsible .option-text,.collapsiblewtw .option-text{padding-bottom:0}
 #section-checkin.section-content .col-left,#section-checkin.section-content .col-right{width:50%}
 #section-checkin.section-content .image-only{background-size:cover}
 #section-checkin.section-content .col-left .flex-content{height:50%}
@@ -4272,6 +4285,9 @@ body.subpage.single .intro-galleries.half .rightcol{width:70%;padding-left:15px}
 .post-type-entries.threecols .postbox{width:33.33%}
 .post-type-entries.threecols .postbox .details{padding-bottom:90px}
 .post-type-entries.threecols div.button{position:absolute;left:0;bottom:40px;margin-bottom:0}
+#section-whattowear{padding-left:10vw;padding-right:10vw}
+#section-whattowear.half .col{width:50%;padding:70px 5vw}
+#section-whattowear.half .col.model .default{min-height:500px}
 .post-type-race .race-types.two-col .type{width:50%}
 .post-type-race .race-types.three-col .type{width:33.33%}
 .post-type-race .race-types.multi-col .type{width:50%}
@@ -4528,6 +4544,7 @@ section.visit .tile.half{width:49%}
 section.visit .img h2{font-size:40px;bottom:30px;left:30px}
 section.visit .desc{padding:30px}
 section.visit .link{margin-left:30px}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options{padding:120px 5vw}
 }@media screen and (min-width:820px){#banner.taxonomy-banner .static-banner img.desktop{display:block}
 #banner.taxonomy-banner .static-banner img.mobile{display:none}
 .post-type-entries .imagediv.mobile{display:none}
@@ -4565,6 +4582,7 @@ body.subpage .site-content{padding-top:10px}
 body.logged-in.admin-bar.subpage .site-header{top:0 !important}
 body.logged-in.admin-bar.subpage .site-header .navbar{top:32px !important;background-color:#fff}
 body.logged-in.admin-bar.subpage .film-event-status{top:105px}
+}@media(min-width:820px)and (min-width:820px){#section-whattowear.half .model{width:35%}
 }@media(min-width:960px){.topinfo span.el{font-size:12px}
 .home-video-gallery.count1 .video-big{height:600px}
 .section-content#section-options .categories .box-content{padding-bottom:50px}
@@ -4587,6 +4605,9 @@ body.logged-in.admin-bar.subpage .film-event-status{top:105px}
 #timeline-area .horizontal-timeline .timeline{max-width:80%}
 #timeline-area .horizontal-timeline .timeline a.prev,#timeline-area .horizontal-timeline .timeline a.next{top:-53px}
 .calendar-tab-events-posts .infoBox.first figure{padding-bottom:50%}
+body.subpage.single.single-activity .content-default.new-layout .intro-galleries.half .rightcol,body.subpage.single.single-activity .content-default.new-layout .intro-galleries.half .leftcol{width:50%}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .inner:after{content:"";display:block;width:1px;height:100%;background:#000;position:absolute;top:0;right:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left,body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-right{padding:50px 10vw;width:50%}
 }@media(min-width:1200px){section.route-details .flexcol{width:25%}
 section.route-map .map-frame{height:60vh}
 .information-tabs-wrap .tabs-info ul a span.arrow:before,.information-tabs-wrap .tabs-info ul a span.arrow:after{top:14px}
@@ -4686,6 +4707,8 @@ body.single-race .filter-wrapper form .filter-field-group .select-wrap{left:0;pa
 body.single-race .filter-wrapper form .filter-field-group .filter-label{padding-left:0;padding-right:0}
 body.single-race .filter-wrapper form .filter-field-group .filter-label .inside{overflow:hidden}
 body.single-race .filter-wrapper form .filter-field-group .filter-label span{padding:0;font-size:13px;line-height:1}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left,body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-right{padding-left:0;padding-right:0}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left{border-bottom:1px solid #ccc;padding-bottom:30px}
 }@media screen and (max-width:819px){#primary .upcoming-posts .schedule.schedules-list li.item{padding:15px 0}
 #primary .upcoming-posts .schedule.schedules-list li.item:after{position:relative;bottom:-14px}
 #primary .upcoming-posts .schedule.schedules-list li.item:last-child:after{display:none}

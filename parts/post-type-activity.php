@@ -141,9 +141,13 @@ while ( have_posts() ) : the_post();
   $res_text = (isset($reserve['text']) && $reserve['text']) ? $reserve['text'] : '';
   $res_button = (isset($reserve['button']) && $reserve['button']) ? $reserve['button'] : '';
   $rbuttonLink = (isset($res_button['url']) && $res_button['url']) ? $res_button['url'] : '';
-  $rbuttonText = (isset($res_button['text']) && $res_button['text']) ? $res_button['text'] : '';
+  $rbuttonText = (isset($res_button['title']) && $res_button['title']) ? $res_button['title'] : '';
   $rbuttonTarget = (isset($res_button['target']) && $res_button['target']) ? $res_button['target'] : '_blank';
   $has_price_options = array($pass_price, $single_pass_price, $monthly_access_price);
+  // echo "<pre>";
+  // print_r($reserve);
+  // echo "</pre>";
+
   if( ($has_price_options && array_filter($has_price_options)) || $res_text ) { ?>
   <section id="pass-options-section" class="pass-price-options" data-section="Options">
     <div class="inner">
@@ -180,7 +184,7 @@ while ( have_posts() ) : the_post();
           <?php echo $res_text ?>
         </div>
         <?php if ($rbuttonLink && $rbuttonText) { ?>
-        <a href="<?php echo $rbuttonLink ?>" target="<?php echo $rbuttonTarget ?>" class="button"><?php echo $rbuttonText ?></a>
+        <a href="<?php echo $rbuttonLink ?>" target="<?php echo $rbuttonTarget ?>" class="button btn-red"><?php echo $rbuttonText ?></a>
         <?php } ?>
       </div> 
       <?php } ?>
