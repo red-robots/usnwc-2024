@@ -4382,7 +4382,7 @@ body.subpage.single .intro-galleries.half .rightcol{width:70%;padding-left:15px}
 .hero-register-button .registerBtn:after{height:51%;bottom:0;-webkit-transform:skew(-40deg);transform:skew(-40deg)}
 .hero-register-button .registerBtn:hover{background:#000}
 .hero-register-button .registerBtn:hover:before,.hero-register-button .registerBtn:hover:after{background-color:#000}
-body.scrolled.single-dining.logged-in.admin-bar .post-hero-image .stats,body.scrolled.page-template-page-instruction-single.logged-in.admin-bar .post-hero-image .stats,body.scrolled.single-retreat.logged-in.admin-bar .post-hero-image .stats{top:118px}
+body.scrolled.single-dining.logged-in.admin-bar .post-hero-image .stats,body.scrolled.page-template-page-instruction-single.logged-in.admin-bar .post-hero-image .stats,body.scrolled.single-retreat.logged-in.admin-bar .post-hero-image .stats{top:105px}
 body.scrolled.logged-in.admin-bar .stats{top:118px}
 body.scrolled .hero-register-button .registerBtn{position:fixed}
 .dining-event-details{padding-top:80px;padding-bottom:70px}
@@ -4610,7 +4610,7 @@ section.teasers .fullwidth-image .fullwidth-image__text h3.mobile{display:none}
 body.subpage .site-header{background:#fff;height:75px;position:fixed;top:0;left:0;z-index:99999;-webkit-transform:none;transform:none}
 body.subpage .site-header .navbar{position:fixed;top:0;left:0;width:100%}
 body.subpage .site-header .navbar .logo img{-webkit-filter:invert(1);filter:invert(1)}
-body.subpage .site-content{padding-top:10px}
+body.subpage .site-content{padding-top:0}
 body.logged-in.admin-bar.subpage .site-header{top:0 !important}
 body.logged-in.admin-bar.subpage .site-header .navbar{top:32px !important;background-color:#fff}
 body.logged-in.admin-bar.subpage .film-event-status{top:105px}

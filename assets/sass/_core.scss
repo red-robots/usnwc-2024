@@ -7478,7 +7478,7 @@ body.scrolled.single-retreat {
 		.post-hero-image .stats {
 			top: 130px;
 			@include tab {
-				top: 118px;
+				top: 105px;
 			}
 		}
 	}
@@ -7508,6 +7508,10 @@ body.scrolled {
 			position: fixed;
 		}
 	}
+}
+
+body.logged-in.admin-bar {
+
 }
 
 .shead-icon {
@@ -16491,7 +16495,7 @@ body.subpage {
       }
     }
     .site-content {
-      padding-top: 10px;
+      padding-top: 0;
     }
   }
 }
