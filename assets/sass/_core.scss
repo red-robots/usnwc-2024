@@ -4247,8 +4247,8 @@ a.button {
   }
 }
 .mscol .textcol .button-group {
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
   margin-top: 25px;
   div.button {
     display: inline-block;
@@ -5721,9 +5721,9 @@ body.single-instructions {
     background-color: #F2F2F2;
 		@include flexgroup();
     .textcol {
-      .info {
-        text-align: left;
-      }
+      // .info {
+      //   text-align: left;
+      // }
       h3.mstitle {
         font-family: $font-brandon-bold;
         font-size: 35px;

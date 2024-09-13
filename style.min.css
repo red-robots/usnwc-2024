@@ -2364,7 +2364,7 @@ input.button:hover,input.button:focus,button.button:hover,button.button:focus,a.
 .child-card .info div.button a,.mscol .textcol div.button a{display:inline-block;border:0;background-color:#fff;padding:7px 25px 6px;border-radius:60px;-webkit-box-shadow:0 2px 5px rgba(0,0,0,.16);box-shadow:0 2px 5px rgba(0,0,0,.16);text-transform:uppercase;font-size:15px}
 .child-card .info div.button a:before,.mscol .textcol div.button a:before{display:none}
 .child-card .info div.button a:hover,.child-card .info div.button a:focus,.mscol .textcol div.button a:hover,.mscol .textcol div.button a:focus{background:#ba0d30 !important;color:#fff !important}
-.mscol .textcol .button-group{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-top:25px}
+.mscol .textcol .button-group{margin-top:25px}
 .mscol .textcol .button-group div.button{display:inline-block;margin-right:15px}
 .fullwidth-wrapper{width:100%;float:left;padding-left:20px;padding-right:20px;margin-top:20px;margin-bottom:20px}
 .align-middle-button{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
@@ -2594,7 +2594,6 @@ body.single-instructions #primary #section-faqs{padding-top:60px;padding-bottom:
 .text-and-image-blocks section.section-break .icon img,.menu-sections section.section-break .icon img{width:100%}
 .text-and-image-blocks section.section-break h3,.menu-sections section.section-break h3{text-transform:uppercase;text-align:center}
 .text-and-image-blocks .mscol,.menu-sections .mscol{margin-top:20px;margin-bottom:80px;background-color:#f2f2f2;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
-.text-and-image-blocks .mscol .textcol .info,.menu-sections .mscol .textcol .info{text-align:left}
 .text-and-image-blocks .mscol .textcol h3.mstitle,.menu-sections .mscol .textcol h3.mstitle{font-family:"Brandon Bold";font-size:35px;line-height:1.2;color:#000}
 .text-and-image-blocks .mscol .textcol .buttondiv a,.menu-sections .mscol .textcol .buttondiv a{border:0;background-color:#fff;padding:7px 25px;border-radius:60px;-webkit-box-shadow:0 2px 5px rgba(0,0,0,.16);box-shadow:0 2px 5px rgba(0,0,0,.16);text-transform:uppercase}
 .text-and-image-blocks .mscol .textcol .buttondiv a:before,.menu-sections .mscol .textcol .buttondiv a:before{display:none}
