@@ -54,7 +54,8 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
 					$start_date_format = '';
 					if($start_date) {
 						$c_month = date('M',strtotime($start_date));
-						$period = ($c_month!='MAY') ? '. ':'';
+						//$period = ($c_month!='MAY') ? '. ':'';
+            $period = ' ';
 						$start_date_format = date('F',strtotime($start_date)) . $period . date('j',strtotime($start_date));
 					}
 					$short_description = get_field("short_description",$pid);
