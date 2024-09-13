@@ -2358,9 +2358,9 @@ input.button,button.button,a.button{display:inline-block;padding:8px 20px;border
 input.button:hover,input.button:focus,button.button:hover,button.button:focus,a.button:hover,a.button:focus{color:#fff !important;background-color:#000}
 .button-rounded{font-family:"Brandon";font-size:16px;text-transform:uppercase;border-radius:100px;background-color:#ba0d30;color:#fff;padding:12px 40px 10px}
 .button-rounded:hover,.button-rounded:focus{color:#fff;text-decoration:none;background-color:#000}
-.button-pill{font-family:"Brandon" !important;font-size:13px !important;line-height:1.2 !important;letter-spacing:.05em !important;text-transform:uppercase;border-radius:100px;padding:5px 25px 6px;color:#5a5959;border:1px solid #a2a2a2}
-.button-pill:before{display:none !important}
-.button-pill:hover,.button-pill:focus{background:#ba0d30 !important;color:#fff !important}
+.btn-sm,.button-pill{font-family:"Brandon" !important;font-size:13px !important;line-height:1.2 !important;letter-spacing:.05em !important;text-transform:uppercase;border-radius:100px;padding:5px 25px 6px;color:#5a5959;border:1px solid #a2a2a2}
+.btn-sm:before,.button-pill:before{display:none !important}
+.btn-sm:hover,.btn-sm:focus,.button-pill:hover,.button-pill:focus{background:#ba0d30 !important;color:#fff !important}
 .child-card .info div.button a,.mscol .textcol div.button a{display:inline-block;border:0;background-color:#fff;padding:7px 25px 6px;border-radius:60px;-webkit-box-shadow:0 2px 5px rgba(0,0,0,.16);box-shadow:0 2px 5px rgba(0,0,0,.16);text-transform:uppercase;font-size:15px}
 .child-card .info div.button a:before,.mscol .textcol div.button a:before{display:none}
 .child-card .info div.button a:hover,.child-card .info div.button a:focus,.mscol .textcol div.button a:hover,.mscol .textcol div.button a:focus{background:#ba0d30 !important;color:#fff !important}
