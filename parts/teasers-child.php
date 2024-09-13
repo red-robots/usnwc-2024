@@ -199,26 +199,29 @@ $placeholder = THEMEURI . 'images/rectangle.png';
     		
         <?php
         elseif( get_row_layout() == 'full_bleed_image' ):
-            $fb_image = get_sub_field('full_image');
-            $fb_image_title = get_sub_field('title');
-            $fb_image_icon = get_sub_field('icon');
-            if( $fb_image_title ) {
-                $fb_sani = sanitize_title_with_dashes($fb_image_title);
-                $fb_dataTitle = $fb_image_title;
-            }
-            ?>
-            <section class="full-bleed"  id="section-<?php echo $fb_sani; ?>" data-section="<?php echo $fb_dataTitle; ?>" >
-                <div class="wrapper">
-                    <div class="icon">
-                        <img src="<?php echo $fb_image_icon['url']; ?>">
-                    </div>
-                    <h2 class="stitle"><?php echo $fb_image_title; ?></h2>
-                </div>
-                
-                <div class="full-bleed-img " style="--aspect-ratio: 16/9">
-                    <img src="<?php echo $fb_image['url']; ?>">
-                </div>
-            </section>
+          $fb_image = get_sub_field('full_image');
+          $fb_image_title = get_sub_field('title');
+          $fb_image_icon = get_sub_field('icon');
+          $fb_sani = '';
+          $fb_dataTitle = '';
+          if( $fb_image_title ) {
+              $fb_sani = sanitize_title_with_dashes($fb_image_title);
+              $fb_dataTitle = $fb_image_title;
+          }
+          if($fb_sani) { ?>
+          <section class="full-bleed"  id="section-<?php echo $fb_sani; ?>" data-section="<?php echo $fb_dataTitle; ?>" >
+              <div class="wrapper">
+                  <div class="icon">
+                      <img src="<?php echo $fb_image_icon['url']; ?>">
+                  </div>
+                  <h2 class="stitle"><?php echo $fb_image_title; ?></h2>
+              </div>
+              
+              <div class="full-bleed-img " style="--aspect-ratio: 16/9">
+                  <img src="<?php echo $fb_image['url']; ?>">
+              </div>
+          </section>
+          <?php } ?>
 
     	<?php 
     	elseif( get_row_layout() == 'parallax' ):

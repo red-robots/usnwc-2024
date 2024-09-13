@@ -55,7 +55,7 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
 					if($start_date) {
 						$c_month = date('M',strtotime($start_date));
 						$period = ($c_month!='MAY') ? '. ':'';
-						$start_date_format = date('M',strtotime($start_date)) . $period . date('j',strtotime($start_date));
+						$start_date_format = date('F',strtotime($start_date)) . $period . date('j',strtotime($start_date));
 					}
 					$short_description = get_field("short_description",$pid);
 					$is_festival = get_field("is_festival",$pid);
@@ -82,29 +82,31 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
 							}
 						}
 					}
+
+          $event_date = array($start_day, $start_date_format);
+          $event_date_format = '';
+          if( array_filter($event_date) ) {
+            $event_date_format = implode(", ", $event_date);
+          }
+          $pagelink = get_permalink($pid);
 				?>
 				<div data-postid='<?php echo $pid ?>' data-startdate="<?php echo $start_date ?>" data-title="<?php echo $start_day ?>" class="entry <?php echo $has_image ?>">
 					<div class="inside">
 						<div class="titlediv">
-							<h2 class="day"><?php echo $start_day ?></h2>
-							<p class="date"><?php echo $start_date_format ?></p>
-							<h3 class="title"><span><?php echo $title ?></span></h3>
+              <p class="event-date"><?php echo $event_date_format ?></p>
 						</div>
 						<div class="photo <?php echo $has_image ?>"<?php echo $style ?>>
 							<img src="<?php echo $helper ?>" alt="" aria-hidden="true" class="helper">
 						</div>
+            <h3 class="title"><?php echo $title ?></h3>
+            <div class="button">
+              <a href="javascript:void(0)" data-url="<?php echo $pagelink ?>" data-action="ajaxGetPageData" data-id="<?php echo $pid ?>" class="btn-sm xs popdata button-pill"><span>See Details</span></a>
+            </div>
 						<?php if ($short_description) { ?>
 						<div class="description text-center js-blocks">
 							<div class="text"><?php echo $short_description ?></div>
 						</div>
 						<?php } ?>
-						<div class="clear"></div>
-						<div class="text-center">
-							<!-- <br> --><br>
-							<div class="button">
-								<a href="#" data-url="<?php echo $pagelink ?>" data-action="ajaxGetPageData" data-id="<?php echo $pid ?>" class="btn-sm xs popdata"><span>See Details</span></a>
-							</div>
-						</div>
 
 						<?php /* SCHEDULE */ 
 								// echo '<pre>';
@@ -114,8 +116,7 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
 						?>
 						<?php if ( $schedules && $is_festival !== 'yes' ) { ?>
 						<div class="schedule schedules-list">
-							<h3 class="t1"><?php echo ($schedule_title) ? $schedule_title : 'Schedule' ?></h3>
-							<!-- <h4><?php echo $is_festival; ?></h4> -->
+							
 							<ul class="items">
 							<?php $ctr=1; foreach ($schedules as $s) { 
 								$time = $s['time'];
@@ -133,21 +134,28 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
 										$altText = ($altText) ? '('.$altText.')' : '';
 									}
 									?>
-									<li class="item timerow-<?php echo $ctr?>">
-										<div class="time"><?php echo $time ?></div>
+									<li class="item timerow-<?php echo $ctr?><?php echo ($is_pop_up) ? ' has-link':'' ?>">
 										<div class="event">
 											<?php if ($is_pop_up) { ?>
 												<?php if ($act) { ?>
-													<a href="#" data-url="<?php echo $pageLink ?>" data-action="ajaxGetPageData" data-id="<?php echo $pid ?>" class="actname popdata"><?php echo $activityName ?></a>	
+                          <span class="namewrap">
+                            <span class="actname"><b><?php echo $activityName ?></b></span>  
+  													<a href="#" data-url="<?php echo $pageLink ?>" data-action="ajaxGetPageData" data-id="<?php echo $pid ?>" class="actnamelink popdata">Learn More</a>	
+                          </span>
 												<?php } ?>
 											<?php } else { ?>
-												<span class="actname"><?php echo $activityName ?></span>	
+                        <span class="namewrap">
+												  <span class="actname"><b><?php echo $activityName ?></b></span>	
+                        </span>
 											<?php } ?>
 
 											<?php if ($altText) { ?>
-											<span class="alttext"><?php echo $altText ?></span>
+                        <span class="namewrap">
+											   <span class="alttext actname"><b><?php echo $altText ?></b></span>
+                        </span>
 											<?php } ?>
 										</div>
+                    <div class="time"><span><?php echo $time ?></span></div>
 									</li>
 								<?php $ctr++; } ?>
 							<?php } ?>
@@ -161,13 +169,27 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
 			</div>
 		</div>
 	</section>
-	<?php } ?>
+
+  <?php  
+    $sched = get_field('full_schedule_link');
+    $s_url = (isset($sched['url']) && $sched['url'] ) ? $sched['url'] : '';
+    $s_title = (isset($sched['title']) && $sched['title'] ) ? $sched['title'] : '';
+    $s_target = (isset($sched['target']) && $sched['target'] ) ? $sched['target'] : '_blank';
+    ?>
+    <?php if ($s_url && $s_title) { ?>
+    <div class="fullwidth-wrapper">
+      <div class="buttondiv align-middle-button">
+        <a href="<?php echo $s_url ?>" target="<?php echo $s_target ?>" class="button-rounded"><?php echo $s_title ?></a>
+      </div>
+    </div>
+    <?php } ?>
+  <?php } ?>
 
 	<?php /* UPCOMING BANDS BY DATE */ ?>
 	<?php 
 	// get_template_part("parts/filter-river-jam"); 
 	// include this way to pass variables. sending post id's from above to not include on the next query
-	include(locate_template('parts/filter-river-jam.php'));
+	//include(locate_template('parts/filter-river-jam.php'));
 	?>
 
 
@@ -188,7 +210,6 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
 	<section id="riverjam-programs" data-section="Programs" class="section-content menu-sections">
 		<div class="wrapper">
 			<div class="shead-icon text-center">
-				<div class="icon"><span class="ci-task"></span></div>
 				<h2 class="stitle">PROGRAMS</h2>
 			</div>
 		</div>
@@ -221,7 +242,7 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
 								<?php if ($program_description) { ?>
 								<div class="textwrap"><?php echo $program_description; ?></div>
 								<div class="buttondiv">
-									<a href="#" data-url="<?php echo $pagelink; ?>" data-action="ajaxGetPageData" data-id="<?php echo $xid ?>" class="btn-sm xs popdata"><span>See More</span></a>
+									<a href="#" data-url="<?php echo $pagelink; ?>" data-action="ajaxGetPageData" data-id="<?php echo $xid ?>" class="btn-sm xs popdata"><span>See Details</span></a>
 								</div>
 								<?php } ?>
 							</div>
