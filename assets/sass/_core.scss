@@ -3136,9 +3136,6 @@ section.stories-whats {
 	}
   .option-text {
     padding-bottom: 10px;
-    @include tab {
-      padding-bottom: 0;
-    }
   }
 	.option-name {
 		display: block;
