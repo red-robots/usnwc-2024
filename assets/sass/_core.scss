@@ -5717,6 +5717,27 @@ body.single-instructions {
       }
     }
 	}
+
+  .gallerycol {
+    overflow: hidden;
+  }
+  .half.odd {
+    .gallerycol {
+      @include tab {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+      }
+    }
+  }
+  .half.even {
+    .gallerycol {
+      @include tab {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+    }
+  }
+
 	.gallerycol {
 		.flexslider,
 		.slides,
@@ -12531,22 +12552,6 @@ body.page-template-page-food-beverage {
 		float: left;
 		margin-top: 8px;
 	}
-  .half.odd {
-    .gallerycol {
-      @include tab {
-        border-top-left-radius: 15px;
-        border-bottom-left-radius: 15px;
-      }
-    }
-  }
-  .half.even {
-    .gallerycol {
-      @include tab {
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-      }
-    }
-  }
 }
 
 .filter-wrapper.river-jam {

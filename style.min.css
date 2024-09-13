@@ -2594,6 +2594,7 @@ body.single-instructions #primary #section-faqs{padding-top:60px;padding-bottom:
 .text-and-image-blocks .mscol .textcol .buttondiv a,.menu-sections .mscol .textcol .buttondiv a{border:0;background-color:#fff;padding:7px 25px;border-radius:60px;-webkit-box-shadow:0 2px 5px rgba(0,0,0,.16);box-shadow:0 2px 5px rgba(0,0,0,.16);text-transform:uppercase}
 .text-and-image-blocks .mscol .textcol .buttondiv a:before,.menu-sections .mscol .textcol .buttondiv a:before{display:none}
 .text-and-image-blocks .mscol .textcol .buttondiv a:hover,.text-and-image-blocks .mscol .textcol .buttondiv a:focus,.menu-sections .mscol .textcol .buttondiv a:hover,.menu-sections .mscol .textcol .buttondiv a:focus{background-color:#ba0d30;color:#fff}
+.text-and-image-blocks .gallerycol,.menu-sections .gallerycol{overflow:hidden}
 .text-and-image-blocks .gallerycol .flexslider,.text-and-image-blocks .gallerycol .slides,.text-and-image-blocks .gallerycol .slides li.slide-item,.menu-sections .gallerycol .flexslider,.menu-sections .gallerycol .slides,.menu-sections .gallerycol .slides li.slide-item{width:100%;float:left;position:relative;background-color:#ccc;border-radius:0}
 .text-and-image-blocks .gallerycol .slides li.slide-item,.menu-sections .gallerycol .slides li.slide-item{background-size:cover;background-position:center;background-repeat:no-repeat}
 .text-and-image-blocks .gallerycol img,.menu-sections .gallerycol img{width:100%;height:auto;float:left}
@@ -4311,6 +4312,8 @@ body.subpage.single .intro-galleries.half .rightcol{width:70%;padding-left:15px}
 #section-awards .awards-columns .inside{padding:4vw 6vw}
 #section-awards .col-content .result-data{width:33.33%}
 #section-sponsors .sponsors-list .sponsor{width:120px;-ms-flex-preferred-size:auto;flex-basis:auto;margin:1.3vw}
+.text-and-image-blocks .half.odd .gallerycol,.menu-sections .half.odd .gallerycol{border-top-left-radius:15px;border-bottom-left-radius:15px}
+.text-and-image-blocks .half.even .gallerycol,.menu-sections .half.even .gallerycol{border-top-right-radius:15px;border-bottom-right-radius:15px}
 .text-and-image-blocks .gallerycol .flexslider,.text-and-image-blocks .gallerycol .slides,.text-and-image-blocks .gallerycol .slides li.slide-item,.menu-sections .gallerycol .flexslider,.menu-sections .gallerycol .slides,.menu-sections .gallerycol .slides li.slide-item{height:100% !important}
 .text-and-image-blocks .textcol .inside,.menu-sections .textcol .inside{height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .text-and-image-blocks .half .textcol,.text-and-image-blocks .half .gallerycol,.menu-sections .half .textcol,.menu-sections .half .gallerycol{width:50%}
@@ -4498,8 +4501,6 @@ body.single-festival .filter-wrapper.filterstyle .select-wrap{width:75%}
 .section-content.program-options.columns2 .pblock{width:50%}
 .redDiv{padding-left:5vw;padding-right:5vw}
 #primary .upcoming-posts{padding-left:5vw;padding-right:5vw}
-#primary.riverjam .half.odd .gallerycol{border-top-left-radius:15px;border-bottom-left-radius:15px}
-#primary.riverjam .half.even .gallerycol{border-top-right-radius:15px;border-bottom-right-radius:15px}
 .filter-wrapper.river-jam .select-wrap{max-width:800px;width:100%}
 .faq-categories #faqTabs.flexwrap2{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;position:relative}
 .faq-categories .wrapper{max-width:1460px;padding-left:20px;padding-right:20px}
