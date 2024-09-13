@@ -13,7 +13,7 @@ $textImageData = get_field("textImageCol");
 	<?php if( get_post_type() != 'retreat') { ?>
 		<div class="wrapper">
 			<div class="shead-icon text-center">
-				<h2 class="programs"><img src="<?php bloginfo('template_url'); ?>/images/icons/paddle.png" width="40"  /> Programs</h2>
+				<h2 class="programs">Programs</h2>
 			</div> 
 		</div>
 	<?php } ?>

@@ -48,7 +48,7 @@ if( $passport == 'all' ) {
 
 				<?php if( $passport !== 'none' ){ ?>
 					<div class="stats open">
-						<a <?php if($passport){echo $pp;} ?> href="#" target="<?php echo $buttonTarget ?>" class="registerBtn">
+						<a <?php if($passport){echo $pp;} ?> href="#" target="" class="registerBtn">
 							<?php if($passLabel){
 								echo $passLabel;
 							}else{
@@ -127,10 +127,8 @@ if( $passport == 'all' ) {
 
 		if( have_rows('schedule_days') && $showHide !== 'hide' ): ?>
 			<section class="instr-schedule">
-				<div class="wwrapper">
-					<div class="shead-icon text-center">
-						<h2 class="stitle"><img src="<?php bloginfo('template_url'); ?>/images/icons/bw_calendar2.svg" width="30"  /> Upcoming</h2>
-					</div>
+				<div class="titleWrap">
+					<h2 class="stitle">Upcoming</h2>
 				</div>
 				<div id="inst-sched" class="<?php echo $dayClass; ?>">
 					<ul class="slides">

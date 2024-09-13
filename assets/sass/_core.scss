@@ -14516,8 +14516,32 @@ section.instr-schedule {
 	width: 100%;
 	padding: 40px 0;
 	float: left;
+  .titleWrap {
+    padding-left: 20px;
+    padding-right: 20px;
+    @include tab {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+  }
+  .stitle {
+    text-align: left;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+    font-family: $font-brandon-bold;
+    font-size: 35px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+  }
 	#inst-sched {
-		
+    padding-top: 40px;
+		padding-left: 20px;
+    padding-right: 20px;
+    @include tab {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
 		.flex-control-paging {
 			display: none;
 		}
@@ -14526,14 +14550,11 @@ section.instr-schedule {
 		width: 100%;
 		background-color: rgba(#000, 1);
 		padding-bottom: 30px;
-		@media screen and (min-width: $tabwidth) {
-			width: 49%;
-			margin: 5px;
-		}
-		@media screen and (min-width: $deskwidth) {
-			width: 33%;
-			margin: 5px;
-		}
+		margin: 0 0;
+    width: 100%;
+    @include mid {
+      width: 33.333%;
+    }
 	}
 	.flex .slides {
 		display: flex;

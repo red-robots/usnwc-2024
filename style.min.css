@@ -3909,8 +3909,11 @@ ul.items .show{display:block}
 .instr-details{padding:20px;background-color:#fff;width:90%}
 body.page-template-page-instruction-single h2.programs{padding:50px 0 20px 0;text-transform:uppercase}
 section.instr-schedule{width:100%;padding:40px 0;float:left}
+section.instr-schedule .titleWrap{padding-left:20px;padding-right:20px}
+section.instr-schedule .stitle{text-align:left;padding-left:0;padding-right:0;text-align:left;font-family:"Brandon Bold";font-size:35px;border-bottom:1px solid #000;padding-bottom:10px}
+section.instr-schedule #inst-sched{padding-top:40px;padding-left:20px;padding-right:20px}
 section.instr-schedule #inst-sched .flex-control-paging{display:none}
-section.instr-schedule li.slide-item{width:100%;background-color:#000;padding-bottom:30px}
+section.instr-schedule li.slide-item{width:100%;background-color:#000;padding-bottom:30px;margin:0;width:100%}
 section.instr-schedule .flex .slides{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch}
 section.instr-schedule .day{color:#fff;-ms-flex-preferred-size:45%;flex-basis:45%;margin:0 .5%}
 section.instr-schedule .day .image img{width:100%}
@@ -4542,6 +4545,8 @@ body.single-festival .filter-wrapper.filterstyle .select-wrap{width:75%}
 #timeline-area.timeline-wrapper .timeline .middle-line{width:50%}
 #timeline-area.timeline-wrapper .timeline .middle-line:before{content:"";display:block;width:25px;height:25px;border-radius:50%;background-color:#ba0d30;position:absolute;top:-10px;right:-12.5px}
 #timeline-area.timeline-wrapper .timeline .middle-line:after{content:"";display:block;width:7vw;border-bottom:2px solid #ba0d30;position:absolute;bottom:0;right:0;margin-right:-3.5vw;margin-bottom:-1.2vw}
+section.instr-schedule .titleWrap{padding-left:5vw;padding-right:5vw}
+section.instr-schedule #inst-sched{padding-left:5vw;padding-right:5vw}
 .grey-section-blocks .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-line-pack:stretch;align-content:stretch;-webkit-box-pack:stretch;-ms-flex-pack:stretch;justify-content:stretch}
 .email-submission form{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:start;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch}
 .email-submission .gform_body{width:80%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-right:20px}
@@ -4567,7 +4572,6 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .prenav li.umbrella{background-size:150px 23px}
 .prenav a{padding:8px 60px}
 .instr-details{width:600px;padding:40px}
-section.instr-schedule li.slide-item{width:49%;margin:5px}
 section.instr-schedule .flex .slides{-ms-flex-wrap:nowrap;flex-wrap:nowrap}
 section.instr-schedule .day{-ms-flex-preferred-size:13.5%;flex-basis:13.5%}
 section.instr-schedule .day .row{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
@@ -4615,6 +4619,7 @@ body.logged-in.admin-bar.subpage .film-event-status{top:105px}
 #timeline-area .horizontal-timeline .events-wrapper{max-width:80%}
 #timeline-area .horizontal-timeline .timeline{max-width:80%}
 #timeline-area .horizontal-timeline .timeline a.prev,#timeline-area .horizontal-timeline .timeline a.next{top:-53px}
+section.instr-schedule li.slide-item{width:33.333%}
 .calendar-tab-events-posts .infoBox.first figure{padding-bottom:50%}
 body.subpage.single.single-activity .content-default.new-layout .intro-galleries.half .rightcol,body.subpage.single.single-activity .content-default.new-layout .intro-galleries.half .leftcol{width:50%}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .inner:after{content:"";display:block;width:1px;height:100%;background:#000;position:absolute;top:0;right:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}
@@ -4639,7 +4644,6 @@ section.full-bleed-promo .info .words h2{font-size:80px;line-height:.8}
 #timeline-area .history-data .info{min-height:450px}
 section.visit .tile{margin-bottom:120px}
 section.visit .img h2{font-size:50px}
-}@media screen and (min-width:1200px){section.instr-schedule li.slide-item{width:33%;margin:5px}
 }@media(min-width:1300px){.information-tabs-wrap .tabs-info ul a span.arrow:before,.information-tabs-wrap .tabs-info ul a span.arrow:after{top:15px}
 section.homepage-hero .home-info .info h1{font-size:60px}
 section.full-bleed-promo .info .words h2{font-size:100px}
