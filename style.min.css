@@ -2828,7 +2828,7 @@ body.page-template-page-stories .select2-container--default .select2-results__op
 .photo-credit:after{content:"";width:0;height:0;border-left:6px solid #fff;border-top:5px solid transparent;border-bottom:5px solid transparent;position:absolute;right:-5px;bottom:5px}
 .photo-credit span{display:block;width:100%}
 .photo-credit.show{width:auto;height:auto;padding:8px;opacity:1;visibility:visible;overflow:visible}
-.content-area-full.post-type-dining .post-hero-image,.content-area-full.instruction-page .post-hero-image{margin-top:85px}
+.content-area-full.post-type-dining .post-hero-image,.content-area-full.instruction-page .post-hero-image{margin-top:0}
 .content-area-full.post-type-dining .post-hero-image.closed,.content-area-full.instruction-page .post-hero-image.closed{padding-top:38px}
 .content-area-full.post-type-dining .post-hero-image .stats,.content-area-full.instruction-page .post-hero-image .stats{width:100%;z-index:10;color:#fff;text-transform:uppercase;font-family:"Lato",sans-serif;font-size:18px;font-weight:400;line-height:1;letter-spacing:1px;-webkit-transition:all ease .3s;transition:all ease .3s}
 .content-area-full.post-type-dining .post-hero-image .stats.closed,.content-area-full.instruction-page .post-hero-image .stats.closed{text-align:center;padding:11px 20px 10px;background:rgba(186,13,48,.9)}
