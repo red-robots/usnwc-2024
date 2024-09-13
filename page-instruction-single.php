@@ -57,11 +57,8 @@ if( $passport == 'all' ) {
 						</a>
 					</div>
 
-				<?php }else{ ?>
-					<?php if ($registerButton && $registerLink) { ?>
-						<div class="stats open"><a href="<?php echo $registerLink ?>" target="<?php echo $registerTarget ?>" class="registerBtn"><?php echo $registerButton ?></a></div>
-					<?php } ?>
 				<?php } ?>
+        
 			<?php } else if($status=='closed') { ?>
 			<div class="stats closed">SOLD OUT</div>
 			<?php } else if($status=='custom') { ?>
