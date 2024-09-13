@@ -59,7 +59,7 @@ $textImageData = get_field("textImageCol");
 								</div>
 							<?php } ?>
 
-							<div class="text-center">
+							<div class="button-group">
 							<?php if ($details) { ?>
 								<div class="button inline-btn">
 									<a href="#instr-details<?php echo $i; ?>" class="btn-sm xs instr" id="inline">

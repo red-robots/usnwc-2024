@@ -2361,6 +2361,11 @@ input.button:hover,input.button:focus,button.button:hover,button.button:focus,a.
 .button-pill{font-family:"Brandon" !important;font-size:13px !important;line-height:1.2 !important;letter-spacing:.05em !important;text-transform:uppercase;border-radius:100px;padding:5px 25px 6px;color:#5a5959;border:1px solid #a2a2a2}
 .button-pill:before{display:none !important}
 .button-pill:hover,.button-pill:focus{background:#ba0d30 !important;color:#fff !important}
+.child-card .info div.button a,.mscol .textcol div.button a{display:inline-block;border:0;background-color:#fff;padding:7px 25px 6px;border-radius:60px;-webkit-box-shadow:0 2px 5px rgba(0,0,0,.16);box-shadow:0 2px 5px rgba(0,0,0,.16);text-transform:uppercase;font-size:15px}
+.child-card .info div.button a:before,.mscol .textcol div.button a:before{display:none}
+.child-card .info div.button a:hover,.child-card .info div.button a:focus,.mscol .textcol div.button a:hover,.mscol .textcol div.button a:focus{background:#ba0d30 !important;color:#fff !important}
+.mscol .textcol .button-group{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-top:25px}
+.mscol .textcol .button-group div.button{display:inline-block;margin-right:15px}
 .fullwidth-wrapper{width:100%;float:left;padding-left:20px;padding-right:20px;margin-top:20px;margin-bottom:20px}
 .align-middle-button{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .schedule-activities-info.new-layout .subhead .date-hours{background:#ba0d30;color:#fff;padding:20px;margin-top:40px}
@@ -3951,6 +3956,7 @@ section.flexible-row .text-copy{font-size:16px}
 .icon-via-img img{width:100%}
 .carousel-item-text{padding:10px;background-color:#f2f2f2;font-size:18px;width:100%;clear:both}
 .carousel-item-text h3{font-size:1.2rem;font-weight:bold}
+body.page-template-page-teaser-child .text-centered-section{padding-top:0}
 section.teasers{width:100%;position:relative}
 section.teasers section.full-bleed{width:100%;margin-bottom:20px}
 section.teasers section.full-bleed [style*="--aspect-ratio"]>:first-child{width:100%}
@@ -3963,11 +3969,18 @@ section.teasers section.full-bleed .full-bleed-img img{height:140% !important}
 section.teasers section.section-title{padding:60px 20px}
 section.teasers section.section-title p.sdesc{max-width:900px;margin:0 auto}
 section.teasers section.section-title .stitle{font-size:30px}
+section.teasers section.section-title h2{font-family:"Brandon Bold";color:#000}
+section.teasers section.section-title div.button a{border-radius:100px;background-color:#ba0d30;color:#fff;border:0;font-size:16px;text-transform:uppercase}
+section.teasers section.section-title div.button a:before{display:none}
+section.teasers section.section-title div.button a:hover,section.teasers section.section-title div.button a:focus{background-color:#000}
 section.teasers section.alt-cards .creative{width:100%}
 section.teasers section.alt-cards .info{width:100%}
+section.teasers section.child-card{overflow:hidden;position:relative;background:#f2f2f2}
 section.teasers section.child-card .creative{width:100%;position:relative;overflow:hidden}
-section.teasers section.child-card .info{width:100%;background-color:#f2f2f2;font-size:16px}
-section.teasers section.child-card .info h2{font-size:30px}
+section.teasers section.child-card .info{text-align:left;width:100%;background-color:#f2f2f2;font-size:16px}
+section.teasers section.child-card .info h2{font-family:"Brandon Bold";font-size:35px;line-height:1.2;color:#000}
+section.teasers section.child-card .info p{margin-top:0}
+section.teasers section.child-card .info .btn-wrapper{margin-top:15px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 section.teasers section.alt-cards,section.teasers section.child-card{width:100%;position:relative;clear:both}
 section.teasers section.alt-cards .creative img,section.teasers section.child-card .creative img{width:100%}
 section.teasers section.alt-cards .info,section.teasers section.child-card .info{padding:60px 20px;font-size:20px;line-height:1.7}
@@ -4552,6 +4565,10 @@ section.instr-schedule #inst-sched{padding-left:5vw;padding-right:5vw}
 .email-submission .gform_body{width:80%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-right:20px}
 .carousel-item-text{padding:30px}
 .carousel-item-text h3{font-size:1.75rem}
+section.teasers section.child-card.odd{-webkit-box-orient:horizontal !important;-webkit-box-direction:normal !important;-ms-flex-flow:row !important;flex-flow:row !important}
+section.teasers section.child-card.odd .creative{border-top-right-radius:15px;border-bottom-right-radius:15px}
+section.teasers section.child-card.even{-webkit-box-orient:horizontal !important;-webkit-box-direction:reverse !important;-ms-flex-flow:row-reverse !important;flex-flow:row-reverse !important}
+section.teasers section.child-card.even .creative{border-top-left-radius:15px;border-bottom-left-radius:15px}
 .hide-gal{display:block}
 .photo{width:30%}
 section.visit{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;padding:0 50px}
@@ -4579,8 +4596,8 @@ section.instr-schedule .day .row .left,section.instr-schedule .day .row .right{w
 section.teasers section.alt-cards .creative{width:50%}
 section.teasers section.alt-cards .info{width:50%}
 section.teasers section.child-card{margin-bottom:20px}
-section.teasers section.child-card .creative{width:60%}
-section.teasers section.child-card .info{width:40%}
+section.teasers section.child-card .creative{width:50%}
+section.teasers section.child-card .info{width:50%}
 section.teasers section.alt-cards,section.teasers section.child-card{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch}
 section.teasers section.alt-cards:nth-of-type(even),section.teasers section.child-card:nth-of-type(even){-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-flow:row-reverse;flex-flow:row-reverse}
 section.teasers section.alt-cards .info,section.teasers section.child-card .info{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:60px}

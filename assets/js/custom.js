@@ -1043,6 +1043,19 @@ jQuery(document).ready(function ($) {
       }
     }
   });
+
+  if ($('.teasers .child-card').length) {
+    var j = 1;
+    $('.teasers .child-card').each(function () {
+      if (j % 2 == 0) {
+        $(this).addClass('even');
+      } else {
+        $(this).addClass('odd');
+      }
+
+      j++;
+    });
+  }
 }); // END #####################################    END
 "use strict";
 
