@@ -29,7 +29,10 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
   $single_access_title = get_field("single_access_title");
   $single_access_feat_image = get_field("single_access_feat_image");
   $single_access_text = get_field("single_access_text");
+  $single_activities_options = get_field("single_activities_options");
   $class1 = ( ($all_access_title || $all_access_text) && ($single_access_title || $single_access_text) ) ? 'half':'full';
+
+  $all_access_pass_options = get_field('all_access_pass_options');
   ?>
 
   <section class="access-pass-options">
@@ -45,8 +48,49 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
             <img src="<?php echo $all_access_feat_image['url'] ?>" alt="<?php echo $all_access_feat_image['title'] ?>">
             <?php } ?>
           </figure>
-          <?php if($single_access_text) { ?>
-            <div class="text"><?php echo $single_access_text ?></div>
+          <?php if($all_access_text) { ?>
+            <div class="text"><?php echo $all_access_text ?></div>
+          <?php } ?>
+
+          <?php if($all_access_pass_options) { ?>
+            <div class="pass-options-wrap">
+              <?php foreach ($all_access_pass_options as $p) { 
+                $name = $p['title'];
+                $items = $p['items'];
+                $btn = $p['button'];
+                $btnLink = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
+                $btnTitle = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
+                $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
+                if($name) { ?>
+                <div class="option">
+                  <div class="wrap">
+                    <div>
+                      <h3><?php echo $name ?></h3>
+                      <?php if ($items) { ?>
+                      <div class="items">
+                        <?php foreach ($items as $n) { ?>
+                          <?php if ($n['name']) { ?>
+                            <div class="item">
+                              <span class="name"><span><?php echo $n['name'] ?></span></span>
+                              <?php if ($n['price']) { ?>
+                              <span class="price"> &ndash; <span><?php echo $n['price'] ?></span></span>
+                              <?php } ?>
+                            </div>
+                          <?php } ?>
+                        <?php } ?>
+                      </div>  
+                      <?php } ?>
+                    </div>
+                    <?php if ($btnLink && $btnTitle) { ?>
+                    <div class="buttondiv">
+                      <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="button-pill"><?php echo $btnTitle ?></a>
+                    </div>
+                    <?php } ?>
+                  </div>
+                </div>
+                <?php } ?>
+              <?php } ?>
+            </div>
           <?php } ?>
         </div>
       </div>
@@ -63,6 +107,48 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
             <img src="<?php echo $single_access_feat_image['url'] ?>" alt="<?php echo $single_access_feat_image['title'] ?>">
             <?php } ?>
           </figure>
+          <?php if($single_access_text) { ?>
+            <div class="text"><?php echo $single_access_text ?></div>
+          <?php } ?>
+
+          <?php 
+          $singleButtons = get_field('purchase_buttons');
+          // $s_btnLink = (isset($singleBtn['url']) && $singleBtn['url']) ? $singleBtn['url'] : '';
+          // $s_btnTitle = (isset($singleBtn['title']) && $singleBtn['title']) ? $singleBtn['title'] : '';
+          // $s_btnTarget = (isset($singleBtn['target']) && $singleBtn['target']) ? $singleBtn['target'] : '_self';
+          if($single_activities_options) { ?>
+            <div class="single-activity-options">
+              <div class="firstCol"></div>
+              <div class="secondCol"></div>
+              <?php foreach ($single_activities_options as $a) { 
+                $a_name = $a['name'];
+                $a_price = $a['price'];
+                if($a_name) { ?>
+                <div class="option">
+                  <h3 class="name"><span><?php echo $a_name ?></span></h3>
+                  <?php if($a_price) { ?>
+                  <span class="price"><span><?php echo $a_price ?></span></span>
+                  <?php } ?>
+                </div>
+                <?php } ?>
+              <?php } ?>
+            </div>
+          <?php } ?>
+
+          <?php if ($singleButtons) { ?>
+          <div class="buttons">
+            <?php foreach ($singleButtons as $s) { 
+              $sbtn = $s['button'];
+              $s_btnLink = (isset($sbtn['url']) && $sbtn['url']) ? $sbtn['url'] : '';
+              $s_btnTitle = (isset($sbtn['title']) && $sbtn['title']) ? $sbtn['title'] : '';
+              $s_btnTarget = (isset($sbtn['target']) && $sbtn['target']) ? $sbtn['target'] : '_self';
+              if($single_activities_options) { ?>
+              <a href="<?php echo $s_btnLink ?>" target="<?php echo $s_btnTarget ?>" class="button-pill"><?php echo $s_btnTitle ?></a>
+              <?php } ?>
+            <?php } ?>
+          </div>
+          <?php } ?>
+
         </div>
       </div>
       <?php } ?>

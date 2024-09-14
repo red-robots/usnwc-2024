@@ -1056,6 +1056,19 @@ jQuery(document).ready(function ($) {
       j++;
     });
   }
+
+  if ($('.single-activity-options .option').length) {
+    var activitiesCount = $('.single-activity-options .option').length;
+    var countOptions = activitiesCount / 2;
+    countOptions = Math.round(countOptions);
+    $('.single-activity-options .option').each(function (k) {
+      if (k < countOptions) {
+        $(this).appendTo('.single-activity-options .firstCol');
+      } else {
+        $(this).appendTo('.single-activity-options .secondCol');
+      }
+    });
+  }
 }); // END #####################################    END
 "use strict";
 
