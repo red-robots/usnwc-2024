@@ -4189,12 +4189,15 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 #primary.buy-page.buy-page-new .access-pass-options figure h2{position:absolute;left:0;bottom:0;z-index:5;width:100%;margin:0;padding:20px 30px;font-family:"Brandon Bold";font-size:2.75rem;line-height:1.2;color:#fff;text-transform:uppercase}
 #primary.buy-page.buy-page-new .access-pass-options figure:before{content:"";display:block;width:100%;height:100%;position:absolute;bottom:0;left:0;z-index:2;-webkit-box-shadow:3px 3px 280px #000 inset;box-shadow:3px 3px 280px #000 inset}
 #primary.buy-page.buy-page-new .access-pass-options figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.access-pass-options .buttondiv{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}
 .pass-options-wrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;font-size:17px;line-height:1.4;margin-top:35px;margin-bottom:35px;padding-left:30px;padding-right:30px}
-.pass-options-wrap h3{font-family:"Brandon Bold";font-size:18px;line-height:1.2;text-transform:uppercase;color:#000}
+.pass-options-wrap div.items,.pass-options-wrap h3{width:100%}
+.pass-options-wrap h3{font-family:"Brandon Bold";font-size:18px;line-height:1.2;text-transform:uppercase;color:#000;text-align:left}
 .pass-options-wrap .option{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;width:100%;text-align:center;margin-bottom:50px;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .pass-options-wrap .option .wrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-line-pack:justify;align-content:space-between}
 .pass-options-wrap .option h3,.pass-options-wrap .option .items,.pass-options-wrap .option .buttondiv{width:100%}
 .pass-options-wrap .option:last-child{margin-bottom:0}
+.pass-options-wrap .buttondiv{text-align:flex-start}
 .single-activity-options{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-top:35px;padding-left:20px;padding-right:20px}
 .single-activity-options .firstCol,.single-activity-options .secondCol{width:100%}
 .single-activity-options .option{font-size:17px;line-height:1.4;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-bottom:10px;position:relative}

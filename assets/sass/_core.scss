@@ -16781,6 +16781,13 @@ body.subpage.single.single-activity {
   }
 }
 
+.access-pass-options {
+  .buttondiv {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
 .pass-options-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -16796,12 +16803,16 @@ body.subpage.single.single-activity {
   @include tab {
     margin-bottom: 0;
   }
+  div.items, h3 {
+    width: 100%;
+  }
   h3 {
     font-family: $font-brandon-bold;
     font-size: 18px;
     line-height: 1.2;
     text-transform: uppercase;
     color: #000;
+    text-align: left;
   }
   .option {
     display: flex;
@@ -16831,6 +16842,9 @@ body.subpage.single.single-activity {
   }
   .option:last-child {
     margin-bottom: 0;
+  }
+  .buttondiv {
+    text-align: flex-start;
   }
 }
 .single-activity-options {
