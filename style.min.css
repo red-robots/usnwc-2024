@@ -4191,13 +4191,15 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 #primary.buy-page.buy-page-new .access-pass-options figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .access-pass-options .buttondiv{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}
 .pass-options-wrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;font-size:17px;line-height:1.4;margin-top:35px;margin-bottom:35px;padding-left:30px;padding-right:30px}
+.pass-options-wrap div.buttondiv{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .pass-options-wrap div.items,.pass-options-wrap h3{width:100%}
 .pass-options-wrap h3{font-family:"Brandon Bold";font-size:18px;line-height:1.2;text-transform:uppercase;color:#000;text-align:left}
 .pass-options-wrap .option{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;width:100%;text-align:center;margin-bottom:50px;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .pass-options-wrap .option .wrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-line-pack:justify;align-content:space-between}
-.pass-options-wrap .option h3,.pass-options-wrap .option .items,.pass-options-wrap .option .buttondiv{width:100%}
+.pass-options-wrap .option h3{text-align:left}
+.pass-options-wrap .option h3,.pass-options-wrap .option .items,.pass-options-wrap .option .buttondiv{width:100%;text-align:left}
 .pass-options-wrap .option:last-child{margin-bottom:0}
-.pass-options-wrap .buttondiv{text-align:flex-start}
+.pass-options-wrap div.buttondiv{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .single-activity-options{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-top:35px;padding-left:20px;padding-right:20px}
 .single-activity-options .firstCol,.single-activity-options .secondCol{width:100%}
 .single-activity-options .option{font-size:17px;line-height:1.4;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-bottom:10px;position:relative}
@@ -4597,7 +4599,9 @@ section.visit .desc{padding:30px}
 section.visit .link{margin-left:30px}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options{padding:120px 5vw}
 .pass-options-wrap{margin-bottom:0}
+.pass-options-wrap h3{position:relative}
 .pass-options-wrap .option{margin-bottom:0;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;width:auto}
+.pass-options-wrap .option h3{text-align:none}
 .single-activity-options .firstCol,.single-activity-options .secondCol{width:48%}
 }@media screen and (min-width:820px){#banner.taxonomy-banner .static-banner img.desktop{display:block}
 #banner.taxonomy-banner .static-banner img.mobile{display:none}
@@ -4811,6 +4815,9 @@ body.logged-in.admin-bar .site-header{top:45px}
 }@media screen and (max-width:768px){.flex-container.slide-horizontal .flex-direction-nav li .prev,.flex-direction-nav li .prev{display:none}
 .flex-container.slide-horizontal .flex-direction-nav li .next,.flex-direction-nav li .next{display:none}
 .flexslider .flex-control-nav{display:none}
+.pass-options-wrap .wrap .options{margin-bottom:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:space-between;-ms-flex-align:space-between;align-items:space-between}
+.pass-options-wrap div.buttondiv{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.pass-options-wrap h3,.pass-options-wrap .buttondiv{text-align:center !important}
 }@media screen and (max-width:600px){section.route-stories .block .feat-image.no-image .bg:before{width:30vw;height:30vw}
 .topinfo .businessHours{left:-37vw}
 #section-featured-posts .block .feat-image.no-image .bg:before{width:30vw;height:30vw}

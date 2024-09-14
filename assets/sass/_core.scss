@@ -16803,6 +16803,10 @@ body.subpage.single.single-activity {
   @include tab {
     margin-bottom: 0;
   }
+  div.buttondiv {
+    display: flex;
+    justify-content: center;
+  }
   div.items, h3 {
     width: 100%;
   }
@@ -16813,6 +16817,9 @@ body.subpage.single.single-activity {
     text-transform: uppercase;
     color: #000;
     text-align: left;
+    @include tab {
+      position: relative;
+    }
   }
   .option {
     display: flex;
@@ -16836,15 +16843,36 @@ body.subpage.single.single-activity {
         justify-content: center;
       }
     }
+    h3 {
+      text-align: left;
+      @include tab {
+        text-align: none;
+      }
+    }
     h3, .items, .buttondiv {
       width: 100%;
+      text-align: left;
     }
   }
   .option:last-child {
     margin-bottom: 0;
   }
-  .buttondiv {
-    text-align: flex-start;
+  
+  div.buttondiv {
+    justify-content: flex-start;
+  }
+  @include max(768px) {
+    .wrap .options {
+      margin-bottom: 0;
+      display: flex;
+      align-items: space-between;
+    }
+    div.buttondiv {
+      justify-content: center;
+    }
+    h3, .buttondiv {
+      text-align: center!important;
+    }
   }
 }
 .single-activity-options {
