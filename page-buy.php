@@ -19,7 +19,7 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
 				<div class="intro-text"><?php the_content(); ?></div>
 			</div>
 		</div>
-	<?php endwhile;  ?>
+	
 
 	<?php
   $all_access_title = get_field("all_access_title");
@@ -154,6 +154,12 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
       <?php } ?>
     </div>
   </section>
+
+
+  <?php include( locate_template('parts/buy-repeater-blocks.php') );  ?>
+
+  
+  <?php endwhile;  ?>
 
 </div><!-- #primary -->
 

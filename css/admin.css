@@ -152,7 +152,9 @@ body.wp-admin.post-type-activity_schedule #poststuff #titlewrap {
   line-height: 1.1;
   font-weight: bold;
 }
-
+.acf-field-flexible-content[data-name="flexible_blocks"] [data-layout="image_cards"] .acf-fc-layout-handle:after {
+  content: "Image Cards";
+}
 
 /* Custom Icons */
 #customIconsContainer,
