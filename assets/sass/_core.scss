@@ -17265,10 +17265,16 @@ body.subpage.single.single-activity {
           z-index: 10;
           padding: 20px;
           font-family: $font-brandon-bold;
-          font-size: 2.75rem;
+          font-size: 2.2rem;
           line-height: 1.2;
           text-transform: uppercase;
           color: #FFF;
+          @include mid {
+            font-size: 2.5rem;
+          }
+          @include desk {
+            font-size: 2.75rem;
+          }
         }
         img {
           width: 100%;

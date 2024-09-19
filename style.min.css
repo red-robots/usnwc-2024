@@ -4258,7 +4258,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-image-cards-page .flexwrap .flexbox figure .image-link{display:block;text-decoration:none;position:relative;overflow:hidden;border-radius:20px;width:100%;padding-bottom:65%;-webkit-transition:all ease .3s;transition:all ease .3s}
 .section-image-cards-page .flexwrap .flexbox figure .image-link:before{content:"";display:block;width:100%;height:50%;position:absolute;bottom:0;left:0;z-index:2;opacity:.5;background:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0)),to(rgba(0,0,0,0.65)));background:linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,0.65) 100%)}
 .section-image-cards-page .flexwrap .flexbox figure .image-link:hover,.section-image-cards-page .flexwrap .flexbox figure .image-link:focus{-webkit-transform:translateY(-5px);transform:translateY(-5px);-webkit-box-shadow:0 10px 20px rgba(0,0,0,.18);box-shadow:0 10px 20px rgba(0,0,0,.18)}
-.section-image-cards-page .flexwrap .flexbox figure .image-title{position:absolute;left:0;bottom:0;z-index:10;padding:20px;font-family:"Brandon Bold";font-size:2.75rem;line-height:1.2;text-transform:uppercase;color:#fff}
+.section-image-cards-page .flexwrap .flexbox figure .image-title{position:absolute;left:0;bottom:0;z-index:10;padding:20px;font-family:"Brandon Bold";font-size:2.2rem;line-height:1.2;text-transform:uppercase;color:#fff}
 .section-image-cards-page .flexwrap .flexbox figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .section-image-cards-page .flexwrap .flexbox figure.noLink{border-radius:20px;padding-bottom:65%;overflow:hidden}
 .section-image-cards-page .flexwrap .flexbox figure.noLink:before{content:"";display:block;width:100%;height:100%;position:absolute;bottom:0;left:0;z-index:2;background:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0)),to(rgba(0,0,0,0.65)));background:linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,0.65) 100%)}
@@ -4723,6 +4723,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 #primary.buy-page.buy-page-new .access-pass-options .infobox{width:50%}
 .pass-options-wrap{gap:.85em}
 .section-image-cards-page{padding-left:5vw;padding-right:5vw}
+.section-image-cards-page .flexwrap .flexbox figure .image-title{font-size:2.5rem}
 }@media screen and (min-width:1025px){#primary .upcoming-posts .entry{width:33.333%}
 }@media(min-width:1200px){section.route-details .flexcol{width:25%}
 section.route-map .map-frame{height:60vh}
@@ -4744,6 +4745,7 @@ section.full-bleed-promo .info .words h2{font-size:80px;line-height:.8}
 section.visit .tile{margin-bottom:120px}
 section.visit .img h2{font-size:50px}
 .section-image-cards-page{padding-left:8vw;padding-right:8vw}
+.section-image-cards-page .flexwrap .flexbox figure .image-title{font-size:2.75rem}
 }@media(min-width:1300px){.information-tabs-wrap .tabs-info ul a span.arrow:before,.information-tabs-wrap .tabs-info ul a span.arrow:after{top:15px}
 section.homepage-hero .home-info .info h1{font-size:60px}
 section.full-bleed-promo .info .words h2{font-size:100px}
