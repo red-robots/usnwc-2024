@@ -34,11 +34,16 @@ if( is_page('waiver') ) {
 					<div class="page-header">
 						<h1 class="page-title"><?php the_title(); ?></h1>
 					</div>
+          <?php if ( get_the_content() ) { ?>
 					<div class="<?php echo $pageClass; ?>">
 						<?php the_content(); ?>
 					</div>
+          <?php } ?>
 				</div>
 			</section>
+
+
+      <?php get_template_part('parts/todays-snapshot-content') ?>
 
 		<?php endwhile; ?>
 
