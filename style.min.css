@@ -4262,6 +4262,27 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-image-cards-page .flexwrap .flexbox figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .section-image-cards-page .flexwrap .flexbox figure.noLink{border-radius:20px;padding-bottom:65%;overflow:hidden}
 .section-image-cards-page .flexwrap .flexbox figure.noLink:before{content:"";display:block;width:100%;height:100%;position:absolute;bottom:0;left:0;z-index:2;background:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0)),to(rgba(0,0,0,0.65)));background:linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,0.65) 100%)}
+.new-flexible-content{width:100%;float:left}
+.flexibleContentDiv{margin-bottom:50px}
+.flexibleContentDiv .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;background:#efefef;position:relative}
+.flexibleContentDiv .fxcol{min-height:450px;font-size:18px;line-height:1.4;position:relative}
+.flexibleContentDiv .imageCol{position:relative}
+.flexibleContentDiv .imageCol figure{margin:0;position:relative;overflow:hidden;padding-bottom:60%}
+.flexibleContentDiv .imageCol figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.flexibleContentDiv .textCol .inside{padding:20px}
+.flexibleContentDiv .textCol h2{font-family:"Brandon Bold";font-size:35px;line-height:1.2;text-transform:uppercase;margin:0 0 20px}
+.flexibleContentDiv .textCol p{color:#444}
+.flexibleContentDiv .textCol .button-gray{background-color:#fff;color:#444;text-transform:uppercase;font-size:15px;padding:8px 25px 7px;-webkit-box-shadow:0 4px 7px rgba(0,0,0,.15);box-shadow:0 4px 7px rgba(0,0,0,.15)}
+.flexibleContentDiv .textCol .button-gray:hover,.flexibleContentDiv .textCol .button-gray:focus{color:#fff !important;background-color:#ba0d30 !important}
+.flexibleContentDiv .textCol .custom-button-element{margin-top:15px;display:inline-block}
+.flexibleContentDiv .textCol p a:not(.button-gray):not(.button){display:inline-block;text-decoration:none;color:#444;font-size:15px;letter-spacing:.02em;text-transform:uppercase;position:relative;-webkit-transition:all ease .3s;transition:all ease .3s}
+.flexibleContentDiv .textCol p a:not(.button-gray):not(.button):after{content:"";display:block;width:100%;height:1px;background:#444;position:absolute;left:0;bottom:2px;-webkit-transition:all ease .3s;transition:all ease .3s}
+.flexibleContentDiv .textCol p a:not(.button-gray):not(.button):hover,.flexibleContentDiv .textCol p a:not(.button-gray):not(.button):focus{color:#ba0d30}
+.flexibleContentDiv .textCol p a:not(.button-gray):not(.button):hover:after,.flexibleContentDiv .textCol p a:not(.button-gray):not(.button):focus:after{background:#ba0d30}
+.flexibleContentDiv .textCol p a:not(.button-gray):not(.button):focus{outline:1px dotted #ba0d30}
+.flexibleContentDiv.image-position-left .imageCol figure{border-top-right-radius:15px;border-bottom-right-radius:15px}
+.flexibleContentDiv.image-position-right .imageCol figure{border-top-left-radius:15px;border-bottom-left-radius:15px}
+.flexibleContentDiv.half .fxcol{width:100%}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -4356,7 +4377,7 @@ body.subpage.single .intro-galleries.half .leftcol{width:30%}
 body.subpage.single .intro-galleries.half .leftcol .wrap{padding:15px}
 body.subpage.single .intro-galleries.half .leftcol .inner{max-width:80%}
 body.subpage.single .intro-galleries.half .rightcol{width:70%;padding-left:15px}
-.text-centered-section{padding-top:80px;padding-bottom:80px}
+.text-centered-section{padding-top:20px;padding-bottom:80px}
 .text-centered-section.dark{padding-top:80px;padding-bottom:80px}
 .section-content#section-options{padding-top:60px;padding-bottom:60px}
 .section-content#section-options .activities{width:70%;margin-bottom:0;padding-right:40px}
@@ -4724,6 +4745,17 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .pass-options-wrap{gap:.85em}
 .section-image-cards-page{padding-left:5vw;padding-right:5vw}
 .section-image-cards-page .flexwrap .flexbox figure .image-title{font-size:2.5rem}
+.flexibleContentDiv{margin-bottom:100px}
+.flexibleContentDiv .textCol .flexwrap{padding-left:6vw;padding-right:6vw}
+.flexibleContentDiv .imageCol{width:50%;height:100%;position:absolute;top:0}
+.flexibleContentDiv .imageCol figure{padding-bottom:0;width:100%;height:100%;position:absolute;top:0;left:0}
+.flexibleContentDiv .textCol{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.flexibleContentDiv .textCol .inside{padding:5vw 5vw}
+.flexibleContentDiv.image-position-left .flexwrap{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
+.flexibleContentDiv.image-position-left .imageCol{left:0}
+.flexibleContentDiv.image-position-right .flexwrap{-webkit-box-pack:flex-right;-ms-flex-pack:flex-right;justify-content:flex-right}
+.flexibleContentDiv.image-position-right .imageCol{right:0}
+.flexibleContentDiv.half .fxcol{width:50%}
 }@media screen and (min-width:1025px){#primary .upcoming-posts .entry{width:33.333%}
 }@media(min-width:1200px){section.route-details .flexcol{width:25%}
 section.route-map .map-frame{height:60vh}
@@ -4746,6 +4778,7 @@ section.visit .tile{margin-bottom:120px}
 section.visit .img h2{font-size:50px}
 .section-image-cards-page{padding-left:8vw;padding-right:8vw}
 .section-image-cards-page .flexwrap .flexbox figure .image-title{font-size:2.75rem}
+.flexibleContentDiv .textCol .flexwrap{padding-left:8vw;padding-right:8vw}
 }@media(min-width:1300px){.information-tabs-wrap .tabs-info ul a span.arrow:before,.information-tabs-wrap .tabs-info ul a span.arrow:after{top:15px}
 section.homepage-hero .home-info .info h1{font-size:60px}
 section.full-bleed-promo .info .words h2{font-size:100px}

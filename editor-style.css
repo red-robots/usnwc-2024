@@ -24,3 +24,11 @@
   transition: all ease .3s;
   border: none!important;
 }
+.custom-button-element a.button-gray {
+    background: #777777!important;
+    padding: 10px 22px 9px !important;
+    border-radius: 85px !important;
+}
+.page-template-page-flexible-content-new.mce-content-body h2 {
+  margin-top: 0!important;
+}

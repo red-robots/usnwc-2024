@@ -508,3 +508,90 @@ body.post-type-dining .inside.acf-fields:has(.acf-tab-wrap) .acf-field-date-pick
   float: left;
   clear: none;
 }
+
+[data-name="flexible_content"] [data-name="main_title"] {
+  padding-top: 0;
+  border-top: none;
+}
+[data-name="flexible_content"] [data-name="main_title"] .acf-label,
+[data-name="flexible_content"] [data-name="title_top"] .acf-label {
+  display: none;
+}
+[data-name="flexible_content"] [data-name="title_top"] .acf-label {
+  position: relative;
+}
+[data-name="flexible_content"] [data-name="title_top"]:before {
+  content:"Title";
+  display: block;
+  margin-bottom: 5px;
+}
+[data-name="flexible_content"] [data-name="main_title"] .acf-input-wrap input {
+  font-size: 20px;
+  font-weight: 600;
+}
+[data-name="flexible_content"] [data-name="main_title"] .acf-input-wrap {
+  position: relative;
+}
+[data-name="flexible_content"] [data-name="title_top"] {
+  padding-bottom: 7px!important;
+}
+[data-name="flexible_content"] .mce-toolbar .mce-btn[aria-label="Button Red"] {
+  display: none!important;
+}
+
+[data-name="flexible_content"] [data-name="content"]{
+  width: 62%;
+  float: left;
+  clear: none;
+}
+[data-name="flexible_content"] [data-name="image"] {
+  width: 37%;
+  float: left;
+  clear: none;
+}
+[data-name="flexible_content"] [data-name="image_position"] {
+  width: 37%;
+  float: left;
+  clear: none;
+}
+[data-name="flexible_content"] [data-name="image"] .show-if-value.image-wrap {
+  max-width: 100%!important;
+  width: 100%!important;
+}
+[data-name="flexible_content"] [data-name="image"] .show-if-value.image-wrap img {
+  width: 100%!important;
+  height: auto!important;
+}
+
+#wp-content-wrap .mce-toolbar .mce-btn[aria-label="Button Pill Shape"] {
+  display: none!important;
+}
+
+[data-layout="black_row"] [data-name="columnLeft"]{
+  width: 50%;
+  float: left;
+  clear: none;
+}
+[data-layout="black_row"] [data-name="columnRight"]{
+  width: 50%;
+  float: left;
+  clear: none;
+}
+[data-layout="image_card_middle"] [data-name="content_middle"] {
+  width: 62%;
+  float: left;
+  clear: none;
+}
+[data-layout="image_card_middle"] [data-name="featured_image"] {
+  width: 37%;
+  float: left;
+  clear: none;
+}
+[data-layout="image_card_middle"] [data-name="featured_image"] .show-if-value.image-wrap {
+  max-width: 100%!important;
+  width: 100%!important;
+}
+[data-layout="image_card_middle"] [data-name="featured_image"] .show-if-value.image-wrap img {
+  width: 100%!important;
+  height: auto!important;
+}

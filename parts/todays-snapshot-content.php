@@ -1,8 +1,6 @@
-<?php  
-  $infocolumns = get_field('infocolumns');
-  $image_cards = get_field('image_cards');
-?>
-
+<?php 
+$infocolumns = get_field('infocolumns');
+if ($infocolumns) { ?>
 <section class="section-snapshop snapshop-wrapper">
   <div class="wrapper">
     <div class="titlediv">
@@ -52,8 +50,11 @@
   <?php } ?>
 
 </section>
+<?php } ?>
 
-<?php if ($image_cards) { ?>
+<?php 
+$image_cards = get_field('image_cards');
+if ($image_cards) { ?>
 <section class="section-image-cards-page">
   <div class="wrapper">
     <div class="flexwrap">
