@@ -57,7 +57,8 @@ $placeholder = THEMEURI . 'images/rectangle.png';
 						<section id="two-columns-block_<?php echo $ctr ?>" class="two-columns-block text-and-image-blocks">
 							<div class="columns-2">
 								<?php $i=1; foreach ($content_columns as $col) {
-									$e_title = $col['title'];
+									$e_title_top = $col['title_top'];
+                  $e_title = $col['title'];
 									$e_text = $col['description']; 
 									$fullText = $col['description']; 
 									$shorttext = $col['shorttext']; 
@@ -87,9 +88,16 @@ $placeholder = THEMEURI . 'images/rectangle.png';
 											<div class="textcol">
 												<div class="inside">
 													<div class="info">
-														<?php if ($e_title) { ?>
-															<h3 class="mstitle"><?php echo $e_title ?></h3>
-														<?php } ?>
+                            <?php if ($e_title_top || $e_title) { ?>
+                            <div class="titlediv">
+                              <?php if ($e_title_top) { ?>  
+                                <div class="titletop"><?php echo $e_title_top ?></div>
+                              <?php } ?>
+  														<?php if ($e_title) { ?>
+  															<h3 class="mstitle"><?php echo $e_title ?></h3>
+  														<?php } ?>
+                            </div>
+                            <?php } ?>
 
 														<?php if ($e_text || $buttons) { ?>
 														<div class="textwrap text-center">

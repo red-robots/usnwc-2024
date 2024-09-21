@@ -2614,13 +2614,18 @@ body.single-instructions #primary #section-faqs{padding-top:60px;padding-bottom:
 .text-and-image-blocks .gallerycol .singlepic,.menu-sections .gallerycol .singlepic{width:100%;float:left}
 .text-and-image-blocks .gallerycol .singlepic img,.menu-sections .gallerycol .singlepic img{width:100%;height:auto;float:left}
 .text-and-image-blocks .textcol,.text-and-image-blocks .gallerycol,.menu-sections .textcol,.menu-sections .gallerycol{width:100%;position:relative;background:#f2f2f2}
-.text-and-image-blocks .textcol,.menu-sections .textcol{font-size:16px;line-height:1.5;text-align:center}
+.text-and-image-blocks .textcol,.menu-sections .textcol{font-size:16px;line-height:1.5;text-align:left;color:#444}
+.text-and-image-blocks .textcol h2,.text-and-image-blocks .textcol h3,.text-and-image-blocks .textcol p,.menu-sections .textcol h2,.menu-sections .textcol h3,.menu-sections .textcol p{text-align:left}
+.text-and-image-blocks .textcol p,.menu-sections .textcol p{color:#444}
 .text-and-image-blocks .textcol .inside,.menu-sections .textcol .inside{padding:5vw}
+.text-and-image-blocks .textcol .cta-buttons,.menu-sections .textcol .cta-buttons{text-align:left;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;gap:1em}
+.text-and-image-blocks .textcol .cta-buttons a,.menu-sections .textcol .cta-buttons a{margin:0}
 .text-and-image-blocks .textcol .mstitle,.menu-sections .textcol .mstitle{font-family:"Lato",sans-serif;font-size:30px;font-weight:500;line-height:1.2;margin:0 0 15px;text-transform:uppercase}
 .text-and-image-blocks .textcol .mstime,.menu-sections .textcol .mstime{font-size:20px;font-weight:600;line-height:1.2}
 .text-and-image-blocks .textcol .buttondiv,.menu-sections .textcol .buttondiv{margin-top:25px}
 .text-and-image-blocks .half .textcol,.text-and-image-blocks .half .gallerycol,.menu-sections .half .textcol,.menu-sections .half .gallerycol{width:100%}
 .text-and-image-blocks .half.even,.menu-sections .half.even{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}
+.text-and-image-blocks .mscol .textwrap,.text-and-image-blocks .mscol .info{text-align:left}
 #flexible-content .text-and-image-blocks{margin-top:30px}
 .text-and-gallery{width:100%;float:left;margin-top:50px}
 .text-and-gallery .mscol{margin-top:15px;margin-bottom:15px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}

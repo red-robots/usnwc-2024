@@ -5868,7 +5868,14 @@ body.single-instructions {
 	.textcol {
 		font-size: 16px;
     line-height: 1.5;
-    text-align: center;
+    text-align: left;
+    color: #444;
+    h2,h3,p {
+      text-align: left;
+    }
+    p {
+      color: #444;
+    }
 		.inside {
 			padding: 5vw;
 			@include tab {
@@ -5876,6 +5883,15 @@ body.single-instructions {
 				@include flexgroup-center();
 			}
 		}
+    .cta-buttons  {
+      text-align: left;
+      display: flex;
+      justify-content: flex-start;
+      gap: 1em;
+      a {
+        margin: 0 0;
+      }
+    }
 
 		.mstitle {
 			font-family: $font_secondary;
@@ -5918,7 +5934,12 @@ body.single-instructions {
 		}
 	}
 }
-
+.text-and-image-blocks {
+  .mscol .textwrap,
+  .mscol .info {
+    text-align: left;
+  }
+}
 
 #flexible-content .text-and-image-blocks {
 	margin-top: 30px;
