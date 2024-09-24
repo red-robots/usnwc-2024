@@ -13413,9 +13413,14 @@ body.page-template-page-race {
   p {
     font-size: 1.12rem;
   }
-  .column1, {
+  .column1 {
     @media screen and (min-width: 901px) {
-      padding-right: 30px;
+      padding-right: 15px;
+    }
+  }
+  .column2 {
+    @media screen and (min-width: 901px) {
+      padding-left: 15px;
     }
   }
 }
