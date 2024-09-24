@@ -13151,7 +13151,13 @@ body.page-template-page-race {
 	}
 }
 
+.fullwidth {
+  width: 100%;
+  float: left;
+}
 .flexibleContentWrap {
+  width: 100%;
+  float: left;
 	.column-style, .two-columns-block, .three-columns-block {
 		width: 100%;
 		float: left;
@@ -13248,7 +13254,6 @@ body.page-template-page-race {
 		}
 	}
 }
-
 .accomodations {
 	width: 100%;
 	float: left;
@@ -13346,7 +13351,6 @@ body.page-template-page-race {
 		}
 	}
 }
-
 .custom-message-banner {
 	background: transparent!important;
 	.innerTxt {
@@ -13374,6 +13378,46 @@ body.page-template-page-race {
 		height: 100%;
 		padding: 0 0;
 	}
+}
+.section-fullwidth-black {
+  width: 100%;
+  float: 50%;
+  background-color: #000;
+  color: #FFF!important;
+  .fxcol {
+    width: 50%;
+  }
+  .wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  div, span, h1,h2,h3,h4,h5,h6, p {
+    color: #FFF;
+  }
+  h2 {
+    font-family: $font-brandon-bold;
+    font-size: 2rem;
+    line-height: 1.3;
+    margin: 0 0;
+    text-transform: uppercase;
+    position: relative;
+    &:after {
+      content:"";
+      display: block;
+      width: 100px;
+      height: 2px;
+      background: $red;
+      margin-top: 30px;
+    }
+  }
+  p {
+    font-size: 1.12rem;
+  }
+  .column1, {
+    @media screen and (min-width: 901px) {
+      padding-right: 30px;
+    }
+  }
 }
 
 .team-staff-section {
