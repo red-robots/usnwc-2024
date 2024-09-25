@@ -68,7 +68,7 @@ if( is_faqs_visible() ) {
 					<div class="faqsItems">
 						<?php 
 						$faq_pageId = 157;
-						$max = 10;
+						$max = 3;
 						$totalFaqs = count($faqLists);
 						$faq_ids = array();
 						$n=1; foreach ($faqLists as $f) { 
@@ -78,22 +78,26 @@ if( is_faqs_visible() ) {
 							if($question && $answer) { 
 								$isFirst = ($n==1) ? ' first':'';
 								//$faqlimit = ($n>$max) ? ' hide-faq':'';
-								if($n<=$max) { $faq_ids[] = $faq_parent_id; ?>
-								<div data-faq-parent="<?php echo $faq_parent_id; ?>" class="faq-item collapsible<?php echo $isFirst ?>">
+                $isHide = ($n > $max) ? ' hide':'';
+								//if($n<=$max) { 
+                $faq_ids[] = $faq_parent_id; ?>
+								<div data-faq-parent="<?php echo $faq_parent_id; ?>" class="faq-item animated fadeIn collapsible<?php echo $isFirst.$isHide ?>">
 									<h3 class="option-name"><?php echo $question ?><span class="arrow"></span></h3>
 									<div class="option-text"><?php echo $answer ?></div>
 								</div>
-								<?php } ?>
+								<?php // } ?>
 							<?php $n++; } ?>
 						<?php } ?>
 
-						<?php if ($totalFaqs>$max) { 
+						<?php 
+            if ($totalFaqs>$max) { 
 							$faqparent = ($faq_ids) ? array_unique($faq_ids) : ''; 
 							$fpid = ( isset($faqparent[0]) && $faqparent[0] ) ? '?pid=' . $faqparent[0] : '';
+              $seeMoreLink = get_permalink($faq_pageId);
 						?>
 						<div class="morefaqs">
 							<!-- <a href="#" class="btn-sm btn-cta morefaqsBtn"><span>See More</span></a> -->
-							<a href="<?php echo get_permalink($faq_pageId); ?><?php echo $fpid?>" class="btn-sm xs"><span>See More</span></a>
+							<a href="javascript:void(0)" id="seeMoreFAQs" class="seeMoreFAQs btn-sm xs"><span>See More</span></a>
 						</div>
 						<?php } ?>
 					</div>	
@@ -107,6 +111,21 @@ if( is_faqs_visible() ) {
 			</div>
 		</div>
 	</section>
+
+  <script>
+    var seeMoreButton = document.getElementById('seeMoreFAQs');
+    seeMoreButton.addEventListener('click', function(){
+      var faqs = document.querySelectorAll('.faq-item');
+      if(faqs) {
+        faqs.forEach(function(item,index){
+          if(item.classList.contains('hide')) {
+            item.classList.remove('hide');
+          }
+        });
+      }
+      seeMoreButton.style.display="none";
+    });
+  </script>
 	<?php } ?>
 
 <?php } ?>
