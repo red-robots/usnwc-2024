@@ -29,12 +29,12 @@ pre {
 }
 body {
 	font-family: $font_primary;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.3;
-	color: #222222;
+	color: #444;
 }
 p {
-  color: #777777;
+  color: #555;
 }
 section, div {
 	&:focus {
@@ -992,9 +992,10 @@ body.nav-open {
 	.banner-bottom {
 		width: 100%;
 		position: absolute;
-		bottom: 0;
+		bottom: -5px;
 		left: 0;
 		z-index: 1000000;
+    overflow: hidden;
 		img {
 			width: 100%;
 		}
@@ -13381,11 +13382,14 @@ body.page-template-page-race {
 }
 .section-fullwidth-black {
   width: 100%;
-  float: 50%;
+  float: left;
   background-color: #000;
   color: #FFF!important;
   .fxcol {
-    width: 50%;
+    width: 100%;
+    @include tab {
+      width: 50%;
+    }
   }
   .wrapper {
     padding-top: 50px;
@@ -13416,6 +13420,14 @@ body.page-template-page-race {
   .column1 {
     @media screen and (min-width: 901px) {
       padding-right: 15px;
+    }
+    @media screen and (max-width: 900px) {
+      h2 {
+        font-family: $font-brandon-regular;
+        font-size: 2rem;
+        line-height: 1.3;
+        margin-bottom: 35px;
+      }
     }
   }
   .column2 {
@@ -13519,6 +13531,145 @@ body.page-template-page-race {
 		margin: 0 0 0;
 	}
 }
+
+.section-middle-card {
+  padding: 50px 30px;
+  @include mid {
+    padding: 10vw;
+  }
+  @include tab {
+    padding: 7vw;
+  }
+  .wrapper {
+    background: #F2F2F2;
+    padding: 0 0;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  .flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .fxcol {
+    width: 100%;
+    position: relative;
+    @include tab {
+      width: 50%;
+    }
+    h2 {
+      font-family: $font-brandon-bold;
+      font-size: 35px;
+      line-height: 1.2;
+      color: #000;
+      text-transform: uppercase;
+    }
+    h3, h4 {
+      font-family: $font_secondary;
+      font-weight: 600;
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
+      margin: 0 0;
+      color: #000;
+    }
+    h3 {
+      font-size: 20px;
+    }
+    h4 {
+      font-size: 18px;
+    }
+    &.left {
+      .inside {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 100%;
+        padding: 30px;
+        @include tab {
+          padding: 5vw;
+        }
+        @include mid {
+          padding: 3vw 4vw;
+        }
+        p {
+          font-size: 17px;
+        }
+        .top, .bottom {
+          width: 100%;
+        }
+        .bottom {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-end;
+          margin-top: 30px;
+          .wrap {
+            width: 100%;
+          }
+          .gform_wrapper {
+            margin-top: 20px;
+            .gfield input,
+            .gfield textarea {
+              transition: all ease .3s;
+              border: 1px solid #FFF;
+              &:focus {
+                outline: 0;
+                border: 1px solid #000;
+                box-shadow: 0 0 5px rgba(0,0,0,.15);
+              }
+            }
+          }
+          .gform_footer {
+            margin-top: 10px;
+            margin-bottom: 0;
+            padding-bottom: 0;
+          }
+          .gform_footer .button {
+            border: none;
+            background-color: #fff;
+            padding: 8px 25px 7px;
+            border-radius: 60px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, .16);
+            text-transform: uppercase;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.2;
+            &:before {
+              display: none;
+            }
+            &:hover, &:focus {
+              background-color: $red;
+              color: #FFF;
+            }
+          }
+        }
+      }
+    }
+    &.right {
+      figure {
+        margin: 0 0;
+        height: 100%;
+        padding: 20vh;
+        position: relative;
+        @include tab {
+          padding: 33vh;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+  }
+}
+
+
+
 
 body.single-race .filter-wrapper {
 	@media screen and (max-width: $tabwidth) {

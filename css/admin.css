@@ -595,3 +595,12 @@ body.post-type-dining .inside.acf-fields:has(.acf-tab-wrap) .acf-field-date-pick
   width: 100%!important;
   height: auto!important;
 }
+[data-name="flexible_content_page"] [data-layout="two_column_text"] [data-name="column1"],
+[data-name="flexible_content_page"] [data-layout="two_column_text"] [data-name="column2"] {
+  width: 48%!important;
+  float: left;
+  clear: none;
+}
+
+
+
