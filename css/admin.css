@@ -601,6 +601,9 @@ body.post-type-dining .inside.acf-fields:has(.acf-tab-wrap) .acf-field-date-pick
   float: left;
   clear: none;
 }
-
-
-
+.acf-flexible-content [data-name="staticImages"] [data-name="image1"],
+.acf-flexible-content [data-name="staticImages"] [data-name="image2"] {
+  width: 49%;
+  float: left;
+  clear:none;
+}

@@ -4319,6 +4319,14 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .flexibleContentDiv.image-position-left .imageCol figure{border-top-right-radius:15px;border-bottom-right-radius:15px}
 .flexibleContentDiv.image-position-right .imageCol figure{border-top-left-radius:15px;border-bottom-left-radius:15px}
 .flexibleContentDiv.half .fxcol{width:100%}
+.menu-sections-repeatable .mscol{min-height:400px}
+.fb-static-images .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;height:100%}
+.fb-static-images figure{margin:0;height:100%;position:relative}
+.fb-static-images figure img{width:100% !important;height:100% !important;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.fb-static-images.count-2 .flexwrap{height:100%}
+.fb-static-images.count-2.fb-static-images figure{padding-bottom:50%}
+.fb-static-images.count-2 figure{width:50%}
+.fb-static-images.count-2 figure:first-child{left:-3px}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -4750,7 +4758,7 @@ section.teasers .fullwidth-image .fullwidth-image__text h3.mobile{display:none}
 body.subpage .site-header{background:#fff;height:75px;position:fixed;top:0;left:0;z-index:99999;-webkit-transform:none;transform:none}
 body.subpage .site-header .navbar{position:fixed;top:0;left:0;width:100%}
 body.subpage .site-header .navbar .logo img{-webkit-filter:invert(1);filter:invert(1)}
-body.subpage .site-content{padding-top:0}
+body.subpage .site-content{padding-top:20px}
 body.logged-in.admin-bar.subpage .site-header{top:0 !important}
 body.logged-in.admin-bar.subpage .site-header .navbar{top:32px !important;background-color:#fff}
 body.logged-in.admin-bar.subpage .film-event-status{top:105px}
@@ -4837,6 +4845,9 @@ section.full-bleed-promo .info .words h2{font-size:100px}
 }@media screen and (max-width:1100px){.repeatable-section.section-image-cards .inner-content{padding-left:25px;padding-right:25px}
 }@media screen and (max-width:1070px){.navigation__children.open .childNavCloseBtn{display:block;-webkit-animation-name:fadeIn;animation-name:fadeIn}
 }@media screen and (max-width:1024px){.repeatable-section.section-image-cards .imagecard{width:50%}
+.menu-sections-repeatable .fb-static-images.count-2 .flexwrap{height:100%}
+.menu-sections-repeatable .textcol{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.fb-static-images.count-2.fb-static-images figure{padding-bottom:35%}
 }@media screen and (max-width:1000px){.filter-wrapper.non-facetwp.options4 .select-wrap{max-width:50%}
 .filter-wrapper.with-reset-btn .resetBtn{position:relative !important;top:0;right:14px}
 }@media screen and (max-width:999px){.page-activity-passes .pass-types{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}

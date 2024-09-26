@@ -5,6 +5,7 @@
 $placeholder = THEMEURI . 'images/rectangle.png';
 $banner = get_field("flexslider_banner");
 $has_banner = ($banner) ? 'hasbanner':'nobanner';
+$post_id = get_the_ID();
 get_header(); ?>
 <div id="primary" class="content-area-full <?php echo $has_banner ?>">
 	<main id="main" class="site-main fw-left" role="main">
@@ -19,6 +20,8 @@ get_header(); ?>
 				</div>
 			</section>
 			<?php } ?>
+
+      <?php endwhile; ?>
 
 			<?php get_template_part("parts/subpage-tabs"); ?>
 
@@ -50,87 +53,98 @@ get_header(); ?>
 			<?php } ?>
 
 
-			<?php
-			/* RESTAURANTS */
-			$sections = get_field("section_3"); ?>
-			<?php if ($sections) { ?>
-			<section class="menu-sections">
-				<div class="columns-2">
-				<?php $i=1; foreach ($sections as $s) { 
-					// echo '<pre>';
-					// print_r($s);
-					// echo '<pre>';
-					$e_title = $s['entrytitle'];
-					$e_text = $s['entrytext'];
-					$e_time = $s['entrytime'];
-					// $linktype = ($s['entry_linktype']) ? $s['entry_linktype'] : '';
-					// $link_field = ($linktype) ? 'entry_'.$linktype : '';
-					// $link_val = ($link_field) ? $s[$link_field] : '';
-					$slides = $s['entryslides'];
-					$boxClass = ( ($e_title || $e_text) && $slides ) ? 'half':'full';
-					if( ($e_title || $e_text) || $slides) {  $colClass = ($i % 2) ? ' odd':' even'; ?>
-					<div id="section<?php echo $i?>" data-section="<?php echo $e_title ?>" class="mscol <?php echo $boxClass.$colClass ?>">
-							<?php if ( $e_title || $e_text ) { ?>
-							<div class="textcol">
-								<div class="inside">
+		  <?php if( have_rows('section_3') ) { ?>
+        <?php $i=1; while( have_rows('section_3') ): the_row(); ?>
+        <?php if( get_row_layout() == 'entry' ) { ?>
+          <?php  
+            $e_title = get_sub_field('entrytitle');
+            $e_text = get_sub_field('entrytext');
+            $e_time = get_sub_field('entrytime');
+            $slides = get_sub_field('entryslides');
+            $staticImages = get_sub_field('staticImages');
+            $image_display_type = get_sub_field('image_display_type');
+            $boxClass = ( ($e_title || $e_text) && $slides ) ? 'half':'full';
+            $id = get_the_ID();
+          ?>
 
-									<div class="info">
-										<?php if ($e_title) { ?>
-											<h3 class="mstitle"><?php echo $e_title ?></h3>
-										<?php } ?>
+          <section class="menu-sections menu-sections-repeatable">
+            <div class="columns-2">
 
-										<?php if ($e_text || $e_time) { ?>
-											<div class="textwrap">
-												<?php if ($e_text) { ?>
-													<div class="mstext"><?php echo $e_text ?></div>
-												<?php } ?>
+              <?php if( ($e_title || $e_text) || $slides) {  $colClass = ($i % 2) ? ' odd':' even'; ?>
+              <div id="section-section_3_<?php echo $i?>" data-section="<?php echo $e_title ?>" class="mscol <?php echo $boxClass.$colClass ?>">
+                <?php if ( $e_title || $e_text ) { ?>
+                <div class="textcol">
+                  <div class="inside">
+                    <div class="info">
+                      <?php if ($e_title) { ?>
+                        <h3 class="mstitle"><?php echo $e_title ?></h3>
+                      <?php } ?>
+
+                      <?php if ($e_text || $e_time) { ?>
+                      <div class="textwrap">
+                        <?php if ($e_text) { ?>
+                          <div class="mstext"><?php echo $e_text ?></div>
+                        <?php } ?>
+
+                        <?php if ($e_time) { ?>
+                          <?php if (strpos($e_time, '[get_hours') !== false) { ?>
+                            <?php if ( do_shortcode($e_time) ) { ?>
+                              <div class="mstime shcode"><?php echo do_shortcode($e_time); ?></div>
+                            <?php } ?>
+                          <?php } else { ?>
+                            <div class="mstime"><?php echo $e_time ?></div>
+                          <?php } ?>
+                        <?php } ?>
+                      </div>
+                      <?php } ?>
+                    </div>
+                  </div>
+                </div>
+                <?php } ?>
+
+                <?php if ($image_display_type=='slider') { ?>
+                  
+                  <?php if ( $slides ) { ?>
+                  <div class="gallerycol">
+                    <div class="flexslider">
+                      <ul class="slides">
+                        <?php $helper = THEMEURI . 'images/rectangle-narrow.png'; ?>
+                        <?php foreach ($slides as $s) { ?>
+                          <li class="slide-item" style="background-image:url('<?php echo $s['url']?>')">
+                            <img src="<?php echo $helper ?>" alt="" aria-hidden="true" class="placeholder">
+                            <img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>" class="actual-image" />
+                          </li>
+                        <?php } ?>
+                      </ul>
+                    </div>
+                  </div>  
+                  <?php } ?>
+
+                <?php } else { ?>
+                  <?php 
+                  $image1 = ( isset($staticImages['image1']) && $staticImages['image1'] ) ? $staticImages['image1']['url'] : ''; 
+                  $image2 = ( isset($staticImages['image2']) && $staticImages['image2'] ) ? $staticImages['image2']['url'] : '';
+                  $imagesArr = array($image1,$image2);
+                  if( $images = array_filter($imagesArr) ) { ?>
+                    <div class="gallerycol fb-static-images count-<?php echo count($images) ?>">
+                      <div class="flexwrap">
+                        <?php foreach ($images as $imgUrl) { ?>
+                        <figure><img src="<?php echo $imgUrl ?>" alt=""></figure>  
+                        <?php } ?>
+                      </div>
+                    </div>
+                  <?php } ?>
+                <?php } ?>
+              </div>
+              <?php } ?>  
 
 
-												<?php if ($e_time) { ?>
-													<?php if (strpos($e_time, '[get_hours') !== false) { ?>
-														<?php if ( do_shortcode($e_time) ) { ?>
-															<div class="mstime shcode"><?php echo do_shortcode($e_time); ?></div>
-														<?php } ?>
-													<?php } else { ?>			
-														<div class="mstime"><?php echo $e_time ?></div>
-													<?php } ?>
-
-												<?php } ?>
-											</div>
-										<?php } ?>
-
-										<?php 
-											include('parts/fb-button-multiple.php'); 
-											//include('parts/fb-button-single.php'); 
-										?>
-									</div><!-- .info -->
-
-								</div><!-- .inside -->
-							</div><!-- .textcol -->	
-							<?php } ?>
-
-							<?php if ( $slides ) { ?>
-							<div class="gallerycol">
-								<div class="flexslider">
-									<ul class="slides">
-										<?php $helper = THEMEURI . 'images/rectangle-narrow.png'; ?>
-										<?php foreach ($slides as $s) { ?>
-											<li class="slide-item" style="background-image:url('<?php echo $s['url']?>')">
-												<img src="<?php echo $helper ?>" alt="" aria-hidden="true" class="placeholder">
-												<img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>" class="actual-image" />
-											</li>
-										<?php } ?>
-									</ul>
-								</div>
-							</div>	
-							<?php } ?>
-
-					</div>
-					<?php $i++; } ?>
-				<?php } ?>
-				</div>
-			</section>	
-			<?php } ?>
+            </div>
+          </section>
+        <?php } ?>
+        
+        <?php $i++; endwhile;  ?>
+      <?php } ?>
 
 			<?php 
 			/* MAP */
@@ -153,7 +167,7 @@ get_header(); ?>
 			</section>
 			<?php } ?>
 
-		<?php endwhile; ?>
+		
 	</main><!-- #main -->
 </div><!-- #primary -->
 
