@@ -275,11 +275,13 @@ nav.new-nav {
 		    overflow: hidden;
 		    .menu-col {
 		    	white-space: nowrap;
-		    	margin-right: 60px;
 		    	width: auto;
 		    	transform: translateY(0);
 		    	transition: all ease .5s;
+          text-wrap: wrap;
 		    	opacity: 1;
+          padding-left: 10px;
+          padding-right: 10px;
 		    	&.menu-col {
 		    		
 		    	}

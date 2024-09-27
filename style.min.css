@@ -1801,7 +1801,7 @@ nav.new-nav .has-children a:after{font-family:FontAwesome;content:"";padding-
 nav.new-nav .mega-menu{height:auto;position:absolute;left:0;top:100%;width:100vw;background-color:#fff;z-index:1;-webkit-transition:all ease .2s;transition:all ease .2s;overflow:hidden}
 nav.new-nav .mega-menu.show{height:1000px;-webkit-transform:translateY(0);transform:translateY(0);opacity:1;display:block}
 nav.new-nav .mega-menu .mega-menu-content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:nowrap;flex-wrap:nowrap;padding:60px 40px;width:100%;position:relative;overflow:hidden}
-nav.new-nav .mega-menu .mega-menu-content .menu-col{white-space:nowrap;margin-right:60px;width:auto;-webkit-transform:translateY(0);transform:translateY(0);-webkit-transition:all ease .5s;transition:all ease .5s;opacity:1}
+nav.new-nav .mega-menu .mega-menu-content .menu-col{white-space:nowrap;width:auto;-webkit-transform:translateY(0);transform:translateY(0);-webkit-transition:all ease .5s;transition:all ease .5s;text-wrap:wrap;opacity:1;padding-left:10px;padding-right:10px}
 nav.new-nav .mega-menu .mega-menu-content .menu-col.is-hovered{-webkit-transform:translateY(50px);transform:translateY(50px);opacity:0}
 nav.new-nav .mega-menu .mega-menu-content ul{margin:0;padding:0;width:auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 nav.new-nav .mega-menu .mega-menu-content li{list-style:none;top:140px}
