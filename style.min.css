@@ -4340,11 +4340,11 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 #customModalContainer .activity-schedule-modal .modal-title h2,#customModalContainer .activity-schedule-modal .modal-title p{color:#fff !important;margin:0}
 #customModalContainer .activity-schedule-modal .modal-title h2{font-size:25px;font-weight:500;line-height:1.2;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
 #customModalContainer .activity-schedule-modal .modal-title .hours-info .pass-hours{position:relative;border-left:1px solid rgba(255,255,255,.35);padding-left:8px;margin-left:8px}
-#customModalContainer .activity-schedule-modal .modal-body{padding:20px}
+#customModalContainer .activity-schedule-modal .modal-body{padding:30px 20px}
 #customModalContainer .activity-schedule-modal .note{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-bottom:15px}
 #customModalContainer .activity-schedule-modal .note .inner{border:1px solid #ccc;padding:8px 14px;font-size:15px;font-style:italic;line-height:1.3}
 #customModalContainer .activity-schedule-modal .legend{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1em}
-#customModalContainer .activity-schedule-modal .legend span{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;position:relative;top:-2px}
+#customModalContainer .activity-schedule-modal .legend span{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;position:relative;top:-4px}
 #customModalContainer .activity-schedule-modal .legend span:before{content:"";display:inline-block;width:7px;height:7px;border-radius:100px;background:#ccc;margin-right:4px}
 #customModalContainer .activity-schedule-modal .legend span.open:before{background:#4fb206}
 #customModalContainer .activity-schedule-modal .legend span.closed:before{background:#e60606}
