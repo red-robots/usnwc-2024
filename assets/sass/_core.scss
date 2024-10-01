@@ -17861,7 +17861,7 @@ body.subpage.single.single-activity {
       }
     }
     .modal-body {
-      padding: 20px;
+      padding: 30px 20px;
     }
     .note {
       display: flex;
@@ -17975,6 +17975,7 @@ body.subpage.single.single-activity {
       padding-left: 10px;
       display: flex;
       justify-content: space-between;
+      margin: 6px 0px;
       &:after {
         content:"";
         display: block;

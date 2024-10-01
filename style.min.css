@@ -4359,7 +4359,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .activity-schedule-modal .schedule-container .fxcol{width:100%;color:#000}
 .activity-schedule-modal .schedule-container .items{margin-bottom:2.5em}
 .activity-schedule-modal .schedule-container .activity-name{margin-bottom:7px;text-transform:uppercase;font-family:"Brandon Medium";font-size:18px;line-height:1.2}
-.activity-schedule-modal .schedule-container .line-item{position:relative;padding-left:10px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.activity-schedule-modal .schedule-container .line-item{position:relative;padding-left:10px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin:6px 0}
 .activity-schedule-modal .schedule-container .line-item:after{content:"";display:block;width:calc(100% - 30px);border-bottom:1px dashed #ccc;position:absolute;left:18px;bottom:6px}
 .activity-schedule-modal .schedule-container .line-item span{display:inline-block;position:relative;background:#fff;z-index:3;font-size:15px}
 .activity-schedule-modal .schedule-container .line-item .stat{display:inline-block;width:6px;height:6px;position:absolute;top:6px;left:0;border-radius:100px}
