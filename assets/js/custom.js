@@ -1068,6 +1068,22 @@ jQuery(document).ready(function ($) {
         $(this).appendTo('.single-activity-options .secondCol');
       }
     });
+  } //Today's Snapshot (Hours > Activity Schedule) pop-up
+
+
+  $(document).on('click', '.popupSchedule', function (e) {
+    e.preventDefault();
+    $('#customModalContainer').addClass('open');
+  });
+  $(document).on('click', '#customModalClose', function (e) {
+    e.preventDefault();
+    $('#customModalContainer').removeClass('open');
+  });
+
+  if ($('.activity-schedule-modal').length && $('#customModalContainer').length) {
+    if ($('#customModalContent .activity-schedule-modal').length == 0) {
+      $('.activity-schedule-modal').appendTo('#customModalContent');
+    }
   }
 }); // END #####################################    END
 "use strict";

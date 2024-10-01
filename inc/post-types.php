@@ -475,6 +475,15 @@ function build_taxonomies() {
       'query_var' => false,
       'show_admin_column'=>1
     ),
+    array(
+      'post_type' => array('activity_schedule'),
+      'menu_name' => 'Locations',
+      'plural'    => 'Locations',
+      'single'    => 'Location',
+      'taxonomy'  => 'whitewater-location',
+      'query_var' => false,
+      'show_admin_column'=>1
+    ),
     // array(
     //   'post_type' => array('jam-programs'),
     //   'menu_name' => 'Programming',

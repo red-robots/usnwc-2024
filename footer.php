@@ -73,6 +73,14 @@
 	</footer><!-- #colophon -->
 	
 </div><!-- #page -->
+
+<div id="customModalContainer">
+  <div id="customModalInner">
+    <div id="customModalContent"></div>
+    <button id="customModalClose" aria-label="Close Modal"></button>
+  </div>
+</div>
+
 <div id="loaderDiv"> <div class="loaderInline"> <div class="sk-chase"> <div class="sk-chase-dot"></div> <div class="sk-chase-dot"></div> <div class="sk-chase-dot"></div> <div class="sk-chase-dot"></div> <div class="sk-chase-dot"></div> <div class="sk-chase-dot"></div> </div> </div> </div>
 
 <?php wp_footer(); ?>

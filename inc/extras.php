@@ -1147,6 +1147,18 @@ function get_page_id_by_permalink($url) {
     }
 }
 
+function getActivityScheduleToday($locationSlug) {
+  global $wpdb;
+  $wp = $wpdb->prefix;
+  $todayDate = date('Ymd');
+  $query = "SELECT p.ID, meta.meta_value AS event_schedule, term.term_id, term.name AS term_name FROM {$wp}posts p, {$wp}postmeta meta, {$wp}term_relationships rel, {$wp}terms term  
+            WHERE p.ID=meta.post_id AND meta.meta_key='eventDateSchedule' AND meta.meta_value='{$todayDate}' 
+            AND p.post_status='publish' AND p.post_type='activity_schedule' AND p.ID=rel.object_id 
+            AND rel.term_taxonomy_id=term.term_id AND term.slug='{$locationSlug}'";
+  $result = $wpdb->get_row($query);
+  return $result;
+}
+
 function get_categories_by_page_id($post_id,$taxonomy,$related=null) {
     global $wpdb;
     $related_posts = array();
@@ -1373,15 +1385,41 @@ function get_template_by_id($post_id,$template=null) {
     return ($result) ? $result->ID : '';
 }
 
+// $post = get_post(63946);
+// $terms = get_the_terms( $post, 'whitewater-location' );
+// echo "<pre>";
+// print_r($terms);
+// echo "</pre>";
+
+
+function activity_location_catid($post_id) {
+  global $wpdb;
+  $query = "SELECT term.* FROM ".$wpdb->prefix."term_relationships rel, ".$wpdb->prefix."terms term 
+            WHERE rel.term_taxonomy_id=term.term_id AND rel.object_id=".$post_id;
+  $result = $wpdb->get_row($query);
+  return $result;
+}
+
 add_action('acf/save_post', 'my_custom_acf_save_post');
 function my_custom_acf_save_post( $post_id ) {
     $post_type = get_post_type($post_id);
     if($post_type=='activity_schedule') {
         /* Update slug when event date is changed */
         $event_date = get_field("eventDateSchedule");
+
+
+
+
         if($event_date) {
             $post_title = date('l, F jS, Y',strtotime($event_date));
             $post_slug = sanitize_title($event_date);
+
+            $term = activity_location_catid($post_id);
+            if($term) {
+              $post_title .= ' - ' . $term->name;
+              $post_slug .= '-' . $term->slug;
+            }
+
             $my_post = array(
                 'ID'            =>  $post_id,
                 'post_title'    => $post_title,
@@ -1391,6 +1429,9 @@ function my_custom_acf_save_post( $post_id ) {
         }
     }
 }
+
+
+
 
 /* Shortcode for Company Name */
 function contact_shortcode_company_name( $atts ){

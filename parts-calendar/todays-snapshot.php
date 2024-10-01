@@ -53,6 +53,7 @@
             <div class="flexwrap">
             <?php foreach ($infocolumns as $c) { 
               $v_title = $c['title'];
+              $v_title_slug = ($v_title) ? sanitize_title($v_title) : '';
               $v_text = $c['text'];
               $v_link = $c['link'];
               $nLink = ( isset($v_link['url']) && $v_link['url'] ) ? $v_link['url'] : '';
@@ -74,8 +75,169 @@
 
                   <?php if ($nLink && $nTitle) { ?>
                   <div class="link">
-                    <a href="<?php echo $nLink ?>" target="<?php echo $nTarget ?>"><?php echo $nTitle ?> <i class="fa-light fa-angle-right"></i></a>
+                    <?php  
+                    if ( (strpos($nLink, '#') !== false) && (strpos($v_title_slug, 'hours') !== false) ) {
+                      //Get Activity Schedule
+                      $slug = str_replace('#','', trim($nLink));
+                      $data = getActivityScheduleToday($slug); ?>
+                      <?php if($data) { ?>
+                        <a href="javascript:void(0)" class="popupSchedule"><?php echo $nTitle ?> <i class="fa-light fa-angle-right"></i></a>
+
+                        <!-- ACTIVITY SCHEDULE -->
+                        <div class="activity-schedule-modal">
+                          <?php  
+                          $pid = $data->ID;
+                          $schedule = get_field('eventDateSchedule', $pid);
+                          $phFrom = get_field('pass_hours_from', $pid);
+                          $phTo = get_field('pass_hours_to', $pid);
+                          $note = get_field('note', $pid);
+                          $pass = array($phFrom, $phTo);
+                          $pass_hours = ( $pass && array_filter($pass) ) ? array_filter($pass):'';
+                          if( $pass_hours ) {
+                            if( count($pass_hours) == 1 ) {
+                              $pass_hours = $pass_hours[0];
+                            } else {
+                              $pass_hours = implode(' - ', $pass_hours);
+                            }
+                          }
+                          $today_date = date('l, F d');
+                          $schedules1  = get_field('schedules', $pid);
+                          $schedules2  = get_field('schedules_2', $pid);
+                          $column_class = ($schedules1 && $schedules2) ? 'half':'full';
+                          ?>
+                          <div class="modal-title">
+                            <h2>Activity Schedule</h2>
+                            <p class="hours-info">
+                              <?php echo $today_date ?>
+                              <?php if ( $pass_hours ) { ?>
+                              <span class="pass-hours">
+                                Pass Hours: <span><?php echo strtoupper($pass_hours) ?></span>
+                              </span>
+                              <?php } ?>
+                            </p>
+                          </div>
+                          <div class="modal-body">
+                            <?php if ($note) { ?>
+                             <div class="note">
+                                <div class="inner">
+                                  <?php echo $note ?>
+                                </div>
+                             </div> 
+                            <?php } ?>
+                            <div class="legend">
+                              <span class="open">Activity Open</span>
+                              <span class="closed">Activity Closed</span>
+                            </div>
+
+                            <?php if($schedules1 || $schedules2 ) { ?>
+                            <div class="schedule-container <?php echo $column_class ?>">
+                              
+                              <?php if ($schedules1) { ?>
+                              <div class="fxcol column1">
+                                <?php foreach ($schedules1 as $s) { 
+                                  $name = $s['group_name'];
+                                  $activities = $s['items'];
+                                  if($name || $activities) { ?>
+                                  <div class="items">
+                                    <?php if ($name) { ?>
+                                    <div class="activity-name"><?php echo $name ?></div>
+                                    <?php } ?>
+
+                                    <?php if ($activities) { ?>
+                                    <div class="activities">
+                                      <?php foreach ($activities as $a) { 
+                                        $i_name = $a['name'];
+                                        $i_start_time = $a['start_time'];
+                                        $i_end_time = $a['end_time'];
+                                        $i_status = $a['status'];
+                                        $timeArr = array($i_start_time, $i_end_time);
+                                        $time = '';
+                                        if($timeArr && array_filter($timeArr)) {
+                                          $arrs = array_filter($timeArr);
+                                          if( count($arrs) == 1 ) {
+                                            $time = $timeArr[0];
+                                          } else {
+                                            $time = implode(' - ', $arrs);
+                                          }
+                                        }
+                                        if($i_name) { ?>
+                                        <div class="line-item">
+                                          <span class="stat <?php echo $i_status ?>"></span>
+                                          <span class="name"><?php echo $i_name ?></span>
+                                          <?php if ($time) { ?>
+                                          <span class="time"><?php echo strtoupper($time) ?></span>
+                                          <?php } ?>
+                                        </div>
+                                        <?php } ?>
+                                      <?php } ?>
+                                    </div>
+                                    <?php } ?>
+                                  </div>
+
+                                  <?php } ?>
+                                <?php } ?>
+                              </div>
+                              <?php } ?>
+
+                              <?php if ($schedules2) { ?>
+                              <div class="fxcol column2">
+                                <?php foreach ($schedules2 as $s) { 
+                                  $name = $s['group_name'];
+                                  $activities = $s['items'];
+                                  if($name || $activities) { ?>
+                                  <div class="items">
+                                    <?php if ($name) { ?>
+                                    <div class="activity-name"><?php echo $name ?></div>
+                                    <?php } ?>
+
+                                    <?php if ($activities) { ?>
+                                    <div class="activities">
+                                      <?php foreach ($activities as $a) { 
+                                        $i_name = $a['name'];
+                                        $i_start_time = $a['start_time'];
+                                        $i_end_time = $a['end_time'];
+                                        $i_status = $a['status'];
+                                        $timeArr = array($i_start_time, $i_end_time);
+                                        $time = '';
+                                        if($timeArr && array_filter($timeArr)) {
+                                          $arrs = array_filter($timeArr);
+                                          if( count($arrs) == 1 ) {
+                                            $time = $timeArr[0];
+                                          } else {
+                                            $time = implode(' - ', $arrs);
+                                          }
+                                        }
+                                        if($i_name) { ?>
+                                        <div class="line-item">
+                                          <span class="stat <?php echo $i_status ?>"></span>
+                                          <span class="name"><?php echo $i_name ?></span>
+                                          <?php if ($time) { ?>
+                                          <span class="time"><?php echo strtoupper($time) ?></span>
+                                          <?php } ?>
+                                        </div>
+                                        <?php } ?>
+                                      <?php } ?>
+                                    </div>
+                                    <?php } ?>
+                                  </div>
+
+                                  <?php } ?>
+                                <?php } ?>
+                              </div>
+                              <?php } ?>
+
+                            </div>      
+                            <?php } ?>
+
+                          </div>
+                        </div>
+
+                      <?php } ?>
+                    <?php } else { ?>
+                      <a href="<?php echo $nLink ?>" target="<?php echo $nTarget ?>"><?php echo $nTitle ?> <i class="fa-light fa-angle-right"></i></a>
+                    <?php } ?>
                   </div>
+
                   <?php } ?>
                 </div>
               </div>  

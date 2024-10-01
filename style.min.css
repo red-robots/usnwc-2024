@@ -4330,6 +4330,45 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .calendar-grid-wrapper .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-month__day-cell--mobile{display:inline-block !important;visibility:visible !important;position:absolute;top:0;left:-7px;height:auto;width:50px;background-color:transparent !important}
 .calendar-grid-wrapper .tribe-events-calendar-month__day--other-month .tribe-events-calendar-month__day-cell h3 time{color:#acacac !important}
 .calendar-grid-wrapper .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-month__day{padding-top:25px}
+.activity-schedule-modal{display:none}
+#customModalContainer{position:fixed;top:0;left:0;width:100%;height:100%;overflow:auto;background-color:rgba(0,0,0,.85);padding:20px;z-index:99999999;display:none;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+#customModalContainer #customModalInner{position:relative;padding:0;border-radius:20px;background:#fff;min-height:400px;max-width:1000px;width:100%;margin:0 auto;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
+#customModalContainer.open{display:-webkit-box;display:-ms-flexbox;display:flex}
+#customModalContainer.open #customModalInner{-webkit-animation-delay:.1s;animation-delay:.1s;-webkit-animation-name:fadeInDown;animation-name:fadeInDown}
+#customModalContainer .activity-schedule-modal{display:block;overflow:hidden;border-radius:20px 20px 0 0}
+#customModalContainer .activity-schedule-modal .modal-title{background:#707070;color:#fff;text-align:center;padding:25px 15px}
+#customModalContainer .activity-schedule-modal .modal-title h2,#customModalContainer .activity-schedule-modal .modal-title p{color:#fff !important;margin:0}
+#customModalContainer .activity-schedule-modal .modal-title h2{font-size:25px;font-weight:500;line-height:1.2;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+#customModalContainer .activity-schedule-modal .modal-title .hours-info .pass-hours{position:relative;border-left:1px solid rgba(255,255,255,.35);padding-left:8px;margin-left:8px}
+#customModalContainer .activity-schedule-modal .modal-body{padding:20px}
+#customModalContainer .activity-schedule-modal .note{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-bottom:15px}
+#customModalContainer .activity-schedule-modal .note .inner{border:1px solid #ccc;padding:8px 14px;font-size:15px;font-style:italic;line-height:1.3}
+#customModalContainer .activity-schedule-modal .legend{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1em}
+#customModalContainer .activity-schedule-modal .legend span{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;position:relative;top:-2px}
+#customModalContainer .activity-schedule-modal .legend span:before{content:"";display:inline-block;width:7px;height:7px;border-radius:100px;background:#ccc;margin-right:4px}
+#customModalContainer .activity-schedule-modal .legend span.open:before{background:#4fb206}
+#customModalContainer .activity-schedule-modal .legend span.closed:before{background:#e60606}
+#customModalContainer #customModalContent{border-radius:20px}
+#customModalContainer #customModalClose{-webkit-appearance:none;-moz-appearance:none;appearance:none;display:block;border:0;padding:0;width:33px;height:33px;background-color:transparent;z-index:10;position:absolute;top:10px;right:10px}
+#customModalContainer #customModalClose:before,#customModalContainer #customModalClose:after{content:"";display:block;width:88%;height:2px;background:#fff;position:absolute;top:16px;left:2px}
+#customModalContainer #customModalClose:before{-webkit-transform:rotate(45deg);transform:rotate(45deg)}
+#customModalContainer #customModalClose:after{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
+#customModalContainer #customModalClose:hover,#customModalContainer #customModalClose:focus{opacity:.5}
+#customModalContainer #customModalClose:focus{border:1px dotted #ccc}
+.activity-schedule-modal .schedule-container{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-top:40px}
+.activity-schedule-modal .schedule-container .fxcol{width:100%;color:#000}
+.activity-schedule-modal .schedule-container .items{margin-bottom:2.5em}
+.activity-schedule-modal .schedule-container .activity-name{margin-bottom:7px;text-transform:uppercase;font-family:"Brandon Medium";font-size:18px;line-height:1.2}
+.activity-schedule-modal .schedule-container .line-item{position:relative;padding-left:10px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.activity-schedule-modal .schedule-container .line-item:after{content:"";display:block;width:calc(100% - 30px);border-bottom:1px dashed #ccc;position:absolute;left:18px;bottom:6px}
+.activity-schedule-modal .schedule-container .line-item span{display:inline-block;position:relative;background:#fff;z-index:3;font-size:15px}
+.activity-schedule-modal .schedule-container .line-item .stat{display:inline-block;width:6px;height:6px;position:absolute;top:6px;left:0;border-radius:100px}
+.activity-schedule-modal .schedule-container .line-item .stat.open{background:#4fb206}
+.activity-schedule-modal .schedule-container .line-item .stat.closed{background:#e60606}
+.activity-schedule-modal .schedule-container .line-item .name{padding-right:4px}
+.activity-schedule-modal .schedule-container .line-item .time{padding-left:4px}
+.activity-schedule-modal .schedule-container.half{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.activity-schedule-modal .schedule-container.half .fxcol{width:100%}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -4812,6 +4851,8 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .flexibleContentDiv.image-position-right .flexwrap{-webkit-box-pack:flex-right;-ms-flex-pack:flex-right;justify-content:flex-right}
 .flexibleContentDiv.image-position-right .imageCol{right:0}
 .flexibleContentDiv.half .fxcol{width:50%}
+.activity-schedule-modal .schedule-container{padding-left:50px;padding-right:50px;padding-bottom:30px}
+}@media screen and (min-width:961px){.activity-schedule-modal .schedule-container.half .fxcol{width:46%}
 }@media screen and (min-width:1025px){#primary .upcoming-posts .entry{width:33.333%}
 }@media(min-width:1200px){section.route-details .flexcol{width:25%}
 section.route-map .map-frame{height:60vh}
