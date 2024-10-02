@@ -2066,8 +2066,9 @@ body.search .text-col{width:100%;float:left}
 body.search .has-image .image-col{width:100%}
 body.search .has-image .text-col{width:100%}
 input.nav-search{width:100%;border:0;height:30px;border-radius:15px;background-color:rgba(255,255,255,.6);padding:0 10px;margin:10px 0 0 0;background-image:url(images/eyeglass.png);background-position:right 10px top 5px;background-repeat:no-repeat}
-body.subpage h1.pagetitle,body.subpage h1.page-title,.h1{font-family:"Brandon Bold";font-size:45px;line-height:1.3;letter-spacing:.01em;text-transform:uppercase;margin:0 0 25px;position:relative}
+body.subpage h1.pagetitle,body.subpage h1.page-title,.h1{font-family:"Brandon Bold";font-size:45px;line-height:1.3;letter-spacing:.01em;text-transform:uppercase;margin:0 0 25px;position:relative;color:#000}
 body.subpage h1.pagetitle span:after,body.subpage h1.page-title span:after,.h1 span:after{display:none}
+body.subpage h1.page-title{color:#000}
 body.subpage.single .content-default{padding-top:0;padding-bottom:0}
 body.subpage.single .content-default .wrapper{font-size:20px;line-height:1.7;font-weight:400}
 body.subpage.single .content-default .main-description{padding-top:70px;padding-bottom:50px}
@@ -4369,6 +4370,15 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .activity-schedule-modal .schedule-container .line-item .time{padding-left:4px}
 .activity-schedule-modal .schedule-container.half{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .activity-schedule-modal .schedule-container.half .fxcol{width:100%}
+.flexible-content-wrapper{margin-top:100px}
+.section-upcoming_events .wrapper{max-width:1000px;width:100%;margin:0 auto}
+.section-upcoming_events .section-title{font-family:"Brandon Medium";font-size:40px;line-height:1.2;text-transform:uppercase;padding-bottom:10px;color:#000;border-bottom:2px solid #ccc;margin:0 0 30px}
+.section-upcoming_events .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-15px;margin-right:-15px}
+.section-upcoming_events .flexwrap .infobox{width:100%;padding:15px}
+.section-upcoming_events .flexwrap .infobox .event-date{font-family:"Brandon Bold";font-size:22px;line-height:1.2;color:#000}
+.section-upcoming_events .flexwrap .infobox figure{margin:10px 0;position:relative;padding-bottom:60%;overflow:hidden;border-radius:12px}
+.section-upcoming_events .flexwrap .infobox figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.section-upcoming_events .flexwrap .infobox h3{font-family:"Brandon Bold";font-size:25px;line-height:1.2;text-transform:uppercase;margin:0 0 18px;color:#000}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -4768,6 +4778,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .pass-options-wrap .option h3{text-align:none}
 .single-activity-options .firstCol,.single-activity-options .secondCol{width:48%}
 .section-image-cards-page .flexwrap .flexbox{width:50%}
+.section-upcoming_events .flexwrap .infobox{width:50%}
 }@media screen and (min-width:820px){#banner.taxonomy-banner .static-banner img.desktop{display:block}
 #banner.taxonomy-banner .static-banner img.mobile{display:none}
 .post-type-entries .imagediv.mobile{display:none}
@@ -4852,6 +4863,8 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .flexibleContentDiv.image-position-right .imageCol{right:0}
 .flexibleContentDiv.half .fxcol{width:50%}
 .activity-schedule-modal .schedule-container{padding-left:50px;padding-right:50px;padding-bottom:30px}
+.section-upcoming_events .wrapper{max-width:80vw}
+.section-upcoming_events .flexwrap .infobox{width:33.333%}
 }@media screen and (min-width:961px){.activity-schedule-modal .schedule-container.half .fxcol{width:46%}
 }@media screen and (min-width:1025px){#primary .upcoming-posts .entry{width:33.333%}
 }@media(min-width:1200px){section.route-details .flexcol{width:25%}

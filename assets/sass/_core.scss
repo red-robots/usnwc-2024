@@ -2296,10 +2296,16 @@ body.subpage h1.page-title,
   text-transform: uppercase;
   margin: 0 0 25px;
   position: relative;
+  color: #000;
   span:after {
     display: none;
   }
 }
+
+body.subpage h1.page-title {
+  color: #000;
+}
+
 body.subpage.single  .content-default {
 	padding-top: 0;
 	padding-bottom: 0;
@@ -18025,6 +18031,80 @@ body.subpage.single.single-activity {
     }
   }
 }
+
+//REPEATABLE CONTENT
+.flexible-content-wrapper {
+  margin-top: 100px;
+}
+.section-upcoming_events {
+  .wrapper {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    @include mid {
+      max-width: 80vw;
+    }
+  }
+  .section-title {
+    font-family: $font-brandon-medium;
+    font-size: 40px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    color: #000;
+    border-bottom: 2px solid #CCC;
+    margin: 0 0 30px;
+  }
+  .flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    .infobox {
+      width: 100%;
+      padding: 15px;
+      @include tab {
+        width: 50%;
+      }
+      @include mid {
+        width: 33.333%;
+      }
+      .event-date {
+        font-family: $font-brandon-bold;
+        font-size: 22px;
+        line-height: 1.2;
+        color: #000;
+      }
+      figure {
+        margin: 10px 0;
+        position: relative;
+        padding-bottom: 60%;
+        overflow: hidden;
+        border-radius: 12px;
+        img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      h3 {
+        font-family: $font-brandon-bold;
+        font-size: 25px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        margin: 0 0 18px;
+        color: #000;
+      }
+    }
+  }
+}
+
+
 
 body.logged-in.admin-bar {
   @media screen and (min-width: 820px) {
