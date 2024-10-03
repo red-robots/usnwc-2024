@@ -4203,11 +4203,14 @@ a.button {
   background-color: $red;
   color: #FFF;
   font-family: $font-brandon-regular;
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: none!important;
   &:hover, &:focus {
     color: #FFF!important;
     background-color: #000;
+  }
+  &.uppercase {
+    text-transform: uppercase!important;
   }
 }
 
@@ -4227,6 +4230,7 @@ a.button {
 }
 
 .btn-sm,
+.btn-default,
 .section-image-cards .button.button-type-button,
 .button-pill {
   font-family: $font-brandon-regular!important;
@@ -4248,6 +4252,12 @@ a.button {
     border-color: $red!important;
     background: $red!important;
     color: #FFF!important;
+  }
+}
+.button-red {
+  background-color: $red!important;
+  &:hover, &:focus {
+    background: #000!important;
   }
 }
 .button.button-type-link {
@@ -18045,6 +18055,11 @@ body.subpage.single.single-activity {
       max-width: 80vw;
     }
   }
+  .buttonMiddle {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+  }
   .section-title {
     font-family: $font-brandon-medium;
     font-size: 40px;
@@ -18103,8 +18118,264 @@ body.subpage.single.single-activity {
     }
   }
 }
+.section-two_column_row {
+  margin: 70px 0;
+  overflow: hidden;
+  @include mid {
+    margin-top: 90px;
+    margin-bottom: 90px;
+  }
+  .flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 350px;
+    background-color: $gray;
+    @include mid {
+      min-height: 520px;
+    }
+    .textBlock {
+      padding: 30px;
+      @include tab {
+        padding: 30px 5vw;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
+      .inside {
+        width: 100%;
+      }
+      h2 {
+        font-family: $font-brandon-bold!important;
+        font-size: 36px;
+        line-height: 1.2;
+        color: #000;
+        margin: 0 0 16px;
+        text-transform: uppercase;
+      }
+    }
+    .imageBlock {
+      position: relative;
+      overflow: hidden;
+      figure {
+        margin: 0 0;
+        height: 100%;
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+      .gallery-content {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+      }
+      &.normal {
+        figure {
+          width: 100%;
+        }
+        &.count2 {
+          figure {
+            width: 50%;
+          }
+        }
+        &.count3 {
+          figure {
+            width: 100%;
+            @include tab {
+              width: 33.333%;
+            }
+          }
+        }
+      }
+    }
+    &.half {
+      .textBlock,
+      .imageBlock {
+        width: 100%;
+        @include tab {
+          width: 50%;
+        }
+      }
+      .imageBlock {
+        @include tab {
+          border-top-left-radius: 15px;
+          border-bottom-left-radius: 15px;
+        }
+      }
+    }
+  }
+  .gallerySlider {
+    width: 100%;
+    height: 100%;
+    .swiper-wrapper,
+    .swiper-slide {
+      height: 100%;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none!important;
+    }
+    .swiper-pagination {
+      position: absolute;
+      left: 0;
+      bottom: 15px;
+      z-index: 999;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 0.5em;
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background-color: rgba(255,255,255,.75);
+        border: 1px solid #FFF;
+        opacity: 1;
+        &.swiper-pagination-bullet-active {
+          background-color: $red;
+        }
+      }
+    }
+    .swiper-slide {
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+  &.even {
+    .flexwrap {
+      &.half {
+        flex-direction: row-reverse;
+        .imageBlock {
+          @include tab {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+          }
+        }
+      }
+    }
+  }
 
+  .custom-button-element {
+    display: inline-block;
+    margin-top: 20px;
+  }
+  .button-element.button {
+    border: 1px solid $gray_dark;
+    background-color: transparent;
+    color: $gray_dark;
+    padding: 7px 25px 6px;
+    text-transform: uppercase;
+    &:hover {
+      background-color: $red;
+      border-color: $red;
+      color: #FFF;
+    }
+  }
 
+  @media screen and (max-width: 960px) {
+    .gallery-content {
+      width: 100%;
+      height: unset;
+      figure {
+        width: 100%;
+        height: unset;
+        min-height: 65vw;
+      }
+    }
+    .imageBlock  {
+      .gallery-content {
+        width: 100%;
+        height: unset;
+        min-height: 65vw;
+      }
+    }
+  }
+}
+
+.section-fullwidth_image {
+  figure {
+    margin: 0 0;
+    position: relative;
+    img {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+  }
+  figcation {
+    margin: 0 0;
+    text-align: center;
+  }
+  &.has-text-overlay {
+    position: relative;
+    h1,h2,h3,h4,h5,p,div,span,li {
+      color: #FFF;
+    }
+    .text-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,.65);
+      color: #FFF;
+      padding: 20px 30px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      .text-inner {
+        max-width: 1000px;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        p {
+          font-size: 20px;
+        }
+      }
+      .custom-button-element {
+        display: inline-block;
+        margin-top: 30px;
+        a.button {
+          text-transform: uppercase;
+          padding: 7px 25px 7px;
+        }
+      }
+    }
+    figure {
+      min-height: 600px;
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+}
+
+.section-content.section-content--faqs {
+
+}
 
 body.logged-in.admin-bar {
   @media screen and (min-width: 820px) {
