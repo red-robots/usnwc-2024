@@ -4,7 +4,9 @@
  */
 get_header(); 
 $twoColumnItems = array();
+$show_subnav = get_field('show_subnav');
 ?>
+
 <div id="primary" class="content-area-full content-default repeatable-layout">
 	<main id="main" class="site-main" role="main">
 
@@ -19,6 +21,14 @@ $twoColumnItems = array();
     </section>
     <?php endwhile; ?>
 
+    <?php if ($show_subnav) { ?>
+    <div id="pageTabs" class="pageTabs2 new" style="display:none;">
+      <div class="wrapper">
+        <div id="tabcontent"></div>
+      </div>
+    </div>
+    <?php } ?>
+    
 
 		<?php if( have_rows('flexibleContent') ) {  ?>
     <section class="flexible-content-wrapper">
@@ -48,7 +58,7 @@ $twoColumnItems = array();
               );
               $posts = get_posts($args);
               if($posts) { ?>
-              <div id="section-upcoming_events-<?php echo $i ?>" class="repeatable-block section-upcoming_events">
+              <div id="section-upcoming_events-<?php echo $i ?>" class="repeatable-block section section-upcoming_events">
                 <div class="wrapper">
                   
                   <?php if($section_title) { ?>
@@ -99,10 +109,11 @@ $twoColumnItems = array();
             <?php } ?>
         <?php } 
         else if ( get_row_layout() == 'two_column_row' ) { 
-          $twoColumnItems[] = $i;
+          
           $text = get_sub_field('text_column'); 
           $images = get_sub_field('images'); 
           $gallery_type = get_sub_field('gallery_type'); 
+          $image_position = get_sub_field('image_position'); 
           $columnClass = ( $text && $images ) ? 'half':'full';
           if($images) {
             if($gallery_type=='normal' && count($images)>3 ) {
@@ -114,49 +125,56 @@ $twoColumnItems = array();
             }
           }
           $alt_class = 'odd';
-          if($twoColumnItems && ( end($twoColumnItems) % 2==0 ) ) {
-            $alt_class = 'even';
-          }
-          ?>
-          <div id="section-two_column_row-<?php echo $i ?>" class="repeatable-block section-two_column_row <?php echo $alt_class ?>">
-            <div class="section-inner">
-              <div class="flexwrap <?php echo $columnClass ?>">
-                <?php if ($text) { ?>
-                <div class="textBlock">
-                  <div class="inside"><?php echo $text ?></div>
-                </div>
-                <?php } ?>
-
-                <?php if ($images) { ?>
-                <div class="imageBlock <?php echo $gallery_type ?> count<?php echo count($images) ?>">
-                  <div class="gallery-content">
-                    <?php if ($gallery_type=='slideshow') { ?>
-                    <div id="gallerySlider<?php echo $i ?>" class="swiper gallerySlider">
-                      <div class="swiper-wrapper">
-                        <?php foreach ($images as $img) { ?>
-                        <div class="swiper-slide">
-                          <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" />
-                        </div>
-                        <?php } ?>
-                      </div>
-                      <div class="swiper-button-next"></div>
-                      <div class="swiper-button-prev"></div>
-                      <div class="swiper-pagination"></div>
-                    </div>
-
-                    <?php } else { ?>
-                      <?php foreach ($images as $img) { ?>
-                      <figure>
-                        <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" />
-                      </figure>
-                      <?php } ?>
-                    <?php } ?>
+          if($text || $images) { 
+            if($twoColumnItems && ( end($twoColumnItems) % 2==0 ) ) {
+              $alt_class = 'even';
+            }
+            $twoColumnItems[] = $i; 
+            if($image_position) {
+              $position = ($image_position==1) ? 'left':'right';
+              $alt_class .= ' image-position-'.$position;
+            }
+            ?>
+            <div id="section-two_column_row-<?php echo $i ?>" class="repeatable-block section  section-two_column_row <?php echo $alt_class ?>">
+              <div class="section-inner">
+                <div class="flexwrap <?php echo $columnClass ?>">
+                  <?php if ($text) { ?>
+                  <div class="textBlock">
+                    <div class="inside"><?php echo $text ?></div>
                   </div>
+                  <?php } ?>
+
+                  <?php if ($images) { ?>
+                  <div class="imageBlock <?php echo $gallery_type ?> count<?php echo count($images) ?>">
+                    <div class="gallery-content">
+                      <?php if ($gallery_type=='slideshow') { ?>
+                      <div id="gallerySlider<?php echo $i ?>" class="swiper gallerySlider">
+                        <div class="swiper-wrapper">
+                          <?php foreach ($images as $img) { ?>
+                          <div class="swiper-slide">
+                            <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" />
+                          </div>
+                          <?php } ?>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                      </div>
+
+                      <?php } else { ?>
+                        <?php foreach ($images as $img) { ?>
+                        <figure>
+                          <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" />
+                        </figure>
+                        <?php } ?>
+                      <?php } ?>
+                    </div>
+                  </div>
+                  <?php } ?>
                 </div>
-                <?php } ?>
               </div>
             </div>
-          </div>
+          <?php } ?>
         <?php } 
         else if ( get_row_layout() == 'fullwidth_image' ) {  
           $image = get_sub_field('image'); 
@@ -164,7 +182,7 @@ $twoColumnItems = array();
           $add_text_overlay = get_sub_field('add_text_overlay'); 
           $hasText = ($add_text_overlay && $text) ? 'has-text-overlay':'only-image';
           if($image) { ?>
-          <div id="section-fullwidth_image-<?php echo $i ?>" class="repeatable-block section-fullwidth_image <?php echo $hasText ?>">
+          <div id="section-fullwidth_image-<?php echo $i ?>" class="repeatable-block section  section-fullwidth_image <?php echo $hasText ?>">
             <div class="section-inner">
               <figure>
                 <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>">
@@ -181,6 +199,128 @@ $twoColumnItems = array();
             </div>
           </div>
           <?php } ?>
+        <?php } 
+        else if ( get_row_layout() == 'cards_bottom_text' ) {  
+          $card_text_intro = get_sub_field('card_text_intro'); 
+          $card_columns = get_sub_field('card_columns'); 
+          $card_content = get_sub_field('card_content'); 
+          ?>
+          <div id="section-cards_bottom_text-<?php echo $i ?>" class="repeatable-block section  section-cards_bottom_text">
+            <div class="wrapper">
+              <?php if ($card_text_intro) { ?>
+              <div class="content-part text-intro">
+                <?php echo anti_email_spam($card_text_intro); ?>
+              </div> 
+              <?php } ?>
+
+              <?php if ($card_content) { ?>
+              <div class="content-part cards-content show-<?php echo $card_columns ?>">
+                <div class="flexwrap">
+                  <?php foreach ($card_content as $c) { 
+                    $image = $c['image'];
+                    $text = $c['text'];
+                    if($image || $text) { ?>
+                    <div class="fxcol">
+                      <div class="inner">
+                      <?php if ($image) { ?>
+                      <figure><img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>"></figure> 
+                      <?php } ?>
+
+                      <?php if ($text) { ?>
+                      <div class="textbox"><?php echo $text ?></div> 
+                      <?php } ?>
+                      </div>
+                    </div>
+                    <?php } ?>
+                  <?php } ?>
+                </div>
+              </div> 
+              <?php } ?>
+            </div>
+          </div>
+        <?php } 
+        else if ( get_row_layout() == 'pricing_cards' ) {  
+          $title = get_sub_field('title'); 
+          $section_text = get_sub_field('section_text'); 
+          $infocards = get_sub_field('infocards'); 
+          ?>
+          <div id="section-pricing_cards-<?php echo $i ?>" class="repeatable-block section section-pricing_cards">
+            <div class="wrapper">
+              <?php if ($title) { ?>
+              <div class="content-part content-title">
+                <h2><?php echo $title ?></h2>
+                <?php if ($section_text) { ?>
+                <div class="content-part content-intro">
+                  <?php echo anti_email_spam($section_text); ?>
+                </div> 
+                <?php } ?>
+              </div> 
+              <?php } ?>
+
+              <?php if ($infocards) { ?>
+              <div class="content-part infocards">
+                <div class="flexwrap show-<?php echo count($infocards); ?>">
+                  <?php foreach ($infocards as $info) { 
+                  $image = $info['image'];
+                  $title = $info['title'];
+                  $details = $info['details'];
+                  $priceList = $info['price_list'];
+                  $buttons1 = $info['button1'];
+                  $buttons2 = $info['button2'];
+                  $buttons = array($buttons1, $buttons2);
+                  ?>
+                  <div class="fxcol">
+                    <div class="inner">
+                      <?php if ($image) { ?>
+                      <figure><img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>"></figure> 
+                      <?php } ?>
+
+                      <?php if ($title) { ?>
+                      <h3 class="title"><?php echo $title ?></h3> 
+                      <?php } ?>
+
+                      <?php if ($details) { ?>
+                      <div class="details"><?php echo $details ?></div> 
+                      <?php } ?>
+
+                      <?php if ($priceList) { ?>
+                      <div class="priceList">
+                        <?php foreach ($priceList as $p) { 
+                          $name = $p['name'];
+                          $price = $p['price'];
+                          if($name) { ?>
+                          <div class="line-item">
+                            <span class="name"><span><?php echo $name ?></span></span>
+                            <span class="price"><span><?php echo $price ?></span></span>
+                          </div>
+                          <?php } ?>
+                        <?php } ?>
+                      </div> 
+                      <?php } ?>
+
+                      <?php if ($buttons && array_filter($buttons) ) { ?>
+                      <div class="button-block">
+                        <?php foreach ($buttons as $btn) { 
+                          $btnUrl = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
+                          $btnTitle = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
+                          $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
+                          if($btnUrl && $btnTitle) { ?>
+                          <a href="<?php echo $btnUrl ?>" target="<?php echo $btnTarget ?>" class="button button-red"><?php echo $btnTitle ?></a>
+                          <?php } ?>
+                        <?php } ?>
+                      </div> 
+                      <?php } ?>
+
+                    </div>
+                  </div>
+                  <?php } ?>
+                </div>
+              </div> 
+              <?php } ?>
+
+              
+            </div>
+          </div>
         <?php } ?>
 
       <?php $i++; endwhile; ?>
@@ -197,7 +337,7 @@ $twoColumnItems = array();
       if($faqs) { 
         $totalFaqs = count($faqs);
         ?>
-        <section id="section-faqs" data-section="FAQ" class="section-content section-content--faqs full no-image">
+        <section id="section-faqs" data-section="FAQ" class="section  section-content section-content--faqs full no-image">
           <div class="wrapper">
             <div class="flexwrap">
               <div class="col faqs">
@@ -239,6 +379,7 @@ $twoColumnItems = array();
           </div>
         </section>
       <?php } ?>
+
     <?php } ?>
 
 	</main><!-- #main -->
@@ -249,8 +390,6 @@ jQuery(document).ready(function($){
   if( $('.gallerySlider').length ) {
     $('.gallerySlider').each(function(){
       var sliderId = '#' + $(this).attr('id');
-      console.log(sliderId);
-
       var swiper = new Swiper(sliderId, {
         effect: 'fade', /* "slide", "fade", "cube", "coverflow" or "flip" */
         loop: true,
@@ -280,17 +419,19 @@ jQuery(document).ready(function($){
 
 
   var seeMoreButton = document.getElementById('seeMoreFAQs');
-  seeMoreButton.addEventListener('click', function(){
-    var faqs = document.querySelectorAll('.faq-item');
-    if(faqs) {
-      faqs.forEach(function(item,index){
-        if(item.classList.contains('hide')) {
-          item.classList.remove('hide');
-        }
-      });
-    }
-    seeMoreButton.style.display="none";
-  });
+  if(seeMoreButton){
+    seeMoreButton.addEventListener('click', function(){
+      var faqs = document.querySelectorAll('.faq-item');
+      if(faqs) {
+        faqs.forEach(function(item,index){
+          if(item.classList.contains('hide')) {
+            item.classList.remove('hide');
+          }
+        });
+      }
+      seeMoreButton.style.display="none";
+    });
+  }
 
   $(document).on('click', '.faqsItems .option-name', function(){
     var parent = $(this).parents('.faq-item');
@@ -300,6 +441,27 @@ jQuery(document).ready(function($){
     });
   });
 
+  <?php 
+  //Script for Subnavigation
+  if ($show_subnav) { ?>
+    if( $('.flexible-content-wrapper .section').length > 0 ) {
+      if( $("#pageTabs").length>0 ) {
+        if( $('#main h2').length > 1 ) {
+          var subnav = '<div class="wrapper"><div id="tabcontent">';
+          $('.section').each(function(){
+            var sectionId = $(this).attr("id");
+            if( $(this).find('h2').length ) {
+              var name = $(this).find('h2').eq(0).text().trim();
+              subnav += '<span class="mini-nav"><a href="#'+sectionId+'">'+name+'</a></span>';
+            }
+          });
+          subnav += '</div></div>';
+          $("#pageTabs").html(subnav);
+          $("#pageTabs").show();
+        }
+      }
+    } 
+  <?php } ?>
 
 });
 </script>

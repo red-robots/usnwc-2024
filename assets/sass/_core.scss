@@ -1,3 +1,25 @@
+@mixin H2_STYTLE() {
+  font-family: $font-brandon-bold;
+  font-size: 40px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  color: #000;
+  border-bottom: 2px solid #ccc;
+  margin: 0 0 30px;
+}
+
+
+@mixin H3_STYTLE() {
+  font-family: $font-brandon-bold;
+  font-size: 25px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+  color: #000;
+}
+
+
 div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
 	overflow-wrap: normal;
     word-wrap: normal;
@@ -3706,6 +3728,11 @@ section.stories-whats {
         margin: 8px 8px;
       }
     }
+  }
+
+  &.new {
+    margin-bottom: 31px;
+    margin-top: 60px;
   }
 }
 
@@ -18108,12 +18135,13 @@ body.subpage.single.single-activity {
       }
 
       h3 {
-        font-family: $font-brandon-bold;
-        font-size: 25px;
-        line-height: 1.2;
-        text-transform: uppercase;
-        margin: 0 0 18px;
-        color: #000;
+        // font-family: $font-brandon-bold;
+        // font-size: 25px;
+        // line-height: 1.2;
+        // text-transform: uppercase;
+        // margin: 0 0 18px;
+        // color: #000;
+        @include H3_STYTLE;
       }
     }
   }
@@ -18271,15 +18299,40 @@ body.subpage.single.single-activity {
     }
   }
 
+  &.image-position-left.odd {
+    .flexwrap.half {
+      flex-direction: row-reverse;
+      .imageBlock {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+    }
+  }
+  &.image-position-left.even {
+    .flexwrap.half {
+      flex-direction: row;
+      .imageBlock {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+
   .custom-button-element {
     display: inline-block;
     margin-top: 20px;
   }
   .button-element.button {
-    border: 1px solid $gray_dark;
-    background-color: transparent;
+    // border: 1px solid $gray_dark;
+    // background-color: transparent;
+    background-color: #FFF;
     color: $gray_dark;
     padding: 7px 25px 6px;
+    box-shadow: 0 3px 5px rgba(0,0,0,.15);
     text-transform: uppercase;
     &:hover {
       background-color: $red;
@@ -18373,8 +18426,234 @@ body.subpage.single.single-activity {
   }
 }
 
-.section-content.section-content--faqs {
+section.route-details.route-details-new {
+  background: transparent;
+  .desc {
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 15px;
+  }
+  .title {
+    font-family: $font-brandon-bold;
+    font-size: 35px;
+    line-height: 1.2;
+    text-transform: none!important;
+    color: #666666;
+  }
+  .flexcol {
+    border-right: 1px solid #CCC;
+  }
+  .flexcol:last-child {
+    border-right: none;
+  }
+}
 
+.section-cards_bottom_text {
+  .wrapper {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    @include mid {
+      max-width: 85vw;
+    }
+  }
+  .text-intro {
+    h1,h2 {
+      font-family: $font-brandon-medium;
+      font-size: 40px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+      color: #000;
+      border-bottom: 2px solid #ccc;
+      margin: 0 0 20px;
+    }
+    p:last-child {
+      margin-bottom: 30px;
+    }
+  }
+
+
+  .cards-content {
+    .flexwrap {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -20px;
+      margin-right: -20px;
+      .fxcol {
+        width: 100%;
+        padding: 20px;
+        margin-bottom: 10px;
+        a.button {
+          padding: 7px 25px 5px;
+          text-transform: uppercase;
+        }
+        figure {
+          margin: 0 0;
+          padding-bottom: 60%;
+          position: relative;
+          overflow: hidden;
+          border-radius: 15px;
+          img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+        .textbox {
+          color: #000;
+          padding-top: 20px;
+          h2,h3 {
+            font-family: $font-brandon-bold;
+            font-size: 25px;
+            line-height: 1.2;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+
+    &.show-2 .flexwrap .fxcol {
+      @include tab {
+        width: 50%;
+      }
+    }
+
+    &.show-3 .flexwrap .fxcol {
+      @include tab {
+        width: 33.333%;
+      }
+    }
+
+    &.show-4 .flexwrap .fxcol {
+      @include tab {
+        width: 25%;
+      }
+    }
+
+  }
+}
+
+.section-pricing_cards {
+  .wrapper {
+    max-width: 100%;
+    @include tab {
+      max-width: 85vw;
+    }
+  }
+  
+  .flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    .fxcol {
+      width: 100%;
+      padding: 15px;
+      @include tab {
+        width: 33.333%;
+      }
+    }
+    &.show1 .fxcol {
+      width: 100%!important;
+    }
+    &.show2 .fxcol {
+      @include tab {
+        width: 50%;
+      }
+    }
+    &.show3 .fxcol {
+      @include tab {
+        width: 33.333%;
+      }
+    }
+  }
+
+  .fxcol {
+    a.button {
+      padding: 7px 25px 5px;
+      text-transform: uppercase;
+    }
+    figure {
+      margin: 0 0 15px;
+      padding-bottom: 60%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .details {
+      margin-bottom: 20px;
+    }
+  }
+
+  h2 {
+    @include H2_STYTLE;
+  }
+  h3 {
+    @include H3_STYTLE;
+  }
+
+  .content-title {
+    margin-bottom: 15px;
+    h2 {
+      margin-bottom: 15px;
+    }
+  }
+  .button-block {
+    display: flex;
+    gap: 1em;
+    margin-top: 20px;
+  }
+  .priceList {
+    .line-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      position: relative;
+      margin: 10px 0;
+      &:after {
+        content:"";
+        display: block;
+        width: 100%;
+        border-bottom: 1px dashed #CCC;
+        position: absolute;
+        left: 0;
+        bottom: 6px;
+      }
+      .name,
+      .price {
+        display: inline-block;
+        position: relative;
+        z-index: 5;
+        background: #FFF;
+      }
+      .name {
+        font-family: $font-brandon-bold;
+        font-size: 15px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        color: #000;
+        padding-right: 6px;
+      }
+      .price {
+        padding-left: 6px;
+      }
+    }
+  }
 }
 
 body.logged-in.admin-bar {

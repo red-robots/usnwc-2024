@@ -814,17 +814,35 @@ jQuery(document).ready(function($){
             });
         }
     } else {
-        if( $('.acf-flexible-content .acf-field-text[data-name="title"]').length > 0 ) {
-            $('.acf-field-text[data-name="title"]').each(function(){
-                var parent = $(this).parents(".layout");
-                parent.addClass('show-title');
-                var str = $(this).find('.acf-input-wrap input').val();
-                if( $(this).parents('.acf-repeater.-table').length==0 ) {
-                  var title = ( str.replace(/\s+/g,'').trim() ) ? str.replace(/\s+/g,' ').trim() : '(Blank)';
-                  parent.find(".acf-fc-layout-handle").attr("data-title",title);
+        if( $('.acf-flexible-content').length ) {
+          $('.acf-flexible-content').each(function(){
+            if( $(this).find('[data-layout="pricing_cards"]').length ) {
+
+              $(this).find('[data-layout]').each(function(){
+                var layoutDiv = $(this);
+                if( $(this).find('.acf-field-text[data-name="title"]').length ) {
+                  var titleDiv = $(this).find('.acf-field-text[data-name="title"]').eq(0);
+                  var titleStr = titleDiv.find('.acf-input-wrap input').val().trim();
+                  if( typeof titleStr!=="undefined" ) {
+                    layoutDiv.find('.acf-fc-layout-handle').attr("data-title",titleStr);
+                  }
                 }
-            });
+              });
+            }
+          });
         }
+
+        // if( $('.acf-flexible-content .acf-field-text[data-name="title"]').length > 0 ) {
+        //     $('.acf-field-text[data-name="title"]').each(function(){
+        //         var parent = $(this).parents(".layout");
+        //         parent.addClass('show-title');
+        //         var str = $(this).find('.acf-input-wrap input').val();
+        //         if( $(this).parents('.acf-repeater.-table').length==0 ) {
+        //           var title = ( str.replace(/\s+/g,'').trim() ) ? str.replace(/\s+/g,' ').trim() : '(Blank)';
+        //           parent.find(".acf-fc-layout-handle").attr("data-title",title);
+        //         }
+        //     });
+        // }
     }
 
     /* Activity Schedule */

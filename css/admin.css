@@ -158,6 +158,28 @@ body.wp-admin.post-type-activity_schedule #poststuff #edit-slug-box  {
   line-height: 1.1;
   font-weight: bold;
 }
+[data-layout="pricing_cards"] .acf-fc-layout-handle {
+  color: transparent!important;
+}
+[data-layout="pricing_cards"] .acf-fc-layout-handle:after {
+  content:attr(data-title);
+  display: inline-block;
+  position: absolute;
+  top: 11px;
+  left: 40px;
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.1;
+  font-weight: bold;
+}
+[data-layout="pricing_cards"] [data-name="button1"],
+[data-layout="pricing_cards"] [data-name="button2"] {
+  width: 49%!important;
+  float: left!important;
+  clear:none!important;
+}
+
 .acf-field-flexible-content[data-name="flexible_blocks"] [data-layout="image_cards"] .acf-fc-layout-handle:after {
   content: "Image Cards";
 }

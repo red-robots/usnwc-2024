@@ -2396,6 +2396,7 @@ section.stories-whats .wn-box .wn-box-contents .flex{display:-webkit-box;display
 #pageTabs #tabcontent span.mini-nav a{display:block;padding:6px 20px 5px;font-family:"Brandon Medium";font-size:12px;line-height:1.2;color:#707070;text-transform:uppercase;text-decoration:none}
 #pageTabs #tabcontent span.mini-nav a:hover,#pageTabs #tabcontent span.mini-nav a:focus{background-color:#e5e5e5;color:#ba0d30}
 #pageTabs #tabcontent span.mini-nav:last-child{border-right:0}
+#pageTabs.new{margin-bottom:31px;margin-top:60px}
 body.single-race #pageTabs{top:0;margin-top:0}
 body.single-race #primary #section-faqs{padding-top:60px;padding-bottom:30px}
 body.single-race .content-default .black-section ul,body.single-race .content-default .black-section ol{display:inline-block;text-align:left}
@@ -4515,8 +4516,12 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-two_column_row .gallerySlider .swiper-slide{position:relative}
 .section-two_column_row .gallerySlider .swiper-slide img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .section-two_column_row.even .flexwrap.half{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}
+.section-two_column_row.image-position-left.odd .flexwrap.half{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}
+.section-two_column_row.image-position-left.odd .flexwrap.half .imageBlock{border-top-left-radius:0;border-bottom-left-radius:0;border-top-right-radius:15px;border-bottom-right-radius:15px}
+.section-two_column_row.image-position-left.even .flexwrap.half{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+.section-two_column_row.image-position-left.even .flexwrap.half .imageBlock{border-top-left-radius:15px;border-bottom-left-radius:15px;border-top-right-radius:0;border-bottom-right-radius:0}
 .section-two_column_row .custom-button-element{display:inline-block;margin-top:20px}
-.section-two_column_row .button-element.button{border:1px solid #707070;background-color:transparent;color:#707070;padding:7px 25px 6px;text-transform:uppercase}
+.section-two_column_row .button-element.button{background-color:#fff;color:#707070;padding:7px 25px 6px;-webkit-box-shadow:0 3px 5px rgba(0,0,0,.15);box-shadow:0 3px 5px rgba(0,0,0,.15);text-transform:uppercase}
 .section-two_column_row .button-element.button:hover{background-color:#ba0d30;border-color:#ba0d30;color:#fff}
 .section-fullwidth_image figure{margin:0;position:relative}
 .section-fullwidth_image figure img{width:100%;height:auto;position:relative}
@@ -4530,6 +4535,39 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-fullwidth_image.has-text-overlay .text-overlay .custom-button-element a.button{text-transform:uppercase;padding:7px 25px 7px}
 .section-fullwidth_image.has-text-overlay figure{min-height:600px}
 .section-fullwidth_image.has-text-overlay figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+section.route-details.route-details-new{background:transparent}
+section.route-details.route-details-new .desc{font-size:20px;color:#000;margin-bottom:15px}
+section.route-details.route-details-new .title{font-family:"Brandon Bold";font-size:35px;line-height:1.2;text-transform:none !important;color:#666}
+section.route-details.route-details-new .flexcol{border-right:1px solid #ccc}
+section.route-details.route-details-new .flexcol:last-child{border-right:0}
+.section-cards_bottom_text .wrapper{max-width:100%;width:100%;margin:0 auto}
+.section-cards_bottom_text .text-intro h1,.section-cards_bottom_text .text-intro h2{font-family:"Brandon Medium";font-size:40px;line-height:1.2;text-transform:uppercase;padding-bottom:10px;color:#000;border-bottom:2px solid #ccc;margin:0 0 20px}
+.section-cards_bottom_text .text-intro p:last-child{margin-bottom:30px}
+.section-cards_bottom_text .cards-content .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-20px;margin-right:-20px}
+.section-cards_bottom_text .cards-content .flexwrap .fxcol{width:100%;padding:20px;margin-bottom:10px}
+.section-cards_bottom_text .cards-content .flexwrap .fxcol a.button{padding:7px 25px 5px;text-transform:uppercase}
+.section-cards_bottom_text .cards-content .flexwrap .fxcol figure{margin:0;padding-bottom:60%;position:relative;overflow:hidden;border-radius:15px}
+.section-cards_bottom_text .cards-content .flexwrap .fxcol figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.section-cards_bottom_text .cards-content .flexwrap .fxcol .textbox{color:#000;padding-top:20px}
+.section-cards_bottom_text .cards-content .flexwrap .fxcol .textbox h2,.section-cards_bottom_text .cards-content .flexwrap .fxcol .textbox h3{font-family:"Brandon Bold";font-size:25px;line-height:1.2;text-transform:uppercase}
+.section-pricing_cards .wrapper{max-width:100%}
+.section-pricing_cards .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-15px;margin-right:-15px}
+.section-pricing_cards .flexwrap .fxcol{width:100%;padding:15px}
+.section-pricing_cards .flexwrap.show1 .fxcol{width:100% !important}
+.section-pricing_cards .fxcol a.button{padding:7px 25px 5px;text-transform:uppercase}
+.section-pricing_cards .fxcol figure{margin:0 0 15px;padding-bottom:60%;position:relative;overflow:hidden;border-radius:15px}
+.section-pricing_cards .fxcol figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.section-pricing_cards .fxcol .details{margin-bottom:20px}
+.section-pricing_cards h2{font-family:"Brandon Bold";font-size:40px;line-height:1.2;text-transform:uppercase;padding-bottom:10px;color:#000;border-bottom:2px solid #ccc;margin:0 0 30px}
+.section-pricing_cards h3{font-family:"Brandon Bold";font-size:25px;line-height:1.2;text-transform:uppercase;margin:0 0 18px;color:#000}
+.section-pricing_cards .content-title{margin-bottom:15px}
+.section-pricing_cards .content-title h2{margin-bottom:15px}
+.section-pricing_cards .button-block{display:-webkit-box;display:-ms-flexbox;display:flex;gap:1em;margin-top:20px}
+.section-pricing_cards .priceList .line-item{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative;margin:10px 0}
+.section-pricing_cards .priceList .line-item:after{content:"";display:block;width:100%;border-bottom:1px dashed #ccc;position:absolute;left:0;bottom:6px}
+.section-pricing_cards .priceList .line-item .name,.section-pricing_cards .priceList .line-item .price{display:inline-block;position:relative;z-index:5;background:#fff}
+.section-pricing_cards .priceList .line-item .name{font-family:"Brandon Bold";font-size:15px;line-height:1.2;text-transform:uppercase;color:#000;padding-right:6px}
+.section-pricing_cards .priceList .line-item .price{padding-left:6px}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -4935,6 +4973,13 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-two_column_row .flexwrap.half .textBlock,.section-two_column_row .flexwrap.half .imageBlock{width:50%}
 .section-two_column_row .flexwrap.half .imageBlock{border-top-left-radius:15px;border-bottom-left-radius:15px}
 .section-two_column_row.even .flexwrap.half .imageBlock{border-top-left-radius:0;border-bottom-left-radius:0;border-top-right-radius:15px;border-bottom-right-radius:15px}
+.section-cards_bottom_text .cards-content.show-2 .flexwrap .fxcol{width:50%}
+.section-cards_bottom_text .cards-content.show-3 .flexwrap .fxcol{width:33.333%}
+.section-cards_bottom_text .cards-content.show-4 .flexwrap .fxcol{width:25%}
+.section-pricing_cards .wrapper{max-width:85vw}
+.section-pricing_cards .flexwrap .fxcol{width:33.333%}
+.section-pricing_cards .flexwrap.show2 .fxcol{width:50%}
+.section-pricing_cards .flexwrap.show3 .fxcol{width:33.333%}
 }@media screen and (min-width:820px){#banner.taxonomy-banner .static-banner img.desktop{display:block}
 #banner.taxonomy-banner .static-banner img.mobile{display:none}
 .post-type-entries .imagediv.mobile{display:none}
@@ -5023,6 +5068,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-upcoming_events .flexwrap .infobox{width:33.333%}
 .section-two_column_row{margin-top:90px;margin-bottom:90px}
 .section-two_column_row .flexwrap{min-height:520px}
+.section-cards_bottom_text .wrapper{max-width:85vw}
 }@media screen and (min-width:961px){.activity-schedule-modal .schedule-container.half .fxcol{width:46%}
 }@media screen and (min-width:1025px){#primary .upcoming-posts .entry{width:33.333%}
 }@media(min-width:1200px){section.route-details .flexcol{width:25%}
