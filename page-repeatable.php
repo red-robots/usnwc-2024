@@ -327,6 +327,24 @@ $show_subnav = get_field('show_subnav');
     </section>
     <?php } ?>
 
+
+    <?php  
+      $fieldtrip_form_title = get_field('fieldtrip_form_title');
+      $fieldtrip_form = get_field('fieldtrip_form');
+      if($fieldtrip_form) { ?>
+      <section id="section-fieldtrip_form" data-section="FAQ" class="section  section-fieldtrip_form">
+        <div class="wrapper">
+          <?php if ($fieldtrip_form_title) { ?>
+          <h2 class="section-title"><?php echo $fieldtrip_form_title ?></h2>
+          <?php } ?>
+
+          <?php if ($fieldtrip_form) { ?>
+          <div class="section-text"><?php echo anti_email_spam($fieldtrip_form); ?></div>
+          <?php } ?>
+        </div>
+      </section>
+      <?php } ?>
+
     <?php  
     $faqs_post_item = get_field('faqs_post_item');
     $faqs = '';

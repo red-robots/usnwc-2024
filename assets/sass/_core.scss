@@ -18658,6 +18658,24 @@ section.route-details.route-details-new {
   }
 }
 
+.section-fieldtrip_form {
+  .wrapper {
+    background: #f7f7f7;
+    padding: 30px;
+    border-radius: 20px;
+  }
+  .section-title {
+    @include H2_STYTLE;
+  }
+  .gform_title {
+    font-family: $font-brandon-medium;
+    font-size: 25px;
+    line-height: 1.2;
+    margin: 0 0 20px;
+    color: #000;
+  }
+}
+
 body.logged-in.admin-bar {
   @media screen and (min-width: 820px) {
     &.subpage {
