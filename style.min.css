@@ -4550,6 +4550,7 @@ section.route-details.route-details-new .flexcol:last-child{border-right:0}
 .section-cards_bottom_text .cards-content .flexwrap .fxcol figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .section-cards_bottom_text .cards-content .flexwrap .fxcol .textbox{color:#000;padding-top:20px}
 .section-cards_bottom_text .cards-content .flexwrap .fxcol .textbox h2,.section-cards_bottom_text .cards-content .flexwrap .fxcol .textbox h3{font-family:"Brandon Bold";font-size:25px;line-height:1.2;text-transform:uppercase}
+.section-pricing_cards{margin-top:40px;margin-bottom:40px}
 .section-pricing_cards .wrapper{max-width:100%}
 .section-pricing_cards .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-15px;margin-right:-15px}
 .section-pricing_cards .flexwrap .fxcol{width:100%;padding:15px}
