@@ -1089,6 +1089,7 @@ jQuery(document).ready(function ($) {
 
   $(document).on('click', '.button-popup-details', function () {
     var postid = $(this).attr('data-postid');
+    $('body').addClass('modal-open');
     $.ajax({
       url: frontajax.ajaxurl,
       type: 'post',
@@ -1099,7 +1100,6 @@ jQuery(document).ready(function ($) {
       },
       beforeSend: function beforeSend() {
         $("#loaderDiv").show();
-        $('body').addClass('modal-open');
       },
       success: function success(obj) {
         $("#loaderDiv").hide();
@@ -1116,6 +1116,7 @@ jQuery(document).ready(function ($) {
   });
   $(document).on('click', '.filmSeriesInfo #customModalClose', function (e) {
     e.preventDefault();
+    $('body').removeClass('modal-open');
     $('#customModalContainer').removeClass("filmSeriesInfo show");
     setTimeout(function () {
       $('#customModalContent').html("");

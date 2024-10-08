@@ -1198,6 +1198,7 @@ var getGridSize = function() {
   //Popup Film Series
   $(document).on('click', '.button-popup-details', function(){
     var postid = $(this).attr('data-postid');
+    $('body').addClass('modal-open');
     $.ajax({
       url : frontajax.ajaxurl,
       type : 'post',
@@ -1208,7 +1209,6 @@ var getGridSize = function() {
       },
       beforeSend:function(){
         $("#loaderDiv").show();
-        $('body').addClass('modal-open');
       },
       success:function( obj ) {
         $("#loaderDiv").hide();
@@ -1225,6 +1225,7 @@ var getGridSize = function() {
 
   $(document).on('click', '.filmSeriesInfo #customModalClose', function(e){
     e.preventDefault();
+    $('body').removeClass('modal-open');
     $('#customModalContainer').removeClass("filmSeriesInfo show");
     setTimeout(function(){
       $('#customModalContent').html("");
