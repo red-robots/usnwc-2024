@@ -4485,6 +4485,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .activity-schedule-modal .schedule-container.half{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .activity-schedule-modal .schedule-container.half .fxcol{width:100%}
 .flexible-content-wrapper{margin-top:100px}
+.section-upcoming_events{margin-bottom:70px}
 .section-upcoming_events .wrapper{max-width:1000px;width:100%;margin:0 auto}
 .section-upcoming_events .buttonMiddle{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin:50px 0}
 .section-upcoming_events .section-title{font-family:"Brandon Medium";font-size:40px;line-height:1.2;text-transform:uppercase;padding-bottom:10px;color:#000;border-bottom:2px solid #ccc;margin:0 0 30px}
@@ -4527,6 +4528,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-two_column_row .custom-button-element{display:inline-block;margin-top:20px}
 .section-two_column_row .button-element.button{background-color:#fff;color:#707070;padding:7px 25px 6px;-webkit-box-shadow:0 3px 5px rgba(0,0,0,.15);box-shadow:0 3px 5px rgba(0,0,0,.15);text-transform:uppercase}
 .section-two_column_row .button-element.button:hover{background-color:#ba0d30;border-color:#ba0d30;color:#fff}
+.section-fullwidth_image{margin-top:60px}
 .section-fullwidth_image figure{margin:0;position:relative}
 .section-fullwidth_image figure img{width:100%;height:auto;position:relative}
 .section-fullwidth_image figcation{margin:0;text-align:center}
