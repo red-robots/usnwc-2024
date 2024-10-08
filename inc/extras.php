@@ -2481,4 +2481,31 @@ function myplugin_register_tinymce_javascript( $plugin_array ) {
 
 
 
+add_action('wp_ajax_nopriv_film_series_details_popup', 'film_series_details_popup');
+add_action('wp_ajax_film_series_details_popup', 'film_series_details_popup');
+function film_series_details_popup(){
+  global $wpdb;
+  if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+    
+    $pid = $_POST['post_id'];
+    $post = get_post($pid);
+    $output = '';
+    if($post) {
+      ob_start(); 
+      include( locate_template('parts/film-series-popup.php') ); 
+      $output = ob_get_contents();
+      ob_end_clean();
+    }
+
+    $response['result'] = $output;
+
+    echo json_encode($response);
+
+  } else {
+      header("Location: ".$_SERVER["HTTP_REFERER"]);
+  }
+  die();
+}
+
+
 

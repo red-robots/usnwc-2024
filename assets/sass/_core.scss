@@ -18097,6 +18097,9 @@ body.subpage.single.single-activity {
     border-bottom: 2px solid #CCC;
     margin: 0 0 30px;
   }
+  .summary {
+    margin-bottom: 30px;
+  }
   .flexwrap {
     display: flex;
     flex-wrap: wrap;
@@ -18144,6 +18147,17 @@ body.subpage.single.single-activity {
         @include H3_STYTLE;
       }
     }
+  }
+
+  &.monthly-events {
+    margin-bottom: 70px;
+    .flexwrap .infobox figure {
+      padding-bottom: 130%;
+      margin-bottom: 15px;
+    }
+  }
+  &.monthly-events:last-child {
+    margin-bottom: 0;
   }
 }
 .section-two_column_row {
@@ -18393,6 +18407,15 @@ body.subpage.single.single-activity {
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
+      h2 {
+        font-family: $font-brandon-bold;
+        font-size: 40px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        color: #FFF;
+        margin: 0 0 10px;
+      }
       .text-inner {
         max-width: 1000px;
         width: 100%;
@@ -18405,9 +18428,25 @@ body.subpage.single.single-activity {
       .custom-button-element {
         display: inline-block;
         margin-top: 30px;
+        margin-left: 6px;
+        margin-right: 6px;
+        &.red a.button.button-element {
+          &:hover, &:focus {
+            background-color: #FFF!important;
+            color: #000!important;
+          }
+        }
         a.button {
           text-transform: uppercase;
           padding: 7px 25px 7px;
+          &.button-gray {
+            background-color: #FFF;
+            color: #000;
+            &:hover, &:focus {
+              background-color: $red;
+              color: #FFF;
+            }
+          }
         }
       }
     }
@@ -18673,6 +18712,147 @@ section.route-details.route-details-new {
     line-height: 1.2;
     margin: 0 0 20px;
     color: #000;
+  }
+}
+
+#customModalContainer.filmSeriesInfo.show {
+  display: block;
+  background-color: rgba(0,0,0,.96);
+  #customModalInner {
+    animation-delay: 0.2s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name:fadeInDown;
+  }
+  #customModalClose {
+    &:before, &:after {
+      background: #848484;
+    }
+  }
+}
+
+.popup-content-wrapper.details-film-series {
+  padding-bottom: 40px;
+  h2.eventName {
+    padding: 50px 30px;
+    text-align: center;
+    font-family: $font-brandon-bold;
+    font-size: 35px;
+    line-height: 1.2;
+    margin: 0 0;
+    color: #000;
+    text-transform: uppercase;
+  }
+  figure.featured-image {
+    margin: 0 0;
+    position: relative;
+    img.post-image {
+      width: 100%;
+      height: auto;
+    }
+    .banner-bottom {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 100;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .event-intro {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 30px;
+    font-size: 18px;
+    line-height: 1.3;
+  }
+  .buttonBlock {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    a.button {
+      text-transform: uppercase;
+    }
+  }
+
+  .details-wrapper {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px 20px;
+    h2.section-title {
+      text-align: center;
+      font-family: $font-brandon-bold;
+      font-size: 35px;
+      line-height: 1.2;
+      margin: 0 0 50px;
+      color: #000;
+      text-transform: uppercase;
+    }
+  }
+
+  .otherInfo {
+    background: #707070;
+    color: #FFF;
+    text-align: center;
+    padding: 20px 20px;
+    border-radius: 15px;
+    margin: 50px 0 0;
+    h3 {
+      font-size: 25px;
+      text-transform: uppercase;
+    }
+    &.disclaimer {
+      background-color: transparent;
+      color: #000;
+      margin: 40px 0 0;
+      .info {
+        font-size: 14px;
+        line-height: 1.4;
+        font-style: italic;
+      }
+    }
+  }
+
+  .infoboxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .infobox {
+      padding: 20px;
+      width: 100%;
+      text-align: center;
+      @include tab {
+        width: 33.33%;
+        border-right: 1px solid #CCC;
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+    .infoTitle {
+      color: #000;
+      margin-bottom: 20px;
+    }
+    .infoDate {
+      div {
+        font-family: $font-brandon-bold;
+        font-size: 35px;
+        line-height: 1.2;
+        margin: 0 0;
+        color: #504f4f;
+        text-transform: uppercase;
+      }
+    }
+    .infoText p:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 

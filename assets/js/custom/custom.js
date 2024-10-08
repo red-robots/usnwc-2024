@@ -1195,5 +1195,40 @@ var getGridSize = function() {
     }
   }
 
+  //Popup Film Series
+  $(document).on('click', '.button-popup-details', function(){
+    var postid = $(this).attr('data-postid');
+    $.ajax({
+      url : frontajax.ajaxurl,
+      type : 'post',
+      dataType : "json",
+      data : {
+        action  : 'film_series_details_popup',
+        post_id : postid
+      },
+      beforeSend:function(){
+        $("#loaderDiv").show();
+      },
+      success:function( obj ) {
+        $("#loaderDiv").hide();
+        if(obj.result) {
+          $('#customModalContainer #customModalContent').html(obj.result);
+          $('#customModalContainer').addClass('filmSeriesInfo show');
+        }
+      },
+      error:function() {
+        $("#loaderDiv").hide();
+      }
+    });
+  });
+
+  $(document).on('click', '.filmSeriesInfo #customModalClose', function(e){
+    e.preventDefault();
+    $('#customModalContainer').removeClass("filmSeriesInfo show");
+    setTimeout(function(){
+      $('#customModalContent').html("");
+    },80);
+  });
+
 
 });// END #####################################    END

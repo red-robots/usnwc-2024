@@ -1084,7 +1084,42 @@ jQuery(document).ready(function ($) {
     if ($('#customModalContent .activity-schedule-modal').length == 0) {
       $('.activity-schedule-modal').appendTo('#customModalContent');
     }
-  }
+  } //Popup Film Series
+
+
+  $(document).on('click', '.button-popup-details', function () {
+    var postid = $(this).attr('data-postid');
+    $.ajax({
+      url: frontajax.ajaxurl,
+      type: 'post',
+      dataType: "json",
+      data: {
+        action: 'film_series_details_popup',
+        post_id: postid
+      },
+      beforeSend: function beforeSend() {
+        $("#loaderDiv").show();
+      },
+      success: function success(obj) {
+        $("#loaderDiv").hide();
+
+        if (obj.result) {
+          $('#customModalContainer #customModalContent').html(obj.result);
+          $('#customModalContainer').addClass('filmSeriesInfo show');
+        }
+      },
+      error: function error() {
+        $("#loaderDiv").hide();
+      }
+    });
+  });
+  $(document).on('click', '.filmSeriesInfo #customModalClose', function (e) {
+    e.preventDefault();
+    $('#customModalContainer').removeClass("filmSeriesInfo show");
+    setTimeout(function () {
+      $('#customModalContent').html("");
+    }, 80);
+  });
 }); // END #####################################    END
 "use strict";
 

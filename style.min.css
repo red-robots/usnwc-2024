@@ -4488,12 +4488,16 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-upcoming_events .wrapper{max-width:1000px;width:100%;margin:0 auto}
 .section-upcoming_events .buttonMiddle{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin:50px 0}
 .section-upcoming_events .section-title{font-family:"Brandon Medium";font-size:40px;line-height:1.2;text-transform:uppercase;padding-bottom:10px;color:#000;border-bottom:2px solid #ccc;margin:0 0 30px}
+.section-upcoming_events .summary{margin-bottom:30px}
 .section-upcoming_events .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-15px;margin-right:-15px}
 .section-upcoming_events .flexwrap .infobox{width:100%;padding:15px}
 .section-upcoming_events .flexwrap .infobox .event-date{font-family:"Brandon Bold";font-size:22px;line-height:1.2;color:#000}
 .section-upcoming_events .flexwrap .infobox figure{margin:10px 0;position:relative;padding-bottom:60%;overflow:hidden;border-radius:12px}
 .section-upcoming_events .flexwrap .infobox figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .section-upcoming_events .flexwrap .infobox h3{font-family:"Brandon Bold";font-size:25px;line-height:1.2;text-transform:uppercase;margin:0 0 18px;color:#000}
+.section-upcoming_events.monthly-events{margin-bottom:70px}
+.section-upcoming_events.monthly-events .flexwrap .infobox figure{padding-bottom:130%;margin-bottom:15px}
+.section-upcoming_events.monthly-events:last-child{margin-bottom:0}
 .section-two_column_row{margin:70px 0;overflow:hidden}
 .section-two_column_row .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;min-height:350px;background-color:#f2f2f2}
 .section-two_column_row .flexwrap .textBlock{padding:30px}
@@ -4529,10 +4533,14 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-fullwidth_image.has-text-overlay{position:relative}
 .section-fullwidth_image.has-text-overlay h1,.section-fullwidth_image.has-text-overlay h2,.section-fullwidth_image.has-text-overlay h3,.section-fullwidth_image.has-text-overlay h4,.section-fullwidth_image.has-text-overlay h5,.section-fullwidth_image.has-text-overlay p,.section-fullwidth_image.has-text-overlay div,.section-fullwidth_image.has-text-overlay span,.section-fullwidth_image.has-text-overlay li{color:#fff}
 .section-fullwidth_image.has-text-overlay .text-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.65);color:#fff;padding:20px 30px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.section-fullwidth_image.has-text-overlay .text-overlay h2{font-family:"Brandon Bold";font-size:40px;line-height:1.2;text-transform:uppercase;padding-bottom:10px;color:#fff;margin:0 0 10px}
 .section-fullwidth_image.has-text-overlay .text-overlay .text-inner{max-width:1000px;width:100%;text-align:center;margin:0 auto}
 .section-fullwidth_image.has-text-overlay .text-overlay .text-inner p{font-size:20px}
-.section-fullwidth_image.has-text-overlay .text-overlay .custom-button-element{display:inline-block;margin-top:30px}
+.section-fullwidth_image.has-text-overlay .text-overlay .custom-button-element{display:inline-block;margin-top:30px;margin-left:6px;margin-right:6px}
+.section-fullwidth_image.has-text-overlay .text-overlay .custom-button-element.red a.button.button-element:hover,.section-fullwidth_image.has-text-overlay .text-overlay .custom-button-element.red a.button.button-element:focus{background-color:#fff !important;color:#000 !important}
 .section-fullwidth_image.has-text-overlay .text-overlay .custom-button-element a.button{text-transform:uppercase;padding:7px 25px 7px}
+.section-fullwidth_image.has-text-overlay .text-overlay .custom-button-element a.button.button-gray{background-color:#fff;color:#000}
+.section-fullwidth_image.has-text-overlay .text-overlay .custom-button-element a.button.button-gray:hover,.section-fullwidth_image.has-text-overlay .text-overlay .custom-button-element a.button.button-gray:focus{background-color:#ba0d30;color:#fff}
 .section-fullwidth_image.has-text-overlay figure{min-height:600px}
 .section-fullwidth_image.has-text-overlay figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 section.route-details.route-details-new{background:transparent}
@@ -4572,6 +4580,29 @@ section.route-details.route-details-new .flexcol:last-child{border-right:0}
 .section-fieldtrip_form .wrapper{background:#f7f7f7;padding:30px;border-radius:20px}
 .section-fieldtrip_form .section-title{font-family:"Brandon Bold";font-size:40px;line-height:1.2;text-transform:uppercase;padding-bottom:10px;color:#000;border-bottom:2px solid #ccc;margin:0 0 30px}
 .section-fieldtrip_form .gform_title{font-family:"Brandon Medium";font-size:25px;line-height:1.2;margin:0 0 20px;color:#000}
+#customModalContainer.filmSeriesInfo.show{display:block;background-color:rgba(0,0,0,.96)}
+#customModalContainer.filmSeriesInfo.show #customModalInner{-webkit-animation-delay:.2s;animation-delay:.2s;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:fadeInDown;animation-name:fadeInDown}
+#customModalContainer.filmSeriesInfo.show #customModalClose:before,#customModalContainer.filmSeriesInfo.show #customModalClose:after{background:#848484}
+.popup-content-wrapper.details-film-series{padding-bottom:40px}
+.popup-content-wrapper.details-film-series h2.eventName{padding:50px 30px;text-align:center;font-family:"Brandon Bold";font-size:35px;line-height:1.2;margin:0;color:#000;text-transform:uppercase}
+.popup-content-wrapper.details-film-series figure.featured-image{margin:0;position:relative}
+.popup-content-wrapper.details-film-series figure.featured-image img.post-image{width:100%;height:auto}
+.popup-content-wrapper.details-film-series figure.featured-image .banner-bottom{position:absolute;left:0;bottom:0;width:100%;z-index:100}
+.popup-content-wrapper.details-film-series figure.featured-image .banner-bottom img{width:100%;height:auto}
+.popup-content-wrapper.details-film-series .event-intro{max-width:900px;width:100%;margin:0 auto;padding:50px 30px;font-size:18px;line-height:1.3}
+.popup-content-wrapper.details-film-series .buttonBlock{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1em;margin-top:40px;margin-bottom:40px}
+.popup-content-wrapper.details-film-series .buttonBlock a.button{text-transform:uppercase}
+.popup-content-wrapper.details-film-series .details-wrapper{max-width:900px;width:100%;margin:0 auto;padding:0 20px 20px}
+.popup-content-wrapper.details-film-series .details-wrapper h2.section-title{text-align:center;font-family:"Brandon Bold";font-size:35px;line-height:1.2;margin:0 0 50px;color:#000;text-transform:uppercase}
+.popup-content-wrapper.details-film-series .otherInfo{background:#707070;color:#fff;text-align:center;padding:20px 20px;border-radius:15px;margin:50px 0 0}
+.popup-content-wrapper.details-film-series .otherInfo h3{font-size:25px;text-transform:uppercase}
+.popup-content-wrapper.details-film-series .otherInfo.disclaimer{background-color:transparent;color:#000;margin:40px 0 0}
+.popup-content-wrapper.details-film-series .otherInfo.disclaimer .info{font-size:14px;line-height:1.4;font-style:italic}
+.popup-content-wrapper.details-film-series .infoboxes{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.popup-content-wrapper.details-film-series .infoboxes .infobox{padding:20px;width:100%;text-align:center}
+.popup-content-wrapper.details-film-series .infoboxes .infoTitle{color:#000;margin-bottom:20px}
+.popup-content-wrapper.details-film-series .infoboxes .infoDate div{font-family:"Brandon Bold";font-size:35px;line-height:1.2;margin:0;color:#504f4f;text-transform:uppercase}
+.popup-content-wrapper.details-film-series .infoboxes .infoText p:last-child{margin-bottom:0}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -4984,6 +5015,8 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-pricing_cards .flexwrap .fxcol{width:33.333%}
 .section-pricing_cards .flexwrap.show2 .fxcol{width:50%}
 .section-pricing_cards .flexwrap.show3 .fxcol{width:33.333%}
+.popup-content-wrapper.details-film-series .infoboxes .infobox{width:33.33%;border-right:1px solid #ccc}
+.popup-content-wrapper.details-film-series .infoboxes .infobox:last-child{border-right:0}
 }@media screen and (min-width:820px){#banner.taxonomy-banner .static-banner img.desktop{display:block}
 #banner.taxonomy-banner .static-banner img.mobile{display:none}
 .post-type-entries .imagediv.mobile{display:none}
