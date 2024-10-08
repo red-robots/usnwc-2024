@@ -18733,6 +18733,10 @@ section.route-details.route-details-new {
   }
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .popup-content-wrapper.details-film-series {
   padding-bottom: 40px;
   h2.eventName {
@@ -18839,6 +18843,7 @@ section.route-details.route-details-new {
       }
     }
     .infoTitle {
+      font-size: 20px;
       color: #000;
       margin-bottom: 20px;
     }

@@ -4585,6 +4585,7 @@ section.route-details.route-details-new .flexcol:last-child{border-right:0}
 #customModalContainer.filmSeriesInfo.show{display:block;background-color:rgba(0,0,0,.96)}
 #customModalContainer.filmSeriesInfo.show #customModalInner{-webkit-animation-delay:.2s;animation-delay:.2s;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:fadeInDown;animation-name:fadeInDown}
 #customModalContainer.filmSeriesInfo.show #customModalClose:before,#customModalContainer.filmSeriesInfo.show #customModalClose:after{background:#848484}
+body.modal-open{overflow:hidden}
 .popup-content-wrapper.details-film-series{padding-bottom:40px}
 .popup-content-wrapper.details-film-series h2.eventName{padding:50px 30px;text-align:center;font-family:"Brandon Bold";font-size:35px;line-height:1.2;margin:0;color:#000;text-transform:uppercase}
 .popup-content-wrapper.details-film-series figure.featured-image{margin:0;position:relative}
@@ -4602,7 +4603,7 @@ section.route-details.route-details-new .flexcol:last-child{border-right:0}
 .popup-content-wrapper.details-film-series .otherInfo.disclaimer .info{font-size:14px;line-height:1.4;font-style:italic}
 .popup-content-wrapper.details-film-series .infoboxes{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .popup-content-wrapper.details-film-series .infoboxes .infobox{padding:20px;width:100%;text-align:center}
-.popup-content-wrapper.details-film-series .infoboxes .infoTitle{color:#000;margin-bottom:20px}
+.popup-content-wrapper.details-film-series .infoboxes .infoTitle{font-size:20px;color:#000;margin-bottom:20px}
 .popup-content-wrapper.details-film-series .infoboxes .infoDate div{font-family:"Brandon Bold";font-size:35px;line-height:1.2;margin:0;color:#504f4f;text-transform:uppercase}
 .popup-content-wrapper.details-film-series .infoboxes .infoText p:last-child{margin-bottom:0}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}

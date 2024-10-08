@@ -1208,6 +1208,7 @@ var getGridSize = function() {
       },
       beforeSend:function(){
         $("#loaderDiv").show();
+        $('body').addClass('modal-open');
       },
       success:function( obj ) {
         $("#loaderDiv").hide();

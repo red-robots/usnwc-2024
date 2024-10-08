@@ -1099,6 +1099,7 @@ jQuery(document).ready(function ($) {
       },
       beforeSend: function beforeSend() {
         $("#loaderDiv").show();
+        $('body').addClass('modal-open');
       },
       success: function success(obj) {
         $("#loaderDiv").hide();
