@@ -193,6 +193,9 @@ $show_subnav = get_field('show_subnav');
                                     if (strpos($date, 'TH') !== false) {
                                       $date = str_replace('TH','<sup style="text-transform:none">th</sup>', $date);
                                     }
+                                    else if (strpos($date, 'ND') !== false) {
+                                      $date = str_replace('ND','<sup style="text-transform:none">nd</sup>', $date);
+                                    }
                                     else if (strpos($date, 'ST') !== false) {
                                       $date = str_replace('TH','<sup style="text-transform:none">st</sup>', $date);
                                     }
