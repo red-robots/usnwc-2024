@@ -49,6 +49,9 @@ $show_subnav = get_field('show_subnav');
                 'posts_per_page'  => 3,
                 'post_type'       => $post_type,
                 'post_status'     => 'publish',
+                'meta_key' => 'start_date',
+                'orderby' => 'meta_value_num',
+                'order' => 'ASC',
                 'meta_query'      => array(
                   'relation' => 'OR',
                   array(
