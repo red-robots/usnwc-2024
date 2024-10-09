@@ -42,6 +42,7 @@ $show_subnav = get_field('show_subnav');
             $btnUrl = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
             $btnTitle = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
             $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
+
             if($post_type) { 
               $args = array(
                 'posts_per_page'  => 3,
@@ -58,7 +59,7 @@ $show_subnav = get_field('show_subnav');
               );
               $posts = get_posts($args);
               if($posts) { ?>
-              <div id="section-upcoming_events-<?php echo $i ?>" class="repeatable-block section section-upcoming_events">
+              <div id="section-upcoming_events-<?php echo $i ?>" data-posttype="<?php echo $post_type ?>" class="repeatable-block section section-upcoming_events">
                 <div class="wrapper">
                   
                   <?php if($section_title) { ?>
@@ -70,6 +71,9 @@ $show_subnav = get_field('show_subnav');
                     $pid = $p->ID;
                     $title = $p->post_title;
                     $image = get_field('full_image', $pid);
+                    if(!$image) {
+                      $image = get_field('mobile-banner', $pid);
+                    }
                     $start_date = get_field('start_date', $pid);
                     $pagelink = get_permalink($pid);
                     if($start_date) {
@@ -78,9 +82,12 @@ $show_subnav = get_field('show_subnav');
                     ?>
                     <div class="infobox">
                       <div class="inside">
-                        <?php if ($start_date) { ?>
-                        <div class="event-date"><?php echo $start_date ?></div>
+                        <?php if ($post_type!=='dining') { ?>
+                          <?php if ($start_date) { ?>
+                          <div class="event-date"><?php echo $start_date ?></div>
+                          <?php } ?>
                         <?php } ?>
+                        
                         <?php if ($image) { ?>
                         <figure class="event-image">
                           <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['url'] ?>" />
@@ -92,6 +99,62 @@ $show_subnav = get_field('show_subnav');
                         <div class="button-block">
                           <a href="<?php echo $pagelink ?>" class="button-pill">See Details</a>
                         </div>
+
+
+                        <?php 
+                        //ADVENTURE DINING
+                        if ($post_type=='dining') { 
+                          $schedules = get_field('schedule_days', $pid);
+
+                          if($schedules) { ?>
+                          <div class="schedule-items">
+                            <?php foreach ($schedules as $s) { 
+                              $times = $s['coursetime'];
+                              if($times) { ?>
+                              <div class="course-times">
+                              <?php foreach ($times as $t) { 
+                                //$time = $t['time'];
+                                $course = $t['course'];
+                                $product_link = $t['product_link'];
+                                $btn = $t['extra_link'];
+                                $btnUrl = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
+                                $btnTitle = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
+                                $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
+                                $shortnameDay = '';
+                                if($course) { 
+                                  $date  = $course;
+                                  $dayParts = explode(',', $course);
+                                  if(count($dayParts) > 1) {
+                                    $day = $dayParts[0];
+                                    if( $dayName = shortenDayName($day) ) {
+                                      $date = $dayName . ', ' . $dayParts[1];
+                                    }
+                                  } 
+                                ?>
+                                <div class="lineItem">
+                                  <span class="time"><?php echo $date ?></span>
+                                  <?php if($btn || $product_link) { ?>
+                                  <span class="links">
+                                    <?php if($product_link) { ?>
+                                    <a data-accesso-keyword="<?php echo $product_link ?>" href="javascript:void(0)">Register</a>
+                                    <?php } ?>
+
+                                    <?php if($btnUrl && $btnTitle) { ?>
+                                    <a href="<?php echo $btnUrl ?>" target="<?php echo $btnTarget ?>"><?php echo $btnTitle ?></a>
+                                    <?php } ?>
+                                  </span>
+                                  <?php } ?>
+                                </div>
+                                <?php } ?>
+                              <?php } ?>
+                              </div>
+                              
+                              <?php } ?>
+                            <?php } ?>
+                          </div>  
+                          <?php } ?>
+                        <?php } ?>
+
                       </div>
                     </div>
                   <?php } ?>

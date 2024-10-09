@@ -2508,4 +2508,15 @@ function film_series_details_popup(){
 }
 
 
+function shortenDayName($day) {
+  $d['Monday'] = 'Mon';
+  $d['Tuesday'] = 'Tue';
+  $d['Wednesday'] = 'Wed';
+  $d['Thursday'] = 'Thu';
+  $d['Friday'] = 'Fri';
+  $d['Saturday'] = 'Sat';
+  $d['Sunday'] = 'Sun';
+  return ( isset($d[$day]) ) ? $d[$day] : '';
+}
+
 
