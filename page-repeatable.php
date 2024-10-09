@@ -42,23 +42,9 @@ $show_subnav = get_field('show_subnav');
             $btnUrl = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
             $btnTitle = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
             $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
+            $current_date = date('Y-m-d');
 
             if($post_type) { 
-              // $args = array(
-              //   'posts_per_page'  => 3,
-              //   'post_type'       => $post_type,
-              //   'post_status'     => 'publish',
-              //   'meta_query'      => array(
-              //     'relation' => 'OR',
-              //     array(
-              //       'key' => 'start_date',
-              //       'value' => date('Y-m-d'),
-              //       'compare' => '>=',
-              //       'type' => 'DATE'
-              //     ),
-              //   )
-              // );
-              $current_date = date('Y-m-d');
               $args = array(
                 'posts_per_page'  => 3,
                 'post_type'       => $post_type,
@@ -66,35 +52,57 @@ $show_subnav = get_field('show_subnav');
                 'meta_query'      => array(
                   'relation' => 'OR',
                   array(
-                    'key'        => 'end_date',
-                    'compare'    => '>=',
-                    'value'      => $current_date,
+                    'key' => 'start_date',
+                    'value' => $current_date,
+                    'compare' => '>=',
+                    'type' => 'DATE'
                   ),
                   array(
-                      // If an end_date does not exist.
-                      array(
-                          // We use another, nested set of conditions, for if the end_date
-                          // value is empty, OR if it is null/not set at all.
-                          'relation' => 'OR',
-                          array(
-                              'key'        => 'end_date',
-                              'compare'    => '=',
-                              'value'      => '',
-                          ),
-                          array(
-                              'key'        => 'end_date',
-                              'compare'    => 'NOT EXISTS',
-                          ),
-                      ),
-                      // AND, if the start date is upcoming.
-                      array(
-                          'key'        => 'start_date',
-                          'compare'    => '>=',
-                          'value'      => $current_date,
-                      ),
-                  )
+                    'key' => 'end_date',
+                    'value' => $current_date,
+                    'compare' => '>=',
+                    'type' => 'DATE'
+                  ),
                 )
               );
+              
+
+              // $args = array(
+              //   'posts_per_page'  => 3,
+              //   'post_type'       => $post_type,
+              //   'post_status'     => 'publish',
+              //   'meta_query'      => array(
+              //     'relation' => 'OR',
+              //     array(
+              //       'key'        => 'end_date',
+              //       'compare'    => '>=',
+              //       'value'      => $current_date,
+              //     ),
+              //     array(
+              //         // If an end_date does not exist.
+              //         array(
+              //             // We use another, nested set of conditions, for if the end_date
+              //             // value is empty, OR if it is null/not set at all.
+              //             'relation' => 'OR',
+              //             array(
+              //                 'key'        => 'end_date',
+              //                 'compare'    => '=',
+              //                 'value'      => '',
+              //             ),
+              //             array(
+              //                 'key'        => 'end_date',
+              //                 'compare'    => 'NOT EXISTS',
+              //             ),
+              //         ),
+              //         // AND, if the start date is upcoming.
+              //         array(
+              //             'key'        => 'start_date',
+              //             'compare'    => '>=',
+              //             'value'      => $current_date,
+              //         ),
+              //     )
+              //   )
+              // );
 
               $posts = get_posts($args);
               if($posts) { ?>
