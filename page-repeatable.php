@@ -43,7 +43,7 @@ $show_subnav = get_field('show_subnav');
             $btnTitle = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
             $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
             $current_date = date('Y-m-d');
-
+            $current_year = date('Y');
             if($post_type) { 
               $args = array(
                 'posts_per_page'  => 3,
@@ -126,6 +126,7 @@ $show_subnav = get_field('show_subnav');
                     }
                     $start_date = get_field('start_date', $pid);
                     $pagelink = get_permalink($pid);
+                    $start_date_year = ($start_date ) ? date('Y', strtotime($start_date)) : '';
                     if($start_date) {
                       $start_date = date('l, F d', strtotime($start_date));
                     }
@@ -179,7 +180,23 @@ $show_subnav = get_field('show_subnav');
                                     if( $dayName = shortenDayName($day) ) {
                                       $date = $dayName . ', ' . $dayParts[1];
                                     }
-                                  } 
+                                  }
+
+                                  if($start_date_year) {
+                                    if($start_date_year!=$current_year) {
+                                      $date .= ' ' . $start_date_year;
+                                    } 
+                                  }
+
+                                  if($date) {
+                                    $date = strtoupper($date);
+                                    if (strpos($date, 'TH') !== false) {
+                                      $date = str_replace('TH','<sup style="text-transform:none">th</sup>', $date);
+                                    }
+                                    else if (strpos($date, 'ST') !== false) {
+                                      $date = str_replace('TH','<sup style="text-transform:none">st</sup>', $date);
+                                    }
+                                  }
                                 ?>
                                 <div class="lineItem">
                                   <span class="time"><?php echo $date ?></span>
