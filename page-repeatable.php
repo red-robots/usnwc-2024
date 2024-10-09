@@ -163,10 +163,10 @@ $show_subnav = get_field('show_subnav');
                                 //$time = $t['time'];
                                 $course = $t['course'];
                                 $product_link = $t['product_link'];
-                                $btn = $t['extra_link'];
-                                $btnUrl = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
-                                $btnTitle = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
-                                $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
+                                $xbtn = $t['extra_link'];
+                                $xbtnUrl = (isset($xbtn['url']) && $xbtn['url']) ? $xbtn['url'] : '';
+                                $xbtnTitle = (isset($xbtn['title']) && $xbtn['title']) ? $xbtn['title'] : '';
+                                $xbtnTarget = (isset($xbtn['target']) && $xbtn['target']) ? $xbtn['target'] : '_self';
                                 $shortnameDay = '';
                                 if($course) { 
                                   $date  = $course;
@@ -180,14 +180,14 @@ $show_subnav = get_field('show_subnav');
                                 ?>
                                 <div class="lineItem">
                                   <span class="time"><?php echo $date ?></span>
-                                  <?php if($btn || $product_link) { ?>
+                                  <?php if($xbtnUrl || $product_link) { ?>
                                   <span class="links">
                                     <?php if($product_link) { ?>
                                     <a data-accesso-keyword="<?php echo $product_link ?>" href="javascript:void(0)">Register</a>
                                     <?php } ?>
 
-                                    <?php if($btnUrl && $btnTitle) { ?>
-                                    <a href="<?php echo $btnUrl ?>" target="<?php echo $btnTarget ?>"><?php echo $btnTitle ?></a>
+                                    <?php if($xbtnUrl && $xbtnTitle) { ?>
+                                    <a href="<?php echo $xbtnUrl ?>" target="<?php echo $xbtnTarget ?>"><?php echo $xbtnTitle ?></a>
                                     <?php } ?>
                                   </span>
                                   <?php } ?>
