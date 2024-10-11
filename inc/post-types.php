@@ -484,6 +484,15 @@ function build_taxonomies() {
       'query_var' => false,
       'show_admin_column'=>1
     ),
+    array(
+      'post_type' => array('whats-new'),
+      'menu_name' => 'Whats New Category',
+      'plural'    => 'Whats New Category',
+      'single'    => 'Whats New Category',
+      'taxonomy'  => 'whats-new-category',
+      'query_var' => false,
+      'show_admin_column'=>1
+    ),
     // array(
     //   'post_type' => array('jam-programs'),
     //   'menu_name' => 'Programming',
