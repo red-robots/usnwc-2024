@@ -153,12 +153,13 @@ jQuery(document).ready(function($){
         width : boxesWidth
       },
       beforeSend:function(){
-        
+        $("#loaderDiv").show();
       },
       success:function( obj ) {
-        console.log(obj);
+        $("#loaderDiv").hide();
       },
       error:function(request, status, error) {
+        console.log(error);
         console.log(request.responseText);
       }
     });

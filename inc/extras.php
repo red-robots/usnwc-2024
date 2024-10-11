@@ -1604,10 +1604,11 @@ add_action('wp_ajax_nopriv_assignBoxWidth', 'assignBoxWidth');
 add_action('wp_ajax_assignBoxWidth', 'assignBoxWidth');
 function assignBoxWidth(){
   global $wpdb;
+  $prefix = $wpdb->prefix;
   if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
     $postids = ($_POST['postid']) ? $_POST['postid'] : '';
     $boxWidth = ($_POST['width']) ? $_POST['width'] : '';
-
+    $jsonData = "";
     $stories_boxes_width = array();
     if($postids) {
       foreach($postids as $k=>$id) {
@@ -1621,26 +1622,111 @@ function assignBoxWidth(){
 
    
 
-    if($currentVal = get_option('stories_boxes_width')){
-      $objects = json_decode($currentVal);
+    // if($currentVal = get_option('stories_boxes_width')){
+    //   $objects = json_decode($currentVal);
     
-      foreach($stories_boxes_width as $pid=>$arr) {
-        $objects[$pid] = $arr;
+    //   foreach($stories_boxes_width as $pid=>$arr) {
+    //     $objects[$pid] = $arr;
+    //   }
+
+    //   $jsonData = json_encode($objects);
+    //   update_option('stories_boxes_width', $jsonData);
+    // }
+    // else {
+    //   $jsonData = json_encode($stories_boxes_width);
+    //   add_option('stories_boxes_width', $jsonData);
+    // }
+
+    $optionName = 'stories_boxes_width';
+    $option_table = $prefix.'options';
+
+    if($stories_boxes_width){
+
+      if( $objects = GetOption($optionName) ) {
+        foreach($stories_boxes_width as $pid=>$arr) {
+          $objects[$pid] = $arr;
+        }
+        $jsonData = json_encode($objects);
+        $wpdb->update(
+          $option_table,
+          array( 
+            'option_value' => $jsonData
+          ),
+          array(
+            'option_name' => $optionName
+          )
+        );
+      } else {
+
+        $objects = array();
+        $result = is_exist_option($optionName);
+        if($result) {
+          foreach($stories_boxes_width as $pid=>$arr) {
+            $objects[$pid] = $arr;
+          }
+          $jsonData = json_encode($objects);
+          $wpdb->update(
+            $option_table,
+            array( 
+              'option_value' => $jsonData
+            ),
+            array(
+              'option_name' => $optionName
+            )
+          );
+
+        } else {
+
+          $jsonData = json_encode($stories_boxes_width);
+          $wpdb->insert(
+              $option_table,
+              array(
+                'option_name' => $optionName,
+                'option_value' => $jsonData,
+              )
+          );
+        }
+
       }
-
-      $jsonData = json_encode($objects);
-      update_option('stories_boxes_width', $jsonData);
-    }
-    else {
-      $jsonData = json_encode($stories_boxes_width);
-      add_option('stories_boxes_width', $jsonData);
     }
 
-    echo json_encode($stories_boxes_width);
+    $response['result'] = $jsonData;
+    echo json_encode($response);
+
   } else {
     header("Location: ".$_SERVER["HTTP_REFERER"]);
   }
   die();
+}
+
+function is_exist_option($optName) {
+  global $wpdb;
+  $prefix = $wpdb->prefix;
+  $db_options = $prefix.'options';
+  $sql_query = 'SELECT * FROM ' . $db_options . ' WHERE option_name = "' . $optName . '"';
+  $result = $wpdb->get_row($sql_query);
+  return $result;
+}
+
+function GetOption( $optName ) {
+  global $wpdb;
+  $prefix = $wpdb->prefix;
+  $db_options = $prefix.'options';
+  $sql_query = 'SELECT * FROM ' . $db_options . ' WHERE option_name = "' . $optName . '"';
+  $result = $wpdb->get_row($sql_query);
+  $data = '';
+  if($result) {
+    $data = ($result->option_value) ? json_decode($result->option_value) : '';
+  }
+  return $data;
+
+  // $results = $wpdb->get_results( $sql_query, OBJECT );
+
+  // if ( count( $results ) === 0 ) {
+  //     return false;
+  // } else {
+  //     return true;
+  // }
 }
 
 

@@ -19048,6 +19048,11 @@ body.modal-open {
     figure { padding-bottom: 75%; }
   }
 
+  .storyBlock[data-width="100%"] {
+    width: 100%;
+    figure { padding-bottom: 50%; }
+  }
+
   .storyBlock.square figure {
     padding-bottom: 75%;
   }
