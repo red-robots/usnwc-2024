@@ -1600,6 +1600,49 @@ function extractURLFromString($string) {
     }
 }
 
+add_action('wp_ajax_nopriv_assignBoxWidth', 'assignBoxWidth');
+add_action('wp_ajax_assignBoxWidth', 'assignBoxWidth');
+function assignBoxWidth(){
+  global $wpdb;
+  if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+    $postids = ($_POST['postid']) ? $_POST['postid'] : '';
+    $boxWidth = ($_POST['width']) ? $_POST['width'] : '';
+
+    $stories_boxes_width = array();
+    if($postids) {
+      foreach($postids as $k=>$id) {
+        $width = $boxWidth[$k];
+        $stories_boxes_width[$id] = array(
+          'post_id'=>$id,
+          'width'=>$width
+        );
+      }
+    }
+
+   
+
+    if($currentVal = get_option('stories_boxes_width')){
+      $objects = json_decode($currentVal);
+    
+      foreach($stories_boxes_width as $pid=>$arr) {
+        $objects[$pid] = $arr;
+      }
+
+      $jsonData = json_encode($objects);
+      update_option('stories_boxes_width', $jsonData);
+    }
+    else {
+      $jsonData = json_encode($stories_boxes_width);
+      add_option('stories_boxes_width', $jsonData);
+    }
+
+    echo json_encode($stories_boxes_width);
+  } else {
+    header("Location: ".$_SERVER["HTTP_REFERER"]);
+  }
+  die();
+}
+
 
 add_action('wp_ajax_nopriv_posts_load_more', 'posts_load_more');
 add_action('wp_ajax_posts_load_more', 'posts_load_more');
