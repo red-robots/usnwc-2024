@@ -18979,6 +18979,7 @@ body.modal-open {
         padding: 2px 2px;
         width: 60px;
         height: 30px;
+        font-size: 13px;
       }
       .saveButton {
         height: 30px;
@@ -19027,14 +19028,22 @@ body.modal-open {
       padding: 6px 18px 6px;
     }
 
-    .textwrap {
-      display: none;
-      &.show {
-        display: block;
-        animation-duration: 1s;
-        animation-fill-mode: both;
-        animation-name: fadeInDown;
-      }
+    // .textwrap {
+    //   display: none;
+    //   &.show {
+    //     display: block;
+    //     animation-duration: 1s;
+    //     animation-fill-mode: both;
+    //     animation-name: fadeInDown;
+    //   }
+    // }
+
+    .textwrap  {
+      overflow: hidden;
+      height: 0;
+      opacity: 0;
+      transform: translateY(-5vw);
+      transition: all ease .5s;
     }
   }
 
@@ -19055,6 +19064,24 @@ body.modal-open {
 
   .storyBlock.square figure {
     padding-bottom: 75%;
+  }
+
+  .storyBlock:hover,
+  .storyBlock:focus {
+    .textwrap {
+      height: auto;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .storyBlock[data-width="50%"]:hover figure,
+  .storyBlock[data-width="50%"]:focus figure {
+    padding-bottom: 45%;
+  }
+
+  .storyBlock[data-width="25% | 1:1"]:hover figure,
+  .storyBlock[data-width="25% | 1:1"]:focus figure {
+    padding-bottom: 60%;
   }
 
   @include max(960px) {
@@ -19088,6 +19115,12 @@ body.modal-open {
   &:hover {
     background-color: #09d56b;
   }
+}
+
+.loadMoreWrapper {
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
 }
 
 body.logged-in.admin-bar {

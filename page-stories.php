@@ -36,72 +36,82 @@ get_header();
 
   if ( $posts->have_posts() ) { ?>
   <section class="stories-feeds-section">
-    <div class="wrapper">
-      <div id="container" class="flexwrap">
-      <?php while ( $posts->have_posts() ) : $posts->the_post(); 
-        $post_id = get_the_ID();
-        $thumbnail_id = get_post_thumbnail_id($post_id);
-        $photo = wp_get_attachment_image_url($thumbnail_id,'full');
-        if(!$photo) {
-          $photo = get_template_directory_uri() . '/assets/img/photo-coming-soon.jpg';
-        }
-        $excerpt = get_field('custom_excerpt');
-        $btn = get_field('readmore');
-        $btnUrl = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
-        $btnTitle = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
-        $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
-        $options = ['25% | 4:5','25% | 1:1','50%','75%','100%'];
-        $v_width = $options[0];
-        if( isset($currentBoxes->$post_id) && $currentBoxes->$post_id ) {
-          $obj = $currentBoxes->$post_id;
-          $v_width = $obj->width;
-        }
+    <div class="wrapper stories-wrapper">
+      <div id="container" class="flexwrap stories-entries">
+        <?php while ( $posts->have_posts() ) : $posts->the_post(); 
+          $post_id = get_the_ID();
+          $thumbnail_id = get_post_thumbnail_id($post_id);
+          $photo = wp_get_attachment_image_url($thumbnail_id,'full');
+          if(!$photo) {
+            $photo = get_template_directory_uri() . '/assets/img/photo-coming-soon.jpg';
+          }
+          $excerpt = get_field('custom_excerpt');
+          $btn = get_field('readmore');
+          $btnUrl = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
+          $btnTitle = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
+          $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
+          $options = ['25% | 4:5','25% | 1:1','50%','75%','100%'];
+          $v_width = $options[0];
+          if( isset($currentBoxes->$post_id) && $currentBoxes->$post_id ) {
+            $obj = $currentBoxes->$post_id;
+            $v_width = $obj->width;
+          }
 
 
-        ?>
-        <div class="storyBlock resizable" data-width="<?php echo $v_width ?>">
-          <div class="inner">
-            <?php if ( is_user_logged_in() ) { ?>
-            <div class="resizeBlock">
-              <select name="entry_<?php echo $post_id?>" class="blockSize">
-                <?php foreach ($options as $k=>$e) { 
-                  $is_selected = ($k==0) ? ' selected':'';
-                  if($v_width) {
-                    if($e==$v_width) {
-                      $is_selected = ' selected';
+          ?>
+          <div class="storyBlock animated fadeIn resizable" tabindex="0" data-width="<?php echo $v_width ?>">
+            <div class="inner">
+              <?php if ( is_user_logged_in() ) { ?>
+              <div class="resizeBlock">
+                <select name="entry_<?php echo $post_id?>" class="blockSize">
+                  <?php foreach ($options as $k=>$e) { 
+                    $is_selected = ($k==0) ? ' selected':'';
+                    if($v_width) {
+                      if($e==$v_width) {
+                        $is_selected = ' selected';
+                      }
+                    } else {
+                      $is_selected = '';
                     }
-                  } else {
-                    $is_selected = '';
-                  }
-                ?>
-                <option value="<?php echo $e ?>"<?php echo $is_selected ?>><?php echo $e ?></option>
-                <?php } ?>
-              </select>
-              <button class="saveButton" data-pid="<?php echo $post_id?>">Save</button>
-            </div>
-            <?php } ?>
-            <figure>
-              <img src="<?php echo $photo ?>" alt="<?php echo get_the_title() ?>" />
-            </figure>
-            <div class="post-title"><?php the_title(); ?></div>
-            <?php if ($excerpt || ($btnUrl && $btnTitle)) { ?>
-            <div class="textwrap">
-              <?php if ($excerpt) { ?>
-              <div class="excerpt"><?php echo $excerpt ?></div>
+                  ?>
+                  <option value="<?php echo $e ?>"<?php echo $is_selected ?>><?php echo $e ?></option>
+                  <?php } ?>
+                </select>
+                <button class="saveButton" data-pid="<?php echo $post_id?>">Save</button>
+              </div>
               <?php } ?>
-              <?php if ($btnUrl && $btnTitle) { ?>
-              <div class="buttonBlock">
-                <a href="<?php echo $btnUrl ?>" class="button button-pill" target="<?php echo $btnTarget ?>"><?php echo $btnTitle ?></a>
+              <figure>
+                <img src="<?php echo $photo ?>" alt="<?php echo get_the_title() ?>" />
+              </figure>
+              <div class="post-title"><?php the_title(); ?></div>
+              <?php if ($excerpt || ($btnUrl && $btnTitle)) { ?>
+              <div class="textwrap">
+                <?php if ($excerpt) { ?>
+                <div class="excerpt"><?php echo $excerpt ?></div>
+                <?php } ?>
+                <?php if ($btnUrl && $btnTitle) { ?>
+                <div class="buttonBlock">
+                  <a href="<?php echo $btnUrl ?>" class="button button-pill" target="<?php echo $btnTarget ?>"><?php echo $btnTitle ?></a>
+                </div>
+                <?php } ?>
               </div>
               <?php } ?>
             </div>
-            <?php } ?>
           </div>
-        </div>
 
-      <?php endwhile; wp_reset_postdata(); ?>
+        <?php endwhile; wp_reset_postdata(); ?>
       </div>
     </div>
+    <div id="hiddenData" style="display:none;"></div>
+
+    <?php
+    $total_pages = $posts->max_num_pages;
+    if ($total_pages > $perpage) { ?>
+    <div id="pagination" class="pagination-wrapper loadMoreWrapper">
+      <a href="javascript:void(0)" data-baseurl="<?php echo get_permalink() ?>" id="loadMorePosts" data-next="2" data-total-pages="<?php echo $total_pages ?>" class="button button-red">See More</a>
+    </div>
+    <?php } ?>
+
   </section>
 
   <?php } ?>
@@ -113,6 +123,29 @@ get_header();
 
 <script>
 jQuery(document).ready(function($){
+
+  $(document).on('click','#loadMorePosts', function(e){
+    e.preventDefault();
+    var loadMoreButton = $(this);
+    var d = new Date();
+    var next = $(this).attr('data-next');
+    var nextPlus = parseInt(next) + 1;
+    var totalPages = parseInt( $(this).attr('data-total-pages') );
+    var baseUrl = $(this).attr('data-baseurl') + '?pg=' + next;
+    loadMoreButton.attr('data-next', nextPlus);
+
+    $('#hiddenData').load(baseUrl + ' .stories-entries', function(){
+      if( $('#hiddenData .storyBlock').length ) {
+        var items = $('#hiddenData .stories-entries').html();
+        $('.stories-wrapper .stories-entries').append(items);
+        $('#hiddenData').html("");
+      }
+      if(nextPlus>totalPages) {
+        loadMoreButton.hide();
+      }
+    });
+  });
+
   $('#saveBoxesWidth').insertAfter('.site-footer');
   $('body').on('change','.resizeBlock select.blockSize',function(e){
     var num = $(this).val();

@@ -1620,51 +1620,18 @@ function assignBoxWidth(){
       }
     }
 
-   
-
-    // if($currentVal = get_option('stories_boxes_width')){
-    //   $objects = json_decode($currentVal);
-    
-    //   foreach($stories_boxes_width as $pid=>$arr) {
-    //     $objects[$pid] = $arr;
-    //   }
-
-    //   $jsonData = json_encode($objects);
-    //   update_option('stories_boxes_width', $jsonData);
-    // }
-    // else {
-    //   $jsonData = json_encode($stories_boxes_width);
-    //   add_option('stories_boxes_width', $jsonData);
-    // }
 
     $optionName = 'stories_boxes_width';
     $option_table = $prefix.'options';
 
-    if($stories_boxes_width){
-
-      if( $objects = GetOption($optionName) ) {
-        foreach($stories_boxes_width as $pid=>$arr) {
-          $objects[$pid] = $arr;
-        }
-        $jsonData = json_encode($objects);
-        $wpdb->update(
-          $option_table,
-          array( 
-            'option_value' => $jsonData
-          ),
-          array(
-            'option_name' => $optionName
-          )
-        );
-      } else {
-
-        $objects = array();
-        $result = is_exist_option($optionName);
-        if($result) {
-          foreach($stories_boxes_width as $pid=>$arr) {
-            $objects[$pid] = $arr;
+    if( $opt = is_option_exists($optionName) ) {
+      if($stories_boxes_width){
+        $optionValue = ($opt->option_value) ? json_decode($opt->option_value, true) : '';
+        if($stories_boxes_width) {
+          foreach($stories_boxes_width as $id=>$data) {
+            $optionValue[$id] = $data;
           }
-          $jsonData = json_encode($objects);
+          $jsonData = json_encode($optionValue);
           $wpdb->update(
             $option_table,
             array( 
@@ -1674,21 +1641,20 @@ function assignBoxWidth(){
               'option_name' => $optionName
             )
           );
-
-        } else {
-
-          $jsonData = json_encode($stories_boxes_width);
-          $wpdb->insert(
-              $option_table,
-              array(
-                'option_name' => $optionName,
-                'option_value' => $jsonData,
-              )
-          );
         }
-
       }
+    } else {
+      $jsonData = json_encode($stories_boxes_width);
+      $wpdb->insert(
+        $option_table,
+        array(
+          'option_name' => $optionName,
+          'option_value' => $jsonData,
+        )
+      );
     }
+
+    $result = is_option_exists($optionName);
 
     $response['result'] = $jsonData;
     echo json_encode($response);
@@ -1699,7 +1665,8 @@ function assignBoxWidth(){
   die();
 }
 
-function is_exist_option($optName) {
+
+function is_option_exists($optName) {
   global $wpdb;
   $prefix = $wpdb->prefix;
   $db_options = $prefix.'options';
