@@ -18959,7 +18959,8 @@ body.modal-open {
   .storyBlock {
     width: 25%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 20px 0;
+    overflow: hidden;
     transition: all ease .2s;
     .inner {
       position: relative;
@@ -18973,6 +18974,25 @@ body.modal-open {
       display: flex;
       justify-content: flex-end;
       padding: 10px;
+      .editPostLink {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 30px;
+        height: 30px;
+        background: #FFF;
+        border-radius: 100px;
+        font-size: 18px;
+        color: #070707;
+        box-shadow: 1px 8px 15px rgba(0, 0, 0, .5);
+        &:hover {
+          background: #000;
+          color: #FFF;
+        }
+      }
       select {
         border-radius: 0;
         border: 1px solid #000;
@@ -19044,6 +19064,7 @@ body.modal-open {
       opacity: 0;
       transform: translateY(-5vw);
       transition: all ease .5s;
+      pointer-events: none;
     }
   }
 
@@ -19068,13 +19089,15 @@ body.modal-open {
 
   .storyBlock:hover,
   .storyBlock:focus {
-    figure {
-      padding-bottom: 30%;
-    }
+    // figure {
+    //   padding-bottom: 30%;
+    // }
     .textwrap {
+      overflow: visible!important;
       height: auto;
       opacity: 1;
       transform: translateY(0);
+      pointer-events: auto;
     }
   }
   .storyBlock[data-width="50%"]:hover figure,
@@ -19091,6 +19114,14 @@ body.modal-open {
   .storyBlock[data-width="25% | 4:5"]:focus figure {
     padding-bottom: 75%;
   }
+  .storyBlock[data-width="100%"] {
+    margin-bottom: 70px;
+  }
+  .storyBlock[data-width="100%"] figure:hover,
+  .storyBlock[data-width="100%"]:focus figure {
+    padding-bottom: 35%;
+  }
+
 
   @include max(960px) {
     .storyBlock {width:50%!important;}

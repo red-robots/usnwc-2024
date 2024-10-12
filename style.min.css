@@ -4620,16 +4620,18 @@ body.modal-open{overflow:hidden}
 .stories-feeds-section{width:100%;float:left}
 .stories-feeds-section .wrapper{max-width:100%;width:100%;margin:0 auto}
 .stories-feeds-section .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-10px;margin-right:-10px}
-.stories-feeds-section .storyBlock{width:25%;padding:10px;margin:10px 0;-webkit-transition:all ease .2s;transition:all ease .2s}
+.stories-feeds-section .storyBlock{width:25%;padding:10px;margin:20px 0;overflow:hidden;-webkit-transition:all ease .2s;transition:all ease .2s}
 .stories-feeds-section .storyBlock .inner{position:relative}
 .stories-feeds-section .storyBlock .resizeBlock{position:absolute;top:0;left:0;width:100%;z-index:100;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;padding:10px}
+.stories-feeds-section .storyBlock .resizeBlock .editPostLink{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:absolute;top:10px;left:10px;width:30px;height:30px;background:#fff;border-radius:100px;font-size:18px;color:#070707;-webkit-box-shadow:1px 8px 15px rgba(0,0,0,.5);box-shadow:1px 8px 15px rgba(0,0,0,.5)}
+.stories-feeds-section .storyBlock .resizeBlock .editPostLink:hover{background:#000;color:#fff}
 .stories-feeds-section .storyBlock .resizeBlock select{border-radius:0;border:1px solid #000;padding:2px 2px;width:60px;height:30px;font-size:13px}
 .stories-feeds-section .storyBlock .resizeBlock .saveButton{height:30px;border:0;background-color:#048a49;color:#fff;text-transform:uppercase;font-size:12px;font-weight:500;line-height:1;display:none}
 .stories-feeds-section .storyBlock figure{margin:0;position:relative;padding-bottom:110%;overflow:hidden;border-radius:10px;-webkit-transition:all ease .3s;transition:all ease .3s}
 .stories-feeds-section .storyBlock figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .stories-feeds-section .storyBlock .post-title{text-transform:uppercase;font-family:"Brandon Bold";font-size:15px;line-height:1.2;color:#000;margin:10px 0}
 .stories-feeds-section .storyBlock .button.button-pill{background-color:transparent;color:#707070;padidng:7px 20px 6px;font-size:13px !important;padding:6px 18px 6px}
-.stories-feeds-section .storyBlock .textwrap{overflow:hidden;height:0;opacity:0;-webkit-transform:translateY(-5vw);transform:translateY(-5vw);-webkit-transition:all ease .5s;transition:all ease .5s}
+.stories-feeds-section .storyBlock .textwrap{overflow:hidden;height:0;opacity:0;-webkit-transform:translateY(-5vw);transform:translateY(-5vw);-webkit-transition:all ease .5s;transition:all ease .5s;pointer-events:none}
 .stories-feeds-section .storyBlock[data-width="50%"]{width:50%}
 .stories-feeds-section .storyBlock[data-width="50%"] figure{padding-bottom:60%}
 .stories-feeds-section .storyBlock[data-width="25% | 1:1"]{width:25%}
@@ -4637,11 +4639,12 @@ body.modal-open{overflow:hidden}
 .stories-feeds-section .storyBlock[data-width="100%"]{width:100%}
 .stories-feeds-section .storyBlock[data-width="100%"] figure{padding-bottom:50%}
 .stories-feeds-section .storyBlock.square figure{padding-bottom:75%}
-.stories-feeds-section .storyBlock:hover figure,.stories-feeds-section .storyBlock:focus figure{padding-bottom:30%}
-.stories-feeds-section .storyBlock:hover .textwrap,.stories-feeds-section .storyBlock:focus .textwrap{height:auto;opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}
+.stories-feeds-section .storyBlock:hover .textwrap,.stories-feeds-section .storyBlock:focus .textwrap{overflow:visible !important;height:auto;opacity:1;-webkit-transform:translateY(0);transform:translateY(0);pointer-events:auto}
 .stories-feeds-section .storyBlock[data-width="50%"]:hover figure,.stories-feeds-section .storyBlock[data-width="50%"]:focus figure{padding-bottom:45%}
 .stories-feeds-section .storyBlock[data-width="25% | 1:1"]:hover figure,.stories-feeds-section .storyBlock[data-width="25% | 1:1"]:focus figure{padding-bottom:60%}
 .stories-feeds-section .storyBlock[data-width="25% | 4:5"]:hover figure,.stories-feeds-section .storyBlock[data-width="25% | 4:5"]:focus figure{padding-bottom:75%}
+.stories-feeds-section .storyBlock[data-width="100%"]{margin-bottom:70px}
+.stories-feeds-section .storyBlock[data-width="100%"] figure:hover,.stories-feeds-section .storyBlock[data-width="100%"]:focus figure{padding-bottom:35%}
 #saveBoxesWidth{position:fixed;bottom:30px;right:30px;border:1px solid #fff;border-radius:10px;background-color:#059d33;color:#fff;z-index:99999999;padding:15px 15px;font-size:20px;-webkit-box-shadow:0 8px 15px rgba(0,0,0,.35);box-shadow:0 8px 15px rgba(0,0,0,.35)}
 #saveBoxesWidth:hover{background-color:#09d56b}
 .loadMoreWrapper{padding:0 20px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}

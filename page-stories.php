@@ -61,8 +61,10 @@ get_header();
           ?>
           <div class="storyBlock animated fadeIn resizable" tabindex="0" data-width="<?php echo $v_width ?>">
             <div class="inner">
-              <?php if ( is_user_logged_in() ) { ?>
+              <?php if ( is_user_logged_in() && current_user_can( 'manage_options' ) ) { ?>
               <div class="resizeBlock">
+                <a href="<?php echo get_edit_post_link($post_id); ?>" target="_blank" title="Edit Post" class="editPostLink"><i class="fa-sharp fa-light fa-pencil"></i></a>
+
                 <select name="entry_<?php echo $post_id?>" class="blockSize">
                   <?php foreach ($options as $k=>$e) { 
                     $is_selected = ($k==0) ? ' selected':'';
@@ -117,7 +119,7 @@ get_header();
   <?php } ?>
 
 </div><!-- #primary -->
-<?php if ( is_user_logged_in() ) { ?>
+<?php if ( is_user_logged_in() && current_user_can( 'manage_options' ) ) { ?>
 <button id="saveBoxesWidth">Save Boxes Width</button>
 <?php } ?>
 
