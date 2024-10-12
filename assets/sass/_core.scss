@@ -19068,6 +19068,9 @@ body.modal-open {
 
   .storyBlock:hover,
   .storyBlock:focus {
+    figure {
+      padding-bottom: 30%;
+    }
     .textwrap {
       height: auto;
       opacity: 1;
@@ -19082,6 +19085,11 @@ body.modal-open {
   .storyBlock[data-width="25% | 1:1"]:hover figure,
   .storyBlock[data-width="25% | 1:1"]:focus figure {
     padding-bottom: 60%;
+  }
+
+  .storyBlock[data-width="25% | 4:5"]:hover figure,
+  .storyBlock[data-width="25% | 4:5"]:focus figure {
+    padding-bottom: 75%;
   }
 
   @include max(960px) {
