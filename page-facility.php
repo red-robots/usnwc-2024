@@ -26,7 +26,7 @@ get_header(); ?>
     
     <?php if( isset($wwlocations) && $wwlocations ) { ?>
     <div class="locationPanels facility-map-section">
-      <div class="wrapper">
+      
       <?php foreach ($wwlocations as $k=>$w) { 
         $is_active = ($k==0) ? ' active':'';
         $loc = $w['locations_taxonomy'];
@@ -36,38 +36,63 @@ get_header(); ?>
         $address = $w['location'];
         if($loc && $maps) { ?>
         <?php //get_template_part("parts/subpage-tabs"); ?>
-        <button class="mobileTabHandle" aria-expanded="false" aria-controls="tabpanel-<?php echo $slug ?>">
-          <div class="name"><?php echo $name ?></div>
-          <?php if ($address) { ?>
-          <div class="loc"><?php echo $address ?></div>
-          <?php } ?>
-        </button>
-        <div id="tabpanel-<?php echo $slug ?>" class="info-panel tab-<?php echo $slug.$is_active ?>">
-          <?php foreach ($maps as $m) { 
-            $map_image = $m['map'];
-            $map_name = $m['title'];
-            $map_slug = ($map_name) ? sanitize_title($map_name) : '';
-            if($map_image) { ?>
-            
-            <div id="map-info-<?php echo $map_slug ?>" class="mapcol" data-section="<?php echo $map_name ?>">
-              <figure>
-                <a href="<?php echo $map_image['url'] ?>" data-fancybox>
-                  <img src="<?php echo $map_image['url'] ?>" alt="<?php echo ($map_name) ? $map_name : $map_image['title'] ?>" />
-                  <span class="zoom-icon"><i class="fas fa-search"></i></span>
-                </a>
-              </figure>
-            </div>
+        <div class="tabOuterWrapper">
+          <div class="mobileTabHandleDiv">
+            <button class="mobileTabHandle" aria-expanded="false" aria-controls="tabpanel-<?php echo $slug ?>">
+              <div class="name"><?php echo $name ?></div>
+              <?php if ($address) { ?>
+              <div class="loc"><?php echo $address ?></div>
+              <?php } ?>
+            </button>
+          </div>
+          <div id="tabpanel-<?php echo $slug ?>" class="info-panel tab-<?php echo $slug.$is_active ?>">
+            <div class="tabwrapper">
+            <?php foreach ($maps as $m) { 
+              $map_image = $m['map'];
+              $map_name = $m['title'];
+              $map_slug = ($map_name) ? sanitize_title($map_name) : '';
+              if($map_image) { ?>
+              <div id="map-info-<?php echo $map_slug ?>" class="mapcol" data-section="<?php echo $map_name ?>">
+                <figure>
+                  <a href="<?php echo $map_image['url'] ?>" data-fancybox>
+                    <img src="<?php echo $map_image['url'] ?>" alt="<?php echo ($map_name) ? $map_name : $map_image['title'] ?>" />
+                    <span class="zoom-icon"><i class="fas fa-search"></i></span>
+                  </a>
+                </figure>
+              </div>
+              <?php } ?>
             <?php } ?>
-          <?php } ?>
+            </div>
+          </div>
         </div>
         <?php } ?>
       <?php } ?>
-      </div>
+      
     </div>
     <?php } ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->
 <?php include( locate_template('inc/pagetabs-script.php') ); ?>
+
+<script>
+jQuery(document).ready(function($){
+  if( $('.locationPanels .info-panel').length ) {
+    $('.locationPanels .info-panel').each(function(){
+      var infoPanel = $(this);
+      if( $(this).find('.mapcol').length ) {
+        var locationSubNav = '<div class="customSubNavWrapper"><div class="location_subnav">';
+        $(this).find('.mapcol').each(function(){
+          var sectionName = $(this).attr('data-section');
+          var sectionId = $(this).attr('id');
+          locationSubNav += '<span><a href="#'+sectionId+'">'+sectionName+'</a></span>';
+        });
+        locationSubNav +='</div></div>';
+        infoPanel.prepend(locationSubNav);
+      }
+    });
+  }
+});
+</script>
 <?php
 get_footer();

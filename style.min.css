@@ -4650,9 +4650,12 @@ body.modal-open{overflow:hidden}
 .loadMoreWrapper{padding:0 20px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .fancybox-container{z-index:9999999}
 .locationTabsWrapper{width:100%;float:left;border-bottom:none !important;padding:0 20px 40px}
-.locationPanels.facility-map-section{padding-bottom:50px}
+.locationPanels.facility-map-section{padding-top:0 !important;padding-bottom:0 !important;background-color:transparent !important}
+.locationPanels.facility-map-section .wrapper{max-width:800px}
 .locationPanels.facility-map-section .info-panel{display:none;width:100%;float:left}
-.locationPanels.facility-map-section .info-panel .mapcol{max-width:100% !important;width:100%;float:left;margin:20px 0}
+.locationPanels.facility-map-section .info-panel .tabwrapper{width:100%;float:left;padding:30px 20px;background:#f2f2f2}
+.locationPanels.facility-map-section .info-panel .mapcol{max-width:800px !important;width:100%;margin:30px auto}
+.locationPanels.facility-map-section .info-panel .mapcol a,.locationPanels.facility-map-section .info-panel .mapcol img{float:none !important}
 .locationPanels.facility-map-section .info-panel figure{margin:0}
 .locationPanels.facility-map-section .info-panel img{width:100%;height:auto;visibility:visible !important}
 .locationPanels.facility-map-section .info-panel.active{display:block;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:fadeIn;animation-name:fadeIn}
@@ -4660,6 +4663,11 @@ body.modal-open{overflow:hidden}
 .locationPanels.facility-map-section .mobileTabHandle:after{content:"";width:0;height:0;border-top:12px solid #747474;border-left:8px solid transparent;border-right:8px solid transparent;position:absolute;top:50%;right:20px;-webkit-transform:translateY(-50%);transform:translateY(-50%);-webkit-transition:all ease .3s;transition:all ease .3s}
 .locationPanels.facility-map-section .mobileTabHandle .name{text-transform:uppercase;font-size:18px;font-weight:500;line-height:1;color:#000}
 .locationPanels.facility-map-section .mobileTabHandle .loc{margin-top:2px;font-size:13px;font-style:italic;color:#5c5c5c}
+.locationPanels.facility-map-section .customSubNavWrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-bottom:35px}
+.locationPanels.facility-map-section .location_subnav{border:1px solid #707070;padding:0 0 !important;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;border-radius:100px;overflow:hidden}
+.locationPanels.facility-map-section .location_subnav span{display:inline-block;margin:0;padding:0;border-right:1px solid #707070}
+.locationPanels.facility-map-section .location_subnav a{display:block;padding:6px 20px 5px;font-family:"Brandon Medium";font-size:12px;line-height:1.2;color:#707070;text-transform:uppercase;text-decoration:none}
+.locationPanels.facility-map-section .location_subnav a:hover,.locationPanels.facility-map-section .location_subnav a:focus{color:#ba0d30;background-color:#e5e5e5}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -5232,11 +5240,13 @@ body.home .homerow .imagebox a .title{font-size:5vw}
 .stories-feeds-section .storyBlock{width:50% !important}
 .stories-feeds-section .storyBlock figure{padding-bottom:75% !important}
 .locationPanels.facility-map-section{padding-top:20px;padding-bottom:20px}
+.locationPanels.facility-map-section .mobileTabHandleDiv{padding-left:30px;padding-right:30px}
 .locationPanels.facility-map-section .mobileTabHandle{display:block;margin-bottom:15px}
 .locationPanels.facility-map-section .mobileTabHandle[aria-expanded=true]{border-color:#ba0d30;background:#fff}
 .locationPanels.facility-map-section .mobileTabHandle[aria-expanded=true]:after{border-top:12px solid #ba0d30}
 .locationPanels.facility-map-section .info-panel,.locationPanels.facility-map-section .info-panel.active{display:none;margin-bottom:15px}
 .locationPanels.facility-map-section .info-panel:last-child,.locationPanels.facility-map-section .info-panel.active:last-child{margin-bottom:0}
+.locationPanels.facility-map-section .customSubNavWrapper{margin-top:20px}
 }@media screen and (max-width:900px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}

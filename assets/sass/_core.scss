@@ -19171,16 +19171,29 @@ body.modal-open {
   padding: 0 20px 40px;
 }
 .locationPanels.facility-map-section {
-  padding-bottom: 50px;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+  background-color: transparent!important;
+  .wrapper {
+    max-width: 800px;
+  }
   .info-panel {
     display: none;
     width: 100%;
     float: left;
-    .mapcol {
-      max-width: 100%!important;
+    .tabwrapper {
       width: 100%;
       float: left;
-      margin: 20px 0;
+      padding: 30px 20px;
+      background: #f2f2f2;
+    }
+    .mapcol {
+      max-width: 800px!important;
+      width: 100%;
+      margin: 30px auto;
+      a, img {
+        float: none!important;
+      }
     }
     figure {
       margin: 0 0;
@@ -19239,9 +19252,48 @@ body.modal-open {
     }
   }
 
+  .customSubNavWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+  }
+  .location_subnav {
+    border: 1px solid #707070;
+    padding: 0 0 !important;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 100px;
+    overflow: hidden;
+    span {
+      display: inline-block;
+      margin: 0 0;
+      padding: 0 0;
+      border-right: 1px solid #707070;
+    }
+    a {
+      display: block;
+      padding: 6px 20px 5px;
+      font-family: $font-brandon-medium;
+      font-size: 12px;
+      line-height: 1.2;
+      color: #707070;
+      text-transform: uppercase;
+      text-decoration: none;
+      &:hover, &:focus {
+        color: $red;
+        background-color: #e5e5e5;
+      }
+    }
+  }
+
   @media screen and (max-width: 960px) {
     padding-top: 20px;
     padding-bottom: 20px;
+    .mobileTabHandleDiv {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
     .mobileTabHandle {
       display: block;
       margin-bottom: 15px;
@@ -19261,8 +19313,13 @@ body.modal-open {
         margin-bottom: 0;
       }
     }
+    .customSubNavWrapper {
+      margin-top: 20px;
+    }
   }
 }
+
+
 
 body.logged-in.admin-bar {
   @media screen and (min-width: 820px) {
