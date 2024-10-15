@@ -36,7 +36,9 @@
       </ul> 
 
       <?php $j=1; foreach ($wwlocations as $w) { 
-        $name = $w['name'];
+        $loc = $w['locations_taxonomy'];
+        $name = (isset($loc->name) && $loc->name) ? $loc->name : '';
+        //$name = $w['name'];
         $location = $w['location'];
         $infocolumns = $w['infocolumns'];
         $is_active = ($j==1) ? ' active':'';
