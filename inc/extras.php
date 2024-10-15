@@ -1623,6 +1623,7 @@ function assignBoxWidth(){
 
     $optionName = 'stories_boxes_width';
     $option_table = $prefix.'options';
+    $result_data = [];
 
     if( $opt = is_option_exists($optionName) ) {
       if($stories_boxes_width){
@@ -1631,6 +1632,8 @@ function assignBoxWidth(){
           foreach($stories_boxes_width as $id=>$data) {
             $optionValue[$id] = $data;
           }
+
+          $result_data = $optionValue;
           $jsonData = json_encode($optionValue);
           $wpdb->update(
             $option_table,
@@ -1644,6 +1647,7 @@ function assignBoxWidth(){
         }
       }
     } else {
+      $result_data = $stories_boxes_width;
       $jsonData = json_encode($stories_boxes_width);
       $wpdb->insert(
         $option_table,
@@ -1656,7 +1660,7 @@ function assignBoxWidth(){
 
     $result = is_option_exists($optionName);
 
-    $response['result'] = $jsonData;
+    $response['result'] = $result_data;
     echo json_encode($response);
 
   } else {

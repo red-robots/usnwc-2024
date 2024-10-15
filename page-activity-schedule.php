@@ -4,6 +4,7 @@
  */
 
 get_header(); 
+$dateToday = date('l, F m, Y');
 $blank_image = THEMEURI . "images/square.png";
 $square = THEMEURI . "images/square.png";
 $flexslider = get_field( "flexslider_banner" );

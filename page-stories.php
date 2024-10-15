@@ -56,10 +56,8 @@ get_header();
             $obj = $currentBoxes->$post_id;
             $v_width = $obj->width;
           }
-
-
           ?>
-          <div class="storyBlock animated fadeIn resizable" tabindex="0" data-width="<?php echo $v_width ?>">
+          <div class="storyBlock animated fadeIn resizable" data-pid="<?php echo $post_id ?>" tabindex="0" data-width="<?php echo $v_width ?>">
             <div class="inner">
               <?php if ( is_user_logged_in() && current_user_can( 'manage_options' ) ) { ?>
               <div class="resizeBlock">
@@ -192,6 +190,7 @@ jQuery(document).ready(function($){
       },
       success:function( obj ) {
         $("#loaderDiv").hide();
+        console.log(obj);
       },
       error:function(request, status, error) {
         console.log(error);
