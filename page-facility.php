@@ -8,11 +8,10 @@ $banner = get_field("flexslider_banner");
 $has_banner = ($banner) ? 'hasbanner':'nobanner';
 get_header(); ?>
 
-<div id="primary" class="content-area-full about-page <?php echo $has_banner ?>">
+<div id="primary" class="content-area-full map-page <?php echo $has_banner ?>">
 	<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-
 			<?php if( get_the_content() ) { ?>
 			<div class="intro-text-wrap">
 				<div class="wrapper">
@@ -21,52 +20,51 @@ get_header(); ?>
 				</div>
 			</div>
 			<?php } ?>
-
-			<?php if( $facility_maps = get_field("facility_maps") ) { 
-				$block_title = get_field("block_title");
-				$custom_icon = get_field("custom_icon");
-				$count = count($facility_maps);
-				$mapClass = ($count>1) ? 'half':'full';
-			?>
-
-			<?php get_template_part("parts/subpage-tabs"); ?>
-
-			<section class="facility-map-section <?php echo $mapClass ?>">
-				<div class="wrapper">
-					<div class="shead-icon text-center">
-						<div class="icon"><span class="<?php echo $custom_icon ?>"></span></div>
-						<h2 class="stitle"><?php echo $block_title ?></h2>
-					</div>
-				</div>
-
-				<div class="columns-wrapper maps-above-the-other">
-					<?php $n=1; foreach ($facility_maps as $m) {
-						$title = $m['title']; 
-						$image = $m['image'];
-						$width = $m['blockwidth'];
-						if($width) {
-							$style = ($width) ? ' style="width:'.$width.'%"' : '';
-						} else {
-							$style = ($width) ? ' style="max-width:1200px;width:100%"' : '';
-						}
-						if($image) { ?>
-							<div class="map-wrap mcol<?php echo $n ?>">
-								<div id="mapcol<?php echo $n ?>" class="mapcol c<?php echo $n ?>"<?php echo $style ?> data-section="<?php echo $title ?>">
-									<div class="inside" style="background-image:url('<?php echo $image['url'] ?>')">
-										<a href="<?php echo $image['url'] ?>" data-fancybox>
-											<img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" />
-											<span class="zoom-icon"><i class="fas fa-search"></i></span>
-										</a>
-									</div>
-								</div>
-							</div>
-						<?php $n++; } ?>
-					<?php } ?>
-				</div>
-			</section>
-			<?php } ?>
-			
 		<?php endwhile; ?>
+
+    <?php include( locate_template('parts/tabs-locations.php') ); ?>
+    
+    <?php if( isset($wwlocations) && $wwlocations ) { ?>
+    <div class="locationPanels facility-map-section">
+      <div class="wrapper">
+      <?php foreach ($wwlocations as $k=>$w) { 
+        $is_active = ($k==0) ? ' active':'';
+        $loc = $w['locations_taxonomy'];
+        $name = (isset($loc->name) && $loc->name) ? $loc->name : '';
+        $slug = ($name) ? sanitize_title($name) : '';
+        $maps = $w['maps'];
+        $address = $w['location'];
+        if($loc && $maps) { ?>
+        <?php //get_template_part("parts/subpage-tabs"); ?>
+        <button class="mobileTabHandle" aria-expanded="false" aria-controls="tabpanel-<?php echo $slug ?>">
+          <div class="name"><?php echo $name ?></div>
+          <?php if ($address) { ?>
+          <div class="loc"><?php echo $address ?></div>
+          <?php } ?>
+        </button>
+        <div id="tabpanel-<?php echo $slug ?>" class="info-panel tab-<?php echo $slug.$is_active ?>">
+          <?php foreach ($maps as $m) { 
+            $map_image = $m['map'];
+            $map_name = $m['title'];
+            $map_slug = ($map_name) ? sanitize_title($map_name) : '';
+            if($map_image) { ?>
+            
+            <div id="map-info-<?php echo $map_slug ?>" class="mapcol" data-section="<?php echo $map_name ?>">
+              <figure>
+                <a href="<?php echo $map_image['url'] ?>" data-fancybox>
+                  <img src="<?php echo $map_image['url'] ?>" alt="<?php echo ($map_name) ? $map_name : $map_image['title'] ?>" />
+                  <span class="zoom-icon"><i class="fas fa-search"></i></span>
+                </a>
+              </figure>
+            </div>
+            <?php } ?>
+          <?php } ?>
+        </div>
+        <?php } ?>
+      <?php } ?>
+      </div>
+    </div>
+    <?php } ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->

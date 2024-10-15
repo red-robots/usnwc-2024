@@ -1122,6 +1122,37 @@ jQuery(document).ready(function ($) {
       $('#customModalContent').html("");
     }, 80);
   });
+
+  if ($('.locationPanels').length) {
+    $(document).on('click', '.locationTabsWrapper .tab button', function (e) {
+      e.preventDefault();
+      var tabId = $(this).attr('id');
+      var tabSelected = $('.info-panel.' + tabId);
+      tabSelected.addClass('active');
+      $('.locationPanels .info-panel').not(tabSelected).removeClass('active');
+    });
+    $(document).on('click', '.mobileTabHandle', function (e) {
+      e.preventDefault();
+      var tabId = $(this).attr('aria-controls');
+      var tabSelected = $('#' + tabId); //$(this).toggleClass('active');
+      //$('.locationTabsWrapper .mobileTabHandle').not(this).removeClass('active');
+      //tabSelected.slideToggle();
+
+      if ($(this).attr('aria-expanded') == 'false') {
+        $(this).attr('aria-expanded', 'true');
+      } else {
+        $(this).attr('aria-expanded', 'false');
+      }
+
+      $('.locationPanels .info-panel').each(function () {
+        if ($(this).attr('id') == tabId) {
+          $(this).slideToggle();
+        } else {
+          $(this).slideUp();
+        }
+      });
+    });
+  }
 }); // END #####################################    END
 "use strict";
 

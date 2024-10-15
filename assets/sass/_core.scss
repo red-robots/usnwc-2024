@@ -19161,6 +19161,108 @@ body.modal-open {
   display: flex;
   justify-content: center;
 }
+.fancybox-container {
+  z-index: 9999999;
+}
+.locationTabsWrapper {
+  width: 100%;
+  float: left;
+  border-bottom: none!important;
+  padding: 0 20px 40px;
+}
+.locationPanels.facility-map-section {
+  padding-bottom: 50px;
+  .info-panel {
+    display: none;
+    width: 100%;
+    float: left;
+    .mapcol {
+      max-width: 100%!important;
+      width: 100%;
+      float: left;
+      margin: 20px 0;
+    }
+    figure {
+      margin: 0 0;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      visibility: visible!important;
+    }
+
+    &.active {
+      display: block;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      animation-name: fadeIn;
+    }
+  }
+
+
+  .mobileTabHandle {
+    display: none;
+    appearance: none;
+    border: 2px solid #e1e1e1;
+    background-color: #e1e1e1;
+    border-radius: 10px;
+    text-align: left;
+    width: 100%;
+    padding: 10px 55px 8px 15px;
+    position: relative;
+    transition: all ease .3s;
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 12px solid #747474;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      transition: all ease .3s;
+    }
+    .name {
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1;
+      color: #000;
+    }
+    .loc {
+      margin-top: 2px;
+      font-size: 13px;
+      font-style: italic;
+      color: #5c5c5c;
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .mobileTabHandle {
+      display: block;
+      margin-bottom: 15px;
+    }
+    .mobileTabHandle[aria-expanded="true"] {
+      border-color: $red;
+      background: #FFF;
+      &:after {
+        border-top: 12px solid $red;
+      }
+    }
+    .info-panel,
+    .info-panel.active {
+      display: none;
+      margin-bottom: 15px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
 
 body.logged-in.admin-bar {
   @media screen and (min-width: 820px) {
