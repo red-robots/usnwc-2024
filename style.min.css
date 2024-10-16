@@ -5192,6 +5192,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-two_column_row{margin-top:90px;margin-bottom:90px}
 .section-two_column_row .flexwrap{min-height:520px}
 .section-cards_bottom_text .wrapper{max-width:85vw}
+}@media screen and (min-width:960px){.section--schedules .section-two_column_row .flexwrap{min-height:480px}
 }@media screen and (min-width:961px){.activity-schedule-modal .schedule-container.half .fxcol{width:46%}
 }@media screen and (min-width:1025px){#primary .upcoming-posts .entry{width:33.333%}
 }@media(min-width:1200px){section.route-details .flexcol{width:25%}

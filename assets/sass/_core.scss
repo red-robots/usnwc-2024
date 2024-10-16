@@ -19398,6 +19398,12 @@ body.modal-open {
       margin-bottom: 25px!important;
     }
   }
+
+  @media screen and (min-width: 960px) {
+    .section-two_column_row .flexwrap {
+      min-height: 480px;
+    }
+  }
 }
 
 .event-details--section {
