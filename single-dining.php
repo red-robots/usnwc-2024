@@ -102,6 +102,64 @@ get_header();
         <?php } ?>
 
       <?php } ?>
+
+      <?php  
+      $event_title = get_field('event_title');
+      if($event_title) { ?>
+      <div id="event-details" data-section="<?php echo $event_title ?>" class="event-details--section">
+        <div class="wrapper">
+          <h2><?php echo $event_title ?></h2>
+        </div>
+        
+
+        <?php  
+        /* EVENT DETAILS */
+        $details = get_field("event_details");
+        $event_button = get_field("event_button");
+        $button = ( isset($event_button['button_type']) && $event_button['button_type'] ) ? $event_button['button_type']:'';
+        $buttonName = '';
+        $buttonLink = '';
+        $buttonTarget = '';
+        if($button && $button=='pdf') {
+          $buttonPDF = $event_button['button_pdf'];
+          if($buttonPDF['pdf_button_name'] && $buttonPDF['pdf_button_link']) {
+            $buttonName = $buttonPDF['pdf_button_name'];
+            $buttonLink = $buttonPDF['pdf_button_link']['url'];
+            $buttonTarget = '_blank';
+          }
+        } else if($button && $button=='pagelink') {
+          $buttonPage = $event_button['button_pagelink'];
+          $buttonName = $buttonPage['title'];
+          $buttonLink = $buttonPage['url'];
+          $buttonTarget = ( isset($buttonPage['target']) && $buttonPage['target'] ) ? $buttonPage['target']:'_self';
+        }
+        $cta_buttons = get_field("event_cta_buttons");
+        if($details) { ?>
+        <div id="section-event-details" data-section="<?php echo $event_title ?>" class="section-content dining-event-details single-dining-page">
+          <div class="wrapper">
+            <div class="details text-center">
+              <?php foreach ($details as $d) { 
+                $title = $d['title'];
+                $text = $d['description'];
+                ?>
+                <div class="info">
+                  <?php if ($title) { ?>
+                    <h3 class="infoTitle"><?php echo $title ?></h3>
+                  <?php } ?>
+                  <?php if ($text) { ?>
+                    <div class="infoText"><?php echo $text ?></div>
+                  <?php } ?>
+                </div>
+              <?php } ?>
+              
+            </div>
+          </div>
+        </div>
+        <?php } ?>  
+
+      </div>
+      <?php } ?>
+
     <?php endwhile; ?>
   </main>
 </div>
