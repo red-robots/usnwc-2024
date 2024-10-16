@@ -5,7 +5,7 @@ $textImageData = get_field("textImageCol"); ?>
 
 
 <?php if ($textImageData) { ?>
-<section class="text-and-image-blocks nomtop">
+<section class="text-and-image-blocks text-and-image-blocks--gallery nomtop">
 	<div class="columns-2">
 	<?php 
 		$i=1; while ( have_rows('textImageCol') ) : the_row();
@@ -46,13 +46,35 @@ $textImageData = get_field("textImageCol"); ?>
 		$btnTarget = ( isset($btn['target']) && $btn['target'] ) ? $btn['target'] : '_self';
 		$slides = get_sub_field('images'); //$slides = $s['images'];
 		$boxClass = ( ($e_title || $e_text) && $slides ) ? 'half':'full';
-		if( ($e_title || $e_text) || $slides) {  $colClass = ($i % 2) ? ' odd':' even'; ?>
+
+    $image_position = get_sub_field('image_position');
+
+		if( ($e_title || $e_text) || $slides) {  
+      $colClass = ($i % 2) ? ' odd':' even'; 
+      $colClass .= ' image-position-' . $image_position;
+    ?>
     
     <?php if ( isset($show_in_subnav) && $show_in_subnav ) { ?>
       <div id="section<?php echo $i?>" data-section="<?php echo $e_title ?>" class="mscol <?php echo $boxClass.$colClass ?>">
     <?php } else { ?>
       <div id="section<?php echo $i?>" class="mscol <?php echo $boxClass.$colClass ?>">
     <?php } ?>
+
+        <?php if ( $slides ) { ?>
+        <div class="gallerycol">
+          <div class="flexslider">
+            <ul class="slides">
+              <?php $helper = THEMEURI . 'images/rectangle-narrow.png'; ?>
+              <?php foreach ($slides as $s) { ?>
+                <li class="slide-item" style="background-image:url('<?php echo $s['url']?>')">
+                  <img src="<?php echo $helper ?>" alt="" aria-hidden="true" class="placeholder">
+                  <img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>" class="actual-image" />
+                </li>
+              <?php } ?>
+            </ul>
+          </div>
+        </div>  
+        <?php } ?>
 
 				<?php if ( $e_title || $e_text ) { ?>
 				<div class="textcol">
@@ -80,21 +102,8 @@ $textImageData = get_field("textImageCol"); ?>
 				</div><!-- .textcol -->	
 				<?php } ?>
 
-				<?php if ( $slides ) { ?>
-				<div class="gallerycol">
-					<div class="flexslider">
-						<ul class="slides">
-							<?php $helper = THEMEURI . 'images/rectangle-narrow.png'; ?>
-							<?php foreach ($slides as $s) { ?>
-								<li class="slide-item" style="background-image:url('<?php echo $s['url']?>')">
-									<img src="<?php echo $helper ?>" alt="" aria-hidden="true" class="placeholder">
-									<img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>" class="actual-image" />
-								</li>
-							<?php } ?>
-						</ul>
-					</div>
-				</div>	
-				<?php } ?>
+				
+
 		<?php } ?>
 
 		</div>

@@ -19562,6 +19562,12 @@ body.modal-open {
   }
 }
 
+.text-and-image-blocks.text-and-image-blocks--gallery {
+  .image-position-left {
+    flex-direction: row!important;
+  }
+}
+
 body.logged-in.admin-bar {
   @media screen and (min-width: 820px) {
     &.subpage {
