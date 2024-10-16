@@ -2397,6 +2397,8 @@ section.stories-whats .wn-box .wn-box-contents .flex{display:-webkit-box;display
 #pageTabs #tabcontent span.mini-nav a:hover,#pageTabs #tabcontent span.mini-nav a:focus{background-color:#e5e5e5;color:#ba0d30}
 #pageTabs #tabcontent span.mini-nav:last-child{border-right:0}
 #pageTabs.new{margin-bottom:31px;margin-top:60px}
+.subNavTabsWrapper{width:100%;float:left;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.subNavTabsWrapper #pageTabs{margin-bottom:0}
 body.single-race #pageTabs{top:0;margin-top:0}
 body.single-race #primary #section-faqs{padding-top:60px;padding-bottom:30px}
 body.single-race .content-default .black-section ul,body.single-race .content-default .black-section ol{display:inline-block;text-align:left}
@@ -4687,7 +4689,23 @@ body.modal-open{overflow:hidden}
 .event-details--section .details{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .event-details--section .details .info{display:inline-block;width:33.333%;padding:20px 40px;border-right:1px solid #ccc}
 .event-details--section .details .info:last-child{border-right:0}
-.dining-event-details.single-dining-page{width:100%;background-color:transparent;padding-top:30px}
+.dining-event-details.single-dining-page{width:100%;background-color:transparent;padding-top:30px;padding-bottom:30px}
+.checkin-section-images{padding-top:0;padding-bottom:70px}
+.checkin-section-images .section-title{font-family:"Brandon Bold";font-size:36px;line-height:1.2;color:#000;margin:0 0 16px;text-transform:uppercase;text-align:center}
+.checkin-section-images .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;border:2px solid #fff}
+.checkin-section-images .flexcol{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative}
+.checkin-section-images figure{width:100%;margin:0;position:relative;border:4px solid #fff}
+.checkin-section-images img{width:100%;height:auto}
+.checkin-section-images .flexcol.images-1 figure{height:100%}
+.checkin-section-images .flexcol.images-1 figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.checkin-section-images .flexcol.images-2 figure{padding-bottom:50%}
+.checkin-section-images .flexcol.images-2 figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.checkin-section-images .flexcol.images-3 figure{padding-bottom:50%}
+.checkin-section-images .flexcol.images-3 figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.checkin-section-images .flexcol.images-3 figure.frame2,.checkin-section-images .flexcol.images-3 figure.frame3{width:100%}
+.checkin-section-images .flexcol.images-4 figure{padding-bottom:50%}
+.checkin-section-images .flexcol.images-4 figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.checkin-section-images .flexcol.images-4 figure.frame1,.checkin-section-images .flexcol.images-4 figure.frame2,.checkin-section-images .flexcol.images-4 figure.frame3,.checkin-section-images .flexcol.images-4 figure.frame4{width:100%}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -5103,6 +5121,9 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .popup-content-wrapper.details-film-series .infoboxes .infobox{width:33.33%;border-right:1px solid #ccc}
 .popup-content-wrapper.details-film-series .infoboxes .infobox:last-child{border-right:0}
 .stories-feeds-section .wrapper{max-width:85vw}
+.checkin-section-images .flexcol{width:50%}
+.checkin-section-images .flexcol.images-3 figure.frame2,.checkin-section-images .flexcol.images-3 figure.frame3{width:50%}
+.checkin-section-images .flexcol.images-4 figure.frame1,.checkin-section-images .flexcol.images-4 figure.frame2,.checkin-section-images .flexcol.images-4 figure.frame3,.checkin-section-images .flexcol.images-4 figure.frame4{width:50%}
 }@media screen and (min-width:820px){#banner.taxonomy-banner .static-banner img.desktop{display:block}
 #banner.taxonomy-banner .static-banner img.mobile{display:none}
 .post-type-entries .imagediv.mobile{display:none}

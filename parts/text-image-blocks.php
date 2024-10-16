@@ -4,16 +4,40 @@ $textImageData = get_field("textImageCol"); ?>
 
 
 
-
-
 <?php if ($textImageData) { ?>
 <section class="text-and-image-blocks nomtop">
 	<div class="columns-2">
 	<?php 
 		$i=1; while ( have_rows('textImageCol') ) : the_row();
 	
-
-		if( get_row_layout() == 'text_and_image' ):
+    if( get_row_layout() == 'grid_images' ): 
+      $section_title = get_sub_field('section_title');
+      $column_images['left'] = get_sub_field('column_left_images');
+      $column_images['right'] = get_sub_field('column_right_images');
+      if( $column_images ) { ?>
+      <div id="grid-images-<?php echo $i ?>" data-section="<?php echo $section_title ?>" class="grid-images checkin-section-images">
+        <?php if ($section_title) { ?>
+        <div class="wrapper">
+          <h2 class="section-title"><?php echo $section_title ?></h2>
+        </div>
+        <?php } ?>
+        <div class="flexwrap">
+          <?php foreach ($column_images as $key=>$images) { ?>
+            <?php if ($images) { $count_images = count($images); ?>
+            <div class="flexcol fxcol-<?php echo $key ?> images-<?php echo $count_images ?>">
+              <?php $im=1; foreach ($images as $img) {  ?>
+               <figure class="frame<?php echo $im ?>">
+                 <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" />
+               </figure> 
+              <?php $im++; } ?>
+            </div>
+            <?php } ?>
+          <?php } ?>
+        </div>
+      </div>
+      <?php } ?>
+		<?php 
+    elseif ( get_row_layout() == 'text_and_image' ):
 		$e_title = get_sub_field('title'); //$e_title = $s['title'];
 		$e_text = get_sub_field('text'); //$e_text = $s['text'];
 		$btn = get_sub_field('button'); //$btn = $s['button'];
@@ -23,7 +47,13 @@ $textImageData = get_field("textImageCol"); ?>
 		$slides = get_sub_field('images'); //$slides = $s['images'];
 		$boxClass = ( ($e_title || $e_text) && $slides ) ? 'half':'full';
 		if( ($e_title || $e_text) || $slides) {  $colClass = ($i % 2) ? ' odd':' even'; ?>
-		<div id="section<?php echo $i?>" class="mscol <?php echo $boxClass.$colClass ?>">
+    
+    <?php if ( isset($show_in_subnav) && $show_in_subnav ) { ?>
+      <div id="section<?php echo $i?>" data-section="<?php echo $e_title ?>" class="mscol <?php echo $boxClass.$colClass ?>">
+    <?php } else { ?>
+      <div id="section<?php echo $i?>" class="mscol <?php echo $boxClass.$colClass ?>">
+    <?php } ?>
+
 				<?php if ( $e_title || $e_text ) { ?>
 				<div class="textcol">
 					<div class="inside">
@@ -68,7 +98,7 @@ $textImageData = get_field("textImageCol"); ?>
 		<?php } ?>
 
 		</div>
-		<?php $i++;  ?>
+		
 		<?php elseif( get_row_layout() == 'section_break' ):  
 			$sHeading = get_sub_field('section_heading');
 			$sDetails = get_sub_field('section_details');
@@ -85,7 +115,7 @@ $textImageData = get_field("textImageCol"); ?>
 				<?php echo $sDetails; ?>
 			</section>
 		<?php endif; ?>
-	<?php endwhile; ?>
+	<?php $i++; endwhile; ?>
 	</div>
 </section>	
 

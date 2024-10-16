@@ -3735,6 +3735,16 @@ section.stories-whats {
     margin-top: 60px;
   }
 }
+.subNavTabsWrapper {
+  width: 100%;
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  #pageTabs {
+    margin-bottom: 0;
+  }
+}
 
 body.single-race {
 	#pageTabs {
@@ -19442,6 +19452,114 @@ body.modal-open {
   width: 100%;
   background-color: transparent;
   padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.checkin-section-images {
+  padding-top: 0;
+  padding-bottom: 70px;
+  .section-title {
+    font-family: $font-brandon-bold;
+    font-size: 36px;
+    line-height: 1.2;
+    color: #000;
+    margin: 0 0 16px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid #FFF;
+  }
+  .flexcol {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    @include tab {
+      width: 50%;
+    }
+  }
+  figure {
+    width: 100%;
+    margin: 0 0;
+    position: relative;
+    border: 4px solid #FFF;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .flexcol.images-1 {
+    figure {
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+  .flexcol.images-2 {
+    figure {
+      padding-bottom: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+  .flexcol.images-3 {
+    figure {
+      padding-bottom: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+      }
+      &.frame2, &.frame3 {
+        width: 100%;
+        @include tab {
+          width: 50%;
+        }
+      }
+    }
+  }
+  .flexcol.images-4 {
+    figure {
+      padding-bottom: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+      }
+      &.frame1, &.frame2,
+      &.frame3, &.frame4 {
+        width: 100%;
+        @include tab {
+          width: 50%;
+        }
+      }
+    }
+  }
 }
 
 body.logged-in.admin-bar {

@@ -1,4 +1,5 @@
 <?php
+$post_id = get_the_ID(); 
 get_header(); 
 ?>
 <div id="primary" class="content-area-full content-default single-dining-post">
@@ -12,6 +13,10 @@ get_header();
         </div>
       </div>
       <?php } ?>
+
+      <div class="subNavTabsWrapper">
+        <?php get_template_part("parts/subpage-tabs"); ?>
+      </div>
 
       <?php 
       $schedules = get_field('schedule_days');
@@ -135,7 +140,7 @@ get_header();
         }
         $cta_buttons = get_field("event_cta_buttons");
         if($details) { ?>
-        <div id="section-event-details" data-section="<?php echo $event_title ?>" class="section-content dining-event-details single-dining-page">
+        <div id="section-event-details" class="section-content dining-event-details single-dining-page">
           <div class="wrapper">
             <div class="details text-center">
               <?php foreach ($details as $d) { 
@@ -161,7 +166,28 @@ get_header();
       <?php } ?>
 
     <?php endwhile; ?>
+
+
+    
+    <?php 
+    //Texts and Gallery
+    $show_in_subnav = true;
+    include(locate_template('parts/text-image-blocks.php')); 
+    ?>
+
+    <?php /* FAQ */ ?>
+    <?php 
+    $faq_title = get_field("faq_title");
+    if( $faqs = get_faq_listings($post_id) ) { ?>
+      <?php
+        $customFAQTitle = $faq_title;
+        include( locate_template('parts/content-faqs.php') ); 
+        include( locate_template('inc/faqs.php') ); 
+      ?>
+    <?php } ?>
+
   </main>
 </div>
 <?php
+include( locate_template('inc/pagetabs-script.php') ); 
 get_footer();
