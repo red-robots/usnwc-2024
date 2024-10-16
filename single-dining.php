@@ -75,6 +75,9 @@ get_header();
                             else if (strpos($date, 'ST') !== false) {
                               $date = str_replace('TH','<sup style="text-transform:none">st</sup>', $date);
                             }
+                            else if (strpos($date, 'RD') !== false) {
+                              $date = str_replace('RD','<sup style="text-transform:none">rd</sup>', $date);
+                            }
                           }
                         ?>
                         <div class="lineItem">
