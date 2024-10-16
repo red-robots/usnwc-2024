@@ -19320,6 +19320,72 @@ body.modal-open {
 }
 
 
+#hero--single {
+  position: relative;
+  figure {
+    margin: 0 0;
+    position: relative;
+    padding-bottom: 36vw;
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .banner-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    pointer-events: none;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.section--schedules {
+  width: 100%;
+  float: left;
+  .course-times .lineItem span {
+    background: #f2f2f2!important;
+  }
+  .course-times .lineItem span.time {
+    font-size: 18px!important;
+  }
+  .course-times .lineItem .links {
+    top: 3px!important
+  }
+  .imageBlock {
+    position: relative;
+    overflow: hidden;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .textBlock {
+    min-height: 640px;
+    h2 {
+      margin-bottom: 25px!important;
+    }
+  }
+}
 
 body.logged-in.admin-bar {
   @media screen and (min-width: 820px) {

@@ -136,6 +136,8 @@ if($postHeroImage) {
 		}
 	}
 	 
+
+  get_template_part('parts/single-hero'); 
 	?>
 
 	<div id="content" class="site-content">

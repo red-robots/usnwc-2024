@@ -137,7 +137,7 @@ function js_custom_init() {
             'plural'    => 'Adventure Dining',
             'single'    => 'Adventure Dining',
             'menu_icon' => 'dashicons-coffee',
-            'supports'  => array('title','editor')
+            'supports'  => array('title','editor','thumbnail')
         ),
         array(
             'post_type' => 'event-space',
