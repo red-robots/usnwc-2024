@@ -2416,7 +2416,7 @@ h1.page-title span{display:inline-block;position:relative}
 h1.page-title span:after{content:"";display:block;width:30%;height:2px;background:#ba0d30;margin:25px auto 0}
 .intro-text-wrap{width:100%;float:left;text-align:center;padding:70px 20px}
 .intro-text-wrap .btn-sm.btn-cta{margin-top:20px}
-.intro-text{font-size:24px;line-height:1.4;font-family:"Brandon Light";color:rgba(0,0,0,.6);max-width:900px;margin:0 auto}
+.intro-text{font-size:22px;line-height:1.4;font-family:"Brandon Light";color:rgba(0,0,0,.6);max-width:900px;margin:0 auto}
 .intro-text p:last-child{margin-bottom:0}
 .festival-page{width:100%;float:left}
 .post-type-entries{width:100%;float:left}
@@ -3850,6 +3850,9 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .flexibleContentWrap .column-style.first .titlediv{margin-bottom:20px !important}
 .flexibleContentWrap .column-style.first .shead-icon{margin-top:0 !important;margin-bottom:20px !important}
 .flexibleContentWrap .column-style.next .shead-icon{margin-top:65px !important;margin-bottom:50px !important}
+.flexibleContentWrap .title-wrapper .text-wrap{font-family:"Brandon Light";font-size:22px;line-height:1.4}
+.flexibleContentWrap .title-wrapper.has-section-text .titlediv{margin-bottom:0}
+.flexibleContentWrap .title-wrapper.has-section-text .shead-icon{margin-bottom:15px}
 .modal.customModal .cta-buttons a{margin:0 8px}
 .modal.customModal .modal-header{position:relative}
 .modal.customModal .modal-header #eventStatusTxt{display:inline-block;position:absolute;top:0;left:0}
