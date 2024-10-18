@@ -35,15 +35,24 @@ $placeholder = THEMEURI . 'images/rectangle.png';
         <?php if( get_row_layout() == 'text_and_image_block' ) { ?>
           <?php  
           $section_title = get_sub_field('section_title');
+          $section_text = get_sub_field('section_text');
           $content_columns = get_sub_field('content_columns');
           $column_style = get_sub_field('column_style');
           ?>
           <div class="column-style column-style-<?php echo $ctr ?> <?php echo ($column_style) ? ' '.$column_style:''?>">
-            <?php if ($section_title) { ?>
-            <div class="wrapper titlediv">
-              <div class="shead-icon text-center">
-                <h2 class="stitle"><?php echo $section_title ?></h2>
+            <?php if ($section_title || $section_text) { ?>
+            <div class="wrapper">
+              <?php if ($section_title ) { ?>
+              <div class="titlediv">
+                <div class="shead-icon text-center">
+                  <h2 class="stitle"><?php echo $section_title ?></h2>
+                </div>
               </div>
+              <?php } ?>
+
+              <?php if ($section_text ) { ?>
+              <div class="text-wrap"><?php echo anti_email_spam($section_text) ?></div>
+              <?php } ?>
             </div>
             <?php } ?>
 
