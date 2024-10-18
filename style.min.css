@@ -3941,6 +3941,7 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .subscribeForm #mce-success-response{margin-top:10px;color:#fff}
 .teaser-form{width:90%;margin:30px auto}
 .teaser-form input.teaser{border:1px solid #ccc !important;padding:10px 45px 10px 10px !important;height:auto !important}
+.cards-multiple-wrapper .intro-wrapper{text-align:center}
 .cardsWrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-left:-10px;margin-right:-10px;padding:0 30px}
 .cardsWrapper .textWrapper{max-width:800px;width:100%;marign:0 auto;font-family:"Brandon Light";font-size:22px;line-height:1.4;max-width:800px;width:100%;margin:0 auto;text-align:center}
 .cardsWrapper .imageWrap{width:100%;padding:10px}

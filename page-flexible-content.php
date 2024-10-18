@@ -338,10 +338,10 @@ $placeholder = THEMEURI . 'images/rectangle.png';
         $card_text = get_sub_field('card_text');
         $cards_multiple = get_sub_field('cards_multiple');
         if($cards_multiple) { ?>
-        <section id="cards-multiple-<?php echo $ctr ?>" data-section="">
+        <section id="cards-multiple-<?php echo $ctr ?>" class="cards-multiple-wrapper" data-section="<?php echo $card_title ?>">
           <div class="full-wrapper">
             <?php if ($card_title || $card_text) { ?>
-              <div class="intro-wrapper">
+              <div class="wrapper intro-wrapper">
                 <?php if ($card_title) { ?>
                 <div class="titleWrapper"><h2 class="stitle"><?php echo $card_title ?></h2></div>
                 <?php } ?>

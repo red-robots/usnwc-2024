@@ -13950,17 +13950,9 @@ body.single-race .filter-wrapper {
 		width: 250px;
 	}
 }
-
-.cardsWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-left: -10px;
-  margin-right: -10px;
-  padding: 0 30px;
-  @include mid {
-    padding-left: 7vw;
-    padding-right: 7vw;
+.cards-multiple-wrapper {
+  .intro-wrapper {
+    text-align: center;
   }
   .textWrapper {
     max-width: 800px;
@@ -13974,6 +13966,19 @@ body.single-race .filter-wrapper {
     margin: 0 auto;
     text-align: center;
   }
+}
+.cardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 0 30px;
+  @include mid {
+    padding-left: 7vw;
+    padding-right: 7vw;
+  }
+  
   .imageWrap {
     width: 100%;
     padding: 10px;
