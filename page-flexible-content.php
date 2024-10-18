@@ -41,7 +41,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
           ?>
           <div class="column-style column-style-<?php echo $ctr ?> <?php echo ($column_style) ? ' '.$column_style:''?>">
             <?php if ($section_title || $section_text) { ?>
-            <div class="wrapper">
+            <div class="wrapper title-wrapper<?php echo ($section_text) ? ' has-section-text':''; ?>">
               <?php if ($section_title ) { ?>
               <div class="titlediv">
                 <div class="shead-icon text-center">

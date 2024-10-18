@@ -3850,7 +3850,7 @@ h1.page-title {
   }
 }
 .intro-text {
-	font-size: 24px;
+	font-size: 22px;
 	line-height: 1.4;
 	font-family: $font-brandon-light;
 	color: rgba(#000, .6);
@@ -13285,6 +13285,21 @@ body.page-template-page-race {
 			margin-bottom: 50px!important;
 		}
 	}
+  .title-wrapper {
+    .text-wrap {
+      font-family: $font-brandon-light;
+      font-size: 22px;
+      line-height: 1.4;
+    }
+    &.has-section-text {
+      .titlediv {
+        margin-bottom: 0;
+      }
+      .shead-icon {
+        margin-bottom: 15px;
+      }
+    }
+  }
 }
 .modal.customModal {
 	.cta-buttons {
