@@ -13957,6 +13957,9 @@ body.single-race .filter-wrapper {
   .intro-wrapper {
     text-align: center;
   }
+  .intro-wrapper:has(.textWrapper) {
+    padding: 30px 0;
+  }
   .textWrapper {
     max-width: 800px;
     width: 100%;
