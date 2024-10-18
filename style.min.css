@@ -2473,6 +2473,8 @@ h1.page-title span:after{content:"";display:block;width:30%;height:2px;backgroun
 input.button,button.button,a.button{display:inline-block;padding:7px 25px 5px;border-radius:100px;background-color:#ba0d30;color:#fff;font-family:"Brandon";font-size:16px;text-decoration:none !important}
 input.button:hover,input.button:focus,button.button:hover,button.button:focus,a.button:hover,a.button:focus{color:#fff !important;background-color:#000}
 input.button.uppercase,button.button.uppercase,a.button.uppercase{text-transform:uppercase !important}
+input.button.button-white,button.button.button-white,a.button.button-white{text-transform:uppercase;background-color:#fff;color:#000}
+input.button.button-white:hover,input.button.button-white:focus,button.button.button-white:hover,button.button.button-white:focus,a.button.button-white:hover,a.button.button-white:focus{color:#fff !important;background-color:#000}
 .button-rounded{font-family:"Brandon";font-size:16px;text-transform:uppercase;border-radius:100px;background-color:#ba0d30;color:#fff;padding:12px 40px 10px}
 .button-rounded:hover,.button-rounded:focus{color:#fff;text-decoration:none;background-color:#000}
 .btn-sm,.btn-default,.section-image-cards .button.button-type-button,.button-pill{font-family:"Brandon" !important;font-size:13px !important;line-height:1.2 !important;letter-spacing:.05em !important;text-transform:uppercase;border-radius:100px;background-color:transparent;padding:7px 25px 6px;color:#5a5959;border:1px solid #a2a2a2;text-decoration:none !important}
@@ -3943,6 +3945,7 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .teaser-form input.teaser{border:1px solid #ccc !important;padding:10px 45px 10px 10px !important;height:auto !important}
 .cards-multiple-wrapper .titleWrapper h2{margin-bottom:10px}
 .cards-multiple-wrapper .intro-wrapper{text-align:center}
+.cards-multiple-wrapper .intro-wrapper:has(.textWrapper){padding:30px 0}
 .cards-multiple-wrapper .textWrapper{max-width:800px;width:100%;marign:0 auto;font-family:"Brandon Light";font-size:22px;line-height:1.4;max-width:800px;width:100%;margin:0 auto;text-align:center}
 .cardsWrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-left:-10px;margin-right:-10px;padding:0 30px}
 .cardsWrapper .imageWrap{width:100%;padding:10px}
@@ -3954,6 +3957,10 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .cardsWrapper figure .card-link:after{content:"";display:block;width:100%;height:0;opacity:0;position:absolute;bottom:0;left:0;background:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0)),to(rgba(0,0,0,0.65)));background:linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,0.65) 100%);-webkit-transition:all ease .3s;transition:all ease .3s}
 .cardsWrapper figure .card-link:hover img,.cardsWrapper figure .card-link:focus img{-webkit-transform:scale(1.05);transform:scale(1.05)}
 .cardsWrapper figure .card-link:hover:after,.cardsWrapper figure .card-link:focus:after{opacity:1;height:75%}
+.fullwidth-red-bar-section{padding-top:25px;padding-bottom:25px;text-align:center;background-color:#ba0d30}
+.fullwidth-red-bar-section .introWrapper{color:#fff;text-align:center}
+.fullwidth-red-bar-section .introWrapper h2{font-family:"Brandon Bold";font-size:45px;line-height:1.3;letter-spacing:.01em;text-transform:uppercase}
+.fullwidth-red-bar-section .introWrapper p{color:#fff}
 body.logged-in.admin-bar .site-header,body.logged-in.admin-bar .mobile-nav{top:32px}
 .modal-open .modal{z-index:999999}
 .modal-backdrop.show{opacity:.8;z-index:99999}
@@ -5073,6 +5080,7 @@ body.single-festival .filter-wrapper.filterstyle .select-wrap{width:75%}
 .site-footer .logo{margin-right:20px;margin-bottom:0}
 .site-footer li{width:auto;margin:0 20px}
 .teaser-form{width:40%}
+.fullwidth-red-bar-section .introWrapper{max-width:900px;width:100%;margin:0 auto}
 .modal.customModal .modal-body{padding:0 5vw 3vw}
 #timeline-area{padding-top:100px;padding-bottom:100px}
 #timeline-area.timeline-wrapper .timeline-large-title{padding-top:100px;padding-bottom:100px}
