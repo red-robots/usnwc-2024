@@ -343,7 +343,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
             <?php if ($card_title || $card_text) { ?>
               <div class="intro-wrapper">
                 <?php if ($card_title) { ?>
-                <div class="titleWrapper"><h2><?php echo $card_title ?></h2></div>
+                <div class="titleWrapper"><h2 class="stitle"><?php echo $card_title ?></h2></div>
                 <?php } ?>
                 <?php if ($card_text) { ?>
                 <div class="textWrapper"><?php echo anti_email_spam($card_text) ?></div>
