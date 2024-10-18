@@ -13291,6 +13291,10 @@ body.page-template-page-race {
       font-family: $font-brandon-light;
       font-size: 22px;
       line-height: 1.4;
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
     }
     &.has-section-text {
       .titlediv {
