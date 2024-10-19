@@ -45,7 +45,12 @@ $show_faqs = get_field('show_faqs_items');
           $content_columns = get_sub_field('content_columns');
           $column_style = get_sub_field('column_style');
           ?>
-          <div class="column-style column-style-<?php echo $ctr ?> <?php echo ($column_style) ? ' '.$column_style:''?>">
+          <?php if ($section_title) { ?>
+            <div id="column-style--<?php echo sanitize_title($section_title) ?>" data-section="<?php echo $section_title ?>" class="column-style column-style-<?php echo $ctr ?> <?php echo ($column_style) ? ' '.$column_style:''?>">
+          <?php } else { ?>
+            <div class="column-style column-style-<?php echo $ctr ?> <?php echo ($column_style) ? ' '.$column_style:''?>">
+          <?php } ?>
+          
             <?php if ($section_title || $section_text) { ?>
             <div class="wrapper title-wrapper <?php echo ($section_text) ? ' has-section-text':' no-section-text'; ?>">
               <?php if ($section_title ) { ?>
@@ -93,9 +98,12 @@ $show_faqs = get_field('show_faqs_items');
                     }
                     $popupContent = ( isset($col['content_display_type']) && $col['content_display_type'] ) ? true : false;
                     $imagePos = ($image_position) ? ' image-position-'.$image_position : '';
-                    
+                    $dataSection = ( $section_title ) ? '' : 'data-section="'.$e_title.'"';
+
                     if( ($e_title || $e_text) || $slides) { $colClass = ($i % 2) ? ' odd':' even'; ?>
-                      <div id="section<?php echo $i?>_parent<?php echo $ctr?>" data-section="<?php echo $e_title?>" class="mscol <?php echo $boxClass.$colClass.$imagePos ?>">
+
+                      <div id="section<?php echo $i?>_parent<?php echo $ctr?>" <?php echo $dataSection?> class="mscol <?php echo $boxClass.$colClass.$imagePos ?>">
+
                         <?php if ( $e_title || $e_text ) { ?>
                         <div class="textcol">
                           <div class="inside">
