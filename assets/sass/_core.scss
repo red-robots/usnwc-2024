@@ -6009,6 +6009,33 @@ body.single-instructions {
   .mscol .info {
     text-align: left;
   }
+  .mscol.image-position-left {
+    @include tab {
+      flex-direction: row-reverse;
+      &.half .gallerycol {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+    }
+  }
+  .custom-button-element {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 15px;
+    .button.button-gray {
+      background-color: #fff;
+      color: $gray_dark;
+      padding: 7px 25px 6px;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, .15);
+      text-transform: uppercase;
+      &:hover, &:focus {
+        background-color: $red!important;
+        color: #FFF!important;
+      }
+    }
+  }
 }
 
 #flexible-content .text-and-image-blocks {
@@ -13315,6 +13342,12 @@ body.page-template-page-race {
         margin-bottom: 15px;
       }
     }
+    &.no-section-text {
+      .titlediv,
+      .shead-icon {
+        margin-bottom: 0;
+      }
+    }
   }
 }
 
@@ -14111,6 +14144,154 @@ body.single-race .filter-wrapper {
     margin-top: 25px;
   }
 }
+
+.cards-format-line-items {
+  padding-left: 20px;
+  padding-right: 20px;
+  .wrapper {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    @include tab {
+      max-width: 90vw;
+    }
+  }
+  .introWrap,
+  .eventsCards {
+    width: 100%;
+    float: left;
+  }
+  .titlediv {
+    border-bottom: 2px solid #b5b5b5;
+    .stitle {
+      margin-bottom: 13px;
+    }
+    p:first-child {
+      margin-top: 0;
+    }
+  }
+  .eventsCards {
+    .flexwrap {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+    .infocard {
+      width: 100%;
+      @include xs {
+        width: 50%;
+      }
+      @include tab {
+        width: 33.333%;
+      }
+      .inner {
+        padding: 12px;
+      }
+      .lineItems {
+        margin-top: 20px;
+      }
+      figure {
+        margin: 0 0 12px;
+        position: relative;
+        padding-bottom: 70%;
+        overflow: hidden;
+        border-radius: 10px;
+        img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+      .card-title {
+        font-family: $font-brandon-bold;
+        font-size: 21px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        color: #000;
+      }
+      .line-item {
+        margin: 15px 0;
+        .info {
+          position: relative;
+          margin-left: -5px;
+          margin-right: -5px;
+          &:after {
+            content:"";
+            display: block;
+            width: 100%;
+            border-bottom: 1px dashed $gray_dark;
+            position: absolute;
+            left: 0;
+            bottom: 7px;
+          }
+          span, a {
+            font-size: 15px;
+            line-height: 1.2;
+            position: relative;
+            z-index: 10;
+            background: #FFF;
+            padding: 0 5px;
+          }
+          a {
+            display: inline-block;
+            background: #FFF;
+            color: $gray_dark;
+            text-transform: uppercase;
+            font-size: 13px;
+            top: -5px;
+            transition: all ease .3s;
+            text-decoration: none!important;
+            &:after {
+              content:"";
+              display: block;
+              width: 100%;
+              transition: all ease .3s;
+              border-bottom: 1px solid $gray_dark;
+              position: relative;
+            }
+            &:hover, &:focus {
+              color: $red;
+              &:after {
+                border-bottom-color: $red;
+              }
+            }
+          }
+        }
+        .name {
+          font-family: $font-brandon-bold;
+          font-size: 15px;
+          line-height: 1.2;
+          text-transform: uppercase;
+          color: #000;
+          top: -2px;
+        }
+        .desc {
+          margin-top: 3px;
+          font-size: 15px;
+          line-height: 1.2;
+          color: $gray_dark;
+        }
+      }
+    }
+  }
+
+  .lineItems {
+    .line-item {
+      .info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;
+      }
+    }
+  }
+}
+
 body.logged-in.admin-bar {
 	
 	.site-header, .mobile-nav {

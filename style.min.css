@@ -2746,6 +2746,9 @@ body.single-instructions #primary #section-faqs{padding-top:60px;padding-bottom:
 .text-and-image-blocks .half .textcol,.text-and-image-blocks .half .gallerycol,.menu-sections .half .textcol,.menu-sections .half .gallerycol{width:100%}
 .text-and-image-blocks .half.even,.menu-sections .half.even{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}
 .text-and-image-blocks .mscol .textwrap,.text-and-image-blocks .mscol .info{text-align:left}
+.text-and-image-blocks .custom-button-element{display:inline-block;margin-top:10px;margin-right:15px}
+.text-and-image-blocks .custom-button-element .button.button-gray{background-color:#fff;color:#707070;padding:7px 25px 6px;-webkit-box-shadow:0 3px 5px rgba(0,0,0,.15);box-shadow:0 3px 5px rgba(0,0,0,.15);text-transform:uppercase}
+.text-and-image-blocks .custom-button-element .button.button-gray:hover,.text-and-image-blocks .custom-button-element .button.button-gray:focus{background-color:#ba0d30 !important;color:#fff !important}
 #flexible-content .text-and-image-blocks{margin-top:30px}
 .text-and-gallery{width:100%;float:left;margin-top:50px}
 .text-and-gallery .mscol{margin-top:15px;margin-bottom:15px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
@@ -3856,6 +3859,7 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .flexibleContentWrap .title-wrapper .text-wrap{font-family:"Brandon Light";font-size:22px;line-height:1.4;max-width:800px;width:100%;margin:0 auto;text-align:center}
 .flexibleContentWrap .title-wrapper.has-section-text .titlediv{margin-bottom:0}
 .flexibleContentWrap .title-wrapper.has-section-text .shead-icon{margin-bottom:15px}
+.flexibleContentWrap .title-wrapper.no-section-text .titlediv,.flexibleContentWrap .title-wrapper.no-section-text .shead-icon{margin-bottom:0}
 .modal.customModal .cta-buttons a{margin:0 8px}
 .modal.customModal .modal-header{position:relative}
 .modal.customModal .modal-header #eventStatusTxt{display:inline-block;position:absolute;top:0;left:0}
@@ -3963,6 +3967,31 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .fullwidth-red-bar-section .introWrapper h2{font-size:35px;line-height:1.3;letter-spacing:.01em;text-transform:uppercase}
 .fullwidth-red-bar-section .introWrapper h3{font-size:30px;line-height:1.3;letter-spacing:.01em;text-transform:uppercase}
 .fullwidth-red-bar-section .introWrapper p{color:#fff}
+.fullwidth-red-bar-section .buttonBlock{margin-top:25px}
+.cards-format-line-items{padding-left:20px;padding-right:20px}
+.cards-format-line-items .wrapper{max-width:100%;width:100%;margin:0 auto}
+.cards-format-line-items .introWrap,.cards-format-line-items .eventsCards{width:100%;float:left}
+.cards-format-line-items .titlediv{border-bottom:2px solid #b5b5b5}
+.cards-format-line-items .titlediv .stitle{margin-bottom:13px}
+.cards-format-line-items .titlediv p:first-child{margin-top:0}
+.cards-format-line-items .eventsCards .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-12px;margin-right:-12px}
+.cards-format-line-items .eventsCards .infocard{width:100%}
+.cards-format-line-items .eventsCards .infocard .inner{padding:12px}
+.cards-format-line-items .eventsCards .infocard .lineItems{margin-top:20px}
+.cards-format-line-items .eventsCards .infocard figure{margin:0 0 12px;position:relative;padding-bottom:70%;overflow:hidden;border-radius:10px}
+.cards-format-line-items .eventsCards .infocard figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.cards-format-line-items .eventsCards .infocard .card-title{font-family:"Brandon Bold";font-size:21px;line-height:1.2;text-transform:uppercase;color:#000}
+.cards-format-line-items .eventsCards .infocard .line-item{margin:15px 0}
+.cards-format-line-items .eventsCards .infocard .line-item .info{position:relative;margin-left:-5px;margin-right:-5px}
+.cards-format-line-items .eventsCards .infocard .line-item .info:after{content:"";display:block;width:100%;border-bottom:1px dashed #707070;position:absolute;left:0;bottom:7px}
+.cards-format-line-items .eventsCards .infocard .line-item .info span,.cards-format-line-items .eventsCards .infocard .line-item .info a{font-size:15px;line-height:1.2;position:relative;z-index:10;background:#fff;padding:0 5px}
+.cards-format-line-items .eventsCards .infocard .line-item .info a{display:inline-block;background:#fff;color:#707070;text-transform:uppercase;font-size:13px;top:-5px;-webkit-transition:all ease .3s;transition:all ease .3s;text-decoration:none !important}
+.cards-format-line-items .eventsCards .infocard .line-item .info a:after{content:"";display:block;width:100%;-webkit-transition:all ease .3s;transition:all ease .3s;border-bottom:1px solid #707070;position:relative}
+.cards-format-line-items .eventsCards .infocard .line-item .info a:hover,.cards-format-line-items .eventsCards .infocard .line-item .info a:focus{color:#ba0d30}
+.cards-format-line-items .eventsCards .infocard .line-item .info a:hover:after,.cards-format-line-items .eventsCards .infocard .line-item .info a:focus:after{border-bottom-color:#ba0d30}
+.cards-format-line-items .eventsCards .infocard .line-item .name{font-family:"Brandon Bold";font-size:15px;line-height:1.2;text-transform:uppercase;color:#000;top:-2px}
+.cards-format-line-items .eventsCards .infocard .line-item .desc{margin-top:3px;font-size:15px;line-height:1.2;color:#707070}
+.cards-format-line-items .lineItems .line-item .info{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative}
 body.logged-in.admin-bar .site-header,body.logged-in.admin-bar .mobile-nav{top:32px}
 .modal-open .modal{z-index:999999}
 .modal-backdrop.show{opacity:.8;z-index:99999}
@@ -4759,6 +4788,7 @@ body.search .has-image .text-col{width:67%;float:right;padding-left:30px;display
 .section-price-ages.twoCols .info{width:50%}
 .section-classes.twocol.post-type-entries .postbox{width:50%}
 .cardsWrapper .imageWrap{width:50%}
+.cards-format-line-items .eventsCards .infocard{width:50%}
 }@media screen and (min-width:767px){.flexslider .slides .iframe-wrapper iframe,.flexslider .slides .iframe-wrapper video{width:100%;height:100%;position:absolute;top:0;left:0;z-index:5}
 .flexslider .slides .iframe-wrapper{padding:40% 0 0 0}
 .flexslider .slides .iframe-wrapper.yes-mobile{padding:40% 0 0 0}
@@ -4877,6 +4907,8 @@ body.subpage.single .intro-galleries.half .rightcol{width:70%;padding-left:15px}
 .text-and-image-blocks .gallerycol .flexslider,.text-and-image-blocks .gallerycol .slides,.text-and-image-blocks .gallerycol .slides li.slide-item,.menu-sections .gallerycol .flexslider,.menu-sections .gallerycol .slides,.menu-sections .gallerycol .slides li.slide-item{height:100% !important}
 .text-and-image-blocks .textcol .inside,.menu-sections .textcol .inside{height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .text-and-image-blocks .half .textcol,.text-and-image-blocks .half .gallerycol,.menu-sections .half .textcol,.menu-sections .half .gallerycol{width:50%}
+.text-and-image-blocks .mscol.image-position-left{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}
+.text-and-image-blocks .mscol.image-position-left.half .gallerycol{border-top-left-radius:0;border-bottom-left-radius:0;border-top-right-radius:15px;border-bottom-right-radius:15px}
 .text-and-gallery .gallerycol .flexslider,.text-and-gallery .gallerycol .slides,.text-and-gallery .gallerycol .slides li.slide-item{height:100% !important}
 .text-and-gallery .textcol .inside{height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .text-and-gallery .half .textcol{border-right:15px solid #fff;width:40%}
@@ -5083,6 +5115,8 @@ body.single-festival .filter-wrapper.filterstyle .select-wrap{width:75%}
 .site-footer li{width:auto;margin:0 20px}
 .teaser-form{width:40%}
 .fullwidth-red-bar-section .introWrapper{max-width:900px;width:100%;margin:0 auto}
+.cards-format-line-items .wrapper{max-width:90vw}
+.cards-format-line-items .eventsCards .infocard{width:33.333%}
 .modal.customModal .modal-body{padding:0 5vw 3vw}
 #timeline-area{padding-top:100px;padding-bottom:100px}
 #timeline-area.timeline-wrapper .timeline-large-title{padding-top:100px;padding-bottom:100px}

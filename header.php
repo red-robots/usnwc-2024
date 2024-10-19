@@ -127,17 +127,18 @@ if($postHeroImage) {
 	if( is_front_page() ){
 		get_template_part('parts/homepage-hero');
 	} else {
-		// for the merge of Instruction, we'll have to exclude some pages
-		$parent_page_id = 298;
-		// Get the current page's ancestors
-		$ancestors = get_post_ancestors( get_the_ID() );
-		if( !in_array( $parent_page_id, $ancestors ) ){ 
-			get_template_part("parts/slideshow"); 
-		}
-	}
-	 
+		// // for the merge of Instruction, we'll have to exclude some pages
+		// $parent_page_id = 298;
+		// // Get the current page's ancestors
+		// $ancestors = get_post_ancestors( get_the_ID() );
+		// if( !in_array( $parent_page_id, $ancestors ) ){ 
+		// 	get_template_part("parts/slideshow"); 
+		// }
 
-  get_template_part('parts/single-hero'); 
+    // get_template_part("parts/slideshow"); 
+    // get_template_part('parts/single-hero');
+    get_template_part("parts/hero");  
+	}
 	?>
 
 	<div id="content" class="site-content">

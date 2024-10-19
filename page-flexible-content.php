@@ -4,10 +4,13 @@
  */
 
 get_header(); 
+$post_id = get_the_ID(); 
 $blank_image = THEMEURI . "images/square.png";
 $square = THEMEURI . "images/square.png";
 $rectangle = THEMEURI . "images/rectangle-lg.png";
 $placeholder = THEMEURI . 'images/rectangle.png';
+$show_subnav = get_field('show_page_subnav');
+$show_faqs = get_field('show_faqs_items');
 ?>
 
 <div id="primary" data-post="<?php echo get_the_ID()?>" class="content-area-full festival-page">
@@ -24,7 +27,10 @@ $placeholder = THEMEURI . 'images/rectangle.png';
 
   <?php endwhile;  ?>
 
-		<?php //get_template_part("parts/subpage-tabs"); ?>
+
+    <?php if ($show_subnav) { ?>
+    <?php get_template_part("parts/subpage-tabs"); ?> 
+    <?php } ?>
 
 
 		<?php /* FLEXIBLE CONTENT */ ?>
@@ -41,7 +47,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
           ?>
           <div class="column-style column-style-<?php echo $ctr ?> <?php echo ($column_style) ? ' '.$column_style:''?>">
             <?php if ($section_title || $section_text) { ?>
-            <div class="wrapper title-wrapper <?php echo ($section_text) ? ' has-section-text':''; ?>">
+            <div class="wrapper title-wrapper <?php echo ($section_text) ? ' has-section-text':' no-section-text'; ?>">
               <?php if ($section_title ) { ?>
               <div class="titlediv">
                 <div class="shead-icon text-center">
@@ -67,6 +73,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
                     $e_text = $col['description']; 
                     $fullText = $col['description']; 
                     $shorttext = $col['shorttext']; 
+                    $image_position = $col['force_image_position']; 
                     $colClass = ($i % 2) ? ' odd':' even';
                     $image_type = $col['image_type'];
                     $has_image = false;
@@ -85,9 +92,10 @@ $placeholder = THEMEURI . 'images/rectangle.png';
                       $e_text = $shorttext;
                     }
                     $popupContent = ( isset($col['content_display_type']) && $col['content_display_type'] ) ? true : false;
+                    $imagePos = ($image_position) ? ' image-position-'.$image_position : '';
                     
                     if( ($e_title || $e_text) || $slides) { $colClass = ($i % 2) ? ' odd':' even'; ?>
-                      <div id="section<?php echo $i?>_parent<?php echo $ctr?>" data-section="<?php echo $e_title?>" class="mscol <?php echo $boxClass.$colClass ?>">
+                      <div id="section<?php echo $i?>_parent<?php echo $ctr?>" data-section="<?php echo $e_title?>" class="mscol <?php echo $boxClass.$colClass.$imagePos ?>">
                         <?php if ( $e_title || $e_text ) { ?>
                         <div class="textcol">
                           <div class="inside">
@@ -147,7 +155,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
                           $slide_id = ($slideCount==1) ? 'staticImage':'slideShow';
                           ?>
                           <div class="gallerycol">
-                            <div id="<?php echo $slide_id ?>" class="flexslider>">
+                            <div id="<?php echo $slide_id ?>" class="flexslider">
                               <ul class="slides">
                                 <?php $helper = THEMEURI . 'images/rectangle-narrow.png'; ?>
                                 <?php foreach ($slides as $s) { ?>
@@ -404,12 +412,99 @@ $placeholder = THEMEURI . 'images/rectangle.png';
         </section>
         <?php  } ?>
 
+
+        <?php if( get_row_layout() == 'events' ) { 
+          $section_title = get_sub_field('section_title');
+          $has_section_text = get_sub_field('has_section_text');
+          $section_text = get_sub_field('section_text');
+          $events = get_sub_field('events_content');
+          if($section_title || $events) { ?>
+          <section id="events-cards-format-<?php echo $ctr ?>" data-section="<?php echo $section_title ?>" class="events-cards-format cards-format-line-items">
+            <?php if ($section_title || $has_section_text) { ?>
+            <div class="introWrap">
+              <div class="wrapper">
+                <div class="titlediv<?php echo ($has_section_text && $section_text) ? ' hasText':' noText'; ?>">
+                  <?php if ($section_title) { ?>
+                  <h2 class="stitle"><?php echo $section_title ?></h2> 
+                  <?php } ?>
+                  <?php if ($has_section_text && $section_text) { ?>
+                  <div class="stext"><?php echo anti_email_spam($section_text) ?></div> 
+                  <?php } ?>
+                </div>
+              </div>
+            </div>
+            <?php } ?>
+
+            <?php if ($events) { ?>
+            <div class="eventsCards">
+              <div class="wrapper">
+                <div class="flexwrap">
+                  <?php foreach ($events as $e) { 
+                  $name = $e['title'];
+                  $img = $e['image'];
+                  $lineItems = $e['line_items'];
+                  if ($img) {  ?>
+                  <div class="infocard">
+                    <div class="inner">
+                      <figure>
+                        <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" />
+                      </figure>
+                      <?php if ($name) { ?>
+                      <h3 class="card-title"><?php echo $name ?></h3> 
+                      <?php } ?>
+                      <?php if ($lineItems) { ?>
+                      <div class="lineItems">
+                        <?php foreach ($lineItems as $m) { 
+                          $mtitle = $m['title'];
+                          $mtext = $m['description'];
+                          $mbtn = $m['buttonLink'];
+                          $mBtnName = (isset($mbtn['title']) && $mbtn['title']) ? $mbtn['title'] : '';
+                          $mBtnUrl = (isset($mbtn['url']) && $mbtn['url']) ? $mbtn['url'] : '';
+                          $mBtnTarget = (isset($mbtn['target']) && $mbtn['target']) ? $mbtn['target'] : '_self';
+                          if ($mtitle) { ?>
+                          <div class="line-item">
+                            <div class="info">
+                              <span class="name"><?php echo $mtitle ?></span>
+                              <?php if ( $mBtnName && $mBtnUrl ) { ?>
+                              <a href="<?php echo $mBtnUrl ?>" target="<?php echo $mBtnTarget ?>" class="link"><?php echo $mBtnName ?></a>
+                              <?php } ?>
+                            </div>
+                            <?php if ($mtext) { ?>
+                            <div class="desc"><?php echo anti_email_spam($mtext) ?></div>
+                            <?php } ?>
+                          </div>  
+                          <?php } ?>
+                        <?php } ?>
+                      </div>
+                      <?php } ?>
+                    </div>
+                  </div>
+                  <?php } ?>
+                  <?php } ?>
+                </div>
+              </div>
+            </div>
+            <?php } ?>
+          </section>
+          <?php  } ?>
+        <?php  } ?>
+
+
       <?php $ctr++; endwhile;  ?>
     </div>
     <?php  } ?>
 
 		
-	
+    <?php /* FAQ */
+    if($show_faqs) {
+      $faq_title = get_field("faq_title");
+      if( $faqs = get_faq_listings($post_id) ) { 
+        $customFAQTitle = $faq_title;
+        include( locate_template('parts/content-faqs.php') ); 
+        include( locate_template('inc/faqs.php') ); 
+      } 
+    }
+    ?>
 
 </div><!-- #primary -->
 <script type="text/javascript">
@@ -426,5 +521,7 @@ jQuery(document).ready(function($){
 });
 </script>
 <?php 
-//include( locate_template('inc/pagetabs-script.php') );  
+if ($show_subnav) {
+  include( locate_template('inc/pagetabs-script.php') );  
+}
 get_footer();
