@@ -464,7 +464,7 @@ $show_faqs = get_field('show_faqs_items');
                           $mBtnTarget = (isset($mbtn['target']) && $mbtn['target']) ? $mbtn['target'] : '_self';
                           $button_attribute = '';
                           if( $mBtnUrl ) {
-                            if (strpos($mBtnUrl, ':') !== false) {
+                            if ( (strpos($mBtnUrl, ':') !== false) && strpos($mBtnUrl, 'data-accesso-package') !== false ) {
                               $mBtnUrl = str_replace('#','',$mBtnUrl);
                               $parts = explode(':', $mBtnUrl);
                               $button_attribute = $parts[0] . '=' . $parts[1];
