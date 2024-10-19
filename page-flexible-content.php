@@ -470,16 +470,20 @@ $show_faqs = get_field('show_faqs_items');
                           $mBtnName = (isset($mbtn['title']) && $mbtn['title']) ? $mbtn['title'] : '';
                           $mBtnUrl = (isset($mbtn['url']) && $mbtn['url']) ? $mbtn['url'] : '';
                           $mBtnTarget = (isset($mbtn['target']) && $mbtn['target']) ? $mbtn['target'] : '_self';
-                          $button_attribute = '';
-                          if( $mBtnUrl ) {
-                            if ( (strpos($mBtnUrl, ':') !== false) && strpos($mBtnUrl, 'data-accesso-package') !== false ) {
-                              $mBtnUrl = str_replace('#','',$mBtnUrl);
-                              $parts = explode(':', $mBtnUrl);
-                              $button_attribute = $parts[0] . '=' . $parts[1];
-                              $button_attribute = trim( preg_replace('/\s+/', '', $button_attribute) );
-                              $mBtnUrl = '#';
-                            }
-                          }
+                          //$button_attribute = '';
+                          // if( $mBtnUrl ) {
+                          //   if ( (strpos($mBtnUrl, ':') !== false) && strpos($mBtnUrl, 'data-accesso-package') !== false ) {
+                          //     $mBtnUrl = str_replace('#','',$mBtnUrl);
+                          //     $parts = explode(':', $mBtnUrl);
+                          //     $button_attribute = $parts[0] . '=' . $parts[1];
+                          //     $button_attribute = trim( preg_replace('/\s+/', '', $button_attribute) );
+                          //     $mBtnUrl = '#';
+                          //   }
+                          // }
+
+                          $attribute = $m['link_attribute'];
+                          $button_attribute = ($attribute) ? $attribute:'';
+
                           if ($mtitle) { ?>
                           <div class="line-item">
                             <div class="info">
