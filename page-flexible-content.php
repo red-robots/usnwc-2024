@@ -132,11 +132,12 @@ $show_faqs = get_field('show_faqs_items');
                                       <div class="cta-buttons buttondiv">
                                       <?php foreach ($buttons as $b) { 
                                         $btn = $b['button'];
+                                        $attribute = ($b['button_attribute']) ? ' ' . $b['button_attribute'] : '';
                                         $btnName = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
                                         $btnLink = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
                                         $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
                                         if($btnName && $btnLink) { ?>
-                                        <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="btn-sm xs"><span><?php echo $btnName ?></span></a>
+                                        <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>"<?php echo $attribute ?> class="btn-sm xs"><span><?php echo $btnName ?></span></a>
                                         <?php } ?>
                                       <?php } ?>
                                       </div>
@@ -461,12 +462,22 @@ $show_faqs = get_field('show_faqs_items');
                           $mBtnName = (isset($mbtn['title']) && $mbtn['title']) ? $mbtn['title'] : '';
                           $mBtnUrl = (isset($mbtn['url']) && $mbtn['url']) ? $mbtn['url'] : '';
                           $mBtnTarget = (isset($mbtn['target']) && $mbtn['target']) ? $mbtn['target'] : '_self';
+                          $button_attribute = '';
+                          if( $mBtnUrl ) {
+                            if (strpos($mBtnUrl, ':') !== false) {
+                              $mBtnUrl = str_replace('#','',$mBtnUrl);
+                              $parts = explode(':', $mBtnUrl);
+                              $button_attribute = $parts[0] . '=' . $parts[1];
+                              $button_attribute = trim( preg_replace('/\s+/', '', $button_attribute) );
+                              $mBtnUrl = '#';
+                            }
+                          }
                           if ($mtitle) { ?>
                           <div class="line-item">
                             <div class="info">
                               <span class="name"><?php echo $mtitle ?></span>
                               <?php if ( $mBtnName && $mBtnUrl ) { ?>
-                              <a href="<?php echo $mBtnUrl ?>" target="<?php echo $mBtnTarget ?>" class="link"><?php echo $mBtnName ?></a>
+                              <a href="<?php echo $mBtnUrl ?>" target="<?php echo $mBtnTarget ?>" <?php echo $button_attribute ?> class="link"><?php echo $mBtnName ?></a>
                               <?php } ?>
                             </div>
                             <?php if ($mtext) { ?>
