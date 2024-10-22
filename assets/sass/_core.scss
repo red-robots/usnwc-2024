@@ -14191,6 +14191,25 @@ body.single-race .filter-wrapper {
       .lineItems {
         margin-top: 20px;
       }
+      .right-info {
+        background: transparent!important;
+        font-size: 15px;
+        line-height: 1.2;
+        color: #707070;
+        text-align: right;
+        position: relative;
+        right: -5px;
+        .right-text {
+          background: #FFF;
+          display: block;
+        }
+        a.link {
+          margin-top: 6px;
+        }
+      }
+      .right-text-span {
+        color: #707070;
+      }
       figure {
         margin: 0 0 12px;
         position: relative;
@@ -14285,6 +14304,7 @@ body.single-race .filter-wrapper {
       .info {
         display: flex;
         flex-wrap: wrap;
+        align-items: flex-end;
         justify-content: space-between;
         position: relative;
       }

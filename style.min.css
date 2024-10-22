@@ -3978,6 +3978,10 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .cards-format-line-items .eventsCards .infocard{width:100%}
 .cards-format-line-items .eventsCards .infocard .inner{padding:12px}
 .cards-format-line-items .eventsCards .infocard .lineItems{margin-top:20px}
+.cards-format-line-items .eventsCards .infocard .right-info{background:transparent !important;font-size:15px;line-height:1.2;color:#707070;text-align:right;position:relative;right:-5px}
+.cards-format-line-items .eventsCards .infocard .right-info .right-text{background:#fff;display:block}
+.cards-format-line-items .eventsCards .infocard .right-info a.link{margin-top:6px}
+.cards-format-line-items .eventsCards .infocard .right-text-span{color:#707070}
 .cards-format-line-items .eventsCards .infocard figure{margin:0 0 12px;position:relative;padding-bottom:70%;overflow:hidden;border-radius:10px}
 .cards-format-line-items .eventsCards .infocard figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .cards-format-line-items .eventsCards .infocard .card-title{font-family:"Brandon Bold";font-size:21px;line-height:1.2;text-transform:uppercase;color:#000}
@@ -3991,7 +3995,7 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .cards-format-line-items .eventsCards .infocard .line-item .info a:hover:after,.cards-format-line-items .eventsCards .infocard .line-item .info a:focus:after{border-bottom-color:#ba0d30}
 .cards-format-line-items .eventsCards .infocard .line-item .name{font-family:"Brandon Bold";font-size:15px;line-height:1.2;text-transform:uppercase;color:#000;top:-2px}
 .cards-format-line-items .eventsCards .infocard .line-item .desc{margin-top:3px;font-size:15px;line-height:1.2;color:#707070}
-.cards-format-line-items .lineItems .line-item .info{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative}
+.cards-format-line-items .lineItems .line-item .info{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative}
 body.logged-in.admin-bar .site-header,body.logged-in.admin-bar .mobile-nav{top:32px}
 .modal-open .modal{z-index:999999}
 .modal-backdrop.show{opacity:.8;z-index:99999}

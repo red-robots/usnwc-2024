@@ -485,12 +485,32 @@ $show_faqs = get_field('show_faqs_items');
                           $attribute = $m['link_attribute'];
                           $button_attribute = ($attribute) ? $attribute:'';
 
+                          $right_text = $m['right_text'];
+
                           if ($mtitle) { ?>
                           <div class="line-item">
                             <div class="info">
                               <span class="name"><?php echo $mtitle ?></span>
-                              <?php if ( $mBtnName && $mBtnUrl ) { ?>
-                              <a href="<?php echo $mBtnUrl ?>" target="<?php echo $mBtnTarget ?>" <?php echo $button_attribute ?> class="link"><?php echo $mBtnName ?></a>
+
+                              <?php if ( $right_text && $mBtnName ) { ?>
+                                <span class="right-info">
+                                  <?php if ( $right_text ) { ?>
+                                  <span class="right-text"><?php echo $right_text ?></span>
+                                  <?php } ?>
+                                  <?php if ( $mBtnName && $mBtnUrl ) { ?>
+                                  <a href="<?php echo $mBtnUrl ?>" target="<?php echo $mBtnTarget ?>" <?php echo $button_attribute ?> class="link"><?php echo $mBtnName ?></a>
+                                  <?php } ?>
+                                </span>
+                              <?php } else { ?>
+
+                                <?php if ($right_text) { ?>
+                                  <span class="right-text-span"><?php echo $right_text ?></span>
+                                <?php } else { ?>
+                                  <?php if ( $mBtnName && $mBtnUrl ) { ?>
+                                  <a href="<?php echo $mBtnUrl ?>" target="<?php echo $mBtnTarget ?>" <?php echo $button_attribute ?> class="link"><?php echo $mBtnName ?></a>
+                                  <?php } ?>
+                                <?php } ?>
+
                               <?php } ?>
                             </div>
                             <?php if ($mtext) { ?>
