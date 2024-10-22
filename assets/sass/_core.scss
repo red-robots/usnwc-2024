@@ -19958,6 +19958,94 @@ body.modal-open {
   }
 }
 
+.column-data-section {
+  margin: 30px 0 40px;
+  .button-simple {
+    margin-top: 8px;
+    a.simple-link {
+      display: inline-block;
+      position: relative;
+      .fa-angle-right {
+        display: inline-block;
+        position: relative;
+        top: 2px;
+        margin-left: 2px;
+        transition: all ease .3s;
+      }
+      &:hover, &:focus {
+        .fa-angle-right {
+          transform: translateX(3px);
+        }
+      }
+    }
+  }
+  .flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .fxcol {
+    width: 100%;
+    position: relative;
+    .inside {
+      text-align: center;
+      padding: 15px;
+    }
+    .title-small {
+      margin: 0 0 5px;
+      font-family: $font-brandon-regular;
+      font-size: 22px;
+      line-height: 1.2;
+      color: #000;
+    }
+    .text-large {
+      font-family: $font-brandon-bold;
+      font-size: 35px;
+      line-height: 1.2;
+      color: #555;
+      margin: 0 0;
+      text-transform: uppercase;
+    }
+    @include xs {
+      width: 33.333%;
+      &:after {
+        content:"";
+        display: block;
+        width: 1px;
+        height: 100%;
+        background: #CCC;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+    &:last-child:after {
+      display: none;
+    }
+  }
+  &.column-count-3 .fxcol {
+    @include xs {
+      width: 33.333%;
+    }
+  }
+  &.column-count-4 .fxcol {
+    @include xs {
+      width: 50%;
+    }
+    @include tab {
+      width: 25%;
+    }
+  }
+  &.column-count-5 .fxcol {
+    @include xs {
+      width: 50%;
+    }
+    @include tab {
+      width: 20%;
+    }
+  }
+}
+
 body.logged-in.admin-bar {
   @media screen and (min-width: 820px) {
     &.subpage {
