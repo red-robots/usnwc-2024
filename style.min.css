@@ -2749,6 +2749,7 @@ body.single-instructions #primary #section-faqs{padding-top:60px;padding-bottom:
 .text-and-image-blocks .custom-button-element{display:inline-block;margin-top:10px;margin-right:15px}
 .text-and-image-blocks .custom-button-element .button.button-gray{background-color:#fff;color:#707070;padding:7px 25px 6px;-webkit-box-shadow:0 3px 5px rgba(0,0,0,.15);box-shadow:0 3px 5px rgba(0,0,0,.15);text-transform:uppercase}
 .text-and-image-blocks .custom-button-element .button.button-gray:hover,.text-and-image-blocks .custom-button-element .button.button-gray:focus{background-color:#ba0d30 !important;color:#fff !important}
+.text-and-image-blocks .textcol .fulltext h3{font-family:"Brandon Bold";font-size:20px;line-height:1.2;margin:0 0 3px}
 #flexible-content .text-and-image-blocks{margin-top:30px}
 .text-and-gallery{width:100%;float:left;margin-top:50px}
 .text-and-gallery .mscol{margin-top:15px;margin-bottom:15px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
