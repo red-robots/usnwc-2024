@@ -2086,7 +2086,7 @@ body.nav-open .menu-toggle{opacity:0}
 body.single-activity .intro-galleries .flexwrap{position:relative}
 body.single-activity #subpageSlides{width:100% !important;height:100% !important;padding-left:0 !important;border-radius:0 !important}
 .site-content{width:100%;float:left}
-h2.stitle,.stitle{margin:0;font-family:"Brandon Bold";font-size:40px;line-height:1.2;text-transform:uppercase;color:#000}
+.faqs .titlediv h2,h2.stitle,.stitle{margin:0;font-family:"Brandon Bold";font-size:40px;line-height:1.2;text-transform:uppercase;color:#000}
 .buttondiv{margin-top:20px}
 .btn-sm{cursor:pointer;display:inline-block;text-decoration:none !important;color:#5a5959;padding:7px 25px;border:1px solid #a2a2a2;overflow:hidden;position:relative;font-size:20px;font-weight:600;border-radius:0;-webkit-appearance:none;-webkit-box-shadow:none;box-shadow:none;min-width:85px}
 .btn-sm.popdata,.btn-sm.xs{padding:7px 15px 6px;font-size:15px;line-height:1.2}
