@@ -20154,8 +20154,15 @@ body.modal-open {
   }
   &.section-fullwidth-black {
     background-color: #000;
+    h2,h3,h5,p {
+      color: #FFF!important;
+    }
     h2:after {
       display: none;
+    }
+    .custom-button-element.red a.button-element.button:hover {
+      background-color: #FFF!important;
+      color: #000!important
     }
   }
   .introtext-wrapper {

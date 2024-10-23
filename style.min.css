@@ -4796,7 +4796,9 @@ body.modal-open{overflow:hidden}
 .introtext-wrapper .textWrapper{margin-top:10px}
 .two_column_text_section.section-fullwidth-gray{background-color:#f2f2f2;padding:50px 0 20px}
 .two_column_text_section.section-fullwidth-black{background-color:#000}
+.two_column_text_section.section-fullwidth-black h2,.two_column_text_section.section-fullwidth-black h3,.two_column_text_section.section-fullwidth-black h5,.two_column_text_section.section-fullwidth-black p{color:#fff !important}
 .two_column_text_section.section-fullwidth-black h2:after{display:none}
+.two_column_text_section.section-fullwidth-black .custom-button-element.red a.button-element.button:hover{background-color:#fff !important;color:#000 !important}
 .two_column_text_section .introtext-wrapper{padding-bottom:40px}
 .two_column_text_section p:has(.custom-button-element){margin-top:25px}
 .two_column_text_section .custom-button-element.red a.button{text-transform:uppercase;padding:7px 25px 6px;font-size:14px}
