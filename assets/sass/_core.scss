@@ -20214,6 +20214,10 @@ body.modal-open {
   }
 }
 
+#slideShow .flex-viewport {
+  height: 100%;
+}
+
 body.logged-in.admin-bar {
   @media screen and (min-width: 820px) {
     &.subpage {
