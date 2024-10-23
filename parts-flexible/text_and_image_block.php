@@ -5,6 +5,8 @@
   $has_section_intro = get_sub_field('has_section_intro');
   $content_columns = get_sub_field('content_columns');
   $column_style = get_sub_field('column_style');
+  $has_dash_items = get_sub_field('add_dash_items');
+  $line_items_dash = get_sub_field('line_items_dash');
   ?>
   <?php if ($section_title) { ?>
     <div id="column-style--<?php echo sanitize_title($section_title) ?>" data-section="<?php echo $section_title ?>" class="text_and_image_block_section column-style column-style-<?php echo $ctr ?> <?php echo ($column_style) ? ' '.$column_style:''?>">
@@ -39,6 +41,8 @@
             $e_text = $col['description']; 
             $fullText = $col['description']; 
             $shorttext = $col['shorttext']; 
+            $has_dash_items = $col['add_dash_items']; 
+            $line_items = $col['line_items_dash']; 
             $image_position = $col['force_image_position']; 
             $colClass = ($i % 2) ? ' odd':' even';
             $image_type = $col['image_type'];
@@ -61,7 +65,7 @@
             $imagePos = ($image_position) ? ' image-position-'.$image_position : '';
             $dataSection = ( $section_title ) ? '' : 'data-section="'.$e_title.'"';
 
-            if( ($e_title || $e_text) || $slides) { $colClass = ($i % 2) ? ' odd':' even'; ?>
+            if( ($e_title || $e_text) || $slides || ($has_dash_items && $line_items)) { $colClass = ($i % 2) ? ' odd':' even'; ?>
 
               <div id="section<?php echo $i?>_parent<?php echo $ctr?>" <?php echo $dataSection?> class="mscol <?php echo $boxClass.$colClass.$imagePos ?>">
 
@@ -80,10 +84,61 @@
                       </div>
                       <?php } ?>
 
-                      <?php if ($e_text || $buttons) { ?>
+                      <?php if ( ($e_text || $buttons) || ($has_dash_items && $line_items) ) { ?>
                         <div class="textwrap text-center">
                           <?php if ($e_text) { ?>
                           <div class="mstext <?php echo $textType ?>"><?php echo $e_text ?></div>
+                          <?php } ?>
+
+
+                          <?php if ($has_dash_items && $line_items) { ?>
+                          <div class="schedule-items-wrap">
+                            <?php foreach ($line_items as $m) { 
+                              $m_title = $m['title'];
+                              $m_text = $m['description'];
+                              $m_text_right = $m['text_right'];
+                              $m_btn = $m['button'];
+                              $mbtnName = (isset($m_btn['title']) && $m_btn['title']) ? $m_btn['title'] : '';
+                              $mbtnLink = (isset($m_btn['url']) && $m_btn['url']) ? $m_btn['url'] : '';
+                              $mbtnTarget = (isset($m_btn['target']) && $m_btn['target']) ? $m_btn['target'] : '_self';
+                              if ($m_title) {  ?>
+                              <div class="dash-item">
+                                <div class="line">
+                                  <span class="name"><?php echo $m_title ?></span>
+                                  <?php if ($m_text_right || $mbtnName ) { ?>
+                                    <span class="right-info">
+                                      <span class="text-desktop">
+                                        <?php if ($m_text_right) { ?>
+                                          <span class="text"><?php echo $m_text_right ?></span> 
+                                        <?php } ?>
+                                        <?php if ($mbtnName && $mbtnLink) { ?>
+                                          <span class="link">
+                                            <a href="<?php echo $mbtnLink ?>" target="<?php echo $mbtnTarget ?>" class="simple-link"><?php echo $mbtnName ?></a>
+                                          </span>
+                                        <?php } ?>
+                                      </span>
+                                    </span>
+                                  <?php } ?>
+                                </div>
+
+                                <?php if ($m_text) { ?>
+                                  <span class="desc"><?php echo $m_text ?></span> 
+                                <?php } ?>
+
+                                <?php if ($m_text_right || $mbtnName ) { ?>
+                                  <span class="right-info right-info-mobile">
+                                    <?php if ($m_text_right) { ?>
+                                      <div class="text-mobile"><?php echo $m_text_right ?></div> 
+                                    <?php } ?>
+                                    <?php if ($mbtnName && $mbtnLink) { ?>
+                                      <a href="<?php echo $mbtnLink ?>" target="<?php echo $mbtnTarget ?>" class="simple-link"><?php echo $mbtnName ?></a>
+                                    <?php } ?>
+                                  </span>
+                                <?php } ?>
+                              </div>
+                              <?php } ?>
+                            <?php } ?>
+                          </div>
                           <?php } ?>
 
                           <?php if ($popupContent) { ?>
