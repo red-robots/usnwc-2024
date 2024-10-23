@@ -69,7 +69,7 @@
 
               <div id="section<?php echo $i?>_parent<?php echo $ctr?>" <?php echo $dataSection?> class="mscol <?php echo $boxClass.$colClass.$imagePos ?>">
 
-                <?php if ( $e_title || $e_text ) { ?>
+                <?php if ( $e_title || $e_text || ($has_dash_items && $line_items) ) { ?>
                 <div class="textcol">
                   <div class="inside">
                     <div class="info">
