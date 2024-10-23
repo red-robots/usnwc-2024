@@ -37,6 +37,28 @@ $('.loop').owlCarousel({
 });
 
 
+$('.carousel-center-loop').owlCarousel({
+    center: true,
+    items:2,
+    nav: true,
+    loop:true,
+    margin:15,
+    autoplay:true,
+    smartSpeed: 1000,
+    autoplayTimeout:10000,
+    autoplayHoverPause:true,
+    responsive:{
+      400:{
+        items:1
+      },
+      768: {
+        items:2
+      }
+    }
+});
+
+
+
 /*
 *
 *     Subnaviagation Animation
