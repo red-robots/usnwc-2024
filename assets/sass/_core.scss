@@ -20330,6 +20330,23 @@ body.modal-open {
   }
 }
 
+.upcoming_events_section {
+  margin: 60px 0;
+  .section-title {
+    font-family: $font-brandon-medium;
+    font-size: 40px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    color: #000;
+    border-bottom: 2px solid #ccc;
+    margin: 0 0 30px;
+  }
+  .event-title {
+    margin-bottom: 18px;
+  }
+}
+
 body.logged-in.admin-bar {
   @media screen and (min-width: 820px) {
     &.subpage {

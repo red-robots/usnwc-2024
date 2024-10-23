@@ -2750,6 +2750,7 @@ body.single-instructions #primary #section-faqs{padding-top:60px;padding-bottom:
 .text-and-image-blocks .custom-button-element .button.button-gray{background-color:#fff;color:#707070;padding:7px 25px 6px;-webkit-box-shadow:0 3px 5px rgba(0,0,0,.15);box-shadow:0 3px 5px rgba(0,0,0,.15);text-transform:uppercase}
 .text-and-image-blocks .custom-button-element .button.button-gray:hover,.text-and-image-blocks .custom-button-element .button.button-gray:focus{background-color:#ba0d30 !important;color:#fff !important}
 .text-and-image-blocks .textcol .fulltext h3{font-family:"Brandon Bold";font-size:18px;line-height:1.2;margin:0 0 3px}
+.text-and-image-blocks .textcol .info{width:100%}
 #flexible-content .text-and-image-blocks{margin-top:30px}
 .text-and-gallery{width:100%;float:left;margin-top:50px}
 .text-and-gallery .mscol{margin-top:15px;margin-bottom:15px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
@@ -4822,6 +4823,9 @@ body.modal-open{overflow:hidden}
 .schedule-items-wrap .dash-item .right-info.right-info-mobile{display:none}
 .schedule-items-wrap .dash-item .desc{display:block;width:100%;font-style:italic;font-size:15px;color:#888}
 .schedule-items-wrap .dash-item .desc p:last-child{margin-bottom:0}
+.upcoming_events_section{margin:60px 0}
+.upcoming_events_section .section-title{font-family:"Brandon Medium";font-size:40px;line-height:1.2;text-transform:uppercase;padding-bottom:10px;color:#000;border-bottom:2px solid #ccc;margin:0 0 30px}
+.upcoming_events_section .event-title{margin-bottom:18px}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
