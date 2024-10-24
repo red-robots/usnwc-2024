@@ -64,7 +64,7 @@ function js_custom_init() {
             'plural'    => 'Races',
             'single'    => 'Race',
             'menu_icon' => 'dashicons-location-alt',
-            'supports'  => array('title','editor')
+            'supports'  => array('title','editor','thumbnail')
         ),
 
         array(

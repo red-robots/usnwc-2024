@@ -20047,6 +20047,16 @@ body.modal-open {
       width: 20%;
     }
   }
+
+  &.column-count-4,
+  &.column-count-5 {
+    .wrapper {
+      max-width: 100%;
+      @include tab {
+        max-width: 95vw;
+      }
+    }
+  }
 }
 
 .fullwidth-image-section {

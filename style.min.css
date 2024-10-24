@@ -4779,6 +4779,7 @@ body.modal-open{overflow:hidden}
 .column-data-section .fxcol .title-small{margin:0 0 5px;font-family:"Brandon";font-size:22px;line-height:1.2;color:#000}
 .column-data-section .fxcol .text-large{font-family:"Brandon Bold";font-size:35px;line-height:1.2;color:#555;margin:0;text-transform:uppercase}
 .column-data-section .fxcol:last-child:after{display:none}
+.column-data-section.column-count-4 .wrapper,.column-data-section.column-count-5 .wrapper{max-width:100%}
 .fullwidth-image-section{width:100%;float:left;margin:30px 0}
 .fullwidth-image-section figure{margin:0;position:relative;padding-bottom:45%}
 .fullwidth-image-section figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
@@ -5266,6 +5267,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .checkin-section-images .flexcol.images-4 figure.frame1,.checkin-section-images .flexcol.images-4 figure.frame2,.checkin-section-images .flexcol.images-4 figure.frame3,.checkin-section-images .flexcol.images-4 figure.frame4{width:50%}
 .column-data-section.column-count-4 .fxcol{width:25%}
 .column-data-section.column-count-5 .fxcol{width:20%}
+.column-data-section.column-count-4 .wrapper,.column-data-section.column-count-5 .wrapper{max-width:95vw}
 }@media screen and (min-width:820px){#banner.taxonomy-banner .static-banner img.desktop{display:block}
 #banner.taxonomy-banner .static-banner img.mobile{display:none}
 .post-type-entries .imagediv.mobile{display:none}
