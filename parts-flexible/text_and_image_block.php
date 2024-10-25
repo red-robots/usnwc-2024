@@ -46,12 +46,15 @@
             $image_position = $col['force_image_position']; 
             $colClass = ($i % 2) ? ' odd':' even';
             $image_type = $col['image_type'];
+            $single_image = $col['single_image'];
             $has_image = false;
-            $images = ($image_type) ? $col[$image_type.'_image'] : '';
+            $images = ( $image_type && isset($col[$image_type.'_image']) ) ? $col[$image_type.'_image'] : '';
             $slides = array();
             if($image_type=='single') {
-              $slides[0]['url'] = $images['url'];
-              $slides[0]['title'] = $images['title'];
+              if( $single_image ) {
+                $slides[0]['url'] = $single_image['url'];
+                $slides[0]['title'] = $single_image['title'];
+              }
             } else {
               $slides = $col['gallery_image'];
             }
@@ -64,6 +67,9 @@
             $popupContent = ( isset($col['content_display_type']) && $col['content_display_type'] ) ? true : false;
             $imagePos = ($image_position) ? ' image-position-'.$image_position : '';
             $dataSection = ( $section_title ) ? '' : 'data-section="'.$e_title.'"';
+
+            $is_repeater_dashed_items = $col['is_repeater_dashed_items'];
+            $repeater_dashed_items = $col['repeater_dashed_items'];
 
             if( ($e_title || $e_text) || $slides || ($has_dash_items && $line_items)) { $colClass = ($i % 2) ? ' odd':' even'; ?>
 
@@ -84,62 +90,16 @@
                       </div>
                       <?php } ?>
 
-                      <?php if ( ($e_text || $buttons) || ($has_dash_items && $line_items) ) { ?>
+                      <?php if ( ($e_text || $buttons) || ($has_dash_items && $line_items) || ($is_repeater_dashed_items && $repeater_dashed_items) ) { ?>
                         <div class="textwrap text-center">
                           <?php if ($e_text) { ?>
                           <div class="mstext <?php echo $textType ?>"><?php echo $e_text ?></div>
                           <?php } ?>
 
+                          <!-- DASHED ITEMS -->
+                          <?php include( locate_template('parts-flexible/schedule_dashed_items.php') ); ?>
+                          <!-- end of DASHED ITEMS -->
 
-                          <?php if ($has_dash_items && $line_items) { ?>
-                          <div class="schedule-items-wrap">
-                            <?php foreach ($line_items as $m) { 
-                              $m_title = $m['title'];
-                              $m_text = $m['description'];
-                              $m_text_right = $m['text_right'];
-                              $m_btn = $m['button'];
-                              $mbtnName = (isset($m_btn['title']) && $m_btn['title']) ? $m_btn['title'] : '';
-                              $mbtnLink = (isset($m_btn['url']) && $m_btn['url']) ? $m_btn['url'] : '';
-                              $mbtnTarget = (isset($m_btn['target']) && $m_btn['target']) ? $m_btn['target'] : '_self';
-                              if ($m_title) {  ?>
-                              <div class="dash-item">
-                                <div class="line">
-                                  <span class="name"><?php echo $m_title ?></span>
-                                  <?php if ($m_text_right || $mbtnName ) { ?>
-                                    <span class="right-info">
-                                      <span class="text-desktop">
-                                        <?php if ($m_text_right) { ?>
-                                          <span class="text"><?php echo $m_text_right ?></span> 
-                                        <?php } ?>
-                                        <?php if ($mbtnName && $mbtnLink) { ?>
-                                          <span class="link">
-                                            <a href="<?php echo $mbtnLink ?>" target="<?php echo $mbtnTarget ?>" class="simple-link"><?php echo $mbtnName ?></a>
-                                          </span>
-                                        <?php } ?>
-                                      </span>
-                                    </span>
-                                  <?php } ?>
-                                </div>
-
-                                <?php if ($m_text) { ?>
-                                  <span class="desc"><?php echo $m_text ?></span> 
-                                <?php } ?>
-
-                                <?php if ($m_text_right || $mbtnName ) { ?>
-                                  <span class="right-info right-info-mobile">
-                                    <?php if ($m_text_right) { ?>
-                                      <div class="text-mobile"><?php echo $m_text_right ?></div> 
-                                    <?php } ?>
-                                    <?php if ($mbtnName && $mbtnLink) { ?>
-                                      <a href="<?php echo $mbtnLink ?>" target="<?php echo $mbtnTarget ?>" class="simple-link"><?php echo $mbtnName ?></a>
-                                    <?php } ?>
-                                  </span>
-                                <?php } ?>
-                              </div>
-                              <?php } ?>
-                            <?php } ?>
-                          </div>
-                          <?php } ?>
 
                           <?php if ($popupContent) { ?>
                             <?php  
@@ -209,15 +169,23 @@
           $shorttext = $col['shorttext']; 
           $e_text = $col['description']; 
           $fullText = $col['description']; 
+          $has_dash_items = $col['add_dash_items']; 
+          $line_items = $col['line_items_dash']; 
+          $is_repeater_dashed_items = $col['is_repeater_dashed_items'];
+          $repeater_dashed_items = $col['repeater_dashed_items'];
+
           $colClass = ($i % 2) ? ' odd':' even';
           $image_type = $col['image_type'];
           $has_image = false;
           $images = ($image_type) ? $col[$image_type.'_image'] : '';
           $slides = array();
+          $single_image = $col['single_image'];
           if($image_type=='single') {
-            $slides[0]['url'] = $images['url'];
-            $slides[0]['title'] = $images['title'];
-            $slides[0]['sizes'] = $images['sizes'];
+            if($single_image) {
+              $slides[0]['url'] = $images['url'];
+              $slides[0]['title'] = $images['title'];
+              $slides[0]['sizes'] = $images['sizes'];
+            }
           } else {
             $slides = $col['gallery_image'];
           }
@@ -255,6 +223,12 @@
                 <?php if ($e_text) { ?>
                 <div class="text <?php echo $textType ?>"><?php echo $e_text ?></div>
                 <?php } ?>
+
+                <!-- DASHED ITEMS -->
+                <?php include( locate_template('parts-flexible/schedule_dashed_items.php') ); ?>
+                <!-- end of DASHED ITEMS -->
+
+
 
                 <?php if ($popupContent) { ?>
                     <?php  

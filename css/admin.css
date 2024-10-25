@@ -732,5 +732,21 @@ body.post-type-activity_schedule .acf-field-repeater[data-name="items"] [data-na
   border-top: none;
   padding: 2px 0!important;
 }
+.acf-field-true-false[data-name="is_repeater_dashed_items"],
+.acf-flexible-content [data-layout="schedule_cards"] [data-name="has_section_text"] {
+  padding-left: 40px;
+}
+.acf-field-true-false[data-name="is_repeater_dashed_items"] .acf-label {
+  margin-bottom: 0;
+}
+.acf-flexible-content [data-layout="schedule_cards"] [data-name="has_section_text"] .acf-input,
+.acf-field-true-false[data-name="is_repeater_dashed_items"] .acf-input {
+  display: inline-block;
+  width: auto!important;
+  position: absolute;
+  top: 15px;
+  left: 18px;
+}
+
 
 

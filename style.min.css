@@ -2086,8 +2086,12 @@ body.nav-open .menu-toggle{opacity:0}
 body.single-activity .intro-galleries .flexwrap{position:relative}
 body.single-activity #subpageSlides{width:100% !important;height:100% !important;padding-left:0 !important;border-radius:0 !important}
 .site-content{width:100%;float:left}
-.faqs .titlediv h2,h2.stitle,.stitle{margin:0;font-family:"Brandon Bold";font-size:40px;line-height:1.2;text-transform:uppercase;color:#000}
+.faqs .titlediv h2,h2.stitle,.stitle,.title-wrapper h2.section-title{margin:0;font-family:"Brandon Bold";font-size:40px;line-height:1.2;text-transform:uppercase;color:#000}
 .buttondiv{margin-top:20px}
+.midwrapper{padding-left:20px;padding-right:20px}
+.title-wrapper:has(.midwrapper){padding-bottom:20px !important}
+.title-wrapper:has(.midwrapper) .inner{border-bottom:2px solid #707070}
+.title-wrapper:has(.midwrapper) .section-text{margin-top:5px;font-size:18px;line-height:1.3}
 .btn-sm{cursor:pointer;display:inline-block;text-decoration:none !important;color:#5a5959;padding:7px 25px;border:1px solid #a2a2a2;overflow:hidden;position:relative;font-size:20px;font-weight:600;border-radius:0;-webkit-appearance:none;-webkit-box-shadow:none;box-shadow:none;min-width:85px}
 .btn-sm.popdata,.btn-sm.xs{padding:7px 15px 6px;font-size:15px;line-height:1.2}
 .btn-sm.wide{padding:7px 35px}
@@ -4813,9 +4817,9 @@ body.modal-open{overflow:hidden}
 .schedule-items-wrap .dash-item{margin:10px 0 18px}
 .schedule-items-wrap .dash-item .line{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative}
 .schedule-items-wrap .dash-item .line span,.schedule-items-wrap .dash-item .line a{display:inline-block;position:relative;z-index:10;background:#f2f2f2}
-.schedule-items-wrap .dash-item .line span.name{font-family:"Brandon Bold";font-size:17px;line-height:1.2;text-transform:uppercase;padding-right:5px;color:#000}
+.schedule-items-wrap .dash-item .line span.name{font-family:"Brandon Bold";font-size:14px;line-height:1.2;text-transform:uppercase;padding-right:5px;color:#000}
 .schedule-items-wrap .dash-item .line .right-info{text-align:right;padding-left:5px}
-.schedule-items-wrap .dash-item .line .right-info .text{display:block;width:100%}
+.schedule-items-wrap .dash-item .line .right-info .text{display:block;width:100%;font-size:14px;line-height:1.2}
 .schedule-items-wrap .dash-item .line .right-info span.link{padding-left:5px}
 .schedule-items-wrap .dash-item .line .right-info:has(.simple-link){background:transparent}
 .schedule-items-wrap .dash-item .line .right-info:has(.simple-link) .text-desktop{background:transparent}
@@ -4824,11 +4828,31 @@ body.modal-open{overflow:hidden}
 .schedule-items-wrap .dash-item .simple-link:hover{color:#ba0d30}
 .schedule-items-wrap .dash-item .simple-link:hover:after{border-bottom-color:#ba0d30}
 .schedule-items-wrap .dash-item .right-info.right-info-mobile{display:none}
-.schedule-items-wrap .dash-item .desc{display:block;width:100%;font-style:italic;font-size:15px;color:#888}
+.schedule-items-wrap .dash-item .desc{display:block;width:100%;font-style:italic;font-size:15px;color:#888;text-align:left}
 .schedule-items-wrap .dash-item .desc p:last-child{margin-bottom:0}
+.schedule-items-wrap .group-dash-items{margin-top:35px}
+.schedule-items-wrap .group-dash-items:first-child{margin-top:0}
+.schedule-items-wrap .group-dash-items .group-title{width:100%;text-align:left;font-family:"Brandon Bold";font-size:20px;font-weight:500;text-transform:uppercase;position:relative;color:#000;margin-bottom:10px}
+.schedule-items-wrap .group-dash-items .group-title span{position:relative}
+.schedule-items-wrap .group-dash-items .group-title span:after{content:"";display:block;width:100%;height:2px;background:#ccc;position:absolute;left:0;bottom:0}
+.schedule-items-wrap .group-dash-items .dash-item{margin-bottom:10px}
+.schedule-items-wrap.NoDescription .dash-item{margin:5px 0}
+.schedule-items-wrap.NoDescription .dash-item .line span,.schedule-items-wrap.NoDescription .dash-item .line a{font-size:16px;background:#fff}
+.schedule-items-wrap.NoDescription .dash-item .line span.text{color:#000}
+.schedule-items-wrap.NoDescription .dash-item .line span.name{font-family:"Brandon";text-transform:none !important}
+.buttonsWrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;gap:1em}
 .upcoming_events_section{margin:60px 0}
 .upcoming_events_section .section-title{font-family:"Brandon Medium";font-size:40px;line-height:1.2;text-transform:uppercase;padding-bottom:10px;color:#000;border-bottom:2px solid #ccc;margin:0 0 30px}
 .upcoming_events_section .event-title{margin-bottom:18px}
+.schedule_cards_section{padding-top:50px;padding-bottom:50px}
+.schedule_cards_section .title-wrapper{padding-top:0 !important}
+.cardsContainer .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-left:-12px;margin-right:-12px}
+.cardsContainer .infocard{width:100%}
+.cardsContainer .infocard .inside{padding:12px}
+.cardsContainer .infocard .cardTopTitle{font-family:"Brandon Medium";font-size:18px;line-height:1.2;color:#000;margin-bottom:10px}
+.cardsContainer .infocard .cardMainTitle{font-family:"Brandon Bold";font-size:23px;line-height:1.2;text-transform:uppercase;color:#000}
+.cardsContainer .infocard figure{margin:0 0 12px;position:relative;padding-bottom:70%;overflow:hidden;border-radius:10px}
+.cardsContainer .infocard figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -4919,6 +4943,7 @@ section.route-stories.half .block{width:50%}
 #banner.subpageBanner .slideItem img.mobile{display:none}
 #banner.taxonomy-banner .static-banner img.actual-image{display:none}
 body.single-activity #subpageSlides ul.slides,body.single-activity #subpageSlides li.sub-slide-item,body.single-activity #subpageSlides .slide-image{height:100% !important}
+.midwrapper{padding-left:5vw;padding-right:5vw}
 section.homepage-hero .img-holder.mobile{display:none}
 section.homepage-hero .img-holder.desktop{display:block}
 section.homepage-hero .home-info .info h1{font-size:40px}
@@ -5359,6 +5384,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-two_column_row{margin-top:90px;margin-bottom:90px}
 .section-two_column_row .flexwrap{min-height:520px}
 .section-cards_bottom_text .wrapper{max-width:85vw}
+.cardsContainer .infocard{width:33.333%}
 }@media screen and (min-width:960px){.section--schedules .section-two_column_row .flexwrap{min-height:480px}
 }@media screen and (min-width:961px){.activity-schedule-modal .schedule-container.half .fxcol{width:46%}
 }@media screen and (min-width:1025px){#primary .upcoming-posts .entry{width:33.333%}
@@ -5544,6 +5570,9 @@ body.logged-in.admin-bar .site-header{top:45px}
 .schedule-items-wrap .dash-item .right-info.right-info-mobile{display:block;width:100%;text-align:left}
 .schedule-items-wrap .dash-item{border-bottom:1px dashed #888}
 .schedule-items-wrap .dash-item:last-child{border-bottom:0}
+.schedule-items-wrap.NoDescription .dash-item{border-bottom:1px dashed #888;padding-bottom:8px;margin-bottom:8px !important}
+.schedule-items-wrap.NoDescription .dash-item .line span.name{width:60%}
+.schedule-items-wrap.NoDescription .dash-item .line span.right-info{width:40%}
 }@media screen and (max-width:600px){section.route-stories .block .feat-image.no-image .bg:before{width:30vw;height:30vw}
 .topinfo .businessHours{left:-37vw}
 #section-featured-posts .block .feat-image.no-image .bg:before{width:30vw;height:30vw}

@@ -1501,8 +1501,8 @@ body.single-activity  {
 
 
 .faqs .titlediv h2,
-h2.stitle,
-.stitle {
+h2.stitle, .stitle,
+.title-wrapper h2.section-title {
 	margin: 0 0;
 	font-family: $font-brandon-bold;
   font-size: 40px;
@@ -1512,6 +1512,25 @@ h2.stitle,
 }
 .buttondiv {
 	margin-top: 20px;
+}
+.midwrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+  @include tab {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+.title-wrapper:has(.midwrapper) {
+  padding-bottom: 20px!important;
+  .inner {
+    border-bottom: 2px solid $gray_dark;
+  }
+  .section-text {
+    margin-top: 5px;
+    font-size: 18px;
+    line-height: 1.3;
+  }
 }
 
 .btn-sm {
@@ -14172,7 +14191,7 @@ body.single-race .filter-wrapper {
     float: left;
   }
   .titlediv {
-    border-bottom: 2px solid #b5b5b5;
+    border-bottom: 2px solid $gray_border;
     .stitle {
       margin-bottom: 13px;
     }
@@ -16865,7 +16884,7 @@ section.visit {
     margin: 0 0;
     padding: 10px;
     list-style: none;
-    border: 1px solid #b5b5b5;
+    border: 1px solid $gray_border;
     border-radius: 10px;
     background: #FFF;
     position: absolute;
@@ -20267,7 +20286,7 @@ body.modal-open {
       }
       span.name {
         font-family: $font-brandon-bold;
-        font-size: 17px;
+        font-size: 14px;
         line-height: 1.2;
         text-transform: uppercase;
         padding-right: 5px;
@@ -20279,6 +20298,8 @@ body.modal-open {
         .text {
           display: block;
           width: 100%;
+          font-size: 14px;
+          line-height: 1.2;
         }
         .text-desktop {
           @media screen and (max-width: 768px) {
@@ -20333,6 +20354,7 @@ body.modal-open {
       font-style: italic;
       font-size: 15px;
       color: #888;
+      text-align: left;
       p:last-child {
         margin-bottom: 0;
       }
@@ -20345,6 +20367,78 @@ body.modal-open {
       }
     }
   }
+
+  .group-dash-items {
+    margin-top: 35px;
+    &:first-child {
+      margin-top: 0;
+    }
+    .group-title {
+      width: 100%;
+      text-align: left;
+      font-family: $font-brandon-bold;
+      font-size: 20px;
+      font-weight: 500;
+      text-transform: uppercase;
+      position: relative;
+      color: #000;
+      margin-bottom: 10px;
+      span {
+        position: relative;
+        &:after {
+          content:"";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background: #CCC;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
+    .dash-item {
+      margin-bottom: 10px;
+    }
+  }
+
+  &.NoDescription {
+    .dash-item {
+      margin: 5px 0;
+    }
+    .dash-item .line span, 
+    .dash-item .line a {
+      font-size: 16px;
+      background: #FFF;
+    }
+    .dash-item .line span.text {
+      color: #000;
+    }
+    .dash-item .line span.name {
+      font-family: $font-brandon-regular;
+      text-transform: none!important;
+    }
+
+    @media screen and (max-width: 768px) {
+      .dash-item {
+        border-bottom: 1px dashed #888;
+        padding-bottom: 8px;
+        margin-bottom: 8px !important;
+      }
+      .dash-item .line span.name {
+        width: 60%;
+      }
+      .dash-item .line span.right-info {
+        width: 40%;
+      }
+    }
+  }
+}
+
+.buttonsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
 }
 
 .upcoming_events_section {
@@ -20361,6 +20455,63 @@ body.modal-open {
   }
   .event-title {
     margin-bottom: 18px;
+  }
+}
+
+.schedule_cards_section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  .title-wrapper  {
+    padding-top: 0!important;
+  }
+}
+
+.cardsContainer {
+  .flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  .infocard {
+    width: 100%;
+    @include mid {
+      width: 33.333%;
+    }
+    .inside {
+      padding: 12px;
+    }
+    .cardTopTitle {
+      font-family: $font-brandon-medium;
+      font-size: 18px;
+      line-height: 1.2;
+      color: #000;
+      margin-bottom: 10px;
+    }
+    .cardMainTitle {
+      font-family: $font-brandon-bold;
+      font-size: 23px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      color: #000;
+    }
+    figure {
+      margin: 0 0 12px;
+      position: relative;
+      padding-bottom: 70%;
+      overflow: hidden;
+      border-radius: 10px;
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
   }
 }
 
