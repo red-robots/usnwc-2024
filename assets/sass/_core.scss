@@ -20520,6 +20520,13 @@ body.modal-open {
   }
 }
 
+.simple_intro_text_section {
+  .section-title,
+  .section-text {
+    text-align: center;
+  }
+}
+
 body.logged-in.admin-bar {
   @media screen and (min-width: 820px) {
     &.subpage {

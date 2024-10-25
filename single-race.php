@@ -52,6 +52,7 @@ $show_faqs = get_field('show_faqs_items');
         <?php include( locate_template('parts-flexible/carousel_fullwidth.php') ); ?>
         <?php include( locate_template('parts-flexible/upcoming_events.php') ); ?>
         <?php include( locate_template('parts-flexible/schedule_cards.php') ); ?>
+        <?php include( locate_template('parts-flexible/simple_intro_text.php') ); ?>
 
       <?php $ctr++; endwhile;  ?>
     </div>
