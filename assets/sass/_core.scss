@@ -1523,6 +1523,11 @@ h2.stitle, .stitle,
 }
 .title-wrapper:has(.midwrapper) {
   padding-bottom: 20px!important;
+  &.no-section-text {
+    .section-title {
+      padding-bottom: 15px;
+    }
+  }
   .inner {
     border-bottom: 2px solid $gray_dark;
   }
