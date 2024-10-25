@@ -138,6 +138,9 @@ a {
 	&.wide {
 		max-width: 1350px;
 	}
+  &.narrow {
+    max-width: 1000px;
+  }
 }
 .site {
 	position: relative;
@@ -20524,6 +20527,12 @@ body.modal-open {
   .section-title,
   .section-text {
     text-align: center;
+  }
+  .custom-button-element {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 40px;
   }
 }
 
