@@ -4847,8 +4847,8 @@ body.modal-open{overflow:hidden}
 .upcoming_events_section .event-title{margin-bottom:18px}
 .schedule_cards_section{padding-top:50px;padding-bottom:50px}
 .schedule_cards_section .title-wrapper{padding-top:0 !important}
-.cardsContainer .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-left:-12px;margin-right:-12px}
-.cardsContainer .infocard{width:100%}
+.cardsContainer .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-12px;margin-right:-12px}
+.cardsContainer .infocard{width:100%;margin-bottom:25px}
 .cardsContainer .infocard .inside{padding:12px}
 .cardsContainer .infocard .cardTopTitle{font-family:"Brandon Medium";font-size:18px;line-height:1.2;color:#000;margin-bottom:10px}
 .cardsContainer .infocard .cardMainTitle{font-family:"Brandon Bold";font-size:23px;line-height:1.2;text-transform:uppercase;color:#000}
