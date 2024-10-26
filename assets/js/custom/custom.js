@@ -1288,4 +1288,25 @@ var getGridSize = function() {
   }
 
 
+  $(document).on('click', '.accordion-handle', function(e){
+    e.preventDefault();
+    var target = $(this);
+    var parent = $(this).parent();
+    if( $(this).attr('aria-expanded')=='false' ) {
+      $(this).attr('aria-expanded', 'true');
+    } else {
+      $(this).attr('aria-expanded', 'false');
+    }
+    $(this).toggleClass('active');
+    $(this).next().slideToggle();
+    //$('.accordion .accordion-item').not(parent).removeClass('active');
+    $('.accordion .accordion-item').not(parent).each(function(){
+      $(this).removeClass('active');
+      $(this).find('.accordion-handle').removeClass('active');
+      $(this).find('.accordion-details').slideUp();
+    });
+    parent.toggleClass('active');
+  });
+
+
 });// END #####################################    END

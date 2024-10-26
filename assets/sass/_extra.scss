@@ -1,0 +1,144 @@
+.accordion {
+  margin: 0 0;
+  padding: 0 0;
+  list-style: none;
+  .accordion-item {
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid $gray;
+    margin-bottom: 18px;
+    transition: all ease .3s;
+  }
+  .accordion-handle {
+    appearance: none;
+    border: none;
+    background-color: $gray;
+    padding: 25px 35px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-family: $font-brandon-bold;
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #000;
+    position: relative;
+    transition: all ease .3s;
+    &:after {
+      content:"";
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid #000;
+      border-bottom: 2px solid #000;
+      position: absolute;
+      right: 35px;
+      top: 30px;
+      transform: rotate(45deg);
+      transition: all ease .3s;
+    }
+    &.active {
+      background-color: #FFF;
+    }
+    &.active:after {
+      border-color: $red;
+      transform: scaleY(-1) rotate(45deg);
+    }
+  }
+  .accordion-details {
+    padding: 0 35px 15px;
+    font-size: 18px;
+    line-height: 1.4;
+    color: #000;
+    display: none;
+    p {
+      color: #000;
+    }
+  }
+  .accordion-item.active {
+    border-color: #000;
+  }
+}
+
+.title-wrapper.no-border .inner {
+  border-bottom: none;
+}
+
+.title-wrapper.text-center {
+  h2, .section-text, p {
+    text-align: center;
+  }
+}
+
+.accordion_elements_section {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.cards-multiple-wrapper {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.cardsWrapper.card_style2 {
+  .imageWrap {
+    width: 100%;
+  }
+  figure {
+    padding-bottom: 0;
+    div.image {
+      padding-bottom: 60%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      border: 1px solid #CCC;
+    }
+  }
+  figcaption {
+    margin-top: 20px;
+    h3 {
+      font-family: $font-brandon-bold;
+      font-size: 18px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      color: #000;
+      margin: 0 0 5px;
+    }
+    .card-details {
+      color: #000;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+  }
+  .buttonBlock {
+    margin-top: 20px;
+  }
+  &.count-2 {
+    .imageWrap {
+      @include xs {
+        width: 50%;
+      }
+    }
+  }
+  &.count-3 {
+    .imageWrap {
+      @include tab {
+        width: 33.333%;
+      }
+    }
+  }
+  &.count-4 {
+    .imageWrap {
+      @include xs {
+        width: 50%;
+      }
+      @include tab {
+        width: 25%;
+      }
+    }
+  }
+}
+
+
+
