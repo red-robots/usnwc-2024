@@ -4814,6 +4814,15 @@ body.modal-open{overflow:hidden}
 .two_column_text_section .flexwrap .fxcol h3 strong{font-size:18px}
 .two_column_text_section.has-vertical-line .fxcol{padding-bottom:25px;margin-bottom:30px;border-bottom:1px solid #999}
 .two_column_text_section.has-vertical-line .fxcol:last-child{border-bottom:0}
+.two_column_text_section.address-with-map{padding-top:0 !important;padding-bottom:0 !important}
+.two_column_text_section.address-with-map .wrapper{max-width:100% !important;padding:0 0 !important}
+.two_column_text_section.address-with-map .flexwrap .column1{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}
+.two_column_text_section.address-with-map .flexwrap .column1 a{color:#404040;text-decoration:none;display:inline-block;-webkit-transition:all ease .3s;transition:all ease .3s}
+.two_column_text_section.address-with-map .flexwrap .column1 a:hover,.two_column_text_section.address-with-map .flexwrap .column1 a:focus{color:#ba0d30}
+.two_column_text_section.address-with-map .flexwrap .column2{min-height:380px}
+.two_column_text_section.address-with-map .flexwrap .column2 .inside{height:100%;position:relative;background-color:#d3f8e2;overflow:hidden;border-top-left-radius:15px;border-bottom-left-radius:15px}
+.two_column_text_section.address-with-map .flexwrap .column2 .inside p{margin:0}
+.two_column_text_section.address-with-map .flexwrap .column2 .inside iframe{margin:0;position:absolute;top:0;left:0;width:100% !important;height:100% !important}
 #slideShow .flex-viewport{height:100%}
 .schedule-items-wrap{margin:10px 0 30px}
 .schedule-items-wrap .dash-item{margin:10px 0 18px}
@@ -4857,7 +4866,7 @@ body.modal-open{overflow:hidden}
 .cardsContainer .infocard figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .simple_intro_text_section .section-title,.simple_intro_text_section .section-text{text-align:center}
 .simple_intro_text_section .custom-button-element{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1em;margin-top:40px}
-.accordion{margin:0;padding:0;list-style:none}
+.accordion{max-width:1100px;width:100%;margin:0 auto;padding:0;list-style:none}
 .accordion .accordion-item{overflow:hidden;border-radius:10px;border:1px solid #f2f2f2;margin-bottom:18px;-webkit-transition:all ease .3s;transition:all ease .3s}
 .accordion .accordion-handle{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;background-color:#f2f2f2;padding:25px 35px;display:block;width:100%;text-align:left;font-family:"Brandon Bold";font-size:18px;line-height:1.2;letter-spacing:.02em;text-transform:uppercase;color:#000;position:relative;-webkit-transition:all ease .3s;transition:all ease .3s}
 .accordion .accordion-handle:after{content:"";display:block;width:8px;height:8px;border-right:2px solid #000;border-bottom:2px solid #000;position:absolute;right:35px;top:30px;-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-transition:all ease .3s;transition:all ease .3s}
@@ -4866,6 +4875,7 @@ body.modal-open{overflow:hidden}
 .accordion .accordion-details{padding:0 35px 15px;font-size:18px;line-height:1.4;color:#000;display:none}
 .accordion .accordion-details p{color:#000}
 .accordion .accordion-item.active{border-color:#000}
+.accordion .accordion-details:has(.gform_wrapper) .gform_wrapper{width:100%}
 .title-wrapper.no-border .inner{border-bottom:0}
 .title-wrapper.text-center h2,.title-wrapper.text-center .section-text,.title-wrapper.text-center p{text-align:center}
 .accordion_elements_section{margin-top:50px;margin-bottom:50px}
@@ -4877,6 +4887,10 @@ body.modal-open{overflow:hidden}
 .cardsWrapper.card_style2 figcaption h3{font-family:"Brandon Bold";font-size:18px;line-height:1.2;text-transform:uppercase;color:#000;margin:0 0 5px}
 .cardsWrapper.card_style2 figcaption .card-details{color:#000;font-size:18px;line-height:1.4}
 .cardsWrapper.card_style2 .buttonBlock{margin-top:20px}
+.social_media_section{padding-top:30px;padding-bottom:40px}
+.social_media_section .social-media-links{text-align:center;position:relative;top:-10px}
+.social_media_section .social-media-links a{font-size:2rem;line-height:1;color:#6d6d6d;display:inline-block;margin:5px 8px;-webkit-transition:all ease .3s;transition:all ease .3s}
+.social_media_section .social-media-links a:hover,.social_media_section .social-media-links a:focus{color:#000;-webkit-transform:translateY(-2px);transform:translateY(-2px)}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -4913,6 +4927,7 @@ body.search .has-image .text-col{width:67%;float:right;padding-left:30px;display
 .two_column_text_section .flexwrap .fxcol{width:50%}
 .two_column_text_section.has-vertical-line .fxcol{padding:0 30px;margin-bottom:0;border-bottom:0;border-right:1px solid #999}
 .two_column_text_section.has-vertical-line .fxcol:last-child{border-right:0;padding-right:0}
+.two_column_text_section.address-with-map .flexwrap .column2{min-height:500px}
 .cardsWrapper.card_style2.count-2 .imageWrap{width:50%}
 .cardsWrapper.card_style2.count-4 .imageWrap{width:50%}
 }@media(min-width:600px)and (min-width:820px){.two_column_text_section.has-vertical-line .fxcol{padding-left:6vw;padding-right:6vw}
@@ -5319,6 +5334,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .column-data-section.column-count-4 .fxcol{width:25%}
 .column-data-section.column-count-5 .fxcol{width:20%}
 .column-data-section.column-count-4 .wrapper,.column-data-section.column-count-5 .wrapper{max-width:95vw}
+.accordion .accordion-details:has(.gform_wrapper) .gform_wrapper{width:50%}
 .cardsWrapper.card_style2.count-3 .imageWrap{width:33.333%}
 .cardsWrapper.card_style2.count-4 .imageWrap{width:25%}
 }@media screen and (min-width:820px){#banner.taxonomy-banner .static-banner img.desktop{display:block}

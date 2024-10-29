@@ -269,32 +269,34 @@ $placeholder = THEMEURI . 'images/rectangle.png';
             		// echo '</pre>';
 					/*=== SCHEDULE ===*/ 
 					// if ($is_filtered) { /* FILTERED SCHEDULE */ 
-						$posts_selected = explode(",",$is_filtered);
-						$filter_activites = array();
-						$selected_activities = array();
-						foreach ($schedule_activities as $a) { 
-							$schedules = $a['schedule'];
-							$day = $a['month'];
-							$daySlug = ($day) ? sanitize_title($day) : '';
-							if($schedules) {
-								foreach ($schedules as $s) { 
-									$time = $s['time'];
-									$altText = ( isset($s['alt_text']) && $s['alt_text'] ) ? $s['alt_text']:'';
-									$is_pop_up = ( isset($s['popup_info'][0]) && $s['popup_info'][0] ) ? true : false;
-									$act = ( isset($s['activity']) && $s['activity'] ) ? $s['activity']:'';
-									if($act) {
-										$id = $act->ID;
-										$act->schedule = $time;
-										$act->popup_info = $is_pop_up;
-										$act->alt_text = $altText;
-										if( in_array($id,$posts_selected) ) {
-											$filter_activites[$day][] = $act;
-										}
-									}
-								}
-							}
-						}
+						//$posts_selected = explode(",",$is_filtered);
 
+            if($schedule_activities) {
+              $posts_selected  = [];
+  						$filter_activites = array();
+  						$selected_activities = array();
+  						foreach ($schedule_activities as $a) { 
+  							$schedules = ( isset($a['schedule']) ) ? $a['schedule'] : '';
+  							$day = (isset($a['month'])) ? $a['month'] : '';
+  							$daySlug = ($day) ? sanitize_title($day) : '';
+  							if($schedules) {
+  								foreach ($schedules as $s) { 
+  									$time = $s['time'];
+  									$altText = ( isset($s['alt_text']) && $s['alt_text'] ) ? $s['alt_text']:'';
+  									$is_pop_up = ( isset($s['popup_info'][0]) && $s['popup_info'][0] ) ? true : false;
+  									$act = ( isset($s['activity']) && $s['activity'] ) ? $s['activity']:'';
+  									if($act) {
+  										$id = $act->ID;
+  										$act->schedule = $time;
+  										$act->popup_info = $is_pop_up;
+  										$act->alt_text = $altText;
+  										if( in_array($id,$posts_selected) ) {
+  											$filter_activites[$day][] = $act;
+  										}
+  									}
+  								}
+  							}
+  						}
 						?>
 						
 						<?php //if ($filter_activites) { ?>
@@ -329,7 +331,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
 											$oDate = $m['date'];
 											$date = DateTime::createFromFormat('d/m/Y', $oDate);
 											$formatted_date = $date->format('l, F j');
-											$zoom = $m['zoom'][0];
+											$zoom = ( isset($m['zoom'][0]) ) ? $m['zoom'][0] : '';
 											if( $zoom == 'Yes' ){ $zoom = 'via Zoom';}
 											?>
 											<li class="item">
@@ -358,6 +360,9 @@ $placeholder = THEMEURI . 'images/rectangle.png';
 								</div>
 							</div>
 						</div>
+
+          <?php } ?>
+
 					</div>
 					</section>
 				</section>

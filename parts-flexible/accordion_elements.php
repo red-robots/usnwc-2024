@@ -5,7 +5,7 @@
   $section_text = get_sub_field('section_text');
   $has_section_text = get_sub_field('has_section_text');
   $data_section = ($section_title) ? ' data-section="'.$section_title.'"':'';
-  if($schedule_cards_row || $section_title) { ?>
+  if($accordions || $section_title) { ?>
   <div id="accordion-elements-<?php echo $ctr ?>" class="fullwidth-float-left accordion_elements_section"<?php echo $data_section ?>>
     <div class="title-wrapper no-border text-center <?php echo ($has_section_text && $section_text) ? ' has-section-text':' no-section-text'; ?>">
       <div class="midwrapper">

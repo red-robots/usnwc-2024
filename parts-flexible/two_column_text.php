@@ -4,10 +4,17 @@
   
   $bgcolor = get_sub_field('bgcolor');
   $divider = get_sub_field('show_vertical_divider_line');
+  $section_custom_class = get_sub_field('section_custom_class');
   $section_class = ($divider) ? ' has-vertical-line':'';
+
+  if($section_custom_class) {
+    $section_class .= ' ' . $section_custom_class;
+  }
+
   $has_intro = get_sub_field('include_intro_title_and_text_twocol');
   $intro_title = get_sub_field('title');
   $intro_text = get_sub_field('text');
+  
   $section_data_title = ($has_intro && $intro_title) ? ' data-section="'.$intro_title.'"':'';
   ?>
   <section id="section-fullwidth-black-<?php echo $ctr?>" class="mscol fullwidth two_column_text_section section-fullwidth-<?php echo $bgcolor?><?php echo $section_class?>"<?php echo $section_data_title?>>

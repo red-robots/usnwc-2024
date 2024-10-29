@@ -20259,6 +20259,58 @@ body.modal-open {
       }
     }
   }
+
+  &.address-with-map {
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+    .wrapper {
+      max-width: 100%!important;
+      padding: 0 0!important;
+    }
+    .flexwrap {
+      .column1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        a {
+          color: $color_text_main;
+          text-decoration: none;
+          display: inline-block;
+          transition: all ease .3s;
+          &:hover, &:focus {
+            color: $red;
+          }
+        }
+      }
+
+      .column2 {
+        min-height: 380px;
+        @include xs {
+          min-height: 500px;
+        }
+        .inside {
+          height: 100%;
+          position: relative;
+          background-color: #D3F8E2;
+          overflow: hidden;
+          border-top-left-radius: 15px;
+          border-bottom-left-radius: 15px;
+          p {
+            margin: 0 0;
+          }
+          iframe {
+            margin: 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%!important;
+            height: 100%!important;
+          }
+        }
+      }
+    }
+  }
 }
 
 #slideShow .flex-viewport {

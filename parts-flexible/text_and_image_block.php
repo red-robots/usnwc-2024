@@ -68,8 +68,8 @@
             $imagePos = ($image_position) ? ' image-position-'.$image_position : '';
             $dataSection = ( $section_title ) ? '' : 'data-section="'.$e_title.'"';
 
-            $is_repeater_dashed_items = $col['is_repeater_dashed_items'];
-            $repeater_dashed_items = $col['repeater_dashed_items'];
+            $is_repeater_dashed_items = ( isset($col['is_repeater_dashed_items']) ) ? $col['is_repeater_dashed_items'] : '';
+            $repeater_dashed_items = ( isset($col['repeater_dashed_items']) ) ? $col['repeater_dashed_items'] : '';
 
             if( ($e_title || $e_text) || $slides || ($has_dash_items && $line_items)) { $colClass = ($i % 2) ? ' odd':' even'; ?>
 

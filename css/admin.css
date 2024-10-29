@@ -733,12 +733,17 @@ body.post-type-activity_schedule .acf-field-repeater[data-name="items"] [data-na
   padding: 2px 0!important;
 }
 .acf-field-true-false[data-name="is_repeater_dashed_items"],
-.acf-flexible-content [data-name="has_section_text"]:has(.acf-true-false) {
+.acf-flexible-content [data-name="has_section_text"]:has(.acf-true-false),
+[data-layout="social_media_section"] [data-name="has_section_intro"]:has(.acf-true-false),
+[data-layout="social_media_section"] [data-name="display_social_media"]:has(.acf-true-false) {
   padding-left: 40px;
 }
 .acf-field-true-false[data-name="is_repeater_dashed_items"] .acf-label {
   margin-bottom: 0;
 }
+
+[data-layout="social_media_section"] [data-name="display_social_media"]:has(.acf-true-false) .acf-input,
+[data-layout="social_media_section"] [data-name="has_section_intro"]:has(.acf-true-false) .acf-input,
 .acf-flexible-content [data-name="has_section_text"]:has(.acf-true-false) .acf-input,
 .acf-field-true-false[data-name="is_repeater_dashed_items"] .acf-input {
   display: inline-block;
@@ -747,6 +752,7 @@ body.post-type-activity_schedule .acf-field-repeater[data-name="items"] [data-na
   top: 15px;
   left: 18px;
 }
+
 
 
 
