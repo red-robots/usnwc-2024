@@ -51,7 +51,7 @@ get_header(); ?>
         $is_active = ($i==1) ? ' active':''; 
         $is_show = ($i==1) ? ' style="display:block"':''; 
         ?>
-        <div id="faq--<?php echo $f->slug; ?>" class="faq-tab-group fullwidth-float-left<?php echo $is_active; ?>"<?php echo $is_show; ?>>
+        <div id="faq--<?php echo $f->slug; ?>" class="faq-tab-group fadeIn animated fullwidth-float-left<?php echo $is_active; ?>"<?php echo $is_show; ?>>
           <div class="wrapper">
             <?php
             $args = array(
