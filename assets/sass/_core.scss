@@ -10937,6 +10937,14 @@ body.logged-in.admin-bar {
 	}
 }
 
+.pageTabs2.aligncenter {
+  width: 100%;
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .sectionTwoCol {
 	margin-bottom: 16px;
 	.imageCol {
@@ -20106,10 +20114,53 @@ body.modal-open {
   }
 }
 
-.fullwidth-float-left {
+.fullwidth-float-left,
+.faqs-group {
   width: 100%;
   float: left;
 }
+.faqs-group {
+  margin-top: 50px;
+  &:first-child {
+    margin-top: 0;
+  }
+  h2.stitle {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto 20px;
+  }
+}
+.all-faqs-container {
+  width: 100%;
+  float: left;
+  .tabsWrapper {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+  }
+  #pageTabs {
+    .mini-nav.active {
+      color: #FFF;
+      background-color: #5b5b5b!important;
+      a {
+        color: #FFF!important;
+        background-color: #5b5b5b!important;
+      }
+    }
+    .mini-nav:focus-within {
+      color: #FFF;
+      background-color: #5b5b5b!important;
+    }
+    .mini-nav a:focus {
+      background-color: #5b5b5b!important;
+      color: #FFF!important;
+    }
+  }
+  .faq-tab-group {
+    display: none;
+  }
+}
+
 
 .carousel_fullwidth_section {
   margin: 20px 0 60px;

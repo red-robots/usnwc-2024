@@ -25,174 +25,107 @@ get_header(); ?>
 		<?php endwhile; ?>
 
 		<?php  
-		$faqTerms = get_terms( array(
-		    'taxonomy' => 'faq_type',
+    $faq_taxonomy = 'faq_type';
+		$faq_categories = get_terms( array(
+		    'taxonomy' => $faq_taxonomy,
 		    'hide_empty' => true,
 		));
-		if($faqTerms) { ?>
-		<section class="faq-categories">
-			<div class="wrapper">
-				<div id="faqTabs" class="flexwrap2">
-					<!-- <div class="faqcat">
-						<a href="#" data-termid="all" class="faqType active">All</a>
-					</div>	 -->
-					<?php 
-					$a = 1;
-					foreach ($faqTerms as $t) { 
-						if($a==1) {
-							$first_faq_group = strval('faqterm-'.$t->term_id);
-							$class = 'active';
-						} else {
-							$class = '';
-						}
-						?>
-					<div class="faqcat">
-						<a href="#" id="faqterm-<?php echo $t->term_id?>" data-termid="<?php echo $t->term_id?>" class="faqType <?php echo $class; ?> <?php echo $first_faq_group; ?>"><?php echo $t->name?></a>
-					</div>	
-					<?php $a++; }  ?>
-				</div>
-				<div id="faqSelect"></div>
+		if($faq_categories) { ?>
+		<section class="all-faqs-container">
+			<div class="tabsWrapper">
+        <div class="wrapper">
+          <div id="pageTabs" class="pageTabs2 faqsTabLinks aligncenter">
+    				<div id="tabcontent">
+              <?php foreach ($faq_categories as $k=>$f) { 
+                $is_tab_active = ($k==0) ? ' active':'';  ?>
+                <span class="mini-nav<?php echo $is_tab_active; ?>">
+                  <a href="javascript:void(0)" data-rel="#faq--<?php echo $f->slug; ?>"><?php echo $f->name; ?></a>
+                </span>
+              <?php } ?>
+            </div>
+          </div>
+        </div>
 			</div>
+
+      <?php $i=1; foreach ($faq_categories as $f) { 
+        $is_active = ($i==1) ? ' active':''; 
+        $is_show = ($i==1) ? ' style="display:block"':''; 
+        ?>
+        <div id="faq--<?php echo $f->slug; ?>" class="faq-tab-group fullwidth-float-left<?php echo $is_active; ?>"<?php echo $is_show; ?>>
+          <div class="wrapper">
+            <?php
+            $args = array(
+              'posts_per_page'   => -1,
+              'post_type'        => 'faqs',
+              'post_status'      => 'publish',
+              'tax_query' => array(
+                    array(
+                        'taxonomy' => $faq_taxonomy,
+                        'terms' => $f->term_id,
+                        'field' => 'term_id',
+                    )
+              ),
+              'orderby' => 'title',
+              'order' => 'ASC' 
+            );
+            $faqs = new WP_Query($args);
+            if ( $faqs->have_posts() ) {  ?>
+            <div class="faqs">
+              <?php while ( $faqs->have_posts() ) : $faqs->the_post(); 
+                $faqs_items = get_field('faqs', get_the_ID());
+                $terms = get_the_terms( get_the_ID(), $faq_taxonomy );
+                $term = ($terms) ? $terms[0]->slug : '';
+                if($faqs_items) { ?>
+                <div id="faq--<?php echo $term ?>" class="faqs-group accordions-wrapper">
+                  <div class="midwrapper">
+                    <h2 class="stitle"><?php the_title(); ?></h2>
+                    <ul class="accordion">
+                    <?php foreach ($faqs_items as $q) { 
+                      $question = $q['question'];
+                      $answer = $q['answer'];
+                      if($question && $answer) { ?>
+                      <li class="accordion-item">
+                         <button class="accordion-handle" aria-expanded="false"><?php echo $question ?></button>
+                         <div class="accordion-details"><?php echo anti_email_spam($answer) ?></div>
+                      </li>  
+                      <?php } ?>
+                    <?php } ?>
+                    </ul>
+                  </div>
+                </div>
+                <?php } ?>
+              <?php endwhile; wp_reset_postdata(); ?>
+            </div>
+            <?php } ?>
+          </div>
+        </div>
+      <?php $i++; } ?>
+      
 		</section>
 		<?php } ?>
 
-		<?php
-			$args = array(
-				'posts_per_page'   => -1,
-				'post_type'        => 'faqs',
-				'post_status'      => 'publish'
-			);
-			$faqs = new WP_Query($args);
-			$first_faq = '';
-			if ( $faqs->have_posts() ) {  ?>
-			<section class="main-faqs-icons">
-				<div class="wrapper">
-					<div class="flexwrap">
-						<?php $i=1; while ( $faqs->have_posts() ) : $faqs->the_post(); 
-								$id = get_the_ID();
-								$icon = get_field("custom_icon");
-								$upload_your_own = get_field('upload_your_own');
-								$title = get_the_title();
-								if($i==1) {
-									$first_faq = $id;
-								} 
-								$postTerms = get_the_terms($id,'faq_type');
-								$postTermId = ($postTerms) ? $postTerms[0]->term_id : '';
-								$termClass = ($postTermId) ? ' faqterm-'.$postTermId:'';
-
-								$faqNum = 'faqterm-'.$postTermId;
-								if( $first_faq_group == $faqNum ) {
-									$styleIt = 'style=""';
-								} else {
-									$styleIt = 'style="display: none;"';
-								}
-								// var_dump($first_faq_group);
-								// var_dump($faqNum);
-							?>
-							<a href="#" data-id="<?php echo $id ?>" data-termid="<?php echo $postTermId ?>" class="faq faqGroup faqpid-<?php echo $id.$termClass ?> " <?php echo $styleIt; ?>>
-								<?php if($upload_your_own) { 
-									// echo '<pre>';
-									// print_r($upload_your_own);
-
-									?>
-									<?php echo $upload_your_own; ?>
-								<?php } else { ?>
-									<?php if ($icon) { ?>
-									<span class="icon"><i class="<?php echo $icon ?>"></i></span>	
-									<?php } ?>
-								<?php } ?>
-
-								<?php if ($title) { ?>
-								<span class="title"><?php echo $title ?></span>	
-								<?php } ?>
-							</a>
-						<?php $i++; endwhile; wp_reset_postdata(); ?>
-					</div>
-				</div>
-			</section>
-
-
-			<div class="main-faq-items" id="faqItems" style="display:none">
-				<div class="wrapper narrow">
-					<div id="faqsContainer">
-						<?php echo ($first_faq) ? getFaqs($first_faq) : ''; ?>
-					</div>
-				</div>
-			</div>
-			<?php } ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->
 
-<?php include( locate_template('inc/faqs.php') ); ?>
 <script type="text/javascript">
 jQuery(document).ready(function($){
-	if( $(".faqType").length>0 ) {
-		var faq_select = '<select class="faq-selection">';
-		faq_select += '<option value="all">All</option>';
-		$(".faqType").each(function(){
-			var cat = $(this).text();
-			var termid = $(this).attr("data-termid");
-			faq_select += '<option value="'+termid+'">'+cat+'</option>';
-		});
-		faq_select += '</select>';
-		$("#faqSelect").html(faq_select);
-	}
-	
+	$(document).on('click', '.faqsTabLinks a', function(e){
+    e.preventDefault();
+    var tabId = $(this).attr('data-rel');
+    var parent = $(this).parent();
+    parent.addClass('active');
+    $('.faqsTabLinks .mini-nav').not(parent).removeClass('active');
 
-	$(document).on("click",".faqType",function(e){
-		e.preventDefault();
-		var id = $(this).attr("data-termid");
-		$(".faqType").removeClass('active');
-		$(".faqGroup").removeClass('active');
-		$(this).addClass("active");
-
-		if(id=='all') {
-			$(".faqGroup").each(function(){
-				$(this).addClass("animated fadeIn").show();
-			});
-		} else {
-			$("#faqItems").hide();
-			$(".faqGroup").removeClass("animated fadeIn");
-			$(".faqGroup").show();
-			$(".faqGroup").each(function(){
-				var termid = $(this).attr("data-termid");
-				if(termid==id) {
-					$(this).addClass("animated fadeIn");
-				} else {
-					$(this).removeClass("animated fadeIn").hide();
-				}
-			});
-		}
-		var pageURL = '<?php echo get_permalink(); ?>';
-		history.replaceState('',document.title,pageURL);
-	});
-
-	$(document).on("change","select.faq-selection",function(e){
-		e.preventDefault();
-		var id = $(this).val();
-		$(".faqGroup").removeClass('active');
-		if(id=='all') {
-			$(".faqGroup").each(function(){
-				$(this).addClass("animated fadeIn").show();
-			});
-		} else {
-			$(".faqType").removeClass('active');
-			$('#faqterm-'+id).addClass("active");
-			$("#faqItems").hide();
-			$(".faqGroup").removeClass("animated fadeIn");
-			$(".faqGroup").show();
-			$(".faqGroup").each(function(){
-				var termid = $(this).attr("data-termid");
-				if(termid==id) {
-					$(this).addClass("animated fadeIn");
-				} else {
-					$(this).removeClass("animated fadeIn").hide();
-				}
-			});
-		}
-		
-	});
+    if( $(tabId).length ) {
+      $('.faq-tab-group' + tabId).addClass('active');
+      $('.faq-tab-group' + tabId).toggle();
+      $('.faq-tab-group').not(tabId).each(function(){
+        $(this).removeClass('active');
+        $(this).hide();
+      });
+    }
+  });
 });
 </script>
 <?php

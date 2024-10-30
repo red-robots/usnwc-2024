@@ -3476,6 +3476,7 @@ body.logged-in.admin-bar .job-info-page .text-centered-section{margin-top:-5px}
 .buy-page#primary .twoColSection .tcol#section1{margin-bottom:16px}
 .buy-page#primary.page-activity-passes .itemrow .activity-name span{bottom:-2px}
 .buy-page#primary #pageTabs.pageTabs2 .mini-nav{padding:0 15px}
+.pageTabs2.aligncenter{width:100%;float:left;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .sectionTwoCol{margin-bottom:16px}
 .sectionTwoCol .imageCol{width:100%}
 .sectionTwoCol .imageCol div.img{width:100%;height:100%;background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#fff}
@@ -4789,7 +4790,17 @@ body.modal-open{overflow:hidden}
 .fullwidth-image-section{width:100%;float:left;margin:30px 0}
 .fullwidth-image-section figure{margin:0;position:relative;padding-bottom:45%}
 .fullwidth-image-section figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
-.fullwidth-float-left{width:100%;float:left}
+.fullwidth-float-left,.faqs-group{width:100%;float:left}
+.faqs-group{margin-top:50px}
+.faqs-group:first-child{margin-top:0}
+.faqs-group h2.stitle{max-width:1100px;width:100%;margin:0 auto 20px}
+.all-faqs-container{width:100%;float:left}
+.all-faqs-container .tabsWrapper{width:100%;float:left;margin-bottom:20px}
+.all-faqs-container #pageTabs .mini-nav.active{color:#fff;background-color:#5b5b5b !important}
+.all-faqs-container #pageTabs .mini-nav.active a{color:#fff !important;background-color:#5b5b5b !important}
+.all-faqs-container #pageTabs .mini-nav:focus-within{color:#fff;background-color:#5b5b5b !important}
+.all-faqs-container #pageTabs .mini-nav a:focus{background-color:#5b5b5b !important;color:#fff !important}
+.all-faqs-container .faq-tab-group{display:none}
 .carousel_fullwidth_section{margin:20px 0 60px}
 .carousel_fullwidth_section .carousel-images figure{margin:0;position:relative;padding-bottom:60%}
 .carousel_fullwidth_section .carousel-images figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
