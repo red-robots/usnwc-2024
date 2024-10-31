@@ -761,6 +761,9 @@ body.post-type-activity_schedule .acf-field-repeater[data-name="items"] [data-na
   width: 50%!important;
   float: left;
 }
+.acf-flexible-content .acf-field-true-false:has(.acf-switch) {
+  padding-left: 15px;
+}
 .acf-flexible-content .acf-field-true-false .acf-input:has(.acf-switch) {
   position: relative;
   top: 0;
