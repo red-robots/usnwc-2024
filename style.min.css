@@ -4934,7 +4934,7 @@ body.subpage.single.single-festival .schedule-listing-dashes .info .flexwrap .na
 body.subpage.single.single-festival .schedule-listing-dashes .info .flexwrap .time{font-size:14px;padding-left:5px}
 body.subpage.single.single-festival .schedule-listing-dashes .info .desc{font-size:13px;font-style:italic}
 body.subpage.single.single-festival .fullwdith_text_section{width:100%;float:left;background-color:#f2f2f2;text-align:center;margin:60px 0 40px}
-body.subpage.single.single-festival .fullwdith_text_section .wrapper{padding-top:20px;padding-bottom:20px}
+body.subpage.single.single-festival .fullwdith_text_section .wrapper{padding-top:25px;padding-bottom:20px}
 body.subpage.single.single-festival .fullwdith_text_section .wrapper .stitle{font-size:20px;margin-bottom:5px}
 body.subpage.single.single-festival .fullwdith_text_section .wrapper .text-wrap{font-family:"Sofia Sans Condensed",sans-serif;font-size:20px;text-transform:uppercase}
 body.subpage.single.single-festival .fullwdith_text_section .wrapper .text-wrap p:last-child{margin-bottom:0}
@@ -5510,6 +5510,7 @@ section.homepage-hero .home-info .info h1{font-size:60px}
 section.full-bleed-promo .info .words h2{font-size:100px}
 .archive-posts-wrap .entry{width:33.33%}
 }@media screen and (min-width:1400px){#section-faqs .faq-item{padding:0 20px 0 40px}
+}@media screen and (min-width:1480px){body.subpage.single.single-festival .column-data-section .fxcol{width:auto;padding-left:5vw;padding-right:5vw}
 }@media screen and (min-width:1500px){#section-whattowear.half .col.options{padding-left:8vw;padding-right:8vw}
 }@media screen and (min-width:1600px){#primary.buy-page.buy-page-new .access-pass-options{padding-left:10vw;padding-right:10vw}
 .repeatable-section.section-intro .inner-content{padding-left:10vw;padding-right:10vw}

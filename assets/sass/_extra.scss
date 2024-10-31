@@ -224,6 +224,13 @@ body.subpage.single.single-festival {
     @include desk {
       padding-bottom: 40px;
     }
+    .fxcol {
+      @media screen and (min-width: 1480px) {
+        width: auto;
+        padding-left: 5vw;
+        padding-right: 5vw;
+      }
+    }
   }
   .upcoming_events_section {
     margin: 50px 0;
@@ -339,7 +346,7 @@ body.subpage.single.single-festival {
     text-align: center;
     margin: 60px 0 40px;
     .wrapper {
-      padding-top: 20px;
+      padding-top: 25px;
       padding-bottom: 20px;
       .stitle {
         font-size: 20px;
