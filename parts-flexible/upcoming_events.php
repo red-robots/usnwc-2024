@@ -2,6 +2,8 @@
 
   <?php 
   $section_title = get_sub_field('section_title');
+  $title_center = get_sub_field('section_title_align_center');
+  $show_start_date = get_sub_field('show_start_date');
   $post_type = get_sub_field('post_type');
 
   // $btn = get_sub_field('button');
@@ -40,11 +42,11 @@
     if($posts) { 
       $data_section = ($section_title) ? 'data-section="'.$section_title.'"':'';
     ?>
-    <div id="section-upcoming_events-<?php echo $i ?>" data-posttype="<?php echo $post_type ?>" <?php echo $data_section ?> class="repeatable-block section section-upcoming_events upcoming_events_section fullwidth-float-left">
+    <div id="section-upcoming_events-<?php echo $ctr ?>" data-posttype="<?php echo $post_type ?>" <?php echo $data_section ?> class="repeatable-block section section-upcoming_events upcoming_events_section fullwidth-float-left">
       <div class="wrapper">
         
         <?php if($section_title) { ?>
-          <h2 class="section-title"><?php echo $section_title ?></h2>
+          <h2 class="section-title<?php echo ($title_center) ? ' text-center':'' ?>"><?php echo $section_title ?></h2>
         <?php } ?>
 
         <div class="flexwrap">
@@ -65,18 +67,50 @@
           <div class="infobox">
             <div class="inside">
               
-              <?php if ($image) { ?>
-              <figure class="event-image">
-                <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['url'] ?>" />
-              </figure>
-              <?php } ?>
-              <?php if ($title) { ?>
-              <h3 class="event-title"><?php echo $title ?></h3>
-              <?php } ?>
-              <div class="button-block">
-                <a href="<?php echo $pagelink ?>" class="button-pill">See Details</a>
-              </div>
+              <?php if ( get_post_type() == 'festival' ) { 
+                  $images_repeater = get_field('flexslider_banner', $pid);
+                  if($images_repeater) {
+                    $img = $images_repeater[0];
+                    $image = ( isset($img['image']) ) ? $img['image'] : ''; 
+                  }
+                ?>
 
+                <a href="<?php echo $pagelink ?>" class="eventLink">
+                  <?php if ($show_start_date && $start_date) { ?>
+                  <div class="start-date"><?php echo $start_date ?></div>
+                  <?php } ?>
+                  <?php if ($image) { ?>
+                  <figure class="event-image">
+                    <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['url'] ?>" />
+                  </figure>
+                  <?php } else { ?>
+                  <figure class="event-image no-image">
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/images/image-not-available.jpg" alt="" />
+                  </figure>
+                  <?php } ?>
+                  <?php if ($title) { ?>
+                  <h3 class="event-title"><?php echo $title ?></h3>
+                  <?php } ?>
+                </a>
+
+              <?php } else { ?>
+
+                <?php if ($show_start_date && $start_date) { ?>
+                <div class="start-date"><?php echo $start_date ?></div>
+                <?php } ?>
+                <?php if ($image) { ?>
+                <figure class="event-image">
+                  <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['url'] ?>" />
+                </figure>
+                <?php } ?>
+                <?php if ($title) { ?>
+                <h3 class="event-title"><?php echo $title ?></h3>
+                <?php } ?>
+                <div class="button-block">
+                  <a href="<?php echo $pagelink ?>" class="button-pill">See Details</a>
+                </div>
+
+              <?php } ?>
             </div>
           </div>
         <?php } ?>

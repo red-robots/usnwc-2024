@@ -4285,6 +4285,10 @@ a.button {
       background-color: #000;
     }
   }
+  &.button-pill {
+    background-color: #FFF;
+    color: #444;
+  }
 }
 
 .button-rounded {
@@ -20563,6 +20567,10 @@ body.modal-open {
     color: #000;
     border-bottom: 2px solid #ccc;
     margin: 0 0 30px;
+    &.text-center {
+      border-bottom: none;
+      margin-bottom: 10px;
+    }
   }
   .event-title {
     margin-bottom: 18px;

@@ -735,24 +735,37 @@ body.post-type-activity_schedule .acf-field-repeater[data-name="items"] [data-na
 .acf-field-true-false[data-name="is_repeater_dashed_items"],
 .acf-flexible-content [data-name="has_section_text"]:has(.acf-true-false),
 [data-layout="social_media_section"] [data-name="has_section_intro"]:has(.acf-true-false),
-[data-layout="social_media_section"] [data-name="display_social_media"]:has(.acf-true-false) {
+[data-layout="social_media_section"] [data-name="display_social_media"]:has(.acf-true-false),
+.acf-flexible-content .acf-field-true-false {
   padding-left: 40px;
 }
-.acf-field-true-false[data-name="is_repeater_dashed_items"] .acf-label {
+.acf-field-true-false[data-name="is_repeater_dashed_items"] .acf-label,
+.acf-flexible-content .acf-field-true-false .acf-label {
   margin-bottom: 0;
 }
 
 [data-layout="social_media_section"] [data-name="display_social_media"]:has(.acf-true-false) .acf-input,
 [data-layout="social_media_section"] [data-name="has_section_intro"]:has(.acf-true-false) .acf-input,
 .acf-flexible-content [data-name="has_section_text"]:has(.acf-true-false) .acf-input,
-.acf-field-true-false[data-name="is_repeater_dashed_items"] .acf-input {
+.acf-field-true-false[data-name="is_repeater_dashed_items"] .acf-input,
+.acf-flexible-content .acf-field-true-false .acf-input {
   display: inline-block;
   width: auto!important;
   position: absolute;
   top: 15px;
   left: 18px;
 }
-
-
+.acf-postbox:has([data-name="bgcolor"]) [data-name="bgcolor"],
+.acf-postbox:has([data-name="textcolor"]) [data-name="textcolor"] {
+  clear: none;
+  width: 50%!important;
+  float: left;
+}
+.acf-flexible-content .acf-field-true-false .acf-input:has(.acf-switch) {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 
 
