@@ -11,5 +11,9 @@ if ( is_single() ) {
     get_template_part("parts/hero-image-video"); 
   }
 } else {
-  get_template_part("parts/slideshow"); 
+  $visibility = get_field('banner_visibility');
+  $is_visible = ($visibility=='hide') ? false : true;
+  if($is_visible) {
+    get_template_part("parts/slideshow"); 
+  }
 }

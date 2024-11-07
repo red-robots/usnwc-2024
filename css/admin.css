@@ -771,4 +771,11 @@ body.post-type-activity_schedule .acf-field-repeater[data-name="items"] [data-na
   width: 100%;
 }
 
+.acf-flexible-content [data-layout="image_and_text_two_column"] .acf-editor-wrap .mce-btn[aria-label="Button Red"],
+.acf-flexible-content [data-layout="image_and_text_two_column"] .acf-editor-wrap .mce-btn[aria-label="Button Pill Shape"],
+.acf-flexible-content [data-layout="image_cards_columns"] .acf-editor-wrap .mce-btn[aria-label="Button Red"],
+.acf-flexible-content [data-layout="image_cards_columns"] .acf-editor-wrap .mce-btn[aria-label="Button Pill Shape"] {
+  display: none!important;
+}
+
 

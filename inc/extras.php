@@ -2620,3 +2620,47 @@ function shortenDayName($day) {
 }
 
 
+function extractYoutubeId($videoURL) {
+  $youtubeId = '';
+  if (strpos( strtolower($videoURL), 'youtube.com') !== false) {
+    /* if iframe */
+    if (strpos( strtolower($videoURL), 'youtube.com/embed') !== false) {
+      $parts = extractURLFromString($videoURL);
+      $youtubeId = basename($parts);
+    } else {
+
+      $parts = parse_url($videoURL);
+      parse_str($parts['query'], $query);
+      $youtubeId = (isset($query['v']) && $query['v']) ? $query['v']:''; 
+      
+    }
+  } else if (strpos( strtolower($videoURL), 'youtu.be') !== false) {
+    $parts = explode('https://youtu.be/', $videoURL);
+    $parts2 = explode('?', $parts[1]);
+    $youtubeId = $parts2[0];
+  } 
+  // if($youtubeId) {
+  //   $embed_url = 'https://www.youtube.com/embed/'.$youtubeId.'?version=3&rel=0&loop=0'; 
+  //   $mainImage = 'https://i.ytimg.com/vi/'.$youtubeId.'/maxresdefault.jpg';
+  // }
+  return $youtubeId;
+}
+
+function extractVimdeoId($videoURL) {
+  $vimeoId = '';
+  if( strpos( strtolower($videoURL), 'vimeo.com') !== false ) { 
+    $parts = explode("https://vimeo.com/",$videoURL);
+    $parts2 = $parts[1];
+
+    if( strpos( strtolower($parts2), '?') !== false ) { 
+      $parts3 = explode("?",$parts2);
+      $vimeoId = $parts3[0];
+    } else {
+      $vimeoId = $parts2;
+    }
+    // $parts = ($vimeo_parts && array_filter($vimeo_parts) ) ? array_filter($vimeo_parts) : '';
+    // $vimeoId = ($parts) ?  preg_replace('/\s+/', '', end($parts)) : '';
+  }
+  return $vimeoId;
+}
+

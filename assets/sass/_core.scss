@@ -19,6 +19,9 @@
   color: #000;
 }
 
+#wpadminbar {
+  z-index: 99999999;
+}
 
 div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
 	overflow-wrap: normal;
@@ -1503,9 +1506,8 @@ body.single-activity  {
 }
 
 
-.faqs .titlediv h2,
-h2.stitle, .stitle,
-.title-wrapper h2.section-title {
+.faqs .titlediv h2, h2.stitle, .stitle,
+.h2, .title-wrapper h2.section-title {
 	margin: 0 0;
 	font-family: $font-brandon-bold;
   font-size: 40px;
@@ -1513,6 +1515,7 @@ h2.stitle, .stitle,
   text-transform: uppercase;
 	color: #000;
 }
+.textCenter {text-align:center!important}
 .buttondiv {
 	margin-top: 20px;
 }
