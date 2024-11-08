@@ -5605,6 +5605,7 @@ section.full-bleed-promo .info .words h2{font-size:100px}
 .repeatable-section.section-image-cards .inner-content{padding-left:10vw;padding-right:10vw}
 }@media screen and (max-width:1230px){.jobs.resetBtn{position:relative;right:12px;top:3px;float:left}
 }@media screen and (max-width:1100px){.repeatable-section.section-image-cards .inner-content{padding-left:25px;padding-right:25px}
+.fullwidth_video_block .videoFrame iframe{-webkit-transform:translateY(0) scale(1.5);transform:translateY(0) scale(1.5)}
 }@media screen and (max-width:1070px){.navigation__children.open .childNavCloseBtn{display:block;-webkit-animation-name:fadeIn;animation-name:fadeIn}
 }@media screen and (max-width:1024px){.repeatable-section.section-image-cards .imagecard{width:50%}
 .menu-sections-repeatable .fb-static-images.count-2 .flexwrap{height:100%}
