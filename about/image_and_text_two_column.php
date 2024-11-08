@@ -6,7 +6,7 @@
   $text_content = get_sub_field('text_content');
   $buttons = get_sub_field('buttons');
   $section_class = ($text_content && $image) ? 'half' : 'full';
-  if($section_title || $section_text) { ?>
+  if($section_title || $text_content) { ?>
   <section id="image-text-two-column-<?php echo $ctr ?>" class="image_and_text_two_column section-two_column_row">
     <div class="section-inner<?php echo ($image_position) ? ' image-'.$image_position:'' ?>">
       <div class="flexwrap <?php echo $section_class ?>">
@@ -16,7 +16,7 @@
             <?php if ($section_title) { ?>
               <h2><?php echo $section_title ?></h2>
             <?php } ?>
-            <?php echo anti_email_spam($section_text) ?>
+            <?php echo anti_email_spam($text_content) ?>
 
             <?php if ($buttons) { ?>
               <div class="cta-buttons buttondiv">
