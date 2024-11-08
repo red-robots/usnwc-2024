@@ -4940,6 +4940,7 @@ body.subpage.single.single-festival .fullwdith_text_section .wrapper{padding-top
 body.subpage.single.single-festival .fullwdith_text_section .wrapper .stitle{font-size:20px;margin-bottom:5px}
 body.subpage.single.single-festival .fullwdith_text_section .wrapper .text-wrap{font-family:"Sofia Sans Condensed",sans-serif;font-size:20px;text-transform:uppercase}
 body.subpage.single.single-festival .fullwdith_text_section .wrapper .text-wrap p:last-child{margin-bottom:0}
+body.page-template-page-about.subpage .image_and_text_two_column.section-two_column_row{width:100%;float:left}
 body.page-template-page-about.subpage .site-header.start-position{position:fixed !important}
 body.page-template-page-about.subpage .site-header{position:absolute;top:0;left:0;width:100%;z-index:999;background:transparent !important}
 body.page-template-page-about.subpage .site-header .logo{-webkit-filter:brightness(0) invert(1);filter:brightness(0) invert(1)}
