@@ -5018,6 +5018,27 @@ body.page-template-page-about.subpage .site-content{padding-top:0}
 .image_cards_columns .cards .flexwrap .imageBlock figure:has(a) a:hover:after,.image_cards_columns .cards .flexwrap .imageBlock figure:has(a) a:focus:after{opacity:.9}
 .image_cards_columns .bottom-text{max-width:100%;width:100%;margin:20px auto 0}
 .image_cards_columns .cta-buttons{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-top:30px}
+.content-area-single .post-title{font-family:"Brandon Bold";font-size:50px;line-height:1.2;text-transform:uppercase;color:#000;text-align:center}
+.content-area-single .entry-title{text-align:center}
+.content-area-single .entry-title .meta{margin-top:15px;color:#888}
+.content-area-single .entry-title .meta span:first-child{border-right:1px solid #ccc;padding-right:8px;margin-right:6px}
+.content-area-single .contentWrap{max-width:1000px;width:100%;margin:0 auto}
+.content-area-single blockquote{font-size:1.5rem;font-style:italic;font-weight:normal;line-height:1.4;text-align:center;margin:50px 0}
+.content-area-single .featured-image figure{margin:0}
+.content-area-single .featured-image figure img{width:100%;height:auto}
+.content-area-single .text-content{padding-top:60px;padding-bottom:40px;font-size:17px;line-height:1.5;color:#000}
+.content-area-single .text-content p{color:#000}
+.content-area-single blockquote.large{font-family:"Brandon Medium";font-size:2.3em;font-style:italic;line-height:1.3;color:#000;margin:0;text-align:left}
+.content-area-single .text-content-gallery .gallery-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-10px;margin-right:-10px}
+.content-area-single .text-content-gallery .gallery-wrapper .imagewrap{width:50%;padding:10px}
+.content-area-single .text-content-gallery .gallery-wrapper.count-3 .imagewrap{width:33.333%}
+.content-area-single .text-content-gallery .gallery-wrapper.count-5 .imagewrap{width:33.333%}
+.content-area-single .text-content-gallery .gallery-wrapper.count-5 .imagewrap:nth-child(4),.content-area-single .text-content-gallery .gallery-wrapper.count-5 .imagewrap:nth-child(5){width:50%}
+.content-area-single .text-content-gallery .gallery-wrapper.count-6 .imagewrap{width:33.333%}
+.content-area-single .text-content-gallery .gallery-wrapper.count-7 .imagewrap{width:33.333%}
+.content-area-single .text-content-gallery .gallery-wrapper.count-7 .imagewrap:last-child{width:100%}
+.content-area-single .text-content-gallery figure{margin:0;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.content-area-single .text-content-gallery figure img{width:100%;height:auto}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -5674,6 +5695,7 @@ body.home .homerow .imagebox a .title{font-size:5vw}
 .image_and_text_two_column .flexwrap .imageBlock figure{height:auto;padding-bottom:60%}
 }@media screen and (max-width:860px){.flex-direction-nav .flex-prev{opacity:1;left:10px}
 .flex-direction-nav .flex-next{opacity:1;right:10px}
+.content-area-single .text-content-gallery .gallery-wrapper .imagewrap{width:100% !important}
 }@media screen and (max-width:820px){.topinfo .businessHours{width:300px;left:-25vw;right:0}
 #banner ul.slides.single-slide #playYoutube{display:none}
 #banner ul.slides.single-slide .type-video .videoIframe{z-index:101}

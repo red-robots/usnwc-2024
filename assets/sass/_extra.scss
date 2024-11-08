@@ -995,7 +995,121 @@ body.page-template-page-about.subpage {
   }
 }
 
+.content-area-single {
+  .post-title {
+    @include page_title_style;
+    text-align: center;
+  }
+  .entry-title {
+    text-align: center;
+    .meta {
+      margin-top: 15px;
+      color: #888;
+      span:first-child {
+        border-right: 1px solid #CCC;
+        padding-right: 8px;
+        margin-right: 6px;
+      }
+    }
+  } 
+  .contentWrap {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.4;
+    text-align: center;
+    margin: 50px 0;
+  }
 
+  .featured-image {
+    figure {
+      margin: 0 0;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .text-content {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #000;
+    p {
+      color: #000;
+    }
+  }
+
+  blockquote.large {
+    font-family: $font-brandon-medium;
+    font-size: 2.3em;
+    font-style: italic;
+    line-height: 1.3;
+    color: #000;
+    margin: 0 0;
+    text-align: left;
+  }
+
+  .text-content-gallery {
+    .gallery-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -10px;
+      margin-right: -10px;
+      .imagewrap {
+        width: 50%;
+        padding: 10px;
+      }
+      &.count-3 {
+        .imagewrap {
+          width: 33.333%;
+        }  
+      }
+      &.count-5 {
+        .imagewrap {
+          width: 33.333%;
+        }
+        .imagewrap:nth-child(4),
+        .imagewrap:nth-child(5) {
+          width: 50%;
+        }    
+      }
+      &.count-6 .imagewrap {
+        width: 33.333%;
+      }
+      &.count-7 .imagewrap {
+        width: 33.333%;
+        &:last-child {
+          width: 100%;
+        }
+      }
+    }
+    figure {
+      margin: 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media screen and (max-width: 860px) {
+      .gallery-wrapper .imagewrap {
+        width: 100%!important;
+      }
+    }
+  }
+}
 
 
 

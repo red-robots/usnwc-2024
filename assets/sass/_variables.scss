@@ -124,6 +124,14 @@ $nav_width: 485px;
 	*zoom: 1;
 }
 
+@mixin page_title_style {
+  font-family: $font-brandon-bold;
+  font-size: 50px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #000;
+}
+
 // Clear after (not all clearfix need this also)
 @mixin clearfix-after() {
 	clear: both;
