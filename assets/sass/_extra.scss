@@ -482,19 +482,7 @@ body.page-template-page-about.subpage {
   .videoFrame {
     position: relative;
     padding-bottom: 57%;
-    padding-top: 25px;
     height: 0;
-    &:before {
-      content:"";
-      display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: rgba(0,0,0,.5);
-      z-index: 10;
-    }
     iframe {
       position: absolute;
       top: 0;
@@ -504,6 +492,20 @@ body.page-template-page-about.subpage {
       width: 110%!important;
       height: 110%!important;
       transform: translateY(-15%);
+    }
+  }
+
+  &:has(.textOverlay) {
+    .videoFrame:before {
+      content:"";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0,0,0,.5);
+      z-index: 10;
     }
   }
 

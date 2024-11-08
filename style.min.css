@@ -4960,9 +4960,9 @@ body.page-template-page-about.subpage .site-content{padding-top:0}
 .fullwidth_video_block .textOverlay .wrapper h1,.fullwidth_video_block .textOverlay .wrapper h2,.fullwidth_video_block .textOverlay .wrapper h3,.fullwidth_video_block .textOverlay .wrapper p{color:#fff}
 .fullwidth_video_block .textOverlay .wrapper h2{font-family:"Brandon Bold";font-size:3rem;line-height:1.2;text-transform:uppercase;margin:0}
 .fullwidth_video_block .textOverlay .wrapper p{font-size:20px;line-height:1.3}
-.fullwidth_video_block .videoFrame{position:relative;padding-bottom:57%;padding-top:25px;height:0}
-.fullwidth_video_block .videoFrame:before{content:"";display:block;width:100%;height:100%;position:absolute;top:0;left:0;background:rgba(0,0,0,.5);z-index:10}
+.fullwidth_video_block .videoFrame{position:relative;padding-bottom:57%;height:0}
 .fullwidth_video_block .videoFrame iframe{position:absolute;top:0;left:0;border:none !important;margin:0;width:110% !important;height:110% !important;-webkit-transform:translateY(-15%);transform:translateY(-15%)}
+.fullwidth_video_block:has(.textOverlay) .videoFrame:before{content:"";display:block;width:100%;height:100%;position:absolute;top:0;left:0;background:rgba(0,0,0,.5);z-index:10}
 .fullwidth_video_block.text--bottom_left .textOverlay{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;text-align:left}
 .fullwidth_video_block.text--bottom_left .textOverlay .wrapper{text-align:left;color:#fff;max-width:800px;width:100%;margin:0;padding-bottom:2vw;padding-left:4vw;padding-right:4vw}
 .fullwidth_video_block.text--bottom_right .textOverlay{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;text-align:right}
