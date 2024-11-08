@@ -495,6 +495,9 @@ body.page-template-page-about.subpage {
       @media screen and (max-width:1100px) {
         transform: translateY(0) scale(1.5);
       }
+      @media screen and (max-width:960px) {
+        transform: translateY(0) scale(1.2)!important;
+      }
     }
   }
 
