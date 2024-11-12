@@ -1210,5 +1210,62 @@ body.single-post {
   }
 }
 
+@media print {
+  html {
+    margin: 0 0;
+    padding: 0 0;
+  }
+  html, body { height: auto; }
+  body {
+    padding: 0 0;
+    margin: 0 0;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  @page {
+    size: A4;
+  }
+  body.single-post {
+    .site-header, .site-footer, .no-banner-spacer,
+    .skip-link, #overlay, #wpadminbar {
+      display: none!important;
+    }
+    .site-content {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    div, figure, img {
+      page-break-after: avoid;
+      page-break-inside: avoid;
+    }
+    .site {
+      overflow: visible!important;
+    }
+    #page, #content, #primary, #main {
+      padding: 0 0!important;
+      width: 100%;
+      float: left;
+    }
+    .entry-title {
+      padding-top: 60px;
+    }
+    blockquote {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border: none;
+    }
+    .content-area-single .contentWrap {
+      padding: 0 0!important;
+      max-width: 100%!important;
+    }
+    .content-area-single .text-content {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+
 
 
