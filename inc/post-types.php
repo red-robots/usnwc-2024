@@ -24,7 +24,7 @@ function js_custom_init() {
             'single'    => 'Guest Author',
             'menu_icon' => 'dashicons-welcome-write-blog',
             'supports'  => array('title','editor'),
-            'menu_position' => 5
+            'menu_position' => 2
         ),
         array(
             'post_type' => 'race-forms',
