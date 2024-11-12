@@ -18,6 +18,15 @@ function js_custom_init() {
         //     'supports'  => array('title','editor', 'author')
         // ),
         array(
+            'post_type' => 'guest-authors',
+            'menu_name' => 'Guest Authors',
+            'plural'    => 'Guest Authors',
+            'single'    => 'Guest Author',
+            'menu_icon' => 'dashicons-welcome-write-blog',
+            'supports'  => array('title','editor'),
+            'menu_position' => 5
+        ),
+        array(
             'post_type' => 'race-forms',
             'menu_name' => 'Form Pages',
             'plural'    => 'Form Pages',
@@ -219,14 +228,6 @@ function js_custom_init() {
             'menu_icon' => 'dashicons-location-alt',
             'supports'  => array('title','editor', 'page-attributes'),
             'hierarchical' => true
-        ),
-        array(
-            'post_type' => 'guest-authors',
-            'menu_name' => 'Guest Authors',
-            'plural'    => 'Guest Authors',
-            'single'    => 'Guest Author',
-            'menu_icon' => 'dashicons-welcome-write-blog',
-            'supports'  => array('title','editor')
         ),
     );
     
