@@ -220,6 +220,14 @@ function js_custom_init() {
             'supports'  => array('title','editor', 'page-attributes'),
             'hierarchical' => true
         ),
+        array(
+            'post_type' => 'guest-authors',
+            'menu_name' => 'Guest Authors',
+            'plural'    => 'Guest Authors',
+            'single'    => 'Guest Author',
+            'menu_icon' => 'dashicons-welcome-write-blog',
+            'supports'  => array('title','editor')
+        ),
     );
     
     if($post_types) {

@@ -19,6 +19,7 @@ get_header();
       $short_description = get_field("short_description_text");
       $custom_post_author = get_field("custom_post_author");
       $postdate = get_the_date('F j, Y');
+      $guest_author = get_field('guest_author');
       ?>
 
       <div class="entry-title">
@@ -35,7 +36,7 @@ get_header();
 
       <?php if ($short_description) { ?>
       <div class="contentWrap quote">
-        <blockquote><?php echo $short_description ?></blockquote> 
+        <blockquote>&ldquo;<?php echo $short_description ?>&rdquo;</blockquote> 
       </div>
       <?php } ?>
 
@@ -56,11 +57,32 @@ get_header();
         <?php include( locate_template('parts/story/quote.php') ); ?>
       
       <?php $ctr++; endwhile;  ?>
-    <?php } ?>
-
-
-    
+    <?php } ?>    
   </main>
+
+  <div id="socialMediaShare"></div>
+
+  <?php if ($guest_author) { 
+    $authorId = $guest_author->ID;
+    $authorName = $guest_author->post_title;
+    $authorBio = $guest_author->post_content;
+    $authorBio = ($authorBio) ? apply_filters('the_content', $authorBio) : '';
+    $authorPhoto = get_field('author_photo', $authorId);
+  ?>
+  <div class="guest-author">
+    <div class="inner">
+      <?php if ($authorPhoto) { ?>
+      <figure class="authorPhoto">
+        <img src="<?php echo $authorPhoto['url'] ?>" alt="<?php echo $authorPhoto['title'] ?>">
+      </figure>
+      <?php } ?>
+      <div class="author"><?php echo $authorName ?></div>
+      <?php if ($authorBio) { ?>
+      <div class="bio"><?php echo $authorBio; ?></div>
+      <?php } ?>
+    </div>
+  </div>
+  <?php } ?>
 </div>
 <?php
 get_footer();

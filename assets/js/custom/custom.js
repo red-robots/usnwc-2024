@@ -1308,5 +1308,19 @@ var getGridSize = function() {
     parent.toggleClass('active');
   });
 
+  if( $('.content-area-single blockquote').length ) {
+    $('.content-area-single blockquote').each(function(){
+      var prevBlock = $(this).prev();
+      if( prevBlock.length==0 ) {
+        $(this).addClass('mt-0');
+      }
+    });
+  }
+
+  //Move social media share icons to bottom page
+  if( $('body.single-post').length && $('.simplesocialbuttons').length ) {
+    $('.simplesocialbuttons').appendTo('#socialMediaShare');
+  }
+
 
 });// END #####################################    END

@@ -5022,13 +5022,14 @@ body.page-template-page-about.subpage .site-content{padding-top:0}
 .content-area-single .entry-title{text-align:center}
 .content-area-single .entry-title .meta{margin-top:15px;color:#888}
 .content-area-single .entry-title .meta span:first-child{border-right:1px solid #ccc;padding-right:8px;margin-right:6px}
-.content-area-single .contentWrap{max-width:1000px;width:100%;margin:0 auto}
-.content-area-single blockquote{font-size:1.5rem;font-style:italic;font-weight:normal;line-height:1.4;text-align:center;margin:50px 0}
+.content-area-single blockquote,.content-area-single blockquote.large{font-family:"Brandon Medium Italic";font-size:2.3em;line-height:1.2;color:#000;margin:50px 0;text-align:left}
+.content-area-single .contentWrap{max-width:1000px;width:100%;margin:0 auto;padding-left:30px;padding-right:30px}
+.content-area-single .contentWrap.quote:has(blockquote){padding-top:50px}
+.content-area-single .contentWrap.quote:has(blockquote) blockquote{font-family:"Brandon Light Italic";font-size:1.2em;line-height:1.3;text-align:center}
 .content-area-single .featured-image figure{margin:0}
 .content-area-single .featured-image figure img{width:100%;height:auto}
 .content-area-single .text-content{padding-top:60px;padding-bottom:40px;font-size:17px;line-height:1.5;color:#000}
 .content-area-single .text-content p{color:#000}
-.content-area-single blockquote.large{font-family:"Brandon Medium";font-size:2.3em;font-style:italic;line-height:1.3;color:#000;margin:0;text-align:left}
 .content-area-single .text-content-gallery .gallery-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-10px;margin-right:-10px}
 .content-area-single .text-content-gallery .gallery-wrapper .imagewrap{width:50%;padding:10px}
 .content-area-single .text-content-gallery .gallery-wrapper.count-3 .imagewrap{width:33.333%}
@@ -5039,6 +5040,19 @@ body.page-template-page-about.subpage .site-content{padding-top:0}
 .content-area-single .text-content-gallery .gallery-wrapper.count-7 .imagewrap:last-child{width:100%}
 .content-area-single .text-content-gallery figure{margin:0;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .content-area-single .text-content-gallery figure img{width:100%;height:auto}
+body.single-post div.simplesocialbuttons.simplesocialbuttons-float-left-center,body.single-post .simplesocialbuttons{visibility:hidden;z-index:-999}
+body.single-post #primary div.simplesocialbuttons.simplesocialbuttons-float-left-center,body.single-post #primary .simplesocialbuttons{position:relative !important;visibility:visible;z-index:100;-webkit-transform:none !important;transform:none !important;top:0 !important;left:0;margin:0 auto !important;max-width:1200px;width:100% !important}
+body.single-post #primary .simplesocialbuttons.simplesocial-round-icon button{margin:5px !important;color:#000 !important;border:1px solid #000;padding:0;width:25px;height:25px}
+body.single-post #primary .simplesocialbuttons.simplesocial-round-icon button:after{width:100%;height:100%;line-height:1;-webkit-transform:scale(0.7);transform:scale(0.7);position:relative;top:2px;display:block}
+body.single-post #primary .simplesocialbuttons.simplesocial-round-icon button:hover,body.single-post #primary .simplesocialbuttons.simplesocial-round-icon button:focus{border-color:#ba0d30 !important;background-color:#ba0d30;color:#fff !important}
+body.single-post #primary .ssb-hide-floating-bar,body.single-post #primary .fb-like.fb_iframe_widget{display:none !important}
+body.single-post .guest-author{margin-top:50px;margin-bottom:50px;color:#000}
+body.single-post .guest-author .inner{max-width:600px;width:100%;margin:0 auto;text-align:center;padding:0 30px}
+body.single-post .guest-author .authorPhoto{width:80px;height:80px;border-radius:100%;margin:0 auto 10px;position:relative;overflow:hidden}
+body.single-post .guest-author .authorPhoto img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:50% 50%;object-position:50% 50%}
+body.single-post .guest-author .author{font-family:"Brandon Bold"}
+body.single-post .guest-author .bio{margin:10px 0 0}
+body.single-post .guest-author .bio p{color:#000}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
