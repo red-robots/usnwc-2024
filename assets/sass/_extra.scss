@@ -1277,6 +1277,30 @@ body.single-post {
   }
 }
 
+ul:has(.two-column-list) {
+  margin: 0 0;
+  padding: 0 0;
+  .two-column-list {
+    column-count: unset;
+    column-gap: unset;
+  }
+}
+ul > li:has(.two-column-list) {
+  margin: 0 0;
+  list-style: none;
+  ul {
+    column-count: 2;
+    column-gap: 4em;
+    margin: 10px 0 25px;
+    padding-left: 25px;
+  }
+  li {
+    list-style: disc;
+  }
+}
+
+
+
 
 
 
