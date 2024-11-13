@@ -37,6 +37,7 @@
   column-count: 2;
   column-gap: 1em;
   margin: 25px 0;
+  text-align: left;
 }
 .two-column-list p, 
 .two-column-list li {
