@@ -44,3 +44,28 @@
   break-inside: avoid-column;
   margin: 5px 0;
 }
+
+ul:has(.two-column-list) {
+  margin: 0 0;
+  padding: 0 0;
+}
+ul:has(.two-column-list) .two-column-list {
+  column-count: unset;
+  column-gap: unset;
+}
+ul > li:has(.two-column-list) {
+  margin: 0 0;
+  list-style: none;
+}
+
+ul > li:has(.two-column-list) ul {
+  column-count: 2;
+  column-gap: 4em;
+  margin: 10px 0 25px;
+  padding-left: 25px;
+}
+
+ul > li:has(.two-column-list) ul > li {
+  list-style: disc;
+}
+

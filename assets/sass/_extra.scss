@@ -1294,7 +1294,7 @@ ul > li:has(.two-column-list) {
     margin: 10px 0 25px;
     padding-left: 25px;
   }
-  li {
+  ul > li {
     list-style: disc;
   }
 }
