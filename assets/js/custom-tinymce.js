@@ -1,4 +1,5 @@
 (function() {  
+
   tinymce.PluginManager.add( 'BUTTON1', function( editor, url ) {
       //console.log(url);
       var parts = url.split('assets');
@@ -28,12 +29,12 @@
   });
 
 
-  tinymce.on('AddEditor', function (e) {
-    console.log(e.editor.startContent);
-    if( document.querySelector('.mceContentBody h2') ) {
-      console.log('has h2');
-    }
-  });
+  // tinymce.on('AddEditor', function (e) {
+  //   //console.log(e.editor.startContent);
+  //   if( document.querySelector('.mceContentBody h2') ) {
+  //     //console.log('has h2');
+  //   }
+  // });
 
 
   tinymce.PluginManager.add( 'BUTTON2', function( editor, url ) {
@@ -63,10 +64,33 @@
       });
   });
 
-  // if( $('.page-template-page-flexible-content-new.mce-content-body h2').length ) {
+  //Create 2-column format text in the WYSIWYG
+  tinymce.PluginManager.add( 'COLUMNS2', function( editor, url ) {
+      var parts = url.split('assets');
+      var themeURL = parts[0];
+      
+      // Add Button to Visual Editor Toolbar
+      editor.addButton('edcolumns2', {
+          title: '2-Column List',
+          cmd: 'edcolumns2',
+          image: themeURL + 'images/icon-columns.png',
+      });
 
-  // }
-
+      // Add Command when Button Clicked
+      editor.addCommand('edcolumns2', function() {
+        var selected_text = editor.selection.getContent();
+        if ( selected_text.length === 0 ) {
+            alert( 'Please select some text.' );
+            return;
+        }
+        var open_column = '<div class="two-column-list">';
+        var close_column = '</div>';
+        var return_text = '';
+        return_text = open_column + selected_text + close_column;
+        editor.execCommand('mceReplaceContent', false, return_text);
+        return;
+      });
+  });
 
 
   

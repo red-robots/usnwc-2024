@@ -701,7 +701,8 @@ body.post-type-activity_schedule .acf-field-repeater[data-name="items"] [data-na
 }
 
 .acf-fields .mce-edit-area iframe[id*="acf-editor-"]{
-  height: 200px!important;
+  min-height: 180px!important;
+/*  height: auto!important;*/
 }
 
 .acf-flexible-content [data-layout="two_column_text"] [data-name="bgcolor"] {

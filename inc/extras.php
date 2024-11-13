@@ -438,6 +438,20 @@ function my_custom_admin_js() { ?>
 <script type="text/javascript">
 jQuery(document).ready(function($){
 
+  if ( typeof acf !== 'undefined' ) {
+    acf.add_action( 'wysiwyg_tinymce_init', function( ed, id, mceInit, $field ) {
+      console.log(ed);
+      // set height of wysiwyg on frontend
+      var minHeight = 200;
+      // var mceHeight = $( ed.iframeElement ).contents().find( 'html' ).height() || minHeight;
+      // if ( mceHeight < minHeight ) {
+      //   mceHeight = minHeight;
+      // }
+      $( ed.iframeElement ).css( 'height', minHeight );
+    } );
+  }
+
+
     /* Go to STORIES TEXT field */
     <?php if( isset($_GET['fsec']) && $_GET['fsec']=='stories-text' ) { ?>
         $('ul.acf-hl.acf-tab-group li').each(function(){
@@ -2565,7 +2579,7 @@ function getDataBySlug($slug) {
 add_filter( 'mce_buttons', 'myplugin_register_buttons' );
 
 function myplugin_register_buttons( $buttons ) {
-  array_push( $buttons,'edbutton1','edbutton2');
+  array_push( $buttons,'edcolumns2','edbutton1','edbutton2');
 
   return $buttons;
 }
@@ -2574,11 +2588,29 @@ function myplugin_register_buttons( $buttons ) {
 add_filter( 'mce_external_plugins', 'myplugin_register_tinymce_javascript' );
 function myplugin_register_tinymce_javascript( $plugin_array ) {
   $plugin_js_url =  get_stylesheet_directory_uri() . '/assets/js/custom-tinymce.js';
+  $plugin_array['COLUMNS2'] = $plugin_js_url;
   $plugin_array['BUTTON1'] = $plugin_js_url;
   $plugin_array['BUTTON2'] = $plugin_js_url;
   return $plugin_array;
 }
 
+// add_filter( 'tiny_mce_before_init', function( $settings ) {
+
+//     $screen = get_current_screen();
+
+//     if ( $screen->is_block_editor() ) {
+//         return $settings;
+//     }        
+
+//     // if ( ! in_array( $screen->post_type, ['tools', 'brand', 'company'], true ) ) {
+//     //     return $settings;
+//     // }        
+
+//     $settings['height'] = '200';
+//     $settings['autoresize_max_height'] = '200';
+
+//     return $settings;
+//  } );
 
 
 add_action('wp_ajax_nopriv_film_series_details_popup', 'film_series_details_popup');

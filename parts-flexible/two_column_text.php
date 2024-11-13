@@ -17,7 +17,7 @@
   
   $section_data_title = ($has_intro && $intro_title) ? ' data-section="'.$intro_title.'"':'';
   ?>
-  <section id="section-fullwidth-black-<?php echo $ctr?>" class="mscol fullwidth two_column_text_section section-fullwidth-<?php echo $bgcolor?><?php echo $section_class?>"<?php echo $section_data_title?>>
+  <section id="section-fullwidth-<?php echo $bgcolor?>-<?php echo $ctr?>" class="mscol fullwidth two_column_text_section section-fullwidth-<?php echo $bgcolor?><?php echo $section_class?>"<?php echo $section_data_title?>>
     <?php if ($has_intro) { ?>
       <?php if ($intro_title || $intro_text) { ?>
         <div class="wrapper introtext-wrapper<?php echo ($intro_text) ? ' has-section-text':''?>">

@@ -20240,6 +20240,13 @@ body.modal-open {
 }
 
 .two_column_text_section {
+  &.section-fullwidth-white {
+    background-color: #FFF;
+    padding: 50px 0 20px;
+    @include xs {
+      padding: 70px 0 80px;
+    }
+  }
   &.section-fullwidth-gray {
     background-color: #F2F2F2;
     padding: 50px 0 20px;
@@ -20276,8 +20283,14 @@ body.modal-open {
   .flexwrap {
     .fxcol {
       width: 100%;
+      padding-left: 30px;
+      padding-right: 30px;
       @include xs {
         width: 50%;
+      }
+      @include tab {
+        padding-left: 2vw;
+        padding-right: 2vw;
       }
       h3 {
         font-family: $font-brandon-bold;
