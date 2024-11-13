@@ -32,3 +32,14 @@
 .page-template-page-flexible-content-new.mce-content-body h2 {
   margin-top: 0!important;
 }
+
+.two-column-list {
+  column-count: 2;
+  column-gap: 1em;
+  margin: 25px 0;
+}
+.two-column-list p, 
+.two-column-list li {
+  break-inside: avoid-column;
+  margin: 5px 0;
+}
