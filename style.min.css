@@ -2758,7 +2758,7 @@ body.single-instructions #primary #section-faqs{padding-top:60px;padding-bottom:
 .text-and-image-blocks .custom-button-element{display:inline-block;margin-top:10px;margin-right:15px}
 .text-and-image-blocks .custom-button-element .button.button-gray{background-color:#fff;color:#707070;padding:7px 25px 6px;-webkit-box-shadow:0 3px 5px rgba(0,0,0,.15);box-shadow:0 3px 5px rgba(0,0,0,.15);text-transform:uppercase}
 .text-and-image-blocks .custom-button-element .button.button-gray:hover,.text-and-image-blocks .custom-button-element .button.button-gray:focus{background-color:#ba0d30 !important;color:#fff !important}
-.text-and-image-blocks .textcol .fulltext h3{font-family:"Brandon Bold";font-size:18px;line-height:1.2;margin:0 0 3px}
+.text-and-image-blocks .textcol .fulltext h3{font-family:"Brandon Bold";font-size:18px;line-height:1.2;margin:0 0 10px}
 .text-and-image-blocks .textcol .info{width:100%}
 #flexible-content .text-and-image-blocks{margin-top:30px}
 .text-and-gallery{width:100%;float:left;margin-top:50px}
@@ -5054,7 +5054,7 @@ body.single-post .guest-author .authorPhoto img{width:100%;height:100%;position:
 body.single-post .guest-author .author{font-family:"Brandon Bold"}
 body.single-post .guest-author .bio{margin:10px 0 0}
 body.single-post .guest-author .bio p{color:#000}
-.two-column-list{-webkit-column-count:2;-moz-column-count:2;column-count:2;-webkit-column-gap:1em;-moz-column-gap:1em;column-gap:1em;margin:25px 0}
+.two-column-list{-webkit-column-count:2;-moz-column-count:2;column-count:2;-webkit-column-gap:1em;-moz-column-gap:1em;column-gap:1em;margin:10px 0 25px;text-align:left}
 .two-column-list p,.two-column-list li{-webkit-column-break-inside:avoid;-moz-column-break-inside:avoid;break-inside:avoid-column;margin:5px 0}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
