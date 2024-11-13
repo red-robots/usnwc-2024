@@ -1,9 +1,4 @@
 <?php
-/**
- * Template Name: Race Series Single Post
- * Template Post Type: race
- */
-
 get_header(); 
 $post_id = get_the_ID(); 
 $blank_image = THEMEURI . "images/square.png";
