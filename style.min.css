@@ -5550,6 +5550,7 @@ body.subpage .site-content{padding-top:20px}
 body.logged-in.admin-bar.subpage .site-header{top:0 !important}
 body.logged-in.admin-bar.subpage .site-header .navbar{top:32px !important;background-color:#fff}
 body.logged-in.admin-bar.subpage .film-event-status{top:105px}
+.flexibleContentWrap .two-columns-block.text-and-image-blocks .image-position-right,.flexibleContentWrap .two-columns-block.text-and-image-blocks .half.even.image-position-right{-webkit-box-orient:horizontal !important;-webkit-box-direction:normal !important;-ms-flex-direction:row !important;flex-direction:row !important}
 }@media(min-width:820px)and (min-width:820px){#section-whattowear.half .model{width:35%}
 }@media screen and (min-width:901px){.section-fullwidth-black .column1{padding-right:15px}
 .section-fullwidth-black .column2{padding-left:15px}

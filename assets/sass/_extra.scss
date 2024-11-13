@@ -1299,6 +1299,16 @@ ul > li:has(.two-column-list) {
   }
 }
 
+.flexibleContentWrap {
+  .two-columns-block.text-and-image-blocks {
+    .image-position-right,
+    .half.even.image-position-right {
+      @media screen and (min-width: 820px) {
+        flex-direction: row!important;
+      }
+    }
+  }
+}
 
 
 
