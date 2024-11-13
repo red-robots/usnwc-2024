@@ -20240,6 +20240,9 @@ body.modal-open {
 }
 
 .two_column_text_section {
+  ul {
+    padding-left: 20px;
+  }
   &.section-fullwidth-white {
     background-color: #FFF;
     padding: 50px 0 20px;

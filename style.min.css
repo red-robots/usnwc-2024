@@ -4815,6 +4815,7 @@ body.modal-open{overflow:hidden}
 .carousel_fullwidth_section .carousel-images .owl-dots button:hover span{background-color:silver}
 .introtext-wrapper{text-align:center;font-family:"Brandon Light";font-size:22px;line-height:1.4;max-width:1000px;width:100%;margin:0 auto;padding-bottom:30px}
 .introtext-wrapper .textWrapper{margin-top:10px}
+.two_column_text_section ul{padding-left:20px}
 .two_column_text_section.section-fullwidth-white{background-color:#fff;padding:50px 0 20px}
 .two_column_text_section.section-fullwidth-gray{background-color:#f2f2f2;padding:50px 0 20px}
 .two_column_text_section.section-fullwidth-black{background-color:#000}
