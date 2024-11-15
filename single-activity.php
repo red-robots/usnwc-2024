@@ -203,7 +203,7 @@ $post_type = get_post_type();
 
               <?php if ($pass_other_into) { ?>
               <div class="pass-item nopass">
-                <span class="price"><span><?php echo $pass_other_into ?></span></span>
+                <span class="name"><span><?php echo $pass_other_into ?></span></span>
               </div>
               <?php } ?>
             
