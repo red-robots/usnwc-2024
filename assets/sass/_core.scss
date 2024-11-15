@@ -16135,16 +16135,27 @@ section.visit {
 	width: 100%;
 	margin: 0 auto;
 	max-width: 1750px;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	align-items: center;
+	// display: flex;
+	// flex-direction: column;
+	// flex-wrap: wrap;
+	// align-items: center;
 	@include tab {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: flex-start;
-		padding: 0 50px;
+		padding: 0 0;
 	}
+  .tileWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include tab {
+      padding: 0 50px;
+    }
+  }
 	.tile {
 		margin-bottom: 50px;
 		position: relative;
@@ -16155,13 +16166,13 @@ section.visit {
 			margin-bottom: 120px;
 		}
 		&.half {
-			width: 90%;
+			width: 100%;
 			@include tab {
 				width: 49%;
 			}
 		}
 		&.full {
-			width: 90%;
+			width: 100%;
 		}
 		a {
 			color: #000;
@@ -16272,8 +16283,12 @@ section.visit {
     width: 100%;
     .tile-inner {
       display: block;
-      margin-left: -50px;
-      margin-right: -50px;
+      margin-left: -20px;
+      margin-right: -20px;
+      @include tab {
+        margin-left: -50px;
+        margin-right: -50px;
+      }
     }
     div.img {
       border-radius: 0;

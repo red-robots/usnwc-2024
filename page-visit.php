@@ -35,9 +35,10 @@ get_header(); ?>
 
 			        // Case: Paragraph layout.
 			        if( get_row_layout() == 'tiles' ):
-			          $tile = get_sub_field('tile');
-                if($tile) {
-    	            foreach( $tile as $t ) {
+			          $tile = get_sub_field('tile'); ?>
+                <?php if($tile) { ?>
+                <div class="tileWrapper">
+    	            <?php foreach( $tile as $t ) {
   		            $title = $t['title'];
   		            $image = $t['image'];
   		            $description = $t['description'];
@@ -75,16 +76,64 @@ get_header(); ?>
       							</div>
       			        <?php } ?>
                   <?php } ?>
-
+                 </div> 
                 <?php } ?>
-
 			        <?php 
-			        // Case: Download layout.
-			        elseif( get_row_layout() == 'download' ): 
-			            $file = get_sub_field('file');
-			            // Do something...
 
-			        endif;
+			        // Two-Column Section
+			        elseif( get_row_layout() == 'two_column_layout' ): 
+                $content_type = get_sub_field('content_type');
+                $image = get_sub_field('image');
+                $iframe = get_sub_field('iframe');
+                $text_position = get_sub_field('text_position');
+                $column2_content = get_sub_field('text_content');
+                $column1_content = ''; 
+                ?>
+                <?php if($content_type=='image') {
+                  ob_start();
+                  if($image) { ?>
+                  <div class="flexcol image">
+                    <figure>
+                      <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" />
+                    </figure>
+                  </div>  
+                  <?php  
+                  $column1_content = ob_get_contents();
+                  ob_end_clean();
+                  }
+                } else if( $content_type=='map') {
+                  ob_start();
+                  if($iframe) { ?>
+                  <div class="flexcol iframe">
+                    <div class="map"><?php echo $iframe ?></div>
+                  </div>  
+                  <?php  
+                  $column1_content = ob_get_contents();
+                  ob_end_clean();
+                  }
+                } 
+
+                  $section_class = ($column1_content && $column2_content) ? 'twocol':'full';
+                  $section_class .= ($text_position) ? ' text--' . $text_position : '';
+                ?>
+
+                <div class="two-column-layout-vist <?php echo $section_class ?>">
+                  <div class="flex-wrapper">
+                    <?php if ($column1_content) { ?>
+                    <?php echo $column1_content ?>
+                    <?php } ?>
+
+                    <?php if ($column2_content) { ?>
+                    <div class="flexcol textwrap">
+                      <div class="inner">
+                        <?php echo anti_email_spam($column2_content) ?>
+                      </div>
+                    </div>
+                    <?php } ?>
+                  </div>
+                </div>
+
+			        <?php endif;
 
 			    // End loop.
 			    endwhile;
