@@ -13790,7 +13790,10 @@ body.page-template-page-race {
       .inside {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        align-content: center;
+        // align-items: center;
+        // justify-content: center;
+        // justify-content: space-between;
         height: 100%;
         padding: 30px;
         @include tab {
@@ -13802,6 +13805,9 @@ body.page-template-page-race {
         p {
           font-size: 17px;
         }
+        .top h2 {
+          margin-bottom: 15px;
+        }
         .top, .bottom {
           width: 100%;
         }
@@ -13809,7 +13815,7 @@ body.page-template-page-race {
           display: flex;
           flex-wrap: wrap;
           align-items: flex-end;
-          margin-top: 30px;
+          margin-top: 10px;
           .wrap {
             width: 100%;
           }
