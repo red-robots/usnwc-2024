@@ -195,7 +195,10 @@ $post_type = get_post_type();
 
           <?php if ($res_text) { ?>
           <div class="col info-right">
-            <h3>RESERVATIONS</h3>
+            <?php /* RESERVATIONS */ ?>
+            <?php if ($res_title) { ?>
+            <h3 style="text-transform:uppercase;"><?php echo $res_title ?></h3>
+            <?php } ?>
             <div class="text">
               <?php echo $res_text ?>
             </div>
