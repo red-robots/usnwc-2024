@@ -27,22 +27,14 @@ if($currentPostType=='activity') {
 
 if($currentPostType=='race') {
 	$terms = get_the_terms($currentPostId, 'activity_type');
-	//$term = $terms[0]->slug;
-	// echo '<pre>';
-	// print_r($terms);
-	// echo '</pre>';
-	// $discipline = get_field('discipline_options');
-	// $disciplineID = $discipline[0];
-	// $raceTerm = get_term( $disciplineID, 'activity_type' );
-	// $slug = $raceTerm->slug;
-	// echo $slug;
 
   if( $terms ) {
+    $term = $terms[0]->slug;
   	$args = array(
   		'posts_per_page'=> $perpage,
   		'post_type'			=> $currentPostType,
-  		'orderby' 			=> 'rand',
-  	  	'order'    			=> 'ASC',
+  		'orderby' 			=> 'title',
+  	  'order'    			=> 'ASC',
   		'post_status'		=> 'publish',
   		'post__not_in' 	=> array($currentPostId),
   		'tax_query' => array(
@@ -59,8 +51,8 @@ if($currentPostType=='race') {
 	$args = array(
 		'posts_per_page'=> $perpage,
 		'post_type'			=> $currentPostType,
-		'orderby' 			=> 'rand',
-	  	'order'    			=> 'ASC',
+		'orderby' 			=> 'title', /* rand */
+	  'order'    			=> 'ASC',
 		'post_status'		=> 'publish',
 		'post__not_in' 	=> array($currentPostId)
 	);
@@ -69,7 +61,17 @@ if($currentPostType=='race') {
 
 if($args) {
   $posts = new WP_Query($args);
-  if( $posts->have_posts() ) { ?>
+  $otherPosts = get_posts($args);
+  $count = count($otherPosts);
+  $chunks = array();
+  if($count > 2) {
+    $num = round( $count/3 );
+    $chunks = array_chunk($otherPosts, $num);
+  }
+  
+  
+
+  if( $otherPosts ) { ?>
   <section class="explore-other-stuff">
   	<div class="wrapper">
   		<?php if ($bottomSectionTitle) { ?>
@@ -78,13 +80,28 @@ if($args) {
 
   		
   		<div class="post-type-entries">
-  			<div class="columns">
-  				<?php $i=1; while ( $posts->have_posts() ) : $posts->the_post(); ?>
-  				<div class="entry">
-  					<a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a>
-  				</div>
-  				<?php $i++; endwhile; wp_reset_postdata(); ?>
-  			</div>
+        <?php if ($chunks) { ?>
+        <div class="chunks">
+          <?php foreach($chunks as $items) { ?>
+          <div class="flexcol">
+            <?php foreach ($items as $p) { $pid = $p->ID; ?>
+            <div class="entry">
+              <a href="<?php echo get_permalink($pid); ?>"><?php echo $p->post_title; ?></a>
+            </div>
+            <?php } ?>
+          </div>
+          <?php } ?>
+        </div>
+
+        <?php } else { ?>
+    			<div class="columns">
+    				<?php foreach($otherPosts as $p) { $pid = $p->ID; ?>
+    				<div class="entry">
+    					<a href="<?php echo get_permalink($pid); ?>"><?php echo $p->post_title; ?></a>
+    				</div>
+    				<?php } ?>
+    			</div>
+        <?php } ?>
   		</div>
   		
   	</div>
