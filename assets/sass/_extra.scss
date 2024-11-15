@@ -1316,11 +1316,12 @@ ul > li:has(.two-column-list) {
   background-color: $gray;
   .flex-wrapper {
     position: relative;
+    min-height: 350px;
     @include tab {
       min-height: 450px;
     }
     @include desk {
-      min-height: 560px;
+      min-height: 575px;
     }
     .flexcol.iframe,
     .flexcol.image {
@@ -1356,7 +1357,47 @@ ul > li:has(.two-column-list) {
     }
   }
   &.full {
-
+    .flex-wrapper:has(.textwrap) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .flexcol.textwrap {
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 30px;
+    }
+    .flexcol.iframe,
+    .flexcol.image {
+      overflow: hidden;
+      height: 100%;
+      border-radius: 0 0!important;
+    }
+    .flexcol.iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      .map, iframe {
+        width: 100%!important;
+        height: 100%!important;
+        padding-bottom: 0!important;
+      }
+    }
+    .flexcol.image {
+      figure {
+        margin: 0 0;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
   }
   &.twocol {
     .flex-wrapper {
@@ -1391,11 +1432,6 @@ ul > li:has(.two-column-list) {
         position: absolute;
         top: 0;
         left: 0;
-        // @include xs {
-        //   position: absolute;
-        //   top: 0;
-        //   left: 0;
-        // }
       }
 
       &.image {
@@ -1440,11 +1476,10 @@ ul > li:has(.two-column-list) {
       .flexcol.iframe,
       .flexcol.image {
         overflow: hidden;
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-      }
-      .flexcol.textwrap {
-
+        @include xs {
+          border-top-right-radius: 15px;
+          border-bottom-right-radius: 15px;
+        }
       }
     }
   }
