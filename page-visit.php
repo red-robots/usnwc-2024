@@ -37,13 +37,15 @@ get_header(); ?>
 			        if( get_row_layout() == 'tiles' ):
 			            $tile = get_sub_field('tile');
 
-			            foreach( $tile as $t ) {
-				            $title = $t['title'];
-				            $image = $t['image'];
-				            $description = $t['description'];
-				            $link = $t['link'];
-				            $span = $t['span'];
-						?>
+	            foreach( $tile as $t ) {
+		            $title = $t['title'];
+		            $image = $t['image'];
+		            $description = $t['description'];
+		            $link = $t['link'];
+		            $span = $t['span'];
+
+                $span .= ($description) ? ' has-description':' no-description';
+						  ?>
 							<div class="tile <?php echo $span ?>">
 								<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
 									<div class="img">
@@ -51,13 +53,15 @@ get_header(); ?>
 										<div class="img-overlay"></div>
 										<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
 									</div>
-									<div class="desc">
-										<?php echo $description; ?>
-									</div>
+                  <?php if ($description) { ?>
+                  <div class="desc">
+                    <?php echo $description; ?>
+                  </div>
+                  <?php } ?>
 									<div class="link"><?php echo $link['title']; ?></div>
 								</a>
 							</div>
-			        	<?php } ?>
+			        <?php } ?>
 
 			        <?php 
 			        // Case: Download layout.

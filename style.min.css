@@ -2850,6 +2850,7 @@ body.single-instructions #primary #section-faqs{padding-top:60px;padding-bottom:
 .bounce-1{-webkit-animation-name:bounce-1;animation-name:bounce-1;-webkit-animation-timing-function:linear;animation-timing-function:linear}
 .stories-page{width:100%;float:left}
 .stories-page .text-centered-section{color:#000;font-family:"Brandon"}
+.stories-page .visit .tile.no-description .link{margin-top:25px}
 .filter-wrapper{width:100%;float:left;color:#707070;padding-bottom:60px;position:relative;z-index:50}
 .filter-wrapper form{width:100%;float:left;display:block;padding-left:20px;padding-right:20px}
 .filter-wrapper .filterbytxt{font-size:16px;line-height:1.2;text-transform:uppercase;margin-bottom:5px;letter-spacing:1px}

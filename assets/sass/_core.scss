@@ -6685,6 +6685,11 @@ body.single-instructions {
 		color: #000;
 		font-family: $font-brandon-regular;
 	}
+  .visit .tile.no-description {
+    .link {
+      margin-top: 25px;
+    }
+  }
 }
 .filter-wrapper {
 	width: 100%;
