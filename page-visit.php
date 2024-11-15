@@ -35,33 +35,48 @@ get_header(); ?>
 
 			        // Case: Paragraph layout.
 			        if( get_row_layout() == 'tiles' ):
-			            $tile = get_sub_field('tile');
-
-	            foreach( $tile as $t ) {
-		            $title = $t['title'];
-		            $image = $t['image'];
-		            $description = $t['description'];
-		            $link = $t['link'];
-		            $span = $t['span'];
-
-                $span .= ($description) ? ' has-description':' no-description';
-						  ?>
-							<div class="tile <?php echo $span ?>">
-								<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
-									<div class="img">
-										<h2><?php echo $title; ?></h2>
-										<div class="img-overlay"></div>
-										<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-									</div>
-                  <?php if ($description) { ?>
-                  <div class="desc">
-                    <?php echo $description; ?>
-                  </div>
+			          $tile = get_sub_field('tile');
+                if($tile) {
+    	            foreach( $tile as $t ) {
+  		            $title = $t['title'];
+  		            $image = $t['image'];
+  		            $description = $t['description'];
+  		            $link = $t['link'];
+  		            $span = $t['span'];
+                  $span .= ($description) ? ' has-description':' no-description';
+                  if($image) { ?>
+      							<div class="tile <?php echo $span ?>">
+                      <?php if( isset($link['url']) ) { ?>
+        								<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="tile-link tile-inner">
+        									<div class="img">
+                            <?php if ($title) { ?>
+                            <h2><?php echo $title; ?></h2>
+                            <?php } ?>
+        										<div class="img-overlay"></div>
+        										<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+        									</div>
+                          <?php if ($description) { ?>
+                          <div class="desc">
+                            <?php echo $description; ?>
+                          </div>
+                          <?php } ?>
+        									<div class="link"><?php echo $link['title']; ?></div>
+        								</a>
+                      <?php } else { ?>
+                      <div class="nolink tile-inner">
+                        <div class="img">
+                          <?php if ($title) { ?>
+                          <h2><?php echo $title; ?></h2>
+                          <?php } ?>
+                          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                        </div>
+                      </div>
+                      <?php } ?>
+      							</div>
+      			        <?php } ?>
                   <?php } ?>
-									<div class="link"><?php echo $link['title']; ?></div>
-								</a>
-							</div>
-			        <?php } ?>
+
+                <?php } ?>
 
 			        <?php 
 			        // Case: Download layout.
