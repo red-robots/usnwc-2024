@@ -162,34 +162,53 @@ $post_type = get_post_type();
       // print_r($reserve);
       // echo "</pre>";
 
-      $a_column_class = ( ($has_price_options && array_filter($has_price_options)) && $res_text ) ? 'twocol' : 'full';
+      
 
-      if( ($has_price_options && array_filter($has_price_options)) || $res_text ) { ?>
+      $pass_other_into = get_field('pass_other_into');
+      $pass_required = get_field('is_pass_required');
+      $is_pass_required = ($pass_required=='no') ? false : true;
+
+      $a_column_class = ( ($has_price_options && array_filter($has_price_options) || $pass_other_into) && $res_text ) ? 'twocol' : 'full';
+
+      if( ($has_price_options && array_filter($has_price_options)) || $res_text || $pass_other_into) { ?>
       <section id="pass-options-section" class="pass-price-options <?php echo $a_column_class ?>" data-section="Options">
         <div class="inner">
-          <?php if ($has_price_options && array_filter($has_price_options)) { ?>
+          <?php if ( $has_price_options && array_filter($has_price_options) || $pass_other_into ) { ?>
           <div class="col info-left">
             <h3>PASS OPTIONS</h3>
-            <?php if ($pass_price) { ?>
-            <div class="pass-item">
-              <span class="name"><span>ALL ACCESS PASS</span></span>
-              <span class="price"><span><?php echo $pass_price ?></span></span>
-            </div>  
+
+            <?php if ($is_pass_required) { ?>
+              <?php if ($pass_price) { ?>
+              <div class="pass-item">
+                <span class="name"><span>ALL ACCESS PASS</span></span>
+                <span class="price"><span><?php echo $pass_price ?></span></span>
+              </div>  
+              <?php } ?>
+
+              <?php if ($monthly_access_price) { ?>
+              <div class="pass-item">
+                <span class="name"><span>MONTHLY ACTIVITY PASS</span></span>
+                <span class="price"><span><?php echo $monthly_access_price ?></span></span>
+              </div>  
+              <?php } ?>
+
+              <?php if ($single_pass_price) { ?>
+              <div class="pass-item">
+                <span class="name"><span>SINGLE ACTIVITY PASS</span></span>
+                <span class="price"><span><?php echo $single_pass_price ?></span></span>
+              </div>  
+              <?php } ?>
+
+            <?php } else { ?>
+
+              <?php if ($pass_other_into) { ?>
+              <div class="pass-item nopass">
+                <span class="price"><span><?php echo $pass_other_into ?></span></span>
+              </div>
+              <?php } ?>
+            
             <?php } ?>
 
-            <?php if ($monthly_access_price) { ?>
-            <div class="pass-item">
-              <span class="name"><span>MONTHLY ACTIVITY PASS</span></span>
-              <span class="price"><span><?php echo $monthly_access_price ?></span></span>
-            </div>  
-            <?php } ?>
-
-            <?php if ($single_pass_price) { ?>
-            <div class="pass-item">
-              <span class="name"><span>SINGLE ACTIVITY PASS</span></span>
-              <span class="price"><span><?php echo $single_pass_price ?></span></span>
-            </div>  
-            <?php } ?>
           </div> 
           <?php } ?>
 

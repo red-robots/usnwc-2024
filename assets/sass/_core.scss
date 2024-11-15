@@ -17514,6 +17514,9 @@ body.subpage.single.single-activity {
             left: 0;
             bottom: 6px;
           }
+          &.nopass:after {
+            display: none;
+          }
         }
         @include max($tabwidth) {
           border-bottom: 1px solid #CCC;
