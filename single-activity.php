@@ -162,8 +162,10 @@ $post_type = get_post_type();
       // print_r($reserve);
       // echo "</pre>";
 
+      $a_column_class = ( ($has_price_options && array_filter($has_price_options)) && $res_text ) ? 'twocol' : 'full';
+
       if( ($has_price_options && array_filter($has_price_options)) || $res_text ) { ?>
-      <section id="pass-options-section" class="pass-price-options" data-section="Options">
+      <section id="pass-options-section" class="pass-price-options <?php echo $a_column_class ?>" data-section="Options">
         <div class="inner">
           <?php if ($has_price_options && array_filter($has_price_options)) { ?>
           <div class="col info-left">

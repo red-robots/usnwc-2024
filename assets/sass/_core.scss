@@ -17524,6 +17524,15 @@ body.subpage.single.single-activity {
         margin-top: 10px;
       }
     }  
+
+    .pass-price-options.full {
+      .inner:after {
+        display: none;
+      }
+      .info-left, .info-right {
+        width: 100%!important;
+      }
+    }
   }
 }
 
