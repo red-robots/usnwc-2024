@@ -5074,6 +5074,9 @@ ul:has(.two-column-list) .two-column-list{-webkit-column-count:unset;-moz-column
 ul>li:has(.two-column-list){margin:0;list-style:none}
 ul>li:has(.two-column-list) ul{-webkit-column-count:2;-moz-column-count:2;column-count:2;-webkit-column-gap:4em;-moz-column-gap:4em;column-gap:4em;margin:10px 0 25px;padding-left:25px}
 ul>li:has(.two-column-list) ul>li{list-style:disc}
+body.page-template-page-visit section.visit{max-width:100%;width:100%;padding:0}
+body.page-template-page-visit section.visit .tileWrapper{padding-left:30px;padding-right:30px}
+body.page-template-page-visit section.visit .tileWrapper.nextText .tile{margin-bottom:60px}
 .two-column-layout-vist{margin-top:50px;margin-bottom:50px;background-color:#f2f2f2}
 .two-column-layout-vist .flex-wrapper{position:relative;min-height:350px}
 .two-column-layout-vist .flex-wrapper .flexcol.iframe,.two-column-layout-vist .flex-wrapper .flexcol.image{overflow:hidden}
@@ -5098,6 +5101,11 @@ ul>li:has(.two-column-list) ul>li{list-style:disc}
 .two-column-layout-vist.twocol .flexcol.image figure{margin:0;width:100%;height:100%;position:absolute;top:0;left:0}
 .two-column-layout-vist.twocol .flexcol.image figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:50% 50%;object-position:50% 50%}
 .two-column-layout-vist.text--right .flex-wrapper .flexcol.iframe,.two-column-layout-vist.text--right .flex-wrapper .flexcol.image{overflow:hidden}
+.visit .text-block-section .text-block-inner{padding-left:30px;padding-right:30px}
+.visit .text-block-section .text-block-inner h2.stitle{margin-bottom:10px}
+.visit .text-block-section .text-block-inner .description{margin-bottom:30px}
+.visit .text-block-section.text--center .text-block-inner{text-align:center}
+.visit .text-block-section.text--right .text-block-inner{text-align:right}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -5687,6 +5695,8 @@ body.subpage.single.single-festival .column-data-section{padding-bottom:40px}
 .image_cards_columns .wrapper{max-width:95vw}
 .image_cards_columns .bottom-text{max-width:60vw}
 .image_cards_columns{padding-left:5vw;padding-right:5vw}
+}@media screen and (min-width:1281px){body.page-template-page-visit section.visit .tileWrapper{padding-left:5vw;padding-right:5vw}
+.visit .text-block-section .text-block-inner{padding-left:5vw;padding-right:5vw}
 }@media(min-width:1300px){.information-tabs-wrap .tabs-info ul a span.arrow:before,.information-tabs-wrap .tabs-info ul a span.arrow:after{top:15px}
 section.homepage-hero .home-info .info h1{font-size:60px}
 section.full-bleed-promo .info .words h2{font-size:100px}

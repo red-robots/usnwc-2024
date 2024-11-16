@@ -1310,6 +1310,27 @@ ul > li:has(.two-column-list) {
   }
 }
 
+body.page-template-page-visit section.visit {
+  max-width: 100%;
+  width: 100%;
+  padding: 0 0;
+  .tileWrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+    @media screen and (min-width: 1281px) {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+  }
+  .tileWrapper {
+    &.nextText {
+      .tile {
+        margin-bottom: 60px;
+      }
+    }
+  }
+}
+
 .two-column-layout-vist {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -1507,5 +1528,34 @@ ul > li:has(.two-column-list) {
   }
 }
 
+
+.visit .text-block-section {
+  .text-block-inner {
+    padding-left: 30px;
+    padding-right: 30px;
+    @media screen and (min-width: 1281px) {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+
+    h2.stitle {
+      margin-bottom: 10px;
+    }
+    .description {
+      margin-bottom: 30px;
+    }
+  }
+
+  &.text--center {
+    .text-block-inner {
+      text-align: center;
+    }
+  }
+  &.text--right {
+    .text-block-inner {
+      text-align: right;
+    }
+  }
+}
 
 

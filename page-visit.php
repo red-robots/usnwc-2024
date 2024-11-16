@@ -133,6 +133,24 @@ get_header(); ?>
                   </div>
                 </div>
 
+              <?php
+              // Text Block
+              elseif( get_row_layout() == 'text_block' ): 
+                $title = get_sub_field('title');
+                $description = get_sub_field('description');
+                $text_alignment = get_sub_field('text_alignment');
+                if( $title || $description ) { ?>
+                <div class="text-block-section text-block-visit text--<?php echo $text_alignment ?>">
+                  <div class="text-block-inner">
+                    <?php if ($title) { ?>
+                      <h2 class="stitle"><?php echo $title ?></h2>
+                    <?php } ?>
+                    <?php if ($description) { ?>
+                      <div class="description"><?php echo anti_email_spam($description) ?></div>
+                    <?php } ?>
+                  </div>
+                </div>
+                <?php } ?>
 			        <?php endif;
 
 			    // End loop.
@@ -152,5 +170,16 @@ get_header(); ?>
 	</main><!-- #main -->
 </div><!-- #primary -->
 
+<script>
+jQuery(document).ready(function($){
+  if( $('.text-block-visit').length ) {
+    $('.text-block-visit').each(function(){
+      if( $(this).prev().hasClass('tileWrapper') ) {
+        $(this).prev().addClass('nextText');
+      }
+    });
+  }
+});
+</script>
 <?php
 get_footer();
