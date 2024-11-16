@@ -2763,6 +2763,11 @@ body.single-instructions #primary #section-faqs{padding-top:60px;padding-bottom:
 .text-and-image-blocks .custom-button-element .button.button-gray:hover,.text-and-image-blocks .custom-button-element .button.button-gray:focus{background-color:#ba0d30 !important;color:#fff !important}
 .text-and-image-blocks .textcol .fulltext h3{font-family:"Brandon Bold";font-size:18px;line-height:1.2;margin:0 0 10px}
 .text-and-image-blocks .textcol .info{width:100%}
+.text-and-image-blocks .gallerycol.mapCol{min-height:350px;background-color:#d3f8e2;overflow:hidden}
+.text-and-image-blocks .gallerycol.mapCol .mapframe{height:100%;position:relative}
+.text-and-image-blocks .gallerycol.mapCol .mapframe iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+.text-and-image-blocks .mscol.half.even .gallerycol.mapCol{border-top-right-radius:15px;border-bottom-right-radius:15px}
+.text-and-image-blocks .mscol.half.image-position-right .gallerycol.mapCol{border-top-right-radius:0;border-bottom-right-radius:0;border-top-left-radius:15px;border-bottom-left-radius:15px}
 #flexible-content .text-and-image-blocks{margin-top:30px}
 .text-and-gallery{width:100%;float:left;margin-top:50px}
 .text-and-gallery .mscol{margin-top:15px;margin-bottom:15px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
@@ -5706,7 +5711,8 @@ body.subpage.single.single-festival .column-data-section{padding-bottom:40px}
 .image_cards_columns .wrapper{max-width:95vw}
 .image_cards_columns .bottom-text{max-width:60vw}
 .image_cards_columns{padding-left:5vw;padding-right:5vw}
-}@media screen and (min-width:1281px){body.page-template-page-visit section.visit .tileWrapper{padding-left:5vw;padding-right:5vw}
+}@media screen and (min-width:1281px){.text-and-image-blocks .gallerycol.mapCol{min-height:500px}
+body.page-template-page-visit section.visit .tileWrapper{padding-left:5vw;padding-right:5vw}
 body.page-template-page-visit section.visit .cards-row-section .cards-inner{padding-left:5vw;padding-right:5vw}
 body.page-template-page-visit section.visit .cards-row-section figure{width:25%}
 .visit .text-block-section .text-block-inner{padding-left:5vw;padding-right:5vw}
@@ -5718,6 +5724,7 @@ section.full-bleed-promo .info .words h2{font-size:100px}
 }@media screen and (min-width:1400px){#section-faqs .faq-item{padding:0 20px 0 40px}
 }@media screen and (min-width:1480px){body.subpage.single.single-festival .column-data-section .fxcol{width:auto;padding-left:5vw;padding-right:5vw}
 .fullwidth_video_block{max-height:700px}
+}@media screen and (min-width:1481px){.text-and-image-blocks .gallerycol.mapCol{min-height:570px}
 }@media screen and (min-width:1500px){#section-whattowear.half .col.options{padding-left:8vw;padding-right:8vw}
 }@media screen and (min-width:1600px){#primary.buy-page.buy-page-new .access-pass-options{padding-left:10vw;padding-right:10vw}
 .repeatable-section.section-intro .inner-content{padding-left:10vw;padding-right:10vw}
@@ -5834,7 +5841,8 @@ body.single-race .filter-wrapper form .filter-field-group .filter-label span{pad
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left,body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-right{padding-left:0;padding-right:0}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left{border-bottom:1px solid #ccc;padding-bottom:30px}
 .pass-options-wrap .option .wrap{-ms-flex-line-pack:justify;align-content:space-between;width:100%;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
-}@media screen and (max-width:819px){#timeline-area.timeline-wrapper .timeline .history{height:auto !important;padding-bottom:50px}
+}@media screen and (max-width:819px){.text-and-image-blocks .gallerycol.mapCol,.text-and-image-blocks .mscol.half.even .gallerycol.mapCol,.text-and-image-blocks .mscol.half.image-position-right .gallerycol.mapCol{border-radius:0 0 0 0 !important}
+#timeline-area.timeline-wrapper .timeline .history{height:auto !important;padding-bottom:50px}
 #timeline-area.timeline-wrapper .timeline .history.first{padding-top:30px}
 #timeline-area.timeline-wrapper .timeline .history .h-title{position:relative;padding-bottom:5px;border-bottom:2px solid #f2f2f2}
 #timeline-area.timeline-wrapper .timeline .history .h-title:before{content:"";display:block;width:15px;height:30px;background:#f2f2f2;border-top-right-radius:100px;border-bottom-right-radius:100px;position:absolute;bottom:-15px;left:2px}
