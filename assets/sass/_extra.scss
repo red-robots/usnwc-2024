@@ -1329,6 +1329,88 @@ body.page-template-page-visit section.visit {
       }
     }
   }
+
+  .cards-row-section {
+    margin: 10px 0 70px;
+    .cards-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-left: 30px;
+      padding-right: 30px;
+      @media screen and (min-width: 1281px) {
+        padding-left: 5vw;
+        padding-right: 5vw;
+      }
+    }
+    figure {
+      margin: 0 0;
+      padding: 10px;
+      width: 100%;
+      div.image {
+        overflow: hidden;
+        border-radius: 10px;
+        position: relative;
+        padding-bottom: 108%;
+        margin-bottom: 10px;
+        &:before {
+          content:"";
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0, .75) 100%);
+          z-index: 2;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          object-fit: cover;
+          object-position: 50% 50%;
+        }
+      }
+
+      .cardInfo {
+        padding: 15px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 5;
+        width: 100%;
+      }
+      .cardTitle {
+        font-family: $font-brandon-medium;
+        font-size: 1.75rem;
+        line-height: 1.2;
+        text-transform: uppercase;
+        color: #FFF;
+        text-transform: uppercase;
+      }
+
+      .cardText {
+        color: #FFF;
+      }
+
+      .cardButton {
+        margin-top: 20px;
+      }
+
+      @media screen and (min-width: 768px) {
+        width: 50%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      @media screen and (min-width: 1281px) {
+        width: 25%;
+      }
+    }
+  }
 }
 
 .two-column-layout-vist {

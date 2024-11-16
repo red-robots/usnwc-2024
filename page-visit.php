@@ -151,6 +151,50 @@ get_header(); ?>
                   </div>
                 </div>
                 <?php } ?>
+
+              <?php
+              // Cards Row (max 4 columns)
+              elseif( get_row_layout() == 'cards_section' ): 
+                $cards = get_sub_field('cards');
+                if($cards) { ?>
+                <div class="cards-row-section cards-count-<?php echo count($cards) ?>">
+                  <div class="cards-inner">
+                    <?php foreach ($cards as $c) { 
+                      $card_image = $c['card_image'];
+                      $card_title = $c['card_title'];
+                      $card_subtitle = $c['card_subtitle'];
+                      $card_button = $c['card_button'];
+                      $btnName = (isset($card_button['title']) && $card_button['title']) ? $card_button['title'] : '';
+                      $btnLink = (isset($card_button['url']) && $card_button['url']) ? $card_button['url'] : '';
+                      $btnTarget = (isset($card_button['target']) && $card_button['target']) ? $card_button['target'] : '_self';
+                      if($card_image) { ?>
+                        <figure>
+                          <div class="inside">
+                            <div class="image">
+                              <img src="<?php echo $card_image['url'] ?>" alt="<?php echo $card_image['title'] ?>" />
+
+                              <?php if ($card_title) { ?>
+                              <div class="cardInfo">
+                                <div class="cardTitle"><?php echo $card_title ?></div>
+                                <?php if ($card_subtitle) { ?>
+                                <div class="cardText"><?php echo $card_subtitle ?></div>
+                                <?php } ?>
+                              </div>
+                              <?php } ?>
+                            </div>
+
+                            <?php if ($btnName && $btnLink) { ?>
+                            <div class="cardButton">
+                              <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="button button-pill"><?php echo $btnName ?></a>
+                            </div>
+                            <?php } ?>
+                          </div>
+                        </figure>
+                      <?php } ?>
+                    <?php } ?>
+                  </div>
+                </div>
+                <?php } ?>
 			        <?php endif;
 
 			    // End loop.

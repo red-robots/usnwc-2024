@@ -4282,13 +4282,15 @@ input.button,
 button.button,
 a.button {
   display: inline-block;
-  padding: 7px 25px 5px;
+  padding: 7px 25px 6px;
   border-radius: 100px;
   background-color: $red;
   color: #FFF;
   font-family: $font-brandon-regular;
   font-size: 16px;
   text-decoration: none!important;
+  min-width: 120px;
+  text-align: center;
   &:hover, &:focus {
     color: #FFF!important;
     background-color: #000;
