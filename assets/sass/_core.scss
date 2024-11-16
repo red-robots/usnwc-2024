@@ -16156,7 +16156,7 @@ section.visit {
   .tileWrapper {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     padding-left: 20px;
     padding-right: 20px;

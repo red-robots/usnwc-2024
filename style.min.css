@@ -4248,7 +4248,7 @@ body.single-whats-new .main-post-text .textcol .inside{font-size:19px}
 .photo{width:47%;margin-bottom:30px;text-align:center}
 .photo img{width:100%}
 section.visit{width:100%;margin:0 auto;max-width:1750px}
-section.visit .tileWrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;padding-left:20px;padding-right:20px}
+section.visit .tileWrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;padding-left:20px;padding-right:20px}
 section.visit .tile{margin-bottom:50px;position:relative}
 section.visit .tile.half{width:100%}
 section.visit .tile.full{width:100%}
