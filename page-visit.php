@@ -24,7 +24,7 @@ get_header(); ?>
 		<?php endwhile; ?>
 
 
-		<section class="visit">
+		<section class="visit flexible-image-cards">
 			<?php
 
 			// Check value exists.
@@ -43,36 +43,42 @@ get_header(); ?>
   		            $image = $t['image'];
   		            $description = $t['description'];
   		            $link = $t['link'];
+                  $buttons = $t['buttons'];
   		            $span = $t['span'];
                   $span .= ($description) ? ' has-description':' no-description';
                   if($image) { ?>
       							<div class="tile <?php echo $span ?>">
-                      <?php if( isset($link['url']) ) { ?>
-        								<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>" class="tile-link tile-inner">
-        									<div class="img">
-                            <?php if ($title) { ?>
-                            <h2><?php echo $title; ?></h2>
-                            <?php } ?>
-        										<div class="img-overlay"></div>
-        										<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-        									</div>
-                          <?php if ($description) { ?>
-                          <div class="desc">
-                            <?php echo $description; ?>
-                          </div>
-                          <?php } ?>
-        									<div class="link"><?php echo $link['title']; ?></div>
-        								</a>
-                      <?php } else { ?>
-                      <div class="nolink tile-inner">
-                        <div class="img">
+                      <figure>
+                        <div class="image-wrapper">
+                          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
                           <?php if ($title) { ?>
                           <h2><?php echo $title; ?></h2>
                           <?php } ?>
-                          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
                         </div>
-                      </div>
-                      <?php } ?>
+
+                        <?php if ($description || $buttons) { ?>
+                        <figcaption>
+                          <?php if ($description) { ?>
+                          <div class="text"><?php echo $description; ?></div>
+                          <?php } ?>
+
+                          <?php if ($buttons) { ?>
+                          <div class="buttons">
+                            <?php foreach ($buttons as $b) { 
+                              $button_style = $b['button_style'];
+                              $btn = $b['link'];
+                              $btnName = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
+                              $btnLink = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
+                              $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
+                              if ($btnName && $btnLink) { ?>
+                                <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="button--<?php echo $button_style ?>"><span><?php echo $btnName ?></span></a>
+                              <?php } ?>
+                            <?php } ?>
+                          </div>
+                          <?php } ?>
+                        </figcaption>
+                        <?php } ?>
+                      </figure>
       							</div>
       			        <?php } ?>
                   <?php } ?>
