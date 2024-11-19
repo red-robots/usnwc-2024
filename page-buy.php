@@ -13,13 +13,12 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
 <div id="primary" data-post="<?php echo get_the_ID()?>" class="content-area-full page-activity-passes buy-page buy-page-new <?php echo $has_banner ?>">
 
 	<?php while ( have_posts() ) : the_post(); ?>
-		<div class="intro-text-wrap">
-			<div class="wrapper">
-				<h1 class="page-title"><span><?php the_title(); ?></span></h1>
-				<div class="intro-text"><?php the_content(); ?></div>
-			</div>
+	<div class="intro-text-wrap">
+		<div class="wrapper">
+			<h1 class="page-title"><span><?php the_title(); ?></span></h1>
+			<div class="intro-text"><?php the_content(); ?></div>
 		</div>
-	
+	</div>
 
 	<?php
   $all_access_title = get_field("all_access_title");

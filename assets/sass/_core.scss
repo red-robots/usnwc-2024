@@ -4391,6 +4391,32 @@ a.button {
     }
   }
 }
+.button.button-type-link:has(span) {
+  min-width: unset;
+  &:before {
+    display: none;
+  }
+  span.link-inner {
+    display: inline-block;
+    position: relative;
+    &:after {
+      content:"";
+      display: block;
+      width: 100%;
+      border: 1px solid #CCC;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      transition: all ease .3s;
+    }
+  }
+  &:hover, &:focus {
+    color: $red;
+    span.link-inner:after {
+      border-color: $red;
+    }
+  }
+}
 .child-card .info div.button a,
 .mscol .textcol div.button a {
   display: inline-block;
@@ -17813,8 +17839,8 @@ body.subpage.single.single-activity {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 35px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
   .firstCol, .secondCol {
     width: 100%;
     @include tab {
@@ -17869,8 +17895,8 @@ body.subpage.single.single-activity {
 .infobox.single {
   div.buttons{
     margin-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
@@ -17999,6 +18025,7 @@ body.subpage.single.single-activity {
       margin-top: 15px;
       display: flex;
       align-items: center;
+      gap: 0.6em;
       .button.button-type-button {
         margin-right: 6px;
         position: relative;
