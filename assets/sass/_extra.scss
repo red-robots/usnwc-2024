@@ -1824,7 +1824,87 @@ section.visit.flexible-image-cards,
   }
 }
 
+#primary.buy-page.buy-page-new .access-pass-options {
+  padding-left: 0;
+  padding-right: 0;
+  .flexwrap {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .infobox {
+    width: 100%!important;
+    background-color: #f2f2f2;
+    padding: 0 0!important;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    .inner {
+      display: flex;
+      flex-wrap: wrap;
+      figure, .textwrap {
+        width: 100%;
+        @media screen and (min-width: 769px) {
+          width: 50%;
+        }
+      }
+      figure {
+        overflow: hidden;
+        border-radius: 0 0;
+        padding-bottom: 60%;
+        @media screen and (min-width: 769px) {
+          padding-bottom: 35%;
+          border-radius: 0 15px 15px 0;
+        }
+      }
+      .textwrap {
+        padding: 40px 30px;
+        @media screen and (min-width: 769px) {
+          padding: 40px 4vw;
+          display: flex;
+          flex-wrap: wrap;
+          align-content: center;
+          .inside {
+            width: 100%;
+          }
+        }
 
+        @media screen and (max-width: 768px) {
+          h2,.text, .text p {
+            text-align: center!important;
+          }
+        }
+      }
+      .text,
+      .buttons,
+      .single-activity-options,
+      .pass-options-wrap {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      @media screen and (max-width: 768px) {
+        .buttons {
+          display: flex;
+          justify-content: center;
+          gap: 1em;
+        }
+      }
+    }
+    .single-activity-options .name span,
+    .single-activity-options .price span {
+      background-color: #f2f2f2;
+    }
+  }
+  .infobox:nth-child(even) {
+    .inner {
+      @media screen and (min-width: 769px) {
+        flex-direction: row-reverse;
+        figure {
+          border-radius: 15px 0 0 15px;
+        }
+      }
+    }
+  }
+}
 
 
 
