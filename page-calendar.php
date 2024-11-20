@@ -40,7 +40,11 @@ get_header(); ?>
               <div><button role="tab" aria-selected="false" aria-controls="eventsGrid" class="tab-item<?php echo ($has_filter) ? ' active':''?>">Events</button></div>
             </div>
             <div id="calendarGrid" class="tab-calendar-panel customCalendarGrid<?php echo ($has_filter) ? '':' active'?>">
-              <?php echo do_shortcode('[tribe_events]'); ?>
+              <?php if ( do_shortcode('[tribe_events]') ) { ?>
+              <div id="calendar-info">
+                <?php echo do_shortcode('[tribe_events]'); ?>
+              </div>
+              <?php } ?>
             </div>
             <div id="eventsGrid" class="tab-calendar-panel<?php echo ($has_filter) ? ' active':''?>">
               <?php get_template_part('parts-calendar/calendar-events-tab'); ?>

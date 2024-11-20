@@ -909,6 +909,14 @@ jQuery(document).ready(function ($) {
   });
   /* Smooth Scrolling */
 
+  if (window.location.hash) {
+    var hashUrl = window.location.hash;
+    SmoothScrolling(hashUrl);
+    setTimeout(function () {
+      SmoothScrolling(hashUrl);
+    }, 500);
+  }
+
   $('a[href*="#"]') // Remove links that don't actually link to anything
   .not('[href="#"]').not('[href="#0"]').click(function (event) {
     // On-page links
@@ -920,26 +928,28 @@ jQuery(document).ready(function ($) {
       if (target.length) {
         // Only prevent default if animation is actually gonna happen
         event.preventDefault();
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 500, function () {
-          // Callback after animation
-          // Must change focus!
-          var $target = $(target); //$target.focus();
-
-          if ($target.is(":focus")) {
-            // Checking if the target was focused
-            return false;
-          } else {
-            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-            //$target.focus(); // Set focus again
-          }
-
-          ;
-        });
+        SmoothScrolling(this.hash);
       }
     }
   });
+
+  function SmoothScrolling(anchor) {
+    if ($(anchor).length) {
+      var target = $(anchor);
+      var offset = $('#masthead').outerHeight();
+      $('html, body').animate({
+        scrollTop: target.offset().top - offset
+      }, 500, function () {
+        if (target.is(":focus")) {
+          return false;
+        } else {
+          target.attr('tabindex', '-1');
+        }
+
+        ;
+      });
+    }
+  }
 
   if ($('.todaySnapshotInfo ul.location-tabs').length) {
     if ($('.info-wrapper').length > 1) {
