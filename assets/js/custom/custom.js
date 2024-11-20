@@ -1049,7 +1049,7 @@ var getGridSize = function() {
       var target = $(anchor);
       var offset = $('#masthead').outerHeight();
       $('html, body').animate({
-        scrollTop: target.offset().top - offset
+        scrollTop: target.offset().top
       }, 500, function() {
         if ( target.is(":focus") ) { 
           return false;
