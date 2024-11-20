@@ -1047,9 +1047,9 @@ var getGridSize = function() {
   function SmoothScrolling(anchor) {
     if( $(anchor).length ) {
       var target = $(anchor);
-      var offset = $('#masthead').outerHeight();
+      var offset = $('#masthead').outerHeight() + 100;
       $('html, body').animate({
-        scrollTop: target.offset().top
+        scrollTop: target.offset().top - offset
       }, 500, function() {
         if ( target.is(":focus") ) { 
           return false;
