@@ -4349,7 +4349,7 @@ section.visit .tile.full-bleed div.img{border-radius:0}
 .customCalendarGrid .date-event-info p strong,.customCalendarGrid .date-event-info p b{font-weight:600;letter-spacing:.02em;color:#000}
 .customCalendarGrid .date-event-info p em{color:#7f7f7f}
 .customCalendarGrid .tribe-events-calendar-month__multiday-event-wrapper .tribe-events-calendar-month__multiday-event-bar-inner{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;background-color:#cd0d0d !important}
-.customCalendarGrid .tribe-events-calendar-month__multiday-event-wrapper .tribe-events-calendar-month__multiday-event-bar-inner h3{color:#fff !important;opacity:1 !important;text-transform:uppercase;font-size:14px}
+.customCalendarGrid .tribe-events-calendar-month__multiday-event-wrapper .tribe-events-calendar-month__multiday-event-bar-inner h3{color:#fff !important;opacity:1 !important;text-transform:uppercase;font-size:11px}
 .customCalendarGrid .tribe-events-calendar-month__day.tribe-events-calendar-month__day--current{border:2px solid #cd0d0d !important}
 .customCalendarGrid .tribe-events-calendar-month__day.tribe-events-calendar-month__day--current h3,.customCalendarGrid .tribe-events-calendar-month__day.tribe-events-calendar-month__day--current h3 *{color:#cd0d0d !important}
 .customCalendarGrid .tribe-events-header__events-bar{display:none !important}
