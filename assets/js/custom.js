@@ -1028,15 +1028,17 @@ jQuery(document).ready(function ($) {
       // $('#eventsGrid').load(newUrl+'&d='+d.getTime()+ ' .calendar-tab-events-posts',function(){
       // });
     });
-  } // if( typeof params.type!=undefined || params.type!=null ) {
-  //   if( $('#eventsGrid').length ) {
-  //     var target = $('#eventsGrid');
-  //     setTimeout(function(){
-  //       scrollToSection(target,100);
-  //     },200);
-  //   } 
-  // }
-  // function scrollToSection(target,offsetVal) {
+  }
+
+  if (_typeof(params.type) != undefined || params.type != null) {
+    if ($('#eventsGrid').length) {
+      var target = $('#eventsGrid');
+      setTimeout(function () {
+        //scrollToSection(target,100);
+        SmoothScrolling('#eventsGrid');
+      }, 200);
+    }
+  } // function scrollToSection(target,offsetVal) {
   //   var adjustment = (offsetVal) ? offsetVal : 0;
   //   $('html, body').animate({
   //     scrollTop: target.offset().top - adjustment

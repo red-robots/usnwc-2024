@@ -1142,14 +1142,15 @@ var getGridSize = function() {
     });
   }
 
-  // if( typeof params.type!=undefined || params.type!=null ) {
-  //   if( $('#eventsGrid').length ) {
-  //     var target = $('#eventsGrid');
-  //     setTimeout(function(){
-  //       scrollToSection(target,100);
-  //     },200);
-  //   } 
-  // }
+  if( typeof params.type!=undefined || params.type!=null ) {
+    if( $('#eventsGrid').length ) {
+      var target = $('#eventsGrid');
+      setTimeout(function(){
+        //scrollToSection(target,100);
+        SmoothScrolling( '#eventsGrid' );
+      },200);
+    } 
+  }
 
 
   // function scrollToSection(target,offsetVal) {
