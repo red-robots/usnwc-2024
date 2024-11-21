@@ -905,8 +905,8 @@ jQuery(document).ready(function ($) {
   /* Smooth Scrolling */
 
   if (window.location.hash) {
-    var hashUrl = window.location.hash;
-    SmoothScrolling(hashUrl);
+    var hashUrl = window.location.hash; //SmoothScrolling(hashUrl);
+
     setTimeout(function () {
       SmoothScrolling(hashUrl);
     }, 500);

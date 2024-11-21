@@ -1007,7 +1007,7 @@ var getGridSize = function() {
 	/* Smooth Scrolling */
   if(window.location.hash){
     var hashUrl = window.location.hash;
-    SmoothScrolling(hashUrl);
+    //SmoothScrolling(hashUrl);
     setTimeout(function(){
       SmoothScrolling(hashUrl);
     },500);
