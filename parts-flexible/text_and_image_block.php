@@ -42,8 +42,8 @@
 
               // $map_image_type = get_sub_field('map_image_type');
               // $map_embed_code = get_sub_field('map_embed_code');
-              $map_image_type = $col['map_image_type'];
-              $map_embed_code = $col['map_embed_code'];
+              $map_image_type = ( isset($col['map_image_type']) ) ? $col['map_image_type'] : '';
+              $map_embed_code = ( isset($col['map_embed_code']) ) ? $col['map_embed_code'] : '';
               $is_image_col = ($map_image_type=='map') ? false : true;
 
               $e_title_top = $col['title_top'];
