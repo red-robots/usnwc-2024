@@ -558,25 +558,23 @@ jQuery(document).ready(function ($) {
   //  		}
   // 	}
   // });
+  // $('a[href*="#"]:not([href="#"])').click(function() {
+  //   var headHeight = $("#masthead").height();
+  // 	var offset = headHeight + 80;
+  //   if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+  //       var target = $(this.hash);
+  //       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+  //       if (target.length) {
+  //         $('html, body').animate({
+  //             scrollTop: target.offset().top - offset
+  //         }, 1000);
+  //         return false;
+  //       }
+  //   }
+  // });
 
-
-  $('a[href*="#"]:not([href="#"])').click(function () {
-    var headHeight = $("#masthead").height();
-    var offset = headHeight + 80;
-
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top - offset
-        }, 1000);
-        return false;
-      }
-    }
-  });
   /* Load More */
+
 
   $(document).on("click", "#loadMoreBtn", function (event) {
     event.preventDefault();
@@ -770,24 +768,21 @@ jQuery(document).ready(function ($) {
     $(".explore-other-stuff .post-type-entries").addClass('column-list-' + totalEntries);
   }
   /* Ajax Load More */
+  // $('a[href*="#"]:not([href="#"])').click(function() {
+  //     var headHeight = $("#masthead").height();
+  // 		var offset = headHeight + 80;
+  //     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+  //         var target = $(this.hash);
+  //         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+  //         if (target.length) {
+  //           $('html, body').animate({
+  //               scrollTop: target.offset().top - offset
+  //           }, 1000);
+  //           return false;
+  //         }
+  //     }
+  // 	});
 
-
-  $('a[href*="#"]:not([href="#"])').click(function () {
-    var headHeight = $("#masthead").height();
-    var offset = headHeight + 80;
-
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top - offset
-        }, 1000);
-        return false;
-      }
-    }
-  });
 
   if (typeof params.pid != 'undefined' && params.pid != null) {
     if ($(".faqpid-" + params.pid).length > 0) {
@@ -1033,34 +1028,29 @@ jQuery(document).ready(function ($) {
       // $('#eventsGrid').load(newUrl+'&d='+d.getTime()+ ' .calendar-tab-events-posts',function(){
       // });
     });
-  }
+  } // if( typeof params.type!=undefined || params.type!=null ) {
+  //   if( $('#eventsGrid').length ) {
+  //     var target = $('#eventsGrid');
+  //     setTimeout(function(){
+  //       scrollToSection(target,100);
+  //     },200);
+  //   } 
+  // }
+  // function scrollToSection(target,offsetVal) {
+  //   var adjustment = (offsetVal) ? offsetVal : 0;
+  //   $('html, body').animate({
+  //     scrollTop: target.offset().top - adjustment
+  //   }, 1000, function() {
+  //     target.focus();
+  //     if (target.is(":focus")) { 
+  //       return false;
+  //     } else {
+  //       target.attr('tabindex','-1'); 
+  //       target.focus(); 
+  //     };
+  //   });
+  // }
 
-  if (_typeof(params.type) != undefined || params.type != null) {
-    if ($('#eventsGrid').length) {
-      var target = $('#eventsGrid');
-      setTimeout(function () {
-        scrollToSection(target, 100);
-      }, 200);
-    }
-  }
-
-  function scrollToSection(target, offsetVal) {
-    var adjustment = offsetVal ? offsetVal : 0;
-    $('html, body').animate({
-      scrollTop: target.offset().top - adjustment
-    }, 1000, function () {
-      target.focus();
-
-      if (target.is(":focus")) {
-        return false;
-      } else {
-        target.attr('tabindex', '-1');
-        target.focus();
-      }
-
-      ;
-    });
-  }
 
   $(document).on('click', function (e) {
     var target = $(e.target);

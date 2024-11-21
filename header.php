@@ -102,8 +102,23 @@ if($postHeroImage) {
 						<img src="<?php bloginfo('template_url'); ?>/images/logo-white.png">
 					</a>
 		   </div>
+
+        <?php  
+          $secondary_links = get_field('secondary_links', 'option');
+        ?>
 				<div class="right">
-					<div class="cal"><a href="<?php bloginfo('url'); ?>/calendar">Calendar</a></div>
+          <?php if ($secondary_links) { ?>
+            <?php foreach ($secondary_links as $e) { 
+              $s = $e['link'];
+              $s_name = ( isset($s['title']) ) ? $s['title'] : '';
+              $s_link = ( isset($s['url']) ) ? $s['url'] : '';
+              $s_target = ( isset($s['target']) ) ? $s['target'] : '_self';
+              if($s_name && $s_link) { ?>
+              <div class="secondNav cal"><a href="<?php echo $s_link ?>" target="<?php echo $s_target ?>"><?php echo $s_name ?></a></div>
+              <?php } ?>
+            <?php } ?>
+          <?php } ?>
+					
 					<div class="today" data-id="1">Today</div>
 					<?php get_template_part('parts/today'); ?>
 				</div>
