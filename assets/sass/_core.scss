@@ -1833,6 +1833,7 @@ section.full-bleed-promo {
 				font-family: $font-brandon-black;
 				line-height: 1;
 				margin-bottom: 15px;
+        color: #FFF;
 				@include tab {
 					font-size: 40px;
 				}
@@ -1845,9 +1846,10 @@ section.full-bleed-promo {
 				}
 			}
 			p {
-				font-size: 18px;
+				font-size: 20px;
 				font-family: $font-brandon-regular;
 				margin-bottom: 0;
+        color: #FFF;
 				@include tab {
 					margin-bottom: 1rem;
 				}
