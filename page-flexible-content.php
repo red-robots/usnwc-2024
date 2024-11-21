@@ -50,6 +50,7 @@ $show_faqs = get_field('show_faqs_items');
         <?php include( locate_template('parts-flexible/upcoming_events.php') ); ?>
         <?php include( locate_template('parts-flexible/accordion_elements.php') ); ?>
         <?php include( locate_template('parts-flexible/social_media_section.php') ); ?>
+        <?php include( locate_template('parts-flexible/sponsors.php') ); ?>
 
       <?php $ctr++; endwhile;  ?>
     </div>

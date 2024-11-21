@@ -1907,5 +1907,36 @@ section.visit.flexible-image-cards,
   }
 }
 
+.sponsors-section {
+  .title-wrapper {
+    padding-bottom: 10px!important;
+  }
+}
+
+.sponsor-images {
+  .flexwrap {
+    align-items: center;
+    justify-content: center;
+    figure {
+      margin: 0 0;
+      padding: 15px 18px;
+      a {
+        display: inline-block;
+        transition: all ease .3s;
+        &:hover, &:focus {
+          transform: translateY(-3px);
+        }
+        &:focus {
+          outline: 1px dotted #555;
+        }
+      }
+      img {
+        width: auto;
+        height: 70px;
+      }
+    }
+  }
+}
+
 
 

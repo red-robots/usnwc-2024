@@ -49,6 +49,7 @@ $show_faqs = get_field('show_faqs_items');
         <?php include( locate_template('parts-flexible/schedule_cards.php') ); ?>
         <?php include( locate_template('parts-flexible/simple_intro_text.php') ); ?>
         <?php include( locate_template('parts-flexible/accordion_elements.php') ); ?>
+        <?php include( locate_template('parts-flexible/sponsors.php') ); ?>
 
       <?php $ctr++; endwhile;  ?>
     </div>
