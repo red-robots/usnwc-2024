@@ -69,7 +69,7 @@ $posts = $wpdb->get_results($new_query);
 $total = $wpdb->get_results($the_query);
 $total_records = ($total) ? count($total) : 0;
 ?>
-<section class="calendar-tab-events-posts">
+<section class="calendar-tab-events-posts<?php echo ($filter_type) ? ' is-filtered':'' ?>">
   <div data-selected="<?php echo ($filter_type) ? $filter_type :'all' ?>" data-baseUrl="<?php echo get_permalink() ?>" class="custom-dropdown dropdown-posttypes">
     <div class="selectwrap">
       <button class="select-event-type selector"><span><?php echo ($selected_filter_name) ? $selected_filter_name :'Type' ?></span></button>

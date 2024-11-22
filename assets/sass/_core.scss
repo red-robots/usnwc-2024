@@ -17003,6 +17003,23 @@ section.visit {
       }
     }
   }
+
+  &.is-filtered {
+    .infoBox.first {
+      width: 33.333%;
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+    .infoBox {
+      width: 50%;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .infoBox {
+      width: 100%!important;
+    }
+  }
 }
 // #eventsGrid.tab-calendar-panel.active {
 //   .infoBox {
