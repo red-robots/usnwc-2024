@@ -17007,7 +17007,9 @@ section.visit {
   &.is-filtered {
     .infoBox.first {
       width: 33.333%;
-      padding-bottom: 65%;
+      figure {
+        padding-bottom: 65%;
+      }
     }
   }
 
