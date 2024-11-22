@@ -4367,7 +4367,7 @@ section.visit .tile.full-bleed div.img{border-radius:0}
 .calendar-tab-events-posts .infoBox .text .more-btn:hover,.calendar-tab-events-posts .infoBox .text .more-btn:focus{color:#fff;border-color:#ba0c2f;background:#ba0c2f}
 .calendar-tab-events-posts .infoBox .text .short-description{font-size:16px;line-height:1.4;margin-top:8px}
 .calendar-tab-events-posts .infoBox.first{width:100%}
-.calendar-tab-events-posts.is-filtered .infoBox.first{width:33.333%}
+.calendar-tab-events-posts.is-filtered .infoBox.first{width:33.333%;padding-bottom:65%}
 .custom-dropdown{max-width:300px;width:90%;margin:0 auto;position:relative;z-index:20}
 .custom-dropdown .selectwrap{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .custom-dropdown .selector{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;border-bottom:2px solid #000;padding:5px 0;background-color:transparent;font-family:"Brandon Medium";font-size:14px;line-height:1;letter-spacing:.02em;text-transform:uppercase;min-width:150px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative}
@@ -5948,7 +5948,7 @@ body.logged-in.admin-bar .site-header{top:45px}
 }@media screen and (max-width:768px){.flex-container.slide-horizontal .flex-direction-nav li .prev,.flex-direction-nav li .prev{display:none}
 .flex-container.slide-horizontal .flex-direction-nav li .next,.flex-direction-nav li .next{display:none}
 .flexslider .flex-control-nav{display:none}
-.calendar-tab-events-posts .infoBox{width:100%}
+.calendar-tab-events-posts .infoBox{width:100% !important}
 .pass-options-wrap .wrap .options{margin-bottom:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:space-between;-ms-flex-align:space-between;align-items:space-between}
 .pass-options-wrap div.buttondiv{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .pass-options-wrap h3,.pass-options-wrap .buttondiv{text-align:center !important}
