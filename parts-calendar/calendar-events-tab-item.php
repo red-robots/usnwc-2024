@@ -1,4 +1,4 @@
-<div class="infoBox<?php echo $is_first ?> post-type--<?php echo $post_type ?>">
+<div class="infoBox post-type--<?php echo $post_type ?>">
   <div class="wrap">
     <figure>
       <?php if ($thumbnail) { ?>

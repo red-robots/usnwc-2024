@@ -5,6 +5,9 @@ $today_date = strtotime(date('Ymd'));
 $where_post_types = '';
 $paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
 $filter_type = ( isset($_GET['type']) && $_GET['type'] ) ? $_GET['type'] : '';
+
+$featured_event = get_field('featured_event','option'); /* will return a post id */
+
 $cpttypes = [
   'festival'    => 'Festivals',
   'race'        => 'Races',
@@ -48,11 +51,18 @@ $condition2 = "SELECT pp.ID, mm.meta_value AS end_date
 $per_page = 15;
 $offset = ($paged>1) ? ($per_page * $paged)-$per_page : 0;
 
+if( isset($_GET['type']) && $_GET['type']!='all' ) {
+  $where = '';
+} else {
+  $where = ($featured_event) ? 'AND p.ID!=' . $featured_event : '';
+}
 $the_query = "SELECT p.*, st.start_date, en.end_date     
           FROM ".$prefix."posts p, ".$prefix."postmeta m, 
           (".$condition1.") st, (".$condition2.") en  
-          WHERE p.ID=st.ID AND p.ID=en.ID AND p.ID=m.post_id 
+          WHERE p.ID=st.ID AND p.ID=en.ID AND p.ID=m.post_id ".$where."
           GROUP BY p.ID";
+
+
 
 //$new_query = $the_query . " ORDER BY st.start_date ASC LIMIT ".$offset.", " . $per_page;
 $new_query = $the_query . " ORDER BY st.start_date ASC LIMIT ".$per_page." OFFSET ".$offset;
@@ -69,7 +79,7 @@ $posts = $wpdb->get_results($new_query);
 $total = $wpdb->get_results($the_query);
 $total_records = ($total) ? count($total) : 0;
 ?>
-<section class="calendar-tab-events-posts<?php echo ($filter_type) ? ' is-filtered':'' ?>">
+<section class="calendar-tab-events-posts<?php echo ($filter_type && $filter_type!='all') ? ' is-filtered':'' ?>">
   <div data-selected="<?php echo ($filter_type) ? $filter_type :'all' ?>" data-baseUrl="<?php echo get_permalink() ?>" class="custom-dropdown dropdown-posttypes">
     <div class="selectwrap">
       <button class="select-event-type selector"><span><?php echo ($selected_filter_name) ? $selected_filter_name :'Type' ?></span></button>
@@ -90,11 +100,21 @@ $total_records = ($total) ? count($total) : 0;
   <div class="records-container">
     <div class="flexwrap">
       <?php 
+        if( isset($_GET['type']) && $_GET['type']!='all' ) {
+          //Don't show featured image
+        } else {
+          if ($featured_event) {
+            include( get_template_directory() . '/parts-calendar/calendar-events-featured.php');
+          }
+        }
+
         $CURRENT_DATE = date('Ymd');
         $i=1; foreach ($posts as $p) { 
         $post_id = $p->ID;
         $post_type = $p->post_type;
         $pagelink = get_permalink($post_id);
+        //$is_featured = isFeaturedEvent($pagelink);
+
         $thumbnail = '';
         $short_description = get_field('event__short_description', $post_id);
         if( get_field('thumbnail_image', $post_id) ) {

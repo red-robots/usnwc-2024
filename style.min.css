@@ -4368,7 +4368,7 @@ section.visit .tile.full-bleed div.img{border-radius:0}
 .calendar-tab-events-posts .infoBox .text .short-description{font-size:16px;line-height:1.4;margin-top:8px}
 .calendar-tab-events-posts .infoBox.first{width:100%}
 .calendar-tab-events-posts.is-filtered .infoBox.first{width:33.333%}
-.calendar-tab-events-posts.is-filtered .infoBox.first figure{padding-bottom:65%}
+.calendar-tab-events-posts.is-filtered .infoBox.first figure{padding-bottom:65% !important}
 .custom-dropdown{max-width:300px;width:90%;margin:0 auto;position:relative;z-index:20}
 .custom-dropdown .selectwrap{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .custom-dropdown .selector{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;border-bottom:2px solid #000;padding:5px 0;background-color:transparent;font-family:"Brandon Medium";font-size:14px;line-height:1;letter-spacing:.02em;text-transform:uppercase;min-width:150px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative}
@@ -5710,7 +5710,6 @@ body.logged-in.admin-bar.subpage .film-event-status{top:105px}
 section.instr-schedule li.slide-item{width:33.333%}
 .snapshop-wrapper.section-snapshop .todaySnapshotInfo{padding-left:5vw;padding-right:5vw}
 .calendar-tab-events-posts .infoBox.first figure{padding-bottom:50%}
-.calendar-tab-events-posts.is-filtered .infoBox.first figure{padding-bottom:65% !important}
 body.subpage.single.single-activity .content-default.new-layout .intro-galleries.half .rightcol,body.subpage.single.single-activity .content-default.new-layout .intro-galleries.half .leftcol{width:50%}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .inner:after{content:"";display:block;width:1px;height:100%;background:#000;position:absolute;top:0;right:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);pointer-events:none}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left,body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-right{padding:50px 10vw;width:50%}

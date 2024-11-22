@@ -7,6 +7,7 @@
  * @package bellaworks
  */
 
+$post_type = get_post_type();
 get_header(); 
 ?>
 <div id="primary" class="content-area-single">
@@ -44,6 +45,12 @@ get_header();
       <?php if ( has_post_thumbnail() ) { ?>
       <div class="featured-image">
         <figure><?php the_post_thumbnail() ?></figure>
+      </div>
+      <?php } ?>
+
+      <?php if ($post_type!='post') { ?>
+      <div class="default-entry-content">
+        <?php the_content(); ?>
       </div>
       <?php } ?>
       

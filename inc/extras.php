@@ -2696,3 +2696,20 @@ function extractVimdeoId($videoURL) {
   return $vimeoId;
 }
 
+
+function isFeaturedEvent($postUrl) {
+  global $wpdb;
+  $query = "SELECT post_id FROM ".$wpdb->prefix."postmeta WHERE meta_key='_EventURL' AND meta_value='".$postUrl."'";
+  $result = $wpdb->get_row($query);
+  $is_featured = '';
+  if($result) {
+    $post_id = $result->post_id;
+    
+    //Check if this is a Featured Event
+    $query2 = "SELECT post_id FROM ".$wpdb->prefix."postmeta WHERE meta_key='_tribe_featured' AND meta_value='1' AND post_id=".$post_id;
+    $result2 = $wpdb->get_row($query2);
+    $is_featured = ($result2) ? $result2->post_id : '';
+  }
+  return $is_featured;
+}
+
