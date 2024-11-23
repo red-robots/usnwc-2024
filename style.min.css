@@ -5190,7 +5190,7 @@ body.page-template-page-visit section.visit.flexible-image-cards .tile.half figu
 .sponsor-images .flexwrap figure img{width:auto;height:65px}
 #section-schedule.section-content .schedules-list li.item{padding:3px 0}
 #section-schedule.section-content .schedules-list ul.items li.no-event-info{margin-top:15px;margin-bottom:5px}
-#section-schedule.section-content .schedules-list ul.items li.no-event-info .time{position:relative !important;width:100% !important;display:block;font-family:"Brandon Bold";font-size:16px;text-transform:uppercase}
+#section-schedule.section-content .schedules-list ul.items li.no-event-info .time{position:relative !important;width:100% !important;display:block;font-family:"Brandon Bold";font-size:16px;text-transform:uppercase;text-align:left}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
