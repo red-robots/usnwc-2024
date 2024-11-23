@@ -14545,11 +14545,11 @@ body.logged-in.admin-bar {
 }
 
 .modal-open .modal {
-	z-index: 999999;
+	z-index: 100000000;
 }
 .modal-backdrop.show {
 	opacity: .8;
-	z-index: 99999;
+	z-index: 99999999;
 }
 .modal.customModal {
 	.modal-content {

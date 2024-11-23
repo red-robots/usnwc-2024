@@ -4027,8 +4027,8 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .cards-format-line-items .eventsCards .infocard .line-item .desc{margin-top:3px;font-size:15px;line-height:1.2;color:#707070}
 .cards-format-line-items .lineItems .line-item .info{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative}
 body.logged-in.admin-bar .site-header,body.logged-in.admin-bar .mobile-nav{top:32px}
-.modal-open .modal{z-index:999999}
-.modal-backdrop.show{opacity:.8;z-index:99999}
+.modal-open .modal{z-index:100000000}
+.modal-backdrop.show{opacity:.8;z-index:99999999}
 .modal.customModal .modal-content{border-radius:0;text-align:left}
 .modal.customModal .modal-header{border-bottom:0}
 .modal.customModal .modal-title{text-align:center}
