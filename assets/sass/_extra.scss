@@ -1790,6 +1790,14 @@ section.visit.flexible-image-cards,
           }
         }
       }
+
+      &.buttons-count-1 {
+        margin-top: 15px;
+        a.button--underline {
+          padding-left: 0!important;
+          padding-right: 0!important;
+        }
+      }
     }
 
     &.full {

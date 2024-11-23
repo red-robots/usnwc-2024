@@ -62,9 +62,10 @@ get_header(); ?>
                           <div class="text"><?php echo $description; ?></div>
                           <?php } ?>
 
-                          <?php if ($buttons) { ?>
-                          <div class="buttons">
-                            <?php foreach ($buttons as $b) { 
+                          <?php if ($buttons) { $countButtons = count($buttons); ?>
+                          <div class="buttons buttons-count-<?php echo $countButtons ?>">
+                            <?php 
+                            foreach ($buttons as $b) { 
                               $button_style = $b['button_style'];
                               $btn = $b['link'];
                               $btnName = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
