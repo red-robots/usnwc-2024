@@ -120,7 +120,7 @@ $textImageData = get_field("textImageCol"); ?>
 						<img src="<?php echo $s_icon['url']; ?>">
 					</div>
 				<?php } ?>
-				<h3><?php echo $sHeading; ?></h3>
+				<h2 class="stitle"><?php echo $sHeading; ?></h2>
 				<?php echo $sDetails; ?>
 			</section>
 		<?php endif; ?>
