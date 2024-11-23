@@ -1514,7 +1514,7 @@ body.single-activity  {
 	float: left;
 }
 
-
+h2.gform_title,
 .faqs .titlediv h2, h2.stitle, .stitle,
 .h2, .title-wrapper h2.section-title {
 	margin: 0 0;
@@ -19481,12 +19481,24 @@ section.route-details.route-details-new {
   .section-title {
     @include H2_STYTLE;
   }
-  .gform_title {
-    font-family: $font-brandon-medium;
-    font-size: 25px;
-    line-height: 1.2;
-    margin: 0 0 20px;
-    color: #000;
+  // .gform_title {
+  //   font-family: $font-brandon-medium;
+  //   font-size: 25px;
+  //   line-height: 1.2;
+  //   margin: 0 0 20px;
+  //   color: #000;
+  // }
+  h2.gform_title {
+    font-size: 36px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="phone"],
+  input[type="tel"],
+  input[type="number"],
+  textarea, select {
+    border-radius: 0;
+    border: 1px solid #787878;
   }
 }
 
