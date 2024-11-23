@@ -2597,8 +2597,8 @@ section.stories-whats {
 	padding-top: 50px;
 	padding-bottom: 50px;
 	@include tab {
-		padding-top: 20px;
-		padding-bottom: 80px;
+		padding-top: 50px;
+		padding-bottom: 70px;
 	}
   .wrapper {
     max-width: 900px;
@@ -4452,20 +4452,36 @@ a.button {
 }
 .child-card .info div.button a,
 .mscol .textcol div.button a {
+  // display: inline-block;
+  // border: none;
+  // background-color: #FFF;
+  // padding: 7px 25px 6px;
+  // border-radius: 60px;
+  // box-shadow: 0 2px 5px rgba(0, 0, 0, .16);
+  // text-transform: uppercase;
+  // font-size: 15px;
+  // &:before {
+  //   display: none;
+  // }
+  // &:hover, &:focus {
+  //   background: $red!important;
+  //   color: #FFF!important;
+  // }
   display: inline-block;
-  border: none;
-  background-color: #FFF;
   padding: 7px 25px 6px;
-  border-radius: 60px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .16);
-  text-transform: uppercase;
-  font-size: 15px;
-  &:before {
-    display: none;
-  }
+  border-radius: 100px;
+  color: #5a5959;
+  border: 1px solid #a2a2a2;
+  background-color: #FFF;
+  font-family: $font-brandon-regular;
+  font-size: 16px;
+  text-decoration: none!important;
+  min-width: 120px;
+  text-align: center;
   &:hover, &:focus {
-    background: $red!important;
     color: #FFF!important;
+    border-color: $red;
+    background-color: $red;
   }
 }
 .mscol .textcol .button-group {
@@ -5312,6 +5328,12 @@ body.subpage.single .content-default .black-section {
 	}
 }
 body.single-instructions {
+  &.subpage .site-content {
+    padding-top: 0;
+  }
+  .no-banner-spacer {
+    display: none;
+  }
 	#section-schedule, .section-schedule {
 		margin-bottom: 16px;
 	}
@@ -11499,7 +11521,8 @@ body.subpage.single .content-default .important-notes-red,
 	.top {
 		display: inline-block;
 		position: absolute;
-		top: 86px;
+		// top: 86px;
+    top: 30px;
 		left: 0;
 		z-index: 30;
 	}

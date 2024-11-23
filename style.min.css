@@ -2508,9 +2508,8 @@ input.button.btn-white-shadow:hover,input.button.btn-white-shadow:focus,button.b
 .button.button-type-link:has(span) span.link-inner:after{content:"";display:block;width:100%;border:1px solid #ccc;position:absolute;left:0;bottom:-5px;-webkit-transition:all ease .3s;transition:all ease .3s}
 .button.button-type-link:has(span):hover,.button.button-type-link:has(span):focus{color:#ba0d30}
 .button.button-type-link:has(span):hover span.link-inner:after,.button.button-type-link:has(span):focus span.link-inner:after{border-color:#ba0d30}
-.child-card .info div.button a,.mscol .textcol div.button a{display:inline-block;border:0;background-color:#fff;padding:7px 25px 6px;border-radius:60px;-webkit-box-shadow:0 2px 5px rgba(0,0,0,.16);box-shadow:0 2px 5px rgba(0,0,0,.16);text-transform:uppercase;font-size:15px}
-.child-card .info div.button a:before,.mscol .textcol div.button a:before{display:none}
-.child-card .info div.button a:hover,.child-card .info div.button a:focus,.mscol .textcol div.button a:hover,.mscol .textcol div.button a:focus{background:#ba0d30 !important;color:#fff !important}
+.child-card .info div.button a,.mscol .textcol div.button a{display:inline-block;padding:7px 25px 6px;border-radius:100px;color:#5a5959;border:1px solid #a2a2a2;background-color:#fff;font-family:"Brandon";font-size:16px;text-decoration:none !important;min-width:120px;text-align:center}
+.child-card .info div.button a:hover,.child-card .info div.button a:focus,.mscol .textcol div.button a:hover,.mscol .textcol div.button a:focus{color:#fff !important;border-color:#ba0d30;background-color:#ba0d30}
 .mscol .textcol .button-group{margin-top:25px}
 .mscol .textcol .button-group div.button{display:inline-block;margin-right:15px}
 .fullwidth-wrapper{width:100%;float:left;padding-left:20px;padding-right:20px;margin-top:20px;margin-bottom:20px}
@@ -2636,6 +2635,8 @@ body.subpage.single .content-default .black-section .wrapper a:hover{color:#ba0d
 .sched-inside-new .activities .info span.time span{padding-right:5px;padding-top:5px;padding-bottom:5px;top:3px}
 .sched-inside-new .activities .info span.event{width:80%;text-align:right;line-height:1.2;color:#707070}
 .sched-inside-new .activities .info span.event span{display:inline;padding-left:7px}
+body.single-instructions.subpage .site-content{padding-top:0}
+body.single-instructions .no-banner-spacer{display:none}
 body.single-instructions #section-schedule,body.single-instructions .section-schedule{margin-bottom:16px}
 body.single-instructions .section-price-ages .flexwrap{padding-bottom:6px}
 body.single-instructions #primary #section-schedule.section-schedule,body.single-instructions #primary .section-schedule{margin-top:12px;margin-bottom:12px}
@@ -3567,7 +3568,7 @@ body.subpage.single .content-default .important-notes-red p:last-child,.importan
 .section-full-button a.red-button-full:hover{background:#c12545}
 .section-full-button a.red-button-full:hover span:before,.section-full-button a.red-button-full:hover span:after{margin-right:-8px}
 .outer-banner-wrap{width:100%;float:left;position:relative;overflow:hidden}
-.outer-banner-wrap .top{display:inline-block;position:absolute;top:86px;left:0;z-index:30}
+.outer-banner-wrap .top{display:inline-block;position:absolute;top:30px;left:0;z-index:30}
 .outer-banner-wrap .button-arrow{display:inline-block;text-decoration:none;cursor:pointer;background:#ba0d30;color:#fff;font-size:18px;line-height:1.2;text-transform:uppercase;text-align:center;position:relative;-webkit-transform:translateX(-10px);transform:translateX(-10px);padding:18px 10px 15px 30px;min-width:180px}
 .outer-banner-wrap .button-arrow span{letter-spacing:1px;position:relative;z-index:10}
 .outer-banner-wrap .button-arrow:before,.outer-banner-wrap .button-arrow:after{content:"";display:block;width:60px;height:50%;position:absolute;right:-15px;background:#ba0d30}
@@ -5302,7 +5303,7 @@ body.subpage.single .intro-galleries.half .leftcol{width:30%}
 body.subpage.single .intro-galleries.half .leftcol .wrap{padding:15px}
 body.subpage.single .intro-galleries.half .leftcol .inner{max-width:80%}
 body.subpage.single .intro-galleries.half .rightcol{width:70%;padding-left:15px}
-.text-centered-section{padding-top:20px;padding-bottom:80px}
+.text-centered-section{padding-top:50px;padding-bottom:70px}
 .text-centered-section.dark{padding-top:80px;padding-bottom:80px}
 .section-content#section-options{padding-top:60px;padding-bottom:60px}
 .section-content#section-options .activities{width:70%;margin-bottom:0;padding-right:40px}
