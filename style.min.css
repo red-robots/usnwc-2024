@@ -5098,7 +5098,7 @@ body.single-post .guest-author .bio{margin:10px 0 0}
 body.single-post .guest-author .bio p{color:#000}
 .two-column-list{-webkit-column-count:2;-moz-column-count:2;column-count:2;-webkit-column-gap:1em;-moz-column-gap:1em;column-gap:1em;margin:10px 0 25px;text-align:left}
 .two-column-list p,.two-column-list li{-webkit-column-break-inside:avoid;-moz-column-break-inside:avoid;break-inside:avoid-column;margin:5px 0}
-.two-column-list h3{font-family:"Brandon Bold";margin-bottom:5px}
+.two-column-list h3{font-family:"Brandon Bold";font-size:20px;margin-bottom:5px}
 ul:has(.two-column-list){margin:0;padding:0}
 ul:has(.two-column-list) .two-column-list{-webkit-column-count:unset;-moz-column-count:unset;column-count:unset;-webkit-column-gap:unset;-moz-column-gap:unset;column-gap:unset}
 ul>li:has(.two-column-list){margin:0;list-style:none}
