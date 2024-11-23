@@ -4705,7 +4705,7 @@ body.modal-open{overflow:hidden}
 .popup-content-wrapper.details-film-series h2.eventName{padding:50px 30px;text-align:center;font-family:"Brandon Bold";font-size:35px;line-height:1.2;margin:0;color:#000;text-transform:uppercase}
 .popup-content-wrapper.details-film-series figure.featured-image{margin:0;position:relative}
 .popup-content-wrapper.details-film-series figure.featured-image img.post-image{width:100%;height:auto}
-.popup-content-wrapper.details-film-series figure.featured-image .banner-bottom{position:absolute;left:0;bottom:0;width:100%;z-index:100}
+.popup-content-wrapper.details-film-series figure.featured-image .banner-bottom{position:absolute;left:0;bottom:0;width:100%;z-index:100;overflow:hidden}
 .popup-content-wrapper.details-film-series figure.featured-image .banner-bottom img{display:block;width:100%;height:auto;-webkit-transform:scale(1.5);transform:scale(1.5)}
 .popup-content-wrapper.details-film-series .event-intro{max-width:900px;width:100%;margin:0 auto;padding:50px 30px;font-size:18px;line-height:1.3}
 .popup-content-wrapper.details-film-series .buttonBlock{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1em;margin-top:40px;margin-bottom:40px}
@@ -4776,8 +4776,8 @@ body.modal-open{overflow:hidden}
 #hero--single{position:relative}
 #hero--single figure{margin:0;position:relative;padding-bottom:36vw}
 #hero--single figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
-#hero--single .banner-bottom{position:absolute;left:0;bottom:0;width:100%;z-index:10;pointer-events:none}
-#hero--single .banner-bottom img{width:100%;height:auto}
+#hero--single .banner-bottom{position:absolute;left:0;bottom:0;width:100%;z-index:10;pointer-events:none;overflow:hidden}
+#hero--single .banner-bottom img{display:block;width:100%;height:auto;-webkit-transform:scale(1.5);transform:scale(1.5)}
 .section--schedules{width:100%;float:left;padding-bottom:0;margin-bottom:0}
 .section--schedules .course-times .lineItem span{background:#f2f2f2 !important}
 .section--schedules .course-times .lineItem span.time{font-size:18px !important}

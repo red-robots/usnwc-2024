@@ -19491,6 +19491,7 @@ body.modal-open {
       bottom: 0;
       width: 100%;
       z-index: 100;
+      overflow: hidden;
       img {
         display: block;
         width: 100%;
@@ -20001,6 +20002,7 @@ body.modal-open {
     width: 100%;
     z-index: 10;
     pointer-events: none;
+    overflow: hidden;
     img {
       display: block;
       width: 100%;
