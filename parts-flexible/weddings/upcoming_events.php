@@ -158,7 +158,7 @@
 
           <?php if($btnUrl && $btnTitle) { ?>
           <div class="buttonBlock buttonMiddle">
-            <a href="<?php echo $btnUrl ?>" target="<?php echo $btnTarget ?>" class="button button-red uppercase"><?php echo $btnTitle ?></a>
+            <a href="<?php echo $btnUrl ?>" target="<?php echo $btnTarget ?>" class="button uppercase"><?php echo $btnTitle ?></a>
           </div>
           <?php } ?>
 
