@@ -64,7 +64,8 @@ $show_faqs = get_field('show_faqs_items');
         include( locate_template('parts/content-faqs.php') ); 
         include( locate_template('inc/faqs.php') ); 
       } 
-    } ?>
+    } 
+    ?>
 
 </div><!-- #primary -->
 <script type="text/javascript">
