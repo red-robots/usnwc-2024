@@ -22,7 +22,9 @@
 #wpadminbar {
   z-index: 99999999;
 }
-
+.gform_wrapper .gform_button.button {
+  text-transform: uppercase!important;
+}
 nav.new-nav .mega-menu .mega-menu-content a {
   padding-left: 0!important;
   padding-right: 0!important;
@@ -1759,16 +1761,20 @@ section.homepage-hero {
 		background-color: $red;
 		text-transform: uppercase;
 		padding: 10px 15px;
-		border-radius: 10px;
+		border-radius: 150px;
 		letter-spacing: 2px;
 		transform: scale(1);
 		transition: all ease .3s;
+    min-width: 120px;
+    text-align: center;
 		@include tab {
-			padding: 15px 25px;
+			padding: 13px 25px 11px;
 		}
 		&:hover {
-			transform: scale(1.1);
+			// transform: scale(1.1);
 			text-decoration: none;
+      background-color: #000;
+      color: #FFF;
 		}
 	}
 }
@@ -4293,8 +4299,9 @@ a.button {
   display: inline-block;
   padding: 7px 25px 6px;
   border-radius: 100px;
-  background-color: $red;
-  color: #FFF;
+  color: #5a5959;
+  border: 1px solid #a2a2a2;
+  background-color: #FFF;
   font-family: $font-brandon-regular;
   font-size: 16px;
   text-decoration: none!important;
@@ -4302,12 +4309,14 @@ a.button {
   text-align: center;
   &:hover, &:focus {
     color: #FFF!important;
-    background-color: #000;
+    border-color: $red;
+    background-color: $red;
   }
   &.uppercase {
     text-transform: uppercase!important;
   }
   &.button-white {
+    border: none!important;
     text-transform: uppercase;
     background-color: #FFF;
     color: #000;
@@ -6127,17 +6136,17 @@ body.single-instructions {
     display: inline-block;
     margin-top: 10px;
     margin-right: 15px;
-    .button.button-gray {
-      background-color: #fff;
-      color: $gray_dark;
-      padding: 7px 25px 6px;
-      box-shadow: 0 3px 5px rgba(0, 0, 0, .15);
-      text-transform: uppercase;
-      &:hover, &:focus {
-        background-color: $red!important;
-        color: #FFF!important;
-      }
-    }
+    // .button.button-gray {
+    //   background-color: #fff;
+    //   color: $gray_dark;
+    //   padding: 7px 25px 6px;
+    //   box-shadow: 0 3px 5px rgba(0, 0, 0, .15);
+    //   text-transform: uppercase;
+    //   &:hover, &:focus {
+    //     background-color: $red!important;
+    //     color: #FFF!important;
+    //   }
+    // }
   }
 
   .textcol .fulltext h3 {
@@ -19070,20 +19079,20 @@ body.subpage.single.single-activity {
     display: inline-block;
     margin-top: 20px;
   }
-  .button-element.button {
-    // border: 1px solid $gray_dark;
-    // background-color: transparent;
-    background-color: #FFF;
-    color: $gray_dark;
-    padding: 7px 25px 6px;
-    box-shadow: 0 3px 5px rgba(0,0,0,.15);
-    text-transform: uppercase;
-    &:hover {
-      background-color: $red;
-      border-color: $red;
-      color: #FFF;
-    }
-  }
+  // .button-element.button {
+  //   // border: 1px solid $gray_dark;
+  //   // background-color: transparent;
+  //   background-color: #FFF;
+  //   color: $gray_dark;
+  //   padding: 7px 25px 6px;
+  //   box-shadow: 0 3px 5px rgba(0,0,0,.15);
+  //   text-transform: uppercase;
+  //   &:hover {
+  //     background-color: $red;
+  //     border-color: $red;
+  //     color: #FFF;
+  //   }
+  // }
 
   @media screen and (max-width: 960px) {
     .gallery-content {
@@ -19255,7 +19264,7 @@ section.route-details.route-details-new {
         padding: 20px;
         margin-bottom: 10px;
         a.button {
-          padding: 7px 25px 5px;
+          padding: 7px 25px 6px;
           text-transform: uppercase;
         }
         figure {
