@@ -62,8 +62,9 @@ get_header(); ?>
             $e_time = get_sub_field('entrytime');
             $slides = get_sub_field('entryslides');
             $staticImages = get_sub_field('staticImages');
+            $hasImages = ($slides || $staticImages) ? true : false;
             $image_display_type = get_sub_field('image_display_type');
-            $boxClass = ( ($e_title || $e_text) && $slides ) ? 'half':'full';
+            $boxClass = ( ($e_title || $e_text) && $hasImages ) ? 'half':'full';
             $id = get_the_ID();
           ?>
 
