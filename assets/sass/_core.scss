@@ -4307,6 +4307,7 @@ a.button {
   text-decoration: none!important;
   min-width: 120px;
   text-align: center;
+  text-transform: uppercase;
   &:hover, &:focus {
     color: #FFF!important;
     border-color: $red;
@@ -5974,23 +5975,23 @@ body.single-instructions {
         line-height: 1.2;
         color: #000;
       }
-      .buttondiv {
-        a {
-          border: none;
-          background-color: #fff;
-          padding: 7px 25px;
-          border-radius: 60px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, .16);
-          text-transform: uppercase;
-          &:before {
-            display: none;
-          }
-          &:hover, &:focus {
-            background-color: $red;
-            color: #FFF;
-          }
-        }
-      }
+      // .buttondiv {
+      //   a {
+      //     border: none;
+      //     background-color: #fff;
+      //     padding: 7px 25px;
+      //     border-radius: 60px;
+      //     box-shadow: 0 2px 5px rgba(0, 0, 0, .16);
+      //     text-transform: uppercase;
+      //     &:before {
+      //       display: none;
+      //     }
+      //     &:hover, &:focus {
+      //       background-color: $red;
+      //       color: #FFF;
+      //     }
+      //   }
+      // }
     }
 	}
 
@@ -14380,6 +14381,10 @@ body.single-race .filter-wrapper {
   .eventsCards {
     width: 100%;
     float: left;
+    .wrapper {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
   .titlediv {
     border-bottom: 2px solid $gray_border;

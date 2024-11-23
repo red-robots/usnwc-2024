@@ -118,7 +118,7 @@
                               $modal_text = $fullText;
                               ?>
                               <div class="cta-buttons buttondiv">
-                                <a data-toggle="modal" data-target="#<?php echo $modal_id ?>" class="btn-sm xs"><span>See Details</span></a>
+                                <a data-toggle="modal" data-target="#<?php echo $modal_id ?>" class="button"><span>See Details</span></a>
                               </div>
                               <?php include( locate_template('parts/flexible-content-popup.php') ); ?>
                             <?php } else { ?>
@@ -131,7 +131,7 @@
                                   $btnLink = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
                                   $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
                                   if($btnName && $btnLink) { ?>
-                                  <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>"<?php echo $attribute ?> class="btn-sm xs"><span><?php echo $btnName ?></span></a>
+                                  <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>"<?php echo $attribute ?> class="button"><span><?php echo $btnName ?></span></a>
                                   <?php } ?>
                                 <?php } ?>
                                 </div>

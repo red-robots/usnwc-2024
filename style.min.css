@@ -2483,14 +2483,12 @@ h1.page-title span:after{content:"";display:block;width:30%;height:2px;backgroun
 .title-w-icon{text-align:center;padding-top:30px;padding-bottom:35px}
 .title-w-icon h2{font-family:"Lato",sans-serif;font-weight:400;font-size:25px;line-height:1.2;text-transform:uppercase;letter-spacing:2px;margin:0}
 .title-w-icon .title-icon span{display:inline-block;width:30px;height:30px;background-size:100%;background-position:center;background-repeat:no-repeat}
-input.button,button.button,a.button{display:inline-block;padding:7px 25px 6px;border-radius:100px;color:#5a5959;border:1px solid #a2a2a2;background-color:#fff;font-family:"Brandon";font-size:16px;text-decoration:none !important;min-width:120px;text-align:center}
+input.button,button.button,a.button{display:inline-block;padding:7px 25px 6px;border-radius:100px;color:#5a5959;border:1px solid #a2a2a2;background-color:#fff;font-family:"Brandon";font-size:16px;text-decoration:none !important;min-width:120px;text-align:center;text-transform:uppercase}
 input.button:hover,input.button:focus,button.button:hover,button.button:focus,a.button:hover,a.button:focus{color:#fff !important;border-color:#ba0d30;background-color:#ba0d30}
 input.button.uppercase,button.button.uppercase,a.button.uppercase{text-transform:uppercase !important}
 input.button.button-white,button.button.button-white,a.button.button-white{border:none !important;text-transform:uppercase;background-color:#fff;color:#000}
 input.button.button-white:hover,input.button.button-white:focus,button.button.button-white:hover,button.button.button-white:focus,a.button.button-white:hover,a.button.button-white:focus{color:#fff !important;background-color:#000}
 input.button.button-pill,button.button.button-pill,a.button.button-pill{background-color:#fff;color:#444}
-input.button.btn-white-shadow,button.button.btn-white-shadow,a.button.btn-white-shadow{border:none !important;background-color:#fff;padding:8px 25px 7px;border-radius:60px;-webkit-box-shadow:0 2px 5px rgba(0,0,0,.16);box-shadow:0 2px 5px rgba(0,0,0,.16);text-transform:uppercase;color:#5a5959;font-size:15px}
-input.button.btn-white-shadow:hover,input.button.btn-white-shadow:focus,button.button.btn-white-shadow:hover,button.button.btn-white-shadow:focus,a.button.btn-white-shadow:hover,a.button.btn-white-shadow:focus{color:#fff !important;background-color:#ba0d30}
 .button-rounded{font-family:"Brandon";font-size:16px;text-transform:uppercase;border-radius:100px;background-color:#ba0d30;color:#fff;padding:12px 40px 10px}
 .button-rounded:hover,.button-rounded:focus{color:#fff;text-decoration:none;background-color:#000}
 .btn-sm,.btn-default,.section-image-cards .button.button-type-button,.button-pill{font-family:"Brandon" !important;font-size:13px !important;line-height:1.2 !important;letter-spacing:.05em !important;text-transform:uppercase;border-radius:100px;background-color:transparent;padding:7px 25px 6px;color:#5a5959;border:1px solid #a2a2a2;text-decoration:none !important}
@@ -2743,9 +2741,6 @@ body.single-instructions #primary #section-faqs{padding-top:60px;padding-bottom:
 .text-and-image-blocks section.section-break h3,.menu-sections section.section-break h3{text-transform:uppercase;text-align:center}
 .text-and-image-blocks .mscol,.menu-sections .mscol{margin-top:20px;margin-bottom:80px;background-color:#f2f2f2;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 .text-and-image-blocks .mscol .textcol h3.mstitle,.menu-sections .mscol .textcol h3.mstitle{font-family:"Brandon Bold";font-size:35px;line-height:1.2;color:#000}
-.text-and-image-blocks .mscol .textcol .buttondiv a,.menu-sections .mscol .textcol .buttondiv a{border:0;background-color:#fff;padding:7px 25px;border-radius:60px;-webkit-box-shadow:0 2px 5px rgba(0,0,0,.16);box-shadow:0 2px 5px rgba(0,0,0,.16);text-transform:uppercase}
-.text-and-image-blocks .mscol .textcol .buttondiv a:before,.menu-sections .mscol .textcol .buttondiv a:before{display:none}
-.text-and-image-blocks .mscol .textcol .buttondiv a:hover,.text-and-image-blocks .mscol .textcol .buttondiv a:focus,.menu-sections .mscol .textcol .buttondiv a:hover,.menu-sections .mscol .textcol .buttondiv a:focus{background-color:#ba0d30;color:#fff}
 .text-and-image-blocks .gallerycol,.menu-sections .gallerycol{overflow:hidden}
 .text-and-image-blocks .gallerycol .flexslider,.text-and-image-blocks .gallerycol .slides,.text-and-image-blocks .gallerycol .slides li.slide-item,.menu-sections .gallerycol .flexslider,.menu-sections .gallerycol .slides,.menu-sections .gallerycol .slides li.slide-item{width:100%;float:left;position:relative;background-color:#ccc;border-radius:0}
 .text-and-image-blocks .gallerycol .slides li.slide-item,.menu-sections .gallerycol .slides li.slide-item{background-size:cover;background-position:center;background-repeat:no-repeat}
@@ -4005,6 +4000,7 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .cards-format-line-items{padding-left:20px;padding-right:20px}
 .cards-format-line-items .wrapper{max-width:100%;width:100%;margin:0 auto}
 .cards-format-line-items .introWrap,.cards-format-line-items .eventsCards{width:100%;float:left}
+.cards-format-line-items .introWrap .wrapper,.cards-format-line-items .eventsCards .wrapper{padding-left:0;padding-right:0}
 .cards-format-line-items .titlediv{border-bottom:2px solid #b5b5b5}
 .cards-format-line-items .titlediv .stitle{margin-bottom:13px}
 .cards-format-line-items .titlediv p:first-child{margin-top:0}
