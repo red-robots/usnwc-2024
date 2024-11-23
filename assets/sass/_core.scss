@@ -19466,11 +19466,17 @@ section.route-details.route-details-new {
 }
 
 .section-fieldtrip_form {
+  padding-left: 20px;
+  padding-right: 20px;
   .wrapper {
-    max-width: 900px;
     background: #f7f7f7;
     padding: 30px;
     border-radius: 20px;
+  }
+  .section-text {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
   }
   .section-title {
     @include H2_STYTLE;
