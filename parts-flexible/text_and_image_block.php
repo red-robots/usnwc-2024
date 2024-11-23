@@ -101,7 +101,7 @@
                         <?php } ?>
 
                         <?php if ( ($e_text || $buttons) || ($has_dash_items && $line_items) || ($is_repeater_dashed_items && $repeater_dashed_items) ) { ?>
-                          <div class="textwrap text-center">
+                          <div class="textwrap<?php echo ($boxClass=='half') ? '':' text-center'; ?>">
                             <?php if ($e_text) { ?>
                             <div class="mstext <?php echo $textType ?>"><?php echo $e_text ?></div>
                             <?php } ?>
