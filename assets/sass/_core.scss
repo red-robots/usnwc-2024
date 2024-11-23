@@ -14315,8 +14315,14 @@ body.single-race .filter-wrapper {
       letter-spacing: .01em;
       text-transform: uppercase;
     }
-    p {
+    p, span, div, a {
       color: #FFF;
+    }
+    a {
+      text-decoration: underline;
+      &:hover {
+        opacity: 0.85;
+      }
     }
   }
   .buttonBlock {

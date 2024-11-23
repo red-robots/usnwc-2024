@@ -3998,7 +3998,9 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .fullwidth-red-bar-section .introWrapper h2,.fullwidth-red-bar-section .introWrapper h3,.fullwidth-red-bar-section .introWrapper h4{font-family:"Brandon Bold" !important}
 .fullwidth-red-bar-section .introWrapper h2{font-size:35px;line-height:1.3;letter-spacing:.01em;text-transform:uppercase}
 .fullwidth-red-bar-section .introWrapper h3{font-size:30px;line-height:1.3;letter-spacing:.01em;text-transform:uppercase}
-.fullwidth-red-bar-section .introWrapper p{color:#fff}
+.fullwidth-red-bar-section .introWrapper p,.fullwidth-red-bar-section .introWrapper span,.fullwidth-red-bar-section .introWrapper div,.fullwidth-red-bar-section .introWrapper a{color:#fff}
+.fullwidth-red-bar-section .introWrapper a{text-decoration:underline}
+.fullwidth-red-bar-section .introWrapper a:hover{opacity:.85}
 .fullwidth-red-bar-section .buttonBlock{margin-top:25px}
 .cards-format-line-items{padding-left:20px;padding-right:20px}
 .cards-format-line-items .wrapper{max-width:100%;width:100%;margin:0 auto}
