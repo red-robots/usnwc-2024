@@ -2129,6 +2129,8 @@ section.homepage-hero .home-info .branding img{width:100%}
 .cta{width:auto;display:inline-block;margin-right:10px}
 .cta a{display:block;color:#fff;background-color:#ba0d30;text-transform:uppercase;padding:10px 15px;border-radius:150px;letter-spacing:2px;-webkit-transform:scale(1);transform:scale(1);-webkit-transition:all ease .3s;transition:all ease .3s;min-width:120px;text-align:center}
 .cta a:hover{text-decoration:none;background-color:#fff;color:#000}
+.today-dropdown .cta a{border:1px solid #ba0d30}
+.today-dropdown .cta a:hover{color:#5a5959 !important;border:1px solid #a2a2a2 !important;background-color:#fff}
 section.full-bleed-promo{width:100%;position:relative;float:left}
 section.full-bleed-promo.rounded_with_padding{padding:10px}
 section.full-bleed-promo.rounded_with_padding img{border-radius:20px}
@@ -3949,9 +3951,6 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .section-middle-card .fxcol.left .inside .bottom .gform_wrapper .gfield input,.section-middle-card .fxcol.left .inside .bottom .gform_wrapper .gfield textarea{-webkit-transition:all ease .3s;transition:all ease .3s;border:1px solid #fff}
 .section-middle-card .fxcol.left .inside .bottom .gform_wrapper .gfield input:focus,.section-middle-card .fxcol.left .inside .bottom .gform_wrapper .gfield textarea:focus{outline:0;border:1px solid #000;-webkit-box-shadow:0 0 5px rgba(0,0,0,.15);box-shadow:0 0 5px rgba(0,0,0,.15)}
 .section-middle-card .fxcol.left .inside .bottom .gform_footer{margin-top:10px;margin-bottom:0;padding-bottom:0}
-.section-middle-card .fxcol.left .inside .bottom .gform_footer .button{border:0;background-color:#fff;padding:8px 25px 7px;border-radius:60px;-webkit-box-shadow:0 2px 5px rgba(0,0,0,.16);box-shadow:0 2px 5px rgba(0,0,0,.16);text-transform:uppercase;color:#555;font-size:16px;line-height:1.2}
-.section-middle-card .fxcol.left .inside .bottom .gform_footer .button:before{display:none}
-.section-middle-card .fxcol.left .inside .bottom .gform_footer .button:hover,.section-middle-card .fxcol.left .inside .bottom .gform_footer .button:focus{background-color:#ba0d30;color:#fff}
 .section-middle-card .fxcol.right figure{margin:0;height:100%;padding:20vh;position:relative}
 .section-middle-card .fxcol.right figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .site-footer{background-color:#fff}
@@ -4318,6 +4317,11 @@ section.visit .tile.full-bleed div.img{border-radius:0}
 .todaySnapshotInfo .info-wrapper .infocol.is-status .status{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:100px;height:100px;border:2px solid #000;border-radius:100%;text-align:center;position:relative;overflow:hidden;font-family:"Lato",sans-serif;font-size:22px;font-weight:600;text-transform:uppercase;color:#5d5d5d}
 .todaySnapshotInfo .info-wrapper .infocol.is-status .status:before{content:"";display:block;width:100%;height:100%;border-radius:100%;position:absolute;top:0;left:0;border:4px solid #4ed84e}
 .todaySnapshotInfo .info-wrapper .infocol.is-status .status.close:before{border:4px solid #e33333}
+.todaySnapshotInfo .infocol.is-status .status{display:none !important}
+.todaySnapshotInfo .infocol.is-status .status-text{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:100px !important;height:100px !important;border:2px solid #000;border-radius:100%;text-align:center;position:relative;overflow:hidden;font-family:"Lato",sans-serif !important;font-size:22px !important;font-weight:600;text-transform:uppercase;color:#5d5d5d !important}
+.todaySnapshotInfo .infocol.is-status .status-text:before{content:"";display:block;width:100%;height:100%;border-radius:100%;position:absolute;top:0;left:0;border:4px solid #4ed84e}
+.todaySnapshotInfo .infocol.is-status.open .status-text:before{border:4px solid #4ed84e}
+.todaySnapshotInfo .infocol.is-status.close .status-text:before,.todaySnapshotInfo .infocol.is-status.closed .status-text:before{border:4px solid #e33333}
 .snapshop-wrapper.section-snapshop{padding-top:0}
 .snapshop-wrapper.section-snapshop .todaySnapshotInfo{border-bottom:0;padding-left:30px;padding-right:30px}
 .snapshop-wrapper.section-snapshop .todaySnapshotInfo .info-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
