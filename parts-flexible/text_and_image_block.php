@@ -68,8 +68,14 @@
               } else {
                 $slides = $col['gallery_image'];
               }
+
+              $hasImageOrMap = ($slides) ?  true : false;
+              if($map_image_type=='map' && $map_embed_code) {
+                $hasImageOrMap = true;
+              }
+
               $buttons = $col['buttons'];
-              $boxClass = ( ($e_title || $e_text) && $slides ) ? 'half':'full';
+              $boxClass = ( ($e_title || $e_text) && $hasImageOrMap ) ? 'half':'full';
               $textType = ($shorttext) ? 'shorttext':'fulltext';
               if($shorttext) {
                 $e_text = $shorttext;
