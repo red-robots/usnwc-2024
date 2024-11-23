@@ -2128,7 +2128,7 @@ section.homepage-hero .home-info .branding{width:50%;margin:20px auto}
 section.homepage-hero .home-info .branding img{width:100%}
 .cta{width:auto;display:inline-block;margin-right:10px}
 .cta a{display:block;color:#fff;background-color:#ba0d30;text-transform:uppercase;padding:10px 15px;border-radius:150px;letter-spacing:2px;-webkit-transform:scale(1);transform:scale(1);-webkit-transition:all ease .3s;transition:all ease .3s;min-width:120px;text-align:center}
-.cta a:hover{text-decoration:none;background-color:#000;color:#fff}
+.cta a:hover{text-decoration:none;background-color:#fff;color:#000}
 section.full-bleed-promo{width:100%;position:relative;float:left}
 section.full-bleed-promo.rounded_with_padding{padding:10px}
 section.full-bleed-promo.rounded_with_padding img{border-radius:20px}
