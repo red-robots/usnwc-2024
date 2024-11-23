@@ -3965,7 +3965,8 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .site-footer .logo img{-webkit-filter:invert(100%);filter:invert(100%);width:100%}
 .site-footer ul{width:auto;margin:0;padding:0}
 .site-footer li{display:inline-block;text-transform:uppercase;margin:10px 0;width:100%;text-align:center}
-.site-footer a{color:rgba(0,0,0,.9)}
+.site-footer a{font-size:13px;color:rgba(0,0,0,.9)}
+.site-footer a:hover,.site-footer a:focus{color:#ba0d30}
 .subscribeForm{width:100%;position:relative;float:left}
 .subscribeForm label{display:block;position:absolute;top:11px;left:11px;z-index:5;color:#a0a0a0}
 .subscribeForm .form-group{width:100%;float:left;position:relative;background:#fff}
@@ -5555,7 +5556,7 @@ body.single-festival .filter-wrapper.filterstyle .select-wrap{width:75%}
 .section-middle-card .fxcol.right figure{padding:33vh}
 .site-footer .wrapper{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 .site-footer .logo{margin-right:20px;margin-bottom:0}
-.site-footer li{width:auto;margin:0 20px}
+.site-footer li{width:auto;margin:0 2rem}
 .teaser-form{width:40%}
 .fullwidth-red-bar-section .introWrapper{max-width:900px;width:100%;margin:0 auto}
 .cards-format-line-items .wrapper{max-width:90vw}

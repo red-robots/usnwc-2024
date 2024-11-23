@@ -14061,11 +14061,15 @@ body.single-race .filter-wrapper {
 		text-align: center;
 		@include tab {
 			width: auto;
-			margin: 0 20px;
+			margin: 0 2rem;
 		}
 	}
 	a {
+    font-size: 13px;
 		color: rgba(#000, .9);
+    &:hover, &:focus {
+      color: $red;
+    }
 	}
 }
 

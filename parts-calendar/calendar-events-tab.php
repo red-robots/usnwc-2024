@@ -15,6 +15,7 @@ $cpttypes = [
   'dining'      => 'Dining',
   'music'       => 'River Jam'
 ];
+
 $selected_filter_name = ($filter_type && isset($cpttypes[$filter_type])) ? $cpttypes[$filter_type]:'';
 $postTypes = $cpttypes;
 

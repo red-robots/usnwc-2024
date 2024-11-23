@@ -784,6 +784,8 @@ body.post-type-activity_schedule .acf-field-repeater[data-name="items"] [data-na
 }
 
 
-
+body.post-type-activity_schedule #acf-group_5f460b222fe52 {
+  display: none!important;
+}
 
 
