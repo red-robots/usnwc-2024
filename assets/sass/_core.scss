@@ -20909,6 +20909,17 @@ body.modal-open {
   }
 }
 
+section.main-description .wrapper {
+  p {
+    color: #707070;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto 20px;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}
+
 body.page-template-page-repeatable {
   .fullwidth-red-bar-section {
     margin-top: 50px;
