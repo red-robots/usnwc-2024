@@ -1947,5 +1947,23 @@ section.visit.flexible-image-cards,
   }
 }
 
+#section-schedule.section-content {
+  .schedules-list li.item {
+    padding: 3px 0;
+  }
+  .schedules-list ul.items li.no-event-info {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    .time {
+      position: relative !important;
+      width: 100% !important;
+      display: block;
+      text-align: center;
+      font-family: $font-brandon-bold;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+  }
+}
 
 

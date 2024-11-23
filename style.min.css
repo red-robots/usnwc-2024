@@ -2635,6 +2635,9 @@ body.subpage.single .content-default .black-section .wrapper a:hover{color:#ba0d
 .sched-inside-new .activities .info span.time span{padding-right:5px;padding-top:5px;padding-bottom:5px;top:3px}
 .sched-inside-new .activities .info span.event{width:80%;text-align:right;line-height:1.2;color:#707070}
 .sched-inside-new .activities .info span.event span{display:inline;padding-left:7px}
+body:has(.subpageBanner) .no-banner-spacer{display:none}
+body:has(.subpageBanner).subpage .site-content{padding-top:0}
+body:has(.subpageBanner) .hero-register-button .stats{top:35px}
 body.single-instructions.subpage .site-content{padding-top:0}
 body.single-instructions .no-banner-spacer{display:none}
 body.single-instructions #section-schedule,body.single-instructions .section-schedule{margin-bottom:16px}
@@ -5184,6 +5187,9 @@ body.page-template-page-visit section.visit.flexible-image-cards .tile.half figu
 .sponsor-images .flexwrap figure a:hover,.sponsor-images .flexwrap figure a:focus{-webkit-transform:translateY(-3px);transform:translateY(-3px)}
 .sponsor-images .flexwrap figure a:focus{outline:1px dotted #555}
 .sponsor-images .flexwrap figure img{width:auto;height:65px}
+#section-schedule.section-content .schedules-list li.item{padding:3px 0}
+#section-schedule.section-content .schedules-list ul.items li.no-event-info{margin-top:15px;margin-bottom:10px}
+#section-schedule.section-content .schedules-list ul.items li.no-event-info .time{position:relative !important;width:100% !important;display:block;text-align:center;font-family:"Brandon Bold";font-size:16px;text-transform:uppercase}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}

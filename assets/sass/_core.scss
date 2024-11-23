@@ -5338,6 +5338,17 @@ body.subpage.single .content-default .black-section {
 		}
 	}
 }
+body:has(.subpageBanner) {
+  .no-banner-spacer {
+    display: none;
+  }
+  &.subpage .site-content {
+    padding-top: 0;
+  }
+  .hero-register-button .stats {
+    top: 35px;
+  }
+}
 body.single-instructions {
   &.subpage .site-content {
     padding-top: 0;

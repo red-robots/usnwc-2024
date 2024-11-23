@@ -1328,5 +1328,16 @@ var getGridSize = function() {
     $('.simplesocialbuttons').appendTo('#socialMediaShare');
   }
 
+  if( $('#section-schedule.section-content ul.items').length ) {
+    $('#section-schedule.section-content ul.items li').each(function(){
+      if( $(this).find('.event').length && $(this).find('.event').text()=='' ) {
+        $(this).addClass('no-event-info');
+      }
+      if( $(this).find('.time').length && $(this).find('.time').text()=='' ) {
+        $(this).addClass('no-time-info');
+      }
+    });
+  }
+
 
 });// END #####################################    END
