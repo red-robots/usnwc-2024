@@ -4694,6 +4694,10 @@ section.route-details.route-details-new .flexcol:last-child{border-right:0}
 .section-fieldtrip_form .section-title{font-family:"Brandon Bold";font-size:40px;line-height:1.2;text-transform:uppercase;padding-bottom:10px;color:#000;border-bottom:2px solid #ccc;margin:0 0 30px}
 .section-fieldtrip_form h2.gform_title{font-size:36px}
 .section-fieldtrip_form input[type=text],.section-fieldtrip_form input[type=email],.section-fieldtrip_form input[type=phone],.section-fieldtrip_form input[type=tel],.section-fieldtrip_form input[type=number],.section-fieldtrip_form textarea,.section-fieldtrip_form select{border-radius:0;border:1px solid #787878}
+body.page-template-page-salesforce .text-centered-section .wrapper{max-width:1200px}
+body.page-template-page-salesforce .gform_wrapper{background:#f7f7f7;padding:30px;border-radius:20px}
+body.page-template-page-salesforce .gform_wrapper h2.gform_title{font-size:36px}
+body.page-template-page-salesforce .gform_wrapper input[type=text],body.page-template-page-salesforce .gform_wrapper input[type=email],body.page-template-page-salesforce .gform_wrapper input[type=phone],body.page-template-page-salesforce .gform_wrapper input[type=tel],body.page-template-page-salesforce .gform_wrapper input[type=number],body.page-template-page-salesforce .gform_wrapper textarea,body.page-template-page-salesforce .gform_wrapper select{border-radius:0;border:1px solid #787878}
 #customModalContainer.filmSeriesInfo.show{display:block;background-color:rgba(0,0,0,.96)}
 #customModalContainer.filmSeriesInfo.show #customModalInner{-webkit-animation-delay:.2s;animation-delay:.2s;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:fadeInDown;animation-name:fadeInDown}
 #customModalContainer.filmSeriesInfo.show #customModalClose:before,#customModalContainer.filmSeriesInfo.show #customModalClose:after{background:#848484}
@@ -5628,6 +5632,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-pricing_cards .flexwrap .fxcol{width:33.333%}
 .section-pricing_cards .flexwrap.show2 .fxcol{width:50%}
 .section-pricing_cards .flexwrap.show3 .fxcol{width:33.333%}
+body.page-template-page-salesforce .gform_wrapper{padding-left:5vw;padding-right:5vw}
 .popup-content-wrapper.details-film-series .infoboxes .infobox{width:33.33%;border-right:1px solid #ccc}
 .popup-content-wrapper.details-film-series .infoboxes .infobox:last-child{border-right:0}
 .stories-feeds-section .wrapper{max-width:85vw}

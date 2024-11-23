@@ -19502,6 +19502,33 @@ section.route-details.route-details-new {
   }
 }
 
+body.page-template-page-salesforce {
+  .text-centered-section .wrapper {
+    max-width: 1200px;
+  }
+  .gform_wrapper {
+    background: #f7f7f7;
+    padding: 30px;
+    border-radius: 20px;
+    @include tab {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+    h2.gform_title {
+      font-size: 36px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="phone"],
+    input[type="tel"],
+    input[type="number"],
+    textarea, select {
+      border-radius: 0;
+      border: 1px solid #787878;
+    }
+  }
+}
+
 #customModalContainer.filmSeriesInfo.show {
   display: block;
   background-color: rgba(0,0,0,.96);
