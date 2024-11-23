@@ -4330,20 +4330,20 @@ a.button {
     color: #444;
   }
 
-  &.btn-white-shadow {
-    border: none!important;
-    background-color: #fff;
-    padding: 8px 25px 7px;
-    border-radius: 60px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .16);
-    text-transform: uppercase;
-    color: #5a5959;
-    font-size: 15px;
-    &:hover, &:focus {
-      color: #FFF!important;
-      background-color: $red;
-    }
-  }
+  // &.btn-white-shadow {
+  //   border: none!important;
+  //   background-color: #fff;
+  //   padding: 8px 25px 7px;
+  //   border-radius: 60px;
+  //   box-shadow: 0 2px 5px rgba(0, 0, 0, .16);
+  //   text-transform: uppercase;
+  //   color: #5a5959;
+  //   font-size: 15px;
+  //   &:hover, &:focus {
+  //     color: #FFF!important;
+  //     background-color: $red;
+  //   }
+  // }
 }
 
 .button-rounded {
