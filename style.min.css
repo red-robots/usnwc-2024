@@ -2029,7 +2029,7 @@ body.nav-open .menu-toggle{opacity:0}
 #banner{width:100%;float:left;position:relative;background-color:#000}
 #banner.video-playing{z-index:300}
 #banner .banner-bottom{width:100%;position:absolute;bottom:-5px;left:0;z-index:1000000;overflow:hidden}
-#banner .banner-bottom img{width:100%}
+#banner .banner-bottom img{display:block;width:100%;height:auto;-webkit-transform:scale(1.5);transform:scale(1.5)}
 #banner .logo-overlay{position:absolute;top:40%;left:0;right:0;margin-left:auto;margin-right:auto;width:200px;z-index:10}
 #banner .logo-overlay img{width:100%}
 #banner .static-banner,#banner .flexslider{border-radius:0}
@@ -4706,7 +4706,7 @@ body.modal-open{overflow:hidden}
 .popup-content-wrapper.details-film-series figure.featured-image{margin:0;position:relative}
 .popup-content-wrapper.details-film-series figure.featured-image img.post-image{width:100%;height:auto}
 .popup-content-wrapper.details-film-series figure.featured-image .banner-bottom{position:absolute;left:0;bottom:0;width:100%;z-index:100}
-.popup-content-wrapper.details-film-series figure.featured-image .banner-bottom img{width:100%;height:auto}
+.popup-content-wrapper.details-film-series figure.featured-image .banner-bottom img{display:block;width:100%;height:auto;-webkit-transform:scale(1.5);transform:scale(1.5)}
 .popup-content-wrapper.details-film-series .event-intro{max-width:900px;width:100%;margin:0 auto;padding:50px 30px;font-size:18px;line-height:1.3}
 .popup-content-wrapper.details-film-series .buttonBlock{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1em;margin-top:40px;margin-bottom:40px}
 .popup-content-wrapper.details-film-series .buttonBlock a.button{text-transform:uppercase}

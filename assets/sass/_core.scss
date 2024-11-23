@@ -1031,7 +1031,10 @@ body.nav-open {
 		z-index: 1000000;
     overflow: hidden;
 		img {
+      display: block;
 			width: 100%;
+      height: auto;
+      transform: scale(1.5);
 		}
 	}
 	.logo-overlay {
@@ -19489,8 +19492,10 @@ body.modal-open {
       width: 100%;
       z-index: 100;
       img {
+        display: block;
         width: 100%;
         height: auto;
+        transform: scale(1.5);
       }
     }
   }
@@ -19997,8 +20002,10 @@ body.modal-open {
     z-index: 10;
     pointer-events: none;
     img {
+      display: block;
       width: 100%;
       height: auto;
+      transform: scale(1.5);
     }
   }
 }
