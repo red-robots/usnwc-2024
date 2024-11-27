@@ -447,17 +447,19 @@ nav.new-nav {
 
 		}
 		.cal, .today  {
-			display: inline-block;
+			display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
 			margin-left: 20px;
 			width: auto;
 			position: relative;
 			z-index: 10;
-			height: 100%;
 			color: #fff;
 			text-transform: uppercase;
 			text-decoration: none;
 			display: block;
-			height: 100%;
+			height: 75px;
 			line-height: 72px;
 			cursor: pointer;
 			a {
