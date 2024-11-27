@@ -1092,14 +1092,14 @@ button:focus{outline:0}
 .fa-youtube-square:before{content:""}
 .sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}
 .sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}
-@font-face{font-family:"Brandon Light";src:url("fonts/brandon/Brandon_Grotesque_light.woff") format("woff");font-weight:normal;font-style:normal}
-@font-face{font-family:"Brandon Light Italic";src:url("fonts/brandon/Brandon_Grotesque_light_italic.woff") format("woff");font-weight:normal;font-style:normal}
-@font-face{font-family:"Brandon";src:url("fonts/brandon/Brandon_Grotesque_regular.woff") format("woff");font-weight:normal;font-style:normal}
-@font-face{font-family:"Brandon Italic";src:url("fonts/brandon/Brandon_Grotesque_regular_italic.woff") format("woff");font-weight:normal;font-style:normal}
-@font-face{font-family:"Brandon Medium";src:url("fonts/brandon/Brandon_Grotesque_medium.woff") format("woff");font-weight:normal;font-style:normal}
-@font-face{font-family:"Brandon Medium Italic";src:url("fonts/brandon/Brandon_Grotesque_medium_italic.woff") format("woff");font-weight:normal;font-style:normal}
-@font-face{font-family:"Brandon Bold";src:url("fonts/brandon/Brandon_Grotesque_bold.woff") format("woff")}
-@font-face{font-family:"Brandon Black";src:url("fonts/brandon/Brandon_Grotesque_black.woff") format("woff")}
+@font-face{font-family:"Brandon Light";src:url("fonts/brandon-grotesque/brandon-light.woff") format("woff");font-weight:normal;font-style:normal}
+@font-face{font-family:"Brandon Light Italic";src:url("fonts/brandon-grotesque/brandon-light-it.woff") format("woff");font-weight:normal;font-style:normal}
+@font-face{font-family:"Brandon";src:url("fonts/brandon-grotesque/brandon-reg.woff") format("woff");font-weight:normal;font-style:normal}
+@font-face{font-family:"Brandon Italic";src:url("fonts/brandon-grotesque/brandon-reg-it.woff") format("woff");font-weight:normal;font-style:normal}
+@font-face{font-family:"Brandon Medium";src:url("fonts/brandon-grotesque/brandon-med.woff") format("woff");font-weight:normal;font-style:normal}
+@font-face{font-family:"Brandon Medium Italic";src:url("fonts/brandon-grotesque/brandon-med-it.woff") format("woff");font-weight:normal;font-style:normal}
+@font-face{font-family:"Brandon Bold";src:url("fonts/brandon-grotesque/Brandon_bld.woff") format("woff")}
+@font-face{font-family:"Brandon Black";src:url("fonts/brandon-grotesque/Brandon_blk.woff") format("woff")}
 /*!
  * animate.css -https://daneden.github.io/animate.css/
  * Version - 3.7.2
@@ -1937,8 +1937,8 @@ nav.new-nav .mega-menu .mega-menu-content a:after{content:""}
 .navbar .left{width:50%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .navbar .right{display:-webkit-box;display:-ms-flexbox;display:flex;width:50%;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;font-size:16px;font-family:"Brandon Light";letter-spacing:1px;position:relative}
 .navbar .right span{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:auto;height:100%}
-.navbar .right .cal,.navbar .right .today{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-left:20px;width:auto;position:relative;z-index:10;color:#fff;text-transform:uppercase;text-decoration:none;display:block;height:75px;line-height:72px;cursor:pointer}
-.navbar .right .cal a,.navbar .right .today a{color:#fff;text-decoration:none}
+.navbar .right .cal,.navbar .right .today{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-left:20px;width:auto;position:relative;z-index:10;color:#fff;text-transform:uppercase;text-decoration:none;display:block;height:75px;line-height:72px;cursor:pointer;font-family:"Brandon"}
+.navbar .right .cal a,.navbar .right .today a{font-family:"Brandon";color:#fff;text-decoration:none}
 .navbar .right .today:after{font-family:FontAwesome;content:"";padding-left:8px;font-weight:light}
 .navbar .logo{display:inline-block;width:50px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .navbar .logo a,.navbar .logo img{display:inline-block;width:100%}

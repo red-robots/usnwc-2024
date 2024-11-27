@@ -87,7 +87,7 @@
 							<?php if( $snapshot_link ) { ?>
 								<li class="info">
 									<div class="cta">
-										<a href="<?php echo $snapshot_link['url']; ?>/"><?php echo $snapshot_link['title']; ?></a>
+										<a href="<?php echo $snapshot_link['url']; ?>"><?php echo $snapshot_link['title']; ?></a>
 									</div>
 								</li>
 							<?php } ?>

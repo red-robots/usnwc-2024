@@ -462,7 +462,9 @@ nav.new-nav {
 			height: 75px;
 			line-height: 72px;
 			cursor: pointer;
+      font-family: $font-brandon-regular;
 			a {
+        font-family: $font-brandon-regular;
 				color: #fff;
 				text-decoration: none;
 			}

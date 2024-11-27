@@ -2,7 +2,7 @@
   $wwlocations = get_field('whitewaterLocations','option');
 ?>
 
-<section class="snapshop-wrapper">
+<section id="todays-snapshot" class="snapshop-wrapper">
   <div class="wrapper">
     <div class="titlediv">
       <h3>Today's Snapshot</h3>
