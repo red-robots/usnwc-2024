@@ -1,7 +1,7 @@
 <?php 
 $navigation = get_field('main_menu_item', 'option');
 if($navigation) { ?>
-<nav class="new-nav desktop-navigation">
+<nav class="new-nav-v2 desktop-navigation">
   <ul>
   <?php 
     // echo '<pre>';
@@ -11,7 +11,7 @@ if($navigation) { ?>
       $c++;
       $i = 0;
       $main_link = $nav['main_link'];
-      $column = $nav['column'];
+      $column = ( isset($nav['column']) ) ? $nav['column'] : '';
       if( $c == 1 ) {
         $navClass = 'discover';
       } elseif ( $c == 2 ) {
@@ -21,18 +21,13 @@ if($navigation) { ?>
       }
 
    ?>
-    <li class="menu-item <?php echo $navClass; ?> <?php if( !empty($column)){ echo 'has-children'; } ?>">
-      <a class="menu-link" href="<?php echo $main_link['url']; ?>"><?php echo $main_link['title']; ?></a><!-- end main a -->
+    <li class="v-menu-item <?php echo $navClass; ?> <?php if( !empty($column)){ echo 'has-children'; } ?>">
+      <a class="menu-link" href="<?php echo $main_link['url']; ?>"><span><?php echo $main_link['title']; ?></span></a><!-- end main a -->
       <?php if( $column ) {  ?>
         <div class="mega-menu" ><div class="mega-menu-content">
         <?php foreach( $column as $col ) { $i++;
-                $links = $col['links'];
-                // echo '<pre>';
-                // print_r($links);
-                // echo '</pre>';
-          ?>
-            
-              <div class="menu-col  is-hovered" data-wow-delay=".<?php echo $i; ?>s">
+            $links = $col['links']; ?>
+            <div class="menu-col">
               <ul>
               <?php foreach( $links as $link ) { 
                   $link_type = $link['link_type'];
