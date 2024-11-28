@@ -1971,6 +1971,101 @@ section.visit.flexible-image-cards,
   }
 }
 
+//New Navigation
+.navbar:hover {
+  background-color: transparent!important;
+}
+.new-nav-v2.desktop-navigation {
+  ul {
+    margin: 0 0;
+    padding: 0 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .menu-link {
+    font-family: $font-brandon-regular;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #000;
+    display: inline-block;
+    position: relative;
+    padding: 7px 0;
+    span {
+      display: inline-block;
+      padding: 20px;
+      position: relative;
+    }
+    &:hover, &:focus {
+      color: #606060;
+      text-decoration: none;
+    }
+    &:focus {
+      outline: 0;
+      span {
+        outline: 1px dotted #000;
+      }
+    }
+  }
+  li.v-menu-item.has-children a span:after {
+    font-family: FontAwesome;
+    content: "\f107";
+    padding-left: 8px;
+    font-weight: 300;
+  }
 
+  .mega-menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    height: 0;
+    width: 100vw;
+    background-color: #fff;
+    z-index: 1;
+    transition: all ease .2s;
+    overflow: hidden;
+    .mega-menu-content {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      padding: 60px 40px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .menu-col {
+      ul {
+        display: block;
+      }
+      a {
+        color: #000;
+        text-transform: uppercase;
+      }
+      li.main a {
+        font-family: $font-brandon-medium;
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  li.v-menu-item:hover {
+    .mega-menu {
+      height: auto;
+      animation-duration: 0.5s;
+      animation-fill-mode: both;
+      animation-name: fadeIn;
+      .mega-menu-content {
+        animation-delay: 0.1s;
+        animation-duration: 0.4s;
+        animation-fill-mode: both;
+        animation-name: fadeInUp;
+      }
+    }
+  }
+}
 
 
