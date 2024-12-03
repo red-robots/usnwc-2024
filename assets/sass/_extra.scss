@@ -2009,6 +2009,16 @@ section.visit.flexible-image-cards,
       }
     }
   }
+  li.v-menu-item.has-children:hover,
+  li.v-menu-item.has-children:focus-within {
+    .menu-link {
+      span {
+        background-color: #FFF;
+        color: #000;
+      }
+    }
+  }
+
   li.v-menu-item.has-children a span:after {
     font-family: FontAwesome;
     content: "\f107";
@@ -2205,6 +2215,10 @@ body.home {
       }
     }
   }
+}
+
+header.site-header.fixed .new-nav-v2.desktop-navigation .menu-link span {
+  color: #000;
 }
 body.scrolled {
   header.site-header {
