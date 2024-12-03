@@ -1937,7 +1937,7 @@ nav.new-nav .mega-menu .mega-menu-content a:after{content:""}
 .navbar .left{width:50%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .navbar .right{display:-webkit-box;display:-ms-flexbox;display:flex;width:50%;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;font-size:16px;font-family:"Brandon Light";letter-spacing:1px;position:relative}
 .navbar .right span{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:auto;height:100%}
-.navbar .right .cal,.navbar .right .today{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-left:20px;width:auto;position:relative;z-index:10;color:#fff;text-transform:uppercase;text-decoration:none;height:75px;line-height:72px;cursor:pointer;font-family:"Brandon"}
+.navbar .right .cal,.navbar .right .today{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-left:20px;width:auto;position:relative;z-index:10;color:#fff;text-transform:uppercase;text-decoration:none;cursor:pointer;font-family:"Brandon"}
 .navbar .right .cal a,.navbar .right .today a{font-family:"Brandon";color:#fff;text-decoration:none}
 .navbar .right .today:after{font-family:FontAwesome;content:"";padding-left:8px;font-weight:light}
 .navbar .logo{display:inline-block;width:50px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
@@ -5194,18 +5194,48 @@ body.page-template-page-visit section.visit.flexible-image-cards .tile.half figu
 .navbar:hover{background-color:transparent !important}
 .new-nav-v2.desktop-navigation ul{margin:0;padding:0;list-style:none;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .new-nav-v2.desktop-navigation .menu-link{font-family:"Brandon";text-transform:uppercase;font-size:16px;letter-spacing:1px;color:#000;display:inline-block;position:relative;padding:7px 0}
-.new-nav-v2.desktop-navigation .menu-link span{display:inline-block;padding:20px;position:relative}
+.new-nav-v2.desktop-navigation .menu-link span{display:inline-block;padding:20px;position:relative;-webkit-transition:all ease .5s;transition:all ease .5s}
 .new-nav-v2.desktop-navigation .menu-link:hover,.new-nav-v2.desktop-navigation .menu-link:focus{color:#606060;text-decoration:none}
 .new-nav-v2.desktop-navigation .menu-link:focus{outline:0}
 .new-nav-v2.desktop-navigation .menu-link:focus span{outline:1px dotted #000}
 .new-nav-v2.desktop-navigation li.v-menu-item.has-children a span:after{font-family:FontAwesome;content:"";padding-left:8px;font-weight:300}
 .new-nav-v2.desktop-navigation .mega-menu{position:absolute;left:0;top:100%;height:0;width:100vw;background-color:#fff;z-index:1;-webkit-transition:all ease .2s;transition:all ease .2s;overflow:hidden}
-.new-nav-v2.desktop-navigation .mega-menu .mega-menu-content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:nowrap;flex-wrap:nowrap;padding:60px 40px;width:100%;position:relative;overflow:hidden}
+.new-nav-v2.desktop-navigation .mega-menu .mega-menu-content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:nowrap;flex-wrap:nowrap;padding:60px 40px;width:100%;position:relative;overflow:hidden;margin-left:-15px;margin-right:-15px}
+.new-nav-v2.desktop-navigation .mega-menu .menu-col{-webkit-transition:all ease .5s;transition:all ease .5s;text-wrap:wrap;padding-left:15px;padding-right:15px}
 .new-nav-v2.desktop-navigation .mega-menu .menu-col ul{display:block}
-.new-nav-v2.desktop-navigation .mega-menu .menu-col a{color:#000;text-transform:uppercase}
-.new-nav-v2.desktop-navigation .mega-menu .menu-col li.main a{font-family:"Brandon Medium";font-size:18px;margin-bottom:20px}
-.new-nav-v2.desktop-navigation li.v-menu-item:hover .mega-menu{height:auto;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:fadeIn;animation-name:fadeIn}
-.new-nav-v2.desktop-navigation li.v-menu-item:hover .mega-menu .mega-menu-content{-webkit-animation-delay:.1s;animation-delay:.1s;-webkit-animation-duration:.4s;animation-duration:.4s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:fadeInUp;animation-name:fadeInUp}
+.new-nav-v2.desktop-navigation .mega-menu .menu-col a{display:inline-block;color:#707070;-webkit-transition:all ease .3s;transition:all ease .3s;text-transform:uppercase}
+.new-nav-v2.desktop-navigation .mega-menu .menu-col li span.desc{display:inline-block;font-size:12px;line-height:1.2;letter-spacing:.03em;text-transform:uppercase;color:#707070}
+.new-nav-v2.desktop-navigation .mega-menu .menu-col li.main{margin-bottom:20px}
+.new-nav-v2.desktop-navigation .mega-menu .menu-col li.main span.desc{display:block}
+.new-nav-v2.desktop-navigation .mega-menu .menu-col li.main a{font-family:"Brandon Medium";font-size:18px;color:#575757}
+.new-nav-v2.desktop-navigation .mega-menu .menu-col li.main a:hover,.new-nav-v2.desktop-navigation .mega-menu .menu-col li.main a:focus{color:#ba0d30;text-decoration:underline}
+.new-nav-v2.desktop-navigation .mega-menu .menu-col li.main a:focus{outline:1px dotted #ba0d30}
+.new-nav-v2.desktop-navigation .mega-menu .menu-col li:not(.main){padding:4px 0}
+.new-nav-v2.desktop-navigation .mega-menu .menu-col li:not(.main) a{font-size:14px;text-decoration:none;letter-spacing:.03em}
+.new-nav-v2.desktop-navigation .mega-menu .menu-col li:not(.main) a:hover,.new-nav-v2.desktop-navigation .mega-menu .menu-col li:not(.main) a:focus{color:#ba0d30;text-decoration:underline}
+.new-nav-v2.desktop-navigation .mega-menu .menu-col li:not(.main) a:focus{outline:1px dotted #ba0d30}
+.new-nav-v2.desktop-navigation .mega-menu .menu-col li:not(.main).lodge a{font-family:"Brandon Medium"}
+.new-nav-v2.desktop-navigation .mega-menu .menu-col li:not(.main).lodge span.desc{padding-left:3px}
+.new-nav-v2.desktop-navigation li.v-menu-item:focus-within .mega-menu,.new-nav-v2.desktop-navigation li.v-menu-item:hover .mega-menu{height:auto;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:fadeIn;animation-name:fadeIn}
+.new-nav-v2.desktop-navigation li.v-menu-item:focus-within .mega-menu .mega-menu-content,.new-nav-v2.desktop-navigation li.v-menu-item:hover .mega-menu .mega-menu-content{-webkit-animation-delay:.1s;animation-delay:.1s;-webkit-animation-duration:.4s;animation-duration:.4s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:fadeInUp;animation-name:fadeInUp}
+header.site-header .navbar .right{padding:0}
+header.site-header .navbar .right .nav-item{padding:7px 0}
+header.site-header .navbar .right .nav-item a.navlink,header.site-header .navbar .right .nav-item .today{text-decoration:none;display:inline-block;font-family:"Brandon";font-size:16px;text-transform:uppercase;color:#000;padding:20px 15px;-webkit-transition:all ease .3s;transition:all ease .3s;margin:0 0 !important;height:65px;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+header.site-header .navbar .right .nav-item a.navlink:hover,header.site-header .navbar .right .nav-item a.navlink:focus,header.site-header .navbar .right .nav-item .today:hover,header.site-header .navbar .right .nav-item .today:focus{background-color:#fff;color:#000 !important}
+header.site-header .navbar .right .nav-item a.navlink:focus,header.site-header .navbar .right .nav-item .today:focus{outline:0}
+header.site-header .navbar .right .nav-item .today{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;border-radius:0;background-color:transparent}
+header.site-header .navbar .right .nav-item-today:hover .today,header.site-header .navbar .right .nav-item-today:focus-within .today{background-color:#fff;color:#000 !important}
+header.site-header .navbar .right .nav-item-today:hover .today-dropdown,header.site-header .navbar .right .nav-item-today:focus-within .today-dropdown{display:block;top:72px;visibility:visible;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:fadeInDown;animation-name:fadeInDown}
+body.home .navbar .right .secondNav a,body.home .navbar .right .today{-webkit-transition:all ease .5s;transition:all ease .5s}
+body.home .navbar .right .secondNav a:hover,body.home .navbar .right .secondNav a:focus{background:#fff;color:#000 !important}
+body.home .new-nav-v2.desktop-navigation .menu-link{color:#fff}
+body.home .new-nav-v2.desktop-navigation .menu-link:hover span,body.home .new-nav-v2.desktop-navigation .menu-link:focus span{background:#fff;color:#000}
+body.home header.site-header .navbar .right .nav-item a.navlink,body.home header.site-header .navbar .right .nav-item .today{color:#fff}
+body.scrolled header.site-header{position:fixed;background-color:rgba(255,255,255,.95)}
+body.scrolled header.site-header .nav-item-today:hover .today-dropdown,body.scrolled header.site-header .nav-item-today:focus-within .today-dropdown{top:75px}
+body.scrolled header.site-header .new-nav-v2.desktop-navigation .menu-link span{color:#000}
+body.scrolled header.site-header .navbar .right .nav-item a.navlink,body.scrolled header.site-header .navbar .right .nav-item .today{color:#000}
+body.scrolled .site-header.scrolling{-webkit-transform:none !important;transform:none !important}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -5296,7 +5326,6 @@ section.route-stories.half .block{width:50%}
 .home-video-gallery.count4 .small-videos{width:75%}
 .home-video-gallery.count4 .small-videos .sm-video{width:33.33%}
 .home-video-gallery .mobile-name{display:none}
-.site-header.scrolling{-webkit-transform:translateY(-80px);transform:translateY(-80px)}
 .site-header.start-position{-webkit-transform:translateY(0);transform:translateY(0);opacity:1;-webkit-transition:all ease .5s;transition:all ease .5s}
 .site-header.fixed{-webkit-transform:translateY(0);transform:translateY(0);opacity:1;background:rgba(255,255,255,.9);-webkit-transition:all ease .5s;transition:all ease .5s}
 .navbar{-webkit-box-shadow:none;box-shadow:none;display:block}
@@ -5977,6 +6006,9 @@ nav.new-nav-mobile .menu-col li span.desc{display:block;width:100%;position:rela
 nav.new-nav-mobile .menu-col ul:has(li.lodge) li.main{margin-bottom:25px !important}
 nav.new-nav-mobile .menu-col ul:has(li.lodge) li.lodge{padding-top:5px !important;padding-bottom:13px !important}
 nav.new-nav-mobile .menu-col ul:has(li.lodge) li.lodge:last-child:before{height:105% !important}
+body.mobile-menu-open{overflow:hidden}
+body.mobile-menu-open nav.new-nav-mobile ul.today{padding-bottom:50px}
+.homepage-hero .home-info{bottom:unset;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);padding:20px 10vw}
 }@media screen and (max-width:782px){html #wpadminbar{position:fixed !important;top:0;left:0}
 body.logged-in.admin-bar .site-header{top:45px}
 }@media screen and (max-width:768px){.flex-container.slide-horizontal .flex-direction-nav li .prev,.flex-direction-nav li .prev{display:none}

@@ -94,7 +94,7 @@ if($postHeroImage) {
 				<div class="left">
 		        <?php
 						/* NAVIGATION */
-						get_template_part("parts/navigation");
+						get_template_part("parts/navigation-new");
 					?>
 				</div>
 				<div class="logo">
@@ -114,13 +114,15 @@ if($postHeroImage) {
               $s_link = ( isset($s['url']) ) ? $s['url'] : '';
               $s_target = ( isset($s['target']) ) ? $s['target'] : '_self';
               if($s_name && $s_link) { ?>
-              <div class="secondNav cal"><a href="<?php echo $s_link ?>" target="<?php echo $s_target ?>"><?php echo $s_name ?></a></div>
+              <div class="nav-item"><a href="<?php echo $s_link ?>" class="navlink" target="<?php echo $s_target ?>"><?php echo $s_name ?></a></div>
               <?php } ?>
             <?php } ?>
           <?php } ?>
-					
-					<div class="today" data-id="1">Today</div>
-					<?php get_template_part('parts/today'); ?>
+					   
+            <div class="nav-item nav-item-today">
+    					<button class="today" tabindex="0" data-id="1">Today</button>
+    					<?php get_template_part('parts/today'); ?>
+            </div>
 				</div>
 		  </div>
 		</div>

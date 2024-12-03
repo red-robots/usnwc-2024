@@ -180,12 +180,11 @@ a {
 	position: fixed;
 	z-index: 500;
 	// opacity: 0;
-	&.scrolling {
-		@include tab {
-			transform: translateY(-80px);
-		}
-		
-	}
+	// &.scrolling {
+	// 	@include tab {
+	// 		transform: translateY(-80px);
+	// 	}
+	// }
 	
 	&.start-position {
 		@include tab {
@@ -458,8 +457,8 @@ nav.new-nav {
 			color: #fff;
 			text-transform: uppercase;
 			text-decoration: none;
-			height: 75px;
-			line-height: 72px;
+			// height: 75px;
+			// line-height: 72px;
 			cursor: pointer;
       font-family: $font-brandon-regular;
 			a {
