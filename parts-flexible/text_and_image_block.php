@@ -125,6 +125,18 @@
                               ?>
                               <div class="cta-buttons buttondiv">
                                 <a data-toggle="modal" data-target="#<?php echo $modal_id ?>" class="button"><span>See Details</span></a>
+                                <?php if ($buttons) { ?>
+                                  <?php foreach ($buttons as $b) { 
+                                    $btn = $b['button'];
+                                    $attribute = ( isset($b['button_attribute']) && $b['button_attribute'] ) ? ' ' . $b['button_attribute'] : '';
+                                    $btnName = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
+                                    $btnLink = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
+                                    $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
+                                    if($btnName && $btnLink) { ?>
+                                      <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>"<?php echo $attribute ?> class="button"><span><?php echo $btnName ?></span></a>
+                                    <?php } ?>
+                                  <?php } ?>
+                                <?php } ?>
                               </div>
                               <?php include( locate_template('parts/flexible-content-popup.php') ); ?>
                             <?php } else { ?>

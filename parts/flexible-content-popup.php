@@ -17,11 +17,12 @@
 					<div class="cta-buttons buttondiv text-center">
 						<?php foreach ($buttons as $b) { 
 							$btn = $b['button'];
+              $attribute = ( isset($b['button_attribute']) && $b['button_attribute'] ) ? ' ' . $b['button_attribute'] : '';
 							$btnName = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
 							$btnLink = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
 							$btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
 							if($btnName && $btnLink) { ?>
-							<a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="btn-sm xs"><span><?php echo $btnName ?></span></a>
+							<a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>"<?php echo $attribute ?> class="btn-sm xs"><span><?php echo $btnName ?></span></a>
 							<?php } ?>
 						<?php } ?>
 					</div>
