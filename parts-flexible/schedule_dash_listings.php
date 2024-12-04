@@ -7,7 +7,7 @@
   if( $section_title || $schedule_listing ) { ?>
   <div id="schedule-dash-listings-<?php echo $ctr ?>" class="schedule_dash_listings_section">
     <div class="wrapper">
-      <?php if ( $section_title ) { ?>
+      <?php if ( $section_title || ($info_1 ||  $info_2) ) { ?>
       <div class="titleDiv">
         <h2 class="stitle" style="color:<?php echo $section_title_color ?>"><?php echo $section_title ?></h2>
         <?php if ( $info_1 ) { ?>
