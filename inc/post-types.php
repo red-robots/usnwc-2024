@@ -133,6 +133,14 @@ function js_custom_init() {
             'supports'  => array('title','editor')
         ),
         array(
+            'post_type' => 'wildwoods',
+            'menu_name' => 'Wildwoods',
+            'plural'    => 'Wildwoods',
+            'single'    => 'Wildwood',
+            'menu_icon' => 'dashicons-category',
+            'supports'  => array('title','editor','thumbnail')
+        ),
+        array(
             'post_type' => 'brewery',
             'menu_name' => 'Breweries',
             'plural'    => 'Breweries',
