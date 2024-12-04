@@ -4,6 +4,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
  if ( have_rows('section_type') ) :
 
     // Loop through rows.
+    $ctr=1;
     while ( have_rows('section_type') ) : the_row(); 
     	$cards = get_sub_field('card');
         $card_w_anchor = get_sub_field('card_w_anchor');
@@ -205,21 +206,26 @@ $placeholder = THEMEURI . 'images/rectangle.png';
           $fb_sani = '';
           $fb_dataTitle = '';
           if( $fb_image_title ) {
-              $fb_sani = sanitize_title_with_dashes($fb_image_title);
-              $fb_dataTitle = $fb_image_title;
+            $fb_sani = sanitize_title_with_dashes($fb_image_title);
+            $fb_dataTitle = $fb_image_title;
           }
-          if($fb_sani) { ?>
-          <section class="full-bleed"  id="section-<?php echo $fb_sani; ?>" data-section="<?php echo $fb_dataTitle; ?>" >
-              <div class="wrapper">
-                  <div class="icon">
-                      <img src="<?php echo $fb_image_icon['url']; ?>">
-                  </div>
-                  <h2 class="stitle"><?php echo $fb_image_title; ?></h2>
+          $data_section = ($fb_image_title) ? ' data-section="'.$fb_image_title.'"':'';
+          $section_id = ($fb_sani) ? 'section--'.$fb_sani : 'section-full_bleed_image--' . $ctr;
+          if($fb_image) { ?>
+          <section class="full-bleed" id="<?php echo $section_id; ?>"<?php echo $data_section; ?>>
+            <div class="wrapper">
+              <?php if ($fb_image_icon) { ?>
+              <div class="icon">
+                  <img src="<?php echo $fb_image_icon['url']; ?>">
               </div>
-              
-              <div class="full-bleed-img " style="--aspect-ratio: 16/9">
-                  <img src="<?php echo $fb_image['url']; ?>">
-              </div>
+              <?php } ?>
+              <?php if ($fb_image_title) { ?>
+              <h2 class="stitle"><?php echo $fb_image_title; ?></h2>
+              <?php } ?>
+            </div>
+            <div class="full-bleed-img " style="--aspect-ratio: 16/9">
+                <img src="<?php echo $fb_image['url']; ?>">
+            </div>
           </section>
           <?php } ?>
 
@@ -456,7 +462,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
                 </div>
 
             </section>
-    	<?php endif;
+    	<?php endif; $ctr++;
 endwhile; 
 else:
 endif;
