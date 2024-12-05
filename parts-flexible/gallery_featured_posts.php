@@ -23,12 +23,17 @@
               $thumbId = get_post_thumbnail_id($pid); 
               $featImg = wp_get_attachment_image_src($thumbId,'full');
               $imageUrl = '';
+              $hero_image = get_field('flexslider_banner', $pid);
               if($featImg) {
                 $imageUrl = $featImg[0];
               } else {
-                $custom_image = get_field('full_image', $pid);
-                if($custom_image) {
-                  $imageUrl = (isset($custom_image['url'])) ? $custom_image['url'] : '';
+                if($hero_image) {
+                  if( isset($hero_image[0]) ) {
+                    $hero = $hero_image[0];
+                    if( isset($hero['image']) && $hero['image'] ) {
+                      $imageUrl = $hero['image']['url'];
+                    }
+                  } 
                 }
               }
               ?>
