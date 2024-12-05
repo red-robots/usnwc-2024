@@ -20,11 +20,12 @@
       </div>
     </div>
 
-    <?php if ($schedule_cards_row) { ?>
+    <?php if ($schedule_cards_row) { $cards_count = count( $schedule_cards_row ); ?>
     <div class="cardsContainer">
       <div class="midwrapper">
-        <div class="flexwrap">
-          <?php $card_ctr=1; while( have_rows('schedule_cards_content') ): the_row(); ?>
+        <div class="flexwrap cards-count-<?php echo $cards_count ?>">
+          <?php $card_ctr=1; 
+          while( have_rows('schedule_cards_content') ): the_row(); ?>
             <?php if( get_row_layout() == 'card_info' ) { 
               $title = get_sub_field('title');
               $date = get_sub_field('date');
