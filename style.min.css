@@ -4606,6 +4606,8 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-upcoming_events.monthly-events{margin-bottom:70px}
 .section-upcoming_events.monthly-events .flexwrap .infobox figure{padding-bottom:130%;margin-bottom:15px}
 .section-upcoming_events.monthly-events:last-child{margin-bottom:0}
+.section-upcoming_events .flexwrap .infobox figure.no-image{background:#f2f2f2}
+.section-upcoming_events .flexwrap .infobox figure.no-image:before{content:"Photo Not Available";display:block;width:100%;position:absolute;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);text-align:center;text-transform:uppercase;font-size:15px;letter-spacing:.05em;color:#8b8b8b}
 .section-upcoming_events:has(.schedule-items) .schedule-items{margin-top:35px}
 .section-upcoming_events:has(.schedule-items) .course-times .lineItem{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative;margin:8px 0}
 .section-upcoming_events:has(.schedule-items) .course-times .lineItem:after{content:"";display:block;width:100%;border-bottom:1px dashed #a7a7a7;position:absolute;left:0;bottom:5px}
@@ -4957,7 +4959,7 @@ body.page-template-page-repeatable .fullwidth-red-bar-section{margin-top:50px}
 .social_media_section .social-media-links a:hover,.social_media_section .social-media-links a:focus{color:#000;-webkit-transform:translateY(-2px);transform:translateY(-2px)}
 .buttons-section-wrapper{margin-top:50px;margin-bottom:50px}
 .buttons-section-wrapper .flexwrap{-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1vw}
-section.teasers section.full-bleed .full-bleed-img:before{display:none}
+section.teasers section.full-bleed .full-bleed-img:before{display:none !important}
 section.teasers section.full-bleed .full-bleed-img img{position:relative !important;width:100% !important;height:auto !important}
 body.subpage .site-header{z-index:99999999 !important}
 body.subpage.single.single-festival .pageTabs2{width:100%;float:left;margin-top:40px;margin-bottom:0 !important}

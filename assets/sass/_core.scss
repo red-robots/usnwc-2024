@@ -18920,6 +18920,23 @@ body.subpage.single.single-activity {
   &.monthly-events:last-child {
     margin-bottom: 0;
   }
+
+  .flexwrap .infobox figure.no-image {
+    background: #f2f2f2;
+    &:before {
+      content: "Photo Not Available";
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 15px;
+      letter-spacing: 0.05em;
+      color: #8b8b8b;
+    }
+  }
 }
 
 .section-upcoming_events:has(.schedule-items) {

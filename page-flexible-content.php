@@ -25,7 +25,7 @@ $show_faqs = get_field('show_faqs_items');
 			</div>
 		</div>
 
-  <?php endwhile;  ?>
+  <?php endwhile;  wp_reset_postdata(); ?>
 
 
     <?php if ($show_subnav) { ?>
