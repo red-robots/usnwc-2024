@@ -21012,6 +21012,36 @@ body.modal-open {
   }
 }
 
+.schedule_cards_section {
+  .cardsContainer {
+    .flexwrap.cards-count-1 {
+      .infocard {
+        width: 100%!important;
+        .inside {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          figure.cardImage,
+          .schedule-items-wrap {
+            width: 48%;
+            @media screen and (max-width: 768px) {
+              width: 100%;
+            }
+          }
+          .schedule-items-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            .dash-item {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .simple_intro_text_section {
   .section-title,
   .section-text {
