@@ -35,8 +35,11 @@
             ?>
             <div class="infocard">
               <div class="inside">
-                <?php if ($date ) { ?>
-                <div class="cardTopTitle"><?php echo $date ?></div>
+
+                <?php if ($cards_count>1) { ?>
+                  <?php if ($date ) { ?>
+                  <div class="cardTopTitle"><?php echo $date ?></div>
+                  <?php } ?>
                 <?php } ?>
                 
                 <?php if ($image) { ?>
@@ -45,12 +48,24 @@
                 </figure>
                 <?php } ?>
 
-                <?php if ($title) { ?>
-                <h3 class="cardMainTitle"><?php echo $title ?></h3>
+                <?php if ($cards_count>1) { ?>
+                  <?php if ($title) { ?>
+                  <h3 class="cardMainTitle"><?php echo $title ?></h3>
+                  <?php } ?>
                 <?php } ?>
 
                 <?php if ($schedule_items) { ?>
                 <div class="schedule-items-wrap NoDescription">
+
+                  <?php if ($cards_count==1) { ?>
+                    <?php if ($title) { ?>
+                    <h3 class="cardMainTitle"><?php echo $title ?></h3>
+                    <?php } ?>
+                    <?php if ($date ) { ?>
+                    <div class="cardTopTitle"><?php echo $date ?></div>
+                    <?php } ?>
+                  <?php } ?>
+
                   <?php foreach ($schedule_items as $m) { 
                     $m_event = $m['title'];
                     $m_time = $m['time'];
