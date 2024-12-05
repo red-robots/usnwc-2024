@@ -138,7 +138,7 @@ function js_custom_init() {
             'plural'    => 'Wildwoods',
             'single'    => 'Wildwood',
             'menu_icon' => 'dashicons-category',
-            'menu_position' => 20,
+            'menu_position' => 15,
             'supports'  => array('title','editor','thumbnail')
         ),
         array(
