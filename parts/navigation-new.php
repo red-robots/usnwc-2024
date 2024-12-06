@@ -23,8 +23,8 @@ if($navigation) { ?>
    ?>
     <li class="v-menu-item <?php echo $navClass; ?> <?php if( !empty($column)){ echo 'has-children'; } ?>">
       <a class="menu-link" href="<?php echo $main_link['url']; ?>"><span><?php echo $main_link['title']; ?></span></a><!-- end main a -->
-      <?php if( $column ) {  ?>
-        <div class="mega-menu" ><div class="mega-menu-content">
+      <?php if( $column ) {  $count_columns = count($column); ?>
+        <div class="mega-menu" ><div class="mega-menu-content count-<?php echo $count_columns ?>">
         <?php foreach( $column as $col ) { $i++;
             $links = $col['links']; ?>
             <div class="menu-col">

@@ -5228,6 +5228,9 @@ body.page-template-page-visit section.visit.flexible-image-cards .tile.half figu
 .new-nav-v2.desktop-navigation .mega-menu .menu-col li:not(.main).lodge span.desc{padding-left:3px}
 .new-nav-v2.desktop-navigation li.v-menu-item:focus-within .mega-menu,.new-nav-v2.desktop-navigation li.v-menu-item:hover .mega-menu{height:auto;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:fadeIn;animation-name:fadeIn}
 .new-nav-v2.desktop-navigation li.v-menu-item:focus-within .mega-menu .mega-menu-content,.new-nav-v2.desktop-navigation li.v-menu-item:hover .mega-menu .mega-menu-content{-webkit-animation-delay:.1s;animation-delay:.1s;-webkit-animation-duration:.4s;animation-duration:.4s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:fadeInUp;animation-name:fadeInUp}
+.new-nav-v2.desktop-navigation .mega-menu-content{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap !important;flex-wrap:wrap !important}
+.new-nav-v2.desktop-navigation .mega-menu-content .menu-col{width:33.333%}
+.new-nav-v2.desktop-navigation .mega-menu-content.count-6 .menu-col{width:16.666%}
 header.site-header .navbar .right{padding:0}
 header.site-header .navbar .right .nav-item{padding:7px 0}
 header.site-header .navbar .right .nav-item a.navlink,header.site-header .navbar .right .nav-item .today{text-decoration:none;display:inline-block;font-family:"Brandon";font-size:16px;text-transform:uppercase;color:#000;padding:20px 15px;-webkit-transition:all ease .3s;transition:all ease .3s;margin:0 0 !important;height:65px;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
@@ -5916,6 +5919,7 @@ body.home .homerow .imagebox a .title{font-size:5vw}
 .fullwidth_video_block.fullwidth_video_alt .videoThumbnail{min-height:auto}
 .fullwidth_video_block.fullwidth_video_alt .videoThumbnail figure:has(a) a{padding-bottom:70%}
 .image_cards_columns .cards .flexwrap .imageBlock{width:50%}
+.new-nav-v2.desktop-navigation .mega-menu-content .menu-col{width:33.333% !important;padding-bottom:40px}
 }@media screen and (max-width:900px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -6042,6 +6046,7 @@ body.logged-in.admin-bar .site-header{top:45px}
 .schedule_cards_section .cardsContainer .flexwrap.cards-count-1 .infocard .inside figure.cardImage,.schedule_cards_section .cardsContainer .flexwrap.cards-count-1 .infocard .inside .schedule-items-wrap{width:100%}
 #primary.buy-page.buy-page-new .access-pass-options .infobox .inner .textwrap h2,#primary.buy-page.buy-page-new .access-pass-options .infobox .inner .textwrap .text,#primary.buy-page.buy-page-new .access-pass-options .infobox .inner .textwrap .text p{text-align:center !important}
 #primary.buy-page.buy-page-new .access-pass-options .infobox .inner .buttons{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1em}
+.new-nav-v2.desktop-navigation .mega-menu-content .menu-col{width:50% !important}
 }@media screen and (max-width:600px){section.route-stories .block .feat-image.no-image .bg:before{width:30vw;height:30vw}
 .topinfo .businessHours{left:-37vw}
 #section-featured-posts .block .feat-image.no-image .bg:before{width:30vw;height:30vw}
@@ -6073,6 +6078,7 @@ body.page-template-page-instructions .select2-dropdown.select2-dropdown--below{t
 .todaySnapshotInfo .info-wrapper .infocol .inner{padding:10px 15px 15px}
 .todaySnapshotInfo .info-wrapper .infocol .inner:after{display:none;opacity:0}
 .todaySnapshotInfo .info-wrapper .infocol:nth-child(1){border-bottom:1px solid #ccc}
+}@media screen and (max-width:400px){.new-nav-v2.desktop-navigation .mega-menu-content .menu-col{width:100% !important}
 }@media screen and (max-width:320px){.page-activity-passes .itemrow:after{bottom:-28px}
 .page-activity-passes .itemrow .activity-name{max-width:100%;bottom:0;margin-bottom:10px;text-align:left}
 .page-activity-passes .itemrow .activity-name span{bottom:0 !important}

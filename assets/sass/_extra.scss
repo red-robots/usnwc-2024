@@ -2143,6 +2143,32 @@ section.visit.flexible-image-cards,
       }
     }
   }
+  .mega-menu-content {
+    display: flex;
+    flex-wrap: wrap!important;
+    .menu-col {
+      width: 33.333%;
+    }
+  }
+  .mega-menu-content.count-6 .menu-col {
+    width: 16.666%;
+  }
+  @media screen and (max-width: 960px) {
+    .mega-menu-content .menu-col {
+      width: 33.333%!important;
+      padding-bottom: 40px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .mega-menu-content .menu-col {
+      width: 50%!important;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .mega-menu-content .menu-col {
+      width: 100%!important;
+    }
+  }
 }
 header.site-header {
   .navbar .right {
