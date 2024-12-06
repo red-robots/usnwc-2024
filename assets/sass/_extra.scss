@@ -2147,11 +2147,24 @@ section.visit.flexible-image-cards,
     display: flex;
     flex-wrap: wrap!important;
     .menu-col {
-      width: 33.333%;
+      width: 25%;
     }
   }
   .mega-menu-content.count-6 .menu-col {
     width: 16.666%;
+  }
+  .mega-menu-content.count-5 .menu-col {
+    width: 20%;
+  }
+  .mega-menu-content.count-4 .menu-col {
+    width: 25%;
+  }
+  .mega-menu-content.count-3 .menu-col {
+    width: 33.333%;
+  }
+  .mega-menu-content.count-1 .menu-col,
+  .mega-menu-content.count-2 .menu-col {
+    width: 50%;
   }
   @media screen and (max-width: 960px) {
     .mega-menu-content .menu-col {
@@ -2171,6 +2184,7 @@ section.visit.flexible-image-cards,
   }
 }
 header.site-header {
+  height: 80px;
   .navbar .right {
     padding: 0 0;
     .nav-item  {
@@ -2260,7 +2274,8 @@ header.site-header.fixed .new-nav-v2.desktop-navigation .menu-link span {
 body.scrolled {
   header.site-header {
     position: fixed;
-    background-color: rgba(255,255,255,.95);
+    height: 80px;
+    background-color: rgba(255,255,255,.95)!important;
     .nav-item-today:hover, 
     .nav-item-today:focus-within {
       .today-dropdown {
@@ -2282,6 +2297,13 @@ body.scrolled {
   }
   .site-header.scrolling {
     transform: none!important;
+  }
+}
+
+body.logged-in.admin-bar,
+body.logged-in.admin-bar.subpage .site-header {
+  @media screen and (min-width: 820px) {
+    top: 32px!important;
   }
 }
 

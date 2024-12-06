@@ -20774,7 +20774,8 @@ body.modal-open {
     .line {
       display: flex;
       flex-wrap: wrap;
-      align-items: flex-end;
+      // align-items: flex-end;
+      align-items: flex-start;
       justify-content: space-between;
       position: relative;
       @media screen and (min-width: 769px) {
@@ -20785,7 +20786,7 @@ body.modal-open {
           border-bottom: 1px dashed #888;
           position: absolute;
           left: 0;
-          bottom:8px;
+          top: 11px;
         }
       }
       span, a {
@@ -20799,8 +20800,20 @@ body.modal-open {
         font-size: 14px;
         line-height: 1.2;
         text-transform: uppercase;
-        padding-right: 5px;
+        padding-right: 3px;
         color: #000;
+        position: relative;
+        z-index: 30;
+        background-color: transparent;
+        span {
+          display: inline;
+          background: #FFF;
+          position: relative;
+          z-index: 25;
+        }
+        @media screen and (min-width: 769px) {
+          max-width: 72%;
+        }
       }
       .right-info {
         text-align: right;
@@ -20927,6 +20940,9 @@ body.modal-open {
     .dash-item .line span.name {
       font-family: $font-brandon-regular;
       text-transform: none!important;
+      @media screen and (min-width: 769px) {
+        max-width: 72%;
+      }
     }
 
     @media screen and (max-width: 768px) {

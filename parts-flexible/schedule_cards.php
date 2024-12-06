@@ -73,7 +73,7 @@
                     if ($m_event) {  ?>
                     <div class="dash-item">
                       <div class="line">
-                        <span class="name"><?php echo $m_event ?></span>
+                        <span class="name"><span><?php echo $m_event ?></span></span>
                         <?php if ($m_time ) { ?>
                           <span class="right-info">
                             <?php if ($m_time) { ?>
