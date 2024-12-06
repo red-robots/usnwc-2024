@@ -4755,11 +4755,10 @@ body.modal-open{overflow:hidden}
 .stories-feeds-section .storyBlock[data-width="100%"] figure{padding-bottom:50%}
 .stories-feeds-section .storyBlock.square figure{padding-bottom:75%}
 .stories-feeds-section .storyBlock:hover .textwrap,.stories-feeds-section .storyBlock:focus .textwrap{overflow:visible !important;height:auto;opacity:1;-webkit-transform:translateY(0);transform:translateY(0);pointer-events:auto}
-.stories-feeds-section .storyBlock[data-width="50%"]:hover figure,.stories-feeds-section .storyBlock[data-width="50%"]:focus figure{padding-bottom:45%}
-.stories-feeds-section .storyBlock[data-width="25% | 1:1"]:hover figure,.stories-feeds-section .storyBlock[data-width="25% | 1:1"]:focus figure{padding-bottom:60%}
-.stories-feeds-section .storyBlock[data-width="25% | 4:5"]:hover figure,.stories-feeds-section .storyBlock[data-width="25% | 4:5"]:focus figure{padding-bottom:75%}
+.stories-feeds-section .storyBlock[data-width="50%"]:hover figure,.stories-feeds-section .storyBlock[data-width="50%"]:focus-within figure{padding-bottom:45%}
+.stories-feeds-section .storyBlock[data-width="25% | 1:1"]:hover figure,.stories-feeds-section .storyBlock[data-width="25% | 1:1"]:focus-within figure{padding-bottom:60%}
+.stories-feeds-section .storyBlock[data-width="25% | 4:5"]:hover figure,.stories-feeds-section .storyBlock[data-width="25% | 4:5"]:focus-within figure{padding-bottom:75%}
 .stories-feeds-section .storyBlock[data-width="100%"]{margin-bottom:70px}
-.stories-feeds-section .storyBlock[data-width="100%"] figure:hover,.stories-feeds-section .storyBlock[data-width="100%"]:focus figure{padding-bottom:35%}
 #saveBoxesWidth{position:fixed;bottom:30px;right:30px;border:1px solid #fff;border-radius:10px;background-color:#059d33;color:#fff;z-index:99999999;padding:15px 15px;font-size:20px;-webkit-box-shadow:0 8px 15px rgba(0,0,0,.35);box-shadow:0 8px 15px rgba(0,0,0,.35)}
 #saveBoxesWidth:hover{background-color:#09d56b}
 .loadMoreWrapper{padding:0 20px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}

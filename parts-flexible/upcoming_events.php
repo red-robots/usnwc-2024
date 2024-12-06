@@ -54,9 +54,9 @@
           $pid = $p->ID;
           $title = $p->post_title;
           $image = get_field('full_image', $pid);
-          if(!$image) {
-            $image = get_field('mobile-banner', $pid);
-          }
+          // if(!$image) {
+          //   $image = get_field('mobile-banner', $pid);
+          // }
           $start_date = get_field('start_date', $pid);
           $pagelink = get_permalink($pid);
           $start_date_year = ($start_date ) ? date('Y', strtotime($start_date)) : '';

@@ -19930,26 +19930,26 @@ body.modal-open {
     }
   }
   .storyBlock[data-width="50%"]:hover figure,
-  .storyBlock[data-width="50%"]:focus figure {
+  .storyBlock[data-width="50%"]:focus-within figure {
     padding-bottom: 45%;
   }
 
   .storyBlock[data-width="25% | 1:1"]:hover figure,
-  .storyBlock[data-width="25% | 1:1"]:focus figure {
+  .storyBlock[data-width="25% | 1:1"]:focus-within figure {
     padding-bottom: 60%;
   }
 
   .storyBlock[data-width="25% | 4:5"]:hover figure,
-  .storyBlock[data-width="25% | 4:5"]:focus figure {
+  .storyBlock[data-width="25% | 4:5"]:focus-within figure {
     padding-bottom: 75%;
   }
   .storyBlock[data-width="100%"] {
     margin-bottom: 70px;
   }
-  .storyBlock[data-width="100%"] figure:hover,
-  .storyBlock[data-width="100%"]:focus figure {
-    padding-bottom: 35%;
-  }
+  // .storyBlock[data-width="100%"]:hover figure,
+  // .storyBlock[data-width="100%"]:focus-within figure {
+  //   padding-bottom: 35%;
+  // }
 
 
   @include max(960px) {
