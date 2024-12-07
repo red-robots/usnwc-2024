@@ -23,7 +23,7 @@
             if ($m_title) {  ?>
             <div class="dash-item">
               <div class="line">
-                <span class="name"><?php echo $m_title ?></span>
+                <span class="name"><span><?php echo $m_title ?></span></span>
                 <?php if ($m_text_right || $mbtnName ) { ?>
                   <span class="right-info">
                     <span class="text-desktop">
@@ -80,7 +80,7 @@
       if ($m_title) {  ?>
       <div class="dash-item">
         <div class="line">
-          <span class="name"><?php echo $m_title ?></span>
+          <span class="name"><span><?php echo $m_title ?></span></span>
           <?php if ($m_text_right || $mbtnName ) { ?>
             <span class="right-info">
               <span class="text-desktop">
