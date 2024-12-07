@@ -12,6 +12,15 @@ jQuery(document).ready(function ($) {
   location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (s, k, v) {
     params[k] = v;
   });
+
+  if ($('.text_and_image_block_section.sponsors-section').length) {
+    $('.text_and_image_block_section.sponsors-section').each(function () {
+      if ($(this).next().hasClass('fullwidth-image-section')) {
+        $(this).next().css('margin-top', '0px');
+      }
+    });
+  }
+
   $('.inline').colorbox({
     inline: true,
     width: "50%" // href:".instr",
