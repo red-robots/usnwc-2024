@@ -20804,9 +20804,10 @@ body.modal-open {
         color: #000;
         position: relative;
         z-index: 30;
-        background-color: transparent;
+        background: transparent!important;
         span {
           display: inline;
+          padding-right: 5px;
           background: #FFF;
           position: relative;
           z-index: 25;
