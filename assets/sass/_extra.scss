@@ -2300,6 +2300,104 @@ body.scrolled {
   }
 }
 
+.section_columns_bottom_text {
+  width: 100%;
+  float: left;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  .full-wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+    @media screen and (min-width: 1281px) {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+  }
+  .introtext-wrapper {
+    padding: 0 0!important;
+  }
+  .columns-wrapper {
+    .flexwrap {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+    .infobox {
+      margin: 20px 0;
+      padding: 12px;
+      figure {
+        margin: 0 0 15px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        background-color: #e7e7e7;
+        padding-bottom: 65%;
+        img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+          object-position: center;
+        }
+        &.has-border {
+          &:before {
+            content:"";
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index:5;
+            border:1px solid #CCC;
+            border-radius: 15px;
+          }
+        }
+      }
+    }
+    
+    .info-title {
+      font-family: $font-brandon-bold;
+      font-size: 23px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      color: #000;
+    }
+    .info-text {
+      line-height: 1.3;
+    }
+    &.numrow-2 {
+      .infobox {
+        width: 50%;
+      }
+    }
+    &.numrow-3 {
+      .infobox {
+        width: 33.333%;
+      }
+    }
+    &.numrow-4 {
+      .infobox {
+        width: 25%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+    .infobox {
+      width: 50%!important;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .infobox {
+      width: 100%!important;
+    }
+  }
+}
+
 body.logged-in.admin-bar,
 body.logged-in.admin-bar.subpage .site-header {
   @media screen and (min-width: 820px) {
