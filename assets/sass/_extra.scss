@@ -2401,10 +2401,44 @@ body.scrolled {
   }
 }
 
+.hero--single-video {
+  position: relative;
+  .outer-video-wrap {
+    padding-bottom: 45%;
+    position: relative;
+    overflow: hidden;
+  }
+  .videoIframeDiv {
+    overflow: hidden;
+  }
+  .videoIframeDiv,
+  .outer-video-wrap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .outer-video-wrap iframe,
+  .videoIframeDiv video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.2);
+  }
+  .outer-video-wrap .videoIframeDiv {
+    transform: scale(1.05);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
 body.logged-in.admin-bar,
 body.logged-in.admin-bar.subpage .site-header {
   @media screen and (min-width: 820px) {
-    top: 32px!important;
+    // top: 32px!important;
   }
 }
 
