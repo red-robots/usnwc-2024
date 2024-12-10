@@ -4,7 +4,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
 // $main_content = get_the_content();
 $authorId = '';
 $author_description = get_the_author_meta('description');
-$main_class = ($new_stories && $galleries) ? 'half':'full';
+$main_class = ( ( isset($new_stories) && $new_stories ) && $galleries) ? 'half':'full';
 $new_count = ($galleries) ? count($galleries) : 0;
 $img_class = ($new_count%2) ? ' default':' twocol';
 

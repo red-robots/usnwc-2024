@@ -1016,10 +1016,13 @@ body.page-template-page-about.subpage {
     .meta {
       margin-top: 15px;
       color: #888;
-      span:first-child {
+      span {
         border-right: 1px solid #CCC;
         padding-right: 8px;
         margin-right: 6px;
+      }
+      span:last-child {
+        border-right: none;
       }
     }
   } 
@@ -2433,6 +2436,10 @@ body.scrolled {
     background-size: cover;
     background-repeat: no-repeat;
   }
+}
+
+.text-centered-section.dark h1.page-title {
+  color: #FFF!important;
 }
 
 body.logged-in.admin-bar,

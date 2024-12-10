@@ -106,9 +106,10 @@ get_header();
 
     <?php
     $total_pages = $posts->max_num_pages;
-    if ($total_pages > $perpage) { ?>
+    $found_posts = $posts->found_posts;
+    if ($found_posts > $perpage) { ?>
     <div id="pagination" class="pagination-wrapper loadMoreWrapper">
-      <a href="javascript:void(0)" data-baseurl="<?php echo get_permalink() ?>" id="loadMorePosts" data-next="2" data-total-pages="<?php echo $total_pages ?>" class="button button-red">See More</a>
+      <a href="javascript:void(0)" data-baseurl="<?php echo get_permalink() ?>" id="loadMorePosts" data-next="2" data-total-pages="<?php echo $total_pages ?>" class="button button-pill">See More</a>
     </div>
     <?php } ?>
 

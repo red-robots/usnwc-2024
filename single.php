@@ -21,6 +21,9 @@ get_header();
       $custom_post_author = get_field("custom_post_author");
       $postdate = get_the_date('F j, Y');
       $guest_author = get_field('guest_author');
+      if($guest_author) {
+        $custom_post_author = $guest_author->post_title;
+      }
       ?>
 
       <div class="entry-title">
