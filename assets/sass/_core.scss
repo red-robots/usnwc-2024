@@ -18941,6 +18941,14 @@ body.subpage.single.single-activity {
       color: #8b8b8b;
     }
   }
+
+  &.title-center-no-line {
+    .section-title {
+      text-align: center;
+      border-bottom: none;
+      margin-bottom: 15px;
+    }
+  }
 }
 
 .section-upcoming_events:has(.schedule-items) {

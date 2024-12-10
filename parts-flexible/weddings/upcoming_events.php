@@ -1,6 +1,7 @@
  <?php if( get_row_layout() == 'upcoming_events' ) { ?>
   <?php 
     $section_title = get_sub_field('section_title');
+    $center_no_line = get_sub_field('center_no_line');
     $post_type = get_sub_field('post_type');
     $btn = get_sub_field('button');
     $btnUrl = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
@@ -34,8 +35,9 @@
       );
       
       $posts = get_posts($args);
+      $title_center_no_line = (isset($center_no_line) && $center_no_line) ? ' title-center-no-line':'';
       if($posts) { ?>
-      <div id="section-upcoming_events-<?php echo $ctr ?>" data-posttype="<?php echo $post_type ?>" class="repeatable-block section section-upcoming_events">
+      <div id="section-upcoming_events-<?php echo $ctr ?>" data-posttype="<?php echo $post_type ?>" class="repeatable-block section section-upcoming_events<?php echo $title_center_no_line ?>">
         <div class="wrapper">
           
           <?php if($section_title) { ?>

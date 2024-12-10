@@ -4609,6 +4609,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-upcoming_events.monthly-events:last-child{margin-bottom:0}
 .section-upcoming_events .flexwrap .infobox figure.no-image{background:#f2f2f2}
 .section-upcoming_events .flexwrap .infobox figure.no-image:before{content:"Photo Not Available";display:block;width:100%;position:absolute;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);text-align:center;text-transform:uppercase;font-size:15px;letter-spacing:.05em;color:#8b8b8b}
+.section-upcoming_events.title-center-no-line .section-title{text-align:center;border-bottom:0;margin-bottom:15px}
 .section-upcoming_events:has(.schedule-items) .schedule-items{margin-top:35px}
 .section-upcoming_events:has(.schedule-items) .course-times .lineItem{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative;margin:8px 0}
 .section-upcoming_events:has(.schedule-items) .course-times .lineItem:after{content:"";display:block;width:100%;border-bottom:1px dashed #a7a7a7;position:absolute;left:0;bottom:5px}

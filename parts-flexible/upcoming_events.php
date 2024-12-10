@@ -2,6 +2,7 @@
 
   <?php 
   $section_title = get_sub_field('section_title');
+  $center_no_line = get_sub_field('center_no_line');
   $title_center = get_sub_field('section_title_align_center');
   $show_start_date = get_sub_field('show_start_date');
   $post_type = get_sub_field('post_type');
@@ -39,10 +40,11 @@
 
 
     $posts = get_posts($args);
+    $title_center_no_line = (isset($center_no_line) && $center_no_line) ? ' title-center-no-line':'';
     if($posts) { 
       $data_section = ($section_title) ? 'data-section="'.$section_title.'"':'';
     ?>
-    <div id="section-upcoming_events-<?php echo $ctr ?>" data-posttype="<?php echo $post_type ?>" <?php echo $data_section ?> class="repeatable-block section section-upcoming_events upcoming_events_section fullwidth-float-left">
+    <div id="section-upcoming_events-<?php echo $ctr ?>" data-posttype="<?php echo $post_type ?>" <?php echo $data_section ?> class="repeatable-block section section-upcoming_events upcoming_events_section fullwidth-float-left<?php echo $title_center_no_line ?>">
       <div class="wrapper">
         
         <?php if($section_title) { ?>
