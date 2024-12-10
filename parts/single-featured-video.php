@@ -1,7 +1,7 @@
 <?php if( isset($videoURL) && $videoURL ) { ?>
-<section id="hero--single" class="hero--single-video">
+<section id="hero--single" class="hero--single-video featured">
     <?php
-    $video_image = get_field('video_image');
+    $video_image = get_field('image');
     $parts = parse_url($videoURL);
     if( isset($parts['query']) ) {
       parse_str($parts['query'], $query);
@@ -20,7 +20,7 @@
       }
 
       if($youtubeId) {
-        $embed_url = 'https://www.youtube.com/embed/'.$youtubeId.'?version=3&rel=0&loop=0&autoplay=1&mute=1'; 
+        $embed_url = 'https://www.youtube.com/embed/'.$youtubeId.'?version=3&rel=0&loop=0&autoplay=0&mute=0'; 
         $mainImage = 'https://i.ytimg.com/vi/'.$youtubeId.'/maxresdefault.jpg';
         if($video_image) {
           $mainImage = $video_image['url'];
@@ -49,7 +49,7 @@
     ?>
     <div class="outer-video-wrap">
       <div class="videoIframeDiv video-vimeo video__vimeo" style="background-image:url('<?php echo $vimeoImage?>');">
-        <iframe src="https://player.vimeo.com/video/<?php echo $vimeoId ?>?background=1&autoplay=1&loop=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+        <iframe src="https://player.vimeo.com/video/<?php echo $vimeoId ?>" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
       </div>
     </div>
   <?php } ?>
@@ -59,9 +59,9 @@
     <div class="outer-video-wrap">
       <div class="videoIframeDiv">
         <?php if ($videoImageUrl) { ?>
-          <video class="desktop" autoPlay loop muted playsinline poster="<?php echo $videoImageUrl; ?>">
+          <video class="desktop" controls playsinline poster="<?php echo $videoImageUrl; ?>">
         <?php } else { ?>
-          <video class="desktop" autoPlay loop muted playsinline>
+          <video class="desktop" controls playsinline>
         <?php } ?>
           <source src="<?php echo $videoURL;?>" type="video/mp4">
         </video>

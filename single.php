@@ -17,6 +17,8 @@ get_header();
       $post_id = get_the_ID();
       $thumbId = get_post_thumbnail_id($post_id); 
       $featImg = wp_get_attachment_image_src($thumbId,'full');
+      $videoURL = get_field("video");
+      $thumbnail_type = get_field("thumbnail_type");
       $short_description = get_field("short_description_text");
       $custom_post_author = get_field("custom_post_author");
       $postdate = get_the_date('F j, Y');
@@ -44,11 +46,16 @@ get_header();
       </div>
       <?php } ?>
 
+      <?php if ($videoURL) { ?>
+        
+        <?php include( locate_template('parts/single-featured-video.php') ); ?>
 
-      <?php if ( has_post_thumbnail() ) { ?>
-      <div class="featured-image">
-        <figure><?php the_post_thumbnail() ?></figure>
-      </div>
+      <?php } else { ?>
+        <?php if ( has_post_thumbnail() ) { ?>
+        <div class="featured-image">
+          <figure><?php the_post_thumbnail() ?></figure>
+        </div>
+        <?php } ?>
       <?php } ?>
 
       <?php if ($post_type!='post') { ?>

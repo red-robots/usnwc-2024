@@ -1138,6 +1138,9 @@ body.page-template-page-about.subpage {
 }
 
 body.single-post {
+  #socialMediaShare {
+    margin-top: 20px;
+  }
   div.simplesocialbuttons.simplesocialbuttons-float-left-center,
   .simplesocialbuttons {
     visibility: hidden;
@@ -2410,6 +2413,9 @@ body.scrolled {
     padding-bottom: 45%;
     position: relative;
     overflow: hidden;
+  }
+  &.featured .outer-video-wrap {
+    padding-bottom: 56%;
   }
   .videoIframeDiv {
     overflow: hidden;
