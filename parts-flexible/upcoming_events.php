@@ -15,6 +15,6 @@
   $current_year = date('Y');
   if($post_type) { 
     include( locate_template('parts-flexible/events/upcoming.php') );
-  <?php } ?>
+  } ?>
 
 <?php } ?>
