@@ -42,7 +42,7 @@ $rectangle = THEMEURI . "images/rectangle-narrow.png";
 			            			</div>
 			            		<?php } ?>
 			            	</div>
-			            	<div class="grad">f</div>
+			            	<div class="grad"></div>
 		            	</div>
 		            </section>
 

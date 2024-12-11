@@ -128,9 +128,9 @@ if($postHeroImage) {
 		</div>
 
 		<nav class="mobile-nav-wrap">
-  			<div class="logo">
+  			<a href="<?php echo get_site_url() ?>" class="logo">
         	<img src="<?php bloginfo('template_url'); ?>/images/logo-white.png" alt="" />
-        </div>
+        </a>
 		  	<span id="mobile-menu-toggle"><span class="bar"><span></span></span></span>
 		  	<div class="mobile-navigation">
 		  		<?php get_template_part('parts/navigation-mobile'); ?>
