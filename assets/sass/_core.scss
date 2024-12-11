@@ -18917,8 +18917,26 @@ body.subpage.single.single-activity {
   &.monthly-events {
     margin-bottom: 70px;
     .flexwrap .infobox figure {
+      background-color: #EEE;
       padding-bottom: 130%;
       margin-bottom: 15px;
+      position: relative;
+      &.no-event-image {
+        span {
+          display: block;
+          padding: 20px;
+          width: 100%;
+          text-align: center;
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          color: #888;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+      }
     }
   }
   &.monthly-events:last-child {

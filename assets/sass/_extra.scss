@@ -2499,6 +2499,12 @@ body.logged-in.admin-bar.subpage .site-header {
   }
 }
 
+.section-upcoming_events.events--film-series .flexwrap .infobox {
+  @media screen and (min-width: 961px) {
+    width: 25%;
+  }
+}
+
 @media screen and (max-width: 819px) {
   body.subpage .site-header,
   body.scrolled .site-header {
