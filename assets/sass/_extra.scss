@@ -2019,8 +2019,10 @@ section.visit.flexible-image-cards,
       transition: all ease .5s;
     }
     &:hover, &:focus {
-      color: #606060;
       text-decoration: none;
+      span {
+        color: $red!important;
+      }
     }
     &:focus {
       outline: 0;
@@ -2056,6 +2058,7 @@ section.visit.flexible-image-cards,
     z-index: 1;
     transition: all ease .2s;
     overflow: hidden;
+    margin-top: -10px;
     .mega-menu-content {
       display: flex;
       justify-content: flex-start;
@@ -2216,10 +2219,15 @@ header.site-header {
       justify-content: center;
       &:hover, &:focus {
         background-color: #FFF;
-        color: #000!important;
+        color: $red!important;
       }
       &:focus {
         outline: none;
+      }
+    }
+    .nav-item-today:hover {
+      button.today {
+        color: $red!important;
       }
     }
     .nav-item .today {
@@ -2453,7 +2461,7 @@ section.homepage-hero {
 body.logged-in.admin-bar,
 body.logged-in.admin-bar.subpage .site-header {
   @media screen and (min-width: 820px) {
-    // top: 32px!important;
+    top: 32px!important;
   }
 }
 
