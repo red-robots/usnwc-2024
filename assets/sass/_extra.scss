@@ -2518,9 +2518,13 @@ body.logged-in.admin-bar.subpage .site-header {
       padding: 20px 10vw;
     }
   }
-  body.logged-in.admin-bar.scrolled {
+  body.logged-in.admin-bar {
     .site-header .mobile-nav-wrap {
       top: 45px;
+    }
+  }
+  body.logged-in.admin-bar.scrolled {
+    .site-header .mobile-nav-wrap {
       .mobile-nav-wrap .logo img,
       #mobile-menu-toggle span {
         transition: all ease .3s;
