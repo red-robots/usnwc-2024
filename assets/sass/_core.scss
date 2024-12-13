@@ -457,8 +457,6 @@ nav.new-nav {
 			color: #fff;
 			text-transform: uppercase;
 			text-decoration: none;
-			// height: 75px;
-			// line-height: 72px;
 			cursor: pointer;
       font-family: $font-brandon-regular;
 			a {
@@ -4343,6 +4341,16 @@ a.button {
   &.button-pill {
     background-color: #FFF;
     color: #444;
+  }
+  &.button-pill-outline-white {
+    background-color: transparent;
+    color: #FFF;
+    border: 1px solid #FFF;
+    padding: 8px 25px 6px;
+    &:hover, &:focus {
+      border-color: $red;
+      background-color: $red;
+    }
   }
 
   // &.btn-white-shadow {
@@ -17590,7 +17598,6 @@ body.subpage {
     
     .site-header {
       background: #FFF;
-      height: 75px;
       position: fixed;
       top: 0;
       left: 0;
@@ -21134,12 +21141,12 @@ section.main-description .wrapper {
   }
 }
 
+
 body.page-template-page-repeatable {
   .fullwidth-red-bar-section {
     margin-top: 50px;
   }
 }
-
 
 
 body.logged-in.admin-bar {

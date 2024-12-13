@@ -12,6 +12,11 @@ jQuery(document).ready(function ($) {
   location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (s, k, v) {
     params[k] = v;
   });
+  $('.site-header .new-nav-v2 li.has-children').hover(function () {
+    $('.site-header').addClass('mouseover');
+  }, function () {
+    $('.site-header').removeClass('mouseover');
+  });
 
   if ($('.text_and_image_block_section.sponsors-section').length) {
     $('.text_and_image_block_section.sponsors-section').each(function () {

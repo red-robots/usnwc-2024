@@ -78,7 +78,7 @@
           $btnLink = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
           $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
           if($btnName && $btnLink) { ?>
-          <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="button button-red uppercase"><span><?php echo $btnName ?></span></a>
+          <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="button button-pill-outline-white uppercase"><span><?php echo $btnName ?></span></a>
           <?php } ?>
         <?php } ?>
         </div>

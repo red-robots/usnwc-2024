@@ -376,6 +376,10 @@ body.subpage.single.single-festival {
 }
 
 body.page-template-page-about.subpage {
+  header.site-header .navbar .right .nav-item a.navlink, header.site-header .navbar .right .nav-item .today,
+  .new-nav-v2.desktop-navigation .menu-link {
+    color: #FFF;
+  }
   .image_and_text_two_column.section-two_column_row {
     width: 100%;
     float: left;
@@ -389,7 +393,7 @@ body.page-template-page-about.subpage {
     left: 0;
     width: 100%;
     z-index: 999;
-    background: transparent!important;
+    background-color: transparent!important;
     .logo {
       filter: brightness(0) invert(1);
     }
@@ -410,6 +414,28 @@ body.page-template-page-about.subpage {
     padding-top: 0;
   }
 }
+
+body.page-template-page-about.subpage.scrolled,
+body.scrolled {
+  .site-header .navbar {
+    background: rgba(255,255,255,1)!important;
+  }
+  header.site-header .navbar .right .nav-item a.navlink, header.site-header .navbar .right .nav-item .today,
+  .new-nav-v2.desktop-navigation .menu-link {
+    color: #000!important;
+  }
+}
+body.page-template-page-about.subpage {
+  .site-header.mouseover .navbar {
+    background: rgba(255,255,255,1)!important;
+  }
+  header.site-header.mouseover .navbar .right .nav-item a.navlink, 
+  header.site-header.mouseover .navbar .right .nav-item .today,
+  header.site-header.mouseover .new-nav-v2.desktop-navigation .menu-link {
+    color: #000!important;
+  }
+}
+
 
 .text_content_center_block {
   color: #FFF!important;
@@ -2031,15 +2057,25 @@ section.visit.flexible-image-cards,
       }
     }
   }
-  li.v-menu-item.has-children:hover,
-  li.v-menu-item.has-children:focus-within {
+  // li.v-menu-item.has-children:hover,
+  // li.v-menu-item.has-children:focus-within {
+  //   .menu-link {
+  //     span {
+  //       background-color: #FFF;
+  //       color: #000;
+  //     }
+  //   }
+  // }
+
+  li.v-menu-item:hover,
+  li.v-menu-item:focus-within {
     .menu-link {
       span {
         background-color: #FFF;
         color: #000;
       }
     }
-  }
+  }  
 
   li.v-menu-item.has-children a span:after {
     font-family: FontAwesome;
@@ -2195,8 +2231,11 @@ section.visit.flexible-image-cards,
     }
   }
 }
-header.site-header {
+header.site-header,
+header.site-header .navbar {
   height: 80px;
+}
+header.site-header {
   .navbar .right {
     padding: 0 0;
     .nav-item  {
