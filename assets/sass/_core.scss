@@ -20185,6 +20185,96 @@ body.modal-open {
   }
 }
 
+.stories-feeds-section .stories-entries .storyBlock:hover {
+  figure {
+    padding-bottom: 65%!important;
+  }
+}
+
+.stories-feeds-section .stories-entries.stories-count-3 {
+  .storyBlock {
+    width: 33.333%;
+    figure {
+      padding-bottom: 70%;
+    }
+    &:hover {
+      figure {
+        padding-bottom: 60%!important;
+      }
+    }
+  }
+}
+.stories-feeds-section .stories-entries.stories-count-4 {
+  .storyBlock {
+    width: 33.333%;
+    figure {
+      padding-bottom: 70%;
+    }
+  }
+  .storyBlock:nth-child(4),
+  .storyBlock:last-child {
+    width: 100%;
+  }
+}
+.stories-feeds-section .stories-entries.stories-count-5 {
+  .storyBlock {
+    width: 33.333%;
+    figure {
+      padding-bottom: 70%;
+    }
+  }
+  .storyBlock:nth-child(4),
+  .storyBlock:nth-child(5) {
+    width: 50%;
+    figure {
+      padding-bottom: 60%;
+    }
+    &:hover {
+      figure {
+        padding-bottom: 55%!important;
+      }
+    }
+  }
+}
+
+.stories-feeds-section .stories-entries.items-6-or-more {
+  .storyBlock {
+    width: 25%;
+    figure {
+      padding-bottom: 70%;
+    }
+  }
+  .storyBlock:nth-child(1),
+  .storyBlock:nth-child(2),
+  .storyBlock:nth-child(3) {
+    width: 33.333%;
+    figure {
+      padding-bottom: 70%;
+    }
+  }
+  .storyBlock:nth-child(4),
+  .storyBlock:nth-child(5) {
+    width: 50%;
+    &:hover {
+      figure {
+        padding-bottom: 60%!important;
+      }
+    }
+  }
+  .storyBlock:nth-child(6) {
+    width: 100%;
+    figure {
+      padding-bottom: 40%;
+    }
+    &:hover {
+      figure {
+        padding-bottom: 40%!important;
+      }
+    }
+  }
+}
+
+
 
 #hero--single {
   position: relative;

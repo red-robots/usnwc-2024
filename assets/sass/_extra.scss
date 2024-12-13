@@ -2503,6 +2503,14 @@ body.logged-in.admin-bar.subpage .site-header {
     top: 32px!important;
   }
 }
+body.logged-in.admin-bar,
+body.logged-in.admin-bar.subpage {
+  &:has(#banner) {
+    @media screen and (min-width: 820px) {
+      .site-header {top: 0!important;}
+    }
+  }
+}
 
 @media screen and (max-width: 980px) {
   body.home .full-bleed-promo {

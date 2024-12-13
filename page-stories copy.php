@@ -37,8 +37,8 @@ get_header();
   if ( $posts->have_posts() ) { 
     $count = $posts->found_posts; 
     $stories_class = 'stories-count-'.$count;
-    if($count>5) {
-      $stories_class .= ' items-6-or-more';
+    if($count>2) {
+      $stories_class .= ' items-3-or-more';
     }
   ?>
   <section class="stories-feeds-section ">
@@ -63,8 +63,29 @@ get_header();
             $v_width = $obj->width;
           }
           ?>
-          <div class="storyBlock animated fadeIn resizable" data-pid="<?php echo $post_id ?>" tabindex="0">
+          <div class="storyBlock animated fadeIn resizable" data-pid="<?php echo $post_id ?>" tabindex="0" data-width="<?php echo $v_width ?>">
             <div class="inner">
+              <?php if ( is_user_logged_in() && current_user_can( 'manage_options' ) ) { ?>
+              <div class="resizeBlock">
+                <a href="<?php echo get_edit_post_link($post_id); ?>" target="_blank" title="Edit Post" class="editPostLink"><i class="fa-sharp fa-light fa-pencil"></i></a>
+
+                <select name="entry_<?php echo $post_id?>" class="blockSize">
+                  <?php foreach ($options as $k=>$e) { 
+                    $is_selected = ($k==0) ? ' selected':'';
+                    if($v_width) {
+                      if($e==$v_width) {
+                        $is_selected = ' selected';
+                      }
+                    } else {
+                      $is_selected = '';
+                    }
+                  ?>
+                  <option value="<?php echo $e ?>"<?php echo $is_selected ?>><?php echo $e ?></option>
+                  <?php } ?>
+                </select>
+                <button class="saveButton" data-pid="<?php echo $post_id?>">Save</button>
+              </div>
+              <?php } ?>
               <figure>
                 <img src="<?php echo $photo ?>" alt="<?php echo get_the_title() ?>" />
               </figure>
