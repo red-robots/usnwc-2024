@@ -30,7 +30,7 @@
         $btnTitle = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
         $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
         if($btnUrl && $btnTitle) { ?>
-        <a href="<?php echo $btnUrl ?>" target="<?php echo $btnTarget ?>" class="button button-red"><?php echo $btnTitle ?></a>
+        <a href="<?php echo $btnUrl ?>" target="<?php echo $btnTarget ?>" class="button button-pill"><?php echo $btnTitle ?></a>
         <?php } ?>
       <?php } ?>
     </div>
