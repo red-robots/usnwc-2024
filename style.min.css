@@ -4805,7 +4805,7 @@ body.modal-open{overflow:hidden}
 .stories-feeds-section .stories-entries.items-6-or-more .storyBlock:nth-child(4),.stories-feeds-section .stories-entries.items-6-or-more .storyBlock:nth-child(5){width:50%}
 .stories-feeds-section .stories-entries.items-6-or-more .storyBlock:nth-child(4):hover figure,.stories-feeds-section .stories-entries.items-6-or-more .storyBlock:nth-child(5):hover figure{padding-bottom:60% !important}
 .stories-feeds-section .stories-entries.items-6-or-more .storyBlock:nth-child(6){width:100%}
-.stories-feeds-section .stories-entries.items-6-or-more .storyBlock:nth-child(6) figure{padding-bottom:40%}
+.stories-feeds-section .stories-entries.items-6-or-more .storyBlock:nth-child(6) figure{padding-bottom:50%}
 .stories-feeds-section .stories-entries.items-6-or-more .storyBlock:nth-child(6):hover figure{padding-bottom:40% !important}
 #hero--single{position:relative}
 #hero--single figure{margin:0;position:relative;padding-bottom:36vw}

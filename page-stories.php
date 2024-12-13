@@ -19,7 +19,7 @@ get_header();
 
   <?php  
   $posttype = array('post','whats-new');
-  $perpage = 12;
+  $perpage = 14;
   $paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
   $args = array(
     'posts_per_page'  => $perpage,
