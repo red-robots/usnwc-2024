@@ -66,6 +66,7 @@ get_header(); ?>
             $image_display_type = get_sub_field('image_display_type');
             $boxClass = ( ($e_title || $e_text) && $hasImages ) ? 'half':'full';
             $id = get_the_ID();
+            $buttons = get_sub_field('buttons');
           ?>
 
           <section class="menu-sections menu-sections-repeatable">
@@ -89,13 +90,52 @@ get_header(); ?>
 
                         <?php if ($e_time) { ?>
                           <?php if (strpos($e_time, '[get_hours') !== false) { ?>
-                            <?php if ( do_shortcode($e_time) ) { ?>
-                              <div class="mstime shcode"><?php echo do_shortcode($e_time); ?></div>
+                            <?php if ( do_shortcode($e_time) ) { 
+                              $hours_info = do_shortcode($e_time);
+                              $hours_info = strtolower($hours_info);
+                              $has_hours = '';
+                              if ( (strpos($hours_info, 'am') !== false) || strpos($hours_info, 'pm') !== false ) {
+                                $has_hours = ' has-hours';
+                              } 
+                              if($has_hours) { ?>
+                              <div class="mstime shcode<?php echo $has_hours ?>"><?php echo do_shortcode($e_time); ?></div>
+                              <?php } ?>
                             <?php } ?>
                           <?php } else { ?>
                             <div class="mstime"><?php echo $e_time ?></div>
                           <?php } ?>
                         <?php } ?>
+
+                        <?php if ($buttons) { ?>
+                        <div class="cta-buttons buttondiv">
+                          <?php foreach ($buttons as $b) { 
+                            $type = $b['link_type'];
+                            $pdf = $b['pdf'];
+                            $link = $b['button_link'];
+                            if($type=='link') { ?>
+                              
+                              <?php if ($link) { 
+                                $btnName = (isset($link['title']) && $link['title']) ? $link['title'] : '';
+                                $btnLink = (isset($link['url']) && $link['url']) ? $link['url'] : '';
+                                $btnTarget = (isset($link['target']) && $link['target']) ? $link['target'] : '_self';
+                                if($btnName && $btnLink) { ?>
+                                  <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="button"><span><?php echo $btnName ?></span></a>
+                                <?php } ?>
+                              <?php } ?>
+                            
+                            <?php } else if($type=='pdf') { ?>
+                              <?php if ($pdf) { 
+                                  $btnName = ( isset($pdf['button_name']) && $pdf['button_name'] ) ? $pdf['button_name'] : '';
+                                  $btnLink = ( isset($pdf['pdf']['url']) ) ? $pdf['pdf']['url'] : '';
+                                  if($btnName && $btnLink) { ?>
+                                    <a href="<?php echo $btnLink ?>" target="_blank" class="button"><span><?php echo $btnName ?></span></a>
+                                  <?php } ?>
+                              <?php } ?>
+                            <?php } ?>
+                          <?php } ?>
+                        </div>
+                        <?php } ?>
+
                       </div>
                       <?php } ?>
                     </div>
