@@ -20191,88 +20191,60 @@ body.modal-open {
 
 .stories-feeds-section .stories-entries .storyBlock:hover {
   figure {
-    padding-bottom: 65%!important;
+    padding-bottom: 65%;
   }
 }
 
-.stories-feeds-section .stories-entries.stories-count-3 {
+.stories-feeds-section .stories-entries.stories-count-1,
+.stories-feeds-section .stories-entries.stories-count-2 {
   .storyBlock {
-    width: 33.333%;
-    figure {
-      padding-bottom: 70%;
-    }
-    &:hover {
-      figure {
-        padding-bottom: 60%!important;
-      }
-    }
-  }
-}
-.stories-feeds-section .stories-entries.stories-count-4 {
-  .storyBlock {
-    width: 33.333%;
-    figure {
-      padding-bottom: 70%;
-    }
-  }
-  .storyBlock:nth-child(4),
-  .storyBlock:last-child {
-    width: 100%;
-  }
-}
-.stories-feeds-section .stories-entries.stories-count-5 {
-  .storyBlock {
-    width: 33.333%;
-    figure {
-      padding-bottom: 70%;
-    }
-  }
-  .storyBlock:nth-child(4),
-  .storyBlock:nth-child(5) {
     width: 50%;
     figure {
-      padding-bottom: 60%;
+      padding-bottom: 70%;
     }
     &:hover {
       figure {
-        padding-bottom: 55%!important;
+        padding-bottom: 60%;
       }
     }
   }
 }
 
+.stories-feeds-section .stories-entries.stories-count-3,
+.stories-feeds-section .stories-entries.stories-count-4,
+.stories-feeds-section .stories-entries.stories-count-5,
 .stories-feeds-section .stories-entries.items-6-or-more {
   .storyBlock {
-    width: 25%;
+    width: 33.333%;
     figure {
       padding-bottom: 70%;
+    }
+    &:hover {
+      figure {
+        padding-bottom: 65%;
+      }
     }
   }
   .storyBlock:nth-child(1),
-  .storyBlock:nth-child(2),
-  .storyBlock:nth-child(3) {
-    width: 33.333%;
+  .storyBlock:nth-child(2) {
+    width: 50%;
     figure {
       padding-bottom: 70%;
     }
-  }
-  .storyBlock:nth-child(4),
-  .storyBlock:nth-child(5) {
-    width: 50%;
     &:hover {
       figure {
-        padding-bottom: 60%!important;
+        padding-bottom: 60%;
       }
     }
   }
-  .storyBlock:nth-child(6) {
+  .storyBlock:nth-child(3) {
     width: 100%;
     figure {
       padding-bottom: 50%;
     }
     &:hover {
       figure {
-        padding-bottom: 50%!important;
+        padding-bottom: 50%;
       }
     }
   }
