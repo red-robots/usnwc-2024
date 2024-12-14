@@ -69,6 +69,12 @@ if($heroImage) {
 if($postHeroImage) {
 	$xBodyClass = ($postHeroImage) ? 'pageHasBanner':'pageNoBanner';
 }
+if( is_single() ) {
+  $custom_class = get_field('custom_class');
+  if($custom_class) {
+    $xBodyClass .= ' '.$custom_class;
+  }
+}
 ?>
 <body <?php body_class($xBodyClass); ?>>
 	<?php if( is_page('employment') ) { get_template_part('inc/employment-tracking'); } ?>

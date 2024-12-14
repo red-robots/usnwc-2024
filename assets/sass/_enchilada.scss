@@ -1,0 +1,131 @@
+$enchillada-lite: #fef9e7; 
+$enchillada-med: #f3edd9;
+$enchillada-red: #b4282e;
+$enchillada-gray: #7f7c73;
+
+body.enchilada {
+  //.content-default {
+    
+    .main-description {
+      color: $enchillada-gray;
+    }
+
+    #pageTabs a,
+    .title-w-icon h2,
+    h2.stitle, .stitle,
+    .text-and-image-blocks .textcol .mstitle,
+    .sectionTitle,
+    .information-tabs-wrap {
+      font-family: novecento-sans-narrow;
+    }
+    .information-tabs-wrap {
+      .tabs-info ul {
+
+        li {
+          a {
+            background-color: $enchillada-med;
+            color: $enchillada-gray;
+            span.arrow, span.arrow:after, span.arrow:before {
+              background-color: $enchillada-gray;
+            }
+          }
+          &.active a {
+            background-color: $enchillada-gray;
+            color: #fff;
+          }
+        }
+      }
+      .info-panel {
+        background-color: $enchillada-gray;
+        li:before {
+          border-left: 3px solid #fff;
+            border-bottom: 3px solid #fff;
+            top: 18px;
+        }
+      }
+    }
+    #primary #section-schedule {
+      background-color: $enchillada-lite;
+      .title-w-icon {
+        background-color: $enchillada-red;
+        
+      }
+    }
+    #section-coursemap, #route-information, #section-awards {
+      color: $enchillada-gray;
+      .shead-icon, h2.stitle, .stitle {
+        color: $enchillada-gray;
+      }
+    }
+    &.subpage.single {
+      h1.pagetitle {
+        color: $enchillada-red;
+        font-size: 2.6em;
+        span:after{display: none;}
+        font-family: novecento-sans-narrow;
+      }
+      .content-default {
+        background-color: $enchillada-lite;
+        text-transform: uppercase;
+        font-family: novecento-sans-narrow;
+        .wrapper {
+          font-size: 2em;
+          font-weight: 300;
+        }
+        .black-section {
+          background-color: $enchillada-red;
+        }
+      }
+    }
+    
+    li.rdate {
+      background-color: $enchillada-med;
+    }
+    .post-type-race {
+      #section-registration {
+        .title-w-icon {
+          background-color: $enchillada-red;
+        }
+      }
+      .race-types {
+        background-color: $enchillada-gray;
+        font-family: novecento-sans-narrow;
+        .inner-wrap {
+          padding: 20px 10px;
+        }
+        .type {
+          padding: 0px 10px;
+          .inside {
+            background-color: $enchillada-lite;
+          }
+          .type-name {
+            background-color: $enchillada-lite;
+            h3 {
+              color: $enchillada-gray;
+              font-family: novecento-sans-narrow;
+            }
+          }
+        } 
+    
+      }
+    }
+    section.route-details {
+      background-color: $enchillada-med;
+    }
+    #section-awards .awards-columns .inside {
+      background-color: $enchillada-med;
+    }
+    .text-and-image-blocks .half.odd .textcol {
+      border-right: 15px solid $enchillada-lite;
+    }
+    .text-and-image-blocks .half.even .textcol {
+      border-left: 15px solid $enchillada-lite;
+    }
+    .text-and-image-blocks {
+      color: $enchillada-gray;
+      .textcol {
+        background-color: $enchillada-med;
+      }
+    }
+  //}
+}

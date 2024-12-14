@@ -2090,7 +2090,7 @@ body.nav-open .menu-toggle{opacity:0}
 #subpageSlides .flex-direction-nav a,.gallerycol .flex-direction-nav a{text-shadow:none}
 body.single-activity .intro-galleries .flexwrap{position:relative}
 body.single-activity #subpageSlides{width:100% !important;height:100% !important;padding-left:0 !important;border-radius:0 !important}
-.site-content{width:100%;float:left}
+.site-content{width:100%;float:left;position:relative}
 h2.gform_title,.faqs .titlediv h2,h2.stitle,.stitle,.h2,.title-wrapper h2.section-title{margin:0;font-family:"Brandon Bold";font-size:40px;line-height:1.2;text-transform:uppercase;color:#000}
 .textCenter{text-align:center !important}
 .buttondiv{margin-top:20px}
@@ -3007,9 +3007,9 @@ body.page-template-page-stories .select2-container--default .select2-results__op
 .hero-register-button .registerBtn{display:inline-block;text-decoration:none;color:#fff;text-transform:uppercase;font-family:"Lato",sans-serif;font-size:18px;font-weight:400;line-height:50px;background:#ba0d30;height:52px;padding:0 35px;position:relative;-webkit-box-shadow:-12px 8px 17px rgba(0,0,0,.3);box-shadow:-12px 8px 17px rgba(0,0,0,.3);width:100%;text-align:center}
 .hero-register-button.has-event-status #banner .static-banner .slideCaption .text{margin-top:3%}
 body.scrolled.single-dining .post-hero-image .stats,body.scrolled.page-template-page-instruction-single .post-hero-image .stats,body.scrolled.single-retreat .post-hero-image .stats{position:fixed;z-index:5000}
-body.scrolled.single-dining.logged-in.admin-bar .post-hero-image .stats,body.scrolled.page-template-page-instruction-single.logged-in.admin-bar .post-hero-image .stats,body.scrolled.single-retreat.logged-in.admin-bar .post-hero-image .stats{top:130px}
+body.scrolled.single-dining.logged-in.admin-bar .post-hero-image .stats,body.scrolled.page-template-page-instruction-single.logged-in.admin-bar .post-hero-image .stats,body.scrolled.single-retreat.logged-in.admin-bar .post-hero-image .stats{top:125px}
 body.scrolled .stats{position:fixed;z-index:5000;top:85px}
-body.scrolled.logged-in.admin-bar .stats{top:130px}
+body.scrolled.logged-in.admin-bar .stats{top:125px}
 .shead-icon{margin-bottom:35px}
 .shead-icon div.icon span{font-size:35px;line-height:1}
 .dining-event-details{background:#f2f2f2;padding-top:50px;padding-bottom:40px}
@@ -3354,9 +3354,8 @@ body.page-template-page-group-events #pageTabs{margin-bottom:20px}
 .accordion-wrapper .subdata.half .subcol.left{width:100%}
 .accordion-wrapper .subdata.half .subcol.right{width:100%}
 .accordion-wrapper .subdata:last-child .flexwrap{border-bottom:0}
-.film-event-status{width:100%;position:fixed;top:85px;left:0;z-index:100;background:rgba(186,13,48,.85);color:#fff;text-align:center;font-family:"Lato",sans-serif;font-size:16px;font-weight:400;letter-spacing:2px}
+.film-event-status{width:100%;position:absolute;top:0;left:0;z-index:100;background:rgba(186,13,48,.85);color:#fff;text-align:center;font-family:"Lato",sans-serif;font-size:16px;font-weight:400;letter-spacing:2px}
 .film-event-status .wrapper{padding:8px 20px 8px}
-body.logged-in.admin-bar .film-event-status{top:130px}
 body.logged-in.admin-bar .job-info-page .text-centered-section{margin-top:-5px}
 .content-area-full.film-series-page .text-centered-section{background:#191919;color:#fff}
 .content-area-full.film-series-page .video-frame{width:100%;position:relative;margin:50px 0 10px}
@@ -4422,7 +4421,6 @@ body.home .homerow .imagebox a:hover:before,body.home .homerow .imagebox a:focus
 .tribe-events-calendar-month .tribe-events-calendar-month__day .hentry[data-isparent=true]{z-index:10}
 body.subpage .site-header.start-position{position:relative !important;z-index:999999}
 body.subpage nav.new-nav .menu-item a,body.subpage .site-header .navbar .right .cal a,body.subpage .site-header .navbar .right .today{color:#000 !important}
-.film-event-status{top:75px}
 .button-element{display:inline-block;text-decoration:none;background-color:#ba0d30;color:#fff;padding:10px 25px;border-radius:8px;font-size:23px;font-weight:500;line-height:1.2;-webkit-transition:all ease .3s;transition:all ease .3s}
 .button-element:hover,.button-element:focus{color:#fff !important;background-color:#191919;text-decoration:none !important}
 body.subpage.single.single-activity .content-default.new-layout .main-description p{color:#707070;max-width:600px;width:100%;margin:0 auto 20px;font-size:20px;line-height:1.4}
@@ -4949,6 +4947,7 @@ body.modal-open{overflow:hidden}
 .simple_intro_text_section .section-title,.simple_intro_text_section .section-text{text-align:center}
 .simple_intro_text_section .custom-button-element{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1em;margin-top:40px}
 section.main-description .wrapper p{color:#707070;max-width:600px;width:100%;margin:0 auto 20px;font-size:20px;line-height:1.4}
+body.scrolled .film-event-status{position:fixed;top:80px}
 body.page-template-page-repeatable .fullwidth-red-bar-section{margin-top:50px}
 .accordion{max-width:1100px;width:100%;margin:0 auto;padding:0;list-style:none}
 .accordion .accordion-item{overflow:hidden;border-radius:10px;border:1px solid #f2f2f2;margin-bottom:18px;-webkit-transition:all ease .3s;transition:all ease .3s}
@@ -5306,6 +5305,36 @@ body.scrolled .site-header.scrolling{-webkit-transform:none !important;transform
 .hero--single-video .outer-video-wrap .videoIframeDiv{-webkit-transform:scale(1.05);transform:scale(1.05);background-size:cover;background-repeat:no-repeat}
 .text-centered-section.dark h1.page-title{color:#fff !important}
 section.homepage-hero{overflow:hidden}
+body.enchilada .main-description{color:#7f7c73}
+body.enchilada #pageTabs a,body.enchilada .title-w-icon h2,body.enchilada h2.stitle,body.enchilada .stitle,body.enchilada .text-and-image-blocks .textcol .mstitle,body.enchilada .sectionTitle,body.enchilada .information-tabs-wrap{font-family:novecento-sans-narrow}
+body.enchilada .information-tabs-wrap .tabs-info ul li a{background-color:#f3edd9;color:#7f7c73}
+body.enchilada .information-tabs-wrap .tabs-info ul li a span.arrow,body.enchilada .information-tabs-wrap .tabs-info ul li a span.arrow:after,body.enchilada .information-tabs-wrap .tabs-info ul li a span.arrow:before{background-color:#7f7c73}
+body.enchilada .information-tabs-wrap .tabs-info ul li.active a{background-color:#7f7c73;color:#fff}
+body.enchilada .information-tabs-wrap .info-panel{background-color:#7f7c73}
+body.enchilada .information-tabs-wrap .info-panel li:before{border-left:3px solid #fff;border-bottom:3px solid #fff;top:18px}
+body.enchilada #primary #section-schedule{background-color:#fef9e7}
+body.enchilada #primary #section-schedule .title-w-icon{background-color:#b4282e}
+body.enchilada #section-coursemap,body.enchilada #route-information,body.enchilada #section-awards{color:#7f7c73}
+body.enchilada #section-coursemap .shead-icon,body.enchilada #section-coursemap h2.stitle,body.enchilada #section-coursemap .stitle,body.enchilada #route-information .shead-icon,body.enchilada #route-information h2.stitle,body.enchilada #route-information .stitle,body.enchilada #section-awards .shead-icon,body.enchilada #section-awards h2.stitle,body.enchilada #section-awards .stitle{color:#7f7c73}
+body.enchilada.subpage.single h1.pagetitle{color:#b4282e;font-size:2.6em;font-family:novecento-sans-narrow}
+body.enchilada.subpage.single h1.pagetitle span:after{display:none}
+body.enchilada.subpage.single .content-default{background-color:#fef9e7;text-transform:uppercase;font-family:novecento-sans-narrow}
+body.enchilada.subpage.single .content-default .wrapper{font-size:2em;font-weight:300}
+body.enchilada.subpage.single .content-default .black-section{background-color:#b4282e}
+body.enchilada li.rdate{background-color:#f3edd9}
+body.enchilada .post-type-race #section-registration .title-w-icon{background-color:#b4282e}
+body.enchilada .post-type-race .race-types{background-color:#7f7c73;font-family:novecento-sans-narrow}
+body.enchilada .post-type-race .race-types .inner-wrap{padding:20px 10px}
+body.enchilada .post-type-race .race-types .type{padding:0 10px}
+body.enchilada .post-type-race .race-types .type .inside{background-color:#fef9e7}
+body.enchilada .post-type-race .race-types .type .type-name{background-color:#fef9e7}
+body.enchilada .post-type-race .race-types .type .type-name h3{color:#7f7c73;font-family:novecento-sans-narrow}
+body.enchilada section.route-details{background-color:#f3edd9}
+body.enchilada #section-awards .awards-columns .inside{background-color:#f3edd9}
+body.enchilada .text-and-image-blocks .half.odd .textcol{border-right:15px solid #fef9e7}
+body.enchilada .text-and-image-blocks .half.even .textcol{border-left:15px solid #fef9e7}
+body.enchilada .text-and-image-blocks{color:#7f7c73}
+body.enchilada .text-and-image-blocks .textcol{background-color:#f3edd9}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -5620,7 +5649,6 @@ body.scrolled .hero-register-button .registerBtn{position:fixed}
 .subpage-tabs-wrapper .wrapper{padding-top:40px}
 .accordion-wrapper .subdata.half .subcol.left{width:65%;padding-right:30px}
 .accordion-wrapper .subdata.half .subcol.right{width:35%;margin-top:0}
-body.logged-in.admin-bar .film-event-status{top:118px}
 body.logged-in.admin-bar .job-info-page .text-centered-section{margin-top:85px}
 .main-faqs-icons .faq{width:25%}
 .employment-page .section-video{padding-top:80px;padding-bottom:80px}
@@ -5809,9 +5837,10 @@ body.subpage .site-header{background:#fff;position:fixed;top:0;left:0;z-index:99
 body.subpage .site-header .navbar{position:fixed;top:0;left:0;width:100%}
 body.subpage .site-header .navbar .logo img{-webkit-filter:invert(1);filter:invert(1)}
 body.subpage .site-content{padding-top:20px}
+body.logged-in.admin-bar.scrolled .film-event-status{top:112px}
 body.logged-in.admin-bar.subpage .site-header{top:0 !important}
 body.logged-in.admin-bar.subpage .site-header .navbar{top:32px !important;background-color:#fff}
-body.logged-in.admin-bar.subpage .film-event-status{top:105px}
+body.logged-in.admin-bar.scrolled .hero-wrapper .stats{top:160px}
 .flexibleContentWrap .two-columns-block.text-and-image-blocks .image-position-right,.flexibleContentWrap .two-columns-block.text-and-image-blocks .half.even.image-position-right{-webkit-box-orient:horizontal !important;-webkit-box-direction:normal !important;-ms-flex-direction:row !important;flex-direction:row !important}
 body.logged-in.admin-bar,body.logged-in.admin-bar.subpage .site-header{top:32px !important}
 body.logged-in.admin-bar:has(#banner) .site-header,body.logged-in.admin-bar.subpage:has(#banner) .site-header{top:0 !important}
@@ -6011,6 +6040,7 @@ body.home .homerow .imagebox a .title{font-size:5vw}
 }@media screen and (max-width:860px){.flex-direction-nav .flex-prev{opacity:1;left:10px}
 .flex-direction-nav .flex-next{opacity:1;right:10px}
 .content-area-single .text-content-gallery .gallery-wrapper .imagewrap{width:100% !important}
+}@media screen and (max-width:821px){body.logged-in.admin-bar.scrolled .film-event-status{top:125px}
 }@media screen and (max-width:820px){.topinfo .businessHours{width:300px;left:-25vw;right:0}
 #banner ul.slides.single-slide #playYoutube{display:none}
 #banner ul.slides.single-slide .type-video .videoIframe{z-index:101}

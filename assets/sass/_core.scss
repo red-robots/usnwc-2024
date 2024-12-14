@@ -1518,6 +1518,7 @@ body.single-activity  {
 .site-content {
 	width: 100%;
 	float: left;
+  position: relative;
 }
 
 h2.gform_title,
@@ -7872,7 +7873,7 @@ body.scrolled.single-retreat {
 	
 	&.logged-in.admin-bar {
 		.post-hero-image .stats {
-			top: 130px;
+			top: 125px;
 			@include tab {
 				top: 105px;
 			}
@@ -7890,7 +7891,7 @@ body.scrolled {
 	}
 	&.logged-in.admin-bar {
 		.stats {
-			top: 130px;
+			top: 125px;
 			@include tab {
 				top: 118px;
 			}
@@ -10176,8 +10177,8 @@ body.page-template-page-group-events {
 }
 .film-event-status {
 	width: 100%;
-	position: fixed;
-	top: 85px;
+	position: absolute;
+	top: 0;
 	left: 0;
 	z-index: 100;
 	background: rgba($red,0.85);
@@ -10192,12 +10193,12 @@ body.page-template-page-group-events {
 	}
 }
 body.logged-in.admin-bar {
-	.film-event-status {
-		top: 130px;
-		@include tab {
-			top: 118px;
-		}
-	}
+	// .film-event-status {
+	// 	top: 130px;
+	// 	@include tab {
+	// 		top: 118px;
+	// 	}
+	// }
 	.job-info-page .text-centered-section {
 		margin-top: -5px;
 		@include tab {
@@ -17622,9 +17623,9 @@ body.subpage {
     }
   }
 }
-.film-event-status {
-  top: 75px;
-}
+// .film-event-status {
+//   top: 75px;
+// }
 .button-element {
   display: inline-block;
   text-decoration: none;
@@ -21207,6 +21208,10 @@ section.main-description .wrapper {
   }
 }
 
+body.scrolled .film-event-status {
+  position: fixed;
+  top: 80px;
+}
 
 body.page-template-page-repeatable {
   .fullwidth-red-bar-section {
@@ -21217,6 +21222,9 @@ body.page-template-page-repeatable {
 
 body.logged-in.admin-bar {
   @media screen and (min-width: 820px) {
+    &.scrolled .film-event-status {
+      top: 112px;
+    }
     &.subpage {
       .site-header {
         top: 0!important;
@@ -21225,9 +21233,17 @@ body.logged-in.admin-bar {
           background-color: #FFF;
         }
       }
-      .film-event-status {
-        top: 105px;
-      }
+      // .film-event-status {
+      //   top: 105px;
+      // }
+    }
+    &.scrolled .hero-wrapper .stats {
+      top: 160px;
+    }
+  }
+  @media screen and (max-width: 821px) {
+    &.scrolled .film-event-status {
+      top: 125px;
     }
   }
 }

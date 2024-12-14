@@ -1,5 +1,6 @@
 <?php
 get_header(); 
+$post_type = get_post_type();
 $post_id = get_the_ID(); 
 $blank_image = THEMEURI . "images/square.png";
 $square = THEMEURI . "images/square.png";
@@ -9,8 +10,20 @@ $placeholder = THEMEURI . 'images/rectangle.png';
 $hide_page_subnav = get_field('hide_page_subnav');
 $show_subnav = ($hide_page_subnav) ?  false : true;
 $show_faqs = get_field('show_faqs_items');
+$custom_class = get_field('custom_class');
+$heroImage = get_field("full_image");
 ?>
 
+<?php if ($custom_class=='enchilada') { ?>
+  <?php get_template_part("parts/subpage-banner"); ?>
+  
+  <div id="primary" class="content-area-full content-default post-type-<?php echo $post_type;?>">
+
+    <?php get_template_part('parts/post-type-'.$post_type); ?>
+  
+  </div><!-- #primary -->
+
+<?php } else { ?>
 <div id="primary" data-post="<?php echo get_the_ID()?>" class="content-area-full festival-page">
 	<?php while ( have_posts() ) : the_post(); ?>
 		
@@ -69,6 +82,8 @@ $show_faqs = get_field('show_faqs_items');
     ?>
 
 </div><!-- #primary -->
+<?php } ?>
+
 <script type="text/javascript">
 jQuery(document).ready(function($){
 	$('#slideShow').flexslider({
