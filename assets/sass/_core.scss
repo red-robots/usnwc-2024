@@ -1430,6 +1430,12 @@ body.nav-open {
 	}
 }
 .banner-bottom.svgphp {
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  z-index: 20;
+  pointer-events: none;
   svg {
     fill: #FFFFFF;
   }

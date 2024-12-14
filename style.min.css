@@ -2079,6 +2079,7 @@ body.nav-open .menu-toggle{opacity:0}
 #banner.taxonomy-banner .static-banner img.actual-image{display:block;width:100%;height:auto;float:left}
 #banner.taxonomy-banner .static-banner img.helper{display:none;width:100%;height:auto;float:left}
 #banner.taxonomy-banner .static-banner img.desktop{display:none}
+.banner-bottom.svgphp{position:absolute;left:0;bottom:-3px;width:100%;z-index:20;pointer-events:none}
 .banner-bottom.svgphp svg{fill:#fff}
 #subpageSlides{position:relative;clear:both}
 #subpageSlides .sub-slide-item{width:100%;float:left}
