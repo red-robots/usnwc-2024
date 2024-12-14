@@ -4,7 +4,11 @@ $enchillada-red: #b4282e;
 $enchillada-gray: #7f7c73;
 
 body.enchilada {
-  //.content-default {
+
+  .banner-bottom.svgphp svg {
+    fill: #FEF9E7;
+  }
+    //.content-default {
     
     .main-description {
       color: $enchillada-gray;

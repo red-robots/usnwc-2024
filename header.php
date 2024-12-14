@@ -59,6 +59,7 @@ $heroImage = get_field("full_image");
 $postHeroImage = get_field("post_image_full");
 $flexbanner = get_field("flexslider_banner");
 $xBodyClass = 'pageNoBanner';
+$custom_class = '';
 if($heroImage) {
 	$xBodyClass = ($heroImage) ? 'pageHasBanner':'pageNoBannerr';
 } else {
@@ -151,7 +152,9 @@ if( is_single() ) {
 	if( is_front_page() ){
 		get_template_part('parts/homepage-hero');
 	} else {
-    get_template_part("parts/hero");  
+    if(empty($custom_class)) {
+      get_template_part("parts/hero");  
+    } 
 	}
 	?>
 

@@ -52,7 +52,7 @@ if ($eventStatus && $eventstatus!='upcoming') {
 if( $wrs_banner_type == 'video' ) { 
 	ob_start(); ?>
 	<?php if( $wrs_mobile_video || $wrs_video_banner ) { ?>
-		<div id="banner" class="subpageBanner">
+		<div id="banner" class="subpageBanner has-bottom-curve">
 			<div class="slides-wrapper static-banner">
 				<ul class="slides">
 					<li class="slideItem type-video">
@@ -67,6 +67,9 @@ if( $wrs_banner_type == 'video' ) {
 					</li>
 				</ul>
 			</div>
+      <div class="banner-bottom svgphp">
+        <?php include( locate_template('parts/banner-bottom-svg.php') ); ?>
+      </div>
 		</div>
 	<?php } 
 	$single_post_video = ob_get_contents();
@@ -77,7 +80,7 @@ if( $wrs_banner_type == 'video' ) {
 
 	ob_start(); 
 	if($heroImage) { ?>
-	<div id="banner" class="subpageBanner">
+	<div id="banner" class="subpageBanner has-bottom-curve">
 		<div class="slides-wrapper static-banner">
 			<ul class="slides">
 				<li class="slideItem type-image">
@@ -96,6 +99,9 @@ if( $wrs_banner_type == 'video' ) {
 				</li>
 			</ul>
 		</div>
+    <div class="banner-bottom svgphp">
+      <?php include( locate_template('parts/banner-bottom-svg.php') ); ?>
+    </div>
 	</div>
 	<?php } 
 	$single_post_hero = ob_get_contents();
@@ -106,7 +112,7 @@ if( $wrs_banner_type == 'video' ) {
 <?php
 
 if($has_red_tag) { ?>
-<div class="hero-wrapper hero-register-button<?php echo ($eventStatus) ? ' has-event-status':''; ?>">
+<div class="hero-wrapper has-bottom-curve hero-register-button<?php echo ($eventStatus) ? ' has-event-status':''; ?>">
 <?php if($status){ ?>
 
 	<?php if( $wrs_banner_type == 'video' ) { 
