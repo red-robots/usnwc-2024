@@ -4,6 +4,12 @@
  */
 
 get_header(); 
+
+$filter = ( isset($_GET['filter']) && $_GET['filter'] ) ? $_GET['filter'] : '';
+$filterVal = $filter;
+if($filter && $filter!='all') {
+  $filter = explode('_', $filter);
+}
 ?>
 
 <div id="primary" data-post="<?php echo get_the_ID()?>" class="content-area-full activities-parent">
@@ -27,6 +33,17 @@ get_header();
     'paged'           => $paged,
     'post_status'     => 'publish'
   );
+
+  if($filterVal && $filterVal!='all') {
+    $args['tax_query'] = array(
+      array(
+        'taxonomy' => 'category',
+        'field'    => 'slug',
+        'terms'    => $filter,
+      )
+    );
+  }
+
   $posts = new WP_Query($args);
   $jsonBoxes = get_option('stories_boxes_width');
   $currentBoxes = ($jsonBoxes) ? json_decode($jsonBoxes) : '';
@@ -40,7 +57,32 @@ get_header();
     if($count>5) {
       $stories_class .= ' items-6-or-more';
     }
+
+    $filter_options = array(
+      'all'=>'All',
+      'stories_films'=> 'Stories/Films'
+    );
+
+    $filter_text = ($filterVal && isset($filter_options[$filterVal])) ? $filter_options[$filterVal] : 'All';
   ?>
+
+  <div id="filter-form" class="filter-form">
+    <form class="filter" action="<?php echo get_permalink() ?>" method="get">
+      <div class="input-field">
+        <button type="button" class="filter-button" aria-expanded="false"><?php echo $filter_text ?></button>
+        <div class="dropdown">
+          <ul class="dropdown-options">
+            <?php foreach ($filter_options as $k=>$v) { ?>
+            <li>
+              <a href="javascript:void(0)" data-val="<?php echo $k ?>"><?php echo $v ?></a>
+            </li>  
+            <?php } ?>
+          </ul>
+        </div>
+      </div>
+    </form>
+  </div>
+
   <section class="stories-feeds-section ">
     <div class="wrapper stories-wrapper">
       <div id="container" class="flexwrap stories-entries <?php echo $stories_class ?>">

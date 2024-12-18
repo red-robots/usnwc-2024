@@ -2552,6 +2552,91 @@ body.logged-in.admin-bar.subpage {
   }
 }
 
+.filter-form {
+  width: 100%;
+  float: left;
+  position: relative;
+  z-index: 30;
+  form {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .input-field {
+    width: 100%;
+    position: relative;
+  }
+  .filter-button {
+    display: block;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    padding: 0 0;
+    width: 170px;
+    height: 26px;
+    position: relative;
+    border-bottom: 2px solid #000;
+    text-align: left;
+    margin: 0 auto;
+    font-family: $font-brandon-medium;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 0 5px;
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-left: 2px solid #000;
+      border-bottom: 2px solid #000;
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 7px;
+      right: 7px;
+    }
+  }
+  .dropdown {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    display: flex;
+    justify-content: center;
+    ul {
+      display: none;
+      width: 215px;
+      margin: 0 0;
+      padding: 10px;
+      list-style: none;
+      border: 1px solid #b5b5b5;
+      border-radius: 10px;
+      background: #fff;
+      position: absolute;
+    }
+    a {
+      display: block;
+      width: 100%;
+      text-decoration: none !important;
+      text-align: center;
+      border-bottom: 1px dotted #dedede;
+      font-family: $font-brandon-medium;
+      font-size: 14px;
+      text-transform: uppercase;
+      line-height: 1.2;
+      padding: 10px 5px;
+      color: #000;
+      &:hover, &:focus {
+        background-color: #f4f4f4;
+        color: $red;
+      }
+    }
+    ul li:last-child a {
+      border-bottom: none;
+    }
+  }
+  
+}
+
 @media screen and (max-width: 819px) {
   body.subpage .site-header,
   body.scrolled .site-header {

@@ -5307,6 +5307,16 @@ body.scrolled .site-header.scrolling{-webkit-transform:none !important;transform
 .hero--single-video .outer-video-wrap .videoIframeDiv{-webkit-transform:scale(1.05);transform:scale(1.05);background-size:cover;background-repeat:no-repeat}
 .text-centered-section.dark h1.page-title{color:#fff !important}
 section.homepage-hero{overflow:hidden}
+.filter-form{width:100%;float:left;position:relative;z-index:30}
+.filter-form form{max-width:600px;width:100%;margin:0 auto}
+.filter-form .input-field{width:100%;position:relative}
+.filter-form .filter-button{display:block;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;background-color:transparent;padding:0;width:170px;height:26px;position:relative;border-bottom:2px solid #000;text-align:left;margin:0 auto;font-family:"Brandon Medium";font-size:14px;text-transform:uppercase;padding:0 5px}
+.filter-form .filter-button:after{content:"";display:inline-block;width:6px;height:6px;border-left:2px solid #000;border-bottom:2px solid #000;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);position:absolute;top:7px;right:7px}
+.filter-form .dropdown{width:100%;position:absolute;left:0;bottom:-15px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.filter-form .dropdown ul{display:none;width:215px;margin:0;padding:10px;list-style:none;border:1px solid #b5b5b5;border-radius:10px;background:#fff;position:absolute}
+.filter-form .dropdown a{display:block;width:100%;text-decoration:none !important;text-align:center;border-bottom:1px dotted #dedede;font-family:"Brandon Medium";font-size:14px;text-transform:uppercase;line-height:1.2;padding:10px 5px;color:#000}
+.filter-form .dropdown a:hover,.filter-form .dropdown a:focus{background-color:#f4f4f4;color:#ba0d30}
+.filter-form .dropdown ul li:last-child a{border-bottom:0}
 body.enchilada .banner-bottom.svgphp svg{fill:#fef9e7}
 body.enchilada .main-description{color:#7f7c73}
 body.enchilada #pageTabs a,body.enchilada .title-w-icon h2,body.enchilada h2.stitle,body.enchilada .stitle,body.enchilada .text-and-image-blocks .textcol .mstitle,body.enchilada .sectionTitle,body.enchilada .information-tabs-wrap{font-family:novecento-sans-narrow}
