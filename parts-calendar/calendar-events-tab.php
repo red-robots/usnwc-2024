@@ -180,22 +180,24 @@ $total_records = ($total) ? count($total) : 0;
     </div>
 
     <?php 
-    if($total_records>$per_page) {
+    if( $total_records>$per_page ) {
       $total_pages = round($total_records/$per_page); ?>
-      <div id="pagination" class="pagination pagination-links">
+      <div id="hiddenData" style="display:none;"></div>
+      <div id="pagination" class="pagination-wrapper loadMoreWrappe">
         <?php
-            $pagination = array(
-                'base' => @add_query_arg('pg','%#%'),
-                'format' => '?paged=%#%',
-                'mid-size' => 1,
-                'current' => $paged,
-                'total' => $total_pages,
-                'prev_next' => True,
-                'prev_text' => __( '<span class="fas fa-chevron-left"></span>' ),
-                'next_text' => __( '<span class="fas fa-chevron-right"></span>' )
-            );
-            echo paginate_links($pagination);
+            // $pagination = array(
+            //     'base' => @add_query_arg('pg','%#%'),
+            //     'format' => '?paged=%#%',
+            //     'mid-size' => 1,
+            //     'current' => $paged,
+            //     'total' => $total_pages,
+            //     'prev_next' => True,
+            //     'prev_text' => __( '<span class="fas fa-chevron-left"></span>' ),
+            //     'next_text' => __( '<span class="fas fa-chevron-right"></span>' )
+            // );
+            // echo paginate_links($pagination);
         ?>
+        <a href="javascript:void(0)" data-baseurl="<?php echo get_permalink() ?>" id="loadMorePosts" data-next="2" data-total-pages="<?php echo $total_pages ?>" class="button button-pill">See More</a>
       </div>
     <?php } ?>
   </div>
@@ -207,3 +209,35 @@ $total_records = ($total) ? count($total) : 0;
     <?php } ?>
   <?php } ?>
 </section>
+
+<script>
+jQuery(document).ready(function($){
+
+  $(document).on('click','#loadMorePosts', function(e){
+    e.preventDefault();
+    var loadMoreButton = $(this);
+    var d = new Date();
+    var next = $(this).attr('data-next');
+    var nextPlus = parseInt(next) + 1;
+    var totalPages = parseInt( $(this).attr('data-total-pages') );
+    var baseUrl = $(this).attr('data-baseurl') + '?pg=' + next;
+    loadMoreButton.attr('data-next', nextPlus);
+
+    $('#hiddenData').load(baseUrl + ' .records-container .flexwrap', function(){
+      if( $('#hiddenData .infoBox').length ) {
+        if( $('#hiddenData .flexwrap .infoBox.first').length ) {
+          $('#hiddenData .flexwrap .infoBox.first').remove();
+        }
+        var items = $('#hiddenData .flexwrap').html();
+        $('.records-container .flexwrap').append(items);
+        $('#hiddenData').html("");
+      }
+
+      if(nextPlus>totalPages) {
+        loadMoreButton.hide();
+      }
+    });
+  });
+
+}); 
+</script>

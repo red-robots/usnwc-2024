@@ -1,4 +1,4 @@
-<div class="infoBox post-type--<?php echo $post_type ?>">
+<div class="infoBox animated fadeIn post-type--<?php echo $post_type ?>">
   <div class="wrap">
     <figure>
       <?php if ($thumbnail && isset($thumbnail['url'])) { ?>
