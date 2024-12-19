@@ -32,21 +32,25 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
   $class1 = ( ($all_access_title || $all_access_text) && ($single_access_title || $single_access_text) ) ? 'half':'full';
 
   $all_access_pass_options = get_field('all_access_pass_options');
+  $row_class = ( $all_access_feat_image && ($all_access_text || $all_access_pass_options) ) ? 'half':'full';
   ?>
 
   <section class="access-pass-options">
     <div class="flexwrap">
       <?php if ($all_access_feat_image || $all_access_title) { ?>
       <div class="infobox all">
-        <div class="inner">
-          <figure>
+        <div class="inner <?php echo $row_class ?>">
+
+          <?php if ($all_access_feat_image) { ?>
+          <figure class="flexcol image-block">
             <?php if($all_access_feat_image) { ?>
             <img src="<?php echo $all_access_feat_image['url'] ?>" alt="<?php echo $all_access_feat_image['title'] ?>">
             <?php } ?>
           </figure>
+          <?php } ?>
 
           <?php if($all_access_text || $all_access_pass_options) { ?>
-            <div class="textwrap">
+            <div class="flexcol textwrap">
               <div class="inside">
                 <?php if($all_access_title) { ?>
                   <h2 class="stitle"><?php echo $all_access_title ?></h2>

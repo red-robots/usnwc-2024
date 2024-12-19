@@ -1944,6 +1944,10 @@ section.visit.flexible-image-cards,
           gap: 1em;
         }
       }
+
+      &.full {
+        justify-content: center;
+      }
     }
     .single-activity-options .name span,
     .single-activity-options .price span {
