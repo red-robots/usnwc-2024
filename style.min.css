@@ -5304,7 +5304,7 @@ body.scrolled .site-header.scrolling{-webkit-transform:none !important;transform
 .hero--single-video .videoIframeDiv{overflow:hidden}
 .hero--single-video .videoIframeDiv,.hero--single-video .outer-video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%}
 .hero--single-video .outer-video-wrap iframe,.hero--single-video .videoIframeDiv video{position:absolute;top:0;left:0;width:100%;height:100%}
-.hero--single-video .outer-video-wrap .videoIframeDiv{-webkit-transform:scale(1.05);transform:scale(1.05);background-size:cover;background-repeat:no-repeat}
+.hero--single-video .outer-video-wrap .videoIframeDiv{background-size:cover;background-repeat:no-repeat}
 .text-centered-section.dark h1.page-title{color:#fff !important}
 section.homepage-hero{overflow:hidden}
 .filter-form{width:100%;float:left;position:relative;z-index:30}
