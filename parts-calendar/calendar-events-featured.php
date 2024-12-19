@@ -6,11 +6,20 @@
     $pagelink = get_permalink($pid);
     $thumbnail = '';
     $short_description = get_field('event__short_description', $pid);
-    if( get_field('thumbnail_image', $pid) ) {
-      $thumbnail = get_field('thumbnail_image', $pid);
+    // if( get_field('thumbnail_image', $pid) ) {
+    //   $thumbnail = get_field('thumbnail_image', $pid);
+    // }
+
+    $featuredImage = '';
+
+    if( get_field('full_image', $pid) ) {
+      $thumbnail = get_field('full_image', $pid);
+      $featuredImage = get_field('full_image', $pid);
     }
+
     if( $post_type=='dining' ) {
       $thumbnail = get_field('mobile-banner', $pid);
+      $featuredImage = get_field('mobile-banner', $pid);
     }
 
     $start = get_field('start_date', $pid);
@@ -59,7 +68,11 @@
   <div class="infoBox first post-type--<?php echo $post_type ?>">
     <div class="wrap">
       <figure>
-        <?php if ($thumbnail) { ?>
+        <?php 
+        
+
+        $thumbnail = false;
+        if ($thumbnail) { ?>
           <img src="<?php echo $thumbnail['url'] ?>" alt="" />
         <?php } else { ?>
           <img src="<?php echo get_template_directory_uri(); ?>/images/image-not-available.jpg" alt="" />

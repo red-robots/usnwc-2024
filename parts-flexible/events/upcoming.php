@@ -66,7 +66,7 @@
                   <?php if ($show_start_date && $start_date) { ?>
                   <div class="start-date"><?php echo $start_date ?></div>
                   <?php } ?>
-                  <?php if ($image) { ?>
+                  <?php if ($image && isset($image['url'])) { ?>
                   <figure class="event-image">
                     <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['url'] ?>" />
                   </figure>
@@ -85,7 +85,7 @@
                 <?php if ($show_start_date && $start_date) { ?>
                 <div class="start-date"><?php echo $start_date ?></div>
                 <?php } ?>
-                <?php if ($image) { ?>
+                <?php if ( $image && isset($image['url']) ) { ?>
                 <figure class="event-image">
                   <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['url'] ?>" />
                 </figure>

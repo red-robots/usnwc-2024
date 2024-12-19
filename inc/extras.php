@@ -438,6 +438,17 @@ function my_custom_admin_js() { ?>
 <script type="text/javascript">
 jQuery(document).ready(function($){
 
+  if( $('body').hasClass('post-type-race') ) {
+    if( $('#side-sortables ul.acf-hl.acf-tab-group li').length ) {
+      $('#side-sortables ul.acf-hl.acf-tab-group li').each(function(){
+        if( $(this).text().trim()!='1:1') {
+          $(this).hide();
+        }
+      });
+    }
+  }
+  
+
   if ( typeof acf !== 'undefined' ) {
     acf.add_action( 'wysiwyg_tinymce_init', function( ed, id, mceInit, $field ) {
       console.log(ed);
