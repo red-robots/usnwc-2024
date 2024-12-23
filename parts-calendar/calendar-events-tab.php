@@ -156,7 +156,13 @@ $total_records = ($total) ? count($total) : 0;
               if( date('m', strtotime($start))==date('m', strtotime($end)) ) {
                 $start_date_month = date('M j', strtotime($start));
                 $end_date_month = date('j, Y', strtotime($end));
-                $event_dates .= $start_date_month . '-' . $end_date_month;
+
+                if( date('d', strtotime($start))==date('d', strtotime($end)) ) {
+                  $event_dates .= date('M j, Y', strtotime($start));
+                } else {
+                  $event_dates .= $start_date_month . '-' . $end_date_month;
+                }
+                
               } else {
                 //Different months
                 $start_date_month = date('M j', strtotime($start));
