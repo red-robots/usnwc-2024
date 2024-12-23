@@ -80,9 +80,12 @@
                   <?php if ($nLink && $nTitle) { ?>
                   <div class="link">
                     <?php  
-                    if ( (strpos($nLink, '#') !== false) && (strpos($v_title_slug, 'hours') !== false) ) {
+                    // if ( (strpos($nLink, '#') !== false) && ( (strpos($v_title_slug, 'hours') !== false) ) ) {
+
+                    if ( (strpos($nLink, '#') !== false) && ( (strpos($nLink, '-hours') !== false) ) ) {
                       //Get Activity Schedule
                       $slug = str_replace('#','', trim($nLink));
+                      $slug = str_replace('-hours','', $slug);
                       $data = getActivityScheduleToday($slug); ?>
                       <?php if($data) { ?>
                         <a href="javascript:void(0)" class="popupSchedule"><?php echo $nTitle ?> <i class="fa-light fa-angle-right"></i></a>
