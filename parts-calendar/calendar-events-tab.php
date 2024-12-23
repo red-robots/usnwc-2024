@@ -8,12 +8,22 @@ $filter_type = ( isset($_GET['type']) && $_GET['type'] ) ? $_GET['type'] : '';
 
 $featured_event = get_field('featured_event','option'); /* will return a post id */
 
+// $cpttypes = [
+//   'festival'    => 'Festivals',
+//   'race'        => 'Races',
+//   'film-series' => 'Film Series',
+//   'dining'      => 'Dining',
+//   'music'       => 'River Jam',
+//   'wildwoods'   => 'Wildwoods'
+// ];
+
 $cpttypes = [
-  'festival'    => 'Festivals',
-  'race'        => 'Races',
-  'film-series' => 'Film Series',
   'dining'      => 'Dining',
-  'music'       => 'River Jam'
+  'festival'    => 'Festivals',
+  'film-series' => 'Film Series',
+  'music'       => 'River Jam',
+  'race'        => 'Races',
+  'wildwoods'   => 'Wildwoods'
 ];
 
 $selected_filter_name = ($filter_type && isset($cpttypes[$filter_type])) ? $cpttypes[$filter_type]:'';
@@ -28,11 +38,25 @@ if($filter_type && $filter_type!='all') {
 }
 
 
-$k=0;
-foreach($postTypes as $type=>$title) {
-  $and = ($k>0) ? ' OR ' : '';
-  $where_post_types .= $and . 'pp.post_type="'.$type.'"';
-  $k++;
+if($postTypes) {
+
+  // if( count($postTypes)==1 ) {
+  //   $where_post_types .= ' pp.post_type="' .key($postTypes). '"';
+  // } else {
+  //   $k=0;
+  //   foreach($postTypes as $type=>$title) {
+  //     $and = ($k>0) ? ' OR ' : '';
+  //     $where_post_types .= $and . 'pp.post_type="'.$type.'"';
+  //     $k++;
+  //   }
+  // }
+  
+  $k=0;
+  foreach($postTypes as $type=>$title) {
+    $and = ($k>0) ? ' OR ' : '';
+    $where_post_types .= $and . 'pp.post_type="'.$type.'"';
+    $k++;
+  }
 }
 
 $condition1 = "SELECT pp.ID, mm.meta_value AS start_date 

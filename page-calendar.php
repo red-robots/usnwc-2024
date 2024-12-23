@@ -22,6 +22,7 @@ get_header(); ?>
       <header class="page-header">
         <h1 class="heading-center"><?php the_title(); ?></h1>
       </header>
+    <?php endwhile; ?>
 
       <?php get_template_part('parts-calendar/todays-snapshot') ?>
 
@@ -51,11 +52,10 @@ get_header(); ?>
             </div>
           </div>
           <?php } ?>
-					
 				</div>
 			</section>
 
-		<?php endwhile; ?>
+		
 
 	</main><!-- #main -->
 </div><!-- #primary -->
