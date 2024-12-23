@@ -5306,6 +5306,8 @@ body.scrolled .site-header.scrolling{-webkit-transform:none !important;transform
 .hero--single-video .outer-video-wrap iframe,.hero--single-video .videoIframeDiv video{position:absolute;top:0;left:0;width:100%;height:100%}
 .hero--single-video .outer-video-wrap .videoIframeDiv{background-size:cover;background-repeat:no-repeat}
 .text-centered-section.dark h1.page-title{color:#fff !important}
+.menu-sections .textcol .mstime.custom-time{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.menu-sections .textcol .mstime.custom-time .name{padding-right:10px}
 section.homepage-hero{overflow:hidden}
 .filter-form{width:100%;float:left;position:relative;z-index:30}
 .filter-form form{max-width:600px;width:100%;margin:0 auto}
@@ -5953,6 +5955,7 @@ body.subpage.single.single-festival .column-data-section{padding-bottom:40px}
 body.page-template-page-visit section.visit.flexible-image-cards .tileWrapper,section.visit.flexible-image-cards .tileWrapper,.flexible-image-cards .tileWrapper{padding-left:5vw;padding-right:5vw}
 body.page-template-page-visit section.visit.flexible-image-cards .tile figure h2,section.visit.flexible-image-cards .tile figure h2,.flexible-image-cards .tile figure h2{padding:20px 30px}
 body.page-template-page-visit section.visit.flexible-image-cards .tile.full-bleed figure,section.visit.flexible-image-cards .tile.full-bleed figure,.flexible-image-cards .tile.full-bleed figure{margin-left:-5vw;margin-right:-5vw}
+.menu-sections .textcol .mstime.custom-time .name{padding-right:20px;min-width:200px}
 }@media screen and (min-width:1281px){.text-and-image-blocks .gallerycol.mapCol{min-height:500px}
 body.page-template-page-visit section.visit .tileWrapper{padding-left:5vw;padding-right:5vw}
 body.page-template-page-visit section.visit .cards-row-section .cards-inner{padding-left:5vw;padding-right:5vw}
@@ -6164,6 +6167,7 @@ body.logged-in.admin-bar .site-header{top:45px}
 #primary.buy-page.buy-page-new .access-pass-options .infobox .inner .textwrap h2,#primary.buy-page.buy-page-new .access-pass-options .infobox .inner .textwrap .text,#primary.buy-page.buy-page-new .access-pass-options .infobox .inner .textwrap .text p{text-align:center !important}
 #primary.buy-page.buy-page-new .access-pass-options .infobox .inner .buttons{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1em}
 .new-nav-v2.desktop-navigation .mega-menu-content .menu-col{width:50% !important}
+.menu-sections .textcol .mstime.custom-time{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 }@media screen and (max-width:600px){section.route-stories .block .feat-image.no-image .bg:before{width:30vw;height:30vw}
 .topinfo .businessHours{left:-37vw}
 #section-featured-posts .block .feat-image.no-image .bg:before{width:30vw;height:30vw}

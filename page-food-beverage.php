@@ -67,6 +67,8 @@ get_header(); ?>
             $boxClass = ( ($e_title || $e_text) && $hasImages ) ? 'half':'full';
             $id = get_the_ID();
             $buttons = get_sub_field('buttons');
+            $is_custom_time = get_sub_field('is_custom_time');
+            $custom_times = get_sub_field('custom_times');
           ?>
 
           <section class="menu-sections menu-sections-repeatable">
@@ -88,22 +90,53 @@ get_header(); ?>
                           <div class="mstext"><?php echo $e_text ?></div>
                         <?php } ?>
 
-                        <?php if ($e_time) { ?>
-                          <?php if (strpos($e_time, '[get_hours') !== false) { ?>
-                            <?php if ( do_shortcode($e_time) ) { 
-                              $hours_info = do_shortcode($e_time);
-                              $hours_info = strtolower($hours_info);
-                              $has_hours = '';
-                              if ( (strpos($hours_info, 'am') !== false) || strpos($hours_info, 'pm') !== false ) {
-                                $has_hours = ' has-hours';
-                              } 
-                              if($has_hours) { ?>
-                              <div class="mstime shcode<?php echo $has_hours ?>"><?php echo do_shortcode($e_time); ?></div>
+                        <?php if ( $is_custom_time ) { ?>
+
+                          <?php if ($custom_times) { ?>
+                          <div class="custom-times">
+                            <?php foreach ($custom_times as $c) { 
+                              $c_name = $c['name'];
+                              $start_time = $c['start_time'];
+                              $end_time = $c['end_time'];
+                              $time_info = array($start_time, $end_time);
+                              $times = '';
+                              if( array_filter($time_info) ) {
+                                $time_info = array_filter($time_info);
+                                $times = implode(' &ndash; ', $time_info);
+                              }
+                              if($c_name) { ?>
+                              <div class="mstime custom-time">
+                                <span class="name"><?php echo $c_name ?></span>
+                                <?php if ($times) { ?>
+                                <span class="time"><?php echo $times ?></span> 
+                                <?php } ?>
+                              </div>
                               <?php } ?>
+                            
                             <?php } ?>
-                          <?php } else { ?>
-                            <div class="mstime"><?php echo $e_time ?></div>
+                          </div>
                           <?php } ?>
+                          
+                        <?php } else { ?>
+
+                          <?php if ($e_time) { ?>
+                            <?php if (strpos($e_time, '[get_hours') !== false) { ?>
+                              <?php if ( do_shortcode($e_time) ) { 
+                                $hours_info = do_shortcode($e_time);
+                                $hours_info = strtolower($hours_info);
+                                $has_hours = '';
+                                if ( (strpos($hours_info, 'am') !== false) || strpos($hours_info, 'pm') !== false ) {
+                                  $has_hours = ' has-hours';
+                                } 
+                                if($has_hours) { ?>
+                                <div class="mstime shcode<?php echo $has_hours ?>"><?php echo do_shortcode($e_time); ?></div>
+                                <?php } ?>
+                              <?php } ?>
+                            <?php } else { ?>
+                              <div class="mstime"><?php echo $e_time ?></div>
+                            <?php } ?>
+                          <?php } ?>
+
                         <?php } ?>
 
                         <?php if ($buttons) { ?>

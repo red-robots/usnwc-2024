@@ -2498,6 +2498,21 @@ body.scrolled {
 .text-centered-section.dark h1.page-title {
   color: #FFF!important;
 }
+.menu-sections .textcol .mstime.custom-time {
+  display: flex;
+  flex-wrap: wrap;
+  .name {
+    padding-right: 10px;
+    @media screen and (min-width: 1251px) {
+      padding-right: 20px;
+      min-width: 200px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    justify-content: space-between;
+  }
+}
 section.homepage-hero {
   overflow: hidden;
 }
@@ -2639,7 +2654,6 @@ body.logged-in.admin-bar.subpage {
       border-bottom: none;
     }
   }
-  
 }
 
 @media screen and (max-width: 819px) {
