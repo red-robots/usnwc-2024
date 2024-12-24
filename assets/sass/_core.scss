@@ -7793,6 +7793,7 @@ body.page-template-page-stories {
   @include max($tabwidth) {
     position: absolute;
     bottom: 0;
+    top: unset!important;
     z-index: 9999999;
   }
 }
