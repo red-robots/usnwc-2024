@@ -7790,9 +7790,14 @@ body.page-template-page-stories {
 	}
 }
 .hero-register-button .stats.teaser {
-	@include tab() {
-		top: 90px;
-	}
+	// @include tab() {
+	// 	top: 90px;
+	// }
+  @include max($tabwidth) {
+    position: absolute;
+    bottom: 0;
+    z-index: 9999999;
+  }
 }
 .hero-register-button {
 	.stats {
