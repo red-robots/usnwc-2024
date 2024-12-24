@@ -2336,6 +2336,7 @@ body.scrolled {
     position: fixed;
     height: 80px;
     background-color: rgba(255,255,255,.95)!important;
+    box-shadow: 0 0 10px rgba(0,0,0,.075);
     .nav-item-today:hover, 
     .nav-item-today:focus-within {
       .today-dropdown {

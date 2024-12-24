@@ -969,8 +969,14 @@ nav.new-nav-mobile {
 		}
 	}
 }
-body.scrolled .navbar {
+body.scrolled {
 	// background: rgba(255,255,255,.95);
+  .navbar .flexer .logo {
+    filter: none!important;
+  }
+  &.home .navbar .flexer .logo {
+    filter: invert(1)!important;
+  }
 }
 
 
@@ -13483,9 +13489,10 @@ body.page-template-page-race {
 }
 
 .no-banner-spacer {
-	width: 100%;
-	float: left;
-	margin-bottom: 70px;
+	// width: 100%;
+	// float: left;
+	// margin-bottom: 70px;
+  display: none;
 }
 
 .instruction-taxonomy-page {
@@ -17643,7 +17650,7 @@ body.subpage {
       }
     }
     .site-content {
-      padding-top: 20px;
+      padding-top: 0;
     }
   }
 }
