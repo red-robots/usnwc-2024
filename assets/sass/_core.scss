@@ -7812,7 +7812,7 @@ body.page-template-page-stories {
 		transition: all ease .3s;
 		@media screen and (min-width: $tabwidth) {
 			position: absolute;
-			top: 85px;
+			top: 0;
 			left: 0;
 		}
 		@include tab {
