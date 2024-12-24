@@ -5570,7 +5570,6 @@ body.subpage.single .intro-galleries.half .rightcol{width:70%;padding-left:15px}
 .content-area-full.post-type-dining .post-hero-image .stats,.content-area-full.instruction-page .post-hero-image .stats{position:absolute;top:0;left:0}
 .content-area-full.post-type-dining .registerBtn,.content-area-full.instruction-page .registerBtn{width:auto}
 .content-area-full.post-type-dining .registerBtn:after,.content-area-full.instruction-page .registerBtn:after{content:"";display:block;width:0;height:0;border-left:28px solid #ba0d30;border-top:26px solid transparent;border-bottom:26px solid transparent;position:absolute;top:0;right:-28px;-webkit-transition:all ease .3s;transition:all ease .3s}
-.hero-register-button .stats.teaser{top:90px}
 .hero-register-button .stats{display:block}
 .hero-register-button .registerBtn{width:auto}
 .hero-register-button .registerBtn:before,.hero-register-button .registerBtn:after{content:"";display:block;-webkit-transition:all ease .3s;transition:all ease .3s;position:absolute;right:-12px;width:50px;height:50%;background-color:#ba0d30}
@@ -6075,6 +6074,7 @@ body.home .homerow .imagebox a .title{font-size:5vw}
 .schedule-activities-info.new-layout .activities .activity-info ul.list li.data .cell .cellTxt .ct.closed:before{background:#ba0d30}
 .schedule-activities-info.new-layout .activities .activity-info{float:left}
 .section-links-icons .block{width:50% !important;padding:6vw 3vw}
+.hero-register-button .stats.teaser{position:absolute;bottom:0;z-index:9999999}
 .dining-event-details .dining-event-details{padding-top:0;padding-bottom:10px}
 .filter-wrapper.filterstyle .wrapper{max-width:500px;width:100%}
 .filter-wrapper.filterstyle .flexwrap .filter-label,.filter-wrapper.filterstyle .flexwrap .select-wrap{width:100%;float:left}
