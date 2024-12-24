@@ -100,39 +100,45 @@ if( is_single() ) {
 
 		<div class="navbar">
 			<div class="flexer">
-				<div class="left">
-		        <?php
-						/* NAVIGATION */
-						get_template_part("parts/navigation-new");
-					?>
-				</div>
-				<div class="logo">
-					<a href="<?php bloginfo('url'); ?>">
-						<img src="<?php bloginfo('template_url'); ?>/images/logo-white.png">
-					</a>
-		   </div>
 
-        <?php  
-          $secondary_links = get_field('secondary_links', 'option');
-        ?>
-				<div class="right">
-          <?php if ($secondary_links) { ?>
-            <?php foreach ($secondary_links as $e) { 
-              $s = $e['link'];
-              $s_name = ( isset($s['title']) ) ? $s['title'] : '';
-              $s_link = ( isset($s['url']) ) ? $s['url'] : '';
-              $s_target = ( isset($s['target']) ) ? $s['target'] : '_self';
-              if($s_name && $s_link) { ?>
-              <div class="nav-item"><a href="<?php echo $s_link ?>" class="navlink" target="<?php echo $s_target ?>"><?php echo $s_name ?></a></div>
+        <div class="logo">
+          <a href="<?php bloginfo('url'); ?>">
+            <img src="<?php bloginfo('template_url'); ?>/images/logo-white.png">
+          </a>
+       </div>
+
+
+       <div class="navs">
+  				<div class="left">
+  		        <?php
+  						/* NAVIGATION */
+  						get_template_part("parts/navigation-new");
+  					?>
+  				</div>
+  				
+          <?php  
+            $secondary_links = get_field('secondary_links', 'option');
+          ?>
+  				<div class="right">
+            <?php if ($secondary_links) { ?>
+              <?php foreach ($secondary_links as $e) { 
+                $s = $e['link'];
+                $s_name = ( isset($s['title']) ) ? $s['title'] : '';
+                $s_link = ( isset($s['url']) ) ? $s['url'] : '';
+                $s_target = ( isset($s['target']) ) ? $s['target'] : '_self';
+                if($s_name && $s_link) { ?>
+                <div class="nav-item"><a href="<?php echo $s_link ?>" class="navlink" target="<?php echo $s_target ?>"><?php echo $s_name ?></a></div>
+                <?php } ?>
               <?php } ?>
             <?php } ?>
-          <?php } ?>
-					   
-            <div class="nav-item nav-item-today">
-    					<button class="today" tabindex="0" data-id="1">Today</button>
-    					<?php get_template_part('parts/today'); ?>
-            </div>
-				</div>
+  					   
+              <div class="nav-item nav-item-today">
+      					<button class="today" tabindex="0" data-id="1">Today</button>
+      					<?php get_template_part('parts/today'); ?>
+              </div>
+  				</div>
+        </div>
+
 		  </div>
 		</div>
 

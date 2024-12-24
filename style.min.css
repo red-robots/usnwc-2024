@@ -1944,6 +1944,8 @@ nav.new-nav .mega-menu .mega-menu-content a:after{content:""}
 .navbar .logo{display:inline-block;width:50px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .navbar .logo a,.navbar .logo img{display:inline-block;width:100%}
 .navbar .logo img{height:auto}
+.navbar .navs{width:75%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
+.navbar .navs .left,.navbar .navs .right{width:auto !important}
 #mobile-menu-toggle{position:relative;z-index:600;width:45px;height:45px;text-align:center}
 #mobile-menu-toggle span.bar{display:block;width:40px;margin:0 auto;top:20px}
 #mobile-menu-toggle span.bar,#mobile-menu-toggle span.bar:before,#mobile-menu-toggle span.bar:after{position:absolute;height:2px;background:rgba(255,255,255,.9);-webkit-transition:all ease .2s;transition:all ease .2s}

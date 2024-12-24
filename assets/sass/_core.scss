@@ -493,6 +493,16 @@ nav.new-nav {
 			height: auto;
 		}
 	}
+
+  .navs {
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .left, .right {
+      width: auto!important;
+    }
+  }
 }
 /* Mobile Menu */
 #mobile-menu-toggle {
