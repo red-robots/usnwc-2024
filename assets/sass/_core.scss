@@ -7790,6 +7790,9 @@ body.page-template-page-stories {
 	}
 }
 .hero-register-button .stats.teaser {
+  @include tab {
+    top: 0!important;
+  }
   @include max($tabwidth) {
     position: absolute;
     bottom: 0;
