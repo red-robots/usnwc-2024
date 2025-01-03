@@ -101,7 +101,7 @@ if( is_single() ) {
 		<div class="navbar">
 			<div class="flexer">
 
-        <div class="left">
+        <div class="left-nav left">
           <div class="logo">
             <a href="<?php bloginfo('url'); ?>">
               <img src="<?php bloginfo('template_url'); ?>/images/logo-white.png">
@@ -114,7 +114,7 @@ if( is_single() ) {
        </div>
 
 
-       <div class="navs">		
+       <div class="right-nav navs">		
           <?php  
             $secondary_links = get_field('secondary_links', 'option');
           ?>

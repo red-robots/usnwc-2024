@@ -2669,6 +2669,12 @@ body.logged-in.admin-bar.subpage {
   padding-top: 10px;
   border-top: 1px solid #CCC;
 }
+.navbar .left-nav {
+  width: 68%;
+}
+.navbar .navs.right-nav {
+  width: 30%;
+}
 
 @media screen and (max-width: 819px) {
   body.subpage .site-header,

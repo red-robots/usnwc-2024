@@ -5325,6 +5325,8 @@ section.homepage-hero{overflow:hidden}
 .filter-form .dropdown ul li:last-child a{border-bottom:0}
 .schedule-activities-info.new-layout-v2 .event-date{font-size:30px;color:#777}
 #todays-snapshot.snapshop-wrapper{margin-top:60px;padding-top:10px;border-top:1px solid #ccc}
+.navbar .left-nav{width:68%}
+.navbar .navs.right-nav{width:30%}
 body.enchilada .banner-bottom.svgphp svg{fill:#fef9e7}
 body.enchilada .main-description{color:#7f7c73}
 body.enchilada #pageTabs a,body.enchilada .title-w-icon h2,body.enchilada h2.stitle,body.enchilada .stitle,body.enchilada .text-and-image-blocks .textcol .mstitle,body.enchilada .sectionTitle,body.enchilada .information-tabs-wrap{font-family:novecento-sans-narrow}
