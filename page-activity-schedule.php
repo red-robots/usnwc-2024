@@ -33,133 +33,22 @@ $has_banner = ($slideImages) ? 'has-banner':'no-banner';
 			</div>
 		<?php endwhile;  ?>
 
-		<div class="schedule-activities-info new-layout full">
-			<?php
-			//$dateToday = date('l, F jS, Y'); /* example result: SATURDAY, OCTOBER 17TH, 2020 */
-			//$dateToday = date('l, F j'); /* example resul: SATURDAY, OCTOBER 17 */
-			$dateNow = date('Y-m-d');
-			//$dateToday = date('l, F j', strtotime($dateNow) + 60 * 60 * 22);
+		<div class="schedule-activities-info new-layout-v2 full">
+      <div class="subhead">
+        <div class="date-hours">
+          <h2 class="event-date"><?php echo date('l, F j, Y'); ?></h2>
+        </div>
+      </div>
 
-			// $dateNow = date('Y-m-d');
-			// $exactTime = date('Y-m-d', strtotime($dateNow) + 60 * 60 * 17);
-			// $exactTime_slug = sanitize_title($exactTime);
+      <?php  
+        $terms = get_terms( [
+          'taxonomy'    => 'whitewater-location',
+          'post_type'   => 'activity_schedule',
+          'hide_empty' => false,
+        ]);
 
-			$postype = 'activity_schedule';
-			$post = get_current_activity_schedule($postype);
-			if($post) { 
-				$postID = $post->ID;
-				$post_title = $post->post_title;
-				$pass_hours = get_field("pass_hours",$postID);
-				$note = get_field("note",$postID);
-				$scheduled_activities = get_field("scheduled_activities",$postID);
-				
-				$dateTestT = date('Y-m-d h:i:s A', strtotime($dateNow) - 60 * 60 * 4);
-				$sanizT = sanitize_title($dateTestT);
-				echo '<!-- '.$dateTestT.' - '.$sanizT.' todays modified time -->';
-				// Server time testing below
-				$dateTest = date('Y-m-d h:i:s A');
-				$saniz = sanitize_title($dateTest);
-				echo '<!-- '.$dateTest.' - '.$saniz.' greenwhich time -->';
-				$dateTestTwo = date('Y-m-d h:i:s A', strtotime($dateTest) - 60 * 60 * 5);
-				$sanizTwo = sanitize_title($dateTestTwo);
-				echo '<!-- '.$dateTestTwo.' - '.$sanizTwo.' - '.$postID.' modified time -->';
-
-				// $dateToday = date('l, F j', strtotime($dateTest) - 60 * 60 * 3);
-				$dateToday = date('l, F j <!-- h:i:s  -->', strtotime($dateTestTwo));
-				?>
-				
-				<div class="subhead">
-					<div class="date-hours">
-						<h2 class="event-date"><?php echo $dateToday ?></h2>
-						<?php if ($pass_hours) { ?>
-						<div class="pass-hours"><span class="ph">Pass Hours:</span> <?php echo $pass_hours ?></div>	
-						<?php } ?>
-					</div>
-
-					<?php if ($note) { ?>
-					<div class="note"><?php echo $note ?></div>	
-					<?php } ?>
-				</div>
-
-				<?php get_template_part("parts/subpage-tabs"); ?>
-
-				<div class="entries full">
-					<div class="status-legend">
-						<div class="wrapper">
-							<span class="open">Activity Open</span>
-							<span class="closed">Activity Closed</span>
-						</div>
-					</div>
-					<div class="wrapper">
-					<?php if ($scheduled_activities) { ?>
-						<div class="activities">
-							<?php $i=1; foreach ($scheduled_activities as $a) { 
-								$type = $a['type'];
-								$activities = $a['activities'];
-								if($type || $activities) { ?>
-									<div id="activity<?php echo $i?>" class="activity-info info">
-										<?php if ($type) { ?>
-											<h3 class="type"><?php echo $type ?></h3>
-										<?php } ?>
-										<?php if ($activities) { ?>
-											<ul class="list">
-												<?php foreach ($activities as $e) { 
-												$is_custom = ( isset($e['types']) && $e['types']=='custom' ) ? true : false;
-												$customName = ( isset($e['customText']) && $e['customText'] ) ? $e['customText'] : "";
-												$name = ( isset($e['name']) && $e['name'] ) ? $e['name']->post_title : '';
-												$start = $e['time_start'];
-												$end = $e['time_end'];
-												$status = ( isset($e['status']) && $e['status'] ) ? $e['status'] : 'open';
-												$delimiter = '';
-												if($start && $end) {
-													$delimiter = '<span class="dashed">&ndash;</span>';
-												}
-												if($is_custom) {
-													if(preg_replace("/\s+/", "",$customName)) {
-														$name = preg_replace("/\s+/", " ",$customName);
-													} else {
-														$name = "";
-													}
-												}
-												if($name) { ?>
-													<li class="data" data-status="<?php echo $status?>">
-														<div class="cell name cell-<?php echo $status?>">
-															<span class="cellTxt"><span class="ct <?php echo $status?>"><?php echo $name ?></span></span>
-														</div>
-														<div class="cell time">
-															<span class="cellTxt">
-																<?php if ($start) { ?>
-																<span class="time-start"><?php echo $start ?></span>	
-																<?php } ?>
-																<?php echo $delimiter ?>
-																<?php if ($end) { ?>
-																<span class="time-end"><?php echo $end ?></span>	
-																<?php } ?>
-															</span>
-														</div>
-													</li>
-													<?php } ?>
-												<?php } ?>
-											</ul>
-										<?php } ?>
-									</div>	
-								<?php $i++; } ?>
-							<?php } ?>
-						</div>
-					<?php } ?>
-					</div>
-				</div>
-
-			<?php } else { ?>
-				
-				<div class="subhead">
-					<div class="date-hours">
-						<h2 class="event-date"><?php echo $dateToday ?></h2>
-						<div class="pass-hours">NO SCHEDULED ACTIVITY TODAY</div>	
-					</div>
-				</div>
-			
-			<?php } ?>
+        print_r($terms);
+      ?>
 
 		</div>
 

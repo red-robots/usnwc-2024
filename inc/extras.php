@@ -2725,3 +2725,9 @@ function isFeaturedEvent($postUrl) {
   return $is_featured;
 }
 
+
+function get_activity_schedule_locations() {
+  global $wpdb;
+}
+
+

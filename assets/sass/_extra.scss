@@ -2657,6 +2657,19 @@ body.logged-in.admin-bar.subpage {
   }
 }
 
+.schedule-activities-info.new-layout-v2 {
+  .event-date {
+    font-size: 30px;
+    color: #777;
+  }
+}
+
+#todays-snapshot.snapshop-wrapper {
+  margin-top: 60px;
+  padding-top: 10px;
+  border-top: 1px solid #CCC;
+}
+
 @media screen and (max-width: 819px) {
   body.subpage .site-header,
   body.scrolled .site-header {

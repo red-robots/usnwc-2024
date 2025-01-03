@@ -1944,7 +1944,7 @@ nav.new-nav .mega-menu .mega-menu-content a:after{content:""}
 .navbar .logo{display:inline-block;width:50px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .navbar .logo a,.navbar .logo img{display:inline-block;width:100%}
 .navbar .logo img{height:auto}
-.navbar .navs{width:75%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
+.navbar .navs{width:85%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
 .navbar .navs .left,.navbar .navs .right{width:auto !important}
 #mobile-menu-toggle{position:relative;z-index:600;width:45px;height:45px;text-align:center}
 #mobile-menu-toggle span.bar{display:block;width:40px;margin:0 auto;top:20px}
@@ -5323,6 +5323,8 @@ section.homepage-hero{overflow:hidden}
 .filter-form .dropdown a{display:block;width:100%;text-decoration:none !important;text-align:center;border-bottom:1px dotted #dedede;font-family:"Brandon Medium";font-size:14px;text-transform:uppercase;line-height:1.2;padding:10px 5px;color:#000}
 .filter-form .dropdown a:hover,.filter-form .dropdown a:focus{background-color:#f4f4f4;color:#ba0d30}
 .filter-form .dropdown ul li:last-child a{border-bottom:0}
+.schedule-activities-info.new-layout-v2 .event-date{font-size:30px;color:#777}
+#todays-snapshot.snapshop-wrapper{margin-top:60px;padding-top:10px;border-top:1px solid #ccc}
 body.enchilada .banner-bottom.svgphp svg{fill:#fef9e7}
 body.enchilada .main-description{color:#7f7c73}
 body.enchilada #pageTabs a,body.enchilada .title-w-icon h2,body.enchilada h2.stitle,body.enchilada .stitle,body.enchilada .text-and-image-blocks .textcol .mstitle,body.enchilada .sectionTitle,body.enchilada .information-tabs-wrap{font-family:novecento-sans-narrow}
