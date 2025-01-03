@@ -101,21 +101,20 @@ if( is_single() ) {
 		<div class="navbar">
 			<div class="flexer">
 
-        <div class="logo">
-          <a href="<?php bloginfo('url'); ?>">
-            <img src="<?php bloginfo('template_url'); ?>/images/logo-white.png">
-          </a>
+        <div class="left">
+          <div class="logo">
+            <a href="<?php bloginfo('url'); ?>">
+              <img src="<?php bloginfo('template_url'); ?>/images/logo-white.png">
+            </a>
+         </div>
+         <?php
+            /* NAVIGATION */
+            get_template_part("parts/navigation-new");
+          ?>
        </div>
 
 
-       <div class="navs">
-  				<div class="left">
-  		        <?php
-  						/* NAVIGATION */
-  						get_template_part("parts/navigation-new");
-  					?>
-  				</div>
-  				
+       <div class="navs">		
           <?php  
             $secondary_links = get_field('secondary_links', 'option');
           ?>
