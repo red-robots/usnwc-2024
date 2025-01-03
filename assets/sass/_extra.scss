@@ -1316,7 +1316,7 @@ body.single-post {
   text-align: left;
   p, li {
     break-inside: avoid-column;
-    margin: 0 0 15px;
+    margin: 0 0 10px;
   }
   h3 {
     font-family: $font-brandon-bold;
@@ -1344,6 +1344,14 @@ ul > li:has(.two-column-list) {
   }
   ul > li {
     list-style: disc;
+  }
+}
+
+.two_column_text_section {
+  .fxcol.column1 {
+    ul > li {
+      margin-bottom: 10px;
+    }
   }
 }
 
