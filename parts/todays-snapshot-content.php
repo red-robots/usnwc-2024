@@ -29,7 +29,7 @@ if ($infocolumns) { ?>
             <div class="inner">
               <div class="title"><?php echo $v_title ?></div>
               <?php if ($v_is_status) { ?>
-                <div class="status <?php echo $status_value ?>"></div>
+                <!-- <div class="status <?php //echo $status_value ?>"></div> -->
                 <div class="status-text"><?php echo ucwords($status_value) ?></div>
               <?php } else { ?>
                 <div class="text"><?php echo $v_text ?></div>
