@@ -4558,7 +4558,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .calendar-grid-wrapper .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-month__day-cell--mobile{display:inline-block !important;visibility:visible !important;position:absolute;top:0;left:-7px;height:auto;width:50px;background-color:transparent !important}
 .calendar-grid-wrapper .tribe-events-calendar-month__day--other-month .tribe-events-calendar-month__day-cell h3 time{color:#acacac !important}
 .calendar-grid-wrapper .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-month__day{padding-top:25px}
-.activity-schedule-modal{display:none}
+.activity-schedule-modal:not(.schedule-single){display:none}
 #customModalContainer{position:fixed;top:0;left:0;width:100%;height:100%;overflow:auto;background-color:rgba(0,0,0,.85);padding:20px;z-index:99999999;display:none;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 #customModalContainer #customModalInner{position:relative;padding:0;border-radius:20px;background:#fff;min-height:400px;max-width:1000px;width:100%;margin:0 auto;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
 #customModalContainer.open{display:-webkit-box;display:-ms-flexbox;display:flex}
@@ -5330,6 +5330,18 @@ section.homepage-hero{overflow:hidden}
 .navbar .navs.right-nav{width:30%}
 .snapshot-branch-info{max-width:90vw;width:100%;margin:0 auto}
 .snapshot-branch-info .todaySnapshotInfo,.snapshot-branch-info #todays-snapshot.snapshop-wrapper{border-top:none !important;border-bottom:none !important;margin-top:0;padding-top:0}
+.schedule-activities-info.new-layout-v2{padding-left:20px;padding-right:30px}
+.schedule-activities-info.new-layout-v2 .todaySnapshotInfo{padding-top:50px}
+.schedule-activities-info.new-layout-v2 .note{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-bottom:15px}
+.schedule-activities-info.new-layout-v2 .note .inner{border:1px solid #ccc;padding:8px 14px;font-size:15px;font-style:italic;line-height:1.3}
+.schedule-activities-info.new-layout-v2 .legend{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1em}
+.schedule-activities-info.new-layout-v2 .legend span{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;position:relative;top:-4px}
+.schedule-activities-info.new-layout-v2 .legend span:before{content:"";display:inline-block;width:7px;height:7px;border-radius:100px;background:#ccc;margin-right:4px}
+.schedule-activities-info.new-layout-v2 .legend span.open:before{background:#4fb206}
+.schedule-activities-info.new-layout-v2 .legend span.closed:before{background:#e60606}
+.schedule-activities-info.new-layout-v2 .info-wrapper.active{display:-webkit-box;display:-ms-flexbox;display:flex}
+.activity-schedule-modal.schedule-single{max-width:1200px;width:100%;margin:0 auto;padding:30px 20px}
+.activity-schedule-modal.schedule-single .modal-title{text-align:center}
 body.enchilada .banner-bottom.svgphp svg{fill:#fef9e7}
 body.enchilada .main-description{color:#7f7c73}
 body.enchilada #pageTabs a,body.enchilada .title-w-icon h2,body.enchilada h2.stitle,body.enchilada .stitle,body.enchilada .text-and-image-blocks .textcol .mstitle,body.enchilada .sectionTitle,body.enchilada .information-tabs-wrap{font-family:novecento-sans-narrow}

@@ -1126,12 +1126,12 @@ jQuery(document).ready(function ($) {
   $(document).on('click', '#customModalClose', function (e) {
     e.preventDefault();
     $('#customModalContainer').removeClass('open');
-    $('#customModalContent .activity-schedule-modal').hide();
+    $('#customModalContent .activity-schedule-modal[data-schedule]').hide();
   });
 
-  if ($('.activity-schedule-modal').length && $('#customModalContainer').length) {
-    if ($('#customModalContent .activity-schedule-modal').length == 0) {
-      $('.activity-schedule-modal').appendTo('#customModalContent');
+  if ($('.activity-schedule-modal[data-schedule]').length && $('#customModalContainer').length) {
+    if ($('#customModalContent .activity-schedule-modal[data-schedule]').length == 0) {
+      $('.activity-schedule-modal[data-schedule]').appendTo('#customModalContent');
     }
   } //Popup Film Series
 

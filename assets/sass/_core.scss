@@ -18641,7 +18641,7 @@ body.subpage.single.single-activity {
   padding-top: 25px;
 }
 
-.activity-schedule-modal {
+.activity-schedule-modal:not(.schedule-single) {
   display: none;
 }
 

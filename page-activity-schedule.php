@@ -40,38 +40,211 @@ $has_banner = ($slideImages) ? 'has-banner':'no-banner';
         </div>
       </div>
 
-      <?php
-        $schedules = array();  
-        $terms = get_terms( [
-          'taxonomy'    => 'whitewater-location',
-          'post_type'   => 'activity_schedule',
-          'hide_empty' => false,
-        ]);
-        if($terms) {
-          foreach($terms as $term) {
-            $slug = $term->slug;
-            $data = getActivityScheduleToday($slug);
-            if($data) {
-              $schedules[$slug] = array(
-                'location'=>$term->name,
-                'schedules'=> $data
-              );
-            }
-          }
-        }
+      <?php 
+      $wwlocations = get_field('whitewaterLocations','option');
+      if ( $wwlocations ) { ?>
+      <div class="todaySnapshotInfo">
+        <ul class="location-tabs">
+        <?php $i=1; foreach ($wwlocations as $w) { 
+          $loc = $w['locations_taxonomy'];
+          $name = (isset($loc->name) && $loc->name) ? $loc->name : '';
+          //$name = $w['name'];
+          $locInfo = $w['location'];
+          $location = (isset($locInfo->name) && $locInfo->name) ? $locInfo->name : '';
 
-        if($schedules) { ?>
-        <div class="todaySnapshotInfo">
-          <ul class="location-tabs">
-            <?php $i=1; foreach ($schedules as $termSlug=>$v) { 
-              $is_active = ( $i==1 ) ? ' active':''; 
-              $is_selected = ($i==1) ? 'true':'false'; ?>
-              
-            <?php $i++; } ?>
-          </ul> 
-        </div>
+          //$location = ( isset($loc->name) ) ? $loc->name : '';
+          $infocolumns = $w['infocolumns'];
+          $is_active = ($i==1) ? ' active':'';
+          $is_selected = ($i==1) ? 'true':'false';
+          if($name) { ?>
+            <li class="tab<?php echo $is_active ?>">
+              <button role="tab" aria-selected="<?php echo $is_selected ?>" aria-controls="tabpanel-<?php echo sanitize_title($name) ?>" id="tab-<?php echo sanitize_title($name) ?>">
+                <span class="wname"><?php echo $name ?></span>
+                <?php if ($location) { ?>
+                <span class="wloc"><?php echo $location ?></span>
+                <?php } ?>
+              </button>
+            </li>
+          <?php } ?>
+        <?php $i++; } ?>
+        </ul> 
+
+        <?php 
+        $j=1; foreach ($wwlocations as $w) { 
+          $loc = $w['locations_taxonomy'];
+          $name = (isset($loc->name) && $loc->name) ? $loc->name : '';
+          $slug = (isset($loc->slug) && $loc->slug) ? $loc->slug : '';
+          $locInfo = $w['location'];
+          $location = (isset($locInfo->name) && $locInfo->name) ? $locInfo->name : '';
+          $is_active = ($j==1) ? ' active':'';
+          $is_selected = ($j==1) ? 'true':'false';
+          $is_display = ($j==1) ? 'flex':'none';
+          $data = getActivityScheduleToday($slug); 
+          if($data) { ?>
+
+          <button class="mobile-tab-heading<?php echo $is_active ?>" aria-expanded="<?php echo $is_selected ?>" aria-controls="tabpanel-<?php echo $slug; ?>">
+            <span class="wname"><?php echo $name ?></span>
+            <?php if ($location) { ?>
+            <span class="wloc"><?php echo $location ?></span>
+            <?php } ?>
+          </button>
+
+          <div class="info-wrapper<?php echo $is_active ?>" role="tabpanel" aria-labelledby="tab-<?php echo sanitize_title($name) ?>" id="tabpanel-<?php echo sanitize_title($name) ?>">
+            <!-- ACTIVITY SCHEDULE -->
+            <div data-schedule-single="<?php echo $slug ?>" class="activity-schedule-modal schedule-single">
+              <?php  
+              $pid = $data->ID;
+              $schedule = get_field('eventDateSchedule', $pid);
+              $phFrom = get_field('pass_hours_from', $pid);
+              $phTo = get_field('pass_hours_to', $pid);
+              $note = get_field('note', $pid);
+              $pass = array($phFrom, $phTo);
+              $pass_hours = ( $pass && array_filter($pass) ) ? array_filter($pass):'';
+              if( $pass_hours ) {
+                if( count($pass_hours) == 1 ) {
+                  $pass_hours = $pass_hours[0];
+                } else {
+                  $pass_hours = implode(' - ', $pass_hours);
+                }
+              }
+              $today_date = date('l, F d');
+              $schedules1  = get_field('schedules', $pid);
+              $schedules2  = get_field('schedules_2', $pid);
+              $column_class = ($schedules1 && $schedules2) ? 'half':'full';
+              ?>
+              <div class="modal-title">
+                <h2>Activity Schedule</h2>
+                <p class="hours-info">
+                  <?php //echo $today_date ?>
+                  <?php if ( $pass_hours ) { ?>
+                  <span class="pass-hours">
+                    Pass Hours: <span><?php echo strtoupper($pass_hours) ?></span>
+                  </span>
+                  <?php } ?>
+                </p>
+              </div>
+              <div class="modal-body">
+                <?php if ($note) { ?>
+                 <div class="note">
+                    <div class="inner">
+                      <?php echo $note ?>
+                    </div>
+                 </div> 
+                <?php } ?>
+                <div class="legend">
+                  <span class="open">Activity Open</span>
+                  <span class="closed">Activity Closed</span>
+                </div>
+
+                <?php if($schedules1 || $schedules2 ) { ?>
+                <div class="schedule-container <?php echo $column_class ?>">
+                  
+                  <?php if ($schedules1) { ?>
+                  <div class="fxcol column1">
+                    <?php foreach ($schedules1 as $s) { 
+                      $name = $s['group_name'];
+                      $activities = $s['items'];
+                      if($name || $activities) { ?>
+                      <div class="items">
+                        <?php if ($name) { ?>
+                        <div class="activity-name"><?php echo $name ?></div>
+                        <?php } ?>
+
+                        <?php if ($activities) { ?>
+                        <div class="activities">
+                          <?php foreach ($activities as $a) { 
+                            $i_name = $a['name'];
+                            $i_start_time = $a['start_time'];
+                            $i_end_time = $a['end_time'];
+                            $i_status = $a['status'];
+                            $timeArr = array($i_start_time, $i_end_time);
+                            $time = '';
+                            if($timeArr && array_filter($timeArr)) {
+                              $arrs = array_filter($timeArr);
+                              if( count($arrs) == 1 ) {
+                                $time = $timeArr[0];
+                              } else {
+                                $time = implode(' - ', $arrs);
+                              }
+                            }
+                            if($i_name) { ?>
+                            <div class="line-item">
+                              <span class="stat <?php echo $i_status ?>"></span>
+                              <span class="name"><?php echo $i_name ?></span>
+                              <?php if ($time) { ?>
+                              <span class="time"><?php echo strtoupper($time) ?></span>
+                              <?php } ?>
+                            </div>
+                            <?php } ?>
+                          <?php } ?>
+                        </div>
+                        <?php } ?>
+                      </div>
+
+                      <?php } ?>
+                    <?php } ?>
+                  </div>
+                  <?php } ?>
+
+                  <?php if ($schedules2) { ?>
+                  <div class="fxcol column2">
+                    <?php foreach ($schedules2 as $s) { 
+                      $name = $s['group_name'];
+                      $activities = $s['items'];
+                      if($name || $activities) { ?>
+                      <div class="items">
+                        <?php if ($name) { ?>
+                        <div class="activity-name"><?php echo $name ?></div>
+                        <?php } ?>
+
+                        <?php if ($activities) { ?>
+                        <div class="activities">
+                          <?php foreach ($activities as $a) { 
+                            $i_name = $a['name'];
+                            $i_start_time = $a['start_time'];
+                            $i_end_time = $a['end_time'];
+                            $i_status = $a['status'];
+                            $timeArr = array($i_start_time, $i_end_time);
+                            $time = '';
+                            if($timeArr && array_filter($timeArr)) {
+                              $arrs = array_filter($timeArr);
+                              if( count($arrs) == 1 ) {
+                                $time = $timeArr[0];
+                              } else {
+                                $time = implode(' - ', $arrs);
+                              }
+                            }
+                            if($i_name) { ?>
+                            <div class="line-item">
+                              <span class="stat <?php echo $i_status ?>"></span>
+                              <span class="name"><?php echo $i_name ?></span>
+                              <?php if ($time) { ?>
+                              <span class="time"><?php echo strtoupper($time) ?></span>
+                              <?php } ?>
+                            </div>
+                            <?php } ?>
+                          <?php } ?>
+                        </div>
+                        <?php } ?>
+                      </div>
+
+                      <?php } ?>
+                    <?php } ?>
+                  </div>
+                  <?php } ?>
+
+                </div>      
+                <?php } ?>
+
+              </div>
+            </div>
+          </div>
+
+         <?php $j++; } ?>
         <?php } ?>
-		</div>
+    </div>  
+  <?php } ?>
+	</div>
 
 </div><!-- #primary -->
 
