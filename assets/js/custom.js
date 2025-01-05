@@ -1119,11 +1119,14 @@ jQuery(document).ready(function ($) {
 
   $(document).on('click', '.popupSchedule', function (e) {
     e.preventDefault();
+    var schedule = $(this).attr('data-schedule');
+    $('.activity-schedule-modal[data-schedule="' + schedule + '"]').show();
     $('#customModalContainer').addClass('open');
   });
   $(document).on('click', '#customModalClose', function (e) {
     e.preventDefault();
     $('#customModalContainer').removeClass('open');
+    $('#customModalContent .activity-schedule-modal').hide();
   });
 
   if ($('.activity-schedule-modal').length && $('#customModalContainer').length) {

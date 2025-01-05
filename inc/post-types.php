@@ -503,6 +503,15 @@ function build_taxonomies() {
       'show_admin_column'=>1
     ),
     array(
+      'post_type' => array('activity_schedule'),
+      'menu_name' => 'Cities/States',
+      'plural'    => 'Cities/States',
+      'single'    => 'City/State',
+      'taxonomy'  => 'whitewater-location-city',
+      'query_var' => false,
+      'show_admin_column'=>1
+    ),
+    array(
       'post_type' => array('whats-new'),
       'menu_name' => 'Whats New Category',
       'plural'    => 'Whats New Category',

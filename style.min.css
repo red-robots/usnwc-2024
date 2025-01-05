@@ -5328,6 +5328,8 @@ section.homepage-hero{overflow:hidden}
 #todays-snapshot.snapshop-wrapper{margin-top:60px;padding-top:10px;border-top:1px solid #ccc}
 .navbar .left-nav{width:68%}
 .navbar .navs.right-nav{width:30%}
+.snapshot-branch-info{max-width:90vw;width:100%;margin:0 auto}
+.snapshot-branch-info .todaySnapshotInfo,.snapshot-branch-info #todays-snapshot.snapshop-wrapper{border-top:none !important;border-bottom:none !important;margin-top:0;padding-top:0}
 body.enchilada .banner-bottom.svgphp svg{fill:#fef9e7}
 body.enchilada .main-description{color:#7f7c73}
 body.enchilada #pageTabs a,body.enchilada .title-w-icon h2,body.enchilada h2.stitle,body.enchilada .stitle,body.enchilada .text-and-image-blocks .textcol .mstitle,body.enchilada .sectionTitle,body.enchilada .information-tabs-wrap{font-family:novecento-sans-narrow}
@@ -6177,6 +6179,7 @@ body.logged-in.admin-bar .site-header{top:45px}
 #primary.buy-page.buy-page-new .access-pass-options .infobox .inner .buttons{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1em}
 .new-nav-v2.desktop-navigation .mega-menu-content .menu-col{width:50% !important}
 .menu-sections .textcol .mstime.custom-time{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.snapshot-branch-info{max-width:100%;padding-left:20px;padding-right:20px}
 }@media screen and (max-width:600px){section.route-stories .block .feat-image.no-image .bg:before{width:30vw;height:30vw}
 .topinfo .businessHours{left:-37vw}
 #section-featured-posts .block .feat-image.no-image .bg:before{width:30vw;height:30vw}

@@ -2685,6 +2685,24 @@ body.logged-in.admin-bar.subpage {
   width: 30%;
 }
 
+.snapshot-branch-info {
+  max-width: 90vw;
+  width: 100%;
+  margin: 0 auto;
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .todaySnapshotInfo,
+  #todays-snapshot.snapshop-wrapper {
+    border-top: none!important;
+    border-bottom: none!important;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
 @media screen and (max-width: 819px) {
   body.subpage .site-header,
   body.scrolled .site-header {

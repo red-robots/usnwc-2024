@@ -1,5 +1,7 @@
 <?php  
   $wwlocations = get_field('whitewaterLocations','option');
+  $branchName = ( isset($snapshot_branch) && $snapshot_branch ) ? $snapshot_branch : '';
+  $branchNameSlug = ( isset($branchName->slug) && $branchName->slug ) ? $branchName->slug : '';
 ?>
 
 <section id="todays-snapshot" class="snapshop-wrapper">
@@ -13,45 +15,69 @@
 
   <?php if ( $wwlocations ) { ?>
   <div class="todaySnapshotInfo">
-      <ul class="location-tabs">
-      <?php $i=1; foreach ($wwlocations as $w) { 
+      <?php if ( empty($branchNameSlug) ) { ?>
+        <ul class="location-tabs">
+        <?php $i=1; foreach ($wwlocations as $w) { 
+          $loc = $w['locations_taxonomy'];
+          $name = (isset($loc->name) && $loc->name) ? $loc->name : '';
+          //$name = $w['name'];
+          $locInfo = $w['location'];
+          $location = (isset($locInfo->name) && $locInfo->name) ? $locInfo->name : '';
+
+          //$location = ( isset($loc->name) ) ? $loc->name : '';
+          $infocolumns = $w['infocolumns'];
+          $is_active = ($i==1) ? ' active':'';
+          $is_selected = ($i==1) ? 'true':'false';
+          if($name) { ?>
+            <li class="tab<?php echo $is_active ?>">
+              <button role="tab" aria-selected="<?php echo $is_selected ?>" aria-controls="tabpanel-<?php echo sanitize_title($name) ?>" id="tab-<?php echo sanitize_title($name) ?>">
+                <span class="wname"><?php echo $name ?></span>
+                <?php if ($location) { ?>
+                <span class="wloc"><?php echo $location ?></span>
+                <?php } ?>
+              </button>
+            </li>
+          <?php } ?>
+        <?php $i++; } ?>
+        </ul> 
+      <?php } ?>
+
+      <?php 
+
+        if($branchNameSlug) {
+          foreach ($wwlocations as $k=>$w) {
+            $loc = $w['locations_taxonomy'];
+            $slug = (isset($loc->slug) && $loc->slug) ? $loc->slug : '';
+            if($branchNameSlug!=$slug) {
+              unset($wwlocations[$k]);
+            }
+          }
+        }
+
+        $j=1; foreach ($wwlocations as $w) { 
         $loc = $w['locations_taxonomy'];
         $name = (isset($loc->name) && $loc->name) ? $loc->name : '';
         //$name = $w['name'];
-        $location = $w['location'];
+        //$location = $w['location'];
+        $locInfo = $w['location'];
+        $location = (isset($locInfo->name) && $locInfo->name) ? $locInfo->name : '';
         $infocolumns = $w['infocolumns'];
-        $is_active = ($i==1) ? ' active':'';
-        $is_selected = ($i==1) ? 'true':'false';
+        $is_active = ($j==1) ? ' active':'';
+        $is_selected = ($j==1) ? 'true':'false';
+        $is_display = ($j==1) ? 'flex':'none';
+
+        $is_tabbing = ( $branchNameSlug ) ? false : true;
         if($name) { ?>
-          <li class="tab<?php echo $is_active ?>">
-            <button role="tab" aria-selected="<?php echo $is_selected ?>" aria-controls="tabpanel-<?php echo sanitize_title($name) ?>" id="tab-<?php echo sanitize_title($name) ?>">
+          <?php if ($infocolumns) { ?>
+
+            <?php if ( empty($branchNameSlug) ) { ?>
+            <button class="mobile-tab-heading<?php echo $is_active ?>" aria-expanded="<?php echo $is_selected ?>" aria-controls="tabpanel-<?php echo sanitize_title($name) ?>">
               <span class="wname"><?php echo $name ?></span>
               <?php if ($location) { ?>
               <span class="wloc"><?php echo $location ?></span>
               <?php } ?>
             </button>
-          </li>
-        <?php } ?>
-      <?php $i++; } ?>
-      </ul> 
-
-      <?php $j=1; foreach ($wwlocations as $w) { 
-        $loc = $w['locations_taxonomy'];
-        $name = (isset($loc->name) && $loc->name) ? $loc->name : '';
-        //$name = $w['name'];
-        $location = $w['location'];
-        $infocolumns = $w['infocolumns'];
-        $is_active = ($j==1) ? ' active':'';
-        $is_selected = ($j==1) ? 'true':'false';
-        $is_display = ($j==1) ? 'flex':'none';
-        if($name) { ?>
-          <?php if ($infocolumns) { ?>
-          <button class="mobile-tab-heading<?php echo $is_active ?>" aria-expanded="<?php echo $is_selected ?>" aria-controls="tabpanel-<?php echo sanitize_title($name) ?>">
-            <span class="wname"><?php echo $name ?></span>
-            <?php if ($location) { ?>
-            <span class="wloc"><?php echo $location ?></span>
             <?php } ?>
-          </button>
 
           <div style="display:<?php echo $is_display ?>" class="info-wrapper<?php echo $is_active ?>" role="tabpanel" aria-labelledby="tab-<?php echo sanitize_title($name) ?>" id="tabpanel-<?php echo sanitize_title($name) ?>">
             <div class="flexwrap">
@@ -86,12 +112,13 @@
                       //Get Activity Schedule
                       $slug = str_replace('#','', trim($nLink));
                       $slug = str_replace('-hours','', $slug);
-                      $data = getActivityScheduleToday($slug); ?>
+                      $data = getActivityScheduleToday($slug); 
+                      ?>
                       <?php if($data) { ?>
-                        <a href="javascript:void(0)" class="popupSchedule"><?php echo $nTitle ?> <i class="fa-light fa-angle-right"></i></a>
+                        <a href="javascript:void(0)" data-schedule="<?php echo $slug ?>" class="popupSchedule"><?php echo $nTitle ?> <i class="fa-light fa-angle-right"></i></a>
 
                         <!-- ACTIVITY SCHEDULE -->
-                        <div class="activity-schedule-modal">
+                        <div data-schedule="<?php echo $slug ?>" class="activity-schedule-modal" style="display:none;">
                           <?php  
                           $pid = $data->ID;
                           $schedule = get_field('eventDateSchedule', $pid);

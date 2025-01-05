@@ -429,6 +429,22 @@ foreach($has_expiration_post_types as $pt) { ?>
         display: none;
     }
 <?php } ?>
+
+
+.acf-field-taxonomy[data-type="taxonomy"][data-name="branch_name"] .acf-checkbox-list [type="checkbox"],
+.acf-field-taxonomy[data-type="taxonomy"][data-name="branch_location"] .acf-checkbox-list [type="checkbox"] {
+  position: absolute;
+  pointer-events: none;
+  z-index: -999;
+  visibility: hidden;
+}
+.acf-field-taxonomy[data-type="taxonomy"][data-name="branch_name"] .acf-checkbox-list label a i,
+.acf-field-taxonomy[data-type="taxonomy"][data-name="branch_location"] .acf-checkbox-list label a i {
+  display: inline;
+  position: relative;
+  top: -5px;
+  text-decoration: none;
+}
 </style>
 <?php }
 
@@ -437,6 +453,69 @@ add_action('admin_footer', 'my_custom_admin_js');
 function my_custom_admin_js() { ?>
 <script type="text/javascript">
 jQuery(document).ready(function($){
+
+
+  // if( $('.acf-field-taxonomy[data-type="taxonomy"][data-name="branch_name"] .acf-checkbox-list li').length ) {
+  //   $('.acf-field-taxonomy[data-type="taxonomy"][data-name="branch_name"] .acf-checkbox-list li').each(function(){
+  //     var termId = $(this).attr('data-id');
+  //     var adminUrl = '<?php echo get_admin_url() ?>term.php?taxonomy=whitewater-location&tag_ID='+termId+'&post_type=activity_schedule';
+  //     if( $(this).find('label span').length ) {
+  //       var termName = $(this).find('label span').text();
+  //       $(this).find('label span').replaceWith('<a href="'+adminUrl+'" target="_blank">'+termName+' <i class="dashicons dashicons-edit"></i></a>');
+  //     }
+  //   });
+  // }
+
+
+  if( $('.acf-field-taxonomy[data-type="taxonomy"][data-name="branch_name"] .acf-checkbox-list li').length || $('.acf-field-taxonomy[data-type="taxonomy"][data-name="branch_location"] .acf-checkbox-list') ) {
+    let branchNameEl = '.acf-field-taxonomy[data-type="taxonomy"][data-name="branch_name"] .acf-checkbox-list';
+    let branchLocEl = '.acf-field-taxonomy[data-type="taxonomy"][data-name="branch_location"] .acf-checkbox-list';
+
+    let previousHTML_branchName = $(branchNameEl).html();
+    let previousHTML_branchLoc = $(branchLocEl).html();
+
+    setInterval(function() {
+      const currentHTML_branchName = $(branchNameEl).html();
+      const currentHTML_branchLoc = $(branchLocEl).html();
+
+      if (currentHTML_branchName !== previousHTML_branchName) {
+        detectBranchChanges();
+        previousHTML_branchName = currentHTML_branchName;
+      }
+
+      if (currentHTML_branchLoc !== previousHTML_branchLoc) {
+        detectBranchChanges();
+        previousHTML_branchLoc = currentHTML_branchLoc;
+      }
+    }, 200); // Check every 500 milliseconds
+  
+    detectBranchChanges();
+    function detectBranchChanges() {
+      if( $(branchNameEl).find('li').length ) {
+        $(branchNameEl).find('li').each(function(){
+          var termId = $(this).attr('data-id');
+          var adminUrl = '<?php echo get_admin_url() ?>term.php?taxonomy=whitewater-location&tag_ID='+termId+'&post_type=activity_schedule';
+          if( $(this).find('label span').length ) {
+            var termName = $(this).find('label span').text();
+            $(this).find('label span').replaceWith('<a href="'+adminUrl+'" target="_blank">'+termName+' <i class="dashicons dashicons-edit"></i></a>');
+          }
+        });
+      }
+
+      if( $(branchLocEl).find('li').length ) {
+        $(branchLocEl).find('li').each(function(){
+          var termId = $(this).attr('data-id');
+          var adminUrl = '<?php echo get_admin_url() ?>term.php?taxonomy=whitewater-location-city&tag_ID='+termId+'&post_type=activity_schedule';
+          if( $(this).find('label span').length ) {
+            var termName = $(this).find('label span').text();
+            $(this).find('label span').replaceWith('<a href="'+adminUrl+'" target="_blank">'+termName+' <i class="dashicons dashicons-edit"></i></a>');
+          }
+        });
+      }
+    }
+  }
+
+
 
   if( $('body').hasClass('post-type-race') ) {
     if( $('#side-sortables ul.acf-hl.acf-tab-group li').length ) {

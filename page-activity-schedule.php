@@ -40,16 +40,37 @@ $has_banner = ($slideImages) ? 'has-banner':'no-banner';
         </div>
       </div>
 
-      <?php  
+      <?php
+        $schedules = array();  
         $terms = get_terms( [
           'taxonomy'    => 'whitewater-location',
           'post_type'   => 'activity_schedule',
           'hide_empty' => false,
         ]);
+        if($terms) {
+          foreach($terms as $term) {
+            $slug = $term->slug;
+            $data = getActivityScheduleToday($slug);
+            if($data) {
+              $schedules[$slug] = array(
+                'location'=>$term->name,
+                'schedules'=> $data
+              );
+            }
+          }
+        }
 
-        print_r($terms);
-      ?>
-
+        if($schedules) { ?>
+        <div class="todaySnapshotInfo">
+          <ul class="location-tabs">
+            <?php $i=1; foreach ($schedules as $termSlug=>$v) { 
+              $is_active = ( $i==1 ) ? ' active':''; 
+              $is_selected = ($i==1) ? 'true':'false'; ?>
+              
+            <?php $i++; } ?>
+          </ul> 
+        </div>
+        <?php } ?>
 		</div>
 
 </div><!-- #primary -->
