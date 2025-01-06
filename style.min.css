@@ -5099,14 +5099,14 @@ body.page-template-page-about.subpage header.site-header.mouseover .navbar .righ
 .image_cards_columns .bottom-text{max-width:100%;width:100%;margin:20px auto 0}
 .image_cards_columns .cta-buttons{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-top:30px}
 .content-area-single .post-title{font-family:"Brandon Bold";font-size:50px;line-height:1.2;text-transform:uppercase;color:#000;text-align:center}
-.content-area-single .entry-title{text-align:center;padding-bottom:60px}
+.content-area-single .entry-title{text-align:center;padding-bottom:65px}
 .content-area-single .entry-title .meta{margin-top:15px;color:#888}
 .content-area-single .entry-title .meta span{border-right:1px solid #ccc;padding-right:8px;margin-right:6px}
 .content-area-single .entry-title .meta span:last-child{border-right:0}
 .content-area-single:has(.contentWrap.quote) .entry-title{padding-bottom:40px}
 .content-area-single blockquote,.content-area-single blockquote.large{font-family:"Brandon Medium Italic";font-size:2.3em;line-height:1.2;color:#000;margin:50px 0;text-align:left}
 .content-area-single .contentWrap{max-width:1000px;width:100%;margin:0 auto;padding-left:30px;padding-right:30px}
-.content-area-single .contentWrap.quote:has(blockquote){padding-top:0}
+.content-area-single .contentWrap.quote:has(blockquote){padding-top:0;padding-bottom:60px}
 .content-area-single .contentWrap.quote:has(blockquote) blockquote{font-family:"Brandon Light Italic";font-size:1.2em;line-height:1.3;text-align:center;margin:0}
 .content-area-single .featured-image figure{margin:0}
 .content-area-single .featured-image figure img{width:100%;height:auto}
