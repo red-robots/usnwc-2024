@@ -5234,6 +5234,7 @@ body.page-template-page-visit section.visit.flexible-image-cards .tile.half figu
 #section-schedule.section-content .schedules-list ul.items li.no-event-info{margin-top:18px;margin-bottom:5px}
 #section-schedule.section-content .schedules-list ul.items li.no-event-info .time{position:relative !important;width:100% !important;display:block;font-family:"Brandon Bold";font-size:16px;text-transform:uppercase;text-align:left}
 .navbar:hover{background-color:transparent !important}
+.new-nav-v2.desktop-navigation{padding-left:2vw}
 .new-nav-v2.desktop-navigation ul{margin:0;padding:0;list-style:none;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .new-nav-v2.desktop-navigation .menu-link{font-family:"Brandon";text-transform:uppercase;font-size:16px;letter-spacing:1px;color:#000;display:inline-block;position:relative;padding:7px 0}
 .new-nav-v2.desktop-navigation .menu-link span{display:inline-block;padding:20px;position:relative;-webkit-transition:all ease .5s;transition:all ease .5s}
@@ -5260,7 +5261,7 @@ body.page-template-page-visit section.visit.flexible-image-cards .tile.half figu
 .new-nav-v2.desktop-navigation .mega-menu .menu-col li:not(.main) a:focus{outline:1px dotted #ba0d30}
 .new-nav-v2.desktop-navigation .mega-menu .menu-col li:not(.main).lodge a{font-family:"Brandon Medium"}
 .new-nav-v2.desktop-navigation .mega-menu .menu-col li:not(.main).lodge span.desc{padding-left:3px}
-.new-nav-v2.desktop-navigation .mega-menu .menu-col li.child a{text-transform:none !important;font-size:15px;line-height:1.3}
+.new-nav-v2.desktop-navigation .mega-menu .menu-col li.child a{text-transform:none !important;font-size:14px;line-height:1.3}
 .new-nav-v2.desktop-navigation li.v-menu-item:focus-within .mega-menu,.new-nav-v2.desktop-navigation li.v-menu-item:hover .mega-menu{height:auto;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:fadeIn;animation-name:fadeIn}
 .new-nav-v2.desktop-navigation li.v-menu-item:focus-within .mega-menu .mega-menu-content,.new-nav-v2.desktop-navigation li.v-menu-item:hover .mega-menu .mega-menu-content{-webkit-animation-delay:.1s;animation-delay:.1s;-webkit-animation-duration:.4s;animation-duration:.4s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:fadeInUp;animation-name:fadeInUp}
 .new-nav-v2.desktop-navigation .mega-menu-content{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap !important;flex-wrap:wrap !important}
