@@ -2805,6 +2805,16 @@ body.subpage.pageNoBanner  {
   } 
 }
 
+
+body.single:has(.hero-wrapper .single-slide .type-video) {
+  .hero-wrapper {
+    margin-bottom: 60px;
+  }
+  #main .featured-image {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 819px) {
   body.subpage .site-header,
   body.scrolled .site-header {
