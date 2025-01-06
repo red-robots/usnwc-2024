@@ -539,7 +539,7 @@ $post_type = get_post_type();
         <?php if ($map_title) { ?>
         <div class="wrapper">
           <div class="shead-icon text-center">
-            <div class="icon"><span class="<?php echo $map_icon ?>"></span></div>
+            <!-- <div class="icon"><span class="<?php //echo $map_icon ?>"></span></div> -->
             <h2 class="stitle"><?php echo $map_title ?></h2>
           </div>
         </div>
