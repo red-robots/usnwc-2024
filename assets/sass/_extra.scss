@@ -1039,6 +1039,7 @@ body.page-template-page-about.subpage {
   }
   .entry-title {
     text-align: center;
+    padding-bottom: 60px;
     .meta {
       margin-top: 15px;
       color: #888;
@@ -1051,6 +1052,10 @@ body.page-template-page-about.subpage {
         border-right: none;
       }
     }
+  }
+
+  &:has(.contentWrap.quote) .entry-title {
+    padding-bottom: 40px;
   } 
 
   blockquote,
@@ -1070,12 +1075,14 @@ body.page-template-page-about.subpage {
     padding-left: 30px;
     padding-right: 30px;
     &.quote:has(blockquote) {
-      padding-top: 50px;
+      // padding-top: 50px;
+      padding-top: 0;
       blockquote {
         font-family: $font-brandon-light-italic;
         font-size: 1.2em;
         line-height: 1.3;
         text-align: center;
+        margin: 0 0;
       }
     }
   }
