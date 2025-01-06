@@ -2534,8 +2534,13 @@ body.scrolled {
 section.homepage-hero {
   overflow: hidden;
 }
-body.logged-in.admin-bar,
-body.logged-in.admin-bar.subpage .site-header {
+// body.logged-in.admin-bar,
+// body.logged-in.admin-bar.subpage .site-header {
+//   @media screen and (min-width: 820px) {
+//     top: 32px!important;
+//   }
+// }
+body.home.logged-in.admin-bar .site-header {
   @media screen and (min-width: 820px) {
     top: 32px!important;
   }

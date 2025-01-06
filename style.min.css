@@ -5883,7 +5883,7 @@ body.logged-in.admin-bar.subpage .site-header{top:0 !important}
 body.logged-in.admin-bar.subpage .site-header .navbar{top:32px !important;background-color:#fff}
 body.logged-in.admin-bar.scrolled .hero-wrapper .stats{top:160px}
 .flexibleContentWrap .two-columns-block.text-and-image-blocks .image-position-right,.flexibleContentWrap .two-columns-block.text-and-image-blocks .half.even.image-position-right{-webkit-box-orient:horizontal !important;-webkit-box-direction:normal !important;-ms-flex-direction:row !important;flex-direction:row !important}
-body.logged-in.admin-bar,body.logged-in.admin-bar.subpage .site-header{top:32px !important}
+body.home.logged-in.admin-bar .site-header{top:32px !important}
 body.logged-in.admin-bar:has(#banner) .site-header,body.logged-in.admin-bar.subpage:has(#banner) .site-header{top:0 !important}
 }@media(min-width:820px)and (min-width:820px){#section-whattowear.half .model{width:35%}
 }@media screen and (min-width:901px){.section-fullwidth-black .column1{padding-right:15px}
