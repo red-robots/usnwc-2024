@@ -19031,14 +19031,16 @@ body.subpage.single.single-activity {
       justify-content: space-between;
       position: relative;
       margin: 8px 0;
-      &:after {
-        content:"";
-        display: block;
-        width: 100%;
-        border-bottom: 1px dashed #a7a7a7;
-        position: absolute;
-        left: 0;
-        bottom: 5px;
+      &:has(.links) {
+        &:after {
+          content:"";
+          display: block;
+          width: 100%;
+          border-bottom: 1px dashed #a7a7a7;
+          position: absolute;
+          left: 0;
+          bottom: 5px;
+        }
       }
       span {
         display: inline-block;
