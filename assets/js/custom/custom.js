@@ -1389,6 +1389,8 @@ var getGridSize = function() {
     window.location.href = newUrl;
   });
 
+  
+
 
   if( $('a[href*="#data-accesso-keyword"]').length ) {
     $('a[href*="#data-accesso-keyword"]').each(function(){
