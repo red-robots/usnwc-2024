@@ -2545,6 +2545,11 @@ body.home.logged-in.admin-bar .site-header {
     top: 32px!important;
   }
 }
+body.logged-in.admin-bar.subpage.scrolled .site-header {
+  @media screen and (min-width: 820px) {
+    top: 32px!important;
+  }
+}
 body.logged-in.admin-bar,
 body.logged-in.admin-bar.subpage {
   &:has(#banner) {
