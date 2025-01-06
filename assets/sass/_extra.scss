@@ -2766,6 +2766,15 @@ body.logged-in.admin-bar.subpage {
   }
 }
 
+body.subpage.pageNoBanner.logged-in.admin-bar  {
+  .site-header {
+    top: 0!important;
+  }
+  .site-content {
+    padding-top: 70px;
+  } 
+}
+
 @media screen and (max-width: 819px) {
   body.subpage .site-header,
   body.scrolled .site-header {
