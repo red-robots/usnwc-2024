@@ -2186,6 +2186,11 @@ section.visit.flexible-image-cards,
           }
         }
       }
+      li.child {
+        a {
+          text-transform: none!important;
+        }
+      }
     }
   }
 
