@@ -2813,6 +2813,9 @@ body.single:has(.hero-wrapper .single-slide .type-video) {
   #main .featured-image {
     display: none;
   }
+  #main .contentWrap.quote {
+    padding-bottom: 0;
+  }
 }
 
 @media screen and (max-width: 819px) {
