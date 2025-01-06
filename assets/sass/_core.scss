@@ -19648,8 +19648,13 @@ section.route-details.route-details-new {
     width: 100%;
     margin: 0 auto;
   }
-  .section-title {
+  .section-title,
+  h2.gform_title {
     @include H2_STYTLE;
+    text-align: center!important;
+    border-bottom: none!important;
+    margin-bottom: 10px!important;
+    margin-top: 20px!important;
   }
   // .gform_title {
   //   font-family: $font-brandon-medium;

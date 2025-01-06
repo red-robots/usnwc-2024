@@ -4708,7 +4708,7 @@ section.route-details.route-details-new .flexcol:last-child{border-right:0}
 .section-fieldtrip_form{padding-left:20px;padding-right:20px}
 .section-fieldtrip_form .wrapper{background:#f7f7f7;padding:30px;border-radius:20px}
 .section-fieldtrip_form .section-text{max-width:900px;width:100%;margin:0 auto}
-.section-fieldtrip_form .section-title{font-family:"Brandon Bold";font-size:40px;line-height:1.2;text-transform:uppercase;padding-bottom:10px;color:#000;border-bottom:2px solid #ccc;margin:0 0 30px}
+.section-fieldtrip_form .section-title,.section-fieldtrip_form h2.gform_title{font-family:"Brandon Bold";font-size:40px;line-height:1.2;text-transform:uppercase;padding-bottom:10px;color:#000;border-bottom:2px solid #ccc;margin:0 0 30px;text-align:center !important;border-bottom:none !important;margin-bottom:10px !important;margin-top:20px !important}
 .section-fieldtrip_form h2.gform_title{font-size:36px}
 .section-fieldtrip_form input[type=text],.section-fieldtrip_form input[type=email],.section-fieldtrip_form input[type=phone],.section-fieldtrip_form input[type=tel],.section-fieldtrip_form input[type=number],.section-fieldtrip_form textarea,.section-fieldtrip_form select{border-radius:0;border:1px solid #787878}
 body.page-template-page-salesforce .text-centered-section .wrapper{max-width:1200px}
