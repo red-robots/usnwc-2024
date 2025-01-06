@@ -5342,8 +5342,8 @@ section.homepage-hero{overflow:hidden}
 .schedule-activities-info.new-layout-v2 .info-wrapper.active{display:-webkit-box;display:-ms-flexbox;display:flex}
 .activity-schedule-modal.schedule-single{max-width:1200px;width:100%;margin:0 auto;padding:30px 20px}
 .activity-schedule-modal.schedule-single .modal-title{text-align:center}
-body.subpage.pageNoBanner.logged-in.admin-bar .site-header{top:0 !important}
-body.subpage.pageNoBanner.logged-in.admin-bar .site-content{padding-top:70px}
+body.subpage.pageNoBanner.logged-in.admin-bar .site-header,body.subpage.pageNoBanner .site-header{top:0 !important}
+body.subpage.pageNoBanner.logged-in.admin-bar .site-content,body.subpage.pageNoBanner .site-content{padding-top:70px}
 body.enchilada .banner-bottom.svgphp svg{fill:#fef9e7}
 body.enchilada .main-description{color:#7f7c73}
 body.enchilada #pageTabs a,body.enchilada .title-w-icon h2,body.enchilada h2.stitle,body.enchilada .stitle,body.enchilada .text-and-image-blocks .textcol .mstitle,body.enchilada .sectionTitle,body.enchilada .information-tabs-wrap{font-family:novecento-sans-narrow}

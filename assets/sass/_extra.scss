@@ -2766,7 +2766,8 @@ body.logged-in.admin-bar.subpage {
   }
 }
 
-body.subpage.pageNoBanner.logged-in.admin-bar  {
+body.subpage.pageNoBanner.logged-in.admin-bar,
+body.subpage.pageNoBanner  {
   .site-header {
     top: 0!important;
   }
