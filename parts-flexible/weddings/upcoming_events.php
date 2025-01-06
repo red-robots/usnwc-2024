@@ -60,6 +60,17 @@
             if($start_date) {
               $start_date = date('l, F d', strtotime($start_date));
             }
+
+            if($post_type=='dining') {
+              // $image_id = get_post_thumbnail_id($pid);
+              // $image_title = get_the_title($image_id);
+              // $image = wp_get_attachment_image_src($image_id,'large');
+              // if($image) {
+              //   $image['url'] = $image[0];
+              //   $image['title'] = $image_title;
+              // }
+              $image = get_field('mobile-banner', $pid);
+            }
             ?>
             <div class="infobox">
               <div class="inside">
@@ -71,9 +82,10 @@
                 
                 <?php if ($image && isset($image['url'])) { ?>
                 <figure class="event-image">
-                  <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['url'] ?>" />
+                  <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" />
                 </figure>
                 <?php } ?>
+
                 <?php if ($title) { ?>
                 <h3 class="event-title"><?php echo $title ?></h3>
                 <?php } ?>
