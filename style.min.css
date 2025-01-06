@@ -2233,7 +2233,7 @@ section.stories-whats .wn-box .wn-box-contents .flex{display:-webkit-box;display
 .text-centered-section.noBanner{margin-top:80px}
 .text-centered-section.dark{background:#191919;color:#fff;padding-top:50px;padding-bottom:50px}
 .text-centered-section.dark .intro-main{margin:30px 0}
-.text-centered-section h1{font-family:"Brandon Black";font-size:60px;font-weight:400;line-height:1.2;letter-spacing:2px;text-transform:uppercase;margin:0 0 25px;position:relative;color:#000}
+.text-centered-section h1{font-family:"Brandon Bold";font-size:45px;line-height:1.3;letter-spacing:.01em;text-transform:uppercase;margin:0 0 25px;position:relative;color:#000}
 .text-centered-section p{margin-top:1.3em;margin-bottom:1.3em}
 .text-centered-section p:last-child{margin-bottom:0}
 .text-centered-section .buttondiv{text-align:center}
@@ -5237,7 +5237,7 @@ body.page-template-page-visit section.visit.flexible-image-cards .tile.half figu
 .new-nav-v2.desktop-navigation{padding-left:2.15vw}
 .new-nav-v2.desktop-navigation ul{margin:0;padding:0;list-style:none;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .new-nav-v2.desktop-navigation .menu-link{font-family:"Brandon";text-transform:uppercase;font-size:15px;letter-spacing:1px;color:#000;display:inline-block;position:relative;padding:7px 0}
-.new-nav-v2.desktop-navigation .menu-link span{display:inline-block;padding:20px;position:relative;-webkit-transition:all ease .5s;transition:all ease .5s}
+.new-nav-v2.desktop-navigation .menu-link span{display:inline-block;padding:20px;position:relative}
 .new-nav-v2.desktop-navigation .menu-link:hover,.new-nav-v2.desktop-navigation .menu-link:focus{text-decoration:none}
 .new-nav-v2.desktop-navigation .menu-link:hover span,.new-nav-v2.desktop-navigation .menu-link:focus span{color:#ba0d30 !important}
 .new-nav-v2.desktop-navigation .menu-link:focus{outline:0}
