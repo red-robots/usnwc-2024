@@ -1390,4 +1390,16 @@ var getGridSize = function() {
   });
 
 
+  if( $('a[href*="#data-accesso-keyword"]').length ) {
+    $('a[href*="#data-accesso-keyword"]').each(function(){
+      var parts = $(this).attr('href').split('#data-accesso-keyword-');
+      var slug = parts[1];
+      $(this).attr({
+        'data-accesso-keyword': slug,
+        'href':'javascript:void(0)'
+      });
+    }); 
+  }
+
+
 });// END #####################################    END
