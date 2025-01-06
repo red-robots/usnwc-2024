@@ -530,7 +530,7 @@ jQuery(document).ready(function($){
 
   if ( typeof acf !== 'undefined' ) {
     acf.add_action( 'wysiwyg_tinymce_init', function( ed, id, mceInit, $field ) {
-      console.log(ed);
+      //console.log(ed);
       // set height of wysiwyg on frontend
       var minHeight = 200;
       // var mceHeight = $( ed.iframeElement ).contents().find( 'html' ).height() || minHeight;
