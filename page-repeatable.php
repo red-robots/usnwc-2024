@@ -66,7 +66,11 @@ $show_subnav = get_field('show_subnav');
 
     <?php  
     $faqs_post_item = get_field('faqs_post_item');
+    $faqs_show = get_field('faqs_visibility');
     $faqs = '';
+    if(!$faqs_show) {
+      $faqs_post_item = '';
+    }
     if($faqs_post_item) { 
       $post_id = $faqs_post_item->ID;
       $faqs = get_field('faqs', $post_id);
