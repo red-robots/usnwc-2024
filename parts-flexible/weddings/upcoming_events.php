@@ -10,6 +10,31 @@
     $current_date = date('Y-m-d');
     $current_year = date('Y');
     if($post_type) { 
+      // $args = array(
+      //   'posts_per_page'  => 3,
+      //   'post_type'       => $post_type,
+      //   'post_status'     => 'publish',
+      //   'meta_key' => 'start_date',
+      //   'orderby' => 'meta_value_num',
+      //   'order' => 'ASC',
+      //   'meta_query'      => array(
+      //     'relation' => 'OR',
+      //     array(
+      //       'key' => 'start_date',
+      //       'value' => $current_date,
+      //       'compare' => '>=',
+      //       'type' => 'DATE'
+      //     ),
+      //     array(
+      //       'key' => 'end_date',
+      //       'value' => $current_date,
+      //       'compare' => '>=',
+      //       'type' => 'DATE'
+      //     ),
+      //   )
+      // );
+
+
       $args = array(
         'posts_per_page'  => 3,
         'post_type'       => $post_type,
@@ -18,19 +43,12 @@
         'orderby' => 'meta_value_num',
         'order' => 'ASC',
         'meta_query'      => array(
-          'relation' => 'OR',
           array(
             'key' => 'start_date',
             'value' => $current_date,
             'compare' => '>=',
             'type' => 'DATE'
-          ),
-          array(
-            'key' => 'end_date',
-            'value' => $current_date,
-            'compare' => '>=',
-            'type' => 'DATE'
-          ),
+          )
         )
       );
       
