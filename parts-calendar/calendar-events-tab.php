@@ -267,6 +267,7 @@ jQuery(document).ready(function($){
         $('#hiddenData').html("");
       }
 
+      nextPlus = nextPlus + 1;
       if(nextPlus>totalPages) {
         loadMoreButton.hide();
       }
