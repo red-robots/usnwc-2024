@@ -37,7 +37,7 @@ if($navigation) { ?>
                 ?>
                   <li class="<?php echo $link_type; ?>">
                     <a href="<?php echo $sub_link['url']; ?>"><?php echo $sub_link['title']; ?></a>
-                    <?php if( $description ){ ?>
+                    <?php if( $link_type=='main' && $description ){ ?>
                       <span class="desc"><?php echo $description; ?></span>
                     <?php } ?>
                   </li>
