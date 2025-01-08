@@ -795,7 +795,7 @@ body.toplevel_page_acf-options-today-options [data-name="whitewaterLocations"] [
   padding: 0 0;
   border-left: none; 
 }
-body.toplevel_page_acf-options-today-options [data-name="whitewaterLocations"] [data-name="infocolumns"] thead th[data-name="status"][data-type="button_group"] label{
+/*body.toplevel_page_acf-options-today-options [data-name="whitewaterLocations"] [data-name="infocolumns"] thead th[data-name="status"][data-type="button_group"] label{
   display: block;
   width: 0;
   height: 0;
@@ -811,7 +811,7 @@ body.toplevel_page_acf-options-today-options [data-name="whitewaterLocations"] [
   position: absolute;
   top: 10px;
   left: -85px;
-}
+}*/
 body.toplevel_page_acf-options-today-options [data-name="whitewaterLocations"] [data-name="infocolumns"] tbody td[data-name="status"][data-type="button_group"] div.acf-input .acf-button-group label {
   padding: 4px 5px;
   font-size: 12px;
