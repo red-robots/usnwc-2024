@@ -215,7 +215,10 @@ $total_records = ($total) ? count($total) : 0;
 
     <?php 
     if( $total_records>$per_page ) {
-      $total_pages = round($total_records/$per_page); ?>
+      $perpage_count = $total_records/$per_page;
+      //$total_pages = round($total_records/$per_page); 
+      $total_pages = ceil($perpage_count); 
+      ?>
       <div id="hiddenData" style="display:none;"></div>
       <div id="pagination" class="pagination-wrapper loadMoreWrappe">
         <?php
@@ -231,7 +234,7 @@ $total_records = ($total) ? count($total) : 0;
             // );
             // echo paginate_links($pagination);
         ?>
-        <a href="javascript:void(0)" data-baseurl="<?php echo get_permalink() ?>" id="loadMorePosts" data-next="2" data-total-pages="<?php echo $total_pages ?>" class="button button-pill">See More</a>
+        <a href="javascript:void(0)" data-baseurl="<?php echo get_permalink() ?>" id="loadMorePosts" data-perpage="<?php echo $per_page ?>" data-count="<?php echo $total_records ?>" data-next="2" data-total-pages="<?php echo $total_pages ?>" class="button button-pill">See More</a>
       </div>
     <?php } ?>
   </div>
@@ -267,7 +270,7 @@ jQuery(document).ready(function($){
         $('#hiddenData').html("");
       }
 
-      nextPlus = nextPlus + 1;
+      //nextPlus = nextPlus + 1;
       if(nextPlus>totalPages) {
         loadMoreButton.hide();
       }
