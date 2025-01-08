@@ -1526,6 +1526,7 @@ button.swiper-pagination-bullet{border:0;margin:0;padding:0;-webkit-box-shadow:n
 @font-face{font-family:"resnick";src:url("fonts/Resnick.otf");font-weight:normal;font-style:normal}
 @font-face{font-family:"resnick-extrude";src:url("fonts/Resnick-Extrude.otf");font-weight:normal;font-style:normal}
 @font-face{font-family:"resnick-outline";src:url("fonts/Resnick-Outline.otf");font-weight:normal;font-style:normal}
+@font-face{font-family:"Minion Pro";src:url("fonts/minion/MinionPro-Regular.eot");src:url("fonts/minion/MinionPro-Regular.eot?#iefix") format("embedded-opentype"),url("fonts/minion/MinionPro-Regular.woff2") format("woff2"),url("fonts/minion/MinionPro-Regular.woff") format("woff"),url("fonts/minion/MinionPro-Regular.ttf") format("truetype"),url("fonts/minion/MinionPro-Regular.svg#Minion Pro") format("svg")}
 @font-face{font-family:"custom-icon";src:url("fonts/custom-icon.eot");src:url("fonts/custom-icon.eot?#iefix") format("embedded-opentype"),url("fonts/custom-icon.woff") format("woff"),url("fonts/custom-icon.ttf") format("truetype"),url("fonts/custom-icon.svg#custom-icon") format("svg");font-weight:normal;font-style:normal}
 [class*=ci-]:before{display:inline-block;font-family:"custom-icon";font-style:normal;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .ci-backpack:before{content:"A"}
@@ -5386,6 +5387,57 @@ body.enchilada .text-and-image-blocks .half.odd .textcol{border-right:15px solid
 body.enchilada .text-and-image-blocks .half.even .textcol{border-left:15px solid #fef9e7}
 body.enchilada .text-and-image-blocks{color:#7f7c73}
 body.enchilada .text-and-image-blocks .textcol{background-color:#f3edd9}
+body.page-template-page-bike-ranch.subpage #banner{height:100vh}
+body.page-template-page-bike-ranch.subpage #banner .banner-bottom{display:none}
+body.page-template-page-bike-ranch.subpage #banner .slides-wrapper,body.page-template-page-bike-ranch.subpage #banner .slides,body.page-template-page-bike-ranch.subpage #banner .slides .slideItem,body.page-template-page-bike-ranch.subpage #banner .image-wrapper{height:100% !important}
+body.page-template-page-bike-ranch.subpage #banner .slides-wrapper img.desktop,body.page-template-page-bike-ranch.subpage #banner .slides img.desktop,body.page-template-page-bike-ranch.subpage #banner .slides .slideItem img.desktop,body.page-template-page-bike-ranch.subpage #banner .image-wrapper img.desktop{position:absolute;top:0;left:0;width:100%;height:100%;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+body.page-template-page-bike-ranch.subpage #banner .slides .logo-overlay{top:unset;left:5vw;bottom:5vw;margin:0;width:25vw}
+body.page-template-page-bike-ranch.subpage:has(#banner) .site-header,body.page-template-page-bike-ranch.subpage:has(#banner) .site-header .navbar{background:transparent}
+body.page-template-page-bike-ranch.subpage:has(#banner) .site-header{position:fixed !important}
+body.page-template-page-bike-ranch.subpage:has(#banner) .site-header .navbar .logo img.logo-cream{-webkit-filter:none;filter:none}
+body.page-template-page-bike-ranch.subpage:has(#banner) .new-nav-v2.desktop-navigation .menu-link{color:#feefd8;font-family:"Brandon Bold";font-size:18px}
+body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item a.navlink,body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item.nav-item-today button.today{color:#feefd8 !important}
+body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item a.navlink:hover,body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item a.navlink:focus,body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item.nav-item-today button.today:hover,body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item.nav-item-today button.today:focus{color:#ba0d30 !important}
+body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .navbar .logo img.logo-cream{-webkit-filter:brightness(0) invert(0);filter:brightness(0) invert(0)}
+body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .navbar .right-nav.navs .nav-item a.navlink,body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .navbar .right-nav.navs .nav-item.nav-item-today button.today{color:#000 !important}
+body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .navbar .right-nav.navs .nav-item a.navlink:hover,body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .navbar .right-nav.navs .nav-item a.navlink:focus,body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .navbar .right-nav.navs .nav-item.nav-item-today button.today:hover,body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .navbar .right-nav.navs .nav-item.nav-item-today button.today:focus{color:#ba0d30 !important}
+.bike-ranch-sections .content-inner{background:#294233;color:#fff;padding:50px 20px}
+.bike-ranch-sections .section--two_column_layout_text_image .flexcol{width:100%;position:relative}
+.bike-ranch-sections .section--two_column_layout_text_image .section-title{color:#feefd8;font-family:"Brandon Medium";font-size:25px;line-height:1.2;letter-spacing:.03em;text-transform:uppercase}
+.bike-ranch-sections .section--two_column_layout_text_image .section-text,.bike-ranch-sections .section--two_column_layout_text_image .section-text p,.bike-ranch-sections .section--two_column_layout_text_image .section-text p a{color:#feefd8;font-size:17px}
+.bike-ranch-sections .section--two_column_layout_text_image .section-text p a{text-decoration:underline}
+.bike-ranch-sections .section--two_column_layout_text_image .imageCol figure{margin:0}
+.bike-ranch-sections .section--two_column_layout_text_image .imageCol figure img{width:100%;height:auto}
+.bike-ranch-sections .section--two_column_layout_text_image .section-buttons{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-top:35px}
+.bike-ranch-sections .section--two_column_layout_text_image .section-buttons .button-traditional{display:inline-block;-webkit-appearance:none;-moz-appearance:none;appearance:none;text-decoration:none;text-align:center;background:#feefd8;border:1px solid #feefd8;padding:10px 15px;color:#294233;font-family:"Brandon Medium";font-size:14px;line-height:1.2;letter-spacing:.095em;text-transform:uppercase;width:calc(50% - 8px);margin-bottom:16px}
+.bike-ranch-sections .section--two_column_layout_text_image .section-buttons .button-traditional.outline{color:#feefd8;background:transparent;border:1px solid #feefd8}
+.bike-ranch-sections .section--two_column_layout_text_image .section-buttons .button-traditional:hover,.bike-ranch-sections .section--two_column_layout_text_image .section-buttons .button-traditional:focus{color:#294233;background:#fff;border-color:#fff}
+.bike-ranch-sections .section--two_column_layout_text_image .section-buttons.count-1 .button-traditional{width:auto;min-width:150px}
+.bike-ranch-sections .section--two_column_layout_text_image .section-buttons.count-is-odd.multiple .button-traditional:last-child{width:100%}
+.bike-ranch-sections .section--two_column_layout_text_image.half .flexwrap{-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.bike-ranch-sections .section--two_column_layout_text_image.half .flexcol{width:100%;margin-top:15px;margin-bottom:15px}
+.bike-ranch-sections .content-gallery{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;position:relative}
+.bike-ranch-sections .content-gallery figure{width:100%;margin:0;position:relative}
+.bike-ranch-sections .content-gallery figure img.image-block{width:100%;height:auto}
+.bike-ranch-sections .content-gallery figure img.logo-overlay{display:inline-block;position:absolute;top:50%;left:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);width:38%;height:auto;z-index:10}
+.bike-ranch-sections .content-gallery figure figcaption{position:absolute;top:0;left:0;z-index:5;width:100%;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;color:#fff}
+.bike-ranch-sections .content-gallery figure figcaption h2,.bike-ranch-sections .content-gallery figure figcaption h3,.bike-ranch-sections .content-gallery figure figcaption h4,.bike-ranch-sections .content-gallery figure figcaption h5,.bike-ranch-sections .content-gallery figure figcaption li,.bike-ranch-sections .content-gallery figure figcaption span,.bike-ranch-sections .content-gallery figure figcaption p,.bike-ranch-sections .content-gallery figure figcaption p a{color:#fff}
+.bike-ranch-sections .content-gallery figure figcaption .image-text{padding:50px 30px}
+.bike-ranch-sections .content-gallery figure figcaption .image-text h2,.bike-ranch-sections .content-gallery figure figcaption .image-text h3,.bike-ranch-sections .content-gallery figure figcaption .image-text h4{font-family:"Brandon Medium";line-height:1.2;letter-spacing:.03em;text-transform:uppercase}
+.bike-ranch-sections .content-gallery figure figcaption .image-text h2,.bike-ranch-sections .content-gallery figure figcaption .image-text h3{margin:0 0 25px}
+.bike-ranch-sections .content-gallery figure figcaption .image-text h2{font-size:25px}
+.bike-ranch-sections .content-gallery figure figcaption .image-text h3{font-size:20px}
+.bike-ranch-sections .content-gallery.multiple{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}
+.bike-ranch-sections .content-gallery.multiple figure{width:100%}
+.bike-ranch-sections .section--buttons{background:#feefd8;padding:45px 30px}
+.bike-ranch-sections .section--buttons .section-buttons{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-top:0}
+.bike-ranch-sections .section--buttons .section-buttons .button-wrap{width:calc(50% - 10px);margin-bottom:20px}
+.bike-ranch-sections .section--buttons .section-buttons .button-traditional{display:inline-block;-webkit-appearance:none;-moz-appearance:none;appearance:none;text-decoration:none;text-align:center;background:#294233;border:1px solid #294233;padding:15px 15px 12px;color:#feefd8;font-family:"Brandon Medium";font-size:18px;line-height:1.2;letter-spacing:.095em;text-transform:uppercase;width:100%}
+.bike-ranch-sections .section--buttons .section-buttons .button-traditional.outline{color:#294233;background:transparent;border:1px solid #294233}
+.bike-ranch-sections .section--buttons .section-buttons .button-traditional:hover,.bike-ranch-sections .section--buttons .section-buttons .button-traditional:focus{color:#294233;background:#fff;border-color:#fff}
+.bike-ranch-sections .section--buttons .section-buttons .button-wrap:last-child{margin-bottom:0}
+.bike-ranch-sections .section--buttons .section-buttons.buttons-per-row1 .button-wrap{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.bike-ranch-sections .section--buttons .section-buttons.buttons-per-row1 .button-wrap .button-traditional{width:50%}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -5982,6 +6034,7 @@ section.visit .img h2{font-size:50px}
 body.subpage.single.single-festival .column-data-section{padding-bottom:40px}
 .two-column-layout-vist .flex-wrapper{min-height:575px}
 }@media screen and (min-width:1200px){body.page-template-page-visit section.visit.flexible-image-cards .tile,section.visit.flexible-image-cards .tile,.flexible-image-cards .tile{margin-bottom:100px}
+}@media screen and (min-width:1201px){.bike-ranch-sections .section--two_column_layout_text_image.half .flexcol{width:47%;margin-top:0;margin-bottom:0}
 }@media screen and (min-width:1241px){.fullwidth_video_block{max-height:600px}
 }@media screen and (min-width:1251px){.fullwidth_video_block .textOverlay .wrapper h2{font-size:55px}
 .fullwidth_video_block.fullwidth_video_alt{padding:50px 6vw}
@@ -5992,12 +6045,27 @@ body.page-template-page-visit section.visit.flexible-image-cards .tileWrapper,se
 body.page-template-page-visit section.visit.flexible-image-cards .tile figure h2,section.visit.flexible-image-cards .tile figure h2,.flexible-image-cards .tile figure h2{padding:20px 30px}
 body.page-template-page-visit section.visit.flexible-image-cards .tile.full-bleed figure,section.visit.flexible-image-cards .tile.full-bleed figure,.flexible-image-cards .tile.full-bleed figure{margin-left:-5vw;margin-right:-5vw}
 .menu-sections .textcol .mstime.custom-time .name{padding-right:20px;min-width:200px}
+.bike-ranch-sections .content-inner{padding-top:70px;padding-bottom:70px;padding-left:5vw;padding-right:5vw}
+.bike-ranch-sections .content-gallery figure figcaption .image-text{padding:50px 15vw 50px 8vw}
+.bike-ranch-sections .content-gallery.multiple figure{width:50%;padding-bottom:35%}
+.bike-ranch-sections .content-gallery.multiple figure img.image-block{position:absolute;top:0;left:0;width:100%;height:100%;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.bike-ranch-sections .content-gallery.multiple figure img.logo-overlay{width:65%}
+.bike-ranch-sections .content-gallery.multiple.count-4{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
+.bike-ranch-sections .content-gallery.multiple.count-4 figure.img2,.bike-ranch-sections .content-gallery.multiple.count-4 figure.img3{padding-bottom:40%}
+.bike-ranch-sections .content-gallery.multiple.count-4 figure.img3{width:55%;position:absolute;left:0;bottom:0;z-index:2}
+.bike-ranch-sections .content-gallery.multiple.count-4 figure.img4{width:55%;z-index:5}
+.bike-ranch-sections .section--buttons{padding-left:10vw;padding-right:10vw}
+.bike-ranch-sections .section--buttons .section-buttons.buttons-per-row2 .button-wrap{width:calc(50% - 10px)}
+.bike-ranch-sections .section--buttons .section-buttons.buttons-per-row3 .button-wrap,.bike-ranch-sections .section--buttons .section-buttons.buttons-per-row6 .button-wrap{width:calc(33.33% - 10px)}
+.bike-ranch-sections .section--buttons .section-buttons.buttons-per-row4 .button-wrap{width:calc(25% - 10px)}
+.bike-ranch-sections .section--buttons:has(.buttons-per-row4){padding-left:5vw;padding-right:5vw}
 }@media screen and (min-width:1281px){.text-and-image-blocks .gallerycol.mapCol{min-height:500px}
 body.page-template-page-visit section.visit .tileWrapper{padding-left:5vw;padding-right:5vw}
 body.page-template-page-visit section.visit .cards-row-section .cards-inner{padding-left:5vw;padding-right:5vw}
 body.page-template-page-visit section.visit .cards-row-section figure{width:25%}
 .visit .text-block-section .text-block-inner{padding-left:5vw;padding-right:5vw}
 .section_columns_bottom_text .full-wrapper{padding-left:5vw;padding-right:5vw}
+.bike-ranch-sections .content-inner{padding-left:10vw;padding-right:10vw}
 }@media(min-width:1300px){.information-tabs-wrap .tabs-info ul a span.arrow:before,.information-tabs-wrap .tabs-info ul a span.arrow:after{top:15px}
 section.homepage-hero .home-info .info h1{font-size:60px}
 section.full-bleed-promo .info .words h2{font-size:100px}
@@ -6206,6 +6274,7 @@ body.logged-in.admin-bar .site-header{top:45px}
 .new-nav-v2.desktop-navigation .mega-menu-content .menu-col{width:50% !important}
 .menu-sections .textcol .mstime.custom-time{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .snapshot-branch-info{max-width:100%;padding-left:20px;padding-right:20px}
+.bike-ranch-sections .section--buttons .section-buttons.buttons-per-row1 .button-wrap .button-traditional{width:100%}
 }@media screen and (max-width:600px){section.route-stories .block .feat-image.no-image .bg:before{width:30vw;height:30vw}
 .topinfo .businessHours{left:-37vw}
 #section-featured-posts .block .feat-image.no-image .bg:before{width:30vw;height:30vw}

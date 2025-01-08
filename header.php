@@ -77,6 +77,14 @@ if( is_single() ) {
     $xBodyClass .= ' '.$custom_class;
   }
 }
+
+$is_bike_ranch_template = false;
+if( $template = get_page_template() ) {
+  if (strpos($template, 'bike-ranch') !== false) {
+    $is_bike_ranch_template = true;
+  }
+}
+
 ?>
 <body <?php body_class($xBodyClass); ?>>
 	<?php if( is_page('employment') ) { get_template_part('inc/employment-tracking'); } ?>
@@ -104,7 +112,11 @@ if( is_single() ) {
         <div class="left-nav left">
           <div class="logo">
             <a href="<?php bloginfo('url'); ?>">
-              <img src="<?php bloginfo('template_url'); ?>/images/logo-white.png">
+              <?php if ($is_bike_ranch_template) { ?>
+                <img src="<?php bloginfo('template_url'); ?>/images/logo-cream.png" alt="<?php echo get_bloginfo('name') ?>" class="logo-cream" />
+              <?php } else { ?>
+                <img src="<?php bloginfo('template_url'); ?>/images/logo-white.png" alt="<?php echo get_bloginfo('name') ?>" class="logo-original" />
+              <?php } ?>
             </a>
          </div>
          <?php

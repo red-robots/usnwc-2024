@@ -15,30 +15,23 @@ $show_faqs = get_field('show_faqs_items');
 
 <div id="primary" data-post="<?php echo get_the_ID()?>" class="content-area-full festival-page">
 	<?php while ( have_posts() ) : the_post(); ?>
-		
-		<div class="intro-text-wrap">
-			<div class="wrapper">
-				<h1 class="page-title"><span><?php the_title(); ?></span></h1>
-				<?php if( get_the_content() ) { ?>
-				<div class="intro-text"><?php the_content(); ?></div>
-				<?php } ?>
-			</div>
-		</div>
-
+    <h1 class="sr-only"><?php echo get_the_title() ?></h1>
   <?php endwhile;  wp_reset_postdata(); ?>
-
-
-    <?php if ($show_subnav) { ?>
-    <?php get_template_part("parts/subpage-tabs"); ?> 
-    <?php } ?>
-
 
 		<?php /* FLEXIBLE CONTENT */ ?>
     <?php if( have_rows('flexible_content_bike_ranch') ) { ?>
-    <div class="flexibleContentWrap">
+    <div class="bike-ranch-sections">
+      <?php 
+      $section_fields = array(
+        'two_column_layout_text_image',
+        'gallery',
+        'buttons'
+      );
+      ?>
       <?php $ctr=1; while( have_rows('flexible_content_bike_ranch') ): the_row(); ?>
-      
-
+        <?php foreach ($section_fields as $section) { 
+          include( locate_template('parts-flexible/bike-ranch/'.$section.'.php') );
+        } ?>
       <?php $ctr++; endwhile;  ?>
     </div>
     <?php  } ?>

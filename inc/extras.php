@@ -1030,7 +1030,6 @@ jQuery(document).ready(function($){
 // print_r($content);
 
 
-
 displayCustomIcons();
 function displayCustomIcons() {
     $fonts = '';
@@ -2805,8 +2804,23 @@ function isFeaturedEvent($postUrl) {
 }
 
 
-function get_activity_schedule_locations() {
-  global $wpdb;
+// function get_activity_schedule_locations() {
+//   global $wpdb;
+// }
+
+/*===== REMOVE WP EDITOR ON SPECIFIC PAGE =====*/
+function remove_pages_editor(){
+  //BIKE RANCH TEMPLATE
+  if( $template = get_page_template() ) {
+    if (strpos($template, 'bike-ranch') !== false) {
+      remove_post_type_support( 'page', 'editor' );
+    }
+  }
+  // if(get_the_ID() === 95) {
+  //   remove_post_type_support( 'page', 'editor' );
+  // }
 }
+add_action( 'add_meta_boxes', 'remove_pages_editor' );
+
 
 

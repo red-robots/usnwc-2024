@@ -17,6 +17,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Minion Pro';
+    src: url('fonts/minion/MinionPro-Regular.eot');
+    src: url('fonts/minion/MinionPro-Regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/minion/MinionPro-Regular.woff2') format('woff2'),
+         url('fonts/minion/MinionPro-Regular.woff') format('woff'),
+         url('fonts/minion/MinionPro-Regular.ttf')  format('truetype'),
+         url('fonts/minion/MinionPro-Regular.svg#Minion Pro') format('svg');
+}
 
 @font-face {
     font-family: 'custom-icon';
