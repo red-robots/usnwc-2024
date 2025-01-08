@@ -59,15 +59,19 @@ if($postTypes) {
   }
 }
 
+$where_post_types_condition = ( count($postTypes)==1 ) ? $where_post_types : "(".$where_post_types.")";
+
+
+
 $condition1 = "SELECT pp.ID, mm.meta_value AS start_date 
           FROM " . $prefix ."posts pp, ".$prefix."postmeta mm 
-          WHERE (".$where_post_types.") 
+          WHERE ".$where_post_types_condition."
           AND pp.post_status='publish' 
           AND pp.ID=mm.post_id AND mm.meta_key='start_date'";
 
 $condition2 = "SELECT pp.ID, mm.meta_value AS end_date  
           FROM " . $prefix ."posts pp, ".$prefix."postmeta mm 
-          WHERE (".$where_post_types.") 
+          WHERE ".$where_post_types_condition." 
           AND pp.post_status='publish' 
           AND pp.ID=mm.post_id AND mm.meta_key='end_date' 
           AND UNIX_TIMESTAMP(mm.meta_value) >= ".strtotime(date('Ymd'))." ORDER BY end_date ASC";
