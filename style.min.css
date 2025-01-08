@@ -6294,6 +6294,7 @@ body.logged-in.admin-bar .site-header{top:45px}
 .section-flex-columns .flexcol img{visibility:visible}
 #primary .upcoming-posts .photo.no-image:before{width:30vw;height:30vw}
 .image_cards_columns .cards .flexwrap .imageBlock{width:100%}
+.bike-ranch-sections .section--two_column_layout_text_image .section-buttons .button-traditional{width:100% !important}
 }@media screen and (max-width:500px){body.home .homerow .imagebox{width:100%}
 body.home .homerow .imagebox a{padding-bottom:105%}
 body.home .homerow .imagebox a .title{font-size:35px}
