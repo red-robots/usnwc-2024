@@ -5438,6 +5438,11 @@ body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .
 .bike-ranch-sections .section--buttons .section-buttons .button-wrap:last-child{margin-bottom:0}
 .bike-ranch-sections .section--buttons .section-buttons.buttons-per-row1 .button-wrap{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .bike-ranch-sections .section--buttons .section-buttons.buttons-per-row1 .button-wrap .button-traditional{width:50%}
+.bike-ranch-sections .section--fullwidth_image figure{margin:0;position:relative;padding-bottom:80%}
+.bike-ranch-sections .section--fullwidth_image figure img{position:absolute;top:0;left:0;width:100%;height:100%;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.bike-ranch-sections .section--fullwidth_image figure figcaption{position:absolute;top:0;left:0;width:100%;height:100%;z-index:10;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;padding:30px}
+.bike-ranch-sections .section--fullwidth_image figure figcaption h2{font-family:"Brandon Black";font-size:35px;line-height:1;letter-spacing:.02em;text-transform:uppercase;margin:0 0 5px;color:#fff}
+.bike-ranch-sections .section--fullwidth_image figure figcaption p{color:#fff;font-size:18px}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -5947,6 +5952,7 @@ body.logged-in.admin-bar.scrolled .hero-wrapper .stats{top:160px}
 body.home.logged-in.admin-bar .site-header{top:32px !important}
 body.logged-in.admin-bar.scrolled:has(#banner) .site-header,body.logged-in.admin-bar.subpage.scrolled:has(#banner) .site-header,body.logged-in.admin-bar.subpage.scrolled .site-header{top:32px !important}
 body.logged-in.admin-bar:has(#banner) .site-header,body.logged-in.admin-bar.subpage:has(#banner) .site-header{top:0 !important}
+.bike-ranch-sections .section--fullwidth_image figure figcaption h2{font-size:40px}
 }@media(min-width:820px)and (min-width:820px){#section-whattowear.half .model{width:35%}
 }@media screen and (min-width:901px){.section-fullwidth-black .column1{padding-right:15px}
 .section-fullwidth-black .column2{padding-left:15px}
@@ -6006,6 +6012,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 }@media screen and (min-width:960px){.section--schedules .section-two_column_row .flexwrap{min-height:480px}
 }@media screen and (min-width:961px){.activity-schedule-modal .schedule-container.half .fxcol{width:46%}
 .section-upcoming_events.events--film-series .flexwrap .infobox{width:25%}
+.bike-ranch-sections .section--fullwidth_image figure{padding-bottom:55%}
 }@media screen and (min-width:1025px){#primary .upcoming-posts .entry{width:33.333%}
 }@media(min-width:1200px){section.route-details .flexcol{width:25%}
 section.route-map .map-frame{height:60vh}
@@ -6035,6 +6042,7 @@ body.subpage.single.single-festival .column-data-section{padding-bottom:40px}
 .two-column-layout-vist .flex-wrapper{min-height:575px}
 }@media screen and (min-width:1200px){body.page-template-page-visit section.visit.flexible-image-cards .tile,section.visit.flexible-image-cards .tile,.flexible-image-cards .tile{margin-bottom:100px}
 }@media screen and (min-width:1201px){.bike-ranch-sections .section--two_column_layout_text_image.half .flexcol{width:47%;margin-top:0;margin-bottom:0}
+.bike-ranch-sections .section--fullwidth_image figure figcaption p{font-size:20px}
 }@media screen and (min-width:1241px){.fullwidth_video_block{max-height:600px}
 }@media screen and (min-width:1251px){.fullwidth_video_block .textOverlay .wrapper h2{font-size:55px}
 .fullwidth_video_block.fullwidth_video_alt{padding:50px 6vw}
@@ -6059,6 +6067,7 @@ body.page-template-page-visit section.visit.flexible-image-cards .tile.full-blee
 .bike-ranch-sections .section--buttons .section-buttons.buttons-per-row3 .button-wrap,.bike-ranch-sections .section--buttons .section-buttons.buttons-per-row6 .button-wrap{width:calc(33.33% - 10px)}
 .bike-ranch-sections .section--buttons .section-buttons.buttons-per-row4 .button-wrap{width:calc(25% - 10px)}
 .bike-ranch-sections .section--buttons:has(.buttons-per-row4){padding-left:5vw;padding-right:5vw}
+.bike-ranch-sections .section--fullwidth_image figure figcaption{padding-left:5vw;padding-right:5vw}
 }@media screen and (min-width:1281px){.text-and-image-blocks .gallerycol.mapCol{min-height:500px}
 body.page-template-page-visit section.visit .tileWrapper{padding-left:5vw;padding-right:5vw}
 body.page-template-page-visit section.visit .cards-row-section .cards-inner{padding-left:5vw;padding-right:5vw}
@@ -6066,12 +6075,14 @@ body.page-template-page-visit section.visit .cards-row-section figure{width:25%}
 .visit .text-block-section .text-block-inner{padding-left:5vw;padding-right:5vw}
 .section_columns_bottom_text .full-wrapper{padding-left:5vw;padding-right:5vw}
 .bike-ranch-sections .content-inner{padding-left:10vw;padding-right:10vw}
+}@media screen and (min-width:1290px){.bike-ranch-sections .section--fullwidth_image figure figcaption h2{font-size:70px}
 }@media(min-width:1300px){.information-tabs-wrap .tabs-info ul a span.arrow:before,.information-tabs-wrap .tabs-info ul a span.arrow:after{top:15px}
 section.homepage-hero .home-info .info h1{font-size:60px}
 section.full-bleed-promo .info .words h2{font-size:100px}
 .archive-posts-wrap .entry{width:33.33%}
 }@media screen and (min-width:1300px){.image_cards_columns{padding:80px 5vw}
 }@media screen and (min-width:1400px){#section-faqs .faq-item{padding:0 20px 0 40px}
+.bike-ranch-sections .section--fullwidth_image figure figcaption h2{font-size:100px}
 }@media screen and (min-width:1480px){body.subpage.single.single-festival .column-data-section .fxcol{width:auto;padding-left:5vw;padding-right:5vw}
 .fullwidth_video_block{max-height:700px}
 }@media screen and (min-width:1481px){.text-and-image-blocks .gallerycol.mapCol{min-height:570px}

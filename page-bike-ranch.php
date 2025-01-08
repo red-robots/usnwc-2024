@@ -25,7 +25,8 @@ $show_faqs = get_field('show_faqs_items');
       $section_fields = array(
         'two_column_layout_text_image',
         'gallery',
-        'buttons'
+        'buttons',
+        'fullwidth_image'
       );
       ?>
       <?php $ctr=1; while( have_rows('flexible_content_bike_ranch') ): the_row(); ?>
