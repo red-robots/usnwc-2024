@@ -1229,25 +1229,7 @@ var getGridSize = function() {
         });
   }
 
-  //Today's Snapshot (Hours > Activity Schedule) pop-up
-  $(document).on('click', '.popupSchedule', function(e){
-    e.preventDefault();
-    var schedule = $(this).attr('data-schedule');
-    $('.activity-schedule-modal[data-schedule="'+schedule+'"]').show();
-    $('#customModalContainer').addClass('open');
-  });
 
-  $(document).on('click', '#customModalClose', function(e){
-    e.preventDefault();
-    $('#customModalContainer').removeClass('open');
-    $('#customModalContent .activity-schedule-modal[data-schedule]').hide();
-  });
-
-  if( $('.activity-schedule-modal[data-schedule]').length && $('#customModalContainer').length ) {
-    if( $('#customModalContent .activity-schedule-modal[data-schedule]').length==0 ) {
-      $('.activity-schedule-modal[data-schedule]').appendTo('#customModalContent');
-    }
-  }
 
   //Popup Film Series
   $(document).on('click', '.button-popup-details', function(){
@@ -1402,6 +1384,70 @@ var getGridSize = function() {
       });
     }); 
   }
+
+  /*===============================
+    Today's Snapshot (per location)
+    Pop-ups information 
+  ===============================*/
+
+  //Today's Snapshot (Hours > Activity Schedule) pop-up
+  $(document).on('click', '.popupSchedule', function(e){
+    e.preventDefault();
+    var schedule = $(this).attr('data-schedule');
+    $('.activity-schedule-modal[data-schedule="'+schedule+'"]').show();
+    $('#customModalContainer').addClass('open');
+  });
+
+  $(document).on('click', '#customModalClose', function(e){
+    e.preventDefault();
+    $('#customModalContainer').removeClass('open');
+    $('#customModalContent .activity-schedule-modal[data-schedule]').hide();
+    $('#customModalContent .info-popup').hide();
+  });
+
+  $(document).on('keyup', function(e){
+    //Close Modal when pressing Escape key
+    if( e.which==27 ) {
+      if( $('#customModalContainer').hasClass('open') ) {
+       $('#customModalClose').trigger('click'); 
+      }
+    }
+  });
+
+  if( $('.activity-schedule-modal[data-schedule]').length && $('#customModalContainer').length ) {
+    if( $('#customModalContent .activity-schedule-modal[data-schedule]').length==0 ) {
+      $('.activity-schedule-modal[data-schedule]').appendTo('#customModalContent');
+    }
+  }
+
+  if( $('.info-popup[data-todaypopinfo]').length && $('#customModalContainer').length ) {
+    if( $('#customModalContent .info-popup[data-todaypopinfo]').length==0 ) {
+      $('.info-popup[data-todaypopinfo]').appendTo('#customModalContent');
+    }
+  }
+
+  if( $('.todaySnapshotInfo a[href*="#popup-"]').length ) {
+    $('.todaySnapshotInfo a[href*="#popup-"]').each(function(){
+      var hashTag = $(this).attr('href');
+      $(this).attr({
+        'data-todayinfo': hashTag,
+        'href':'javascript:void(0)'
+      });
+    }); 
+  }
+
+  $(document).on('click','a[data-todayinfo]', function(e){
+    e.preventDefault();
+    var hashTag = $(this).attr('data-todayinfo');
+    if( $('#customModalContent .info-popup[data-todaypopinfo="'+hashTag+'"]').length ) {
+      var currentInfo = $('#customModalContent .info-popup[data-todaypopinfo="'+hashTag+'"]');
+      currentInfo.show();
+      $('#customModalContainer').addClass('open');
+    }
+  });
+
+
+
 
 
 });// END #####################################    END

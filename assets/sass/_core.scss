@@ -18802,6 +18802,32 @@ body.subpage.single.single-activity {
     }
   }
 }
+#customModalContainer:has(.info-popup-content) {
+  #customModalInner {
+    max-width: 800px;
+  }
+  .info-modal-title {
+    background: #707070;
+    color: #fff;
+    text-align: center;
+    padding: 25px 15px;
+    h2 {
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin: 0 0;
+    }
+  }
+  .info-popup-content {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .info-text {
+    padding: 40px 30px;
+  }
+}
 
 .activity-schedule-modal {
   .schedule-container {

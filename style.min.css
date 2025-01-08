@@ -4583,6 +4583,11 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 #customModalContainer #customModalClose:after{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
 #customModalContainer #customModalClose:hover,#customModalContainer #customModalClose:focus{opacity:.5}
 #customModalContainer #customModalClose:focus{border:1px dotted #ccc}
+#customModalContainer:has(.info-popup-content) #customModalInner{max-width:800px}
+#customModalContainer:has(.info-popup-content) .info-modal-title{background:#707070;color:#fff;text-align:center;padding:25px 15px}
+#customModalContainer:has(.info-popup-content) .info-modal-title h2{font-size:25px;font-weight:500;line-height:1.2;letter-spacing:.05em;text-transform:uppercase;margin:0}
+#customModalContainer:has(.info-popup-content) .info-popup-content{border-radius:20px;overflow:hidden}
+#customModalContainer:has(.info-popup-content) .info-text{padding:40px 30px}
 .activity-schedule-modal .schedule-container{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-top:40px}
 .activity-schedule-modal .schedule-container .fxcol{width:100%;color:#000}
 .activity-schedule-modal .schedule-container .items{margin-bottom:2.5em}

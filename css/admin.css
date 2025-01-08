@@ -788,4 +788,41 @@ body.post-type-activity_schedule #acf-group_5f460b222fe52 {
   display: none!important;
 }
 
-
+/*== ACF Today's Snapshot Per Location ==*/
+body.toplevel_page_acf-options-today-options [data-name="whitewaterLocations"] [data-name="infocolumns"] thead th[data-name="status"][data-type="button_group"] {
+  position: relative;
+  width: 5px!important;
+  padding: 0 0;
+  border-left: none; 
+}
+body.toplevel_page_acf-options-today-options [data-name="whitewaterLocations"] [data-name="infocolumns"] thead th[data-name="status"][data-type="button_group"] label{
+  display: block;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+body.toplevel_page_acf-options-today-options [data-name="whitewaterLocations"] [data-name="infocolumns"] tbody td[data-name="status"][data-type="button_group"] {
+  position: relative;
+  border-left: none; 
+  padding: 0 0;
+}
+body.toplevel_page_acf-options-today-options [data-name="whitewaterLocations"] [data-name="infocolumns"] tbody td[data-name="status"][data-type="button_group"] div.acf-input {
+  position: absolute;
+  top: 10px;
+  left: -85px;
+}
+body.toplevel_page_acf-options-today-options [data-name="whitewaterLocations"] [data-name="infocolumns"] tbody td[data-name="status"][data-type="button_group"] div.acf-input .acf-button-group label {
+  padding: 4px 5px;
+  font-size: 12px;
+  line-height: 15px;
+  height: 15px;
+}
+body.toplevel_page_acf-options-today-options [data-name="whitewaterLocations"] [data-name="infocolumns"] tbody td[data-name="status"][data-type="button_group"] div.acf-input .acf-button-group label.selected:has(input[value="open"])  {
+  border-color: #198e0d;
+  background: #198e0d;
+}
+body.toplevel_page_acf-options-today-options [data-name="whitewaterLocations"] [data-name="infocolumns"] tbody td[data-name="status"][data-type="button_group"] div.acf-input .acf-button-group label.selected:has(input[value="close"]) {
+  border-color: #ca0b0b;
+  background: #ca0b0b;
+}

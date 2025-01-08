@@ -44,6 +44,7 @@
 
       <?php 
 
+        
         if($branchNameSlug) {
           foreach ($wwlocations as $k=>$w) {
             $loc = $w['locations_taxonomy'];
@@ -54,8 +55,30 @@
           }
         }
 
+        $popupInfoArrs = array();
+        foreach ($wwlocations as $k=>$w) {
+          $info_popup = $w['info_popup'];
+          $infocolumns = $w['infocolumns'];
+          if($infocolumns) {
+            foreach($infocolumns as $c) {
+              $v_title = $c['title'];
+              $v_link = $c['link'];
+              $nLink = ( isset($v_link['url']) && $v_link['url'] ) ? $v_link['url'] : '';
+              
+
+              if($v_title && $nLink) {
+                if (strpos($nLink, '#popup-') !== false) {
+                  $key = str_replace('#','', $nLink);
+                  $popupInfoArrs[$key] = $v_title ;
+                }
+              }
+            }
+          }
+        }
+
         $j=1; foreach ($wwlocations as $w) { 
         $loc = $w['locations_taxonomy'];
+        $info_popup = $w['info_popup'];
         $name = (isset($loc->name) && $loc->name) ? $loc->name : '';
         //$name = $w['name'];
         //$location = $w['location'];
@@ -107,7 +130,6 @@
                   <div class="link">
                     <?php  
                     // if ( (strpos($nLink, '#') !== false) && ( (strpos($v_title_slug, 'hours') !== false) ) ) {
-
                     if ( (strpos($nLink, '#') !== false) && ( (strpos($nLink, '-hours') !== false) ) ) {
                       //Get Activity Schedule
                       $slug = str_replace('#','', trim($nLink));
@@ -279,6 +301,27 @@
             <?php } ?>
             </div>
           </div>
+
+          <?php if ($info_popup) { ?>
+            <?php foreach ($info_popup as $info) { 
+              $info_text = $info['info_modal'];
+              $info_id = ($info['popup_id']) ? preg_replace('/\s+/', '', trim($info['popup_id'])) : '';
+              if($info_text && $info_id) { 
+                $key = str_replace('#','', $info_id);
+                $popup_title = ( isset($popupInfoArrs[$key]) && $popupInfoArrs[$key] ) ? $popupInfoArrs[$key] : '';
+              ?>
+              <div class="info-popup" data-todaypopinfo="<?php echo $info_id ?>" style="display:none;">
+                <div class="info-popup-content">
+                  <?php if ($popup_title) { ?>
+                  <div class="info-modal-title"><h2><?php echo $popup_title ?></h2></div>
+                  <?php } ?>
+                  <div class="info-text"><?php echo anti_email_spam($info_text) ?></div>
+                </div>
+              </div> 
+              <?php } ?>
+            <?php } ?>
+          <?php } ?>
+
           <?php } ?>
        <?php $j++; } ?>
       <?php } ?>
