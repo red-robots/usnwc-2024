@@ -50,6 +50,10 @@
           if($start_date) {
             $start_date = date('l, F d', strtotime($start_date));
           }
+
+          if( get_field('thumbnail_image', $pid) ) {
+            $image = get_field('thumbnail_image', $pid);
+          }
           ?>
           <div class="infobox">
             <div class="inside">
