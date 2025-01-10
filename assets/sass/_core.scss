@@ -16674,6 +16674,7 @@ section.visit {
     .flexwrap {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
     }
     &.active {
       animation-fill-mode: both;
@@ -16873,6 +16874,7 @@ section.visit {
         // animation-duration: 1s;
         // animation-name: collapseAnimation;
         animation: none!important;
+        justify-content: center;
       }
     }
   }

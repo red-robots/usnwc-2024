@@ -4313,7 +4313,7 @@ section.visit .tile.full-bleed div.img{border-radius:0}
 .todaySnapshotInfo .location-tabs li.active button{border:2px solid #e33333;background-color:#fff;color:#000}
 .todaySnapshotInfo .location-tabs li.active button span.wname{color:#000}
 .todaySnapshotInfo .info-wrapper{display:none;margin-top:40px}
-.todaySnapshotInfo .info-wrapper .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.todaySnapshotInfo .info-wrapper .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .todaySnapshotInfo .info-wrapper.active{-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-name:fadeIn;animation-name:fadeIn}
 .todaySnapshotInfo .info-wrapper .infocol{width:25%;padding:15px;text-align:center}
 .todaySnapshotInfo .info-wrapper .infocol .inner{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;height:100%;min-height:80px;padding:0 15px;position:relative}
@@ -5395,7 +5395,7 @@ body.page-template-page-bike-ranch.subpage #banner .slides .logo-overlay{top:uns
 body.page-template-page-bike-ranch.subpage:has(#banner) .site-header,body.page-template-page-bike-ranch.subpage:has(#banner) .site-header .navbar{background:transparent}
 body.page-template-page-bike-ranch.subpage:has(#banner) .site-header{position:fixed !important}
 body.page-template-page-bike-ranch.subpage:has(#banner) .site-header .navbar .logo img.logo-cream{-webkit-filter:none;filter:none}
-body.page-template-page-bike-ranch.subpage:has(#banner) .new-nav-v2.desktop-navigation .menu-link{color:#feefd8;font-family:"Brandon Bold";font-size:18px}
+body.page-template-page-bike-ranch.subpage:has(#banner) .new-nav-v2.desktop-navigation .menu-link{color:#feefd8}
 body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item a.navlink,body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item.nav-item-today button.today{color:#feefd8 !important}
 body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item a.navlink:hover,body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item a.navlink:focus,body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item.nav-item-today button.today:hover,body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item.nav-item-today button.today:focus{color:#ba0d30 !important}
 body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .navbar .logo img.logo-cream{-webkit-filter:brightness(0) invert(0);filter:brightness(0) invert(0)}
@@ -6122,7 +6122,7 @@ body.home .full-bleed-promo div.img div.info .cta a{display:inline-block;padding
 .todaySnapshotInfo .info-wrapper .infocol{width:50%;border-top:1px solid #ccc}
 .todaySnapshotInfo .info-wrapper .infocol:nth-child(1),.todaySnapshotInfo .info-wrapper .infocol:nth-child(2){border-top:0}
 .todaySnapshotInfo .info-wrapper .infocol:nth-child(2) .inner:after{display:none}
-.todaySnapshotInfo .info-wrapper.active{-webkit-animation:none !important;animation:none !important}
+.todaySnapshotInfo .info-wrapper.active{-webkit-animation:none !important;animation:none !important;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .calendar-tab-events-posts .infoBox{width:50%}
 body.home .homerow .imagebox{width:50%}
 body.home .homerow .imagebox a .title{font-size:5vw}
