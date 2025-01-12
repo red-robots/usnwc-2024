@@ -5371,7 +5371,7 @@ section.homepage-hero{overflow:hidden}
 .site-header .nav-item.nav-item-today .today-dropdown-container ul.branches .branchName.active .name{font-family:"Brandon Bold"}
 .site-header .nav-item.nav-item-today .today-dropdown-container .location-details{margin:0;padding:10px 0 0;list-style:none}
 .site-header .nav-item.nav-item-today .today-dropdown-container .location-details .tlabel{font-family:"Brandon Medium";font-size:14px;text-transform:uppercase;color:#777}
-.site-header .nav-item.nav-item-today .today-dropdown-container .location-details .tVal{font-family:"Brandon";font-size:20px;color:#000}
+.site-header .nav-item.nav-item-today .today-dropdown-container .location-details .tVal{font-family:"Brandon";font-size:20px;color:#000;letter-spacing:.01em}
 .site-header .nav-item.nav-item-today .today-dropdown-container .location-details .info{display:none;text-align:left;-webkit-animation-duration:1s;animation-duration:1s}
 .site-header .nav-item.nav-item-today .today-dropdown-container .location-details .info .info-trail-status{margin-bottom:25px}
 .site-header .nav-item.nav-item-today .today-dropdown-container .location-details .info.active{display:block;-webkit-animation-name:fadeIn;animation-name:fadeIn}
