@@ -6192,7 +6192,7 @@ body.home .homerow .imagebox a .title{font-size:5vw}
 .site-header-desktop{display:none !important}
 .site-header-mobile{display:block;position:fixed;top:0;left:0;width:100%;height:70px;z-index:99999999;-webkit-transition:all ease .3s;transition:all ease .3s}
 .site-header-mobile.menu-open{height:100%;background-color:transparent !important}
-.site-header-mobile .site-header-flex{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;padding:15px 30px;position:relative;z-index:10001}
+.site-header-mobile .site-header-flex{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;padding:10px 30px;position:relative;z-index:10001}
 .site-header-mobile .site-logo-mobile{display:inline-block}
 .site-header-mobile .site-logo-mobile img{width:70px;height:auto}
 .site-header-mobile .mobileMenuToggle{display:inline-block;width:40px;height:45px;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;background-color:transparent;padding:0;margin:0;position:relative}
@@ -6207,7 +6207,7 @@ body.home .homerow .imagebox a .title{font-size:5vw}
 .site-header-mobile .mobile-nav-wrapper,.site-header-mobile .mobile-nav-backdrop{display:none}
 .site-header-mobile .mobile-nav-backdrop{position:fixed;top:0;left:0;width:100%;height:100vh;background:rgba(0,0,0,.9);z-index:9999}
 .site-header-mobile .mobile-nav-backdrop.open{display:block}
-.site-header-mobile .mobile-nav-wrapper{position:fixed;top:0;right:0;z-index:10000;width:100%;height:100vh;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;overflow:hidden;background:rgba(0,0,0,.9);-webkit-animation-duration:1s;animation-duration:1s}
+.site-header-mobile .mobile-nav-wrapper{position:fixed;top:0;right:0;z-index:10000;width:100%;height:100vh;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;overflow:hidden;background:rgba(0,0,0,.95);-webkit-animation-duration:1s;animation-duration:1s}
 .site-header-mobile .mobile-nav-wrapper .mobileNav{opacity:0;-webkit-transition:all ease 1s;transition:all ease 1s;-webkit-transform:translateX(100vw);transform:translateX(100vw);-webkit-animation-duration:.6s;animation-duration:.6s;-webkit-animation-name:fadeIn;animation-name:fadeIn}
 .site-header-mobile .mobile-nav-wrapper.open{display:-webkit-box;display:-ms-flexbox;display:flex;right:0}
 .site-header-mobile .mobile-nav-wrapper.open .mobileNav{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}
@@ -6263,16 +6263,20 @@ body.home .homerow .imagebox a .title{font-size:5vw}
 .site-header-mobile .today--dropdown .inner-info .info-today-schedule ul.items li:last-child{margin-bottom:0}
 .site-header-mobile .today--dropdown .tlabel{text-transform:uppercase;font-size:16px}
 .site-header-mobile .today--dropdown .tVal{font-size:20px}
-.site-header-mobile.menu-open .site-header-flex{background-color:rgba(0,0,0,.88)}
 body.menu-open{overflow:hidden}
 body.subpage:not(.page-template-page-bike-ranch){padding-top:70px}
-body.subpage:not(.page-template-page-bike-ranch) .site-header-mobile{background-color:#fff}
-body.subpage:not(.page-template-page-bike-ranch) .site-header-mobile .site-header-flex{padding-top:8px;padding-bottom:7px;width:100%}
+body.subpage:not(.page-template-page-bike-ranch) .site-header-mobile .site-header-flex{padding-top:8px;padding-bottom:7px;width:100%;background-color:#fff}
 body.subpage:not(.page-template-page-bike-ranch) .site-header-mobile .site-logo-mobile img{-webkit-filter:invert(1);filter:invert(1)}
 body.subpage:not(.page-template-page-bike-ranch) .site-header-mobile .mobileMenuToggle .bar,body.subpage:not(.page-template-page-bike-ranch) .site-header-mobile .mobileMenuToggle .bar:before,body.subpage:not(.page-template-page-bike-ranch) .site-header-mobile .mobileMenuToggle .bar:after{background-color:#000}
 body.subpage:not(.page-template-page-bike-ranch).menu-open .site-header-mobile .site-logo-mobile img{-webkit-filter:invert(0);filter:invert(0)}
 body.subpage:not(.page-template-page-bike-ranch).menu-open .site-header-mobile .mobileMenuToggle .bar,body.subpage:not(.page-template-page-bike-ranch).menu-open .site-header-mobile .mobileMenuToggle .bar:before,body.subpage:not(.page-template-page-bike-ranch).menu-open .site-header-mobile .mobileMenuToggle .bar:after{background-color:#fff}
 body.subpage:not(.page-template-page-bike-ranch).scrolled .site-header-mobile{-webkit-box-shadow:0 0 10px rgba(0,0,0,.075);box-shadow:0 0 10px rgba(0,0,0,.075)}
+body.subpage.scrolled .site-header-mobile .site-header-flex{background-color:#fff;-webkit-box-shadow:0 5px 10px rgba(0,0,0,.05);box-shadow:0 5px 10px rgba(0,0,0,.05)}
+body.subpage.scrolled.page-template-page-bike-ranch .site-header-mobile .site-logo-mobile img{-webkit-filter:brightness(1) invert(1);filter:brightness(1) invert(1)}
+body.subpage.scrolled.page-template-page-bike-ranch .site-header-mobile .mobileMenuToggle .bar,body.subpage.scrolled.page-template-page-bike-ranch .site-header-mobile .mobileMenuToggle .bar:before,body.subpage.scrolled.page-template-page-bike-ranch .site-header-mobile .mobileMenuToggle .bar:after{background-color:#000 !important}
+body.subpage.scrolled.page-template-page-bike-ranch .site-header-mobile.menu-open .site-logo-mobile img{-webkit-filter:brightness(0) invert(1);filter:brightness(0) invert(1)}
+body.subpage.scrolled.page-template-page-bike-ranch .site-header-mobile.menu-open .mobileMenuToggle .bar,body.subpage.scrolled.page-template-page-bike-ranch .site-header-mobile.menu-open .mobileMenuToggle .bar:before,body.subpage.scrolled.page-template-page-bike-ranch .site-header-mobile.menu-open .mobileMenuToggle .bar:after{background-color:#fff !important}
+.site-header-mobile.menu-open .site-header-flex{background-color:rgba(0,0,0,.88) !important}
 }@media screen and (max-width:900px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}

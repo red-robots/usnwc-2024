@@ -23,7 +23,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 15px 30px;
+      padding: 10px 30px;
       position: relative;
       z-index: 10001;
       // background-color: rgba(0,0,0,.85);
@@ -111,7 +111,7 @@
       align-content: center;
       justify-content: center;
       overflow: hidden;
-      background: rgba(0,0,0,.9);
+      background: rgba(0,0,0,.95);
       animation-duration: 1s;
       .mobileNav {
         opacity: 0;
@@ -412,18 +412,12 @@
       }
     }
   }
-  .site-header-mobile.menu-open {
-    .site-header-flex {
-      background-color: rgba(0,0,0,.88);
-    }
-  }
   body.menu-open {
     overflow: hidden;
   }
   body.subpage:not(.page-template-page-bike-ranch) {
     padding-top: 70px;
     .site-header-mobile {
-      background-color: #FFF;
       // display: flex;
       // flex-wrap: wrap;
       // align-items: center;
@@ -431,6 +425,7 @@
         padding-top: 8px;
         padding-bottom: 7px;
         width: 100%;
+        background-color: #FFF;
       }
       .site-logo-mobile img {
         filter: invert(1);
@@ -455,6 +450,40 @@
       .site-header-mobile {
         box-shadow: 0 0 10px rgba(0,0,0,.075);
       }
+    }
+  }
+  body.subpage.scrolled .site-header-mobile {
+    .site-header-flex {
+      background-color: #FFF;
+      box-shadow: 0px 5px 10px rgba(0,0,0,.05);
+    }
+    
+  }
+  body.subpage.scrolled.page-template-page-bike-ranch {
+    .site-header-mobile {
+      .site-logo-mobile img {
+        filter: brightness(1) invert(1);
+      }
+      .mobileMenuToggle {
+        .bar, .bar:before, .bar:after {
+          background-color: #000!important;
+        }
+      }
+      &.menu-open {
+        .site-logo-mobile img {
+          filter: brightness(0) invert(1);
+        }
+        .mobileMenuToggle {
+          .bar, .bar:before, .bar:after {
+            background-color: #FFF!important;
+          }
+        }
+      }
+    }
+  }
+  .site-header-mobile.menu-open {
+    .site-header-flex {
+      background-color: rgba(0,0,0,.88)!important;
     }
   }
 }
