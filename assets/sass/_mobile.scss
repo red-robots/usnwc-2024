@@ -312,7 +312,7 @@
       .location-details {
         display: block;
         width: 100%;
-        li {
+        > li {
           display: block;
           width: 100%;
           padding: 10px 40px 10px 40px;
@@ -397,6 +397,9 @@
         .info-today-schedule {
           ul.items li {
             margin-bottom: 25px;
+            .info-link a {
+              font-size: 16px;
+            }
           }
           ul.items li:last-child {
             margin-bottom: 0;

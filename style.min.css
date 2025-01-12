@@ -6248,7 +6248,7 @@ body.home .homerow .imagebox a .title{font-size:5vw}
 .site-header-mobile .today--dropdown .flexcol{display:block;width:100%}
 .site-header-mobile .today--dropdown .flexcol.fx-locations{display:none}
 .site-header-mobile .today--dropdown .location-details{display:block;width:100%}
-.site-header-mobile .today--dropdown .location-details li{display:block;width:100%;padding:10px 40px 10px 40px}
+.site-header-mobile .today--dropdown .location-details>li{display:block;width:100%;padding:10px 40px 10px 40px}
 .site-header-mobile .today--dropdown .snapshot-button{padding-left:40px;padding-right:40px;margin-top:20px}
 .site-header-mobile .today--dropdown .snapshot-button .snapshotBtn{display:inline-block;-webkit-transition:all ease .3s;transition:all ease .3s;background-color:#ba0d30;border:1px solid #ba0d30;padding:14px 18px 13px;border-radius:150px;color:#fff;font-family:"Brandon";font-size:18px;text-transform:uppercase;letter-spacing:.03em;text-decoration:none;width:100%;text-align:center}
 .site-header-mobile .today--dropdown .snapshot-button .snapshotBtn:hover,.site-header-mobile .today--dropdown .snapshot-button .snapshotBtn:focus{border-color:#777;color:#777;background-color:#fff}
@@ -6260,6 +6260,7 @@ body.home .homerow .imagebox a .title{font-size:5vw}
 .site-header-mobile .today--dropdown .inner-info{display:none;color:#fff;padding-top:15px;padding-left:20px}
 .site-header-mobile .today--dropdown .inner-info .info-trail-status{margin-bottom:25px}
 .site-header-mobile .today--dropdown .inner-info .info-today-schedule ul.items li{margin-bottom:25px}
+.site-header-mobile .today--dropdown .inner-info .info-today-schedule ul.items li .info-link a{font-size:16px}
 .site-header-mobile .today--dropdown .inner-info .info-today-schedule ul.items li:last-child{margin-bottom:0}
 .site-header-mobile .today--dropdown .tlabel{text-transform:uppercase;font-size:16px}
 .site-header-mobile .today--dropdown .tVal{font-size:20px}
