@@ -6424,7 +6424,8 @@ body.page-template-page-visit section.visit.flexible-image-cards .tile figure h2
 #primary.buy-page.buy-page-new .access-pass-options .infobox .inner .textwrap h2,#primary.buy-page.buy-page-new .access-pass-options .infobox .inner .textwrap .text,#primary.buy-page.buy-page-new .access-pass-options .infobox .inner .textwrap .text p{text-align:center !important}
 #primary.buy-page.buy-page-new .access-pass-options .infobox .inner .buttons{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1em}
 .new-nav-v2.desktop-navigation .mega-menu-content .menu-col{width:50% !important}
-.menu-sections .textcol .mstime.custom-time{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.menu-sections .textcol .mstime.custom-time{display:block;width:100%;margin-top:18px}
+.menu-sections .textcol .mstime.custom-time .name,.menu-sections .textcol .mstime.custom-time .time{display:block;width:100%;padding:0}
 .snapshot-branch-info{max-width:100%;padding-left:20px;padding-right:20px}
 .bike-ranch-sections .section--buttons .section-buttons.buttons-per-row1 .button-wrap .button-traditional{width:100%}
 }@media screen and (max-width:600px){section.route-stories .block .feat-image.no-image .bg:before{width:30vw;height:30vw}
