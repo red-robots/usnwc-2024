@@ -6389,7 +6389,7 @@ body.subpage .site-header .mobile-nav-wrap .logo img,body.subpage .site-header #
 body.scrolled .site-header{-webkit-box-shadow:0 5px 10px rgba(0,0,0,.1);box-shadow:0 5px 10px rgba(0,0,0,.1)}
 body.mobile-menu-open{overflow:hidden}
 body.mobile-menu-open nav.new-nav-mobile ul.today{padding-bottom:50px}
-.homepage-hero .home-info{bottom:unset;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);padding:20px 10vw}
+.homepage-hero .home-info{bottom:unset !important;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);padding:20px 10vw}
 body.logged-in.admin-bar .site-header .mobile-nav-wrap{top:45px}
 body.logged-in.admin-bar.scrolled .site-header .mobile-nav-wrap .mobile-nav-wrap .logo img,body.logged-in.admin-bar.scrolled .site-header .mobile-nav-wrap #mobile-menu-toggle span{-webkit-transition:all ease .3s;transition:all ease .3s;-webkit-filter:invert(1);filter:invert(1)}
 }@media screen and (max-width:782px){html #wpadminbar{position:fixed !important;top:0;left:0}
@@ -6415,6 +6415,7 @@ body.logged-in.admin-bar .site-header-mobile .mobileNav{padding-top:190px}
 .schedule-items-wrap.NoDescription .dash-item .line span.name{width:60%}
 .schedule-items-wrap.NoDescription .dash-item .line span.right-info{width:40%}
 .schedule_cards_section .cardsContainer .flexwrap.cards-count-1 .infocard .inside figure.cardImage,.schedule_cards_section .cardsContainer .flexwrap.cards-count-1 .infocard .inside .schedule-items-wrap{width:100%}
+body.page-template-page-visit section.visit.flexible-image-cards .tile figure h2,section.visit.flexible-image-cards .tile figure h2,.flexible-image-cards .tile figure h2{font-size:1.65rem;line-height:1.1}
 #primary.buy-page.buy-page-new .access-pass-options .infobox .inner .textwrap h2,#primary.buy-page.buy-page-new .access-pass-options .infobox .inner .textwrap .text,#primary.buy-page.buy-page-new .access-pass-options .infobox .inner .textwrap .text p{text-align:center !important}
 #primary.buy-page.buy-page-new .access-pass-options .infobox .inner .buttons{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1em}
 .new-nav-v2.desktop-navigation .mega-menu-content .menu-col{width:50% !important}

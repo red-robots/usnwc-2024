@@ -33,9 +33,11 @@
 					<?php } ?>
 				<?php } ?>
 			</div>
+      <?php if ( isset($hero_branding['url']) ) { ?>
 			<div class="branding">
 				<img src="<?php echo $hero_branding['url']; ?>"  alt="<?php echo $hero_branding['alt']; ?>">
 			</div>
+      <?php } ?>
 		</div>
 
 		<?php if( $hero_image ) { ?>

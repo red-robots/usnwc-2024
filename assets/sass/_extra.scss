@@ -3066,7 +3066,7 @@ body.single:has(.hero-wrapper .single-slide .type-video) {
   }
   .homepage-hero {
     .home-info {
-      bottom: unset;
+      bottom: unset!important;
       top: 50%;
       transform: translateY(-50%);
       padding: 20px 10vw;
