@@ -4825,7 +4825,7 @@ body.modal-open{overflow:hidden}
 .event-details--section{width:100%;float:left;padding-top:0 !important;padding-bottom:30px;padding-top:30px !important;padding-bottom:30px}
 .event-details--section h2{font-family:"Brandon Bold";font-size:32px;line-height:1.2;text-transform:uppercase;margin:0;text-align:center;color:#000}
 .event-details--section .details{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
-.event-details--section .details .info{display:inline-block;width:33.333%;padding:20px 40px;border-right:1px solid #ccc}
+.event-details--section .details .info{display:inline-block;width:100%;padding:20px 40px}
 .event-details--section .details .info:last-child{border-right:0}
 .dining-event-details.single-dining-page{width:100%;background-color:transparent;padding-top:30px;padding-bottom:30px}
 .checkin-section-images{padding-top:0;padding-bottom:70px}
@@ -6051,6 +6051,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .cardsContainer .infocard{width:33.333%}
 }@media screen and (min-width:960px){.section--schedules .section-two_column_row .flexwrap{min-height:480px}
 }@media screen and (min-width:961px){.activity-schedule-modal .schedule-container.half .fxcol{width:46%}
+.event-details--section .details .info{width:33.333%;border-right:1px solid #ccc}
 .section-upcoming_events.events--film-series .flexwrap .infobox{width:25%}
 .bike-ranch-sections .section--fullwidth_image figure{padding-bottom:55%}
 }@media screen and (min-width:1025px){#primary .upcoming-posts .entry{width:33.333%}
@@ -6179,6 +6180,7 @@ body.home .homerow .imagebox a .title{font-size:5vw}
 .locationPanels.facility-map-section .info-panel,.locationPanels.facility-map-section .info-panel.active{display:none;margin-bottom:15px}
 .locationPanels.facility-map-section .info-panel:last-child,.locationPanels.facility-map-section .info-panel.active:last-child{margin-bottom:0}
 .locationPanels.facility-map-section .customSubNavWrapper{margin-top:20px}
+.event-details--section .details .info{border-bottom:1px solid #ccc;margin:0 !important;padding:30px 40px}
 .fullwidth_video_block .videoFrame iframe{-webkit-transform:translateY(0) scale(1.2) !important;transform:translateY(0) scale(1.2) !important}
 .fullwidth_video_block .videoFrame{-webkit-transform:scale(1.2);transform:scale(1.2)}
 .fullwidth_video_block .videoFrame iframe{-webkit-transform:translateY(0);transform:translateY(0)}
