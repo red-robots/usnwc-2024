@@ -6166,7 +6166,7 @@ body.home .full-bleed-promo div.img div.info .cta a{display:inline-block;padding
 .todaySnapshotInfo .info-wrapper.active{-webkit-animation:none !important;animation:none !important;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .calendar-tab-events-posts .infoBox{width:50%}
 body.home .homerow .imagebox{width:50%}
-body.home .homerow .imagebox a .title{font-size:5vw}
+body.home .homerow .imagebox a .title{font-size:6vw;line-height:1.1;padding:0 10px}
 .section-two_column_row .gallery-content{width:100%;height:unset}
 .section-two_column_row .gallery-content figure{width:100%;height:unset;min-height:65vw}
 .section-two_column_row .imageBlock .gallery-content{width:100%;height:unset;min-height:65vw}
@@ -6343,6 +6343,8 @@ body.single-race .filter-wrapper form .filter-field-group .select-wrap{left:0;pa
 body.single-race .filter-wrapper form .filter-field-group .filter-label{padding-left:0;padding-right:0}
 body.single-race .filter-wrapper form .filter-field-group .filter-label .inside{overflow:hidden}
 body.single-race .filter-wrapper form .filter-field-group .filter-label span{padding:0;font-size:13px;line-height:1}
+body.home .homerow .wrappe-full{padding:20px 20px}
+body.home .homerow .imagebox{width:50%;padding:10px}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left,body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-right{padding-left:0;padding-right:0}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left{border-bottom:1px solid #ccc;padding-bottom:30px}
 .pass-options-wrap .option .wrap{-ms-flex-line-pack:justify;align-content:space-between;width:100%;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
@@ -6434,9 +6436,7 @@ body.page-template-page-visit section.visit.flexible-image-cards .tile figure h2
 #primary .upcoming-posts .photo.no-image:before{width:30vw;height:30vw}
 .image_cards_columns .cards .flexwrap .imageBlock{width:100%}
 .bike-ranch-sections .section--two_column_layout_text_image .section-buttons .button-traditional{width:100% !important}
-}@media screen and (max-width:500px){body.home .homerow .imagebox{width:100%}
-body.home .homerow .imagebox a{padding-bottom:105%}
-body.home .homerow .imagebox a .title{font-size:35px}
+}@media screen and (max-width:500px){body.home .homerow .imagebox a{padding-bottom:105%}
 .section_columns_bottom_text .infobox{width:100% !important}
 }@media screen and (max-width:480px){.featured-events-section .postbox{width:100%}
 .section-links-icons .block{width:100% !important}
