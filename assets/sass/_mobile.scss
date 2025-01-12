@@ -225,6 +225,9 @@
         .menu-col {
           padding: 0 0 40px;
           color: #FFF!important;
+          &:before {
+            display: none;
+          }
           a {
             color: #FFF!important;
           }
