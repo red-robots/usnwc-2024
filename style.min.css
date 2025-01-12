@@ -6297,6 +6297,8 @@ body.subpage:not(.page-template-page-bike-ranch).scrolled .site-header-mobile{-w
 .content-area-single .text-content-gallery .gallery-wrapper .imagewrap{width:100% !important}
 }@media screen and (max-width:821px){body.logged-in.admin-bar.scrolled .film-event-status{top:125px}
 }@media screen and (max-width:820px){.topinfo .businessHours{width:300px;left:-25vw;right:0}
+#banner .banner-bottom{height:45px;background-image:url("images/banner-bottom-mobile.svg");background-repeat:no-repeat;background-size:140%;background-position:bottom center;bottom:-1px}
+#banner .banner-bottom img{display:none}
 #banner ul.slides.single-slide #playYoutube{display:none}
 #banner ul.slides.single-slide .type-video .videoIframe{z-index:101}
 #section-whattowear .model #defaultModel.default{height:330px !important}
