@@ -5255,8 +5255,8 @@ body.page-template-page-visit section.visit.flexible-image-cards .tile.half figu
 .new-nav-v2.desktop-navigation li.v-menu-item:hover .menu-link span,.new-nav-v2.desktop-navigation li.v-menu-item:focus-within .menu-link span{background-color:#fff;color:#000}
 .new-nav-v2.desktop-navigation li.v-menu-item.has-children a span:after{font-family:FontAwesome;content:"";padding-left:8px;font-weight:300}
 .new-nav-v2.desktop-navigation .mega-menu{position:absolute;left:0;top:100%;height:0;width:100vw;background-color:#fff;z-index:1;-webkit-transition:all ease .2s;transition:all ease .2s;overflow:hidden;margin-top:-12px}
-.new-nav-v2.desktop-navigation .mega-menu .mega-menu-content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:nowrap;flex-wrap:nowrap;padding:60px 40px;width:100%;position:relative;overflow:hidden;margin-left:-15px;margin-right:-15px}
-.new-nav-v2.desktop-navigation .mega-menu .menu-col{-webkit-transition:all ease .5s;transition:all ease .5s;text-wrap:wrap;padding-left:15px;padding-right:15px;position:relative}
+.new-nav-v2.desktop-navigation .mega-menu .mega-menu-content{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:nowrap;flex-wrap:nowrap;padding:60px 40px;width:100%;position:relative;overflow:hidden;margin-left:-8px;margin-right:-8px}
+.new-nav-v2.desktop-navigation .mega-menu .menu-col{-webkit-transition:all ease .5s;transition:all ease .5s;text-wrap:wrap;padding-left:8px;padding-right:8px;position:relative}
 .new-nav-v2.desktop-navigation .mega-menu .menu-col:before{content:"";display:block;width:1px;height:100%;background:#ececec;position:absolute;top:0;left:-12px}
 .new-nav-v2.desktop-navigation .mega-menu .menu-col:first-child:before{display:none}
 .new-nav-v2.desktop-navigation .mega-menu .menu-col ul{display:block}
