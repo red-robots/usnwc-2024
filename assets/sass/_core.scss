@@ -1924,6 +1924,10 @@ section.full-bleed-promo {
 			}
 		}
 	}
+
+  &:last-child {
+    padding-bottom: 0;
+  }
 }
 .footer-disclaimer {
 	width: 100%;
