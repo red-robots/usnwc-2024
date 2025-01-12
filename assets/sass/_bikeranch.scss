@@ -441,6 +441,16 @@ body.page-template-page-bike-ranch.subpage {
           padding-right: 5vw;
         }
 
+        .cta {
+          margin: 15px 0 0;
+          @media screen and (min-width: 1251px) {
+            display: inline-block;
+            position: absolute;
+            right: 5vw;
+            bottom: 40px;
+          }
+        }
+
         h2 {
           font-family: $font-brandon-black;
           font-size: 35px;
@@ -466,6 +476,7 @@ body.page-template-page-bike-ranch.subpage {
             font-size: 20px;
           }
         }
+
       }
     }
   }

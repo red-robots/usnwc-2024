@@ -4976,8 +4976,7 @@ body.page-template-page-repeatable .fullwidth-red-bar-section{margin-top:50px}
 .title-wrapper.no-border .inner{border-bottom:0}
 .title-wrapper.text-center h2,.title-wrapper.text-center .section-text,.title-wrapper.text-center p{text-align:center}
 .accordion_elements_section{margin-top:50px;margin-bottom:50px}
-.cards-multiple-wrapper{margin-top:50px;margin-bottom:50px}
-.flexibleContentWrap:has(.column-style) .cards-multiple-wrapper{width:100%;float:left}
+.cards-multiple-wrapper{margin-top:50px;margin-bottom:50px;width:100%;float:left}
 .cardsWrapper.card_style2 .imageWrap{width:100%}
 .cardsWrapper.card_style2 figure{padding-bottom:0}
 .cardsWrapper.card_style2 figure div.image{padding-bottom:60%;position:relative;overflow:hidden;border-radius:15px;border:1px solid #ccc}
@@ -5486,6 +5485,7 @@ body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .
 .bike-ranch-sections .section--fullwidth_image figure{margin:0;position:relative;padding-bottom:80%}
 .bike-ranch-sections .section--fullwidth_image figure img{position:absolute;top:0;left:0;width:100%;height:100%;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .bike-ranch-sections .section--fullwidth_image figure figcaption{position:absolute;top:0;left:0;width:100%;height:100%;z-index:10;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;padding:30px}
+.bike-ranch-sections .section--fullwidth_image figure figcaption .cta{margin:15px 0 0}
 .bike-ranch-sections .section--fullwidth_image figure figcaption h2{font-family:"Brandon Black";font-size:35px;line-height:1;letter-spacing:.02em;text-transform:uppercase;margin:0 0 5px;color:#fff}
 .bike-ranch-sections .section--fullwidth_image figure figcaption p{color:#fff;font-size:18px}
 .site-header-mobile,.mobile-info-toggle{display:none}
@@ -6117,6 +6117,7 @@ body.page-template-page-visit section.visit.flexible-image-cards .tile.full-blee
 .bike-ranch-sections .section--buttons .section-buttons.buttons-per-row4 .button-wrap{width:calc(25% - 10px)}
 .bike-ranch-sections .section--buttons:has(.buttons-per-row4){padding-left:5vw;padding-right:5vw}
 .bike-ranch-sections .section--fullwidth_image figure figcaption{padding-left:5vw;padding-right:5vw}
+.bike-ranch-sections .section--fullwidth_image figure figcaption .cta{display:inline-block;position:absolute;right:5vw;bottom:40px}
 }@media screen and (min-width:1281px){.text-and-image-blocks .gallerycol.mapCol{min-height:500px}
 body.page-template-page-visit section.visit .tileWrapper{padding-left:5vw;padding-right:5vw}
 body.page-template-page-visit section.visit .cards-row-section .cards-inner{padding-left:5vw;padding-right:5vw}
