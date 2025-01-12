@@ -6058,7 +6058,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 }@media screen and (min-width:961px){.activity-schedule-modal .schedule-container.half .fxcol{width:46%}
 .event-details--section .details .info{width:33.333%;border-right:1px solid #ccc}
 .new-nav-v2.desktop-navigation .mega-menu .mega-menu-content.count-1{display:block !important;width:100%;text-align:center}
-.new-nav-v2.desktop-navigation .mega-menu .mega-menu-content.count-1 .menu-col{width:100% !important}
+.new-nav-v2.desktop-navigation .mega-menu .mega-menu-content.count-1 .menu-col{width:100% !important;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .section-upcoming_events.events--film-series .flexwrap .infobox{width:25%}
 .bike-ranch-sections .section--fullwidth_image figure{padding-bottom:55%}
 }@media screen and (min-width:1025px){#primary .upcoming-posts .entry{width:33.333%}
