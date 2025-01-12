@@ -94,8 +94,7 @@ if( $template = get_page_template() ) {
 
 	<?php //get_template_part('parts/topbar'); ?>
 
-	<header id="masthead" class="site-header start-position" role="banner">
-		
+	<header id="masthead" class="site-header-desktop site-header start-position" role="banner">
 		<div id="topSearchBar" class="top-search-bar">
 			<div class="wrapper">
 				<div class="form-wrapper">
@@ -119,52 +118,39 @@ if( $template = get_page_template() ) {
               <?php } ?>
             </a>
          </div>
-         <?php
-            /* NAVIGATION */
-            get_template_part("parts/navigation-new");
-          ?>
+        <?php get_template_part("parts/navigation-main"); ?>
        </div>
 
-
-       <div class="right-nav navs">		
-          <?php  
-            $secondary_links = get_field('secondary_links', 'option');
-          ?>
-  				<div class="right">
-            <?php if ($secondary_links) { ?>
-              <?php foreach ($secondary_links as $e) { 
-                $s = $e['link'];
-                $s_name = ( isset($s['title']) ) ? $s['title'] : '';
-                $s_link = ( isset($s['url']) ) ? $s['url'] : '';
-                $s_target = ( isset($s['target']) ) ? $s['target'] : '_self';
-                if($s_name && $s_link) { ?>
-                <div class="nav-item"><a href="<?php echo $s_link ?>" class="navlink" target="<?php echo $s_target ?>"><?php echo $s_name ?></a></div>
-                <?php } ?>
-              <?php } ?>
-            <?php } ?>
-  					   
-              <div class="nav-item nav-item-today">
-      					<button class="today" tabindex="0" data-id="1">Today</button>
-      					<?php get_template_part('parts/today'); ?>
-              </div>
-  				</div>
+        <div class="right-nav navs">		
+          <?php get_template_part("parts/navigation-right"); ?>
         </div>
 
 		  </div>
 		</div>
-
-		<nav class="mobile-nav-wrap">
-  			<a href="<?php echo get_site_url() ?>" class="logo">
-        	<img src="<?php bloginfo('template_url'); ?>/images/logo-white.png" alt="" />
-        </a>
-		  	<span id="mobile-menu-toggle"><span class="bar"><span></span></span></span>
-		  	<div class="mobile-navigation">
-		  		<?php get_template_part('parts/navigation-mobile'); ?>
-		  	</div>
-		</nav>
-		
-
 	</header><!-- #masthead -->
+
+  <div class="site-header-mobile">
+    <div class="site-header-flex">
+      <a href="<?php bloginfo('url'); ?>" class="site-logo-mobile">
+        <?php if ($is_bike_ranch_template) { ?>
+          <img src="<?php bloginfo('template_url'); ?>/images/logo-cream.png" alt="<?php echo get_bloginfo('name') ?>" class="logo-cream" />
+        <?php } else { ?>
+          <img src="<?php bloginfo('template_url'); ?>/images/logo-white.png" alt="<?php echo get_bloginfo('name') ?>" class="logo-original" />
+        <?php } ?>
+      </a>
+      <button class="mobileMenuToggle">
+        <span class="sr-only">Mobile Navigation</span>
+        <span class="bar"></span>
+      </button>
+    </div>
+    <div class="mobile-nav-wrapper">
+      <div class="mobileNav">
+        <?php get_template_part("parts/navigation-main"); ?>
+        <?php get_template_part("parts/navigation-right"); ?>
+      </div>
+    </div>
+    <!-- <div class="mobile-nav-backdrop"></div> -->
+  </div>
 
 	<?php 
 	if( is_front_page() ){

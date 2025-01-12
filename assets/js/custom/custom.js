@@ -1447,7 +1447,71 @@ var getGridSize = function() {
   });
 
 
+  //TODAY (navigation)
+  $(document).on('click', '.today--dropdown .branches a[data-location]', function(e){
+    e.preventDefault();
+    var branch = $(this).attr('data-location');
+    $('.today--dropdown .branches a[data-location]').not(this).removeClass('active');
+    $(this).toggleClass('active');
+    if( $(this).attr('aria-expanded')=='false' ) {
+      $(this).attr('aria-expanded','true');
+    } else {
+      $(this).attr('aria-expanded','false');
+    }
+    if( $('.today--dropdown .location-details li[data-location="'+branch+'"]').length ) {
+      $('.today--dropdown .location-details li[data-location]').each(function(){
+        var slug = $(this).attr('data-location');
+        if(branch==slug) {
+          $(this).addClass('active');
+        } else {
+          $(this).removeClass('active');
+        }
+      });
+    }
+  });
 
+  if( $('.mobileNav li.has-children').length ) {
+    $('.mobileNav li.has-children').each(function(){
+      if( $(this).find('a.menu-link').length ) {
+        var mHref = $(this).find('a.menu-link').attr('href');
+        $(this).find('a.menu-link').attr({
+          'href':'javascript:void(0)',
+          'role':'button',
+          'aria-expanded':'false'
+        });
+        $(this).find('a.menu-link').attr('data-link', mHref);
+      }
+    });
+
+    $(document).on('click', '.mobileNav .has-children .menu-link', function(e){
+      e.preventDefault();
+      if( $(this).attr('aria-expanded')=='false' ) {
+        $(this).attr('aria-expanded','true');
+      } else {
+        $(this).attr('aria-expanded','false');
+      }
+      $(this).next('.mega-menu').toggleClass('open').slideToggle();
+    });
+
+    $(document).on('click', '.mobileNav .mobile-info-toggle', function(e){
+      e.preventDefault();
+      $(this).toggleClass('active');
+      $(this).next('.inner-info').toggleClass('open').slideToggle();
+    });
+  }
+
+  $(document).on('click', '.mobileNav .navlink-today', function(e){
+    e.preventDefault();
+    $(this).toggleClass('active');
+    $(this).next('.today--dropdown').toggleClass('open').slideToggle();
+  });
+
+  $(document).on('click', '.mobileMenuToggle', function(e){
+    e.preventDefault();
+    $(this).toggleClass('active');
+    $('body, .site-header-mobile').toggleClass('menu-open');
+    $('.mobile-nav-wrapper, .mobile-nav-backdrop').toggleClass('open');
+  });
 
 
 });// END #####################################    END

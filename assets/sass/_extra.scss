@@ -2795,6 +2795,223 @@ body.logged-in.admin-bar.subpage {
   }
 }
 
+.site-header .nav-item.nav-item-today {
+  position: relative;
+  .today-dropdown-container {
+    width: 490px;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    z-index: 1;
+    padding: 25px 10px 30px;
+    transition: all ease 0.8s;
+    overflow: visible;
+    text-align: center;
+    background: #FFF;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 20px 20px rgba(0,0,0,.05);
+    transform: translateY(-100vw);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    .today-inner {
+      overflow: hidden;
+    }
+    .flexwrap {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      &:after {
+        content:"";
+        display: block;
+        width: 1px;
+        height: 100%;
+        background: #CCC;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .flexcol {
+        width: 50%;
+        padding-left: 30px;
+        padding-right: 30px;
+        &.fx-locations {
+          padding-left: 15px;
+        }
+        &.fx-info {
+          padding-right: 15px;
+        }
+      }
+    }
+    ul.branches {
+      margin: 0 0;
+      padding: 0 0;
+      list-style: none;
+      li {
+        margin-bottom: 30px;
+      }
+      .branchName {
+        display: block;
+        text-decoration: none;
+        text-align: left;
+        color: #000;
+        padding: 10px 10px 10px 35px;
+        position: relative;
+        &:before {
+          position: absolute;
+          top: 15px;
+          left: 15px;
+          content: "";
+          width: 0;
+          height: 0;
+          border-top: 6px solid transparent;
+          border-left: 8px solid $red;
+          border-bottom: 6px solid transparent;
+          opacity: 0;
+        }
+        span {
+          display: block;
+          width: 100%;
+          line-height: 1.2;
+          transition: all ease .3s;
+        }
+        .name {
+          // font-family: $font-brandon-bold;
+          font-family: $font-brandon-regular;
+          font-size: 22px;
+          text-transform: uppercase;
+        }
+        .city {
+          font-family: $font-brandon-regular-italic;
+          font-size: 12px;
+        }
+        &:hover, &:focus {
+          span {
+            color: $red;
+          }
+        }
+        &.active {
+          &:before {
+            opacity: 1;
+          }
+          .name {
+            font-family: $font-brandon-bold;
+          }
+        }
+      }
+    }
+
+    .location-details {
+      margin: 0 0;
+      padding: 10px 0 0;
+      list-style: none;
+      .tlabel {
+        font-family: $font-brandon-medium;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: #777;
+      }
+      .tVal {
+        font-family: $font-brandon-regular;
+        font-size: 20px;
+        color: #000;
+      }
+      .info {
+        display: none;
+        text-align: left;
+        animation-duration: 1s;
+        .info-trail-status {
+          margin-bottom: 25px;
+        }
+        &.active {
+          display: block;
+          animation-name: fadeIn;
+        }
+      }
+
+      ul.items {
+        margin: 0 0;
+        padding: 0 0;
+        list-style: none;
+        text-align: left;
+        li {
+          margin-bottom: 20px;
+        }
+        .info-link {
+          line-height: 1;
+          a {
+            display: inline-block;
+            color: $red;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.1;
+            letter-spacing: 0.06em;
+            &:after {
+              content:"";
+              display: block;
+              width: 6px;
+              height: 6px;
+              border-top: 1px solid $red;
+              border-right: 1px solid $red;
+              position: absolute;
+              top: 5px;
+              right: -8px;
+              transform: rotate(45deg);
+              transition: all ease .3s;
+            }
+            &:hover, &:focus {
+              color: $red;
+              &:after {
+                right: -10px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .snapshot-button {
+      margin-top: 30px;
+      .snapshotBtn {
+        display: inline-block;
+        transition: all ease .3s;
+        background-color: $red;
+        border: 1px solid $red;
+        padding: 14px 18px 13px;
+        border-radius: 150px;
+        color: #FFF;
+        font-family: $font-brandon-regular;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        text-decoration: none;
+        &:hover, &:focus {
+          border-color: #777;
+          color: #777;
+          background-color: #FFF;
+        }
+      }
+    }
+  }
+
+  &:hover, &:focus, &:focus-within {
+    .today-dropdown-container {
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    } 
+  }
+  // .navlink-today {
+  //   &:hover, &:focus {
+  //     .today-dropdown-container {
+  //       transform: translateY(0);
+  //     } 
+  //   }
+  // }
+}
+
 body.subpage.pageNoBanner.logged-in.admin-bar,
 body.subpage.pageNoBanner  {
   .site-header {
