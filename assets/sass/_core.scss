@@ -14177,6 +14177,12 @@ body.single-race .filter-wrapper {
 			filter: invert(100%);
 			width: 100%;
 		}
+    &.footLogo {
+      width: 210px;
+      img {
+        filter: none;
+      }
+    }
 	}
 	ul {
 		width: auto;

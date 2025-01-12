@@ -16,14 +16,17 @@
 		}
 	}
 	$subscribe = get_field("group3","option");
+  $footLogo = get_field("footLogo","option");
 	?>
 	<footer id="colophon" class="site-footer" role="contentinfo">
 			
 			<div class="wrapper">
-
-				<div class="logo">
-	            	<img src="<?php bloginfo('template_url'); ?>/images/logo-white.png">
-	            </div>
+        <?php if ($footLogo) { ?>
+        <div class="logo footLogo">
+          <img src="<?php echo $footLogo['url'] ?>" alt="<?php echo $footLogo['title'] ?>" />
+        </div>
+        <?php } ?>
+				      
 					
 
 					<?php if ($footLinks) { ?>

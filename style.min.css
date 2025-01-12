@@ -3970,6 +3970,8 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .site-footer .wrapper{width:100%;padding:30px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .site-footer .logo{width:50px;margin-bottom:20px}
 .site-footer .logo img{-webkit-filter:invert(100%);filter:invert(100%);width:100%}
+.site-footer .logo.footLogo{width:210px}
+.site-footer .logo.footLogo img{-webkit-filter:none;filter:none}
 .site-footer ul{width:auto;margin:0;padding:0}
 .site-footer li{display:inline-block;text-transform:uppercase;margin:10px 0;width:100%;text-align:center}
 .site-footer a{font-size:13px;color:rgba(0,0,0,.9)}
@@ -6410,6 +6412,7 @@ body.logged-in.admin-bar .site-header-mobile .mobileNav{padding-top:190px}
 .pass-options-wrap div.buttondiv{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .pass-options-wrap h3,.pass-options-wrap .buttondiv{text-align:center !important}
 .repeatable-section.section-image-cards.image-cards-1 .imagecard,.repeatable-section.section-image-cards.image-cards-2 .imagecard,.repeatable-section.section-image-cards.image-cards-3 .imagecard{width:100%}
+.repeatable-section.section-image-cards.image-cards-1 .imagecard figcaption h3,.repeatable-section.section-image-cards.image-cards-2 .imagecard figcaption h3,.repeatable-section.section-image-cards.image-cards-3 .imagecard figcaption h3{font-size:30px}
 .repeatable-section.section-image-cards .imagecard{width:100%}
 .stories-feeds-section .storyBlock{width:100% !important}
 .stories-feeds-section .storyBlock figure{padding-bottom:66% !important}
