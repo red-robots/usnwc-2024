@@ -2412,7 +2412,7 @@ section.stories-whats .wn-box .wn-box-contents .flex{display:-webkit-box;display
 #pageTabs{margin-bottom:70px}
 #pageTabs.fixed-top{position:relative !important}
 #pageTabs .wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
-#pageTabs #tabcontent{border:1px solid #707070;padding:0 0 !important;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;border-radius:100px;overflow:hidden}
+#pageTabs #tabcontent{border:1px solid #707070;padding:0 0 !important;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;border-radius:100px;overflow:visible}
 #pageTabs #tabcontent:before,#pageTabs #tabcontent:after{display:none}
 #pageTabs #tabcontent a:after{display:none}
 #pageTabs #tabcontent span.mini-nav{display:inline-block;margin:0;padding:0;border-right:1px solid #707070}
