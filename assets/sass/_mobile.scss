@@ -471,7 +471,11 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 820px) {
+  .site-header-mobile .mobileNav .new-nav-v2.desktop-navigation li.v-menu-item .menu-link,
+  .site-header-mobile .mobileNav .right .nav-item .navlink {
+    font-size: 22px!important;
+  }
   .site-header-mobile  {
     .mobileNav {
       .new-nav-v2.desktop-navigation .mega-menu {
