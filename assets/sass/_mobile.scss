@@ -15,6 +15,10 @@
     height: 70px;
     z-index: 99999999;
     transition: all ease .3s;
+    &.menu-open {
+      height: 100%;
+      background-color: transparent!important;
+    }
     .site-header-flex {
       display: flex;
       align-items: center;
@@ -304,6 +308,7 @@
           display: none;
         }
       }
+
       .location-details {
         display: block;
         width: 100%;
@@ -311,9 +316,6 @@
           display: block;
           width: 100%;
           padding: 10px 40px 10px 40px;
-        }
-        ul.items li {
-          padding: 0 0;
         }
       }
       .snapshot-button {
@@ -418,13 +420,13 @@
   body.menu-open {
     overflow: hidden;
   }
-  body.subpage {
+  body.subpage:not(.page-template-page-bike-ranch) {
     padding-top: 70px;
     .site-header-mobile {
       background-color: #FFF;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
+      // display: flex;
+      // flex-wrap: wrap;
+      // align-items: center;
       .site-header-flex {
         padding-top: 8px;
         padding-bottom: 7px;
@@ -453,6 +455,18 @@
       .site-header-mobile {
         box-shadow: 0 0 10px rgba(0,0,0,.075);
       }
+    }
+  }
+}
+
+@media screen and (max-width: 782px) {
+  body.logged-in.admin-bar .site-header-mobile {
+    padding-top: 50px;
+    .site-header-flex {
+      top: -4px;
+    }
+    .mobileNav {
+      padding-top: 190px;
     }
   }
 }

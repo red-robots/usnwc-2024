@@ -86,6 +86,7 @@ $branches = get_field('whitewaterLocations', 'option'); ?>
                       <?php foreach ($today_items as $e) { 
                         $title = $e['title'];
                         $hours_shortcode = $e['hours_shortcode'];
+                        $small_text = $e['small_text'];
                         $shortcode = '';
                         if($hours_shortcode) {
                           if ( (strpos($hours_shortcode, '[') !== false) && strpos($hours_shortcode, ']') !== false ) {
@@ -106,6 +107,9 @@ $branches = get_field('whitewaterLocations', 'option'); ?>
                           <div class="tVal">
                             <?php if ($shortcode) { ?>
                             <div class="text"><?php echo $shortcode ?></div>
+                            <?php } ?>
+                            <?php if ($small_text) { ?>
+                            <div class="extra"><?php echo $small_text ?></div>
                             <?php } ?>
                             <?php if ($btnName && $btnLink) { ?>
                             <div class="info-link"><a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>"><?php echo $btnName ?></a></div>
