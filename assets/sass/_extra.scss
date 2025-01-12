@@ -2126,18 +2126,18 @@ section.visit.flexible-image-cards,
       justify-content: flex-start;
       flex-direction: row;
       flex-wrap: nowrap;
-      padding: 60px 40px;
+      padding: 60px 25px;
       width: 100%;
       position: relative;
       overflow: hidden;
-      margin-left: -8px;
-      margin-right: -8px;
+      margin-left: -10px;
+      margin-right: -10px;
     }
     .menu-col {
       transition: all ease .5s;
       text-wrap: wrap;
-      padding-left: 8px;
-      padding-right: 8px;
+      padding-left: 10px;
+      padding-right: 10px;
       position: relative;
       &:before {
         content:"";
