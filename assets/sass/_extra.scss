@@ -2223,6 +2223,20 @@ section.visit.flexible-image-cards,
     }
   }
 
+  .mega-menu .mega-menu-content.count-1 {
+    @media screen and (min-width: 961px) {
+      display: block!important;
+      width: 100%;
+      text-align: center;
+      .menu-col {
+        width: 100%!important;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  }
+
   li.v-menu-item:focus-within,
   li.v-menu-item:hover {
     .mega-menu {
