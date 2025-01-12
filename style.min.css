@@ -4977,6 +4977,7 @@ body.page-template-page-repeatable .fullwidth-red-bar-section{margin-top:50px}
 .title-wrapper.text-center h2,.title-wrapper.text-center .section-text,.title-wrapper.text-center p{text-align:center}
 .accordion_elements_section{margin-top:50px;margin-bottom:50px}
 .cards-multiple-wrapper{margin-top:50px;margin-bottom:50px}
+.flexibleContentWrap:has(.column-style) .cards-multiple-wrapper{width:100%;float:left}
 .cardsWrapper.card_style2 .imageWrap{width:100%}
 .cardsWrapper.card_style2 figure{padding-bottom:0}
 .cardsWrapper.card_style2 figure div.image{padding-bottom:60%;position:relative;overflow:hidden;border-radius:15px;border:1px solid #ccc}
