@@ -2770,7 +2770,7 @@ body.single-instructions #primary #section-faqs{padding-top:60px;padding-bottom:
 .text-and-image-blocks .textcol,.menu-sections .textcol{font-size:16px;line-height:1.5;text-align:left;color:#444}
 .text-and-image-blocks .textcol h2,.text-and-image-blocks .textcol h3,.text-and-image-blocks .textcol p,.menu-sections .textcol h2,.menu-sections .textcol h3,.menu-sections .textcol p{text-align:left}
 .text-and-image-blocks .textcol p,.menu-sections .textcol p{color:#444}
-.text-and-image-blocks .textcol .inside,.menu-sections .textcol .inside{padding:5vw}
+.text-and-image-blocks .textcol .inside,.menu-sections .textcol .inside{padding:30px 20px}
 .text-and-image-blocks .textcol .cta-buttons,.menu-sections .textcol .cta-buttons{text-align:left;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;gap:1em}
 .text-and-image-blocks .textcol .cta-buttons a,.menu-sections .textcol .cta-buttons a{margin:0}
 .text-and-image-blocks .textcol .mstitle,.menu-sections .textcol .mstitle{font-family:"Lato",sans-serif;font-size:30px;font-weight:500;line-height:1.2;margin:0 0 15px;text-transform:uppercase}
@@ -5658,7 +5658,7 @@ body.subpage.single .intro-galleries.half .rightcol{width:70%;padding-left:15px}
 .text-and-image-blocks .half.odd .gallerycol,.menu-sections .half.odd .gallerycol{border-top-left-radius:15px;border-bottom-left-radius:15px}
 .text-and-image-blocks .half.even .gallerycol,.menu-sections .half.even .gallerycol{border-top-right-radius:15px;border-bottom-right-radius:15px}
 .text-and-image-blocks .gallerycol .flexslider,.text-and-image-blocks .gallerycol .slides,.text-and-image-blocks .gallerycol .slides li.slide-item,.menu-sections .gallerycol .flexslider,.menu-sections .gallerycol .slides,.menu-sections .gallerycol .slides li.slide-item{height:100% !important}
-.text-and-image-blocks .textcol .inside,.menu-sections .textcol .inside{height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.text-and-image-blocks .textcol .inside,.menu-sections .textcol .inside{padding:5vw;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .text-and-image-blocks .half .textcol,.text-and-image-blocks .half .gallerycol,.menu-sections .half .textcol,.menu-sections .half .gallerycol{width:50%}
 .text-and-image-blocks .mscol.image-position-left{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}
 .text-and-image-blocks .mscol.image-position-left.half .gallerycol{border-top-left-radius:0;border-bottom-left-radius:0;border-top-right-radius:15px;border-bottom-right-radius:15px}
@@ -6409,6 +6409,7 @@ body.logged-in.admin-bar .site-header-mobile .mobileNav{padding-top:190px}
 .pass-options-wrap .wrap .options{margin-bottom:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:space-between;-ms-flex-align:space-between;align-items:space-between}
 .pass-options-wrap div.buttondiv{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .pass-options-wrap h3,.pass-options-wrap .buttondiv{text-align:center !important}
+.repeatable-section.section-image-cards.image-cards-1 .imagecard,.repeatable-section.section-image-cards.image-cards-2 .imagecard,.repeatable-section.section-image-cards.image-cards-3 .imagecard{width:100%}
 .repeatable-section.section-image-cards .imagecard{width:100%}
 .stories-feeds-section .storyBlock{width:100% !important}
 .stories-feeds-section .storyBlock figure{padding-bottom:66% !important}
@@ -6424,7 +6425,7 @@ body.page-template-page-visit section.visit.flexible-image-cards .tile figure h2
 #primary.buy-page.buy-page-new .access-pass-options .infobox .inner .textwrap h2,#primary.buy-page.buy-page-new .access-pass-options .infobox .inner .textwrap .text,#primary.buy-page.buy-page-new .access-pass-options .infobox .inner .textwrap .text p{text-align:center !important}
 #primary.buy-page.buy-page-new .access-pass-options .infobox .inner .buttons{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1em}
 .new-nav-v2.desktop-navigation .mega-menu-content .menu-col{width:50% !important}
-.menu-sections .textcol .mstime.custom-time{display:block;width:100%;margin-top:18px}
+.menu-sections .textcol .mstime.custom-time{display:block;width:100%;margin-top:20px}
 .menu-sections .textcol .mstime.custom-time .name,.menu-sections .textcol .mstime.custom-time .time{display:block;width:100%;padding:0}
 .snapshot-branch-info{max-width:100%;padding-left:20px;padding-right:20px}
 .bike-ranch-sections .section--buttons .section-buttons.buttons-per-row1 .button-wrap .button-traditional{width:100%}

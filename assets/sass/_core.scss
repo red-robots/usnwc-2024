@@ -18278,6 +18278,9 @@ body.subpage.single.single-activity {
         figcaption h3 {
           font-size: 35px;
         }
+        @media screen and (max-width: 768px) {
+          width: 100%;
+        }
       }
     }
   } 
