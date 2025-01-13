@@ -18,6 +18,15 @@ function js_custom_init() {
         //     'supports'  => array('title','editor', 'author')
         // ),
         array(
+            'post_type' => 'special-events',
+            'menu_name' => 'Special Events',
+            'plural'    => 'Special Events',
+            'single'    => 'Special Event',
+            'menu_icon' => 'dashicons-star-filled',
+            'supports'  => array('title','editor', 'thumbnail'),
+            'menu_position' => 2,
+        ),
+        array(
             'post_type' => 'guest-authors',
             'menu_name' => 'Guest Authors',
             'plural'    => 'Guest Authors',
@@ -42,15 +51,6 @@ function js_custom_init() {
             'single'    => 'What\'s New',
             'menu_icon' => 'dashicons-sos',
             'supports'  => array('title','editor', 'thumbnail', 'excerpt', 'author')
-        ),
-        array(
-            'post_type' => 'special-events',
-            'menu_name' => 'Special Events',
-            'plural'    => 'Special Events',
-            'single'    => 'Special Event',
-            'menu_icon' => 'dashicons-star-filled',
-            'supports'  => array('title','editor', 'thumbnail'),
-            'menu_position' => 7,
         ),
         array(
             'post_type' => 'activity',

@@ -466,6 +466,10 @@ jQuery(document).ready(function($){
   //   });
   // }
 
+  if( $('ul#adminmenu li.wp-has-submenu#menu-posts-special-events').length && $('ul#adminmenu li.wp-has-submenu#menu-posts-tribe_events').length ) {
+    $('ul#adminmenu li.wp-has-submenu#menu-posts-special-events').insertAfter('ul#adminmenu li.wp-has-submenu#menu-posts-tribe_events');
+  }
+
 
   if( $('.acf-field-taxonomy[data-type="taxonomy"][data-name="branch_name"] .acf-checkbox-list li').length || $('.acf-field-taxonomy[data-type="taxonomy"][data-name="branch_location"] .acf-checkbox-list') ) {
     let branchNameEl = '.acf-field-taxonomy[data-type="taxonomy"][data-name="branch_name"] .acf-checkbox-list';
