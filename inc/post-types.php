@@ -44,6 +44,15 @@ function js_custom_init() {
             'supports'  => array('title','editor', 'thumbnail', 'excerpt', 'author')
         ),
         array(
+            'post_type' => 'special-events',
+            'menu_name' => 'Special Events',
+            'plural'    => 'Special Events',
+            'single'    => 'Special Event',
+            'menu_icon' => 'dashicons-star-filled',
+            'supports'  => array('title','editor', 'thumbnail'),
+            'menu_position' => 7,
+        ),
+        array(
             'post_type' => 'activity',
             'menu_name' => 'Activities',
             'plural'    => 'Activities',
