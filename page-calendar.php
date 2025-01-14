@@ -60,5 +60,7 @@ get_header(); ?>
 	</main><!-- #main -->
 </div><!-- #primary -->
 <link rel='stylesheet' id='calendar-styles-css'  href='<?php bloginfo('url'); ?>/wp-content/plugins/events-override/calendar-styles.css?ver=1.4' type='text/css' media='all' />
+
 <?php
+include( locate_template('parts/popup-river-jam.php') );
 get_footer();

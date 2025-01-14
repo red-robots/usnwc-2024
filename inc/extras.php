@@ -2551,7 +2551,8 @@ function get_upcoming_bands() {
                 if($res) {
                     foreach($res as $row) {
                         if($v<=$countSelectedDays) {
-                            $result[] = $row;
+                          $pId = $row->ID;
+                          $result[$pId] = $row;
                         }
                         $v++;
                     }
@@ -2559,6 +2560,13 @@ function get_upcoming_bands() {
             }
         }
     }
+
+    // $entries = array();
+    // if($result) {
+    //   foreach($result as $row) {
+    //     $id = $row->ID;
+    //   }
+    // }
 
     return $result;
 }

@@ -16,7 +16,11 @@
       <div class="short-description"><?php echo $short_description ?></div>
       <?php } ?>
       <div class="buttonwrap">
+        <?php if ($post_type=='music') { ?>
+        <a href="javascript:void(0)" data-url="<?php echo get_permalink($post_id); ?>" data-action="ajaxGetPageData" data-id="<?php echo $post_id ?>" class="more-btn popupDetailsBtn">See Details</a>
+        <?php } else { ?>
         <a href="<?php echo $pagelink; ?>" class="more-btn">See Details</a>
+        <?php } ?>
       </div>
     </div>
   </div>

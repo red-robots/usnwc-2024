@@ -45,6 +45,16 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
 					// echo $pid;
 					$title = $row->post_title;
 					$start_date = ( isset($row->start_date) && $row->start_date ) ? $row->start_date : '';
+          $end_date = get_field('end_date', $pid);
+
+          $startD = ($start_date) ? date('m-d-Y', strtotime($start_date)) : '';
+          $endD = ($end_date) ? date('m-d-Y', strtotime($end_date)) : '';
+          $event_dates = array($startD, $endD);
+          $event_dates_display='';
+          if( $datesArr = array_filter($event_dates) ) {
+            $event_dates_display = implode(', ', $datesArr);
+          }
+
 					// comment out the line below to hide schedule
 					$start_day = ($start_date) ? date('l',strtotime($start_date)) : '';
 					$image = get_field("thumbnail_image",$pid);
@@ -87,11 +97,11 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
           $event_date = array($start_day, $start_date_format);
           $event_date_format = '';
           if( array_filter($event_date) ) {
-            $event_date_format = implode(", ", $event_date);
+            $event_date_format = implode(",", $event_date);
           }
           $pagelink = get_permalink($pid);
 				?>
-				<div data-postid='<?php echo $pid ?>' data-startdate="<?php echo $start_date ?>" data-title="<?php echo $start_day ?>" class="entry <?php echo $has_image ?>">
+				<div data-postid='<?php echo $pid ?>' data-startdate="<?php echo $start_date ?>" data-enddate="<?php echo $end_date ?>" data-title="<?php echo $start_day ?>" class="entry <?php echo $has_image ?>">
 					<div class="inside">
 						<div class="titlediv">
               <p class="event-date"><?php echo $event_date_format ?></p>
@@ -101,7 +111,7 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
 						</div>
             <h3 class="title"><?php echo $title ?></h3>
             <div class="button">
-              <a href="javascript:void(0)" data-url="<?php echo $pagelink ?>" data-action="ajaxGetPageData" data-id="<?php echo $pid ?>" class="btn-sm xs popdata button-pill"><span>See Details</span></a>
+              <a href="javascript:void(0)" data-url="<?php echo $pagelink ?>" data-action="ajaxGetPageData" data-id="<?php echo $pid ?>" class="btn-sm xs popup-details-btn popdata button-pill"><span>See Details</span></a>
             </div>
 						<?php if ($short_description) { ?>
 						<div class="description text-center js-blocks">
@@ -280,99 +290,12 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
 
 </div><!-- #primary -->
 
-<div id="activityModal" class="modal customModal fade">
-	<div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-      	<span id="eventStatusTxt"></span>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div id="modalBodyText" class="modal-body">
-      </div>
-    </div>
-  </div>
-</div>
-
+<?php include( locate_template('parts/popup-river-jam.php') ); ?>
 <script type="text/javascript">
 jQuery(document).ready(function($){
-	$("#activityModal").appendTo('body');
-
 	// $('#gallery').flexslider({
  //    animation: "slide"
  //  });
-
-	$(document).on("click",".popdata",function(e){
-		e.preventDefault();
-		var pageURL = $(this).attr('data-url');
-		var actionName = $(this).attr('data-action');
-		var pageID = $(this).attr('data-id');
-
-		$.ajax({
-			url : frontajax.ajaxurl,
-			type : 'post',
-			dataType : "json",
-			data : {
-				'action' : actionName,
-				'ID' : pageID
-			},
-			beforeSend:function(){
-				$("#loaderDiv").show();
-			},
-			success:function( obj ) {
-			
-				var content = '';
-				if(obj) {
-					var event_status = obj.eventstatus;
-					var eventStatusTxt = '';
-					if(event_status && event_status!='upcoming') {
-						eventStatusTxt = '<span>'+event_status+'</span>';
-					}
-					content += '<div class="modaltitleDiv text-center"><h5 class="modal-title">'+obj.post_title+'</h5></div>';
-					if(obj.featured_image) {
-						var img = obj.featured_image;
-						content += '<div class="modalImage"><img src="'+img.url+'" alt="'+img.title+'p" class="feat-image"></div>';
-					}
-					content += '<div class="modalText"></div>';
-
-					if(content) {
-						$("#modalBodyText").html(content);
-					}
-
-					$.get(obj.postlink,function(data){
-						var textcontent = '<div class="text">'+data+'</div></div>';
-						if(eventStatusTxt) {
-							$("#eventStatusTxt").html(eventStatusTxt);
-						} else {
-							$("#eventStatusTxt").html("");
-						}
-						$("#modalBodyText .modalText").html(textcontent);
-						$("#activityModal").modal("show");
-						$("#loaderDiv").hide();
-						if( $("#activityModal .flexslider").length > 0 ) {
-							$('.flexslider').flexslider({
-								animation: "fade",
-								smoothHeight: true,
-								start: function(){
-
-								}
-							});
-						}
-						
-
-					});
-					
-				}
-				
-			},
-			error:function() {
-				$("#loaderDiv").hide();
-			}
-		});
-
-	});
-
 
   $(document).on('facetwp-refresh', function() {
     var start = $('input.flatpickr-alt[placeholder="Start Date"]').val();
@@ -395,8 +318,6 @@ jQuery(document).ready(function($){
   //   	history.pushState('',document.title,pageURL);
   //   });
  	// });	
-
-
 });
 </script>
 <?php
