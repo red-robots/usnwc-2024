@@ -92,8 +92,6 @@ $the_query = "SELECT p.*, st.start_date, en.end_date
           WHERE p.ID=st.ID AND p.ID=en.ID AND p.ID=m.post_id ".$where."
           GROUP BY p.ID";
 
-
-
 //$new_query = $the_query . " ORDER BY st.start_date ASC LIMIT ".$offset.", " . $per_page;
 $new_query = $the_query . " ORDER BY st.start_date ASC LIMIT ".$per_page." OFFSET ".$offset;
 
