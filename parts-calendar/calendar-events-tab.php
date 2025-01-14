@@ -23,7 +23,8 @@ $cpttypes = [
   'film-series' => 'Film Series',
   'music'       => 'River Jam',
   'race'        => 'Races',
-  'wildwoods'   => 'Wildwoods'
+  'wildwoods'   => 'Wildwoods',
+  'special-events'   => 'Special Events'
 ];
 
 $selected_filter_name = ($filter_type && isset($cpttypes[$filter_type])) ? $cpttypes[$filter_type]:'';
@@ -118,8 +119,9 @@ $total_records = ($total) ? count($total) : 0;
         <li class="option default<?php echo ($filter_type) ? '' :' hidden' ?>"><a href="javascript:void(0)" class="select-posttype" data-val="all">All</a></li>
       <?php foreach ($cpttypes as $type => $title) { 
         $is_selected = ($filter_type && $filter_type==$type) ? ' selected':'';
-        ?>
+        if($type!='special-events') { ?>
         <li class="option<?php echo $is_selected ?>"><a href="javascript:void(0)" class="select-posttype" data-val="<?php echo $type ?>"><?php echo $title ?></a></li>
+        <?php } ?>
       <?php } ?>
       </ul>
     </div>

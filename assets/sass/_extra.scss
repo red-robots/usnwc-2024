@@ -209,7 +209,8 @@ section.teasers section.full-bleed .full-bleed-img {
 body.subpage .site-header {
   z-index: 99999999!important;
 }
-body.subpage.single.single-festival {
+body.subpage.single.single-festival,
+body.subpage.single.single-special-events {
   .pageTabs2 {
     width: 100%;
     float: left;

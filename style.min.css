@@ -4993,37 +4993,37 @@ body.page-template-page-repeatable .fullwidth-red-bar-section{margin-top:50px}
 section.teasers section.full-bleed .full-bleed-img:before{display:none !important}
 section.teasers section.full-bleed .full-bleed-img img{position:relative !important;width:100% !important;height:auto !important}
 body.subpage .site-header{z-index:99999999 !important}
-body.subpage.single.single-festival .pageTabs2{width:100%;float:left;margin-top:40px;margin-bottom:0 !important}
-body.subpage.single.single-festival .banner-bottom{overflow:hidden}
-body.subpage.single.single-festival .banner-bottom #bannerBottomSvg1{-webkit-transform:scale(1.02);transform:scale(1.02)}
-body.subpage.single.single-festival .site-content{padding-top:0}
-body.subpage.single.single-festival .bannerBottomSvg2{fill:#fff}
-body.subpage.single.single-festival .intro-text-wrap{padding-top:75px;padding-bottom:50px}
-body.subpage.single.single-festival .column-data-section .text-large{margin-top:10px;text-transform:none;font-size:2.5rem}
-body.subpage.single.single-festival .upcoming_events_section{margin:50px 0}
-body.subpage.single.single-festival .upcoming_events_section .eventLink{text-decoration:none;color:#000}
-body.subpage.single.single-festival .upcoming_events_section .eventLink *{-webkit-transition:all ease .3s;transition:all ease .3s}
-body.subpage.single.single-festival .upcoming_events_section .eventLink figure:before{content:"";display:block;width:100%;height:100%;position:absolute;top:0;left:0;z-index:20;border-radius:12px;border:2px solid #ba0d30;opacity:0;-webkit-transition:all ease .3s;transition:all ease .3s}
-body.subpage.single.single-festival .upcoming_events_section .eventLink .start-date{font-family:"Brandon Bold";font-size:20px}
-body.subpage.single.single-festival .upcoming_events_section .eventLink:hover .start-date,body.subpage.single.single-festival .upcoming_events_section .eventLink:hover .event-title,body.subpage.single.single-festival .upcoming_events_section .eventLink:focus .start-date,body.subpage.single.single-festival .upcoming_events_section .eventLink:focus .event-title{color:#ba0d30}
-body.subpage.single.single-festival .upcoming_events_section .eventLink:hover figure:before,body.subpage.single.single-festival .upcoming_events_section .eventLink:focus figure:before{opacity:1}
-body.subpage.single.single-festival .schedule_dash_listings_section{width:100%;float:left;margin-top:30px;margin-bottom:50px}
-body.subpage.single.single-festival .schedule_dash_listings_section .titleDiv{text-align:center}
-body.subpage.single.single-festival .schedule_dash_listings_section .titleDiv .info1{text-transform:uppercase;margin-top:15px}
-body.subpage.single.single-festival .schedule_dash_listings_section .titleDiv .info2{font-size:15px;font-style:italic;color:#ba0d30}
-body.subpage.single.single-festival .schedule-listing-dashes{max-width:800px;width:100%;margin:45px auto 0}
-body.subpage.single.single-festival .schedule-listing-dashes .info{margin:10px 0}
-body.subpage.single.single-festival .schedule-listing-dashes .info .flexwrap{text-transform:uppercase;color:#000;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative}
-body.subpage.single.single-festival .schedule-listing-dashes .info .flexwrap:after{content:"";display:block;width:100%;border-bottom:1px dashed #ccc;position:absolute;left:0;bottom:6px}
-body.subpage.single.single-festival .schedule-listing-dashes .info .flexwrap .name,body.subpage.single.single-festival .schedule-listing-dashes .info .flexwrap .time{position:relative;z-index:5;background-color:#fff;font-size:16px}
-body.subpage.single.single-festival .schedule-listing-dashes .info .flexwrap .name{font-family:"Brandon Bold";padding-right:5px;letter-spacing:.02em}
-body.subpage.single.single-festival .schedule-listing-dashes .info .flexwrap .time{font-size:14px;padding-left:5px}
-body.subpage.single.single-festival .schedule-listing-dashes .info .desc{font-size:13px;font-style:italic}
-body.subpage.single.single-festival .fullwdith_text_section{width:100%;float:left;background-color:#f2f2f2;text-align:center;margin:60px 0 40px}
-body.subpage.single.single-festival .fullwdith_text_section .wrapper{padding-top:25px;padding-bottom:20px}
-body.subpage.single.single-festival .fullwdith_text_section .wrapper .stitle{font-size:20px;margin-bottom:5px}
-body.subpage.single.single-festival .fullwdith_text_section .wrapper .text-wrap{font-family:"Sofia Sans Condensed",sans-serif;font-size:20px;text-transform:uppercase}
-body.subpage.single.single-festival .fullwdith_text_section .wrapper .text-wrap p:last-child{margin-bottom:0}
+body.subpage.single.single-festival .pageTabs2,body.subpage.single.single-special-events .pageTabs2{width:100%;float:left;margin-top:40px;margin-bottom:0 !important}
+body.subpage.single.single-festival .banner-bottom,body.subpage.single.single-special-events .banner-bottom{overflow:hidden}
+body.subpage.single.single-festival .banner-bottom #bannerBottomSvg1,body.subpage.single.single-special-events .banner-bottom #bannerBottomSvg1{-webkit-transform:scale(1.02);transform:scale(1.02)}
+body.subpage.single.single-festival .site-content,body.subpage.single.single-special-events .site-content{padding-top:0}
+body.subpage.single.single-festival .bannerBottomSvg2,body.subpage.single.single-special-events .bannerBottomSvg2{fill:#fff}
+body.subpage.single.single-festival .intro-text-wrap,body.subpage.single.single-special-events .intro-text-wrap{padding-top:75px;padding-bottom:50px}
+body.subpage.single.single-festival .column-data-section .text-large,body.subpage.single.single-special-events .column-data-section .text-large{margin-top:10px;text-transform:none;font-size:2.5rem}
+body.subpage.single.single-festival .upcoming_events_section,body.subpage.single.single-special-events .upcoming_events_section{margin:50px 0}
+body.subpage.single.single-festival .upcoming_events_section .eventLink,body.subpage.single.single-special-events .upcoming_events_section .eventLink{text-decoration:none;color:#000}
+body.subpage.single.single-festival .upcoming_events_section .eventLink *,body.subpage.single.single-special-events .upcoming_events_section .eventLink *{-webkit-transition:all ease .3s;transition:all ease .3s}
+body.subpage.single.single-festival .upcoming_events_section .eventLink figure:before,body.subpage.single.single-special-events .upcoming_events_section .eventLink figure:before{content:"";display:block;width:100%;height:100%;position:absolute;top:0;left:0;z-index:20;border-radius:12px;border:2px solid #ba0d30;opacity:0;-webkit-transition:all ease .3s;transition:all ease .3s}
+body.subpage.single.single-festival .upcoming_events_section .eventLink .start-date,body.subpage.single.single-special-events .upcoming_events_section .eventLink .start-date{font-family:"Brandon Bold";font-size:20px}
+body.subpage.single.single-festival .upcoming_events_section .eventLink:hover .start-date,body.subpage.single.single-festival .upcoming_events_section .eventLink:hover .event-title,body.subpage.single.single-festival .upcoming_events_section .eventLink:focus .start-date,body.subpage.single.single-festival .upcoming_events_section .eventLink:focus .event-title,body.subpage.single.single-special-events .upcoming_events_section .eventLink:hover .start-date,body.subpage.single.single-special-events .upcoming_events_section .eventLink:hover .event-title,body.subpage.single.single-special-events .upcoming_events_section .eventLink:focus .start-date,body.subpage.single.single-special-events .upcoming_events_section .eventLink:focus .event-title{color:#ba0d30}
+body.subpage.single.single-festival .upcoming_events_section .eventLink:hover figure:before,body.subpage.single.single-festival .upcoming_events_section .eventLink:focus figure:before,body.subpage.single.single-special-events .upcoming_events_section .eventLink:hover figure:before,body.subpage.single.single-special-events .upcoming_events_section .eventLink:focus figure:before{opacity:1}
+body.subpage.single.single-festival .schedule_dash_listings_section,body.subpage.single.single-special-events .schedule_dash_listings_section{width:100%;float:left;margin-top:30px;margin-bottom:50px}
+body.subpage.single.single-festival .schedule_dash_listings_section .titleDiv,body.subpage.single.single-special-events .schedule_dash_listings_section .titleDiv{text-align:center}
+body.subpage.single.single-festival .schedule_dash_listings_section .titleDiv .info1,body.subpage.single.single-special-events .schedule_dash_listings_section .titleDiv .info1{text-transform:uppercase;margin-top:15px}
+body.subpage.single.single-festival .schedule_dash_listings_section .titleDiv .info2,body.subpage.single.single-special-events .schedule_dash_listings_section .titleDiv .info2{font-size:15px;font-style:italic;color:#ba0d30}
+body.subpage.single.single-festival .schedule-listing-dashes,body.subpage.single.single-special-events .schedule-listing-dashes{max-width:800px;width:100%;margin:45px auto 0}
+body.subpage.single.single-festival .schedule-listing-dashes .info,body.subpage.single.single-special-events .schedule-listing-dashes .info{margin:10px 0}
+body.subpage.single.single-festival .schedule-listing-dashes .info .flexwrap,body.subpage.single.single-special-events .schedule-listing-dashes .info .flexwrap{text-transform:uppercase;color:#000;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative}
+body.subpage.single.single-festival .schedule-listing-dashes .info .flexwrap:after,body.subpage.single.single-special-events .schedule-listing-dashes .info .flexwrap:after{content:"";display:block;width:100%;border-bottom:1px dashed #ccc;position:absolute;left:0;bottom:6px}
+body.subpage.single.single-festival .schedule-listing-dashes .info .flexwrap .name,body.subpage.single.single-festival .schedule-listing-dashes .info .flexwrap .time,body.subpage.single.single-special-events .schedule-listing-dashes .info .flexwrap .name,body.subpage.single.single-special-events .schedule-listing-dashes .info .flexwrap .time{position:relative;z-index:5;background-color:#fff;font-size:16px}
+body.subpage.single.single-festival .schedule-listing-dashes .info .flexwrap .name,body.subpage.single.single-special-events .schedule-listing-dashes .info .flexwrap .name{font-family:"Brandon Bold";padding-right:5px;letter-spacing:.02em}
+body.subpage.single.single-festival .schedule-listing-dashes .info .flexwrap .time,body.subpage.single.single-special-events .schedule-listing-dashes .info .flexwrap .time{font-size:14px;padding-left:5px}
+body.subpage.single.single-festival .schedule-listing-dashes .info .desc,body.subpage.single.single-special-events .schedule-listing-dashes .info .desc{font-size:13px;font-style:italic}
+body.subpage.single.single-festival .fullwdith_text_section,body.subpage.single.single-special-events .fullwdith_text_section{width:100%;float:left;background-color:#f2f2f2;text-align:center;margin:60px 0 40px}
+body.subpage.single.single-festival .fullwdith_text_section .wrapper,body.subpage.single.single-special-events .fullwdith_text_section .wrapper{padding-top:25px;padding-bottom:20px}
+body.subpage.single.single-festival .fullwdith_text_section .wrapper .stitle,body.subpage.single.single-special-events .fullwdith_text_section .wrapper .stitle{font-size:20px;margin-bottom:5px}
+body.subpage.single.single-festival .fullwdith_text_section .wrapper .text-wrap,body.subpage.single.single-special-events .fullwdith_text_section .wrapper .text-wrap{font-family:"Sofia Sans Condensed",sans-serif;font-size:20px;text-transform:uppercase}
+body.subpage.single.single-festival .fullwdith_text_section .wrapper .text-wrap p:last-child,body.subpage.single.single-special-events .fullwdith_text_section .wrapper .text-wrap p:last-child{margin-bottom:0}
 body.page-template-page-about.subpage header.site-header .navbar .right .nav-item a.navlink,body.page-template-page-about.subpage header.site-header .navbar .right .nav-item .today,body.page-template-page-about.subpage .new-nav-v2.desktop-navigation .menu-link{color:#fff}
 body.page-template-page-about.subpage .image_and_text_two_column.section-two_column_row{width:100%;float:left}
 body.page-template-page-about.subpage .site-header.start-position{position:fixed !important}
@@ -6087,7 +6087,7 @@ section.visit .img h2{font-size:50px}
 .flexibleContentDiv .textCol .flexwrap{padding-left:8vw;padding-right:8vw}
 .menu-sections-repeatable .gallerycol{min-height:520px}
 .buttons-section-wrapper{margin-top:80px;margin-bottom:90px}
-body.subpage.single.single-festival .column-data-section{padding-bottom:40px}
+body.subpage.single.single-festival .column-data-section,body.subpage.single.single-special-events .column-data-section{padding-bottom:40px}
 .two-column-layout-vist .flex-wrapper{min-height:575px}
 }@media screen and (min-width:1200px){body.page-template-page-visit section.visit.flexible-image-cards .tile,section.visit.flexible-image-cards .tile,.flexible-image-cards .tile{margin-bottom:100px}
 }@media screen and (min-width:1201px){.bike-ranch-sections .section--two_column_layout_text_image.half .flexcol{width:47%;margin-top:0;margin-bottom:0}
@@ -6133,7 +6133,7 @@ section.full-bleed-promo .info .words h2{font-size:100px}
 }@media screen and (min-width:1300px){.image_cards_columns{padding:80px 5vw}
 }@media screen and (min-width:1400px){#section-faqs .faq-item{padding:0 20px 0 40px}
 .bike-ranch-sections .section--fullwidth_image figure figcaption h2{font-size:100px}
-}@media screen and (min-width:1480px){body.subpage.single.single-festival .column-data-section .fxcol{width:auto;padding-left:5vw;padding-right:5vw}
+}@media screen and (min-width:1480px){body.subpage.single.single-festival .column-data-section .fxcol,body.subpage.single.single-special-events .column-data-section .fxcol{width:auto;padding-left:5vw;padding-right:5vw}
 .fullwidth_video_block{max-height:700px}
 }@media screen and (min-width:1481px){.text-and-image-blocks .gallerycol.mapCol{min-height:570px}
 }@media screen and (min-width:1500px){#section-whattowear.half .col.options{padding-left:8vw;padding-right:8vw}
