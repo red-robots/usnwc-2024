@@ -503,7 +503,7 @@ function build_taxonomies() {
       'show_admin_column'=>1
     ),
     array(
-      'post_type' => array('activity_schedule'),
+      'post_type' => array('activity_schedule','special-events','film-series','festival','dining'),
       'menu_name' => 'Locations',
       'plural'    => 'Locations',
       'single'    => 'Location',
