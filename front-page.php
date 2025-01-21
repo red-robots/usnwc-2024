@@ -82,24 +82,32 @@ $rectangle = THEMEURI . "images/rectangle-narrow.png";
 		           </div>
 
                <div class="carousel-activities-mobile">
-                  <div id="activities--carousel" class="owl-carousel owl-theme">
-                    <?php foreach( $cards as $card ) {
-                      $card_poster = $card['card_poster'];
-                      $card_title = $card['card_title'];
-                      $card_link = $card['card_link'];
-                      ?>
-                      <figure class="item">
-                        <a href="<?php echo $card_link['url']; ?>" target="<?php echo $card_link['target']; ?>">
-                          <div class="info-flex">
-                            <div class="title"><?php echo $card_title; ?></div>
-                            <div class="bg-overlay"></div>
-                          </div>
-                          <img class="poster" src="<?php echo $card_poster['url']; ?>" alt="" aria-hidden="true">
-                        </a>
-                      </figure>
-                    <?php } ?>
+                  <div id="activities--swiper-carousel">
+                    <div id="activities--swiper" class="swiper-container">
+                      <div class="swiper-wrapper">
+                        <?php foreach( $cards as $card ) {
+                          $card_poster = $card['card_poster'];
+                          $card_title = $card['card_title'];
+                          $card_link = $card['card_link'];
+                          ?>
+                          <figure class="swiper-slide">
+                            <div class="inside">
+                              <a href="<?php echo $card_link['url']; ?>" target="<?php echo $card_link['target']; ?>">
+                                <div class="info-flex">
+                                  <div class="title"><?php echo $card_title; ?></div>
+                                  <div class="bg-overlay"></div>
+                                </div>
+                                <img class="poster" src="<?php echo $card_poster['url']; ?>" alt="" aria-hidden="true">
+                              </a>
+                            </div>
+                          </figure>
+                        <?php } ?>
+                      </div>
+                    </div>
                   </div>
                </div>
+
+               
                <?php } ?>
 		        <?php endif;
 

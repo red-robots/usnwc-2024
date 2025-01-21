@@ -1,5 +1,7 @@
 "use strict";
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 /**
@@ -8,6 +10,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
  *	Developed by: Lisa DeBona
  */
 jQuery(document).ready(function ($) {
+  var _Swiper;
+
   var params = {};
   location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (s, k, v) {
     params[k] = v;
@@ -1459,6 +1463,22 @@ jQuery(document).ready(function ($) {
       }
     }
   }
+
+  var mySwiper = new Swiper('#activities--swiper', (_Swiper = {
+    speed: 400,
+    spaceBetween: 10,
+    initialSlide: 0,
+    //truewrapper adoptsheight of active slide
+    autoHeight: false,
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    // delay between transitions in ms
+    autoplay: 5000,
+    autoplayStopOnLast: false,
+    // loop false also
+    effect: 'slide'
+  }, _defineProperty(_Swiper, "spaceBetween", 20), _defineProperty(_Swiper, "slidesPerView", 1), _defineProperty(_Swiper, "centeredSlides", true), _defineProperty(_Swiper, "slidesOffsetBefore", 0), _defineProperty(_Swiper, "grabCursor", true), _Swiper));
 }); // END #####################################    END
 "use strict";
 

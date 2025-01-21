@@ -1579,6 +1579,32 @@ var getGridSize = function() {
 
 
 
+  var mySwiper = new Swiper ('#activities--swiper', {
+    speed: 400,
+    spaceBetween: 10,
+    initialSlide: 0,
+    //truewrapper adoptsheight of active slide
+    autoHeight: false,
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    // delay between transitions in ms
+    autoplay: 5000,
+    autoplayStopOnLast: false, // loop false also
+    effect: 'slide',
+    // Distance between slides in px.
+    spaceBetween: 20,
+    //
+    slidesPerView: 1,
+    //
+    centeredSlides: true,
+    //
+    slidesOffsetBefore: 0,
+    //
+    grabCursor: true,
+  })        
+
+
 
 
 });// END #####################################    END
