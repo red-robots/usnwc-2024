@@ -826,3 +826,8 @@ body.toplevel_page_acf-options-today-options [data-name="whitewaterLocations"] [
   border-color: #ca0b0b;
   background: #ca0b0b;
 }
+.acf-field-image[data-name="poster_portrait_mobile"] .image-wrap img {
+  width: auto;
+  height: 140px;
+}
+

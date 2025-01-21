@@ -5398,6 +5398,9 @@ body.subpage.pageNoBanner.logged-in.admin-bar .site-content,body.subpage.pageNoB
 body.single:has(.hero-wrapper .single-slide .type-video) .hero-wrapper{margin-bottom:60px}
 body.single:has(.hero-wrapper .single-slide .type-video) #main .featured-image{display:none}
 body.single:has(.hero-wrapper .single-slide .type-video) #main .contentWrap.quote{padding-bottom:0}
+section.full-bleed-promo.rounded_with_padding img.poster-mobile{display:none}
+.activities--desktop{display:none}
+.carousel-activities-mobile{display:none;overflow:hidden}
 body.enchilada .banner-bottom.svgphp svg{fill:#fef9e7}
 body.enchilada .main-description{color:#7f7c73}
 body.enchilada #pageTabs a,body.enchilada .title-w-icon h2,body.enchilada h2.stitle,body.enchilada .stitle,body.enchilada .text-and-image-blocks .textcol .mstitle,body.enchilada .sectionTitle,body.enchilada .information-tabs-wrap{font-family:novecento-sans-narrow}
@@ -6440,6 +6443,27 @@ body.page-template-page-visit section.visit.flexible-image-cards .tile figure h2
 .menu-sections .textcol .mstime.custom-time{display:block;width:100%;margin-top:20px}
 .menu-sections .textcol .mstime.custom-time .name,.menu-sections .textcol .mstime.custom-time .time{display:block;width:100%;padding:0}
 .snapshot-branch-info{max-width:100%;padding-left:20px;padding-right:20px}
+body.home .full-bleed-promo .cta a{padding:8px 20px 6px !important;letter-spacing:.02em !important;font-size:15px !important}
+section.full-bleed-promo.rounded_with_padding{padding:30px 30px 20px}
+section.full-bleed-promo.rounded_with_padding div.img:has(img.poster-mobile){padding-bottom:120vw}
+section.full-bleed-promo.rounded_with_padding div.img:has(img.poster-mobile) img.poster-desktop{display:none}
+section.full-bleed-promo.rounded_with_padding div.img:has(img.poster-mobile) img.poster-mobile{display:block}
+section.full-bleed-promo.rounded_with_padding div.img div.info{padding:20px 20px}
+body.home .full-bleed-promo:not(.rounded_with_padding) div.img{padding-bottom:75vw}
+body.home .full-bleed-promo:not(.rounded_with_padding) div.img .info{padding-left:20px;padding-right:20px;padding-bottom:20px}
+body.home .full-bleed-promo:not(.rounded_with_padding) div.img .info .words h2{margin-bottom:0}
+body.home .full-bleed-promo:not(.rounded_with_padding) div.img .info p{display:none}
+.carousel-activities-mobile{display:block;width:100%;float:left;padding-bottom:20px}
+.carousel-activities-mobile #activities--carousel .owl-stage{left:-20px}
+.carousel-activities-mobile .owl-nav,.carousel-activities-mobile .owl-dots{display:none !important}
+.carousel-activities-mobile .item{margin:0;position:relative;padding:10px 10px}
+.carousel-activities-mobile .item a{display:block;position:relative;overflow:hidden;padding-bottom:120vw;border-radius:20px}
+.carousel-activities-mobile .item a img{position:absolute;top:0;left:0;width:100%;height:100%;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.carousel-activities-mobile .item .info-flex{position:absolute;left:0;bottom:0;width:100%;height:100%;text-align:center;z-index:10;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:20px}
+.carousel-activities-mobile .item .info-flex:after{content:"";display:block;width:100%;height:100%;position:absolute;left:0;bottom:0;background:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0)),to(rgba(0,0,0,0.65)));background:linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,0.65) 100%)}
+.carousel-activities-mobile .item .info-flex .title{font-size:32px !important;line-height:1.2;color:#fff;position:relative;z-index:5}
+.carousel-activities-mobile .owl-item:not(.active) .item{padding-left:0}
+.carousel-activities-mobile .owl-item.active .item{padding-right:10px;padding-left:50px}
 .bike-ranch-sections .section--buttons .section-buttons.buttons-per-row1 .button-wrap .button-traditional{width:100%}
 }@media screen and (max-width:600px){section.route-stories .block .feat-image.no-image .bg:before{width:30vw;height:30vw}
 .topinfo .businessHours{left:-37vw}

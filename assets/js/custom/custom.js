@@ -52,6 +52,29 @@ $('.loop').owlCarousel({
     }
 });
 
+if( $('#activities--carousel').length ) {
+  $('#activities--carousel').owlCarousel({
+    center: false,
+    items:1,
+    nav: true,
+    loop:true,
+    margin:0,
+    autoplay:true,
+    smartSpeed: 1000,
+    autoplayTimeout:10000,
+    autoplayHoverPause:true,
+    onChanged:function(){
+      // $('#activities--carousel .owl-item').each(function(){
+      //   if( $(this).hasClass('active') ) {
+      //     $(this).addClass('changed');
+      //   } else {
+      //     $(this).removeClass('changed');
+      //   }
+      // });
+    }
+  });
+}
+
 
 $('.carousel-center-loop').owlCarousel({
     center: true,
@@ -1553,6 +1576,7 @@ var getGridSize = function() {
       }
     }
   }
+
 
 
 
