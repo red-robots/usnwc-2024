@@ -1544,7 +1544,8 @@ var getGridSize = function() {
       var headTag = headingList[h];
       if( $(headTag).length ) {
         $(headTag).each(function(){
-          var slug = $(this).text().trim().replace(/\s+/g,'-').toLowerCase();
+          var slug = $(this).text().trim();
+          slug = slug.replace(/\W+(?!$)/g, '-').replace(/\W$/,'').toLowerCase();
           if(slug) {
             $(this).attr('data-anchor-target', '#'+slug);
           }
