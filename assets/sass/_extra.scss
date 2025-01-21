@@ -317,6 +317,9 @@ body.subpage.single.single-special-events {
     margin: 45px auto 0;
     .info {
       margin: 10px 0;
+      a {
+        text-decoration: underline!important;
+      }
       .flexwrap {
         text-transform: uppercase;
         color: #000;
