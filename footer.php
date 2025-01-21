@@ -121,7 +121,7 @@ jQuery(document).ready(function($){
     //This autocopy hashtag only works on administrator user (logged-in).
     $(document).on('click','[data-anchor-target]', function(){
       var anchor = $(this).attr('data-anchor-target');
-      navigator.clipboard.writeText( $('input#clipboardTextHolder').val() );
+      navigator.clipboard.writeText(anchor);
       alert('Hashtag `'+anchor+'` has been copied!');
     });
   }
