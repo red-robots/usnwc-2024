@@ -111,5 +111,22 @@ jQuery(document).ready(function($){
 
   gtag('config', 'G-L51KQDPENF');
 </script>
+
+<?php if ( is_user_logged_in() && current_user_can( 'administrator' ) ) { ?>
+<script>
+jQuery(document).ready(function($){
+  $('body').addClass('is-administrator');
+  if( $('[data-anchor-target]').length ) {
+    //Copies Hashtag for Anchor Link purpose.
+    //This autocopy hashtag only works on administrator user (logged-in).
+    $(document).on('click','[data-anchor-target]', function(){
+      var anchor = $(this).attr('data-anchor-target');
+      navigator.clipboard.writeText( $('input#clipboardTextHolder').val() );
+      alert('Hashtag `'+anchor+'` has been copied!');
+    });
+  }
+});
+</script>
+<?php } ?>
 </body>
 </html>

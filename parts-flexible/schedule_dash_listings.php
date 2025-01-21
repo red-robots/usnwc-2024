@@ -9,13 +9,19 @@
     <div class="wrapper">
       <?php if ( $section_title || ($info_1 ||  $info_2) ) { ?>
       <div class="titleDiv">
+
+        <?php if ($section_title) { ?>
         <h2 class="stitle" style="color:<?php echo $section_title_color ?>"><?php echo $section_title ?></h2>
+        <?php } ?>
+        
         <?php if ( $info_1 ) { ?>
         <div class="info1"><?php echo $info_1 ?></div>
         <?php } ?>
+
         <?php if ( $info_2 ) { ?>
         <div class="info2"><?php echo $info_2 ?></div>
         <?php } ?>
+
       </div>
       <?php } ?>
 
@@ -36,10 +42,16 @@
             <div class="flexwrap">
               <?php if ($name1 || $name2) { ?>
               <span class="name">
+                
                 <?php if ($vbtnName && $vbtnLink) { ?>
                 <a href="<?php echo $vbtnLink ?>" target="<?php echo $vbtnTarget ?>"><?php echo $vbtnName ?></a>
                 <?php } ?>
-                <?php if ($name2) { ?>
+
+                <?php if ($vbtnLink && $name2) { ?>
+                <a href="<?php echo $vbtnLink ?>"><?php echo $name2 ?></a>
+                <?php } ?>
+
+                <?php if ( empty($vbtnLink) && $name2 ) { ?>
                 <span><?php echo $name2 ?></span>
                 <?php } ?>
               </span>

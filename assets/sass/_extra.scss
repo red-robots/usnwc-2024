@@ -3130,4 +3130,16 @@ body.single:has(.hero-wrapper .single-slide .type-video) {
   }
 }
 
+// .show-anchor-info[data-anchor-target] {
+//   &:before {
+//     content: attr(data-anchor-target);
+//     display: block;
+//     font-family: $font-brandon-regular;
+//     font-size: 18px;
+//     font-weight: normal;
+//     font-style: italic;
+//     text-transform: none;
+//     color: #777;
+//   }
+// }
 
