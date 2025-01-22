@@ -3818,7 +3818,8 @@ section.stories-whats {
     flex-wrap: wrap;
     justify-content: center;
     border-radius: 100px;
-    overflow: visible;
+    // overflow: visible;
+    overflow: hidden;
     &:before, &:after {
       display: none;
     }
