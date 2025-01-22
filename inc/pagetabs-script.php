@@ -37,12 +37,11 @@ jQuery(document).ready(function ($) {
       } else {
         tabs += '<span class="mini-nav"><a href="#'+id+'">'+name+'</a></span>';
       }
-
-      tabsArr.push(nameArr);
+      //tabsArr.push(nameArr);
 		});
 
-    console.log(tabsArr);
-    
+  
+
 		if( $("#pageTabs").length>0 ) {
 			$("#pageTabs").html('<div class="wrapper"><div id="tabcontent">'+tabs+'</div></div>');
 			$("#pageTabs").show();

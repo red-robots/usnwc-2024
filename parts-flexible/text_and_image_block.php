@@ -204,7 +204,7 @@
         <?php } ?>
 
         <?php if ($column_style=='column3') { ?>
-        <section id="three-columns-block_<?php echo $ctr ?>" data-section="<?php echo $section_title ?>" class="three-columns-block section-content section-grid-images">
+        <section id="three-columns-block_<?php echo $ctr ?>" class="three-columns-block section-content section-grid-images">
           <div class="entryList flexwrap">
             <?php $i=1; foreach ($content_columns as $col) {
             $e_title = $col['title'];
