@@ -6429,7 +6429,7 @@ body.logged-in.admin-bar .site-header-mobile .mobileNav{padding-top:190px}
 }@media screen and (max-width:768px){.flex-container.slide-horizontal .flex-direction-nav li .prev,.flex-direction-nav li .prev{display:none}
 .flex-container.slide-horizontal .flex-direction-nav li .next,.flex-direction-nav li .next{display:none}
 .flexslider .flex-control-nav{display:none}
-section.full-bleed-promo .poster-desktop{display:none !important}
+section.full-bleed-promo .poster-desktop{display:none}
 section.full-bleed-promo .poster-mobile{display:block}
 .calendar-tab-events-posts .infoBox{width:100% !important}
 .pass-options-wrap .wrap .options{margin-bottom:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:space-between;-ms-flex-align:space-between;align-items:space-between}

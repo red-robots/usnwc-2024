@@ -3090,6 +3090,10 @@ body.single:has(.hero-wrapper .single-slide .type-video) {
   }
 }
 
+.section--repeatable.section_upcoming_events_by_location {
+  
+}
+
 @media screen and (max-width: 819px) {
   body.subpage .site-header,
   body.scrolled .site-header {
@@ -3328,16 +3332,4 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
   }
 }
 
-// .show-anchor-info[data-anchor-target] {
-//   &:before {
-//     content: attr(data-anchor-target);
-//     display: block;
-//     font-family: $font-brandon-regular;
-//     font-size: 18px;
-//     font-weight: normal;
-//     font-style: italic;
-//     text-transform: none;
-//     color: #777;
-//   }
-// }
 
