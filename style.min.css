@@ -2140,6 +2140,7 @@ section.homepage-hero .home-info .branding img{width:100%}
 .today-dropdown .cta a{border:1px solid #ba0d30}
 .today-dropdown .cta a:hover{color:#5a5959 !important;border:1px solid #a2a2a2 !important;background-color:#fff}
 section.full-bleed-promo{width:100%;position:relative;float:left}
+section.full-bleed-promo .poster-mobile{display:none}
 section.full-bleed-promo.rounded_with_padding{padding:10px}
 section.full-bleed-promo.rounded_with_padding img{border-radius:20px}
 section.full-bleed-promo.rounded_with_padding .grad{border-radius:20px}
@@ -6428,6 +6429,8 @@ body.logged-in.admin-bar .site-header-mobile .mobileNav{padding-top:190px}
 }@media screen and (max-width:768px){.flex-container.slide-horizontal .flex-direction-nav li .prev,.flex-direction-nav li .prev{display:none}
 .flex-container.slide-horizontal .flex-direction-nav li .next,.flex-direction-nav li .next{display:none}
 .flexslider .flex-control-nav{display:none}
+section.full-bleed-promo .poster-desktop{display:none !important}
+section.full-bleed-promo .poster-mobile{display:block}
 .calendar-tab-events-posts .infoBox{width:100% !important}
 .pass-options-wrap .wrap .options{margin-bottom:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:space-between;-ms-flex-align:space-between;align-items:space-between}
 .pass-options-wrap div.buttondiv{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}

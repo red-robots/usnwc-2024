@@ -1837,6 +1837,18 @@ section.full-bleed-promo {
 	width: 100%;
 	position: relative;
 	float: left;
+  .poster-mobile {
+    display: none;
+  }
+  @media screen and (max-width:768px) {
+    .poster-desktop {
+      display: none;
+    }
+    .poster-mobile {
+      display: block;
+    }
+  }
+
 	&.rounded_with_padding {
 		padding: 10px;
 		@include tab {
