@@ -831,3 +831,12 @@ body.toplevel_page_acf-options-today-options [data-name="whitewaterLocations"] [
   height: 140px;
 }
 
+
+/* HIDE TODAY OPTIONS */
+body.toplevel_page_acf-options-today-options ul.acf-tab-group > li:has([data-key="field_5f460015a1a67"]) {
+  display: none!important;
+}
+
+
+
+

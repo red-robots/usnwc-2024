@@ -30,8 +30,10 @@
     }
     .site-logo-mobile {
       display: inline-block;
+      position: relative;
+      top: 2px;
       img {
-        width: 70px;
+        width: 50px;
         height: auto;
       }
     }

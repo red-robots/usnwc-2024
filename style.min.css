@@ -6218,8 +6218,8 @@ body.home .homerow .imagebox a .title{font-size:6vw;line-height:1.1;padding:0 10
 .site-header-mobile{display:block;position:fixed;top:0;left:0;width:100%;height:70px;z-index:99999999;-webkit-transition:all ease .3s;transition:all ease .3s}
 .site-header-mobile.menu-open{height:100%;background-color:transparent !important}
 .site-header-mobile .site-header-flex{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;padding:10px 30px;position:relative;z-index:10001}
-.site-header-mobile .site-logo-mobile{display:inline-block}
-.site-header-mobile .site-logo-mobile img{width:70px;height:auto}
+.site-header-mobile .site-logo-mobile{display:inline-block;position:relative;top:2px}
+.site-header-mobile .site-logo-mobile img{width:50px;height:auto}
 .site-header-mobile .mobileMenuToggle{display:inline-block;width:40px;height:45px;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;background-color:transparent;padding:0;margin:0;position:relative}
 .site-header-mobile .mobileMenuToggle .bar{position:relative}
 .site-header-mobile .mobileMenuToggle .bar,.site-header-mobile .mobileMenuToggle .bar:before,.site-header-mobile .mobileMenuToggle .bar:after{display:block;width:100%;height:3px;background:#fff;border-radius:2px;-webkit-transition:all ease .2s;transition:all ease .2s}
