@@ -21,22 +21,28 @@ jQuery(document).ready(function ($) {
 	/* page anchors */
 	if( $('[data-section]').length > 0 ) {
 		var tabs = '';
+    var tabsArr = [];
 		$('[data-section]').each(function(){
 			var name = $(this).attr('data-section');
 			var id = $(this).attr("id");
       var slug = name.toLowerCase().trim().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
+      var nameArr = name;
       if( hideSubnavItems.length ) {
         if ($.inArray(slug, hideSubnavItems) !== -1) {
           //Do nothing...
+          nameArr = '';
         } else {
           tabs += '<span class="mini-nav"><a href="#'+id+'">'+name+'</a></span>';
         }
       } else {
         tabs += '<span class="mini-nav"><a href="#'+id+'">'+name+'</a></span>';
       }
-			
+
+      tabsArr.push(nameArr);
 		});
 
+    console.log(tabsArr);
+    
 		if( $("#pageTabs").length>0 ) {
 			$("#pageTabs").html('<div class="wrapper"><div id="tabcontent">'+tabs+'</div></div>');
 			$("#pageTabs").show();
