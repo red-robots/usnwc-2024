@@ -5400,7 +5400,6 @@ body.single:has(.hero-wrapper .single-slide .type-video) .hero-wrapper{margin-bo
 body.single:has(.hero-wrapper .single-slide .type-video) #main .featured-image{display:none}
 body.single:has(.hero-wrapper .single-slide .type-video) #main .contentWrap.quote{padding-bottom:0}
 section.full-bleed-promo.rounded_with_padding img.poster-mobile{display:none}
-.activities--desktop{display:none}
 .carousel-activities-mobile{display:none;overflow:hidden}
 .carousel-activities-mobile .swiper-container{padding-left:45px !important}
 .carousel-activities-mobile .swiper-container .swiper-slide{margin:0 0 !important;padding:5px;-webkit-transition:all ease .3s;transition:all ease .3s}
@@ -6015,6 +6014,7 @@ body.logged-in.admin-bar.scrolled .hero-wrapper .stats{top:160px}
 body.home.logged-in.admin-bar .site-header{top:32px !important}
 body.logged-in.admin-bar.scrolled:has(#banner) .site-header,body.logged-in.admin-bar.subpage.scrolled:has(#banner) .site-header,body.logged-in.admin-bar.subpage.scrolled .site-header{top:32px !important}
 body.logged-in.admin-bar:has(#banner) .site-header,body.logged-in.admin-bar.subpage:has(#banner) .site-header{top:0 !important}
+body.logged-in.admin-bar:has(#banner).scrolled .site-header,body.logged-in.admin-bar:has(#banner).scrolled .site-header.scrolling,body.logged-in.admin-bar:has(#banner) .site-header.scrolling,body.logged-in.admin-bar.subpage:has(#banner).scrolled .site-header,body.logged-in.admin-bar.subpage:has(#banner).scrolled .site-header.scrolling,body.logged-in.admin-bar.subpage:has(#banner) .site-header.scrolling{top:32px !important}
 body.logged-in.admin-bar:has(#banner).page-template-page-bike-ranch.subpage.scrolled .site-header,body.logged-in.admin-bar.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling{top:32px !important}
 .bike-ranch-sections .section--fullwidth_image figure figcaption h2{font-size:40px}
 }@media(min-width:820px)and (min-width:820px){#section-whattowear.half .model{width:35%}
@@ -6498,6 +6498,7 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img{padding-bottom:75
 body.home .full-bleed-promo:not(.rounded_with_padding) div.img .info{padding-left:20px;padding-right:20px;padding-bottom:20px}
 body.home .full-bleed-promo:not(.rounded_with_padding) div.img .info .words h2{margin-bottom:0}
 body.home .full-bleed-promo:not(.rounded_with_padding) div.img .info p{display:none}
+.activities--desktop{display:none}
 .carousel-activities-mobile{padding-top:10px;padding-bottom:30px;display:block;width:100%;float:left}
 .carousel-activities-mobile #activities--carousel .owl-stage{left:-20px}
 .carousel-activities-mobile .owl-nav,.carousel-activities-mobile .owl-dots{display:none !important}

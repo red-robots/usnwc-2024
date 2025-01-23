@@ -2607,7 +2607,7 @@ body.logged-in.admin-bar.scrolled:has(#banner) .site-header,
 body.logged-in.admin-bar.subpage.scrolled:has(#banner) .site-header,
 body.logged-in.admin-bar.subpage.scrolled .site-header {
   @media screen and (min-width: 820px) {
-    top: 32px!important;
+    top:32px!important;
   }
 }
 body.logged-in.admin-bar,
@@ -2615,6 +2615,9 @@ body.logged-in.admin-bar.subpage {
   &:has(#banner) {
     @media screen and (min-width: 820px) {
       .site-header {top: 0!important;}
+			&.scrolled .site-header,
+			&.scrolled .site-header.scrolling,
+			.site-header.scrolling {top:32px!important;}
     }
   }
 }
