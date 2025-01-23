@@ -111,7 +111,11 @@ if( $template = get_page_template() ) {
         <div class="left-nav left">
           <div class="logo">
             <a href="<?php bloginfo('url'); ?>">
-              <img src="<?php bloginfo('template_url'); ?>/images/logo-white.png" alt="<?php echo get_bloginfo('name') ?>" class="logo-original" />
+              <?php if ($is_bike_ranch_template) { ?>
+                <img src="<?php bloginfo('template_url'); ?>/images/logo-cream.png" alt="<?php echo get_bloginfo('name') ?>" class="logo-cream" />
+              <?php } else { ?>
+                <img src="<?php bloginfo('template_url'); ?>/images/logo-white.png" alt="<?php echo get_bloginfo('name') ?>" class="logo-original" />
+              <?php } ?>
             </a>
          </div>
         <?php get_template_part("parts/navigation-main"); ?>
@@ -128,7 +132,11 @@ if( $template = get_page_template() ) {
   <div class="site-header-mobile">
     <div class="site-header-flex">
       <a href="<?php bloginfo('url'); ?>" class="site-logo-mobile">
-        <img src="<?php bloginfo('template_url'); ?>/images/logo-white.png" alt="<?php echo get_bloginfo('name') ?>" class="logo-original" />
+        <?php if ($is_bike_ranch_template) { ?>
+          <img src="<?php bloginfo('template_url'); ?>/images/logo-cream.png" alt="<?php echo get_bloginfo('name') ?>" class="logo-cream" />
+        <?php } else { ?>
+          <img src="<?php bloginfo('template_url'); ?>/images/logo-white.png" alt="<?php echo get_bloginfo('name') ?>" class="logo-original" />
+        <?php } ?>
       </a>
       <button class="mobileMenuToggle">
         <span class="sr-only">Mobile Navigation</span>

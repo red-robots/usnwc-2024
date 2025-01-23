@@ -2,6 +2,26 @@ $bike_color_primary: #FEEFD8;
 $bike_color_secondary: #294233;
 
 body.page-template-page-bike-ranch.subpage {
+  .site-header .navbar .logo img {
+    filter: none;
+  }
+  &.scrolled .site-header .navbar .logo img,
+  .site-header.scrolling .navbar .logo img  {
+    filter: invert(1)!important;
+  }
+  &.scrolled .site-header,
+  .site-header.scrolling {
+    .right-nav.navs .navlink {
+      color: #000!important;
+    }
+  }
+
+  header.site-header .navbar .right-nav .right .nav-item {
+    a.navlink,
+    .today.navlink-today {
+      color: #FFF!important;
+    }
+  }
   #banner {
     height: 100vh;
     .banner-bottom {
@@ -32,7 +52,7 @@ body.page-template-page-bike-ranch.subpage {
       }
     }
   }
-  
+
   &:has(#banner) {
     .site-header,
     .site-header .navbar {
@@ -41,25 +61,10 @@ body.page-template-page-bike-ranch.subpage {
     .site-header {
       position: fixed!important;
     }
-    .site-header .navbar .logo img.logo-cream {
-      filter: none;
-    }
-    
-    .new-nav-v2.desktop-navigation .menu-link {
-      color: $bike_color_primary;
-      // font-family: $font-brandon-bold;
-      // font-size: 18px;
-    }
-    .navbar .right-nav.navs {
-      .nav-item a.navlink,
-      .nav-item.nav-item-today button.today {
-        color: $bike_color_primary!important;
-        &:hover, &:focus {
-          color: $red!important;
-        }
-      }
-    }
 
+    .new-nav-v2.desktop-navigation .menu-link {
+      color:#FFF;
+    }
     .site-header.scrolling {
       background-color: rgba(255,255,255,.95) !important;
       .navbar .logo img.logo-cream {
@@ -81,6 +86,150 @@ body.page-template-page-bike-ranch.subpage {
         }
       }
     }
+  }
+
+
+  @media screen and (max-width: 820px) {
+    #banner {
+      height: 75vh;
+      .slides  {
+        .logo-overlay {
+          width: 48vw;
+        }
+      }
+    }
+
+    .bike-ranch-sections {
+      .content-inner {
+        padding: 50px 12vw;
+      }
+      .section--two_column_layout_text_image  {
+        .section-title {
+          font-family: $font-brandon-bold;
+          font-size: 20px;
+        }
+        .flexcol.imageCol {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+      .content-gallery.multiple {
+        overflow: hidden;
+        align-items: unset;
+        figure {
+          width: 50%;
+          .span-image {
+            display: block;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+          &.img1 {
+            .span-image {
+              height: 60vw;
+            }
+            img {
+              display: none;
+            }
+          }
+          &.img2 {
+            overflow: visible;
+            .span-image {
+              position: absolute;
+							top: 0;
+							right: 0;
+							width: 100%;
+							height: 95vw;
+            }
+            img.image-block {
+              display: none;
+            }
+            img.logo-overlay {
+              width: 45vw;
+							top: 35vw;
+							transform: translateX(-50%) translateY(0);
+            }
+          }
+          &.img3 {
+            width: 65%;
+            // transform: translateY(-15vw);
+            z-index: 10;
+            min-height: 90vw;
+            .span-image {
+              display: block;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+            img.image-block {
+              display: none;
+            }
+            figcaption {
+              position: relative;
+              .image-text {
+                padding: 30px 20px;
+                h2 {
+                  font-size: 2.5vh;
+                  margin: 0 0 1vh;
+                }
+                p {
+                  font-size: 1.75vh;
+                }
+								p:last-child {
+									margin-bottom: 0;
+								}
+              }
+            }
+          }
+          &.img4 {
+            width: 35%;
+            overflow: visible;
+            z-index: 30;
+            .span-image {
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              width: 105%;
+              height: 85%;
+            }
+            img.image-block {
+              display: none;
+            }
+          }
+        }
+      }
+			.section.section--buttons {
+				padding: 45px 15vw;
+			}
+			.content-buttons-row .section-buttons {
+				.button-wrap {
+					margin-bottom: 15px;
+					&:last-child {
+						margin-bottom: 0;
+					}
+					.button-traditional {
+						padding: 8px 15px 5px;
+						font-size: 16px;
+					}
+				}
+			}
+    }
+  }
+}
+
+body.page-template-page-bike-ranch.subpage:has(#banner).scrolled .navbar .right-nav.navs .nav-item a.navlink,
+body.page-template-page-bike-ranch.subpage:has(#banner).scrolled .navbar .right-nav.navs .nav-item.nav-item-today .navlink.navlink-today {
+  color: #000!important;
+  &:hover, &:focus {
+    color: $red!important;
+  }
+}
+body.logged-in.admin-bar:has(#banner).page-template-page-bike-ranch.subpage.scrolled .site-header,
+body.logged-in.admin-bar.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling {
+  @media screen and (min-width:820px) {
+    top: 32px!important;
   }
 }
 
@@ -168,7 +317,7 @@ body.page-template-page-bike-ranch.subpage {
           border-color: #FFF;
         }
       }
-      
+
       &.count-1 {
         .button-traditional {
           width: auto;
@@ -359,7 +508,7 @@ body.page-template-page-bike-ranch.subpage {
         margin-bottom: 0;
       }
 
-      
+
       &.buttons-per-row1 {
         .button-wrap {
           width: 100%;

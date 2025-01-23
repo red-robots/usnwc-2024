@@ -5442,6 +5442,10 @@ body.enchilada .text-and-image-blocks .half.odd .textcol{border-right:15px solid
 body.enchilada .text-and-image-blocks .half.even .textcol{border-left:15px solid #fef9e7}
 body.enchilada .text-and-image-blocks{color:#7f7c73}
 body.enchilada .text-and-image-blocks .textcol{background-color:#f3edd9}
+body.page-template-page-bike-ranch.subpage .site-header .navbar .logo img{-webkit-filter:none;filter:none}
+body.page-template-page-bike-ranch.subpage.scrolled .site-header .navbar .logo img,body.page-template-page-bike-ranch.subpage .site-header.scrolling .navbar .logo img{-webkit-filter:invert(1) !important;filter:invert(1) !important}
+body.page-template-page-bike-ranch.subpage.scrolled .site-header .right-nav.navs .navlink,body.page-template-page-bike-ranch.subpage .site-header.scrolling .right-nav.navs .navlink{color:#000 !important}
+body.page-template-page-bike-ranch.subpage header.site-header .navbar .right-nav .right .nav-item a.navlink,body.page-template-page-bike-ranch.subpage header.site-header .navbar .right-nav .right .nav-item .today.navlink-today{color:#fff !important}
 body.page-template-page-bike-ranch.subpage #banner{height:100vh}
 body.page-template-page-bike-ranch.subpage #banner .banner-bottom{display:none}
 body.page-template-page-bike-ranch.subpage #banner .slides-wrapper,body.page-template-page-bike-ranch.subpage #banner .slides,body.page-template-page-bike-ranch.subpage #banner .slides .slideItem,body.page-template-page-bike-ranch.subpage #banner .image-wrapper{height:100% !important}
@@ -5449,16 +5453,15 @@ body.page-template-page-bike-ranch.subpage #banner .slides-wrapper img.desktop,b
 body.page-template-page-bike-ranch.subpage #banner .slides .logo-overlay{top:unset;left:5vw;bottom:5vw;margin:0;width:25vw}
 body.page-template-page-bike-ranch.subpage:has(#banner) .site-header,body.page-template-page-bike-ranch.subpage:has(#banner) .site-header .navbar{background:transparent}
 body.page-template-page-bike-ranch.subpage:has(#banner) .site-header{position:fixed !important}
-body.page-template-page-bike-ranch.subpage:has(#banner) .site-header .navbar .logo img.logo-cream{-webkit-filter:none;filter:none}
-body.page-template-page-bike-ranch.subpage:has(#banner) .new-nav-v2.desktop-navigation .menu-link{color:#feefd8}
-body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item a.navlink,body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item.nav-item-today button.today{color:#feefd8 !important}
-body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item a.navlink:hover,body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item a.navlink:focus,body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item.nav-item-today button.today:hover,body.page-template-page-bike-ranch.subpage:has(#banner) .navbar .right-nav.navs .nav-item.nav-item-today button.today:focus{color:#ba0d30 !important}
+body.page-template-page-bike-ranch.subpage:has(#banner) .new-nav-v2.desktop-navigation .menu-link{color:#fff}
 body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling{background-color:rgba(255,255,255,.95) !important}
 body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .navbar .logo img.logo-cream{-webkit-filter:brightness(0) invert(0);filter:brightness(0) invert(0)}
 body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .navbar .right-nav.navs .nav-item a.navlink,body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .navbar .right-nav.navs .nav-item.nav-item-today button.today{color:#000 !important}
 body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .navbar .right-nav.navs .nav-item a.navlink:hover,body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .navbar .right-nav.navs .nav-item a.navlink:focus,body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .navbar .right-nav.navs .nav-item.nav-item-today button.today:hover,body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .navbar .right-nav.navs .nav-item.nav-item-today button.today:focus{color:#ba0d30 !important}
 body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .new-nav-v2.desktop-navigation .menu-link{color:#000 !important}
 body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .new-nav-v2.desktop-navigation .menu-link:hover,body.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling .new-nav-v2.desktop-navigation .menu-link:focus{color:#ba0d30 !important}
+body.page-template-page-bike-ranch.subpage:has(#banner).scrolled .navbar .right-nav.navs .nav-item a.navlink,body.page-template-page-bike-ranch.subpage:has(#banner).scrolled .navbar .right-nav.navs .nav-item.nav-item-today .navlink.navlink-today{color:#000 !important}
+body.page-template-page-bike-ranch.subpage:has(#banner).scrolled .navbar .right-nav.navs .nav-item a.navlink:hover,body.page-template-page-bike-ranch.subpage:has(#banner).scrolled .navbar .right-nav.navs .nav-item a.navlink:focus,body.page-template-page-bike-ranch.subpage:has(#banner).scrolled .navbar .right-nav.navs .nav-item.nav-item-today .navlink.navlink-today:hover,body.page-template-page-bike-ranch.subpage:has(#banner).scrolled .navbar .right-nav.navs .nav-item.nav-item-today .navlink.navlink-today:focus{color:#ba0d30 !important}
 .bike-ranch-sections .content-inner{background:#294233;color:#fff;padding:50px 20px}
 .bike-ranch-sections .section--two_column_layout_text_image .flexcol{width:100%;position:relative}
 .bike-ranch-sections .section--two_column_layout_text_image .section-title{color:#feefd8;font-family:"Brandon Medium";font-size:25px;line-height:1.2;letter-spacing:.03em;text-transform:uppercase}
@@ -6012,6 +6015,7 @@ body.logged-in.admin-bar.scrolled .hero-wrapper .stats{top:160px}
 body.home.logged-in.admin-bar .site-header{top:32px !important}
 body.logged-in.admin-bar.scrolled:has(#banner) .site-header,body.logged-in.admin-bar.subpage.scrolled:has(#banner) .site-header,body.logged-in.admin-bar.subpage.scrolled .site-header{top:32px !important}
 body.logged-in.admin-bar:has(#banner) .site-header,body.logged-in.admin-bar.subpage:has(#banner) .site-header{top:0 !important}
+body.logged-in.admin-bar:has(#banner).page-template-page-bike-ranch.subpage.scrolled .site-header,body.logged-in.admin-bar.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling{top:32px !important}
 .bike-ranch-sections .section--fullwidth_image figure figcaption h2{font-size:40px}
 }@media(min-width:820px)and (min-width:820px){#section-whattowear.half .model{width:35%}
 }@media screen and (min-width:901px){.section-fullwidth-black .column1{padding-right:15px}
@@ -6372,6 +6376,35 @@ body.home .homerow .imagebox{width:50%;padding:10px}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left,body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-right{padding-left:0;padding-right:0}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left{border-bottom:1px solid #ccc;padding-bottom:30px}
 .pass-options-wrap .option .wrap{-ms-flex-line-pack:justify;align-content:space-between;width:100%;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+body.page-template-page-bike-ranch.subpage #banner{height:75vh}
+body.page-template-page-bike-ranch.subpage #banner .slides .logo-overlay{width:48vw}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-inner{padding:50px 12vw}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .section--two_column_layout_text_image .section-title{font-family:"Brandon Bold";font-size:20px}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .section--two_column_layout_text_image .flexcol.imageCol{margin-top:0;margin-bottom:0}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple{overflow:hidden;-webkit-box-align:unset;-ms-flex-align:unset;align-items:unset}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure{width:50%}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure .span-image{display:block;background-size:cover;background-position:center;background-repeat:no-repeat}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img1 .span-image{height:60vw}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img1 img{display:none}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img2{overflow:visible}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img2 .span-image{position:absolute;top:0;right:0;width:100%;height:95vw}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img2 img.image-block{display:none}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img2 img.logo-overlay{width:45vw;top:35vw;-webkit-transform:translateX(-50%) translateY(0);transform:translateX(-50%) translateY(0)}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img3{width:65%;z-index:10;min-height:90vw}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img3 .span-image{display:block;width:100%;height:100%;position:absolute;top:0;left:0}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img3 img.image-block{display:none}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img3 figcaption{position:relative}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img3 figcaption .image-text{padding:30px 20px}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img3 figcaption .image-text h2{font-size:2.5vh;margin:0 0 1vh}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img3 figcaption .image-text p{font-size:1.75vh}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img3 figcaption .image-text p:last-child{margin-bottom:0}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img4{width:35%;overflow:visible;z-index:30}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img4 .span-image{position:absolute;bottom:0;right:0;width:105%;height:85%}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img4 img.image-block{display:none}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .section.section--buttons{padding:45px 15vw}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-buttons-row .section-buttons .button-wrap{margin-bottom:15px}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-buttons-row .section-buttons .button-wrap:last-child{margin-bottom:0}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-buttons-row .section-buttons .button-wrap .button-traditional{padding:8px 15px 5px;font-size:16px}
 .site-header-mobile .mobileNav .new-nav-v2.desktop-navigation li.v-menu-item .menu-link,.site-header-mobile .mobileNav .right .nav-item .navlink{font-size:22px !important}
 .site-header-mobile .mobileNav .new-nav-v2.desktop-navigation .mega-menu .mega-menu-content .menu-col{width:100% !important}
 }@media screen and (max-width:819px){.text-and-image-blocks .gallerycol.mapCol,.text-and-image-blocks .mscol.half.even .gallerycol.mapCol,.text-and-image-blocks .mscol.half.image-position-right .gallerycol.mapCol{border-radius:0 0 0 0 !important}
