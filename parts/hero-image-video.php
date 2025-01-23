@@ -30,6 +30,7 @@ if($is_default_slide) { ?>
 	$has_red_tag = false;
 
 	$status = get_field('registration_status');
+
 	$registerLink = get_field('registrationLink');
 	$regTarget = get_field('registrationLinkTarget');
 
@@ -217,22 +218,31 @@ if($is_default_slide) { ?>
 		<?php if($has_red_tag) { ?>
 		
 		<?php if($status){ ?>
-
-
 			<?php if ($status=='open') { ?>
-				<?php if ($registerLink) { ?>
-					<div class="stats open teaser"><a href="<?php echo $registerLink['url']; ?>" target="<?php echo $registerTarget ?>" class="registerBtn"><?php echo 'register' ?></a></div>
+				<?php 
+        $register_link = '';
+        $regTarget = ( get_field('registrationLinkTarget', $post_id) ) ? true : false;
+        $registerTarget = ($regTarget) ? '_blank' : '_self';
+        if( $registerLink ) {
+          if( is_array($registerLink) ) {
+            $register_link = ( isset($registerLink['url']) && $registerLink['url'] ) ? $registerLink['url'] : '';
+          } else {
+            if( filter_var($registerLink, FILTER_VALIDATE_URL) ) {
+              $register_link = $registerLink;
+            }
+          }
+        }
+        if ($registerLink) { ?>
+					<div class="stats open teaser"><a href="<?php echo $register_link; ?>" target="<?php echo $registerTarget ?>" class="registerBtn"><?php echo 'register' ?></a></div>
 				<?php } ?>
 			<?php } else if($status=='closed') { ?>
-				<!-- <div class="stats closed">SOLD OUT</div> -->
-				<?php //if( !is_singular('build-your-own-boat-competition') ) { ?>
-					<div class="stats closed teaser"><a href="" class="registerBtn">SOLD OUT</a></div>
-				<?php //} ?>
+				<div class="stats closed teaser"><span class="registerBtn">SOLD OUT</span></div>
 			<?php } else if($status=='custom') { ?>
 
-				<?php if ($status_custom_message) { ?>
-				<!-- <div class="stats closed"><?php echo $status_custom_message ?></div> -->
-				<div class="stats closed teaser"><a href="" class="registerBtn"><?php echo $status_custom_message ?></a></div>
+				<?php 
+        $status_custom_message = get_field('status_custom_message', $post_id);
+        if ( $status_custom_message ) { ?>
+				<div class="stats closed teaser"><span class="registerBtn"><?php echo $status_custom_message ?></span></div>
 				<?php } ?>
 
 			<?php } ?>

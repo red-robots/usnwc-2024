@@ -1,4 +1,5 @@
 <?php    
+    $current__post_id = get_the_ID();
     $args = array(
       'posts_per_page'  => 3,
       'post_type'       => $post_type,
@@ -6,6 +7,7 @@
       'meta_key' => 'start_date',
       'orderby' => 'meta_value_num',
       'order' => 'ASC',
+      'post__not_in'=>array($current__post_id),
       'meta_query'      => array(
         'relation' => 'OR',
         array(
@@ -22,7 +24,6 @@
         ),
       )
     );
-
 
     $posts = get_posts($args);
     $title_center_no_line = (isset($center_no_line) && $center_no_line) ? ' title-center-no-line':'';

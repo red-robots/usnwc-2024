@@ -2591,18 +2591,6 @@ body.scrolled {
 section.homepage-hero {
   overflow: hidden;
 }
-// body.logged-in.admin-bar,
-// body.logged-in.admin-bar.subpage .site-header {
-//   @media screen and (min-width: 820px) {
-//     top: 32px!important;
-//   }
-// }
-body.home.logged-in.admin-bar .site-header {
-  @media screen and (min-width: 820px) {
-    top: 32px!important;
-  }
-}
-
 body.logged-in.admin-bar.scrolled:has(#banner) .site-header,
 body.logged-in.admin-bar.subpage.scrolled:has(#banner) .site-header,
 body.logged-in.admin-bar.subpage.scrolled .site-header {
@@ -2617,7 +2605,7 @@ body.logged-in.admin-bar.subpage {
       .site-header {top: 0!important;}
 			&.scrolled .site-header,
 			&.scrolled .site-header.scrolling,
-			.site-header.scrolling {top:32px!important;}
+			.site-header.scrolling {top:32px!important;background-color:#FFF!important;}
     }
   }
 }
@@ -3336,5 +3324,76 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
     }
   }
 }
-
+.site-header .navbar,
+.site-header .navbar .flexer {
+	min-height: 80px;
+}
+.site-header.mouseover {
+	.redtag {
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+.hero-wrapper .stats.teaser {
+	@media screen and (min-width: 961px) {
+		visibility: hidden;
+		pointer-events: none;
+	}
+}
+.redtag {
+	position: absolute;
+	top: 80px!important;
+	left: 0;
+	z-index: 50;
+	box-shadow: -12px 8px 17px rgba(0,0,0,.3);
+	transition: all ease .3s;
+	.registerBtn {
+		display: inline-block;
+		text-decoration: none;
+		color: #FFF!important;
+		text-transform: uppercase;
+		font-family: $font_secondary;
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 50px;
+		background: $red;
+		height: 50;
+		padding: 0 35px;
+		width: 100%;
+		text-align: center;
+		position: relative;
+		bottom: 0;
+		left: 0;
+		@include tab() {
+			width: auto;
+			&:after {
+				content:"";
+				display: block;
+				width: 0;
+				height: 0;
+				border-left: 28px solid $red;
+				border-top: 25px solid transparent;
+				border-bottom: 25px solid transparent;
+				position: absolute;
+				top: 0;
+				right: -28px;
+				transition: all ease .3s;
+			}
+		}
+	}
+	span.registerBtn {
+		pointer-events: none;
+	}
+	a.registerBtn {
+		&:hover, &:focus {
+			background: #000;
+			&:after {
+				border-left-color: #000;
+			}
+		}
+	}
+}
+body.logged-in.admin-bar.scrolled .redtag {
+	top: 112px !important;
+}
 

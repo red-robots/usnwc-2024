@@ -3008,8 +3008,8 @@ body.page-template-page-stories .select2-container--default .select2-results__op
 .content-area-full.post-type-dining .post-hero-image .stats.closed,.content-area-full.instruction-page .post-hero-image .stats.closed{text-align:center;padding:11px 20px 10px;background:rgba(186,13,48,.9)}
 .content-area-full.post-type-dining .post-hero-image .stats.open,.content-area-full.instruction-page .post-hero-image .stats.open{text-align:left}
 .content-area-full.post-type-dining .registerBtn,.content-area-full.instruction-page .registerBtn{display:inline-block;text-decoration:none;color:#fff;text-transform:uppercase;font-family:"Lato",sans-serif;font-size:18px;font-weight:400;line-height:50px;background:#ba0d30;height:52px;padding:0 35px;position:relative;width:100%;text-align:center}
-.content-area-full.post-type-dining .registerBtn:hover,.content-area-full.instruction-page .registerBtn:hover{background:#000}
-.content-area-full.post-type-dining .registerBtn:hover:after,.content-area-full.instruction-page .registerBtn:hover:after{border-left-color:#000}
+.content-area-full.post-type-dining a.regiserBtn:hover,.content-area-full.post-type-dining a.regiserBtn:focus,.content-area-full.instruction-page a.regiserBtn:hover,.content-area-full.instruction-page a.regiserBtn:focus{background:#000}
+.content-area-full.post-type-dining a.regiserBtn:hover:after,.content-area-full.post-type-dining a.regiserBtn:focus:after,.content-area-full.instruction-page a.regiserBtn:hover:after,.content-area-full.instruction-page a.regiserBtn:focus:after{border-left-color:#000}
 .hero-register-button .stats{width:100%;z-index:110;color:#fff;text-transform:uppercase;font-family:"Lato",sans-serif;font-size:18px;font-weight:400;line-height:1;letter-spacing:1px;-webkit-transition:all ease .3s;transition:all ease .3s}
 .hero-register-button .stats.closed{text-align:left}
 .hero-register-button .stats.open{text-align:left}
@@ -5410,6 +5410,14 @@ section.full-bleed-promo.rounded_with_padding img.poster-mobile{display:none}
 .carousel-activities-mobile .swiper-container .swiper-slide .info-flex{position:absolute;left:0;bottom:0;width:100%;height:100%;text-align:center;z-index:10;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:20px}
 .carousel-activities-mobile .swiper-container .swiper-slide .info-flex:after{content:"";display:block;width:100%;height:100%;position:absolute;left:0;bottom:0;background:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0)),to(rgba(0,0,0,0.65)));background:linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,0.65) 100%)}
 .carousel-activities-mobile .swiper-container .swiper-slide .info-flex .title{font-size:32px !important;line-height:1.2;color:#fff;position:relative;z-index:5}
+.site-header .navbar,.site-header .navbar .flexer{min-height:80px}
+.site-header.mouseover .redtag{opacity:0;pointer-events:none}
+.redtag{position:absolute;top:80px !important;left:0;z-index:50;-webkit-box-shadow:-12px 8px 17px rgba(0,0,0,.3);box-shadow:-12px 8px 17px rgba(0,0,0,.3);-webkit-transition:all ease .3s;transition:all ease .3s}
+.redtag .registerBtn{display:inline-block;text-decoration:none;color:#fff !important;text-transform:uppercase;font-family:"Lato",sans-serif;font-size:18px;font-weight:400;line-height:50px;background:#ba0d30;height:50;padding:0 35px;width:100%;text-align:center;position:relative;bottom:0;left:0}
+.redtag span.registerBtn{pointer-events:none}
+.redtag a.registerBtn:hover,.redtag a.registerBtn:focus{background:#000}
+.redtag a.registerBtn:hover:after,.redtag a.registerBtn:focus:after{border-left-color:#000}
+body.logged-in.admin-bar.scrolled .redtag{top:112px !important}
 body.enchilada .banner-bottom.svgphp svg{fill:#fef9e7}
 body.enchilada .main-description{color:#7f7c73}
 body.enchilada #pageTabs a,body.enchilada .title-w-icon h2,body.enchilada h2.stitle,body.enchilada .stitle,body.enchilada .text-and-image-blocks .textcol .mstitle,body.enchilada .sectionTitle,body.enchilada .information-tabs-wrap{font-family:novecento-sans-narrow}
@@ -5973,6 +5981,8 @@ body.page-template-page-salesforce .gform_wrapper{padding-left:5vw;padding-right
 .buttons-section-wrapper{margin-top:70px;margin-bottom:70px}
 .two-column-layout-vist .flex-wrapper{min-height:450px}
 .two-column-layout-vist.twocol .flexcol.textwrap .inner{padding-left:5vw;padding-right:5vw}
+.redtag .registerBtn{width:auto}
+.redtag .registerBtn:after{content:"";display:block;width:0;height:0;border-left:28px solid #ba0d30;border-top:25px solid transparent;border-bottom:25px solid transparent;position:absolute;top:0;right:-28px;-webkit-transition:all ease .3s;transition:all ease .3s}
 }@media screen and (min-width:820px){#banner.taxonomy-banner .static-banner img.desktop{display:block}
 #banner.taxonomy-banner .static-banner img.mobile{display:none}
 .post-type-entries .imagediv.mobile{display:none}
@@ -6008,13 +6018,13 @@ body.subpage .site-header .navbar .logo img{-webkit-filter:invert(1);filter:inve
 body.subpage .site-content{padding-top:0}
 body.logged-in.admin-bar.scrolled .film-event-status{top:112px}
 body.logged-in.admin-bar.subpage .site-header{top:0 !important}
-body.logged-in.admin-bar.subpage .site-header .navbar{top:32px !important;background-color:#fff}
+body.logged-in.admin-bar.subpage .site-header .navbar{top:32px !important}
+body.logged-in.admin-bar.subpage:not(.page-template-page-bike-ranch) .site-header .navbar{background-color:#fff !important}
 body.logged-in.admin-bar.scrolled .hero-wrapper .stats{top:160px}
 .flexibleContentWrap .two-columns-block.text-and-image-blocks .image-position-right,.flexibleContentWrap .two-columns-block.text-and-image-blocks .half.even.image-position-right{-webkit-box-orient:horizontal !important;-webkit-box-direction:normal !important;-ms-flex-direction:row !important;flex-direction:row !important}
-body.home.logged-in.admin-bar .site-header{top:32px !important}
 body.logged-in.admin-bar.scrolled:has(#banner) .site-header,body.logged-in.admin-bar.subpage.scrolled:has(#banner) .site-header,body.logged-in.admin-bar.subpage.scrolled .site-header{top:32px !important}
 body.logged-in.admin-bar:has(#banner) .site-header,body.logged-in.admin-bar.subpage:has(#banner) .site-header{top:0 !important}
-body.logged-in.admin-bar:has(#banner).scrolled .site-header,body.logged-in.admin-bar:has(#banner).scrolled .site-header.scrolling,body.logged-in.admin-bar:has(#banner) .site-header.scrolling,body.logged-in.admin-bar.subpage:has(#banner).scrolled .site-header,body.logged-in.admin-bar.subpage:has(#banner).scrolled .site-header.scrolling,body.logged-in.admin-bar.subpage:has(#banner) .site-header.scrolling{top:32px !important}
+body.logged-in.admin-bar:has(#banner).scrolled .site-header,body.logged-in.admin-bar:has(#banner).scrolled .site-header.scrolling,body.logged-in.admin-bar:has(#banner) .site-header.scrolling,body.logged-in.admin-bar.subpage:has(#banner).scrolled .site-header,body.logged-in.admin-bar.subpage:has(#banner).scrolled .site-header.scrolling,body.logged-in.admin-bar.subpage:has(#banner) .site-header.scrolling{top:32px !important;background-color:#fff !important}
 body.logged-in.admin-bar:has(#banner).page-template-page-bike-ranch.subpage.scrolled .site-header,body.logged-in.admin-bar.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling{top:32px !important}
 .bike-ranch-sections .section--fullwidth_image figure figcaption h2{font-size:40px}
 }@media(min-width:820px)and (min-width:820px){#section-whattowear.half .model{width:35%}
@@ -6079,6 +6089,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .new-nav-v2.desktop-navigation .mega-menu .mega-menu-content.count-1{display:block !important;width:100%;text-align:center}
 .new-nav-v2.desktop-navigation .mega-menu .mega-menu-content.count-1 .menu-col{width:100% !important;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .section-upcoming_events.events--film-series .flexwrap .infobox{width:25%}
+.hero-wrapper .stats.teaser{visibility:hidden;pointer-events:none}
 .bike-ranch-sections .section--fullwidth_image figure{padding-bottom:55%}
 }@media screen and (min-width:1025px){#primary .upcoming-posts .entry{width:33.333%}
 }@media(min-width:1200px){section.route-details .flexcol{width:25%}

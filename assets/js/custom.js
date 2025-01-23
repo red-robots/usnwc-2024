@@ -6,7 +6,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 
 /**
  *	Custom jQuery Scripts
- *	
+ *
  *	Developed by: Lisa DeBona
  */
 jQuery(document).ready(function ($) {
@@ -893,7 +893,7 @@ jQuery(document).ready(function ($) {
     });
   });
   /* Load More Entries:
-  	 - Race Series 
+  	 - Race Series
   */
 
   $(document).on("click", "#loadMoreEntries", function (e) {
@@ -1119,11 +1119,11 @@ jQuery(document).ready(function ($) {
   //     scrollTop: target.offset().top - adjustment
   //   }, 1000, function() {
   //     target.focus();
-  //     if (target.is(":focus")) { 
+  //     if (target.is(":focus")) {
   //       return false;
   //     } else {
-  //       target.attr('tabindex','-1'); 
-  //       target.focus(); 
+  //       target.attr('tabindex','-1');
+  //       target.focus();
   //     };
   //   });
   // }
@@ -1319,7 +1319,7 @@ jQuery(document).ready(function ($) {
   }
   /*===============================
     Today's Snapshot (per location)
-    Pop-ups information 
+    Pop-ups information
   ===============================*/
   //Today's Snapshot (Hours > Activity Schedule) pop-up
 
@@ -1461,6 +1461,13 @@ jQuery(document).ready(function ($) {
           }
         });
       }
+    }
+  }
+
+  if ($('.hero-wrapper .stats.teaser').length) {
+    if ($('#masthead div.navbar .stats.teaser').length == 0) {
+      $('.hero-wrapper .stats.teaser').clone().appendTo('#masthead div.navbar');
+      $('#masthead div.navbar .stats.teaser').addClass('redtag');
     }
   }
 

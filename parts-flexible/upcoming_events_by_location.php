@@ -1,6 +1,7 @@
 <?php if( get_row_layout() == 'upcoming_events_by_location' ) { ?>
 
   <?php 
+  $current__post_id = get_the_ID();
   $section_title = get_sub_field('section_title');
   $show_start_date = get_sub_field('show_start_date');
   $selected_post_types = get_sub_field('post_types');
@@ -12,9 +13,10 @@
       'posts_per_page'  => 3,
       'post_type'       => $selected_post_types,
       'post_status'     => 'publish',
-      'meta_key' => 'start_date',
-      'orderby' => 'meta_value_num',
-      'order' => 'ASC',
+      'meta_key'        => 'start_date',
+      'orderby'         => 'meta_value_num',
+      'order'           => 'ASC',
+      'post__not_in'    => array($current__post_id),
       'meta_query'      => array(
         'relation' => 'OR',
         array(
@@ -111,7 +113,7 @@
               $image = get_field('thumbnail_image', $pid);
             }
             ?>
-            <div class="infobox">
+            <div class="infobox infobox-pid-<?php echo $pid ?>">
               <div class="inside">
                 
                 <?php if ( get_post_type() == 'festival' ) { 
