@@ -6305,6 +6305,8 @@ body.home .homerow .imagebox a .title{font-size:6vw;line-height:1.1;padding:0 10
 .site-header-mobile .today--dropdown .inner-info .info-today-schedule ul.items li:last-child{margin-bottom:0}
 .site-header-mobile .today--dropdown .tlabel{text-transform:uppercase;font-size:16px}
 .site-header-mobile .today--dropdown .tVal{font-size:20px}
+.site-header-mobile.menu-open .mobile-nav-wrapper.open{z-index:100010}
+.site-header-mobile.menu-open .site-header-flex{z-index:100015}
 body.menu-open{overflow:hidden}
 body.subpage:not(.page-template-page-bike-ranch){padding-top:70px}
 body.subpage:not(.page-template-page-bike-ranch) .site-header-mobile{-webkit-box-shadow:0 5px 10px rgba(0,0,0,.05);box-shadow:0 5px 10px rgba(0,0,0,.05)}

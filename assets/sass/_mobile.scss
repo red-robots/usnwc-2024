@@ -428,9 +428,13 @@
       }
     }
   }
-  .site-header-mobile.menu-open .mobileRedTag {
-    visibility: hidden;
-    pointer-events: none;
+  .site-header-mobile.menu-open {
+    .mobile-nav-wrapper.open {
+      z-index: 100010;
+    }
+    .site-header-flex {
+      z-index: 100015;
+    }
   }
   body.menu-open {
     overflow: hidden;
