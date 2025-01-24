@@ -1498,6 +1498,10 @@ jQuery(document).ready(function ($) {
   if ($('.flexibleContentWrap').length) {
     $('.flexibleContentWrap > *').last().addClass('last-element-section');
   }
+
+  if ($('.flexible-content-wrapper').length) {
+    $('.flexible-content-wrapper > *').last().addClass('last-element-section');
+  }
 }); // END #####################################    END
 "use strict";
 

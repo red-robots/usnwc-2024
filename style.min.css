@@ -4594,6 +4594,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .activity-schedule-modal .schedule-container.half{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .activity-schedule-modal .schedule-container.half .fxcol{width:100%}
 .flexible-content-wrapper{margin-top:100px}
+.flexible-content-wrapper .last-element-section{margin-bottom:0}
 .section-upcoming_events{margin-bottom:70px}
 .section-upcoming_events .wrapper{max-width:1000px;width:100%;margin:0 auto}
 .section-upcoming_events .buttonMiddle{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin:50px 0}
@@ -6065,6 +6066,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-upcoming_events .wrapper{max-width:80vw}
 .section-upcoming_events .flexwrap .infobox{width:33.333%}
 .section-two_column_row{margin-top:90px;margin-bottom:90px}
+.section-two_column_row.last-element-section{margin-bottom:0}
 .section-two_column_row .flexwrap{min-height:520px}
 .section-cards_bottom_text .wrapper{max-width:85vw}
 .cardsContainer .infocard{width:33.333%}

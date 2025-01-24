@@ -18878,6 +18878,9 @@ body.subpage.single.single-activity {
 //REPEATABLE CONTENT
 .flexible-content-wrapper {
   margin-top: 100px;
+  .last-element-section {
+    margin-bottom: 0;
+  }
 }
 .section-upcoming_events {
   margin-bottom: 70px;
@@ -19094,6 +19097,9 @@ body.subpage.single.single-activity {
   @include mid {
     margin-top: 90px;
     margin-bottom: 90px;
+    &.last-element-section {
+      margin-bottom: 0;
+    }
   }
   .flexwrap {
     display: flex;
