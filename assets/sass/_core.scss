@@ -2229,6 +2229,11 @@ body.subpage {
 	&.pageHasBanner .content-default {
 		min-height: 20em;
 	}
+  &:has(.flexible-content-wrapper) {
+    .content-default {
+      padding-bottom: 15px;
+    }
+  }
 }
 body.search {
 	.page-header {
