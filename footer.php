@@ -1,22 +1,8 @@
 	</div><!-- #content -->
 	
 	<?php  
-	// $address = get_field("address","option");
-	// $phone = get_field("phone","option");
-	// $email = get_field("email","option");
-	// $social_media = get_social_links();
-	$links[] = get_field("group1","option");
-	// $links[] = get_field("group2","option");
-	$footLinks = array();
-	if($links) {
-		foreach($links as $n) {
-			if($n['footer_copy'] && $n['links']) {
-				$footLinks[] = $n;
-			}
-		}
-	}
-	$subscribe = get_field("group3","option");
   $footLogo = get_field("footLogo","option");
+  $footerLinks = get_field("group1","option");
 	?>
 	<footer id="colophon" class="site-footer" role="contentinfo">
 			
@@ -27,51 +13,26 @@
         </div>
         <?php } ?>
 				      
-					
-
-					<?php if ($footLinks) { ?>
-						<?php foreach ($footLinks as $e) { 
-							$c_title = ( isset($e['title']) ) ? $e['title'] : '';
-              $c_links = ( isset($e['links']) ) ? $e['links'] : '';
-							$link = (isset($e['foot_parent_link']['url']) && $e['foot_parent_link']['url']) ? $e['foot_parent_link']['url'] : '';
-							$linkTarget = (isset($e['foot_parent_link']['target']) && $e['foot_parent_link']['target']) ? $e['foot_parent_link']['target'] : '_self';
-							$link_open = '';
-							$link_close = '';
-							if($link) {
-								$link_open = '<a class="pagelink" href="'.$link.'" target="'.$linkTarget.'">';
-								$link_close = '</a>';
-							}
-  						if ($c_links) { ?>
-  						  <div class="footcol footlinks">
-  								<ul class="flinks">
-  									<?php foreach ($c_links as $a) { 
-  										$link = $a['link'];
-  						                $pageTitle = ( isset($link['title']) && $link['title'] ) ? $link['title'] : '';
-  						                $pageLink = ( isset($link['url']) && $link['url'] ) ? $link['url'] : '';
-  						                $target = ( isset($link['target']) && $link['target'] ) ? $link['target'] : '_self';  ?>
-  						                <?php if ($pageTitle && $pageLink) { ?>
-  						                	<li><a href="<?php echo $pageLink ?>" target="<?php echo $target ?>"><?php echo $pageTitle ?></a></li>
-  						            	<?php } ?>
-  									<?php } ?>
-  								</ul>
-  						  </div>
+				
+      <?php if ($footerLinks) { 
+        $links = (isset($footerLinks['links']) && $footerLinks['links']) ? $footerLinks['links'] : '';
+        if($links) { ?>
+        <div class="footcol footlinks">
+          <ul class="flinks">
+            <?php foreach ($links as $a) { 
+              $link = $a['link'];
+              $pageTitle = ( isset($link['title']) && $link['title'] ) ? $link['title'] : '';
+              $pageLink = ( isset($link['url']) && $link['url'] ) ? $link['url'] : '';
+              $target = ( isset($link['target']) && $link['target'] ) ? $link['target'] : '_self';  ?>
+              <?php if ($pageTitle && $pageLink) { ?>
+                <li><a href="<?php echo $pageLink ?>" target="<?php echo $target ?>"><?php echo $pageTitle ?></a></li>
               <?php } ?>
-						<?php } ?>
-
-					<?php } ?>
-
-					
+            <?php } ?>
+          </ul>
+        </div>
+        <?php } ?>
+      <?php } ?>
 			</div>
-			
-		
-			<!-- <div class="footer-disclaimer">
-				<?php /*foreach( $footLinks as $e ) { 
-							$footer_copy = $e['footer_copy'];
-
-							echo $footer_copy;
-						}*/
-					?>
-			</div> -->
 		
 	</footer><!-- #colophon -->
 	

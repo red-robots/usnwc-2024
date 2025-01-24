@@ -2106,20 +2106,6 @@ h2.gform_title,.faqs .titlediv h2,h2.stitle,.stitle,.h2,.title-wrapper h2.sectio
 .title-wrapper:has(.midwrapper).no-section-text .section-title{padding-bottom:15px}
 .title-wrapper:has(.midwrapper) .inner{border-bottom:2px solid #707070}
 .title-wrapper:has(.midwrapper) .section-text{margin-top:5px;font-size:18px;line-height:1.3}
-.btn-sm{cursor:pointer;display:inline-block;text-decoration:none !important;color:#5a5959;padding:7px 25px;border:1px solid #a2a2a2;overflow:hidden;position:relative;font-size:20px;font-weight:600;border-radius:0;-webkit-appearance:none;-webkit-box-shadow:none;box-shadow:none;min-width:85px}
-.btn-sm.popdata,.btn-sm.xs{padding:7px 15px 6px;font-size:15px;line-height:1.2}
-.btn-sm.wide{padding:7px 35px}
-.btn-sm.white{color:#fff;border-color:#fff}
-.btn-sm span{position:relative;z-index:5}
-.btn-sm:before{content:"";display:block;width:150%;height:100%;background:#ba0d30;-webkit-transform:translateX(-100%) skew(-45deg);transform:translateX(-100%) skew(-45deg);position:absolute;top:0;left:-20%;-webkit-transition:all ease .5s;transition:all ease .5s}
-.btn-sm:hover{color:#fff;border-color:#ba0d30;text-decoration:none !important}
-.btn-sm:hover:before{-webkit-transform:translateX(0) skew(-45deg);transform:translateX(0) skew(-45deg)}
-.btn-sm.white:hover{color:#fff;border-color:#ba0d30}
-.btn-sm.white:hover:before{border-color:#ba0d30}
-.btn-sm.white:hover span{color:#fff !important}
-.btn-sm.red{background-color:#ba0d30;border-color:#ba0d30;color:#fff}
-.btn-sm.red:hover{border-color:#000}
-.btn-sm.red:hover:before{background:#000}
 .btn-link{color:#ba0d30;display:inline-block;text-decoration:none}
 .textcol .buttonGroup{margin-top:35px}
 .textcol .buttonGroup .buttondiv{margin:0 0 15px !important}
@@ -2495,7 +2481,9 @@ h1.page-title span:after{content:"";display:block;width:30%;height:2px;backgroun
 .title-w-icon{text-align:center;padding-top:30px;padding-bottom:35px}
 .title-w-icon h2{font-family:"Lato",sans-serif;font-weight:400;font-size:25px;line-height:1.2;text-transform:uppercase;letter-spacing:2px;margin:0}
 .title-w-icon .title-icon span{display:inline-block;width:30px;height:30px;background-size:100%;background-position:center;background-repeat:no-repeat}
-input.button,button.button,a.button{display:inline-block;padding:7px 25px 6px;border-radius:100px;color:#5a5959;border:1px solid #a2a2a2;background-color:#fff;font-family:"Brandon";font-size:16px;text-decoration:none !important;min-width:120px;text-align:center;text-transform:uppercase}
+.btn-sm,.btn-default,.section-image-cards .button.button-type-button,.button-pill,input.button,button.button,a.button{font-family:"Brandon" !important;font-size:13px !important;line-height:1.2 !important;letter-spacing:.05em !important;text-transform:uppercase;border-radius:100px;background-color:transparent;padding:7px 15px 6px;color:#5a5959;border:1px solid #a2a2a2;text-decoration:none !important}
+.btn-sm:before,.btn-default:before,.section-image-cards .button.button-type-button:before,.button-pill:before{display:none !important}
+.btn-sm:hover,.btn-sm:focus,.btn-default:hover,.btn-default:focus,.section-image-cards .button.button-type-button:hover,.section-image-cards .button.button-type-button:focus,.button-pill:hover,.button-pill:focus{text-decoration:none !important;border-color:#ba0d30 !important;background:#ba0d30 !important;color:#fff !important}
 input.button:hover,input.button:focus,button.button:hover,button.button:focus,a.button:hover,a.button:focus{color:#fff !important;border-color:#ba0d30;background-color:#ba0d30}
 input.button.uppercase,button.button.uppercase,a.button.uppercase{text-transform:uppercase !important}
 input.button.button-white,button.button.button-white,a.button.button-white{border:none !important;text-transform:uppercase;background-color:#fff;color:#000}
@@ -2503,11 +2491,8 @@ input.button.button-white:hover,input.button.button-white:focus,button.button.bu
 input.button.button-pill,button.button.button-pill,a.button.button-pill{background-color:#fff;color:#444}
 input.button.button-pill-outline-white,button.button.button-pill-outline-white,a.button.button-pill-outline-white{background-color:transparent;color:#fff;border:1px solid #fff;padding:8px 25px 6px}
 input.button.button-pill-outline-white:hover,input.button.button-pill-outline-white:focus,button.button.button-pill-outline-white:hover,button.button.button-pill-outline-white:focus,a.button.button-pill-outline-white:hover,a.button.button-pill-outline-white:focus{border-color:#ba0d30;background-color:#ba0d30}
-.button-rounded{font-family:"Brandon";font-size:16px;text-transform:uppercase;border-radius:100px;background-color:#ba0d30;color:#fff;padding:12px 40px 10px}
+.button-rounded{font-family:"Brandon" !important;font-size:16px;line-height:1.2;text-transform:uppercase;border-radius:100px;background-color:#ba0d30;color:#fff;padding:12px 40px 10px}
 .button-rounded:hover,.button-rounded:focus{color:#fff;text-decoration:none;background-color:#000}
-.btn-sm,.btn-default,.section-image-cards .button.button-type-button,.button-pill{font-family:"Brandon" !important;font-size:13px !important;line-height:1.2 !important;letter-spacing:.05em !important;text-transform:uppercase;border-radius:100px;background-color:transparent;padding:7px 25px 6px;color:#5a5959;border:1px solid #a2a2a2;text-decoration:none !important}
-.btn-sm:before,.btn-default:before,.section-image-cards .button.button-type-button:before,.button-pill:before{display:none !important}
-.btn-sm:hover,.btn-sm:focus,.btn-default:hover,.btn-default:focus,.section-image-cards .button.button-type-button:hover,.section-image-cards .button.button-type-button:focus,.button-pill:hover,.button-pill:focus{text-decoration:none !important;border-color:#ba0d30 !important;background:#ba0d30 !important;color:#fff !important}
 .button-red{background-color:#ba0d30 !important}
 .button-red:hover,.button-red:focus{background:#000 !important}
 .button.button-type-link{padding:0;border:none !important;background-color:transparent !important;color:#5a5959 !important;font-family:"Brandon" !important;font-size:13px !important;line-height:1.2 !important;letter-spacing:.05em !important;text-transform:uppercase;padding:7px 0 6px !important;margin-left:8px;margin-right:8px;-webkit-transition:all ease .3s;transition:all ease .3s;position:relative}
@@ -4554,6 +4539,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .flexibleContentDiv.image-position-right .imageCol figure{border-top-left-radius:15px;border-bottom-left-radius:15px}
 .flexibleContentDiv.half .fxcol{width:100%}
 .menu-sections-repeatable .mscol{min-height:400px}
+.menu-sections-repeatable.last .mscol.last{margin-bottom:10px}
 .fb-static-images .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;height:100%}
 .fb-static-images figure{margin:0;width:100%;height:100%;position:relative}
 .fb-static-images figure img{width:100% !important;height:100% !important;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
@@ -4763,7 +4749,7 @@ body.modal-open{overflow:hidden}
 .stories-feeds-section .storyBlock figure{margin:0;position:relative;padding-bottom:110%;overflow:hidden;border-radius:10px;-webkit-transition:all ease 1s;transition:all ease 1s}
 .stories-feeds-section .storyBlock figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .stories-feeds-section .storyBlock .post-title{text-transform:uppercase;font-family:"Brandon Bold";font-size:15px;line-height:1.2;color:#000;margin:10px 0}
-.stories-feeds-section .storyBlock .button.button-pill{background-color:transparent;color:#707070;padidng:7px 20px 6px;font-size:13px !important;padding:6px 18px 6px}
+.stories-feeds-section .storyBlock .button.button-pill{background-color:transparent;color:#707070;font-size:13px !important;padding:6px 18px 6px}
 .stories-feeds-section .storyBlock .textwrap{overflow:hidden;height:0;opacity:0;-webkit-transform:translateY(-5vw);transform:translateY(-5vw);-webkit-transition:all ease .5s;transition:all ease .5s;pointer-events:none}
 .stories-feeds-section .storyBlock[data-width="50%"]{width:50%}
 .stories-feeds-section .storyBlock[data-width="50%"] figure{padding-bottom:60%}

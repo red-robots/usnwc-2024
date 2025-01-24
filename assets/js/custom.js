@@ -1486,6 +1486,14 @@ jQuery(document).ready(function ($) {
     // loop false also
     effect: 'slide'
   }, _defineProperty(_Swiper, "spaceBetween", 20), _defineProperty(_Swiper, "slidesPerView", 1), _defineProperty(_Swiper, "centeredSlides", true), _defineProperty(_Swiper, "slidesOffsetBefore", 0), _defineProperty(_Swiper, "grabCursor", true), _Swiper));
+
+  if ($('body.page-template-page-food-beverage #main section.menu-sections.menu-sections-repeatable').length) {
+    $('body.page-template-page-food-beverage #main section.menu-sections.menu-sections-repeatable').last().addClass('last');
+
+    if ($('body.page-template-page-food-beverage #main section.menu-sections.menu-sections-repeatable').last().find('.mscol').length) {
+      $('body.page-template-page-food-beverage #main section.menu-sections.menu-sections-repeatable').last().find('.mscol').last().addClass('last');
+    }
+  }
 }); // END #####################################    END
 "use strict";
 

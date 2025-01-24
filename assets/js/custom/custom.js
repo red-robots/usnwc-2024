@@ -1610,6 +1610,12 @@ var getGridSize = function() {
   })
 
 
-
+  if( $('body.page-template-page-food-beverage #main section.menu-sections.menu-sections-repeatable').length ) {
+    $('body.page-template-page-food-beverage #main section.menu-sections.menu-sections-repeatable').last().addClass('last');
+    if( $('body.page-template-page-food-beverage #main section.menu-sections.menu-sections-repeatable').last().find('.mscol').length ) {
+      $('body.page-template-page-food-beverage #main section.menu-sections.menu-sections-repeatable').last().find('.mscol').last().addClass('last');
+    }
+    
+  }
 
 });// END #####################################    END
