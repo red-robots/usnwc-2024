@@ -1627,6 +1627,12 @@ var getGridSize = function() {
   if( $('.hero-wrapper .stats.teaser').length ) {
     if( $('.mobileRedTag .stats').length==0 ) {
       $('.hero-wrapper .stats.teaser').clone().appendTo('.mobileRedTag');
+      setTimeout(function(){
+        var redTagHeight = $('.mobileRedTag').outerHeight();
+        if( $('.hero-wrapper').length ) {
+          $('.hero-wrapper').css('margin-top',redTagHeight+'px');
+        }
+      },50);
     }
   }
 
