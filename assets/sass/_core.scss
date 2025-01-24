@@ -21331,7 +21331,7 @@ body.logged-in.admin-bar {
         }
       }
     }
-		&.subpage:not(.page-template-page-bike-ranch) {
+		&.subpage:not(.page-template-page-bike-ranch):not(.page-template-page-about) {
 			.site-header .navbar {
 				background-color: #FFF!important;
 			}
