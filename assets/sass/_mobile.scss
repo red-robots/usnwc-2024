@@ -121,6 +121,9 @@
         transform: translateX(100vw);
         animation-duration: 0.6s;
         animation-name: fadeIn;
+        a {
+          text-decoration: none;
+        }
       }
       &.open {
         display: flex;

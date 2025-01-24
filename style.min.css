@@ -6235,6 +6235,7 @@ body.home .homerow .imagebox a .title{font-size:6vw;line-height:1.1;padding:0 10
 .site-header-mobile .mobile-nav-backdrop.open{display:block}
 .site-header-mobile .mobile-nav-wrapper{position:fixed;top:0;right:0;z-index:10000;width:100%;height:100vh;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;overflow:hidden;background:rgba(0,0,0,.95);-webkit-animation-duration:1s;animation-duration:1s}
 .site-header-mobile .mobile-nav-wrapper .mobileNav{opacity:0;-webkit-transition:all ease 1s;transition:all ease 1s;-webkit-transform:translateX(100vw);transform:translateX(100vw);-webkit-animation-duration:.6s;animation-duration:.6s;-webkit-animation-name:fadeIn;animation-name:fadeIn}
+.site-header-mobile .mobile-nav-wrapper .mobileNav a{text-decoration:none}
 .site-header-mobile .mobile-nav-wrapper.open{display:-webkit-box;display:-ms-flexbox;display:flex;right:0}
 .site-header-mobile .mobile-nav-wrapper.open .mobileNav{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}
 .site-header-mobile .mobileNav{width:100%;height:100%;overflow:auto;padding-top:150px}
