@@ -4305,6 +4305,8 @@ h1.page-title {
 input.button,
 button.button,
 a.button {
+  display: inline-block;
+  appearance: none;
   font-family: $font-brandon-regular!important;
   font-size: 13px!important;
   line-height: 1.2!important;
@@ -4316,6 +4318,12 @@ a.button {
   color: #5a5959;
   border: 1px solid #a2a2a2;
   text-decoration: none!important;
+  &:hover, &:focus {
+    text-decoration: none!important;
+    border-color: $red!important;
+    background: $red!important;
+    color: #FFF!important;
+  }
 }
 .btn-sm,
 .btn-default,
@@ -4324,40 +4332,13 @@ a.button {
   &:before {
     display: none!important;
   }
-  &:hover, &:focus {
-    text-decoration: none!important;
-    border-color: $red!important;
-    background: $red!important;
-    color: #FFF!important;
-  }
 }
 
 input.button,
 button.button,
 a.button {
-  // display: inline-block;
-  // padding: 7px 25px 6px;
-  // border-radius: 100px;
-  // color: #5a5959;
-  // border: 1px solid #a2a2a2;
-  // background-color: #FFF;
-  // font-family: $font-brandon-regular;
-  // font-size: 16px;
-  // text-decoration: none!important;
-  // min-width: 120px;
-  // text-align: center;
-  // text-transform: uppercase;
-  &:hover, &:focus {
-    color: #FFF!important;
-    border-color: $red;
-    background-color: $red;
-  }
-  &.uppercase {
-    text-transform: uppercase!important;
-  }
   &.button-white {
     border: none!important;
-    text-transform: uppercase;
     background-color: #FFF;
     color: #000;
     &:hover, &:focus {
