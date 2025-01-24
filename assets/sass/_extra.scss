@@ -2614,7 +2614,7 @@ body.logged-in.admin-bar.subpage {
   body.home .full-bleed-promo {
     div.img {
       position: relative;
-      padding-bottom: 30vh;
+      padding-bottom: 50vh;
       img {
         display: block;
         width: 100%;
@@ -2644,6 +2644,11 @@ body.logged-in.admin-bar.subpage {
   }
 }
 
+@media screen and (max-width: 768px) {
+  body.home .full-bleed-promo div.img {
+    padding-bottom: 30vh;
+  }
+}
 
 .section-upcoming_events.events--film-series .flexwrap .infobox {
   @media screen and (min-width: 961px) {

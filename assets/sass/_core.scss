@@ -42,7 +42,7 @@ div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
     hyphens: none;
     page-break-inside: avoid;
 }
-* {
+html, body, *, ::before, ::after {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -1728,6 +1728,7 @@ section.homepage-hero {
 		color: #fff;
 		background-color: $red;
 		text-transform: uppercase;
+    text-decoration: none;
 		padding: 10px 15px;
 		border-radius: 150px;
 		letter-spacing: 2px;
@@ -1792,11 +1793,12 @@ section.full-bleed-promo {
 	}
 	.img {
 		width: 100%;
+    float: left;
 		position: relative;
 
 		img {
-
 			width: 100%;
+      float: left;
 		}
 		.grad {
 			width: 100%;
@@ -14108,6 +14110,9 @@ body.single-race .filter-wrapper {
 
 		}
 	}
+  .footlinks a {
+    text-decoration: none;
+  }
 	.logo {
 		width: 50px;
 		margin-bottom: 20px;
