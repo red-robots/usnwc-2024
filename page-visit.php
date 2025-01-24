@@ -24,7 +24,7 @@ get_header(); ?>
 		<?php endwhile; ?>
 
 
-		<section class="visit flexible-image-cards">
+		<section class="visit flexible-image-cards flexible-image-video-cards">
 			<?php
 
 			// Check value exists.
@@ -40,20 +40,85 @@ get_header(); ?>
                 <div class="tileWrapper">
     	            <?php foreach( $tile as $t ) {
   		            $title = $t['title'];
+                  $hero_type = $t['image_or_video'];
   		            $image = $t['image'];
+                  $videoURL = $t['video_url'];
   		            $description = $t['description'];
   		            $link = $t['link'];
                   $buttons = $t['buttons'];
   		            $span = $t['span'];
                   $span .= ($description) ? ' has-description':' no-description';
-                  if($image) { ?>
+                  if($image || $video_url) { ?>
       							<div class="tile <?php echo $span ?>">
                       <figure>
-                        <div class="image-wrapper">
-                          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-                          <?php if ($title) { ?>
-                          <h2><?php echo $title; ?></h2>
+                        <div class="image-wrapper feature--<?php echo $hero_type ?>">
+
+                          <?php if ($hero_type=='video') { ?>
+
+                            <?php if($videoURL) {
+                              $parts = parse_url($videoURL);
+                              parse_str($parts['query'], $query);
+                              ?>
+
+                              <div class="video-container">
+                              <?php /* YOUTUBE VIDEO */ ?>
+                              <?php if (strpos( strtolower($videoURL), 'youtube.com') !== false) {
+                                $youtubeId = '';
+
+                                /* if iframe */
+                                if (strpos( strtolower($videoURL), 'youtube.com/embed') !== false) {
+                                  $parts = extractURLFromString($videoURL);
+                                  $youtubeId = basename($parts);
+                                } else {
+                                  $youtubeId = (isset($query['v']) && $query['v']) ? $query['v']:''; 
+                                }
+
+                                if($youtubeId) {
+                                  $embed_url = 'https://www.youtube.com/embed/'.$youtubeId.'?version=3&rel=0&loop=0'; 
+                                  $mainImage = 'https://i.ytimg.com/vi/'.$youtubeId.'/maxresdefault.jpg'
+                                  ?>
+                                  <iframe
+                                    width="560"
+                                    height="315"
+                                    src="<?php echo $embed_url; ?>"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                ></iframe>
+
+                                <?php }  ?>
+                              <?php }  ?>
+
+                              <?php /* VIMEO VIDEO */ ?>
+                              <?php if( strpos( strtolower($videoURL), 'vimeo.com') !== false ) { 
+                                $vimeo_parts = explode("/",$videoURL);
+                                $parts = ($vimeo_parts && array_filter($vimeo_parts) ) ? array_filter($vimeo_parts) : '';
+                                $vimeoId = ($parts) ?  preg_replace('/\s+/', '', end($parts)) : '';
+                                $vimeoData = ($vimeoId) ? get_vimeo_data($vimeoId) : '';
+                                $data = json_decode( file_get_contents( 'https://vimeo.com/api/oembed.json?url=' . $videoURL ) );
+                                $vimeoImage = ($data) ? $data->thumbnail_url : '';
+                                ?>
+                                <?php if ($videoThumb) { ?>
+                                <span class="video-placeholder has-image" style="background-image:url('<?php echo $videoThumb['url'] ?>')"></span>    
+                                <?php } ?>  
+                                <iframe class="videoIframe iframe-vimeo" data-vid="vimeo" src="https://player.vimeo.com/video/<?php echo $vimeoId?>" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                              <?php } ?>
+                              </div>
+                            <?php } ?>
+
+                          <?php } else { ?>
+                            
+                            <?php if ($image) { ?>
+                              
+                              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                              <?php if ($title) { ?>
+                              <h2><?php echo $title; ?></h2>
+                              <?php } ?>
+
+                            <?php } ?>
+
                           <?php } ?>
+                       
                         </div>
 
                         <?php if ($description || $buttons) { ?>

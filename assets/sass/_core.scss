@@ -20698,6 +20698,107 @@ body.modal-open {
     }
   }
 }
+.flexibleContentWrap .fullwidth-video-section {
+  figure {
+    margin: 0 0;
+    position: relative;
+    .player {
+      display: block;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      border-radius: 100%;
+      border: 2px solid rgba(255, 255, 255,.65);
+      background: rgba(0,0,0,.75);
+      // background: rgba($red, .75);
+      z-index: 10;
+      transition: all ease .3s;
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-top: 30px solid transparent;
+        border-left: 50px solid #FFF;
+        border-bottom: 30px solid transparent;
+        position: absolute;
+        top: 50%;
+        left: 58%;
+        transform: translateX(-50%) translateY(-50%) scale(0.8);
+        transition: all ease .3s;
+      }
+    }
+    .video-placeholder {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all ease .3s;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      &.has-image {
+        &:before {
+          content:"";
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: rgba(0,0,0,.5);
+        }
+      }
+    }
+    .videopop {
+      display: block;
+      position: relative;
+      padding-bottom: 40vw;
+      background-color: #CCC;
+      overflow: hidden;
+      &:hover, &:focus {
+        .player {
+          background: rgba($red, .85);
+        }
+        .video-placeholder.has-image {
+          transform: scale(1.02);
+        }
+      }
+    }
+  }
+
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background-color: #000;
+    .video-placeholder.has-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%!important;
+      height: 100%!important;
+      border: 0;
+      z-index: 10;
+    }
+  }
+}
 
 .fullwidth-float-left,
 .faqs-group {

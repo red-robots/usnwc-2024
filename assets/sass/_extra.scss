@@ -1908,6 +1908,56 @@ section.visit.flexible-image-cards,
       }
     }
   }
+
+  &.flexible-image-video-cards {
+    .tile.full-bleed {
+      &.has-description {
+        figcaption {
+          div.text, div.buttons {
+            width: 100%;
+            text-align: center;
+          }
+          div.buttons {
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+    }
+    .feature--video {
+      padding-bottom: 0!important;
+      &:after {
+        display: none;
+      }
+      .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        background-color: #000;
+        .video-placeholder.has-image {
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%!important;
+          height: 100%!important;
+          border: 0;
+          z-index: 10;
+        }
+      }
+    }
+  }
+
 }
 
 #primary.buy-page.buy-page-new .access-pass-options {
