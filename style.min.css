@@ -4687,7 +4687,6 @@ section.route-details.route-details-new .flexcol:last-child{border-right:0}
 .section-pricing_cards .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-15px;margin-right:-15px}
 .section-pricing_cards .flexwrap .fxcol{width:100%;padding:15px}
 .section-pricing_cards .flexwrap.show1 .fxcol{width:100% !important}
-.section-pricing_cards .fxcol a.button{padding:7px 25px 5px;text-transform:uppercase}
 .section-pricing_cards .fxcol figure{margin:0 0 15px;padding-bottom:60%;position:relative;overflow:hidden;border-radius:15px}
 .section-pricing_cards .fxcol figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .section-pricing_cards .fxcol .details{margin-bottom:20px}
