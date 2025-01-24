@@ -7,7 +7,6 @@
     display: none!important;
   }
   .site-header-mobile {
-    display: block;
     position: fixed;
     top: 0;
     left: 0;
@@ -15,8 +14,13 @@
     height: 70px;
     z-index: 99999999;
     transition: all ease .3s;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
     &.menu-open {
-      height: 100%;
+      // height: 100%;
       background-color: transparent!important;
     }
     .site-header-flex {
@@ -26,12 +30,13 @@
       padding: 10px 30px;
       position: relative;
       z-index: 10001;
-      // background-color: rgba(0,0,0,.85);
+      width: 100%;
+      height: 100%;
     }
     .site-logo-mobile {
       display: inline-block;
       position: relative;
-      top: 2px;
+      top: 4px;
       img {
         width: 50px;
         height: auto;
@@ -429,9 +434,7 @@
   body.subpage:not(.page-template-page-bike-ranch) {
     padding-top: 70px;
     .site-header-mobile {
-      // display: flex;
-      // flex-wrap: wrap;
-      // align-items: center;
+      box-shadow: 0 5px 10px rgba(0,0,0,.05);
       .site-header-flex {
         padding-top: 8px;
         padding-bottom: 7px;
@@ -501,10 +504,7 @@
 
 @media screen and (max-width: 782px) {
   body.logged-in.admin-bar .site-header-mobile {
-    padding-top: 50px;
-    .site-header-flex {
-      top: -4px;
-    }
+    top: 46px;
     .mobileNav {
       padding-top: 190px;
     }
