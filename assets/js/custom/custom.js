@@ -1625,7 +1625,18 @@ var getGridSize = function() {
   }
 
   if( $('#main .flexible-image-cards').length ) {
-    $('#main .flexible-image-cards > *').last().addClass('last-element-section');
+    var countDivs = $('#main .flexible-image-cards > *').length;
+    if(countDivs>1) {
+      $('#main .flexible-image-cards > *').last().addClass('last-element-section');
+    } else {
+      if(countDivs==1) {
+        if( $('#main .flexible-image-cards > *').first().hasClass('tileWrapper') ) {
+          $('#main .flexible-image-cards .tileWrapper > *').last().addClass('last-element-section');
+        } else {
+          $('#main .flexible-image-cards > *').addClass('last-element-section');
+        }
+      }
+    }
   }
 
   if( $('.hero-wrapper .stats.teaser').length ) {
