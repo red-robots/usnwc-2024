@@ -1503,6 +1503,10 @@ jQuery(document).ready(function ($) {
     $('.flexible-content-wrapper > *').last().addClass('last-element-section');
   }
 
+  if ($('#main .flexible-image-cards').length) {
+    $('#main .flexible-image-cards > *').last().addClass('last-element-section');
+  }
+
   if ($('.hero-wrapper .stats.teaser').length) {
     if ($('.mobileRedTag .stats').length == 0) {
       $('.hero-wrapper .stats.teaser').clone().appendTo('.mobileRedTag');

@@ -1910,6 +1910,9 @@ section.visit.flexible-image-cards,
   }
 
   &.flexible-image-video-cards {
+    .last-element-section {
+      margin-bottom: 10px;
+    }
     .tile.full-bleed {
       &.has-description {
         figcaption {
@@ -1934,7 +1937,7 @@ section.visit.flexible-image-cards,
         width: 100%;
         padding-bottom: 56.25%;
         background-color: #000;
-        .video-placeholder.has-image {
+        .video-placeholder {
           display: block;
           width: 100%;
           height: 100%;

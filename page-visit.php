@@ -43,6 +43,7 @@ get_header(); ?>
                   $hero_type = $t['image_or_video'];
   		            $image = $t['image'];
                   $videoURL = $t['video_url'];
+                  $videoThumb = $t['video_image'];
   		            $description = $t['description'];
   		            $link = $t['link'];
                   $buttons = $t['buttons'];
@@ -103,6 +104,9 @@ get_header(); ?>
                                 <?php } ?>  
                                 <iframe class="videoIframe iframe-vimeo" data-vid="vimeo" src="https://player.vimeo.com/video/<?php echo $vimeoId?>" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                               <?php } ?>
+                                <?php if ($videoThumb) { ?>
+                                <span class="video-placeholder" style="background-image:url('<?php echo $videoThumb['url'] ?>')"></span>    
+                                <?php } ?>  
                               </div>
                             <?php } ?>
 
