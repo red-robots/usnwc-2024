@@ -3398,6 +3398,13 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
 		}
 	}
 }
+.mobileRedTag {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  z-index: 10008;
+}
 body.logged-in.admin-bar.scrolled .redtag {
 	top: 112px !important;
 }

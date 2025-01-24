@@ -5404,6 +5404,7 @@ section.full-bleed-promo.rounded_with_padding img.poster-mobile{display:none}
 .redtag span.registerBtn{pointer-events:none}
 .redtag a.registerBtn:hover,.redtag a.registerBtn:focus{background:#000}
 .redtag a.registerBtn:hover:after,.redtag a.registerBtn:focus:after{border-left-color:#000}
+.mobileRedTag{position:absolute;top:70px;left:0;width:100%;z-index:10008}
 body.logged-in.admin-bar.scrolled .redtag{top:112px !important}
 body.enchilada .banner-bottom.svgphp svg{fill:#fef9e7}
 body.enchilada .main-description{color:#7f7c73}
