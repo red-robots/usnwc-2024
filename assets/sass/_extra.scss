@@ -3404,6 +3404,64 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
   left: 0;
   width: 100%;
   z-index: 10008;
+  span.registerBtn,
+  a.registerBtn {
+    display: block;
+    color: #FFF;
+    text-transform: uppercase;
+    font-family: $font_secondary;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 50px;
+    background: $red;
+    width: 100%;
+    text-align: center;
+    box-shadow: -12px 8px 17px rgba(0,0,0,.3);
+  }
+  span.registerBtn {
+    padding: 5px 35px;
+  }
+  a.registerBtn {
+    text-decoration: none;
+    height: 52px;
+    padding: 0 35px;
+    position: relative;
+    @include tab() {
+      width: auto;
+      &:before,&:after {
+        content:"";
+        display: block;
+        transition: all ease .3s;
+        position: absolute;
+        right: -12px;
+        width: 50px;
+          height: 50%;
+          background-color: $red;
+      }
+      &:before {
+        top: 0;
+        transform: skew(40deg);
+      }
+      &:after {
+        height: 51%;
+        bottom: 0;
+        transform: skew(-40deg);
+      }
+      &:hover {
+        background: #000;
+        &:before,&:after {
+          background-color: #000;
+        }
+      }
+    }
+  }
+}
+body.scrolled.logged-in.admin-bar,
+body.scrolled {
+  .mobileRedTag .stats {
+    position: relative!important;
+    top: 0;
+  }
 }
 body.logged-in.admin-bar.scrolled .redtag {
 	top: 112px !important;

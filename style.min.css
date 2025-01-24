@@ -2994,7 +2994,7 @@ body.page-template-page-stories .select2-container--default .select2-results__op
 .content-area-full.post-type-dining .registerBtn,.content-area-full.instruction-page .registerBtn{display:inline-block;text-decoration:none;color:#fff;text-transform:uppercase;font-family:"Lato",sans-serif;font-size:18px;font-weight:400;line-height:50px;background:#ba0d30;height:52px;padding:0 35px;position:relative;width:100%;text-align:center}
 .content-area-full.post-type-dining a.regiserBtn:hover,.content-area-full.post-type-dining a.regiserBtn:focus,.content-area-full.instruction-page a.regiserBtn:hover,.content-area-full.instruction-page a.regiserBtn:focus{background:#000}
 .content-area-full.post-type-dining a.regiserBtn:hover:after,.content-area-full.post-type-dining a.regiserBtn:focus:after,.content-area-full.instruction-page a.regiserBtn:hover:after,.content-area-full.instruction-page a.regiserBtn:focus:after{border-left-color:#000}
-.hero-register-button .stats{width:100%;z-index:110;color:#fff;text-transform:uppercase;font-family:"Lato",sans-serif;font-size:18px;font-weight:400;line-height:1;letter-spacing:1px;-webkit-transition:all ease .3s;transition:all ease .3s}
+.hero-register-button .stats{display:none;width:100%;z-index:110;color:#fff;text-transform:uppercase;font-family:"Lato",sans-serif;font-size:18px;font-weight:400;line-height:1;letter-spacing:1px;-webkit-transition:all ease .3s;transition:all ease .3s}
 .hero-register-button .stats.closed{text-align:left}
 .hero-register-button .stats.open{text-align:left}
 .hero-register-button .registerBtn{display:inline-block;text-decoration:none;color:#fff;text-transform:uppercase;font-family:"Lato",sans-serif;font-size:18px;font-weight:400;line-height:50px;background:#ba0d30;height:52px;padding:0 35px;position:relative;-webkit-box-shadow:-12px 8px 17px rgba(0,0,0,.3);box-shadow:-12px 8px 17px rgba(0,0,0,.3);width:100%;text-align:center}
@@ -5405,6 +5405,10 @@ section.full-bleed-promo.rounded_with_padding img.poster-mobile{display:none}
 .redtag a.registerBtn:hover,.redtag a.registerBtn:focus{background:#000}
 .redtag a.registerBtn:hover:after,.redtag a.registerBtn:focus:after{border-left-color:#000}
 .mobileRedTag{position:absolute;top:70px;left:0;width:100%;z-index:10008}
+.mobileRedTag span.registerBtn,.mobileRedTag a.registerBtn{display:block;color:#fff;text-transform:uppercase;font-family:"Lato",sans-serif;font-size:18px;font-weight:400;line-height:50px;background:#ba0d30;width:100%;text-align:center;-webkit-box-shadow:-12px 8px 17px rgba(0,0,0,.3);box-shadow:-12px 8px 17px rgba(0,0,0,.3)}
+.mobileRedTag span.registerBtn{padding:5px 35px}
+.mobileRedTag a.registerBtn{text-decoration:none;height:52px;padding:0 35px;position:relative}
+body.scrolled.logged-in.admin-bar .mobileRedTag .stats,body.scrolled .mobileRedTag .stats{position:relative !important;top:0}
 body.logged-in.admin-bar.scrolled .redtag{top:112px !important}
 body.enchilada .banner-bottom.svgphp svg{fill:#fef9e7}
 body.enchilada .main-description{color:#7f7c73}
@@ -5971,6 +5975,12 @@ body.page-template-page-salesforce .gform_wrapper{padding-left:5vw;padding-right
 .two-column-layout-vist.twocol .flexcol.textwrap .inner{padding-left:5vw;padding-right:5vw}
 .redtag .registerBtn{width:auto}
 .redtag .registerBtn:after{content:"";display:block;width:0;height:0;border-left:28px solid #ba0d30;border-top:25px solid transparent;border-bottom:25px solid transparent;position:absolute;top:0;right:-28px;-webkit-transition:all ease .3s;transition:all ease .3s}
+.mobileRedTag a.registerBtn{width:auto}
+.mobileRedTag a.registerBtn:before,.mobileRedTag a.registerBtn:after{content:"";display:block;-webkit-transition:all ease .3s;transition:all ease .3s;position:absolute;right:-12px;width:50px;height:50%;background-color:#ba0d30}
+.mobileRedTag a.registerBtn:before{top:0;-webkit-transform:skew(40deg);transform:skew(40deg)}
+.mobileRedTag a.registerBtn:after{height:51%;bottom:0;-webkit-transform:skew(-40deg);transform:skew(-40deg)}
+.mobileRedTag a.registerBtn:hover{background:#000}
+.mobileRedTag a.registerBtn:hover:before,.mobileRedTag a.registerBtn:hover:after{background-color:#000}
 }@media screen and (min-width:820px){#banner.taxonomy-banner .static-banner img.desktop{display:block}
 #banner.taxonomy-banner .static-banner img.mobile{display:none}
 .post-type-entries .imagediv.mobile{display:none}
