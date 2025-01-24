@@ -141,7 +141,7 @@ if( $template = get_page_template() ) {
         <?php get_template_part("parts/navigation-right"); ?>
       </div>
     </div>
-    <!-- <div class="mobile-nav-backdrop"></div> -->
+    <div class="mobileRedTag"></div>
   </div>
 
 	<?php 

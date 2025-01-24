@@ -1502,6 +1502,12 @@ jQuery(document).ready(function ($) {
   if ($('.flexible-content-wrapper').length) {
     $('.flexible-content-wrapper > *').last().addClass('last-element-section');
   }
+
+  if ($('.hero-wrapper .stats.teaser').length) {
+    if ($('.mobileRedTag .stats.teaser').length = 0) {
+      $('.hero-wrapper .stats.teaser').clone().appendTo('.mobileRedTag');
+    }
+  }
 }); // END #####################################    END
 "use strict";
 
