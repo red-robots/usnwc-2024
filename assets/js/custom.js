@@ -1504,7 +1504,7 @@ jQuery(document).ready(function ($) {
   }
 
   if ($('.hero-wrapper .stats.teaser').length) {
-    if ($('.mobileRedTag .stats.teaser').length = 0) {
+    if ($('.mobileRedTag .stats').length == 0) {
       $('.hero-wrapper .stats.teaser').clone().appendTo('.mobileRedTag');
     }
   }
