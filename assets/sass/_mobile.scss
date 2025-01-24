@@ -428,6 +428,10 @@
       }
     }
   }
+  .site-header-mobile.menu-open .mobileRedTag {
+    visibility: hidden;
+    pointer-events: none;
+  }
   body.menu-open {
     overflow: hidden;
   }
