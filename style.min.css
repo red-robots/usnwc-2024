@@ -3887,7 +3887,7 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .flexibleContentWrap .title-wrapper.has-section-text .titlediv{margin-bottom:0}
 .flexibleContentWrap .title-wrapper.has-section-text .shead-icon{margin-bottom:15px}
 .flexibleContentWrap .title-wrapper.no-section-text .titlediv,.flexibleContentWrap .title-wrapper.no-section-text .shead-icon{margin-bottom:0}
-.flexibleContentWrap .last-element-section{margin-bottom:10px}
+.flexibleContentWrap .last-element-section:not(.cards-multiple-wrapper){margin-bottom:10px}
 .modal.customModal .cta-buttons a{margin:0 8px}
 .modal.customModal .modal-header{position:relative}
 .modal.customModal .modal-header #eventStatusTxt{display:inline-block;position:absolute;top:0;left:0}

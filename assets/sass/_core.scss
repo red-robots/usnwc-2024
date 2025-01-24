@@ -13592,7 +13592,7 @@ body.page-template-page-race {
       }
     }
   }
-  .last-element-section {
+  .last-element-section:not(.cards-multiple-wrapper) {
     margin-bottom: 10px;
   }
 }
