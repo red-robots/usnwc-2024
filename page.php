@@ -45,6 +45,8 @@ if( is_page('waiver') ) {
 
       <?php get_template_part('parts/todays-snapshot-content') ?>
 
+      
+
 		<?php endwhile; ?>
 
 	</main><!-- #main -->

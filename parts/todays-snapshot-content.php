@@ -8,9 +8,8 @@ if ($infocolumns) { ?>
   <?php if ($global_snapshots) { ?>
 
   <section class="snapshot-branch-info">
-    <?php
-    include( locate_template('parts-calendar/todays-snapshot.php') ); 
-    ?>
+    <?php include( locate_template('parts-calendar/todays-snapshot.php') ); ?>
+    <?php //get_template_part('parts-calendar/todays-snapshot') ?>
   </section>
 
   <?php } else { ?>

@@ -13582,6 +13582,47 @@ body.page-template-page-race {
   }
 }
 
+/* NEW LAYOUT */
+.flexibleContentWrap .three-columns-block.three-columns-block-v2 {
+  padding-left: 20px;
+  padding-right: 20px;
+  .entryList.flexwrap {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    @include tab {
+      max-width: 90vw;
+    }
+    &.section-grid-images.section-content .fbox, .fbox{
+      padding: 12px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      .inside {
+        background: transparent;
+        .imagediv {
+          overflow: hidden;
+          border-radius: 10px;
+        }
+      }
+      .details {
+        background-color: transparent;
+        padding: 0 0;
+        text-align: left;
+        h3,.h3 {
+          font-family: $font-brandon-bold;
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 1.2;
+        }
+        .cta-buttons.buttondiv {
+          margin-left: -8px;
+          margin-right: -8px;
+        }
+      }
+    }
+  }
+}
+
 .modal.customModal {
 	.cta-buttons {
 		a {
@@ -14488,7 +14529,7 @@ body.single-race .filter-wrapper {
       }
       .card-title {
         font-family: $font-brandon-bold;
-        font-size: 21px;
+        font-size: 20px;
         line-height: 1.2;
         text-transform: uppercase;
         color: #000;
@@ -19516,6 +19557,10 @@ section.route-details.route-details-new {
   }
 }
 
+.page-template-page-repeatable .main-description {
+  padding-top: 30px;
+}
+
 .section-pricing_cards {
   margin-top: 40px;
   margin-bottom: 40px;
@@ -19531,9 +19576,12 @@ section.route-details.route-details-new {
     flex-wrap: wrap;
     margin-left: -15px;
     margin-right: -15px;
+    margin-top: -15px;
     .fxcol {
       width: 100%;
       padding: 15px;
+      margin-top: 15px;
+      margin-bottom: 15px;
       @include tab {
         width: 33.333%;
       }
