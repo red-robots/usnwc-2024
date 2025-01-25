@@ -3079,7 +3079,6 @@ body.scrolled.logged-in.admin-bar .stats{top:125px}
 .facility-map-section .maps-above-the-other .map-wrap.mcol1{margin-top:0}
 body.page-template-page-facility .fancybox-toolbar{position:fixed;opacity:1;visibility:visible;z-index:999999;top:45px;right:20px}
 body.logged-in.admin-bar.page-template-page-facility .fancybox-toolbar{top:75px;right:20px}
-body.pageNoBanner .site-header{-webkit-box-shadow:0 3px 8px rgba(0,0,0,.1);box-shadow:0 3px 8px rgba(0,0,0,.1)}
 body.pageNoBanner .site-content{min-height:35em}
 .section-price-ages .flexwrap{margin-left:-6px;margin-right:-6px;padding-top:10px;padding-bottom:10px}
 .section-price-ages .info{width:100%;padding:6px;text-align:center}
