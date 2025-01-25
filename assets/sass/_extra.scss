@@ -3116,8 +3116,8 @@ body.logged-in.admin-bar.subpage {
   // }
 }
 
-body.subpage.pageNoBanner.logged-in.admin-bar,
-body.subpage.pageNoBanner  {
+body.subpage.pageNoBanner.logged-in.admin-bar:not(.page-template-page-about),
+body.subpage.pageNoBanner:not(.page-template-page-about)  {
   .site-header {
     top: 0!important;
   }

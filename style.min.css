@@ -5409,8 +5409,8 @@ section.homepage-hero{overflow:hidden}
 .site-header .nav-item.nav-item-today .today-dropdown-container .snapshot-button .snapshotBtn{display:inline-block;-webkit-transition:all ease .3s;transition:all ease .3s;background-color:#ba0d30;border:1px solid #ba0d30;padding:14px 18px 13px;border-radius:150px;color:#fff;font-family:"Brandon";font-size:15px;text-transform:uppercase;letter-spacing:.03em;text-decoration:none}
 .site-header .nav-item.nav-item-today .today-dropdown-container .snapshot-button .snapshotBtn:hover,.site-header .nav-item.nav-item-today .today-dropdown-container .snapshot-button .snapshotBtn:focus{border-color:#777;color:#777;background-color:#fff}
 .site-header .nav-item.nav-item-today:hover .today-dropdown-container,.site-header .nav-item.nav-item-today:focus .today-dropdown-container,.site-header .nav-item.nav-item-today:focus-within .today-dropdown-container{-webkit-transform:translateY(0);transform:translateY(0);visibility:visible;opacity:1;pointer-events:auto}
-body.subpage.pageNoBanner.logged-in.admin-bar .site-header,body.subpage.pageNoBanner .site-header{top:0 !important}
-body.subpage.pageNoBanner.logged-in.admin-bar .site-content,body.subpage.pageNoBanner .site-content{padding-top:70px}
+body.subpage.pageNoBanner.logged-in.admin-bar:not(.page-template-page-about) .site-header,body.subpage.pageNoBanner:not(.page-template-page-about) .site-header{top:0 !important}
+body.subpage.pageNoBanner.logged-in.admin-bar:not(.page-template-page-about) .site-content,body.subpage.pageNoBanner:not(.page-template-page-about) .site-content{padding-top:70px}
 body.single:has(.hero-wrapper .single-slide .type-video) .hero-wrapper{margin-bottom:60px}
 body.single:has(.hero-wrapper .single-slide .type-video) #main .featured-image{display:none}
 body.single:has(.hero-wrapper .single-slide .type-video) #main .contentWrap.quote{padding-bottom:0}
