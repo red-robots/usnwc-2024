@@ -13577,6 +13577,9 @@ body.page-template-page-race {
   .last-element-section:not(.cards-multiple-wrapper) {
     margin-bottom: 10px;
   }
+  .last-element-section .columns-2 .mscol:last-child {
+    margin-bottom: 0;
+  }
 }
 
 /* NEW LAYOUT */
