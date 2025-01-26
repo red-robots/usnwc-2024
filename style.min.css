@@ -4920,7 +4920,7 @@ body.modal-open{overflow:hidden}
 .schedule-items-wrap{margin:10px 0 30px}
 .schedule-items-wrap .dash-item{margin:10px 0 18px}
 .schedule-items-wrap .dash-item .line{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative}
-.schedule-items-wrap .dash-item .line span,.schedule-items-wrap .dash-item .line a{display:inline-block;position:relative;z-index:10;background:#f2f2f2}
+.schedule-items-wrap .dash-item .line span,.schedule-items-wrap .dash-item .line a{display:inline-block;position:relative;z-index:10;background:transparent}
 .schedule-items-wrap .dash-item .line span.name{font-family:"Brandon Bold";font-size:14px;line-height:1.2;text-transform:uppercase;padding-right:3px;color:#000;position:relative;z-index:30;background:transparent !important}
 .schedule-items-wrap .dash-item .line span.name span{display:inline;padding-right:5px;background:#fff;position:relative;z-index:25}
 .schedule-items-wrap .dash-item .line .right-info{text-align:right;padding-left:5px}
