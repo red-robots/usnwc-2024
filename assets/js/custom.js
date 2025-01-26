@@ -1531,6 +1531,10 @@ jQuery(document).ready(function ($) {
 
   if ($('.flexibleContentWrap').length) {
     $('.flexibleContentWrap > *').last().addClass('last-element-section');
+
+    if ($('.flexibleContentWrap .last-element-section section').find('[class*="columns-"]').length) {
+      $('.flexibleContentWrap .last-element-section section').find('[class*="columns-"]').find('.mscol').last().add('last-child-element');
+    }
   }
 
   if ($('.flexible-content-wrapper').length) {

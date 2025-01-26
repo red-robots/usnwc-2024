@@ -3885,7 +3885,7 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .flexibleContentWrap .title-wrapper.has-section-text .titlediv{margin-bottom:0}
 .flexibleContentWrap .title-wrapper.has-section-text .shead-icon{margin-bottom:15px}
 .flexibleContentWrap .title-wrapper.no-section-text .titlediv,.flexibleContentWrap .title-wrapper.no-section-text .shead-icon{margin-bottom:0}
-.flexibleContentWrap .last-element-section:not(.cards-multiple-wrapper){margin-bottom:10px}
+.flexibleContentWrap .last-element-section:not(.cards-multiple-wrapper),.flexibleContentWrap .last-element-section:not(.cards-multiple-wrapper) .last-child-element{margin-bottom:10px}
 .flexibleContentWrap .three-columns-block.three-columns-block-v2{padding-left:20px;padding-right:20px}
 .flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap{max-width:100%;width:100%;margin:0 auto}
 .flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap.section-grid-images.section-content .fbox,.flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap .fbox{padding:12px;margin-top:15px;margin-bottom:15px}
