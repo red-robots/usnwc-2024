@@ -1495,6 +1495,40 @@ jQuery(document).ready(function ($) {
     }
   }
 
+  if ($('body.page-template-page-about').length) {
+    $('body.page-template-page-about #main section').first().addClass('first');
+
+    if ($('body.page-template-page-about #main section').first().hasClass('text_content_center_block')) {
+      $('body.page-template-page-about #main section').first().addClass('full-width-title'); // $('body.page-template-page-about #main section').first().find('.textwrap').addClass('wow fadeInUp').attr({
+      //   'data-wow-duration':'2s',
+      //   'data-wow-delay':'1s',
+      //   'data-wow-offset':'10'
+      // });
+
+      $(window).scroll(function () {
+        var wHeight = $(window).scrollTop();
+
+        if (wHeight > 100) {
+          $('#main .full-width-title .textwrap').addClass('reveal');
+        } else {
+          $('#main .full-width-title .textwrap').removeClass('reveal');
+        }
+      });
+    } // var waypoint = new Waypoint({
+    //   element: document.querySelector('.full-width-title .textwrap'),
+    //   handler: function(direction) {
+    //     console.log(direction);
+    //     //console.log('Scrolled to waypoint!')
+    //     if( direction=='down' ) {
+    //       $('.full-width-title .textwrap').addClass('reveal');
+    //     } else {
+    //       $('.full-width-title .textwrap').removeClass('reveal');
+    //     }
+    //   }
+    // });
+
+  }
+
   if ($('.flexibleContentWrap').length) {
     $('.flexibleContentWrap > *').last().addClass('last-element-section');
   }

@@ -108,6 +108,21 @@ function bellaworks_scripts() {
   );
 
   wp_enqueue_script( 
+    'bellaworks-custom-wow', 
+    get_template_directory_uri() . '/assets/js/vendors/wow.js', 
+    array(), '1.0.2', 
+    true 
+  );
+
+
+  wp_enqueue_script( 
+    'bellaworks-custom-waypoint', 
+    get_template_directory_uri() . '/assets/js/vendors/jquery.waypoints.min.js', 
+    array(), '4.0.1', 
+    true 
+  );
+
+  wp_enqueue_script( 
     'bellaworks-custom', 
     get_template_directory_uri() . '/assets/js/custom.js', 
     array(), '2.37', 

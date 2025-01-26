@@ -5408,6 +5408,13 @@ section.homepage-hero{overflow:hidden}
 .site-header .nav-item.nav-item-today .today-dropdown-container .snapshot-button .snapshotBtn{display:inline-block;-webkit-transition:all ease .3s;transition:all ease .3s;background-color:#ba0d30;border:1px solid #ba0d30;padding:14px 18px 13px;border-radius:150px;color:#fff;font-family:"Brandon";font-size:15px;text-transform:uppercase;letter-spacing:.03em;text-decoration:none}
 .site-header .nav-item.nav-item-today .today-dropdown-container .snapshot-button .snapshotBtn:hover,.site-header .nav-item.nav-item-today .today-dropdown-container .snapshot-button .snapshotBtn:focus{border-color:#777;color:#777;background-color:#fff}
 .site-header .nav-item.nav-item-today:hover .today-dropdown-container,.site-header .nav-item.nav-item-today:focus .today-dropdown-container,.site-header .nav-item.nav-item-today:focus-within .today-dropdown-container{-webkit-transform:translateY(0);transform:translateY(0);visibility:visible;opacity:1;pointer-events:auto}
+body.page-template-page-about .site-main section:first-child{min-height:100vh;height:auto !important}
+body.page-template-page-about .site-main section:first-child .wrapper{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-delay:.5s;animation-delay:.5s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:fadeIn;animation-name:fadeIn}
+body.page-template-page-about .site-main section.full-width-title.text_content_center_block .wrapper{-webkit-transform:none !important;transform:none !important}
+body.page-template-page-about .site-main section.full-width-title .page--title--wrapper{padding:45vh 0 0}
+body.page-template-page-about .site-main section.full-width-title .page--title--wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+body.page-template-page-about .site-main section.full-width-title .textwrap{opacity:0;padding-top:5vw;padding-bottom:20vw;-webkit-transition:all ease .8s;transition:all ease .8s;-webkit-transform:translateY(10vw);transform:translateY(10vw)}
+body.page-template-page-about .site-main section.full-width-title .textwrap.reveal,body.page-template-page-about .site-main section.full-width-title .textwrap.animated{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}
 body.subpage.pageNoBanner.logged-in.admin-bar:not(.page-template-page-about) .site-header,body.subpage.pageNoBanner:not(.page-template-page-about) .site-header{top:0 !important}
 body.subpage.pageNoBanner.logged-in.admin-bar:not(.page-template-page-about) .site-content,body.subpage.pageNoBanner:not(.page-template-page-about) .site-content{padding-top:70px}
 body.single:has(.hero-wrapper .single-slide .type-video) .hero-wrapper{margin-bottom:60px}
@@ -6530,6 +6537,8 @@ body.page-template-page-visit section.visit.flexible-image-cards .tile figure h2
 .menu-sections .textcol .mstime.custom-time .name,.menu-sections .textcol .mstime.custom-time .time{display:block;width:100%;padding:0}
 body.home .full-bleed-promo div.img{padding-bottom:30vh}
 .snapshot-branch-info{max-width:100%;padding-left:20px;padding-right:20px}
+body.page-template-page-about .site-main section.full-width-title .page--title--wrapper{padding-top:15vh}
+body.page-template-page-about .site-main section.full-width-title .page--title--wrapper h2.h2{font-size:3.2rem;padding:0 4vw}
 body.home .full-bleed-promo .cta a{padding:8px 20px 6px !important;letter-spacing:.02em !important;font-size:15px !important}
 section.full-bleed-promo.rounded_with_padding{padding:30px 30px 20px}
 section.full-bleed-promo.rounded_with_padding div.img:has(img.poster-mobile){padding-bottom:120vw}

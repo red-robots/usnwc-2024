@@ -7,7 +7,9 @@
   <section id="text_content_center_<?php echo $ctr ?>" class="text_content_center_block">
     <div class="wrapper textCenter">
       <?php if ($section_title) { ?>
-      <h2 class="h2"><?php echo $section_title ?></h2>
+      <div class="page--title--wrapper">
+        <h2 class="h2"><?php echo $section_title ?></h2>
+      </div>
       <?php } ?>
 
       <?php if ($section_text) { ?>

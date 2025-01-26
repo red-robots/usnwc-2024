@@ -3115,6 +3115,58 @@ body.logged-in.admin-bar.subpage {
   //   }
   // }
 }
+body.page-template-page-about {
+  .site-main section:first-child {
+    min-height: 100vh; 
+    height: auto!important;
+    .wrapper {
+      animation-duration: 1s;
+      animation-delay: 0.5s;
+      animation-fill-mode: both;
+      animation-name: fadeIn;
+    }
+  }
+  .site-main section.full-width-title {
+    &.text_content_center_block .wrapper {
+      transform: none!important;
+    }
+    .page--title--wrapper {
+      // height: 100vh;
+      padding: 45vh 0 0;
+      @media screen and (max-width: 768px) {
+        padding-top: 15vh;
+        h2.h2 {
+          font-size: 3.2rem;
+          padding: 0 4vw;
+        }
+      }
+    }
+    .page--title--wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .textwrap {
+      opacity: 0;
+      // padding-top: 20vw;
+      padding-top: 5vw;
+      padding-bottom: 20vw;
+      transition: all ease .8s;
+      transform: translateY(10vw);
+      &.reveal,
+      &.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      // transform: translateY(10vw);
+      // &.reveal {
+      //   opacity: 1;
+      //   transform: translateY(0);
+      // }
+    }
+  }
+}
 
 body.subpage.pageNoBanner.logged-in.admin-bar:not(.page-template-page-about),
 body.subpage.pageNoBanner:not(.page-template-page-about)  {
