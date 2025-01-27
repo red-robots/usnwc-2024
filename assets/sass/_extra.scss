@@ -3561,6 +3561,63 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
     }
   }
 }
+.navigation-sitemap {
+  ul.sitemap {
+    margin: 0 0;
+    padding: 0 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    ul {
+      margin: 0 0;
+      padding: 0 0;
+      list-style: none;
+    }
+    a {
+      color: #000;
+      display: inline-block;
+      font-size: 16px;
+      line-height: 1.2;
+      text-decoration: none;
+      &:hover, &:focus {
+        color: $red!important;
+      }
+    }
+    .parent-menu-link {
+      font-family: $font-brandon-bold;
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+    .menu-col {
+      margin-bottom: 20px;   
+      .main a {
+        font-family: $font-brandon-medium;
+        font-size: 18px;
+        text-transform: uppercase;
+      }
+      li.child,
+      li.lodge {
+        padding-left: 10px;
+        margin-bottom: 5px;
+        margin-top: 3px;
+        a {
+          text-transform: none!important;
+        }
+      }
+    }
+  }
+  ul.sitemap > li {
+    width: 33.333%;
+    padding: 15px;
+    @media screen and (max-width: 960px) {
+      width: 50%;
+    }
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}
 body.scrolled.logged-in.admin-bar,
 body.scrolled {
   .mobileRedTag .stats {
