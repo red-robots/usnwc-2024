@@ -9,7 +9,7 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
 get_header(); ?>
 
 <div id="primary" class="content-area-full content-default page-default-template sitemappage <?php echo $has_banner ?>">
-	<main id="main" class="site-main wrapper" role="main">
+	<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
