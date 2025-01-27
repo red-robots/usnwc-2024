@@ -5442,6 +5442,7 @@ section.full-bleed-promo.rounded_with_padding img.poster-mobile{display:none}
 .mobileRedTag span.registerBtn,.mobileRedTag a.registerBtn{display:block;color:#fff;text-transform:uppercase;font-family:"Lato",sans-serif;font-size:18px;font-weight:400;line-height:50px;background:#ba0d30;width:100%;text-align:center;-webkit-box-shadow:-12px 8px 17px rgba(0,0,0,.3);box-shadow:-12px 8px 17px rgba(0,0,0,.3)}
 .mobileRedTag span.registerBtn{padding:5px 35px}
 .mobileRedTag a.registerBtn{text-decoration:none;height:52px;padding:0 35px;position:relative}
+.site-map .wrapper{max-width:100%;width:100%}
 .navigation-sitemap ul.sitemap{margin:0;padding:0;list-style:none;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
 .navigation-sitemap ul.sitemap ul{margin:0;padding:0;list-style:none}
 .navigation-sitemap ul.sitemap a{color:#000;display:inline-block;font-size:16px;line-height:1.2;text-decoration:none}
@@ -5451,7 +5452,7 @@ section.full-bleed-promo.rounded_with_padding img.poster-mobile{display:none}
 .navigation-sitemap ul.sitemap .menu-col .main a{font-family:"Brandon Medium";font-size:18px;text-transform:uppercase}
 .navigation-sitemap ul.sitemap .menu-col li.child,.navigation-sitemap ul.sitemap .menu-col li.lodge{padding-left:10px;margin-bottom:5px;margin-top:3px}
 .navigation-sitemap ul.sitemap .menu-col li.child a,.navigation-sitemap ul.sitemap .menu-col li.lodge a{text-transform:none !important}
-.navigation-sitemap ul.sitemap>li{width:33.333%;padding:15px}
+.navigation-sitemap ul.sitemap>li{width:25%;padding:15px}
 body.scrolled.logged-in.admin-bar .mobileRedTag .stats,body.scrolled .mobileRedTag .stats{position:relative !important;top:0}
 body.logged-in.admin-bar.scrolled .redtag{top:112px !important}
 body.enchilada .banner-bottom.svgphp svg{fill:#fef9e7}
@@ -6175,6 +6176,7 @@ body.page-template-page-visit section.visit.flexible-image-cards .tileWrapper,se
 body.page-template-page-visit section.visit.flexible-image-cards .tile figure h2,section.visit.flexible-image-cards .tile figure h2,.flexible-image-cards .tile figure h2{padding:20px 30px}
 body.page-template-page-visit section.visit.flexible-image-cards .tile.full-bleed figure,section.visit.flexible-image-cards .tile.full-bleed figure,.flexible-image-cards .tile.full-bleed figure{margin-left:-5vw;margin-right:-5vw}
 .menu-sections .textcol .mstime.custom-time .name{padding-right:20px;min-width:200px}
+.site-map .wrapper{max-width:90vw}
 .bike-ranch-sections .content-inner{padding-top:70px;padding-bottom:70px;padding-left:5vw;padding-right:5vw}
 .bike-ranch-sections .content-gallery figure figcaption .image-text{padding:50px 15vw 50px 8vw}
 .bike-ranch-sections .content-gallery.multiple figure{width:50%;padding-bottom:35%}
@@ -6220,6 +6222,7 @@ section.full-bleed-promo .info .words h2{font-size:100px}
 }@media screen and (max-width:1024px){.repeatable-section.section-image-cards .imagecard{width:50%}
 .menu-sections-repeatable .fb-static-images.count-2 .flexwrap{height:100%}
 .menu-sections-repeatable .textcol{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.navigation-sitemap ul.sitemap>li{width:50%}
 }@media screen and (max-width:1000px){.filter-wrapper.non-facetwp.options4 .select-wrap{max-width:50%}
 .filter-wrapper.with-reset-btn .resetBtn{position:relative !important;top:0;right:14px}
 }@media screen and (max-width:999px){.page-activity-passes .pass-types{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
@@ -6273,7 +6276,6 @@ body.home .homerow .imagebox a .title{font-size:6vw;line-height:1.1;padding:0 10
 .image_cards_columns .cards .flexwrap .imageBlock{width:50%}
 .new-nav-v2.desktop-navigation .mega-menu-content .menu-col{width:33.333% !important;padding-bottom:40px}
 .section_columns_bottom_text .infobox{width:50% !important}
-.navigation-sitemap ul.sitemap>li{width:50%}
 .site-header-desktop{display:none !important}
 .site-header-mobile{position:fixed;top:0;left:0;width:100%;height:70px;z-index:99999999;-webkit-transition:all ease .3s;transition:all ease .3s;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .site-header-mobile.menu-open{background-color:transparent !important}

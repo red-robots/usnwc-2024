@@ -3561,6 +3561,13 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
     }
   }
 }
+.site-map .wrapper {
+  max-width: 100%;
+  width: 100%;
+  @media screen and (min-width:1251px) {
+    max-width: 90vw;
+  }
+}
 .navigation-sitemap {
   ul.sitemap {
     margin: 0 0;
@@ -3608,9 +3615,9 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
     }
   }
   ul.sitemap > li {
-    width: 33.333%;
+    width: 25%;
     padding: 15px;
-    @media screen and (max-width: 960px) {
+    @media screen and (max-width: 1024px) {
       width: 50%;
     }
     @media screen and (max-width: 768px) {
