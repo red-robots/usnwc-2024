@@ -426,6 +426,9 @@
       .tVal {
         font-size: 20px;
       }
+      &.open .today-inner {
+        padding-bottom: 50px;
+      }
     }
   }
   .site-header-mobile.menu-open {

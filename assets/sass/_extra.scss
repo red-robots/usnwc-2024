@@ -3625,6 +3625,14 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
     }
   }
 }
+
+.two-columns-block .columns-2 {
+  .schedule-items-wrap .dash-item .line span, 
+  .schedule-items-wrap .dash-item .line a {
+    background-color: #f2f2f2;
+  }
+}
+
 body.scrolled.logged-in.admin-bar,
 body.scrolled {
   .mobileRedTag .stats {
