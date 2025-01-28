@@ -3633,6 +3633,12 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
   }
 }
 
+body.page-template-page-bike-ranch.subpage #banner:has(.image-wrapper .mobile) {
+  @media screen and (max-width: 768px) {
+    height: auto!important;
+  }
+}
+
 body.scrolled.logged-in.admin-bar,
 body.scrolled {
   .mobileRedTag .stats {

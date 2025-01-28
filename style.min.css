@@ -6577,6 +6577,7 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img .info p{display:n
 .carousel-activities-mobile .owl-item:not(.active) .item{padding-left:0}
 .carousel-activities-mobile .owl-item.active .item{padding-right:10px;padding-left:50px}
 .navigation-sitemap ul.sitemap>li{width:100%}
+body.page-template-page-bike-ranch.subpage #banner:has(.image-wrapper .mobile){height:auto !important}
 .bike-ranch-sections .section--buttons .section-buttons.buttons-per-row1 .button-wrap .button-traditional{width:100%}
 }@media screen and (max-width:600px){section.route-stories .block .feat-image.no-image .bg:before{width:30vw;height:30vw}
 .topinfo .businessHours{left:-37vw}
