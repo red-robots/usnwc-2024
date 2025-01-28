@@ -27,7 +27,7 @@ jQuery(document).ready(function ($) {
           if ($('.todaySnapshotInfo .popupSchedule[data-schedule="' + loc + '"]').length) {
             $('.todaySnapshotInfo .popupSchedule[data-schedule="' + loc + '"]').trigger('click');
           }
-        }, 500);
+        }, 800);
       }
     }
   }

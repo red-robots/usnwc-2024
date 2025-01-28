@@ -17,7 +17,7 @@ if( typeof params.popup!='undefined' && params.popup=='schedule') {
         if( $('.todaySnapshotInfo .popupSchedule[data-schedule="'+loc+'"]').length ) {
           $('.todaySnapshotInfo .popupSchedule[data-schedule="'+loc+'"]').trigger('click');
         }
-      },500); 
+      },800); 
     }
   }
 }
