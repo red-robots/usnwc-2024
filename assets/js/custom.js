@@ -16,6 +16,21 @@ jQuery(document).ready(function ($) {
   location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (s, k, v) {
     params[k] = v;
   });
+
+  if (typeof params.popup != 'undefined' && params.popup == 'schedule') {
+    if (window.location.hash) {
+      var hashTag = window.location.hash;
+
+      if (hashTag.includes('#tab-')) {
+        var loc = hashTag.replace('#tab-', '');
+
+        if ($('.todaySnapshotInfo .popupSchedule[data-schedule="' + loc + '"]').length) {
+          $('.todaySnapshotInfo .popupSchedule[data-schedule="' + loc + '"]').trigger('click');
+        }
+      }
+    }
+  }
+
   $('.site-header .new-nav-v2 li.has-children').hover(function () {
     $('.site-header').addClass('mouseover');
   }, function () {
