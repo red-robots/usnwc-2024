@@ -23,10 +23,11 @@ jQuery(document).ready(function ($) {
 
       if (hashTag.includes('#tab-')) {
         var loc = hashTag.replace('#tab-', '');
-
-        if ($('.todaySnapshotInfo .popupSchedule[data-schedule="' + loc + '"]').length) {
-          $('.todaySnapshotInfo .popupSchedule[data-schedule="' + loc + '"]').trigger('click');
-        }
+        setTimeout(function () {
+          if ($('.todaySnapshotInfo .popupSchedule[data-schedule="' + loc + '"]').length) {
+            $('.todaySnapshotInfo .popupSchedule[data-schedule="' + loc + '"]').trigger('click');
+          }
+        }, 500);
       }
     }
   }

@@ -13,9 +13,11 @@ if( typeof params.popup!='undefined' && params.popup=='schedule') {
     var hashTag = window.location.hash;
     if( hashTag.includes('#tab-') ) {
       var loc = hashTag.replace('#tab-','');
-      if( $('.todaySnapshotInfo .popupSchedule[data-schedule="'+loc+'"]').length ) {
-        $('.todaySnapshotInfo .popupSchedule[data-schedule="'+loc+'"]').trigger('click');
-      }
+      setTimeout(function(){
+        if( $('.todaySnapshotInfo .popupSchedule[data-schedule="'+loc+'"]').length ) {
+          $('.todaySnapshotInfo .popupSchedule[data-schedule="'+loc+'"]').trigger('click');
+        }
+      },500); 
     }
   }
 }
