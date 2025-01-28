@@ -289,11 +289,12 @@
                     <div class="cta-buttons buttondiv">
                       <?php foreach ($buttons as $b) { 
                         $btn = $b['button'];
+                        $btnAttribute = (isset($btn['button_attribute']) && $btn['button_attribute']) ? ' ' . $btn['button_attribute'] : '';
                         $btnName = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
                         $btnLink = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
                         $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
                         if($btnName && $btnLink) { ?>
-                        <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="btn-sm xs"><span><?php echo $btnName ?></span></a>
+                        <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="btn-sm xs"<?php echo $btnAttribute ?>><span><?php echo $btnName ?></span></a>
                         <?php } ?>
                       <?php } ?>
                     </div>
