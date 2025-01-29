@@ -5447,12 +5447,20 @@ section.full-bleed-promo.rounded_with_padding img.poster-mobile{display:none}
 .navigation-sitemap ul.sitemap ul{margin:0;padding:0;list-style:none}
 .navigation-sitemap ul.sitemap a{color:#000;display:inline-block;font-size:16px;line-height:1.2;text-decoration:none}
 .navigation-sitemap ul.sitemap a:hover,.navigation-sitemap ul.sitemap a:focus{color:#ba0d30 !important}
-.navigation-sitemap ul.sitemap .parent-menu-link{font-family:"Brandon Bold";font-size:20px;text-transform:uppercase;margin-bottom:15px}
-.navigation-sitemap ul.sitemap .menu-col{margin-bottom:20px}
+.navigation-sitemap ul.sitemap .parent-menu-link{font-family:"Brandon Bold";font-size:20px;text-transform:uppercase;margin-bottom:10px}
+.navigation-sitemap ul.sitemap .menu-col{margin-bottom:20px;margin-bottom:20px;border:1px solid #ccc;padding:15px;border-radius:10px;background:#fff}
 .navigation-sitemap ul.sitemap .menu-col .main a{font-family:"Brandon Medium";font-size:18px;text-transform:uppercase}
+.navigation-sitemap ul.sitemap .menu-col .main .desc{display:block}
 .navigation-sitemap ul.sitemap .menu-col li.child,.navigation-sitemap ul.sitemap .menu-col li.lodge{padding-left:10px;margin-bottom:5px;margin-top:3px}
 .navigation-sitemap ul.sitemap .menu-col li.child a,.navigation-sitemap ul.sitemap .menu-col li.lodge a{text-transform:none !important}
-.navigation-sitemap ul.sitemap>li{width:25%;padding:15px}
+.navigation-sitemap .sitemap-menu-content .menu-col:last-child{margin-bottom:0}
+.navigation-sitemap ul.sitemap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.navigation-sitemap ul.sitemap>li{padding:10px;width:25%}
+.navigation-sitemap .link-title{font-family:"Brandon Bold";font-size:18px;text-transform:uppercase}
+.navigation-sitemap .other-link ul>li{margin-bottom:5px;margin-top:3px}
+.navigation-sitemap .other-link ul>li a{display:inline-block;text-decoration:none}
+.navigation-sitemap .other-link ul>li a:hover,.navigation-sitemap .other-link ul>li a:focus{color:#ba0d30}
+.navigation-sitemap.other-links{display:none}
 .two-columns-block .columns-2 .schedule-items-wrap .dash-item .line span,.two-columns-block .columns-2 .schedule-items-wrap .dash-item .line a{background-color:#f2f2f2}
 body.scrolled.logged-in.admin-bar .mobileRedTag .stats,body.scrolled .mobileRedTag .stats{position:relative !important;top:0}
 body.logged-in.admin-bar.scrolled .redtag{top:112px !important}

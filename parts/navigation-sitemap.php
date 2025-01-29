@@ -1,8 +1,8 @@
 <?php 
 $navigation = get_field('main_menu_item', 'option');
 if($navigation) { ?>
-<nav class="navigation-sitemap">
-  <ul class="sitemap">
+<nav class="navigation-sitemap navigation-sitemap-main">
+  <ul class="sitemap masonry-grid">
   <?php 
     // echo '<pre>';
     // print_r($navigation);
@@ -21,7 +21,7 @@ if($navigation) { ?>
       }
 
    ?>
-    <li class="smap-menu-item <?php echo $navClass; ?> <?php echo ($column) ? 'has-children':'no-children'; ?>">
+    <li class="smap-menu-item grid-item <?php echo $navClass; ?> <?php echo ($column) ? 'has-children':'no-children'; ?>">
       <a class="parent-menu-link" href="<?php echo $main_link['url']; ?>" aria-controls="mega-menu-<?php echo sanitize_title($main_link['title']); ?>"><span><?php echo $main_link['title']; ?></span></a><!-- end main a -->
       <?php if( $column ) {  $count_columns = count($column); ?>
         <div class="sitemap-children-menu"><div class="sitemap-menu-content count-<?php echo $count_columns ?>">

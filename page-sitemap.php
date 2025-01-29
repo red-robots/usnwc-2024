@@ -37,10 +37,40 @@ get_header(); ?>
 					$parents = get_field("parent_menu","option");
 					$childenMenuItems = array();
 					$secondary_menu = get_field("secondary_menu","option");
-
-					if($parents) { ?>
+          $sitemap__links = get_field('sitemapLinks','option');
+					if($parents || $sitemap__links) { ?>
 					<div id="sitemapLinks">
-						<?php get_template_part("parts/navigation-sitemap"); ?>
+						<?php if ($parents) { get_template_part("parts/navigation-sitemap"); } ?>
+            <?php if ($sitemap__links) { ?>
+            <nav class="navigation-sitemap other-links">
+              <?php foreach ($sitemap__links as $s) { 
+                $group_title = $s['group_title'];
+                $group_links = $s['group_links'];
+                if($group_links) { ?>
+                <ul class="sitemap">
+                  <li class="grid-item other-link">
+                    <?php if ($group_title) { ?>
+                    <div class="parent-menu-link link-title"><?php echo $group_title ?></div>
+                    <?php } ?>
+                    <div class="menu-col">
+                      <ul class="links">
+                        <?php foreach ($group_links as $g) { 
+                          $url = $g['link'];
+                          $aName = (isset($url['title']) && $url['title']) ? $url['title'] : '';
+                          $aLink = (isset($url['url']) && $url['url']) ? $url['url'] : '';
+                          $aTarget = (isset($url['target']) && $url['target']) ? $url['target'] : '_self';
+                          if($aName && $aLink) { ?>
+                          <li><a href="<?php echo $aLink ?>" target="<?php echo $aTarget ?>"><?php echo $aName ?></a></li>
+                          <?php } ?>
+                        <?php } ?>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <?php } ?>
+              <?php } ?>
+            </nav>
+            <?php } ?>
 					</div>
 					<?php } ?>
 

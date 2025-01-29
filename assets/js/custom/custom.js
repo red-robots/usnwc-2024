@@ -1704,4 +1704,30 @@ var getGridSize = function() {
     }
   }
 
+  //Sitemap
+  if( $('.navigation-sitemap .smap-menu-item').length ) {
+    if( $('.navigation-sitemap.other-links ul').length ) {
+      var siteMapLinks = '';
+      // $('.sitemap-other-links .links-group').each(function(){
+      //   siteMapLinks += '<li class="other-link">'+$(this).html()+'</li>';
+      // });
+      // if(siteMapLinks) {
+      //   $('.navigation-sitemap ul.sitemap').append(siteMapLinks);
+      // }
+      $('.navigation-sitemap.other-links ul.sitemap').each(function(){
+        if( $(this).find('li.other-link').length ) {
+          $(this).find('li.other-link').each(function(){
+            $(this).appendTo('.navigation-sitemap-main ul.sitemap');
+          });
+          
+        }
+      });
+    }
+  } else {
+    $('.navigation-sitemap.other-links').show();
+  }
+
+  $('.masonry-grid').masonry({
+    itemSelector: '.grid-item',
+  });
 });// END #####################################    END
