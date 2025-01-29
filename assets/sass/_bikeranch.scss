@@ -631,3 +631,24 @@ body.logged-in.admin-bar.page-template-page-bike-ranch.subpage:has(#banner) .sit
   }
 }
 
+@media screen and (max-width: 768px) {
+  body.page-template-page-bike-ranch.subpage {
+    .bike-ranch-sections .content-gallery.multiple figure.img3 {
+      width: 100%;
+    }
+    .bike-ranch-sections .content-gallery.multiple figure.img4 {
+      width: 100%;
+      height: auto!important;
+      .span-image {
+        display: none!important;
+      }
+      img.image-block {
+        display: block;
+        width: 100%!important;
+        height: auto!important;
+      }
+    }
+  }
+}
+
+
