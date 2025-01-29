@@ -29,13 +29,13 @@ if( is_page('waiver') ) {
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<section class="text-centered-section">
+			<section class="defaultContentDiv text-centered-section">
 				<div class="wrapper text-center">
 					<div class="page-header">
 						<h1 class="page-title"><?php the_title(); ?></h1>
 					</div>
           <?php if ( get_the_content() ) { ?>
-					<div class="<?php echo $pageClass; ?>">
+					<div class="defaultTextContent <?php echo $pageClass; ?>">
 						<?php the_content(); ?>
 					</div>
           <?php } ?>
