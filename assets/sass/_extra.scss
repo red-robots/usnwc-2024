@@ -3674,15 +3674,15 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
   }
 }
 
-.defaultContentDiv:has(.defaultTextContent) {
-  text-align: left;
-  h1.page-title {
-    text-align: center;
-  }
-}
-.defaultTextContent {
-  text-align: left;
-}
+// .defaultContentDiv:has(.defaultTextContent) {
+//   text-align: left;
+//   h1.page-title {
+//     text-align: center;
+//   }
+// }
+// .defaultTextContent {
+//   text-align: left;
+// }
 
 body.page-template-page-bike-ranch.subpage #banner:has(.image-wrapper .mobile) {
   @media screen and (max-width: 768px) {
