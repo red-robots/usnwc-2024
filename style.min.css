@@ -6589,6 +6589,7 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img .info p{display:n
 body.page-template-page-bike-ranch.subpage #banner:has(.image-wrapper .mobile){height:auto !important}
 .bike-ranch-sections .section--buttons .section-buttons.buttons-per-row1 .button-wrap .button-traditional{width:100%}
 body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img3{width:100%}
+body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img3 figcaption .image-text p{font-size:1.25em}
 body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img4{width:100%;height:auto !important}
 body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img4 .span-image{display:none !important}
 body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img4 img.image-block{display:block;width:100% !important;height:auto !important}

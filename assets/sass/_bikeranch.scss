@@ -635,6 +635,9 @@ body.logged-in.admin-bar.page-template-page-bike-ranch.subpage:has(#banner) .sit
   body.page-template-page-bike-ranch.subpage {
     .bike-ranch-sections .content-gallery.multiple figure.img3 {
       width: 100%;
+      figcaption .image-text p {
+        font-size: 1.25em;
+      }
     }
     .bike-ranch-sections .content-gallery.multiple figure.img4 {
       width: 100%;
