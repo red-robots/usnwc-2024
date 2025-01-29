@@ -123,7 +123,26 @@
                   <?php if ($v_is_status) { ?>
                     <div class="status <?php echo $status_value ?>"><?php echo $status_label ?></div>
                   <?php } else { ?>
-                    <div class="text"><?php echo $v_text ?></div>
+
+                    <?php if ($v_text) { ?>
+                      <?php if (strpos($v_text, '[get_hours') !== false) { ?>
+                        <?php if ( $hours = do_shortcode($v_text) ) { ?>
+                        <div class="text">
+                          <?php 
+                          $hours = strtoupper($hours);
+                          $hours = preg_replace('/\s+/', '', $hours);
+                          if (strpos($hours, ':00') !== false) {
+                            $hours = str_replace(':00','',$hours);
+                          }
+                          echo $hours; 
+                          ?>
+                        </div>
+                        <?php } ?>
+                      <?php } else { ?>
+                        <div class="text"><?php echo $v_text ?></div>
+                      <?php } ?>
+                    <?php } ?>
+                    
                   <?php } ?>
 
                   <?php if ($nLink && $nTitle) { ?>
