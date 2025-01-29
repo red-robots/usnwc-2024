@@ -62,10 +62,11 @@ $branches = get_field('whitewaterLocations', 'option'); ?>
                     }
                   }
                   $tax = $b['locations_taxonomy'];
+                  $loc = (isset($b['location'])) ? $b['location'] : '';
                   $today_items = $b['today_items'];
                   $name = ( isset($tax->name) && $tax->name ) ? $tax->name : '';
                   $slug = ( isset($tax->slug) && $tax->slug ) ? $tax->slug : '';
-                  $city = ( isset($cs->name) && $cs->name ) ? $cs->name : '';
+                  $city = ( isset($loc->name) && $loc->name ) ? $loc->name : '';
                 ?>
                 <li class="info <?php echo $status ?><?php echo $is_active ?>" data-location="<?php echo $slug ?>">
                   <button class="mobile-info-toggle" data-slug="<?php echo $slug ?>">
