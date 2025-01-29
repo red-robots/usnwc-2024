@@ -6522,6 +6522,7 @@ body.logged-in.admin-bar.scrolled .site-header .mobile-nav-wrap .mobile-nav-wrap
 body.logged-in.admin-bar .site-header{top:45px}
 body.logged-in.admin-bar .site-header-mobile{top:46px}
 body.logged-in.admin-bar .site-header-mobile .mobileNav{padding-top:190px}
+.site-header-mobile .mobileMenuToggle{top:8px}
 }@media screen and (max-width:768px){.flex-container.slide-horizontal .flex-direction-nav li .prev,.flex-direction-nav li .prev{display:none}
 .flex-container.slide-horizontal .flex-direction-nav li .next,.flex-direction-nav li .next{display:none}
 .flexslider .flex-control-nav{display:none}
