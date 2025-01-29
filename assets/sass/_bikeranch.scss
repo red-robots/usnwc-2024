@@ -636,7 +636,8 @@ body.logged-in.admin-bar.page-template-page-bike-ranch.subpage:has(#banner) .sit
     .bike-ranch-sections .content-gallery.multiple figure.img3 {
       width: 100%;
       figcaption .image-text h3 {
-        font-size: 25px;
+        font-family: $font-brandon-bold;
+        font-size: 22px;
       }
       figcaption .image-text p {
         font-size: 1.25em;
