@@ -6,6 +6,13 @@ $placeholder = THEMEURI . 'images/rectangle.png';
 $banner = get_field("flexslider_banner");
 $has_banner = ($banner) ? 'hasbanner':'nobanner';
 $post_id = get_the_ID();
+$branch_status = 'open';
+global $post;
+if( isset($post->post_parent) && $post->post_parent ) {
+  $parentId = $post->post_parent;
+  $parentSlug = getPageSlugById($parentId);
+  $branch_status = getBranchOperationStatus($parentSlug); /* open or closed */
+}
 get_header(); ?>
 <div id="primary" class="content-area-full <?php echo $has_banner ?>">
 	<main id="main" class="site-main fw-left" role="main">
@@ -57,6 +64,7 @@ get_header(); ?>
         <?php $i=1; while( have_rows('section_3') ): the_row(); ?>
         <?php if( get_row_layout() == 'entry' ) { ?>
           <?php  
+            $auto_closed = get_sub_field('auto_closed_status');
             $e_title = get_sub_field('entrytitle');
             $e_text = get_sub_field('entrytext');
             $e_time = get_sub_field('entrytime');
@@ -69,9 +77,14 @@ get_header(); ?>
             $buttons = get_sub_field('buttons');
             $is_custom_time = get_sub_field('is_custom_time');
             $custom_times = get_sub_field('custom_times');
+
+            if($auto_closed && $branch_status=='closed') {
+              $e_time = '';
+              $locationSectionClass = ' operation--status--closed';
+            }
           ?>
 
-          <section class="menu-sections menu-sections-repeatable">
+          <section class="menu-sections menu-sections-repeatable<?php echo $locationSectionClass ?>">
             <div class="columns-2">
 
               <?php if( ($e_title || $e_text) || $slides) {  $colClass = ($i % 2) ? ' odd':' even'; ?>
@@ -135,6 +148,12 @@ get_header(); ?>
                             <?php } else { ?>
                               <div class="mstime"><?php echo $e_time ?></div>
                             <?php } ?>
+                          <?php } else { ?>
+
+                            <?php if ($branch_status=='closed') { ?>
+                            <div class="mstime branch--status--closed">Closed</div>
+                            <?php } ?>
+
                           <?php } ?>
 
                         <?php } ?>

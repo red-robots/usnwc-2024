@@ -2673,6 +2673,30 @@ function getDataBySlug($slug) {
   return ($result) ? $result : '';
 }
 
+function getPageSlugById($postId) {
+  global $wpdb;
+  $query = "SELECT p.post_name FROM ".$wpdb->prefix."posts p WHERE p.ID=".$postId;
+  $result = $wpdb->get_row($query);
+  return ($result) ? $result->post_name : '';
+}
+
+// getBranchOperationStatus();
+function getBranchOperationStatus($slug) {
+  $status = '';
+  $branches = get_field('whitewaterLocations', 'option');
+  if ($branches) {
+    foreach ($branches as $b) { 
+      //$location = $b['location'];
+      $tax = $b['locations_taxonomy'];
+      $tax_slug = ( isset($tax->slug) && $tax->slug ) ? $tax->slug : '';
+      if($tax_slug==$slug) {
+        $status = $b['trail_status_branch'];
+      }
+    }
+  }
+  return $status;
+}
+
 // remove_filter( 'the_content', 'wpautop' );
 // remove_filter( 'the_excerpt', 'wpautop');
 

@@ -2893,6 +2893,10 @@ body.logged-in.admin-bar.subpage {
   }
 }
 
+.branch--status--closed {
+  color: $red!important;
+}
+
 .site-header .nav-item.nav-item-today {
   position: relative;
   .today-dropdown-container {
