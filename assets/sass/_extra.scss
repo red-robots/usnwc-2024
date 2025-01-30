@@ -3684,6 +3684,9 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
 }
 .defaultTextContent {
   text-align: left;
+  ul li, ol li {
+    margin-bottom: 0.65em;
+  }
   .gform_wrapper.gravity-theme input[type=color],
   .gform_wrapper.gravity-theme input[type=date],
   .gform_wrapper.gravity-theme input[type=datetime-local],
