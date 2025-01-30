@@ -18,7 +18,7 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
 get_header(); 
 
 if( is_page('waiver') ) {
-	$pageClass = 'waiver';
+	$pageClass = ' waiver';
 } else {
 	$pageClass = '';
 }
@@ -35,7 +35,7 @@ if( is_page('waiver') ) {
 						<h1 class="page-title"><?php the_title(); ?></h1>
 					</div>
           <?php if ( get_the_content() ) { ?>
-					<div class="defaultTextContent <?php echo $pageClass; ?>">
+					<div class="defaultTextContent<?php echo $pageClass; ?>">
 						<?php the_content(); ?>
 					</div>
           <?php } ?>

@@ -68,7 +68,8 @@ $condition1 = "SELECT pp.ID, mm.meta_value AS start_date
           FROM " . $prefix ."posts pp, ".$prefix."postmeta mm 
           WHERE ".$where_post_types_condition."
           AND pp.post_status='publish' 
-          AND pp.ID=mm.post_id AND mm.meta_key='start_date'";
+          AND pp.ID=mm.post_id AND mm.meta_key='start_date' 
+          AND UNIX_TIMESTAMP(mm.meta_value) >= ".strtotime(date('Ymd'));
 
 $condition2 = "SELECT pp.ID, mm.meta_value AS end_date  
           FROM " . $prefix ."posts pp, ".$prefix."postmeta mm 

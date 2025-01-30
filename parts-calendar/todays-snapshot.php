@@ -116,6 +116,9 @@
               $v_status = $c['status'];
               $status_value = ( isset($v_status['value']) ) ? $v_status['value'] : '';
               $status_label = ( isset($v_status['label']) ) ? $v_status['label'] : '';
+              if($status_label && strtolower($status_label)=='close') {
+                $status_label = 'Closed';
+              }
               if($v_title) { ?>
               <div class="infocol<?php echo ($v_is_status) ? ' is-status ' . $status_value:'' ?>">
                 <div class="inner">
