@@ -132,16 +132,17 @@
                         <?php if ( $hours = do_shortcode($v_text) ) { ?>
                         <div class="text hours--info">
                           <?php 
-                          $hours = strtoupper($hours);
+                          $hours = strtolower($hours);
                           $hours = preg_replace('/\s+/', ' ', $hours);
                           if (strpos($hours, ':00') !== false) {
                             $hours = str_replace(':00','',$hours);
                           }
-                          if (strpos($hours, 'HRGEN-HOURS') !== false) {
-                            $hours = str_replace('<span class="HRGEN-HOURS">','',$hours);
+                          if ( strpos($hours, 'hrgen-hours') !== false ||  ) {
+                            $hours = str_replace('<span class="hrgen-hours">','',$hours);
                             $hours = str_replace('</span>','',$hours);
                             $hours = preg_replace('/\s+/','',$hours);
                           }
+                          $hours = ($hours) ? strtoupper($hours) : '';
                           echo $hours; 
                           ?>
                         </div>
