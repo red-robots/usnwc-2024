@@ -133,7 +133,7 @@
                         <div class="text">
                           <?php 
                           $hours = strtoupper($hours);
-                          $hours = preg_replace('/\s+/', '', $hours);
+                          $hours = preg_replace('/\s+/', ' ', $hours);
                           if (strpos($hours, ':00') !== false) {
                             $hours = str_replace(':00','',$hours);
                           }
