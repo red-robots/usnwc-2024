@@ -5462,6 +5462,7 @@ section.full-bleed-promo.rounded_with_padding img.poster-mobile{display:none}
 .navigation-sitemap .other-link ul>li a:hover,.navigation-sitemap .other-link ul>li a:focus{color:#ba0d30}
 .navigation-sitemap.other-links{display:none}
 .two-columns-block .columns-2 .schedule-items-wrap .dash-item .line span,.two-columns-block .columns-2 .schedule-items-wrap .dash-item .line a{background-color:#f2f2f2}
+.defaultContentDiv.text-centered-section .wrapper{max-width:1000px}
 .defaultContentDiv:has(.defaultTextContent){text-align:left}
 .defaultContentDiv:has(.defaultTextContent) h1.page-title{text-align:center}
 .defaultTextContent{text-align:left}

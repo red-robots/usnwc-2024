@@ -3673,7 +3673,9 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
     background-color: #f2f2f2;
   }
 }
-
+.defaultContentDiv.text-centered-section .wrapper {
+  max-width: 1000px;
+}
 .defaultContentDiv:has(.defaultTextContent) {
   text-align: left;
   h1.page-title {
