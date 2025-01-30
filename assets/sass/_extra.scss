@@ -3711,6 +3711,12 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
 .gform_wrapper.gravity-theme .ginput_container_total input[type="text"][readonly] {
   padding-left: 0!important;
   padding-right: 0!important;
+  border: none!important;
+  font-weight: bold;
+  &:focus {
+    border: none!important;
+    box-shadow: none!important;
+  }
 }
 body.page-template-page-bike-ranch.subpage #banner:has(.image-wrapper .mobile) {
   @media screen and (max-width: 768px) {
