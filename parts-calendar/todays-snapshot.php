@@ -137,7 +137,7 @@
                           if (strpos($hours, ':00') !== false) {
                             $hours = str_replace(':00','',$hours);
                           }
-                          if ( strpos($hours, 'hrgen-hours') !== false ||  ) {
+                          if ( strpos($hours, 'hrgen-hours') !== false ) {
                             $hours = str_replace('<span class="hrgen-hours">','',$hours);
                             $hours = str_replace('</span>','',$hours);
                             $hours = preg_replace('/\s+/','',$hours);
