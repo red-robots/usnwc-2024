@@ -3683,7 +3683,10 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
 .defaultTextContent {
   text-align: left;
 }
-
+.gform_wrapper.gravity-theme .ginput_container_total input[type="text"][readonly] {
+  padding-left: 0!important;
+  padding-right: 0!important;
+}
 body.page-template-page-bike-ranch.subpage #banner:has(.image-wrapper .mobile) {
   @media screen and (max-width: 768px) {
     height: auto!important;
