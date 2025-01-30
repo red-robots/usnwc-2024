@@ -133,15 +133,15 @@
                         <div class="text hours--info">
                           <?php 
                           $hours = strtolower($hours);
-                          //$hours = preg_replace('/\s+/', ' ', $hours);
-                          if (strpos($hours, ':00') !== false) {
+                          $hours = preg_replace('/\s+/', ' ', $hours);
+                          if ( strpos($hours, ':00') !== false ) {
                             $hours = str_replace(':00','',$hours);
                           }
-                          if ( strpos($hours, 'hrgen-hours') !== false ) {
-                            $hours = str_replace('<span class="hrgen-hours">','',$hours);
-                            $hours = str_replace('</span>','',$hours);
-                            $hours = preg_replace('/\s+/','',$hours);
-                          }
+                          // if ( strpos($hours, 'hrgen-hours') !== false ) {
+                          //   $hours = str_replace('<span class="hrgen-hours">','',$hours);
+                          //   $hours = str_replace('</span>','',$hours);
+                          //   $hours = preg_replace('/\s+/','',$hours);
+                          // }
                           $hours = ($hours) ? strtoupper($hours) : '';
                           echo $hours; 
                           ?>
