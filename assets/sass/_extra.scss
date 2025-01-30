@@ -3703,7 +3703,7 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
     transition: all ease .3s;
     &:focus {
       outline: 0;
-      box-shadow: 0 .05rem .5rem rgba(0, 0, 0, .15);
+      box-shadow: 0 .05rem .5rem rgba(0, 0, 0, .2);
       border-color: #000;
     }
   }
