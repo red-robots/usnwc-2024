@@ -130,12 +130,17 @@
                     <?php if ($v_text) { ?>
                       <?php if (strpos($v_text, '[get_hours') !== false) { ?>
                         <?php if ( $hours = do_shortcode($v_text) ) { ?>
-                        <div class="text">
+                        <div class="text hours--info">
                           <?php 
                           $hours = strtoupper($hours);
                           $hours = preg_replace('/\s+/', ' ', $hours);
                           if (strpos($hours, ':00') !== false) {
                             $hours = str_replace(':00','',$hours);
+                          }
+                          if (strpos($hours, 'HRGEN-HOURS') !== false) {
+                            $hours = str_replace('<span class="HRGEN-HOURS">','',$hours);
+                            $hours = str_replace('</span>','',$hours);
+                            $hours = preg_replace('/\s+/','',$hours);
                           }
                           echo $hours; 
                           ?>
