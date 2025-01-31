@@ -30,7 +30,8 @@ $intro_textcolor = (get_field('textcolor')) ? get_field('textcolor') : '#555555'
 body.single-festival .column-data-section .text-large {
   color: <?php echo $intro_bgcolor ?>;
 }
-body.single-festival .bannerBottomSvg2 {
+body.single-festival .banner-bottom svg,
+body.single-festival #banner .banner-bottom svg {
   fill: <?php echo $intro_bgcolor ?>!important;
 }
 body.single-festival .schedule-listing-dashes a {
