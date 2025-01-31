@@ -2036,6 +2036,7 @@ body.nav-open .menu-toggle{opacity:0}
 #banner{width:100%;float:left;position:relative;background-color:#000}
 #banner.video-playing{z-index:300}
 #banner .banner-bottom{width:100%;position:absolute;bottom:-5px;left:0;z-index:1000000;overflow:hidden}
+#banner .banner-bottom svg{fill:#fff}
 #banner .banner-bottom img{display:block;width:100%;height:auto;-webkit-transform:scale(1.5);transform:scale(1.5)}
 #banner .logo-overlay{position:absolute;top:40%;left:0;right:0;margin-left:auto;margin-right:auto;width:200px;z-index:10}
 #banner .logo-overlay img{width:100%}
@@ -5474,7 +5475,7 @@ section.full-bleed-promo.rounded_with_padding img.poster-mobile{display:none}
 .gform_wrapper.gravity-theme .ginput_container_total input[type=text][readonly]:focus{border:none !important;-webkit-box-shadow:none !important;box-shadow:none !important}
 body.scrolled.logged-in.admin-bar .mobileRedTag .stats,body.scrolled .mobileRedTag .stats{position:relative !important;top:0}
 body.logged-in.admin-bar.scrolled .redtag{top:112px !important}
-body.enchilada .banner-bottom.svgphp svg{fill:#fef9e7}
+body.enchilada .banner-bottom svg{fill:#fef9e7}
 body.enchilada .main-description{color:#7f7c73}
 body.enchilada #pageTabs a,body.enchilada .title-w-icon h2,body.enchilada h2.stitle,body.enchilada .stitle,body.enchilada .text-and-image-blocks .textcol .mstitle,body.enchilada .sectionTitle,body.enchilada .information-tabs-wrap{font-family:novecento-sans-narrow}
 body.enchilada .information-tabs-wrap .tabs-info ul li a{background-color:#f3edd9;color:#7f7c73}
@@ -6458,6 +6459,8 @@ body.home .homerow .imagebox{width:50%;padding:10px}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left,body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-right{padding-left:0;padding-right:0}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left{border-bottom:1px solid #ccc;padding-bottom:30px}
 .pass-options-wrap .option .wrap{-ms-flex-line-pack:justify;align-content:space-between;width:100%;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+body.subpage.single.single-festival .banner-bottom,body.subpage.single.single-special-events .banner-bottom{background-image:none !important;height:auto !important}
+body.subpage.single.single-festival .banner-bottom #bannerBottomSvg1,body.subpage.single.single-special-events .banner-bottom #bannerBottomSvg1{-webkit-transform:scale(2);transform:scale(2)}
 body.page-template-page-bike-ranch.subpage #banner{height:90vh}
 body.page-template-page-bike-ranch.subpage #banner .slides .logo-overlay{width:48vw}
 body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-inner{padding:50px 12vw}

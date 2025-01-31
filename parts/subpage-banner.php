@@ -78,7 +78,7 @@ if( $wrs_banner_type == 'video' ) {
 <?php } else {
 
 	ob_start(); 
-	if($heroImage) { ?>
+	if($heroImage && isset($heroImage['url'])) { ?>
 	<div id="banner" class="subpageBanner">
 		<div class="slides-wrapper static-banner">
 			<ul class="slides">

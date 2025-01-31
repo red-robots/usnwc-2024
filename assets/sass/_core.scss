@@ -1054,6 +1054,9 @@ body.nav-open {
 		left: 0;
 		z-index: 1000000;
     overflow: hidden;
+    svg {
+      fill: #FFF;
+    }
 		img {
       display: block;
 			width: 100%;

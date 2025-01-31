@@ -5,11 +5,15 @@ $enchillada-gray: #7f7c73;
 
 body.enchilada {
 
-  .banner-bottom.svgphp svg {
-    fill: #FEF9E7;
-  }
+  // .banner-bottom.svgphp svg {
+  //   fill: #FEF9E7;
+  // }
     //.content-default {
     
+    .banner-bottom svg {
+      fill: #FEF9E7;
+    }
+
     .main-description {
       color: $enchillada-gray;
     }
