@@ -17,6 +17,103 @@ function js_custom_init() {
         //     'menu_position' => 9,
         //     'supports'  => array('title','editor', 'author')
         // ),
+        // array(
+        //     'post_type' => 'pass',
+        //     'menu_name' => 'Passes',
+        //     'plural'    => 'Passes',
+        //     'single'    => 'Pass',
+        //     'menu_icon' => 'dashicons-tickets-alt',
+        //     'supports'  => array('title','editor')
+        // ),
+        // array(
+        //     'post_type' => 'camp',
+        //     'menu_name' => 'Camps',
+        //     'plural'    => 'Camps',
+        //     'single'    => 'Camp',
+        //     'menu_icon' => 'dashicons-location',
+        //     'supports'  => array('title','editor')
+        // ),
+        // array(
+        //     'post_type' => 'brewery',
+        //     'menu_name' => 'Breweries',
+        //     'plural'    => 'Breweries',
+        //     'single'    => 'Brewery',
+        //     'menu_icon' => 'dashicons-beer',
+        //     'supports'  => array('title','editor')
+        // ),
+        // array(
+        //     'post_type' => 'festival_activity',
+        //     'menu_name' => 'Festival Activities',
+        //     'plural'    => 'Festival Activities',
+        //     'single'    => 'Festival Activity',
+        //     'menu_icon' => 'dashicons-megaphone',
+        //     'supports'  => array('title','editor','excerpt')
+        // ),
+        // array(
+        //     'post_type' => 'fieldtrips',
+        //     'menu_name' => 'Field Trips',
+        //     'plural'    => 'Field Trips',
+        //     'single'    => 'Field Trip',
+        //     'menu_icon' => 'dashicons-car',
+        //     'supports'  => array('title','editor')
+        // ),
+        // array(
+        //     'post_type' => 'event-space',
+        //     'menu_name' => 'Event Spaces',
+        //     'plural'    => 'Event Spaces',
+        //     'single'    => 'Event Space',
+        //     'menu_icon' => 'dashicons-buddicons-community',
+        //     'supports'  => array('title','editor')
+        // ),
+        // array(
+        //     'post_type' => 'stores',
+        //     'menu_name' => 'Outfitters',
+        //     'plural'    => 'Outfitters',
+        //     'single'    => 'Outfitter',
+        //     'menu_icon' => 'dashicons-store',
+        //     'supports'  => array('title','editor')
+        // ),
+        // array(
+        //     'post_type' => 'teamdev',
+        //     'menu_name' => 'Team Developement',
+        //     'plural'    => 'Team Developement',
+        //     'single'    => 'Team Developement',
+        //     'menu_icon' => 'dashicons-groups',
+        //     'supports'  => array('title','editor')
+        // ),
+        // array(
+        //     'post_type' => 'employeestories',
+        //     'menu_name' => 'Employee Stories',
+        //     'plural'    => 'Employee Stories',
+        //     'single'    => 'Employee Story',
+        //     'menu_icon' => 'dashicons-format-status',
+        //     'supports'  => array('title','editor')
+        // ),
+        // array(
+        //     'post_type' => 'route',
+        //     'menu_name' => 'Routes',
+        //     'plural'    => 'Routes',
+        //     'single'    => 'Route',
+        //     'menu_icon' => 'dashicons-location-alt',
+        //     'supports'  => array('title','editor','comments')
+        // ),
+        // array(
+        //     'post_type' => 'camp_photos',
+        //     'menu_name' => 'Camp Photos',
+        //     'plural'    => 'Camp Photos',
+        //     'single'    => 'Camp Photos',
+        //     'menu_icon' => 'dashicons-location-alt',
+        //     'supports'  => array('title','editor', 'page-attributes'),
+        //     'hierarchical' => true
+        // ),
+        // array(
+        //     'post_type' => 'job',
+        //     'menu_name' => 'Jobs',
+        //     'plural'    => 'Jobs',
+        //     'single'    => 'Job',
+        //     'menu_icon' => 'dashicons-index-card',
+        //     'supports'  => array('title','editor')
+        // ),
         array(
             'post_type' => 'special-events',
             'menu_name' => 'Special Events',
@@ -40,7 +137,7 @@ function js_custom_init() {
             'menu_name' => 'Form Pages',
             'plural'    => 'Form Pages',
             'single'    => 'Form Page',
-            'menu_icon' => 'dashicons-location-alt',
+            'menu_icon' => 'dashicons-text-page',
             'menu_position' => 10,
             'supports'  => array('title','editor', 'author')
         ),
@@ -49,8 +146,16 @@ function js_custom_init() {
             'menu_name' => 'What\'s New',
             'plural'    => 'What\'s New',
             'single'    => 'What\'s New',
-            'menu_icon' => 'dashicons-sos',
+            'menu_icon' => 'dashicons-info',
             'supports'  => array('title','editor', 'thumbnail', 'excerpt', 'author')
+        ),
+        array(
+            'post_type' => 'faqs',
+            'menu_name' => 'FAQs',
+            'plural'    => 'FAQs',
+            'single'    => 'FAQ',
+            'menu_icon' => 'dashicons-editor-help',
+            'supports'  => array('title','editor')
         ),
         array(
             'post_type' => 'activity',
@@ -69,12 +174,12 @@ function js_custom_init() {
             'supports'  => array('title', 'revisions')
         ),
         array(
-            'post_type' => 'pass',
-            'menu_name' => 'Passes',
-            'plural'    => 'Passes',
-            'single'    => 'Pass',
-            'menu_icon' => 'dashicons-tickets-alt',
-            'supports'  => array('title','editor')
+            'post_type' => 'wildwoods',
+            'menu_name' => 'Wildwoods',
+            'plural'    => 'Wildwoods',
+            'single'    => 'Wildwood',
+            'menu_icon' => 'dashicons-palmtree',
+            'supports'  => array('title','editor','thumbnail')
         ),
         array(
             'post_type' => 'race',
@@ -84,7 +189,6 @@ function js_custom_init() {
             'menu_icon' => 'dashicons-location-alt',
             'supports'  => array('title','editor','thumbnail')
         ),
-
         array(
             'post_type' => 'film-series',
             'menu_name' => 'Film Series',
@@ -118,69 +222,12 @@ function js_custom_init() {
             'supports'  => array('title','editor','thumbnail')
         ),
         array(
-            'post_type' => 'festival_activity',
-            'menu_name' => 'Festival Activities',
-            'plural'    => 'Festival Activities',
-            'single'    => 'Festival Activity',
-            'menu_icon' => 'dashicons-megaphone',
-            'supports'  => array('title','editor','excerpt')
-        ),
-        array(
-            'post_type' => 'camp',
-            'menu_name' => 'Camps',
-            'plural'    => 'Camps',
-            'single'    => 'Camp',
-            'menu_icon' => 'dashicons-location',
-            'supports'  => array('title','editor')
-        ),
-        array(
-            'post_type' => 'fieldtrips',
-            'menu_name' => 'Field Trips',
-            'plural'    => 'Field Trips',
-            'single'    => 'Field Trip',
-            'menu_icon' => 'dashicons-car',
-            'supports'  => array('title','editor')
-        ),
-        array(
-            'post_type' => 'wildwoods',
-            'menu_name' => 'Wildwoods',
-            'plural'    => 'Wildwoods',
-            'single'    => 'Wildwood',
-            'menu_icon' => 'dashicons-category',
-            'menu_position' => 15,
-            'supports'  => array('title','editor','thumbnail')
-        ),
-        array(
-            'post_type' => 'brewery',
-            'menu_name' => 'Breweries',
-            'plural'    => 'Breweries',
-            'single'    => 'Brewery',
-            'menu_icon' => 'dashicons-beer',
-            'supports'  => array('title','editor')
-        ),
-        array(
             'post_type' => 'dining',
             'menu_name' => 'Adventure Dining',
             'plural'    => 'Adventure Dining',
             'single'    => 'Adventure Dining',
-            'menu_icon' => 'dashicons-coffee',
+            'menu_icon' => 'dashicons-food',
             'supports'  => array('title','editor','thumbnail')
-        ),
-        array(
-            'post_type' => 'event-space',
-            'menu_name' => 'Event Spaces',
-            'plural'    => 'Event Spaces',
-            'single'    => 'Event Space',
-            'menu_icon' => 'dashicons-buddicons-community',
-            'supports'  => array('title','editor')
-        ),
-        array(
-            'post_type' => 'stores',
-            'menu_name' => 'Outfitters',
-            'plural'    => 'Outfitters',
-            'single'    => 'Outfitter',
-            'menu_icon' => 'dashicons-store',
-            'supports'  => array('title','editor')
         ),
         array(
             'post_type' => 'instructions',
@@ -195,58 +242,9 @@ function js_custom_init() {
             'menu_name' => 'Retreats',
             'plural'    => 'Retreats',
             'single'    => 'Retreat',
-            'menu_icon' => 'dashicons-book-alt',
+            'menu_icon' => 'dashicons-flag',
             'supports'  => array('title','editor')
-        ),
-        // array(
-        //     'post_type' => 'job',
-        //     'menu_name' => 'Jobs',
-        //     'plural'    => 'Jobs',
-        //     'single'    => 'Job',
-        //     'menu_icon' => 'dashicons-index-card',
-        //     'supports'  => array('title','editor')
-        // ),
-        array(
-            'post_type' => 'faqs',
-            'menu_name' => 'FAQs',
-            'plural'    => 'FAQs',
-            'single'    => 'FAQ',
-            'menu_icon' => 'dashicons-info',
-            'supports'  => array('title','editor')
-        ),
-        array(
-            'post_type' => 'teamdev',
-            'menu_name' => 'Team Developement',
-            'plural'    => 'Team Developement',
-            'single'    => 'Team Developement',
-            'menu_icon' => 'dashicons-groups',
-            'supports'  => array('title','editor')
-        ),
-        array(
-            'post_type' => 'employeestories',
-            'menu_name' => 'Employee Stories',
-            'plural'    => 'Employee Stories',
-            'single'    => 'Employee Story',
-            'menu_icon' => 'dashicons-format-status',
-            'supports'  => array('title','editor')
-        ),
-        array(
-            'post_type' => 'route',
-            'menu_name' => 'Routes',
-            'plural'    => 'Routes',
-            'single'    => 'Route',
-            'menu_icon' => 'dashicons-location-alt',
-            'supports'  => array('title','editor','comments')
-        ),
-        array(
-            'post_type' => 'camp_photos',
-            'menu_name' => 'Camp Photos',
-            'plural'    => 'Camp Photos',
-            'single'    => 'Camp Photos',
-            'menu_icon' => 'dashicons-location-alt',
-            'supports'  => array('title','editor', 'page-attributes'),
-            'hierarchical' => true
-        ),
+        )
     );
     
     if($post_types) {
