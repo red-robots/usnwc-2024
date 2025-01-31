@@ -6459,7 +6459,7 @@ body.home .homerow .imagebox{width:50%;padding:10px}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left,body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-right{padding-left:0;padding-right:0}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left{border-bottom:1px solid #ccc;padding-bottom:30px}
 .pass-options-wrap .option .wrap{-ms-flex-line-pack:justify;align-content:space-between;width:100%;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
-body.subpage.single.single-festival .banner-bottom,body.subpage.single.single-special-events .banner-bottom{background-image:none !important;height:auto !important}
+body.subpage.single.single-festival .banner-bottom,body.subpage.single.single-special-events .banner-bottom{background-image:none !important;height:auto !important;bottom:-2px}
 body.subpage.single.single-festival .banner-bottom #bannerBottomSvg1,body.subpage.single.single-special-events .banner-bottom #bannerBottomSvg1{-webkit-transform:scale(2);transform:scale(2)}
 body.page-template-page-bike-ranch.subpage #banner{height:90vh}
 body.page-template-page-bike-ranch.subpage #banner .slides .logo-overlay{width:48vw}
