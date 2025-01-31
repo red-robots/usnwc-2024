@@ -247,6 +247,9 @@ body.subpage.single.single-special-events {
     font-size: 2.5rem;
   }
   .column-data-section {
+    &.padtop {
+      padding-top: 50px;
+    }
     @include desk {
       padding-bottom: 40px;
     }

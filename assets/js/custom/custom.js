@@ -777,6 +777,16 @@ var getGridSize = function() {
 		//$("input.search-field").val("");
 	});
 
+  if( $('.single #primary .intro-text-wrap.alt-color').length ) {
+    if( $('.single #primary .intro-text-wrap.alt-color').next().hasClass('flexibleContentWrap') ) {
+      if( $('.single #primary .intro-text-wrap.alt-color').next().find('section').length ) {
+        var firstSection = $('.single #primary .intro-text-wrap.alt-color').next().find('section').first();
+        if( firstSection.hasClass('column-data-section') ) {
+          firstSection.addClass('padtop');
+        }
+      }
+    }
+  }
 
 	/* Footer Subscribe Form */
 	$('#footSubscribeForm input[type="email"]').on("focus",function(){
