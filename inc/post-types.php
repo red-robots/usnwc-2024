@@ -114,6 +114,14 @@ function js_custom_init() {
         //     'menu_icon' => 'dashicons-index-card',
         //     'supports'  => array('title','editor')
         // ),
+        // array(
+        //     'post_type' => 'retreat',
+        //     'menu_name' => 'Retreats',
+        //     'plural'    => 'Retreats',
+        //     'single'    => 'Retreat',
+        //     'menu_icon' => 'dashicons-flag',
+        //     'supports'  => array('title','editor')
+        // )
         array(
             'post_type' => 'special-events',
             'menu_name' => 'Special Events',
@@ -235,14 +243,6 @@ function js_custom_init() {
             'plural'    => 'Instructions',
             'single'    => 'Instruction',
             'menu_icon' => 'dashicons-book-alt',
-            'supports'  => array('title','editor')
-        ),
-        array(
-            'post_type' => 'retreat',
-            'menu_name' => 'Retreats',
-            'plural'    => 'Retreats',
-            'single'    => 'Retreat',
-            'menu_icon' => 'dashicons-flag',
             'supports'  => array('title','editor')
         )
     );

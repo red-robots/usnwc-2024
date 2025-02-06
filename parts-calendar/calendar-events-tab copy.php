@@ -5,7 +5,17 @@ $today_date = strtotime(date('Ymd'));
 $where_post_types = '';
 $paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
 $filter_type = ( isset($_GET['type']) && $_GET['type'] ) ? $_GET['type'] : '';
+
 $featured_event = get_field('featured_event','option'); /* will return a post id */
+
+// $cpttypes = [
+//   'festival'    => 'Festivals',
+//   'race'        => 'Races',
+//   'film-series' => 'Film Series',
+//   'dining'      => 'Dining',
+//   'music'       => 'River Jam',
+//   'wildwoods'   => 'Wildwoods'
+// ];
 
 $cpttypes = [
   'dining'      => 'Dining',
@@ -19,7 +29,6 @@ $cpttypes = [
 
 $selected_filter_name = ($filter_type && isset($cpttypes[$filter_type])) ? $cpttypes[$filter_type]:'';
 $postTypes = $cpttypes;
-$the_post_types = array();
 
 if($filter_type && $filter_type!='all') {
   foreach($postTypes as $k=>$v) {
@@ -31,9 +40,20 @@ if($filter_type && $filter_type!='all') {
 
 
 if($postTypes) {
+
+  // if( count($postTypes)==1 ) {
+  //   $where_post_types .= ' pp.post_type="' .key($postTypes). '"';
+  // } else {
+  //   $k=0;
+  //   foreach($postTypes as $type=>$title) {
+  //     $and = ($k>0) ? ' OR ' : '';
+  //     $where_post_types .= $and . 'pp.post_type="'.$type.'"';
+  //     $k++;
+  //   }
+  // }
+  
   $k=0;
   foreach($postTypes as $type=>$title) {
-    $the_post_types[] = $type;
     $and = ($k>0) ? ' OR ' : '';
     $where_post_types .= $and . 'pp.post_type="'.$type.'"';
     $k++;
@@ -41,30 +61,52 @@ if($postTypes) {
 }
 
 $where_post_types_condition = ( count($postTypes)==1 ) ? $where_post_types : "(".$where_post_types.")";
+
+
+
+$condition1 = "SELECT pp.ID, mm.meta_value AS start_date 
+          FROM " . $prefix ."posts pp, ".$prefix."postmeta mm 
+          WHERE ".$where_post_types_condition."
+          AND pp.post_status='publish' 
+          AND pp.ID=mm.post_id AND mm.meta_key='start_date' 
+          AND UNIX_TIMESTAMP(mm.meta_value) >= ".strtotime(date('Ymd'));
+
+$condition2 = "SELECT pp.ID, mm.meta_value AS end_date  
+          FROM " . $prefix ."posts pp, ".$prefix."postmeta mm 
+          WHERE ".$where_post_types_condition." 
+          AND pp.post_status='publish' 
+          AND pp.ID=mm.post_id AND mm.meta_key='end_date' 
+          AND UNIX_TIMESTAMP(mm.meta_value) >= ".strtotime(date('Ymd'))." ORDER BY end_date ASC";
+
+
 $per_page = 15;
-$total_records = 0;
-$posts = '';
 $offset = ($paged>1) ? ($per_page * $paged)-$per_page : 0;
 
-$is_filtered = ( isset($_GET['type']) && $_GET['type']!='all' ) ? true : false;
-
-if($the_post_types) {
-  $query = "SELECT p.ID, p.post_title, p.post_type, pxt.post_id, pxt.start_date, pxt.end_date  
-            FROM ".$prefix."postmeta_extension pxt, ".$prefix."posts p, ".$prefix."postmeta m  
-            WHERE p.ID=pxt.post_id AND p.ID=m.post_id AND p.post_status='publish' AND p.post_type IN ('".implode("','",$the_post_types)."')  
-            AND m.meta_key='start_date' AND ".strtotime(date('Ymd'))." BETWEEN UNIX_TIMESTAMP(pxt.start_date) AND UNIX_TIMESTAMP(pxt.end_date)";
-  
-
-  if($featured_event) {
-    $query .= " AND p.ID!=" . $featured_event ." ";
-  }
-  $query_limit = $query . " ORDER BY pxt.start_date ASC, pxt.end_date DESC LIMIT ".$per_page." OFFSET ".$offset;
-
-  $total = $wpdb->get_results($query);
-  $total_records = ($total) ? count($total) : 0;
-  $posts = $wpdb->get_results($query_limit);
+if( isset($_GET['type']) && $_GET['type']!='all' ) {
+  $where = '';
+} else {
+  $where = ($featured_event) ? 'AND p.ID!=' . $featured_event : '';
 }
+$the_query = "SELECT p.*, st.start_date, en.end_date     
+          FROM ".$prefix."posts p, ".$prefix."postmeta m, 
+          (".$condition1.") st, (".$condition2.") en  
+          WHERE p.ID=st.ID AND p.ID=en.ID AND p.ID=m.post_id ".$where."
+          GROUP BY p.ID";
 
+//$new_query = $the_query . " ORDER BY st.start_date ASC LIMIT ".$offset.", " . $per_page;
+$new_query = $the_query . " ORDER BY st.start_date ASC LIMIT ".$per_page." OFFSET ".$offset;
+
+// $the_count_query = "SELECT count(*) as total    
+//           FROM ".$prefix."posts p, ".$prefix."postmeta m, 
+//           (".$condition1.") st, (".$condition2.") en  
+//           WHERE p.ID=st.ID AND p.ID=en.ID AND p.ID=m.post_id 
+//           GROUP BY p.ID";
+// $tp = $wpdb->get_row($the_count_query);
+// $total_records = ($tp) ? $tp->total : 0;
+
+$posts = $wpdb->get_results($new_query);
+$total = $wpdb->get_results($the_query);
+$total_records = ($total) ? count($total) : 0;
 ?>
 <section id="events-feed" class="calendar-tab-events-posts<?php echo ($filter_type && $filter_type!='all') ? ' is-filtered':'' ?>">
   <div data-selected="<?php echo ($filter_type) ? $filter_type :'all' ?>" data-baseUrl="<?php echo get_permalink() ?>" class="custom-dropdown dropdown-posttypes">
@@ -88,9 +130,12 @@ if($the_post_types) {
   <div class="records-container">
     <div class="flexwrap">
       <?php 
-
-        if ($featured_event && $is_filtered==false) {
-          include( get_template_directory() . '/parts-calendar/calendar-events-featured.php');
+        if( isset($_GET['type']) && $_GET['type']!='all' ) {
+          //Don't show featured image
+        } else {
+          if ($featured_event) {
+            include( get_template_directory() . '/parts-calendar/calendar-events-featured.php');
+          }
         }
 
         $CURRENT_DATE = date('Ymd');
@@ -129,8 +174,6 @@ if($the_post_types) {
         $start_str = ($start) ? strtotime($start) : '';
         $end_str = ($end) ? strtotime($end) : $start_str;
 
-        //print_r($start);
-
         $event_dates = '';
         if($start || $end) {
           if($start==$end) {
@@ -152,18 +195,15 @@ if($the_post_types) {
               } else {
                 //Different months
                 $start_date_month = date('M j', strtotime($start));
-
-
+                
                 //Check if start month is past, 
                 //then change month to current if end date is future
-                // if( strtotime($start) < strtotime(date('Ymd')) ) {
-                //   $start_date_month = date('M j');
-                // } 
+                if( strtotime($start) < strtotime(date('Ymd')) ) {
+                  $start_date_month = date('M j');
+                } 
 
                 $end_date_month = date('M j, Y', strtotime($end));
                 $event_dates .= $start_date_month . '-' . $end_date_month;
-
-
               }
             }
           }
@@ -177,10 +217,24 @@ if($the_post_types) {
     <?php 
     if( $total_records>$per_page ) {
       $perpage_count = $total_records/$per_page;
+      //$total_pages = round($total_records/$per_page); 
       $total_pages = ceil($perpage_count); 
       ?>
       <div id="hiddenData" style="display:none;"></div>
       <div id="pagination" class="pagination-wrapper loadMoreWrappe">
+        <?php
+            // $pagination = array(
+            //     'base' => @add_query_arg('pg','%#%'),
+            //     'format' => '?paged=%#%',
+            //     'mid-size' => 1,
+            //     'current' => $paged,
+            //     'total' => $total_pages,
+            //     'prev_next' => True,
+            //     'prev_text' => __( '<span class="fas fa-chevron-left"></span>' ),
+            //     'next_text' => __( '<span class="fas fa-chevron-right"></span>' )
+            // );
+            // echo paginate_links($pagination);
+        ?>
         <a href="javascript:void(0)" data-baseurl="<?php echo get_permalink() ?>" id="loadMorePosts" data-perpage="<?php echo $per_page ?>" data-count="<?php echo $total_records ?>" data-next="2" data-total-pages="<?php echo $total_pages ?>" class="button button-pill">See More</a>
       </div>
     <?php } ?>
