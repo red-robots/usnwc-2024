@@ -1,3 +1,3 @@
-<svg id="bannerBottomSvg1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 52">
-  <path d="M904.5,29l-81.8-23c-13.9-3.3-29.2-5-44.7-5H.5L-.5,52h1920l1-51h-778.5c-15.5,0-30.8,1.8-44.7,5l-82.8,20.5c-14.3,3.3-30.8,8.2-54.5,8.5s-41.2-2.7-55.5-6Z"/>
+<svg id="bannerBottomSvg1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 86.4">
+<path class="st0" d="M772,1H0v85.4h1920V1h-768c-32-1-70.4,33.3-121.8,48.9s-89.2,10.7-137.7-6.6C841.9,25.3,815,1,772,1Z"/>
 </svg>
