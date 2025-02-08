@@ -219,16 +219,18 @@ body.subpage.single.single-special-events {
   }
   .banner-bottom {
     overflow: hidden;
-    #bannerBottomSvg1  {
-      transform: scale(1.02);
-    }
+    transform: scale(1.02);
+    // #bannerBottomSvg1  {
+    //   transform: scale(1.02);
+    // }
     @media screen and (max-width: 820px) {
       background-image: none!important;
       height: auto!important;
       bottom: -1px;
-      #bannerBottomSvg1  {
-        transform: scale(1.65);
-      }
+      transform: scale(1.65);
+      // #bannerBottomSvg1  {
+      //   transform: scale(1.65);
+      // }
     }
   }
   .site-content {
