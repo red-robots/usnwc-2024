@@ -5474,6 +5474,10 @@ section.full-bleed-promo.rounded_with_padding img.poster-mobile{display:none}
 .defaultTextContent .gform_wrapper.gravity-theme input[type=color]:focus,.defaultTextContent .gform_wrapper.gravity-theme input[type=date]:focus,.defaultTextContent .gform_wrapper.gravity-theme input[type=datetime-local]:focus,.defaultTextContent .gform_wrapper.gravity-theme input[type=datetime]:focus,.defaultTextContent .gform_wrapper.gravity-theme input[type=email]:focus,.defaultTextContent .gform_wrapper.gravity-theme input[type=month]:focus,.defaultTextContent .gform_wrapper.gravity-theme input[type=number]:focus,.defaultTextContent .gform_wrapper.gravity-theme input[type=password]:focus,.defaultTextContent .gform_wrapper.gravity-theme input[type=search]:focus,.defaultTextContent .gform_wrapper.gravity-theme input[type=tel]:focus,.defaultTextContent .gform_wrapper.gravity-theme input[type=text]:focus,.defaultTextContent .gform_wrapper.gravity-theme input[type=time]:focus,.defaultTextContent .gform_wrapper.gravity-theme input[type=url]:focus,.defaultTextContent .gform_wrapper.gravity-theme input[type=week]:focus,.defaultTextContent .gform_wrapper.gravity-theme select:focus,.defaultTextContent .gform_wrapper.gravity-theme textarea:focus{outline:0;-webkit-box-shadow:0 .05rem .5rem rgba(0,0,0,.2);box-shadow:0 .05rem .5rem rgba(0,0,0,.2);border-color:#000}
 .gform_wrapper.gravity-theme .ginput_container_total input[type=text][readonly]{padding-left:0 !important;padding-right:0 !important;border:none !important;font-weight:bold}
 .gform_wrapper.gravity-theme .ginput_container_total input[type=text][readonly]:focus{border:none !important;-webkit-box-shadow:none !important;box-shadow:none !important}
+.today--dropdown .location-details .info.open .info-trail-status .tVal{display:inline-block;position:relative}
+.today--dropdown .location-details .info .info-trail-status .tVal:after{content:"";display:inline-block;width:12px;height:12px;position:absolute;top:8px;border-radius:300px;margin-left:5px}
+.today--dropdown .location-details .info.open .info-trail-status .tVal:after{background:#369e0e}
+.today--dropdown .location-details .info.closed .info-trail-status .tVal:after{background:#e80b0b}
 body.scrolled.logged-in.admin-bar .mobileRedTag .stats,body.scrolled .mobileRedTag .stats{position:relative !important;top:0}
 body.logged-in.admin-bar.scrolled .redtag{top:112px !important}
 body.enchilada .banner-bottom svg{fill:#fef9e7}
@@ -6421,7 +6425,7 @@ body.subpage.scrolled.page-template-page-bike-ranch .site-header-mobile.menu-ope
 .content-area-single .text-content-gallery .gallery-wrapper .imagewrap{width:100% !important}
 }@media screen and (max-width:821px){body.logged-in.admin-bar.scrolled .film-event-status{top:125px}
 }@media screen and (max-width:820px){.topinfo .businessHours{width:300px;left:-25vw;right:0}
-#banner .banner-bottom{height:45px;background-image:url("images/banner-bottom-mobile.svg");background-repeat:no-repeat;background-size:140%;background-position:bottom center;bottom:-5px}
+#banner .banner-bottom{height:45px;background-image:url("images/banner-bottom-mobile.svg");background-repeat:no-repeat;background-size:140%;background-position:bottom center;bottom:-2px}
 #banner .banner-bottom img{display:none}
 #banner ul.slides.single-slide #playYoutube{display:none}
 #banner ul.slides.single-slide .type-video .videoIframe{z-index:101}
@@ -6466,7 +6470,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left{border-bottom:1px solid #ccc;padding-bottom:30px}
 .pass-options-wrap .option .wrap{-ms-flex-line-pack:justify;align-content:space-between;width:100%;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 body.subpage.single.single-festival .banner-bottom,body.subpage.single.single-special-events .banner-bottom{background-image:none !important;height:auto !important;bottom:-2px}
-body.subpage.single.single-festival .banner-bottom #bannerBottomSvg1,body.subpage.single.single-special-events .banner-bottom #bannerBottomSvg1{-webkit-transform:scale(2);transform:scale(2)}
+body.subpage.single.single-festival .banner-bottom #bannerBottomSvg1,body.subpage.single.single-special-events .banner-bottom #bannerBottomSvg1{-webkit-transform:scale(2.2);transform:scale(2.2)}
 body.page-template-page-bike-ranch.subpage #banner{height:90vh}
 body.page-template-page-bike-ranch.subpage #banner .slides .logo-overlay{width:48vw}
 body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-inner{padding:50px 12vw}

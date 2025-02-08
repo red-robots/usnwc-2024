@@ -227,7 +227,7 @@ body.subpage.single.single-special-events {
       height: auto!important;
       bottom: -2px;
       #bannerBottomSvg1  {
-        transform: scale(2);
+        transform: scale(2.2);
       }
     }
   }
@@ -3739,6 +3739,29 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
     box-shadow: none!important;
   }
 }
+
+/*=== TODAY DROPDOWN ===*/
+.today--dropdown .location-details .info.open .info-trail-status .tVal {
+  display:inline-block;
+  position:relative;  
+}
+.today--dropdown .location-details .info .info-trail-status .tVal:after {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 8px;
+  border-radius: 300px;
+  margin-left: 5px;
+}
+.today--dropdown .location-details .info.open .info-trail-status .tVal:after {
+  background: #369e0e;
+}
+.today--dropdown .location-details .info.closed .info-trail-status .tVal:after {
+  background: #e80b0b;
+}
+
 body.page-template-page-bike-ranch.subpage #banner:has(.image-wrapper .mobile) {
   @media screen and (max-width: 768px) {
     height: auto!important;
