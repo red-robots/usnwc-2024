@@ -1,8 +1,7 @@
 <?php
-global $wpdb;
-$prefix = $wpdb->prefix;
+global $table_prefix, $wpdb;
 $today_date = strtotime(date('Ymd'));
-$where_post_types = '';
+$thePostTypesArr = array();
 $paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
 $filter_type = ( isset($_GET['type']) && $_GET['type'] ) ? $_GET['type'] : '';
 if($filter_type=='all') {
@@ -33,43 +32,14 @@ if($filter_type && $filter_type!='all') {
 
 
 if($postTypes) {
-
-  // if( count($postTypes)==1 ) {
-  //   $where_post_types .= ' pp.post_type="' .key($postTypes). '"';
-  // } else {
-  //   $k=0;
-  //   foreach($postTypes as $type=>$title) {
-  //     $and = ($k>0) ? ' OR ' : '';
-  //     $where_post_types .= $and . 'pp.post_type="'.$type.'"';
-  //     $k++;
-  //   }
-  // }
-  
   $k=0;
   foreach($postTypes as $type=>$title) {
     $and = ($k>0) ? ' OR ' : '';
-    $where_post_types .= $and . 'pp.post_type="'.$type.'"';
+    $thePostTypesArr[] = $type;
     $k++;
   }
 }
 
-$where_post_types_condition = ( count($postTypes)==1 ) ? $where_post_types : "(".$where_post_types.")";
-
-
-
-$condition1 = "SELECT pp.ID, mm.meta_value AS start_date 
-          FROM " . $prefix ."posts pp, ".$prefix."postmeta mm 
-          WHERE ".$where_post_types_condition."
-          AND pp.post_status='publish' 
-          AND pp.ID=mm.post_id AND mm.meta_key='start_date' 
-          AND UNIX_TIMESTAMP(mm.meta_value) >= ".strtotime(date('Ymd'));
-
-$condition2 = "SELECT pp.ID, mm.meta_value AS end_date  
-          FROM " . $prefix ."posts pp, ".$prefix."postmeta mm 
-          WHERE ".$where_post_types_condition." 
-          AND pp.post_status='publish' 
-          AND pp.ID=mm.post_id AND mm.meta_key='end_date' 
-          AND UNIX_TIMESTAMP(mm.meta_value) >= ".strtotime(date('Ymd'))." ORDER BY end_date ASC";
 
 
 $per_page = 15;
@@ -80,25 +50,16 @@ if( isset($_GET['type']) && $_GET['type']!='all' ) {
 } else {
   $where = ($featured_event) ? 'AND p.ID!=' . $featured_event : '';
 }
-$the_query = "SELECT p.*, st.start_date, en.end_date     
-          FROM ".$prefix."posts p, ".$prefix."postmeta m, 
-          (".$condition1.") st, (".$condition2.") en  
-          WHERE p.ID=st.ID AND p.ID=en.ID AND p.ID=m.post_id ".$where."
-          GROUP BY p.ID";
 
-//$new_query = $the_query . " ORDER BY st.start_date ASC LIMIT ".$offset.", " . $per_page;
-$new_query = $the_query . " ORDER BY st.start_date ASC LIMIT ".$per_page." OFFSET ".$offset;
+$query_meta = "SELECT p.ID, p.post_title, p.post_name, p.post_type, ext.start_date, ext.end_date FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext 
+              WHERE p.ID=ext.post_id AND p.post_status='publish' AND p.post_type IN ('".implode("','", $thePostTypesArr)."') 
+              AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date)";
 
-// $the_count_query = "SELECT count(*) as total    
-//           FROM ".$prefix."posts p, ".$prefix."postmeta m, 
-//           (".$condition1.") st, (".$condition2.") en  
-//           WHERE p.ID=st.ID AND p.ID=en.ID AND p.ID=m.post_id 
-//           GROUP BY p.ID";
-// $tp = $wpdb->get_row($the_count_query);
-// $total_records = ($tp) ? $tp->total : 0;
+$new_query = $query_meta . " GROUP BY p.ID ORDER BY ext.start_date ASC LIMIT ".$per_page." OFFSET ".$offset;
+
 
 $posts = $wpdb->get_results($new_query);
-$total = $wpdb->get_results($the_query);
+$total = $wpdb->get_results($query_meta);
 $total_records = ($total) ? count($total) : 0;
 ?>
 <section id="events-feed" class="calendar-tab-events-posts<?php echo ($filter_type && $filter_type!='all') ? ' is-filtered':'' ?>">
@@ -215,19 +176,6 @@ $total_records = ($total) ? count($total) : 0;
       ?>
       <div id="hiddenData" style="display:none;"></div>
       <div id="pagination" class="pagination-wrapper loadMoreWrappe">
-        <?php
-            // $pagination = array(
-            //     'base' => @add_query_arg('pg','%#%'),
-            //     'format' => '?paged=%#%',
-            //     'mid-size' => 1,
-            //     'current' => $paged,
-            //     'total' => $total_pages,
-            //     'prev_next' => True,
-            //     'prev_text' => __( '<span class="fas fa-chevron-left"></span>' ),
-            //     'next_text' => __( '<span class="fas fa-chevron-right"></span>' )
-            // );
-            // echo paginate_links($pagination);
-        ?>
         <a href="javascript:void(0)" data-baseurl="<?php echo get_permalink() ?>" id="loadMorePosts" data-perpage="<?php echo $per_page ?>" data-count="<?php echo $total_records ?>" data-next="2" data-total-pages="<?php echo $total_pages ?>" class="button button-pill">See More</a>
       </div>
     <?php } ?>
