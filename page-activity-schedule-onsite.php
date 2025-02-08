@@ -65,6 +65,48 @@
 	.schedule-activities-info.new-layout .activities .activity-info h3.type {
 		font-size: 42px;
 	}
+	.activity-info ul.list li {
+		/*  font-family: "Lato", sans-serif; */
+		font-family: "Nunito Sans", sans-serif;
+		font-weight: 700;
+	}
+	.activity-info ul.list li .cell {
+		font-weight: 700;
+	}
+	.schedule-activities-info.new-layout .activities .activity-info ul.list .cell.name .cellTxt span.ct {
+		color: #000;
+	}
+	.schedule-activities-info.new-layout .status-legend span {
+		font-family: "Lato", sans-serif;
+		font-weight: 500;
+		font-size: 30px;
+		color: #000;
+	}
+	.schedule-activities-info.new-layout .subhead .event-date {
+		font-family: "Lato", sans-serif;
+		font-size: 28px;
+    	font-weight: 600;
+	}
+	.schedule-activities-info.new-layout .subhead .pass-hours {
+		font-family: "Lato", sans-serif;
+    	font-size: 18px;
+		font-weight: 400;
+	}
+	.schedule-activities-info.new-layout .subhead .note {
+		font-family: "Lato", sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+	}
+	.schedule-activities-info.new-layout .activities .activity-info ul.list .cell.name .cellTxt {
+		top: 16px;
+	}
+	.schedule-activities-info.new-layout .activities .activity-info ul.list .cell.time .cellTxt {
+		bottom: -16px;
+	}
+	.schedule-activities-info.new-layout .activities .activity-info ul.list .cell.cell-open:before,
+	.schedule-activities-info.new-layout .activities .activity-info ul.list .cell.cell-closed:before {
+		top: 28px;
+	}
 </style>
 </head>
 <body>
@@ -89,6 +131,15 @@ if($flexslider) {
 	}
 }
 $has_banner = ($slideImages) ? 'has-banner':'no-banner';
+	
+global $table_prefix, $wpdb;
+$postype = 'activity_schedule';
+$dateNow = date('Y-m-d  h:i:s A');
+$dateNowMod = date('Ymd', strtotime($dateNow) - 60 * 60 * 5);
+$query = "SELECT p.ID, p.post_title, m.meta_value AS event_date FROM ".$table_prefix."posts p, ".$table_prefix."postmeta m 
+          WHERE p.ID=m.post_id AND m.meta_key='eventDateSchedule' AND m.meta_value='".$dateNowMod."' 
+		  AND p.post_status='publish' AND p.post_type='".$postype."'";
+$result = $wpdb->get_results($query);
 ?>
 
 <div id="primary" data-post="<?php echo get_the_ID()?>" class="content-area-full activity-schedule-onsite <?php echo $has_banner ?>">
@@ -99,25 +150,36 @@ $has_banner = ($slideImages) ? 'has-banner':'no-banner';
 				$custom_page_title = get_field("custom_page_title"); 
 				$page_title = ($custom_page_title) ? $custom_page_title : get_the_title();
 			?>
-			<!-- <div class="text-centered-section intro-text-wrap">
-				<div class="wrapper">
-					<?php the_content(); ?>
-				</div>
-			</div> -->
 		<?php endwhile;  ?>
 
 		<div class="schedule-activities-info new-layout full">
 			<?php
 			//$dateToday = date('l, F jS, Y'); /* example result: SATURDAY, OCTOBER 17TH, 2020 */
 			$dateToday = date('l, F j'); /* example resul: SATURDAY, OCTOBER 17 */
-			$postype = 'activity_schedule';
-			$post = get_current_activity_schedule($postype);
-			if($post) { 
+			//$post = get_current_activity_schedule($postype);
+			if($result) { 
+				$post = $result[0];
 				$postID = $post->ID;
 				$post_title = $post->post_title;
-				$pass_hours = get_field("pass_hours",$postID);
+				//$pass_hours = get_field("pass_hours",$postID);
+				$pass_hours = '';
 				$note = get_field("note",$postID);
-				$scheduled_activities = get_field("scheduled_activities",$postID);
+				//$scheduled_activities = get_field("scheduled_activities",$postID);
+				$passHoursFrom = get_field('pass_hours_from', $postID);
+				$passHoursTo = get_field('pass_hours_to', $postID);
+				$passHoursArr = array($passHoursFrom,$passHoursTo);
+				if( array_filter($passHoursArr) ) {
+					$passHoursArr = array_filter($passHoursArr);
+					$passHours = implode(' — ', $passHoursArr);
+					$pass_hours = strtoupper($passHours);
+				}
+				$scheduled_activities = '';
+				$schedules_column1 = get_field('schedules', $postID);
+				$schedules_column2 = get_field('schedules_2', $postID);
+				if( $schedules_column1 || $schedules_column2 ) {
+					$scheduled_activities = array_merge($schedules_column1, $schedules_column2);
+				}
+				
 				?>
 				
 				<div class="subhead">
@@ -145,66 +207,55 @@ $has_banner = ($slideImages) ? 'has-banner':'no-banner';
 					<div class="wrapper">
 					<?php if ($scheduled_activities) { ?>
 						<div class="activities">
-							<?php $i=1; foreach ($scheduled_activities as $a) { 
-								$type = $a['type'];
-								$activities = $a['activities'];
-								if($type || $activities) { ?>
-									<div id="activity<?php echo $i?>" class="activity-info info">
-										<?php if ($type) { ?>
-											<h3 class="type"><?php echo $type ?></h3>
-										<?php } ?>
-										<?php if ($activities) { ?>
-											<ul class="list">
-												<?php foreach ($activities as $e) { 
-												$is_custom = ( isset($e['types']) && $e['types']=='custom' ) ? true : false;
-												$customName = ( isset($e['customText']) && $e['customText'] ) ? $e['customText'] : "";
-												$name = ( isset($e['name']) && $e['name'] ) ? $e['name']->post_title : '';
-												$start = $e['time_start'];
-												$end = $e['time_end'];
-												$status = ( isset($e['status']) && $e['status'] ) ? $e['status'] : 'open';
-												$delimiter = '';
-												if($start && $end) {
-													$delimiter = '<span class="dashed">&ndash;</span>';
-												}
-												if($is_custom) {
-													if(preg_replace("/\s+/", "",$customName)) {
-														$name = preg_replace("/\s+/", " ",$customName);
-													} else {
-														$name = "";
-													}
-												}
-												if($name) { ?>
-													<li class="data" data-status="<?php echo $status?>">
-														<div class="cell name cell-<?php echo $status?>">
-															<span class="cellTxt"><span class="ct <?php echo $status?>"><?php echo $name ?></span></span>
-														</div>
-														<div class="cell time">
-															<span class="cellTxt">
-																<?php if( $status == 'open' ) { ?>
-																	<?php if ($start) { ?>
-																	<span class="time-start"><?php echo $start ?></span>	
-																	<?php } ?>
-																	<?php echo $delimiter ?>
-																	<?php if ($end) { ?>
-																	<span class="time-end"><?php echo $end ?></span>	
-																	<?php } ?>
-																<?php } else { ?>
-																	<span class="redclosed">CLOSED</span>
-																<?php } ?>
-															</span>
-														</div>
-													</li>
+						<?php $i=1; foreach ($scheduled_activities as $a) { 
+							$group_name = $a['group_name'];
+							$items = $a['items'];
+							?>
+							<div id="activity<?php echo $i?>" class="activity-info info">
+								<?php if($group_name) { ?>
+								<h3 class="type"><?php echo $group_name; ?></h3>
+								<?php } ?>
+								<?php if($items) { ?>
+								<ul class="list">
+									<?php foreach ($items as $e) {  
+									$status = $e['status'];
+									$name = $e['name'];
+									$start_time = $e['start_time'];
+									$end_time = $e['end_time'];
+									?>
+									<li class="data" data-status="<?php echo $status?>">
+										<div class="cell name cell-<?php echo $status?>">
+										  <span class="cellTxt"><span class="ct <?php echo $status?>"><?php echo $name ?></span></span>
+										</div>
+										<div class="cell time">
+											<span class="cellTxt">
+												<?php if( $status == 'open' ) { ?>
+													<?php if($start_time || $end_time) { ?>
+														<?php if($start_time) { ?>
+														<span class="time-start"><?php echo $start_time?></span>
+														<?php } ?>
+														<?php if($start_time && $end_time) { ?>
+														<span class="dashed">–</span>
+														<?php } ?>
+														<?php if($end_time) { ?>
+														<span class="time-end"><?php echo $end_time?></span>
+														<?php } ?>
 													<?php } ?>
+												<?php } else { ?>
+													<span class="redclosed">CLOSED</span>
 												<?php } ?>
-											</ul>
-										<?php } ?>
-									</div>	
-								<?php $i++; } ?>
-							<?php } ?>
+											</span>
+										</div>
+									</li>
+									<?php } ?>
+								</ul>
+								<?php } ?>
+							</div>
+						<?php $i++; } ?>
 						</div>
 					<?php } ?>
-					</div>
 					<span id="timer"></span> s
+					</div>	
 				</div>
 
 			<?php } else { ?>
@@ -225,196 +276,66 @@ $has_banner = ($slideImages) ? 'has-banner':'no-banner';
 
 
 <script type="text/javascript">
-	jQuery(document).ready(function ($) {
+  jQuery(document).ready(function ($) {
 
+    run_scroller();
 
+    function scroll_to_bottom_looped(duration,page_height){
+      $('html, body').animate({ 
+         scrollTop: page_height},
+         duration,
+         "swing"
+      ).promise().then(function(){
+        scroll_to_top_looped(duration,page_height);
+      });
+    }
+    function scroll_to_top_looped(duration,page_height){
+      $('html, body').animate({ 
+         scrollTop: 0},
+         duration,
+         "swing"
+      ).promise().then(function(){
+        scroll_to_bottom_looped(duration,page_height);
+      });
+    }
+    function repeat_scroller(duration,page_height,repeats,i){
+      if( i < repeats ){
+        $('html, body').animate({ 
+           scrollTop: page_height},
+           duration,
+           "swing"
+        ).promise().then(function(){
+          $('html, body').animate({ 
+             scrollTop: 0},
+             duration,
+             "swing"
+          ).promise().then(function(){
+            i++;       
+            repeat_scroller(duration,page_height,repeats,i);
+          });
+        });
+      }else{
+        return false;
+      }
+    }
+        
+    function run_scroller() {
+      // force window to top of page
+      $(this).scrollTop(0);
+      // define vars
+      let page_height = $(document).height()-$(window).height();
+      let duration = 60000;
 
+      // begin the neverending scrollage festival
+      scroll_to_bottom_looped(duration,page_height);
 
-		// $("html, body").animate({ scrollTop: $(document).height() }, 4000);
-		// setTimeout(function() {
-		//    $('html, body').animate({scrollTop:0}, 4000); 
-		// },4000);
-		// setInterval(function(){
-		//      // 4000 - it will take 4 secound in total from the top of the page to the bottom
-		// 	$("html, body").animate({ scrollTop: $(document).height() }, 60000);
-		// 	setTimeout(function() {
-		// 	   $('html, body').animate({scrollTop:0}, 4000); 
-		// 	},4000);
-		    
-		// },8000);
+      // or, use a set number of repeats
+      let repeats = 3;
+      let i = 0;
+      // repeat_scroller(duration,page_height,repeats,i);
+    }
 
-function scroll_to_bottom_looped(duration,page_height){
-	$('html, body').animate({ 
-	   scrollTop: page_height},
-	   duration,
-	   "swing"
-	).promise().then(function(){
-	  scroll_to_top_looped(duration,page_height);
-	});
-}
-function scroll_to_top_looped(duration,page_height){
-	$('html, body').animate({ 
-	   scrollTop: 0},
-	   duration,
-	   "swing"
-	).promise().then(function(){
-	  scroll_to_bottom_looped(duration,page_height);
-	});
-}
-function repeat_scroller(duration,page_height,repeats,i){
-	if( i < repeats ){
-		$('html, body').animate({ 
-		   scrollTop: page_height},
-		   duration,
-		   "swing"
-		).promise().then(function(){
-			$('html, body').animate({ 
-			   scrollTop: 0},
-			   duration,
-			   "swing"
-			).promise().then(function(){
-			  i++;			 
-			  repeat_scroller(duration,page_height,repeats,i);
-			});
-		});
-	}else{
-		return false;
-	}
-}
-
-jQuery(document).ready(function ($) {	
-	// force window to top of page
-	$(this).scrollTop(0);
-	// define vars
-	let page_height = $(document).height()-$(window).height();
-	let duration = 60000;
-
-	// begin the neverending scrollage festival
-	scroll_to_bottom_looped(duration,page_height);
-
-	// or, use a set number of repeats
-	let repeats = 3;
-	let i = 0;
-	// repeat_scroller(duration,page_height,repeats,i);
-});
-// setInterval(() => {
-//   alert("Hello"); 
-// }, 3000);
-		// console.log();
-
-
-
-
-		// var startTime = Date.now();
-
-		// var interval = setInterval(function() {
-		//     var elapsedTime = Date.now() - startTime;
-		//     document.getElementById("timer").innerHTML = (elapsedTime / 1000).toFixed(3);
-		// }, 100);
-
-
-
-		
-		 
-		//  $("html, body").animate({ scrollTop: $(document).height() }, 20000);
-		
-		// setTimeout(function() {
-		//    $('html, body').animate({scrollTop:0}, 4000); 
-		// },400);
-
-		// setInterval(function(){
-		//      // 4000 - it will take 4 secound in total from the top of the page to the bottom
-		// 	$("html, body").animate({ scrollTop: $(document).height() }, 24000);
-			
-		// 	setTimeout(function() {
-		// 	   $('html, body').animate({scrollTop:0}, 24000); 
-		// 	},400);
-		    
-		// },8000);
-
-
-// 		var Height = document.documentElement.scrollHeight;
-// var currentHeight = 0;
-// var bool = true;
-// var step = 1;
-// var speed = 10;
-// var interval = setInterval(scrollpage, speed)
-
-// function scrollpage() {
-//     if (currentHeight < 0 || currentHeight > Height) 
-//         bool = !bool;
-//     if (bool) {
-//         window.scrollTo(0, currentHeight += step);
-//     } else {
-//         // if you don't want to continue scroll 
-//         // clearInterval(interval) use clearInterval
-//         window.scrollTo(0, currentHeight -= step);
-//     }
-// }
-
-
-
-  });// END
-
-// $(document).ready(function() {
-
-//     if ($('.daily-container').height() > $('.daily-content').height()) {
-//         setInterval(function () {
-
-//             start();
-//        }, 3000); 
-   
-//     }
-//     console.log( $('.daily-container').height() );
-//     console.log( $('.daily-content').height() );
-// });
-
-// function animateContent(direction) {  
-//     // var animationOffset = $('.daily-container').height() - $('.daily-content').height();
-//     var animationOffset = $(document).height();
-//     if (direction == 'up') {
-//         animationOffset = 0;
-//     }
-
-//     console.log("animationOffset:"+animationOffset);
-//     // $('.daily-content').animate({ "marginTop": (animationOffset)+ "px" }, 5000);
-//     $("html, body").animate({ scrollTop: $(document).height() }, 5000);
-// }
-
-// function up(){
-//     animateContent("up")
-// }
-// function down(){
-//     animateContent("down")
-// }
-
-// function start(){
-//  setTimeout(function () {
-//  	console.log("down...");
-//     down();
-// }, 2000);
-//  setTimeout(function () {
-//  	console.log("up...");
-//     up();
-// }, 2000);
-//    setTimeout(function () {
-//     console.log("wait...");
-// }, 5000);
-// }  
-// jQuery(document).ready(function ($) {
-// //scroll to bottom
-// setInterval(function(){
-
-//     //time to scroll to bottom
-//     $("html, body").animate({ scrollTop: $(document).height() }, 2000, 'linear');
-//     // console.log( $(document).height() );
-//     //scroll to top
-//     setTimeout(function() {
-//        $('html, body').animate({scrollTop:0}, 11000);
-//     },2);//call every 2000 miliseconds
-
-// },2);//call every 2000 miliseconds
-// });// END
+  });
 </script>
 </body>
 </html>

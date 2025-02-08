@@ -67,15 +67,17 @@ $branches = get_field('whitewaterLocations', 'option'); ?>
                   $name = ( isset($tax->name) && $tax->name ) ? $tax->name : '';
                   $slug = ( isset($tax->slug) && $tax->slug ) ? $tax->slug : '';
                   $city = ( isset($loc->name) && $loc->name ) ? $loc->name : '';
+                  $mobile_display = ($n==1) ? ' style="display:block"' : ' style="display:none"';
+                  $mobile_open = ($n==1) ? ' open':'';
                 ?>
                 <li class="info <?php echo $status ?><?php echo $is_active ?>" data-location="<?php echo $slug ?>">
-                  <button class="mobile-info-toggle" data-slug="<?php echo $slug ?>">
+                  <button class="mobile-info-toggle" data-slug="<?php echo $slug ?>" aria-expanded="<?php echo ($n==1) ? 'true':'false' ?>" aria-controls="location--<?php echo $slug ?>">
                     <span class="name"><?php echo $name ?></span>
                     <?php if($city) { ?>
                     <span class="city"><?php echo $city ?></span>
                     <?php } ?>
                   </button>
-                  <div class="inner-info">
+                  <div class="inner-info<?php echo $mobile_open ?>" id="location--<?php echo $slug ?>" <?php echo $mobile_display ?>>
                     <div class="info-trail-status">
                       <div class="tlabel">Trail Status</div>
                       <div class="tVal"><?php echo $trail_status ?></div>

@@ -432,6 +432,44 @@
       }
     }
   }
+  .site-header-mobile .mobileTodayLink {
+    .navlink-today {
+      display: block;
+      width: 100%;
+      padding: 18px 30px;
+      font-size: 22px !important;
+      line-height: 1.2;
+      text-transform: uppercase;
+      position: relative;
+      color: #fff;
+      appearance: none;
+      background-color: transparent;
+      border: none !important;
+      text-align: left;
+      &:after {
+        font-family: FontAwesome;
+        content: "\f107";
+        padding-left: 8px;
+        font-weight: 300;
+        display: inline-block;
+      }
+      &.active {
+        &:after {
+          transform: translateX(8px) rotate(180deg);
+          transform-origin: center;
+        }
+      }
+    }
+    .info-today-schedule {
+      ul.items {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      ul.items > li {
+        width: 100%;
+      }
+    }
+  }
   .site-header-mobile.menu-open {
     .mobile-nav-wrapper.open {
       z-index: 100010;

@@ -6375,6 +6375,11 @@ body.home .homerow .imagebox a .title{font-size:6vw;line-height:1.1;padding:0 10
 .site-header-mobile .today--dropdown .tlabel{text-transform:uppercase;font-size:16px}
 .site-header-mobile .today--dropdown .tVal{font-size:20px}
 .site-header-mobile .today--dropdown.open .today-inner{padding-bottom:50px}
+.site-header-mobile .mobileTodayLink .navlink-today{display:block;width:100%;padding:18px 30px;font-size:22px !important;line-height:1.2;text-transform:uppercase;position:relative;color:#fff;-webkit-appearance:none;-moz-appearance:none;appearance:none;background-color:transparent;border:none !important;text-align:left}
+.site-header-mobile .mobileTodayLink .navlink-today:after{font-family:FontAwesome;content:"";padding-left:8px;font-weight:300;display:inline-block}
+.site-header-mobile .mobileTodayLink .navlink-today.active:after{-webkit-transform:translateX(8px) rotate(180deg);transform:translateX(8px) rotate(180deg);-webkit-transform-origin:center;transform-origin:center}
+.site-header-mobile .mobileTodayLink .info-today-schedule ul.items{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.site-header-mobile .mobileTodayLink .info-today-schedule ul.items>li{width:100%}
 .site-header-mobile.menu-open .mobile-nav-wrapper.open{z-index:100010}
 .site-header-mobile.menu-open .site-header-flex{z-index:100015}
 body.menu-open{overflow:hidden}

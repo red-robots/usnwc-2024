@@ -2,6 +2,7 @@
 $navigation = get_field('main_menu_item', 'option');
 if($navigation) { ?>
 <nav class="new-nav-v2 desktop-navigation">
+  <div class="mobileTodayLink"></div>
   <ul>
   <?php 
     // echo '<pre>';
