@@ -10,12 +10,6 @@
     $current_date = date('Y-m-d');
     $current_year = date('Y');
     if($post_type) { 
-
-      global $table_prefix, $wpdb;
-      $query = "SELECT p.ID, p.post_title FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext 
-                WHERE p.ID=ext.post_id AND p.post_type='".$post_type."' AND p.post_status='publish' AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date)";
-      $posts = $wpdb->get_results($query);
-
       // $args = array(
       //   'posts_per_page'  => 3,
       //   'post_type'       => $post_type,
@@ -24,16 +18,40 @@
       //   'orderby' => 'meta_value_num',
       //   'order' => 'ASC',
       //   'meta_query'      => array(
+      //     'relation' => 'OR',
       //     array(
       //       'key' => 'start_date',
       //       'value' => $current_date,
       //       'compare' => '>=',
       //       'type' => 'DATE'
-      //     )
+      //     ),
+      //     array(
+      //       'key' => 'end_date',
+      //       'value' => $current_date,
+      //       'compare' => '>=',
+      //       'type' => 'DATE'
+      //     ),
       //   )
       // );
+
+      $args = array(
+        'posts_per_page'  => 3,
+        'post_type'       => $post_type,
+        'post_status'     => 'publish',
+        'meta_key' => 'start_date',
+        'orderby' => 'meta_value_num',
+        'order' => 'ASC',
+        'meta_query'      => array(
+          array(
+            'key' => 'start_date',
+            'value' => $current_date,
+            'compare' => '>=',
+            'type' => 'DATE'
+          )
+        )
+      );
       
-      // $posts = get_posts($args);
+      $posts = get_posts($args);
       $title_center_no_line = (isset($center_no_line) && $center_no_line) ? ' title-center-no-line':'';
       if($posts) { ?>
       <div id="section-upcoming_events-<?php echo $ctr ?>" data-posttype="<?php echo $post_type ?>" class="repeatable-block section section-upcoming_events<?php echo $title_center_no_line ?>">
@@ -47,6 +65,11 @@
           <?php foreach($posts as $p) { 
             $pid = $p->ID;
             $title = $p->post_title;
+            // $image = get_field('full_image', $pid);
+            // if(!$image) {
+            //   $image = get_field('mobile-banner', $pid);
+            // }
+
             $image = get_field('thumbnail_image', $pid);
             $start_date = get_field('start_date', $pid);
             $pagelink = get_permalink($pid);
@@ -54,7 +77,15 @@
             if($start_date) {
               $start_date = date('l, F d', strtotime($start_date));
             }
+
             if($post_type=='dining') {
+              // $image_id = get_post_thumbnail_id($pid);
+              // $image_title = get_the_title($image_id);
+              // $image = wp_get_attachment_image_src($image_id,'large');
+              // if($image) {
+              //   $image['url'] = $image[0];
+              //   $image['title'] = $image_title;
+              // }
               $image = get_field('mobile-banner', $pid);
             }
             ?>
