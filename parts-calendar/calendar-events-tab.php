@@ -55,7 +55,7 @@ $query_meta = "SELECT p.ID, p.post_title, p.post_name, p.post_type, ext.start_da
               WHERE p.ID=ext.post_id AND p.post_status='publish' AND p.post_type IN ('".implode("','", $thePostTypesArr)."') 
               AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date)";
 
-$new_query = $query_meta . " GROUP BY p.ID ORDER BY ext.start_date ASC LIMIT ".$per_page." OFFSET ".$offset;
+$new_query = $query_meta . " GROUP BY p.ID ORDER BY UNIX_TIMESTAMP(ext.start_date) ASC LIMIT ".$per_page." OFFSET ".$offset;
 
 
 $posts = $wpdb->get_results($new_query);

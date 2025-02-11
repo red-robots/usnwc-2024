@@ -14,7 +14,7 @@
       global $table_prefix, $wpdb;
       $query = "SELECT p.ID, p.post_title FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext 
                 WHERE p.ID=ext.post_id AND p.post_type='".$post_type."' AND p.post_status='publish' AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date) 
-                ORDER BY ext.start_date ASC LIMIT ".$per_page;
+                ORDER BY UNIX_TIMESTAMP(ext.start_date) ASC LIMIT ".$per_page;
       $posts = $wpdb->get_results($query);
 
       // $args = array(
