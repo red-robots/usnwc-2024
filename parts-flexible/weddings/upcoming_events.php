@@ -10,10 +10,11 @@
     $current_date = date('Y-m-d');
     $current_year = date('Y');
     if($post_type) { 
-
+      $per_page = 3;
       global $table_prefix, $wpdb;
       $query = "SELECT p.ID, p.post_title FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext 
-                WHERE p.ID=ext.post_id AND p.post_type='".$post_type."' AND p.post_status='publish' AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date)";
+                WHERE p.ID=ext.post_id AND p.post_type='".$post_type."' AND p.post_status='publish' AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date) 
+                ORDER BY ext.start_date ASC LIMIT ".$per_page;
       $posts = $wpdb->get_results($query);
 
       // $args = array(
