@@ -2884,4 +2884,43 @@ function remove_pages_editor(){
 add_action( 'add_meta_boxes', 'remove_pages_editor' );
 
 
+function queryActivitySchedulePosts($limit=5) {
+  global $table_prefix, $wpdb;
+  $query = "SELECT p.ID FROM ".$table_prefix."posts p, ".$table_prefix."postmeta m WHERE p.ID=m.post_id 
+            AND p.post_type='activity_schedule' AND p.post_status='publish' AND m.meta_key='eventDateSchedule' 
+            AND UNIX_TIMESTAMP(m.meta_value) >= ".strtotime(date('Ymd'))." 
+            ORDER BY UNIX_TIMESTAMP(m.meta_value) ASC LIMIT ".$limit;
+  $result = $wpdb->get_results($query);
+  return $result;
+}
+add_action('wp_ajax_activity_schedule_func', 'activity_schedule_func');
+add_action('wp_ajax_activity_schedule_func', 'activity_schedule_func');
+function activity_schedule_func(){
+  if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+    $index = $_REQUEST['index'];
+    $slug = $_REQUEST['slug'];
+    $status = $_REQUEST['status'];
+    $posts = queryActivitySchedulePosts(6);
+    $content = '';
+    $post_id = '';
+    if($posts) {
+      if( isset($posts[$index]) && $posts[$index] ) {
+        $data = $posts[$index];
+        $post_id = $data->ID;
+        $is_navigate = true;
+        ob_start();
+        include( locate_template('parts-calendar/activity-schedule-popup.php') );
+        $content = ob_get_contents();
+        ob_end_clean();
+      }
+    }
+    $response['ID'] = $post_id;
+    $response['result'] = $content;
+    echo json_encode($response);
+
+  } else {
+    header("Location: ".$_SERVER["HTTP_REFERER"]);
+  }
+  die();
+}
 

@@ -18783,8 +18783,8 @@ body.subpage.single.single-activity {
     display: block;
     border: none;
     padding: 0 0;
-    width: 33px;
-    height: 33px;
+    width: 25px;
+    height: 25px;
     background-color: transparent;
     z-index: 10;
     position: absolute;
@@ -18797,7 +18797,7 @@ body.subpage.single.single-activity {
       height: 2px;
       background: #FFF;
       position: absolute;
-      top: 16px;
+      top: 12px;
       left: 2px;
     }
     &:before {
@@ -18908,6 +18908,15 @@ body.subpage.single.single-activity {
       }
       .time {
         padding-left: 4px;
+      }
+      @media screen and (max-width: 480px) {
+        flex-wrap: wrap;
+        .time {
+          display: block;
+          width: 100%;
+          padding-left: 0;
+          padding-bottom: 5px;
+        }
       }
     }
     &.half {

@@ -3764,6 +3764,67 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
   background: #e80b0b;
 }
 
+#customModalContainer .activity-schedule-modal {
+  .modal-body-inner.fadeInUp {
+    animation-duration: 0.5s;
+  }
+  .modal-title {
+    position: relative;
+    .scheduleNav {
+      display: inline-block;
+      appearance: none;
+      border: none;
+      background-color: transparent;
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      &:before {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 10px;
+        border-left: 3px solid #FFF;
+        border-bottom: 3px solid #FFF;
+        transition: all ease .3s;
+      }
+      &.previous-schedule {
+        left: 5vw;
+        &:before {
+          left: 12px;
+          transform: rotate(45deg);
+        }
+      }
+      &.next-schedule {
+        right: 5vw;
+        &:before {
+          right: 12px;
+          transform: rotate(-135deg);
+        }
+      }
+      &.hide {
+        visibility: hidden;
+        pointer-events: none;
+      }
+      &.show {
+        visibility: visible;
+        pointer-events: auto;
+      }
+      &:hover {
+        &:before {
+          opacity: 0.5;
+        }
+      }
+      &:focus {
+        outline: 1px dotted #FFF;
+      }
+    }
+  }
+}
+
 body.page-template-page-bike-ranch.subpage #banner:has(.image-wrapper .mobile) {
   @media screen and (max-width: 768px) {
     height: auto!important;
@@ -3779,5 +3840,8 @@ body.scrolled {
 }
 body.logged-in.admin-bar.scrolled .redtag {
 	top: 112px !important;
+}
+body.logged-in.admin-bar #customModalContainer.open {
+  padding-top: 60px;
 }
 

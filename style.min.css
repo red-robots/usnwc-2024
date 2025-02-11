@@ -4577,8 +4577,8 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 #customModalContainer .activity-schedule-modal .legend span.open:before{background:#4fb206}
 #customModalContainer .activity-schedule-modal .legend span.closed:before{background:#e60606}
 #customModalContainer #customModalContent{border-radius:20px}
-#customModalContainer #customModalClose{-webkit-appearance:none;-moz-appearance:none;appearance:none;display:block;border:0;padding:0;width:33px;height:33px;background-color:transparent;z-index:10;position:absolute;top:10px;right:10px}
-#customModalContainer #customModalClose:before,#customModalContainer #customModalClose:after{content:"";display:block;width:88%;height:2px;background:#fff;position:absolute;top:16px;left:2px}
+#customModalContainer #customModalClose{-webkit-appearance:none;-moz-appearance:none;appearance:none;display:block;border:0;padding:0;width:25px;height:25px;background-color:transparent;z-index:10;position:absolute;top:10px;right:10px}
+#customModalContainer #customModalClose:before,#customModalContainer #customModalClose:after{content:"";display:block;width:88%;height:2px;background:#fff;position:absolute;top:12px;left:2px}
 #customModalContainer #customModalClose:before{-webkit-transform:rotate(45deg);transform:rotate(45deg)}
 #customModalContainer #customModalClose:after{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
 #customModalContainer #customModalClose:hover,#customModalContainer #customModalClose:focus{opacity:.5}
@@ -5477,8 +5477,21 @@ section.full-bleed-promo.rounded_with_padding img.poster-mobile{display:none}
 .today--dropdown .location-details .info .info-trail-status .tVal:after{content:"";display:inline-block;width:12px;height:12px;position:absolute;top:8px;border-radius:300px;margin-left:5px}
 .today--dropdown .location-details .info.open .info-trail-status .tVal:after{background:#369e0e}
 .today--dropdown .location-details .info.closed .info-trail-status .tVal:after{background:#e80b0b}
+#customModalContainer .activity-schedule-modal .modal-body-inner.fadeInUp{-webkit-animation-duration:.5s;animation-duration:.5s}
+#customModalContainer .activity-schedule-modal .modal-title{position:relative}
+#customModalContainer .activity-schedule-modal .modal-title .scheduleNav{display:inline-block;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;background-color:transparent;width:35px;height:35px;position:absolute;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
+#customModalContainer .activity-schedule-modal .modal-title .scheduleNav:before{content:"";display:block;width:16px;height:16px;position:absolute;top:10px;border-left:3px solid #fff;border-bottom:3px solid #fff;-webkit-transition:all ease .3s;transition:all ease .3s}
+#customModalContainer .activity-schedule-modal .modal-title .scheduleNav.previous-schedule{left:5vw}
+#customModalContainer .activity-schedule-modal .modal-title .scheduleNav.previous-schedule:before{left:12px;-webkit-transform:rotate(45deg);transform:rotate(45deg)}
+#customModalContainer .activity-schedule-modal .modal-title .scheduleNav.next-schedule{right:5vw}
+#customModalContainer .activity-schedule-modal .modal-title .scheduleNav.next-schedule:before{right:12px;-webkit-transform:rotate(-135deg);transform:rotate(-135deg)}
+#customModalContainer .activity-schedule-modal .modal-title .scheduleNav.hide{visibility:hidden;pointer-events:none}
+#customModalContainer .activity-schedule-modal .modal-title .scheduleNav.show{visibility:visible;pointer-events:auto}
+#customModalContainer .activity-schedule-modal .modal-title .scheduleNav:hover:before{opacity:.5}
+#customModalContainer .activity-schedule-modal .modal-title .scheduleNav:focus{outline:1px dotted #fff}
 body.scrolled.logged-in.admin-bar .mobileRedTag .stats,body.scrolled .mobileRedTag .stats{position:relative !important;top:0}
 body.logged-in.admin-bar.scrolled .redtag{top:112px !important}
+body.logged-in.admin-bar #customModalContainer.open{padding-top:60px}
 body.enchilada .banner-bottom svg{fill:#fef9e7}
 body.enchilada .main-description{color:#7f7c73}
 body.enchilada #pageTabs a,body.enchilada .title-w-icon h2,body.enchilada h2.stitle,body.enchilada .stitle,body.enchilada .text-and-image-blocks .textcol .mstitle,body.enchilada .sectionTitle,body.enchilada .information-tabs-wrap{font-family:novecento-sans-narrow}
@@ -6646,6 +6659,8 @@ body.page-template-page-instructions .select2-dropdown.select2-dropdown--below{t
 .todaySnapshotInfo .info-wrapper .infocol .inner{padding:10px 15px 15px}
 .todaySnapshotInfo .info-wrapper .infocol .inner:after{display:none;opacity:0}
 .todaySnapshotInfo .info-wrapper .infocol:nth-child(1){border-bottom:1px solid #ccc}
+.activity-schedule-modal .schedule-container .line-item{-ms-flex-wrap:wrap;flex-wrap:wrap}
+.activity-schedule-modal .schedule-container .line-item .time{display:block;width:100%;padding-left:0;padding-bottom:5px}
 }@media screen and (max-width:400px){.new-nav-v2.desktop-navigation .mega-menu-content .menu-col{width:100% !important}
 }@media screen and (max-width:320px){.page-activity-passes .itemrow:after{bottom:-28px}
 .page-activity-passes .itemrow .activity-name{max-width:100%;bottom:0;margin-bottom:10px;text-align:left}

@@ -1364,6 +1364,16 @@ jQuery(document).ready(function ($) {
     $('#customModalContainer').removeClass('open');
     $('#customModalContent .activity-schedule-modal[data-schedule]').hide();
     $('#customModalContent .info-popup').hide();
+
+    if ($(this).parent().find('.activity-schedule-modal').length) {
+      var params = {
+        action: 'activity_schedule_func',
+        status: 'next',
+        index: 0,
+        reset: true
+      };
+      getActivityScheduleContent(params);
+    }
   });
   $(document).on('keyup', function (e) {
     //Close Modal when pressing Escape key
@@ -1649,6 +1659,90 @@ jQuery(document).ready(function ($) {
         }
       }
     }
+  } //ACTIVITY SCHEDULE POPUP with Previous/Next
+
+
+  $(document).on('click', '#customModalContent .scheduleNav', function (e) {
+    e.preventDefault();
+    var modalContainer = $('#customModalContent');
+    var previousButton = $('#customModalContent .scheduleNav.previous-schedule');
+    var nextButton = $('#customModalContent .scheduleNav.next-schedule');
+    var button = $(this);
+    var dataNext = $(this).attr('data-index');
+    var dataStatus = $(this).attr('data-action');
+    var slug = $(this).attr('data-for');
+    var max = 5;
+    var newStat = dataNext;
+
+    if (dataStatus == 'next') {
+      newStat = parseInt(dataNext) + 1;
+      var prevStat = newStat - 2;
+      previousButton.attr('data-index', prevStat);
+    } else if (dataStatus == 'previous') {
+      newStat = parseInt(dataNext) - 1;
+    }
+
+    $(this).attr('data-index', newStat);
+
+    if (dataStatus == 'next') {
+      previousButton.removeClass('hide');
+
+      if (newStat == max) {
+        nextButton.addClass('hide');
+      }
+    } else if (dataStatus == 'previous') {
+      nextButton.removeClass('hide');
+      var nextIndex = newStat + 1;
+
+      if (newStat < 0) {
+        previousButton.addClass('hide');
+        nextButton.attr('data-index', 1);
+      } else {
+        nextButton.attr('data-index', nextIndex);
+      }
+    }
+
+    var params = {
+      action: 'activity_schedule_func',
+      status: dataStatus,
+      index: dataNext
+    };
+    getActivityScheduleContent(params);
+  });
+
+  function getActivityScheduleContent(params) {
+    var modalContainer = $('#customModalContent');
+    var previousButton = $('#customModalContent .scheduleNav.previous-schedule');
+    var nextButton = $('#customModalContent .scheduleNav.next-schedule');
+    var isReset = typeof params.reset != 'undefined' ? params.reset : false;
+    var max = 5;
+    $.ajax({
+      url: frontajax.ajaxurl,
+      type: 'post',
+      dataType: "json",
+      data: params,
+      beforeSend: function beforeSend(obj) {},
+      success: function success(obj) {
+        if (obj.result) {
+          var postId = obj.ID;
+          var content = $.parseHTML(obj.result);
+          var modalTitle = $(content).find('.modal-title-inner').html();
+          var modalBody = $(content).find('.modal-body').html();
+          modalContainer.find('.modal-title-inner').html(modalTitle);
+          modalContainer.find('.modal-title-inner').addClass('animated fadeIn');
+          modalContainer.find('.modal-body').html(modalBody);
+          modalContainer.find('.modal-body-inner').addClass('animated fadeInUp');
+          $('.activity-schedule-modal').attr('data-pid', postId);
+
+          if (isReset) {
+            previousButton.attr('data-index', 0);
+            previousButton.addClass('hide');
+            nextButton.attr('data-index', 1);
+            nextButton.removeClass('hide');
+          }
+        }
+      }
+    });
   }
 }); // END #####################################    END
 "use strict";
