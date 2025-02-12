@@ -3830,6 +3830,7 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
     display: flex!important;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-evenly;
   }
   figure {
     display: inline-block;
