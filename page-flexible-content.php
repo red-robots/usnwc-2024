@@ -81,6 +81,17 @@ jQuery(document).ready(function($){
   		$(this).insertAfter('#page');
   	});
   }
+
+  if( $('.biz-image-list').length ) {
+    $('.biz-image-list').each(function(){
+      var target = $(this);
+      var parent = $(this).parents('.textcol');
+      if( parent.find('.imageListing').length ) {
+        parent.find('.imageListing').appendTo(target);
+        parent.find('.imageListing').show();
+      }
+    });
+  }
 });
 </script>
 <?php 

@@ -2924,3 +2924,12 @@ function activity_schedule_func(){
   die();
 }
 
+
+/* Shortcode for Address */
+function acf_image_list_shortcode_func( $atts ){
+  // $a = shortcode_atts( array(
+  //   'icon' => '',
+  // ), $atts );
+  return '<div class="biz-image-list"></div>';
+}
+add_shortcode( 'image_list', 'acf_image_list_shortcode_func' );

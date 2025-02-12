@@ -830,7 +830,17 @@ body.toplevel_page_acf-options-today-options [data-name="whitewaterLocations"] [
   width: auto;
   height: 140px;
 }
-
+[data-name="logo_images_gallery"] .acf-gallery {
+  height: 200px!important;
+}
+[data-name="logo_images_gallery"] .acf-gallery .acf-gallery-attachment .thumbnail img {
+  height: auto!important;
+  max-height: unset!important;
+  width: 85%!important;
+}
+[data-name="logo_images_gallery"] .acf-gallery .acf-gallery-attachment {
+  width: 10%!important;
+}
 
 /* HIDE TODAY OPTIONS */
 body.toplevel_page_acf-options-today-options ul.acf-tab-group > li:has([data-key="field_5f460015a1a67"]) {

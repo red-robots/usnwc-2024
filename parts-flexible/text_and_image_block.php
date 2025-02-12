@@ -32,63 +32,62 @@
 
 
     <?php if( have_rows('content_columns') ) { ?>
-
-
-
         <?php if ($column_style=='column2') { ?>
         <section id="two-columns-block_<?php echo $ctr ?>" class="two-columns-block text-and-image-blocks">
           <div class="columns-2">
-            <?php $i=1; foreach ($content_columns as $col) { 
+            <?php $i=1; while( have_rows('content_columns') ): the_row(); ?>
+              <?php if( get_row_layout() == 'flex_content_block' ) { ?>
+                <?php  
+                $map_image_type = get_sub_field('map_image_type');
+                $map_embed_code = get_sub_field('map_embed_code');
+                $is_image_col = ($map_image_type=='map') ? false : true;
 
-              // $map_image_type = get_sub_field('map_image_type');
-              // $map_embed_code = get_sub_field('map_embed_code');
-              $map_image_type = ( isset($col['map_image_type']) ) ? $col['map_image_type'] : '';
-              $map_embed_code = ( isset($col['map_embed_code']) ) ? $col['map_embed_code'] : '';
-              $is_image_col = ($map_image_type=='map') ? false : true;
+                $e_title_top = get_sub_field('title_top');
+                $e_title = get_sub_field('title'); 
+                $e_text = get_sub_field('description');  
+                $fullText = $e_text; 
+                $shorttext = get_sub_field('shorttext');
+                $has_dash_items = get_sub_field('add_dash_items');
+                $line_items = get_sub_field('line_items_dash');
+                $image_position = get_sub_field('force_image_position');
+                $colClass = ($i % 2) ? ' odd':' even';
+                $image_type = get_sub_field('image_type');
+                $single_image = get_sub_field('single_image');
 
-              $e_title_top = $col['title_top'];
-              $e_title = $col['title'];
-              $e_text = $col['description']; 
-              $fullText = $col['description']; 
-              $shorttext = $col['shorttext']; 
-              $has_dash_items = $col['add_dash_items']; 
-              $line_items = $col['line_items_dash']; 
-              $image_position = $col['force_image_position']; 
-              $colClass = ($i % 2) ? ' odd':' even';
-              $image_type = $col['image_type'];
-              $single_image = $col['single_image'];
-              $has_image = false;
-              $images = ( $image_type && isset($col[$image_type.'_image']) ) ? $col[$image_type.'_image'] : '';
-              $slides = array();
-              if($image_type=='single') {
-                if( $single_image ) {
-                  $slides[0]['url'] = $single_image['url'];
-                  $slides[0]['title'] = $single_image['title'];
+                $has_image = false;
+
+                $images = ($image_type) ? get_sub_field($image_type.'_image') : '';
+                $slides = array();
+                if($image_type=='single') {
+                  if( $single_image ) {
+                    $slides[0]['url'] = $single_image['url'];
+                    $slides[0]['title'] = $single_image['title'];
+                  }
+                } else {
+                  $slides = get_sub_field('gallery_image');
                 }
-              } else {
-                $slides = $col['gallery_image'];
-              }
-
-              $hasImageOrMap = ($slides) ?  true : false;
-              if($map_image_type=='map' && $map_embed_code) {
-                $hasImageOrMap = true;
-              }
-
-              $buttons = $col['buttons'];
-              $boxClass = ( ($e_title || $e_text) && $hasImageOrMap ) ? 'half':'full';
-              $textType = ($shorttext) ? 'shorttext':'fulltext';
-              if($shorttext) {
-                $e_text = $shorttext;
-              }
-              $popupContent = ( isset($col['content_display_type']) && $col['content_display_type'] ) ? true : false;
-              $imagePos = ($image_position) ? ' image-position-'.$image_position : '';
-              $dataSection = ( $section_title ) ? '' : 'data-section="'.$e_title.'"';
-
-              $is_repeater_dashed_items = ( isset($col['is_repeater_dashed_items']) ) ? $col['is_repeater_dashed_items'] : '';
-              $repeater_dashed_items = ( isset($col['repeater_dashed_items']) ) ? $col['repeater_dashed_items'] : '';
-
-              if( ($e_title || $e_text) || $slides || ($has_dash_items && $line_items)) { $colClass = ($i % 2) ? ' odd':' even'; ?>
-
+                $hasImageOrMap = ($slides) ?  true : false;
+                if($map_image_type=='map' && $map_embed_code) {
+                  $hasImageOrMap = true;
+                }
+                $buttons = get_sub_field('buttons'); 
+                $boxClass = ( ($e_title || $e_text) && $hasImageOrMap ) ? 'half':'full';
+                $textType = ($shorttext) ? 'shorttext':'fulltext';
+                if($shorttext) {
+                  $e_text = $shorttext;
+                }
+                $popupContent = ( get_sub_field('content_display_type') ) ? true : false;
+                $imagePos = ($image_position) ? ' image-position-'.$image_position : '';
+                $dataSection = ( $section_title ) ? '' : 'data-section="'.$e_title.'"';
+                $is_repeater_dashed_items = get_sub_field('is_repeater_dashed_items');
+                $repeater_dashed_items = get_sub_field('repeater_dashed_items');
+                
+                $hasLogos = get_sub_field('has_image_gallery_content');
+                $imageListing = '';
+                if($hasLogos) {
+                  $imageListing = get_sub_field('logo_images_gallery');
+                }
+                if( ($e_title || $e_text) || $slides || ($has_dash_items && $line_items)) { $colClass = ($i % 2) ? ' odd':' even'; ?>
                 <div id="section<?php echo $i?>_parent<?php echo $ctr?>" <?php echo $dataSection?> class="mscol <?php echo $boxClass.$colClass.$imagePos ?>">
 
                   <?php if ( $e_title || $e_text || ($has_dash_items && $line_items) ) { ?>
@@ -157,6 +156,16 @@
                             <?php } ?>
                           </div>
                         <?php } ?>
+
+                        <?php if ($imageListing) { ?>
+                        <div class="imageListing" style="display:none">
+                          <?php foreach ($imageListing as $img) { ?>
+                          <figure class="bizlogo">
+                            <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>">
+                          </figure>
+                          <?php } ?>
+                        </div>
+                        <?php } ?>
                       </div>
                     </div>
                   </div>
@@ -196,9 +205,10 @@
                   <?php } ?>
 
                 </div>
-              <?php } ?>
+                <?php } ?>
 
-            <?php $i++; } ?>
+              <?php } ?>
+            <?php $i++; endwhile;  ?>
           </div>
         </section>
         <?php } ?>

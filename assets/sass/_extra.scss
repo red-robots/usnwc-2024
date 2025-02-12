@@ -3825,6 +3825,26 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
   }
 }
 
+.biz-image-list {
+  .imageListing {
+    display: flex!important;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  figure {
+    display: inline-block;
+    margin: 0 0;
+    padding: 10px;
+    img {
+      width: 8vw;
+      height: auto;
+      @media screen and (max-width: 768px) {
+        width: 80px;
+      }
+    }
+  }
+}
+
 body.page-template-page-bike-ranch.subpage #banner:has(.image-wrapper .mobile) {
   @media screen and (max-width: 768px) {
     height: auto!important;

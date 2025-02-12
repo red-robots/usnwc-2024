@@ -2,6 +2,9 @@
 .mobile-info-toggle {
   display: none;
 }
+.mobileTodayLink {
+  display: none;
+}
 @media screen and (max-width: 960px) {
   .site-header-desktop {
     display: none!important;
@@ -433,6 +436,7 @@
     }
   }
   .site-header-mobile .mobileTodayLink {
+    display: block;
     .navlink-today {
       display: block;
       width: 100%;
