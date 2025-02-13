@@ -40,8 +40,6 @@ if($postTypes) {
   }
 }
 
-
-
 $per_page = 15;
 $offset = ($paged>1) ? ($per_page * $paged)-$per_page : 0;
 
@@ -51,9 +49,20 @@ if( isset($_GET['type']) && $_GET['type']!='all' ) {
   $where = ($featured_event) ? 'AND p.ID!=' . $featured_event : '';
 }
 
-$query_meta = "SELECT p.ID, p.post_title, p.post_name, p.post_type, ext.start_date, ext.end_date FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext 
+if( count($thePostTypesArr) == 1 ) {
+  $selected_post_type = end($thePostTypesArr);
+   $query_meta = "SELECT p.ID, p.post_title, p.post_name, p.post_type, ext.start_date, ext.end_date FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext 
+              WHERE p.ID=ext.post_id AND p.post_status='publish' AND p.post_type='".$selected_post_type."'
+              AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date)";
+
+} else {
+
+  $query_meta = "SELECT p.ID, p.post_title, p.post_name, p.post_type, ext.start_date, ext.end_date FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext 
               WHERE p.ID=ext.post_id AND p.post_status='publish' AND p.post_type IN ('".implode("','", $thePostTypesArr)."') 
               AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date)";
+
+}
+
 
 $new_query = $query_meta . " GROUP BY p.ID ORDER BY UNIX_TIMESTAMP(ext.start_date) ASC LIMIT ".$per_page." OFFSET ".$offset;
 
@@ -169,6 +178,7 @@ $total_records = ($total) ? count($total) : 0;
     </div>
 
     <?php 
+    $filteredType = ( isset($_GET['type']) && $_GET['type'] ) ? $_GET['type'] : '';
     if( $total_records>$per_page ) {
       $perpage_count = $total_records/$per_page;
       //$total_pages = round($total_records/$per_page); 
@@ -176,7 +186,7 @@ $total_records = ($total) ? count($total) : 0;
       ?>
       <div id="hiddenData" style="display:none;"></div>
       <div id="pagination" class="pagination-wrapper loadMoreWrappe">
-        <a href="javascript:void(0)" data-baseurl="<?php echo get_permalink() ?>" id="loadMorePosts" data-perpage="<?php echo $per_page ?>" data-count="<?php echo $total_records ?>" data-next="2" data-total-pages="<?php echo $total_pages ?>" class="button button-pill">See More</a>
+        <a href="javascript:void(0)" data-filter="<?php echo $filteredType ?>" data-baseurl="<?php echo get_permalink() ?>" id="loadMorePosts" data-perpage="<?php echo $per_page ?>" data-count="<?php echo $total_records ?>" data-next="2" data-total-pages="<?php echo $total_pages ?>" class="button button-pill">See More</a>
       </div>
     <?php } ?>
   </div>
@@ -199,7 +209,15 @@ jQuery(document).ready(function($){
     var next = $(this).attr('data-next');
     var nextPlus = parseInt(next) + 1;
     var totalPages = parseInt( $(this).attr('data-total-pages') );
-    var baseUrl = $(this).attr('data-baseurl') + '?pg=' + next;
+    var baseUrl = $(this).attr('data-baseurl');
+    var filter = $(this).attr('data-filter');
+    if(filter) {
+      baseUrl += '?type=' + filter + '&pg=' + next;
+    } else {
+      baseUrl += '?pg=' + next;
+    }
+
+    //var baseUrl = $(this).attr('data-baseurl') + '?pg=' + next;
     loadMoreButton.attr('data-next', nextPlus);
 
     $('#hiddenData').load(baseUrl + ' .records-container .flexwrap', function(){
@@ -218,6 +236,7 @@ jQuery(document).ready(function($){
       }
     });
   });
+
 
 }); 
 </script>
