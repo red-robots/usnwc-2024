@@ -29,5 +29,25 @@ $classes['tribe-events-calendar-month-mobile-events__mobile-event--featured'] = 
 		<?php $this->template( 'month/mobile-events/mobile-day/mobile-event/title', [ 'event' => $event ] ); ?>
 		<?php $this->template( 'month/mobile-events/mobile-day/mobile-event/cost', [ 'event' => $event ] ); ?>
 
+    <?php  
+      $activityLink = '';
+      $activityScheduleId = getActivityScheduleIdByDate($day['date']);
+      $activityLink = '';
+      $compareDate = strtotime($day['date']);
+      $todayDate = strtotime( date('Ymd') );
+
+      if($activityScheduleId) {
+        $dateInfo = date('Ymd', strtotime($day['date']));
+        if($compareDate >= $todayDate) {
+          $activityLink = get_site_url() . '/daily-activity-schedule/?date=' . $dateInfo;
+        }
+      }
+    ?>
+
+    <?php if ($activityLink) { ?>
+    <div class="activity-schedule-link is--mobile">
+      <a href="<?php echo $activityLink ?>" class="button">View Activity Schedule</a>
+    </div>
+    <?php } ?>
 	</div>
 </article>

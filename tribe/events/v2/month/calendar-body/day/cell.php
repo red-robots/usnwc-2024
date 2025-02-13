@@ -56,9 +56,9 @@ $day_id = 'tribe-events-calendar-day-' . $day_date;
     <?php
     $slug = 'hours-of-operation-' . date('m-d-Y', strtotime($day['date']));
     $info = getDataBySlug($slug);
+    
     $activityScheduleId = getActivityScheduleIdByDate($day['date']);
     $activityLink = '';
-
     $compareDate = strtotime($day['date']);
     $todayDate = strtotime( date('Ymd') );
 
@@ -68,8 +68,6 @@ $day_id = 'tribe-events-calendar-day-' . $day_date;
         $activityLink = get_site_url() . '/daily-activity-schedule/?date=' . $dateInfo;
       }
     }
-
-    
 
     if($info) { 
       $content = ($info->post_content) ? $info->post_content : '';
