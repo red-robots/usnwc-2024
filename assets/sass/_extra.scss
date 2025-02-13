@@ -3862,6 +3862,29 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
     border-radius: 200px;
     overflow: hidden;
   }
+  
+  .activity-schedule-link {
+    padding: 5px 0 20px;
+    a {
+      display: block;
+      max-width: 150px;
+      width: 100%;
+      text-align: center;
+      margin: 8px auto;
+      font-size: 10px !important;
+      text-transform: uppercase;
+      color: $red!important;
+      border: 1px solid $red;
+      border-radius: 300px;
+      padding: 5px;
+      transition: all ease .3s;
+      &:hover, &:focus {
+        background: #000!important;
+        border-color: #000!important;
+        color: #FFF!important;
+      }
+    }
+  }
 }
 
 body.page-template-page-bike-ranch.subpage #banner:has(.image-wrapper .mobile) {

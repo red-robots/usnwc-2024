@@ -5495,6 +5495,9 @@ section.full-bleed-promo.rounded_with_padding img.poster-mobile{display:none}
 .calendar-grid-wrapper .tribe-events-calendar-month__multiday-event-bar .tribe-events-calendar-month__multiday-event-bar-inner .tribe-events-calendar-month__multiday-event-bar-title{text-overflow:inherit;white-space:normal}
 .calendar-grid-wrapper .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-month__multiday-event-wrapper{height:auto !important}
 .calendar-grid-wrapper .tribe-events-calendar-month__multiday-event{border-radius:200px;overflow:hidden}
+.calendar-grid-wrapper .activity-schedule-link{padding:5px 0 20px}
+.calendar-grid-wrapper .activity-schedule-link a{display:block;max-width:150px;width:100%;text-align:center;margin:8px auto;font-size:10px !important;text-transform:uppercase;color:#ba0d30 !important;border:1px solid #ba0d30;border-radius:300px;padding:5px;-webkit-transition:all ease .3s;transition:all ease .3s}
+.calendar-grid-wrapper .activity-schedule-link a:hover,.calendar-grid-wrapper .activity-schedule-link a:focus{background:#000 !important;border-color:#000 !important;color:#fff !important}
 body.scrolled.logged-in.admin-bar .mobileRedTag .stats,body.scrolled .mobileRedTag .stats{position:relative !important;top:0}
 body.logged-in.admin-bar.scrolled .redtag{top:112px !important}
 body.logged-in.admin-bar #customModalContainer.open{padding-top:60px}

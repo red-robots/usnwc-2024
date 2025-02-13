@@ -1297,10 +1297,13 @@ function get_page_id_by_permalink($url) {
     }
 }
 
-function getActivityScheduleToday($locationSlug) {
+function getActivityScheduleToday($locationSlug,$customDate=null) {
   global $wpdb;
   $wp = $wpdb->prefix;
   $todayDate = date('Ymd');
+  if($customDate) {
+    $todayDate = $customDate;
+  }
   $query = "SELECT p.ID, meta.meta_value AS event_schedule, term.term_id, term.name AS term_name FROM {$wp}posts p, {$wp}postmeta meta, {$wp}term_relationships rel, {$wp}terms term  
             WHERE p.ID=meta.post_id AND meta.meta_key='eventDateSchedule' AND meta.meta_value='{$todayDate}' 
             AND p.post_status='publish' AND p.post_type='activity_schedule' AND p.ID=rel.object_id 
@@ -2933,3 +2936,16 @@ function acf_image_list_shortcode_func( $atts ){
   return '<div class="biz-image-list"></div>';
 }
 add_shortcode( 'image_list', 'acf_image_list_shortcode_func' );
+
+function getActivityScheduleIdByDate($date) {
+  global $table_prefix, $wpdb;
+  if( empty($date) ) return '';
+  $date_compare = date('Ymd', strtotime($date));
+  $query = "SELECT p.ID FROM ".$table_prefix."posts p, ".$table_prefix."postmeta m 
+            WHERE p.ID=m.post_id AND p.post_status='publish' AND p.post_type='activity_schedule' 
+            AND m.meta_key='eventDateSchedule' AND m.meta_value='".$date_compare."'";
+  $result = $wpdb->get_row($query);
+  return ($result) ? $result->ID : '';
+}
+
+

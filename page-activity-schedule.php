@@ -18,6 +18,9 @@ if($flexslider) {
 	}
 }
 $has_banner = ($slideImages) ? 'has-banner':'no-banner';
+
+$customDate = ( isset($_GET['date']) && $_GET['date'] ) ? $_GET['date'] : '';
+$date_title = ($customDate) ?  date('l, F j, Y', strtotime($customDate)) : date('l, F j, Y');
 ?>
 
 <div id="primary" data-post="<?php echo get_the_ID()?>" class="content-area-full activity-schedule <?php echo $has_banner ?>">
@@ -26,7 +29,7 @@ $has_banner = ($slideImages) ? 'has-banner':'no-banner';
 				$custom_page_title = get_field("custom_page_title"); 
 				$page_title = ($custom_page_title) ? $custom_page_title : get_the_title();
 			?>
-			<div class="text-centered-section intro-text-wrap">
+			<div id="schedule--info" class="text-centered-section intro-text-wrap">
 				<div class="wrapper">
 					<?php the_content(); ?>
 				</div>
@@ -36,7 +39,7 @@ $has_banner = ($slideImages) ? 'has-banner':'no-banner';
 		<div class="schedule-activities-info new-layout-v2 full">
       <div class="subhead">
         <div class="date-hours">
-          <h2 class="event-date"><?php echo date('l, F j, Y'); ?></h2>
+          <h2 class="event-date"><?php //echo date('l, F j, Y'); ?><?php echo $date_title ?></h2>
         </div>
       </div>
 
@@ -79,7 +82,8 @@ $has_banner = ($slideImages) ? 'has-banner':'no-banner';
           $is_active = ($j==1) ? ' active':'';
           $is_selected = ($j==1) ? 'true':'false';
           $is_display = ($j==1) ? 'flex':'none';
-          $data = getActivityScheduleToday($slug); 
+          //$data = getActivityScheduleToday($slug); 
+          $data = getActivityScheduleToday($slug, $customDate); 
           if($data) { ?>
 
           <button class="mobile-tab-heading<?php echo $is_active ?>" aria-expanded="<?php echo $is_selected ?>" aria-controls="tabpanel-<?php echo $slug; ?>">
@@ -246,6 +250,7 @@ $has_banner = ($slideImages) ? 'has-banner':'no-banner';
   <?php } ?>
 	</div>
 
+
 </div><!-- #primary -->
 
 
@@ -261,6 +266,20 @@ jQuery(document).ready(function($){
 		});
 		$("#pageTabs").show().addClass("show-tabs");
 	}
+
+  if( typeof params.date!='undefined' || params.date!=null ) {
+    var scrollTarget = $('#schedule--info');
+    $('html, body').animate({
+      scrollTop: scrollTarget.offset().top - 150
+    }, 500, function() {
+      if ( scrollTarget.is(":focus") ) {
+        return false;
+      } else {
+        scrollTarget.attr('tabindex','-1');
+      };
+    });
+  }
+
 });
 </script>
 

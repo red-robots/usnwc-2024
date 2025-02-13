@@ -56,15 +56,35 @@ $day_id = 'tribe-events-calendar-day-' . $day_date;
     <?php
     $slug = 'hours-of-operation-' . date('m-d-Y', strtotime($day['date']));
     $info = getDataBySlug($slug);
+    $activityScheduleId = getActivityScheduleIdByDate($day['date']);
+    $activityLink = '';
+
+    $compareDate = strtotime($day['date']);
+    $todayDate = strtotime( date('Ymd') );
+
+    if($activityScheduleId) {
+      $dateInfo = date('Ymd', strtotime($day['date']));
+      if($compareDate >= $todayDate) {
+        $activityLink = get_site_url() . '/daily-activity-schedule/?date=' . $dateInfo;
+      }
+    }
+
+    
+
     if($info) { 
       $content = ($info->post_content) ? $info->post_content : '';
       $content = ($content) ? apply_filters('the_content', $content) : '';
       $show_content = (strpos($info->post_content,'Guest Services') !== false) ? true :'';
       if($content && $show_content) { ?>
-      <div class="date-event-info"><?php echo $content ?></div>
+      <div class="date-event-info" data-info="<?php echo $slug ?>"><?php echo $content ?></div>
       <?php } ?>
     <?php } ?>
 
+    <?php if ($activityLink) { ?>
+    <div class="activity-schedule-link">
+      <a href="<?php echo $activityLink ?>" class="button">View Activity Schedule</a>
+    </div>
+    <?php } ?>
   	
 
   <?php //$this->template( 'month/calendar-body/day/more-events', [ 'more_events' => $day['more_events'], 'more_url' => $day['day_url'] ] ); ?>
