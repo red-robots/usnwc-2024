@@ -52,13 +52,13 @@ if( isset($_GET['type']) && $_GET['type']!='all' ) {
 if( count($thePostTypesArr) == 1 ) {
   $selected_post_type = end($thePostTypesArr);
    $query_meta = "SELECT p.ID, p.post_title, p.post_name, p.post_type, ext.start_date, ext.end_date FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext 
-              WHERE p.ID=ext.post_id AND p.post_status='publish' AND p.post_type='".$selected_post_type."'
+              WHERE p.ID=ext.post_id AND p.post_status='publish' ".$where." AND p.post_type='".$selected_post_type."'
               AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date)";
 
 } else {
 
   $query_meta = "SELECT p.ID, p.post_title, p.post_name, p.post_type, ext.start_date, ext.end_date FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext 
-              WHERE p.ID=ext.post_id AND p.post_status='publish' AND p.post_type IN ('".implode("','", $thePostTypesArr)."') 
+              WHERE p.ID=ext.post_id AND p.post_status='publish' ".$where." AND p.post_type IN ('".implode("','", $thePostTypesArr)."') 
               AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date)";
 
 }
