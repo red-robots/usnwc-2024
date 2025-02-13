@@ -53,6 +53,7 @@
           $start_date = date('l, F d', strtotime($start_date));
         }
       ?>
+
       <div class="infobox">
         <div class="inside">
           <?php if ($start_date) { ?>

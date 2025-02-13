@@ -48,6 +48,7 @@
           <?php foreach($posts as $p) { 
             $pid = $p->ID;
             $title = $p->post_title;
+            //$item_post_type = get_post_type($pid);
             $image = get_field('thumbnail_image', $pid);
             $start_date = get_field('start_date', $pid);
             $pagelink = get_permalink($pid);
@@ -57,8 +58,11 @@
             }
             if($post_type=='dining') {
               $image = get_field('mobile-banner', $pid);
+              //$image = get_field('post_image_full', $pid);
+              $image = get_field('post_image_thumb', $pid);
             }
             ?>
+
             <div class="infobox">
               <div class="inside">
                 <?php if ($post_type!=='dining') { ?>

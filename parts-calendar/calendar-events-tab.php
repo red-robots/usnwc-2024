@@ -114,7 +114,8 @@ $total_records = ($total) ? count($total) : 0;
           $thumbnail = get_field('thumbnail_image', $post_id);
         }
         if( $post_type=='dining' ) {
-          $thumbnail = get_field('mobile-banner', $post_id);
+          //$thumbnail = get_field('mobile-banner', $post_id);
+          $thumbnail = get_field('post_image_thumb', $post_id);
         }
 
         $is_first = '';

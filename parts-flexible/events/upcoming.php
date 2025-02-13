@@ -55,7 +55,13 @@
           if( get_field('thumbnail_image', $pid) ) {
             $image = get_field('thumbnail_image', $pid);
           }
+
+          //Try... (Adventure Dining)
+          if(!$image) {
+            $image = get_field('post_image_full', $pid);
+          }
           ?>
+
           <div class="infobox">
             <div class="inside">
               
