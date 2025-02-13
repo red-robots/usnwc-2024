@@ -5492,6 +5492,9 @@ section.full-bleed-promo.rounded_with_padding img.poster-mobile{display:none}
 .biz-image-list .imageListing{display:-webkit-box !important;display:-ms-flexbox !important;display:flex !important;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:space-evenly;-ms-flex-pack:space-evenly;justify-content:space-evenly}
 .biz-image-list figure{display:inline-block;margin:0;padding:10px}
 .biz-image-list figure img{width:8vw;height:auto}
+.calendar-grid-wrapper .tribe-events-calendar-month__multiday-event-bar .tribe-events-calendar-month__multiday-event-bar-inner .tribe-events-calendar-month__multiday-event-bar-title{text-overflow:inherit;white-space:normal}
+.calendar-grid-wrapper .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-month__multiday-event-wrapper{height:auto !important}
+.calendar-grid-wrapper .tribe-events-calendar-month__multiday-event{border-radius:200px;overflow:hidden}
 body.scrolled.logged-in.admin-bar .mobileRedTag .stats,body.scrolled .mobileRedTag .stats{position:relative !important;top:0}
 body.logged-in.admin-bar.scrolled .redtag{top:112px !important}
 body.logged-in.admin-bar #customModalContainer.open{padding-top:60px}

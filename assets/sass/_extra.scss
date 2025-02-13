@@ -3846,6 +3846,24 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
   }
 }
 
+.calendar-grid-wrapper {
+  .tribe-events-calendar-month__multiday-event-bar {
+    .tribe-events-calendar-month__multiday-event-bar-inner {
+      .tribe-events-calendar-month__multiday-event-bar-title {
+        text-overflow: inherit;
+        white-space: normal;
+      }
+    } 
+  }
+  .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-month__multiday-event-wrapper {
+    height: auto!important;
+  }
+  .tribe-events-calendar-month__multiday-event {
+    border-radius: 200px;
+    overflow: hidden;
+  }
+}
+
 body.page-template-page-bike-ranch.subpage #banner:has(.image-wrapper .mobile) {
   @media screen and (max-width: 768px) {
     height: auto!important;
