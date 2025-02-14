@@ -1549,12 +1549,14 @@ var getGridSize = function() {
       $('#customModalContent').append(content);
       $('#customModalClose').removeClass('customModalClose1').addClass('customModalClose2');
       $('#customModalContainer .calendar-activity-schedule').show();
-      $('#customModalContainer .calendar-activity-schedule .location-tabs li.tab').each(function(){
-        var tabContent = $(this).find('button').attr("aria-controls");
-        if( $('.calendar-activity-schedule .info-wrapper#' + tabContent).length==0 ) {
-          $(this).remove();
-        }
-      });
+      
+      //Remove a Branch if there's no activity schedule
+      // $('#customModalContainer .calendar-activity-schedule .location-tabs li.tab').each(function(){
+      //   var tabContent = $(this).find('button').attr("aria-controls");
+      //   if( $('.calendar-activity-schedule .info-wrapper#' + tabContent).length==0 ) {
+      //     $(this).remove();
+      //   }
+      // });
       setTimeout(function(){
         $('#customModalContainer').addClass('open');
       },80);
