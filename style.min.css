@@ -4320,7 +4320,7 @@ section.visit .tile.full-bleed div.img{border-radius:0}
 .todaySnapshotInfo .info-wrapper .infocol .title{font-size:22px;color:#000;margin-bottom:8px}
 .todaySnapshotInfo .info-wrapper .infocol .text{font-family:"Lato",sans-serif;font-size:45px;font-weight:600;line-height:1;color:#787878}
 .todaySnapshotInfo .info-wrapper .infocol .link{margin-top:10px}
-.todaySnapshotInfo .info-wrapper .infocol .link a{font-size:16px}
+.todaySnapshotInfo .info-wrapper .infocol .link a{font-size:16px;font-weight:400 !important}
 .todaySnapshotInfo .info-wrapper .infocol .link a [class*=fa-]{position:relative;top:2px;left:2px}
 .todaySnapshotInfo .info-wrapper .infocol:last-child .inner:after{display:none}
 .todaySnapshotInfo .info-wrapper .close{opacity:1 !important}

@@ -97,7 +97,7 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
           $event_date = array($start_day, $start_date_format);
           $event_date_format = '';
           if( array_filter($event_date) ) {
-            $event_date_format = implode(",", $event_date);
+            $event_date_format = implode(", ", $event_date);
           }
           $pagelink = get_permalink($pid);
 				?>
