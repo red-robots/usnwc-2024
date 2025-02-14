@@ -1155,7 +1155,16 @@ var getGridSize = function() {
       $('.info-wrapper').last().addClass('last');
     }
 
-    $('.todaySnapshotInfo ul.location-tabs button').on('click', function(e){
+    // $('.todaySnapshotInfo ul.location-tabs li').each(function(){
+    //   var button = $(this).find('button');
+    //   var tabControl = button.attr('aria-controls');
+    //   //Hide tab (Branch) if there's no activity schedule
+    //   if( $('.info-wrapper#' + tabControl).length==0 ) {
+    //     $(this).hide();
+    //   }
+    // });
+
+    $(document).on('click', '.todaySnapshotInfo ul.location-tabs button', function(e){
       e.preventDefault();
       var target = $(this);
       var parent = target.parent();
@@ -1171,7 +1180,7 @@ var getGridSize = function() {
       $('.info-wrapper').not('#'+control).hide();
     });
 
-    $('.todaySnapshotInfo .mobile-tab-heading').on('click', function(e){
+    $(document).on('click', '.todaySnapshotInfo .mobile-tab-heading', function(e){
       e.preventDefault();
       var target = $(this);
       var control = $(this).attr('aria-controls');
@@ -1469,7 +1478,7 @@ var getGridSize = function() {
     $('#customModalContainer').addClass('open');
   });
 
-  $(document).on('click', '#customModalClose', function(e){
+  $(document).on('click', '#customModalClose.customModalClose1', function(e){
     e.preventDefault();
     $('#customModalContainer').removeClass('open');
     $('#customModalContent .activity-schedule-modal[data-schedule]').hide();
@@ -1515,6 +1524,43 @@ var getGridSize = function() {
       });
     });
   }
+
+
+  $(document).on('click', '#customModalClose.customModalClose2', function(e){
+    e.preventDefault();
+    $('#customModalContainer').removeClass('open');
+    $('#customModalClose').removeClass('customModalClose2').addClass('customModalClose1');
+    setTimeout(function(){
+      $('.calendar-activity-schedule').remove();
+    },300);
+  });
+
+  $(document).on('click','.calendar-grid-wrapper .activity-schedule-link a', function(e){
+    e.preventDefault();
+    var pageLink = $(this).attr('href');
+    var d = new Date();
+    $('#calendarPopHidden').load(pageLink + '&tmp='+d.getTime() + ' .schedule-activities-info ', function(content){
+      var eventDate = $('#calendarPopHidden').find('h2.event-date').text();
+      var eventContent = $('#calendarPopHidden').find('.todaySnapshotInfo').html();
+      var content = '<div class="activity-schedule-modal calendar-activity-schedule" style="display:none">';
+          content += '<div class="modal-title"><div class="modal-title-inner"><h2>Activity Schedule</h2><p class="hours-info">'+eventDate+'</p></div></div>';
+          content += '<div class="modal-body"><div class="modal-body-inner"><div class="todaySnapshotInfo">'+eventContent+'</div></div></div>';
+          content += '</div>';
+      $('#customModalContent').append(content);
+      $('#customModalClose').removeClass('customModalClose1').addClass('customModalClose2');
+      $('#customModalContainer .calendar-activity-schedule').show();
+      $('#customModalContainer .calendar-activity-schedule .location-tabs li.tab').each(function(){
+        var tabContent = $(this).find('button').attr("aria-controls");
+        if( $('.calendar-activity-schedule .info-wrapper#' + tabContent).length==0 ) {
+          $(this).remove();
+        }
+      });
+      setTimeout(function(){
+        $('#customModalContainer').addClass('open');
+      },80);
+      
+    });
+  });
 
   $(document).on('click','a[data-todayinfo]', function(e){
     e.preventDefault();
@@ -1754,6 +1800,9 @@ var getGridSize = function() {
   $('.masonry-grid').masonry({
     itemSelector: '.grid-item',
   });
+
+
+
 
 
   //MOBILE ONLY

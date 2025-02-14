@@ -5500,6 +5500,11 @@ section.full-bleed-promo.rounded_with_padding img.poster-mobile{display:none}
 .calendar-grid-wrapper .activity-schedule-link a:hover,.calendar-grid-wrapper .activity-schedule-link a:focus{background:#000 !important;border-color:#000 !important;color:#fff !important}
 .calendar-grid-wrapper .activity-schedule-link.is--mobile{padding:25px 0 5px}
 .calendar-grid-wrapper .activity-schedule-link.is--mobile a{max-width:80%;padding:10px 5px;font-size:13px !important}
+.activity-schedule-modal.calendar-activity-schedule .modal-title.modal-title-page{display:none !important}
+.activity-schedule-modal.calendar-activity-schedule .modal-title-calendar{display:block !important;text-align:center}
+.activity-schedule-modal.calendar-activity-schedule .info-wrapper.active{display:-webkit-box !important;display:-ms-flexbox !important;display:flex !important}
+.activity-schedule-modal.calendar-activity-schedule .todaySnapshotInfo{border-bottom:none !important;padding-bottom:0 !important}
+.activity-schedule-modal.calendar-activity-schedule .activity-schedule-modal{padding:0 0 !important}
 body.scrolled.logged-in.admin-bar .mobileRedTag .stats,body.scrolled .mobileRedTag .stats{position:relative !important;top:0}
 body.logged-in.admin-bar.scrolled .redtag{top:112px !important}
 body.logged-in.admin-bar #customModalContainer.open{padding-top:60px}

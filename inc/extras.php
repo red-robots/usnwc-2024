@@ -2887,13 +2887,29 @@ function remove_pages_editor(){
 add_action( 'add_meta_boxes', 'remove_pages_editor' );
 
 
-function queryActivitySchedulePosts($limit=5) {
+function queryActivitySchedulePosts($limit=5,$selectedDate=null) {
+  //$selectedDate => Ymd
   global $table_prefix, $wpdb;
-  $query = "SELECT p.ID FROM ".$table_prefix."posts p, ".$table_prefix."postmeta m WHERE p.ID=m.post_id 
+  // $query = "SELECT p.ID FROM ".$table_prefix."posts p, ".$table_prefix."postmeta m WHERE p.ID=m.post_id 
+  //           AND p.post_type='activity_schedule' AND p.post_status='publish' AND m.meta_key='eventDateSchedule' 
+  //           AND UNIX_TIMESTAMP(m.meta_value) >= ".strtotime(date('Ymd'))." 
+  //           ORDER BY UNIX_TIMESTAMP(m.meta_value) ASC LIMIT ".$limit;
+
+  if($selectedDate) {
+
+    $query = "SELECT p.ID FROM ".$table_prefix."posts p, ".$table_prefix."postmeta m WHERE p.ID=m.post_id 
+            AND p.post_type='activity_schedule' AND p.post_status='publish' AND m.meta_key='eventDateSchedule' 
+            AND m.meta_value='".$selectedDate."'";
+    $result = $wpdb->get_row($query);
+
+  } else {
+    $query = "SELECT p.ID FROM ".$table_prefix."posts p, ".$table_prefix."postmeta m WHERE p.ID=m.post_id 
             AND p.post_type='activity_schedule' AND p.post_status='publish' AND m.meta_key='eventDateSchedule' 
             AND UNIX_TIMESTAMP(m.meta_value) >= ".strtotime(date('Ymd'))." 
             ORDER BY UNIX_TIMESTAMP(m.meta_value) ASC LIMIT ".$limit;
-  $result = $wpdb->get_results($query);
+    $result = $wpdb->get_results($query);
+  }
+  
   return $result;
 }
 add_action('wp_ajax_activity_schedule_func', 'activity_schedule_func');
@@ -2937,15 +2953,37 @@ function acf_image_list_shortcode_func( $atts ){
 }
 add_shortcode( 'image_list', 'acf_image_list_shortcode_func' );
 
+
+
 function getActivityScheduleIdByDate($date) {
   global $table_prefix, $wpdb;
   if( empty($date) ) return '';
   $date_compare = date('Ymd', strtotime($date));
+  $items = array();
+
+  /* 
+   This function only pulls activity from current date and +3 days, 
+    total of 4 activity schedules
+  */
+  $posts = queryActivitySchedulePosts(4);
+  if($posts) {
+    foreach($posts as $p) {
+      $items[] = $p->ID;
+    }
+  }
+
   $query = "SELECT p.ID FROM ".$table_prefix."posts p, ".$table_prefix."postmeta m 
             WHERE p.ID=m.post_id AND p.post_status='publish' AND p.post_type='activity_schedule' 
             AND m.meta_key='eventDateSchedule' AND m.meta_value='".$date_compare."'";
   $result = $wpdb->get_row($query);
-  return ($result) ? $result->ID : '';
+  $output = '';
+  if($result) {
+    $pid = $result->ID;
+    if($items && in_array($pid, $items) ) {
+      $output = $pid;
+    }
+  }
+  return $output;
 }
 
 

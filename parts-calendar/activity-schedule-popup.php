@@ -1,6 +1,6 @@
 <?php if( isset($data->ID) ) {
   $has_future_schedule = queryActivitySchedulePosts(5); ?>
-  <div data-schedule="<?php echo $slug ?>" data-pid="<?php echo $data->ID ?>" class="activity-schedule-modal" style="display:none;">
+  <div data-schedule="<?php echo $slug ?>" data-pid="<?php echo $data->ID ?>" class="activity-schedule-modal today-activity-schedule" style="display:none;">
     <?php  
     $pid = $data->ID;
     $schedule = get_field('eventDateSchedule', $pid);

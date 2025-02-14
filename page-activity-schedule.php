@@ -21,6 +21,27 @@ $has_banner = ($slideImages) ? 'has-banner':'no-banner';
 
 $customDate = ( isset($_GET['date']) && $_GET['date'] ) ? $_GET['date'] : '';
 $date_title = ($customDate) ?  date('l, F j, Y', strtotime($customDate)) : date('l, F j, Y');
+$date_title_modal = ($customDate) ?  date('l, F d', strtotime($customDate)) : date('l, F d');
+
+$compareDate = ($customDate) ? $customDate : date('Ymd');
+// $info = queryActivitySchedulePosts(1,$compareDate);
+// $note = '';
+// $pass_hours = '';
+// if($info) {
+//   $activityScheduleId = $info->ID;
+//   $phFrom = get_field('pass_hours_from',$activityScheduleId);
+//   $phTo = get_field('pass_hours_to', $activityScheduleId);
+//   $note = get_field('note', $activityScheduleId);
+//   $pass = array($phFrom, $phTo);
+//   $pass_hours = ( $pass && array_filter($pass) ) ? array_filter($pass):'';
+//   if( $pass_hours ) {
+//     if( count($pass_hours) == 1 ) {
+//       $pass_hours = $pass_hours[0];
+//     } else {
+//       $pass_hours = implode(' - ', $pass_hours);
+//     }
+//   }
+// }
 ?>
 
 <div id="primary" data-post="<?php echo get_the_ID()?>" class="content-area-full activity-schedule <?php echo $has_banner ?>">
@@ -40,6 +61,9 @@ $date_title = ($customDate) ?  date('l, F j, Y', strtotime($customDate)) : date(
       <div class="subhead">
         <div class="date-hours">
           <h2 class="event-date"><?php //echo date('l, F j, Y'); ?><?php echo $date_title ?></h2>
+          <div class="hours-info-modal" style="display:none;">
+            <?php echo $date_title_modal ?>
+          </div>
         </div>
       </div>
 
@@ -59,7 +83,9 @@ $date_title = ($customDate) ?  date('l, F j, Y', strtotime($customDate)) : date(
           $infocolumns = $w['infocolumns'];
           $is_active = ($i==1) ? ' active':'';
           $is_selected = ($i==1) ? 'true':'false';
-          if($name) { ?>
+          $slug = (isset($loc->slug) && $loc->slug) ? $loc->slug : '';
+          $data = getActivityScheduleToday($slug, $customDate); 
+          if($name && $data) { ?>
             <li class="tab<?php echo $is_active ?>">
               <button role="tab" aria-selected="<?php echo $is_selected ?>" aria-controls="tabpanel-<?php echo sanitize_title($name) ?>" id="tab-<?php echo sanitize_title($name) ?>">
                 <span class="wname"><?php echo $name ?></span>
@@ -93,7 +119,7 @@ $date_title = ($customDate) ?  date('l, F j, Y', strtotime($customDate)) : date(
             <?php } ?>
           </button>
 
-          <div class="info-wrapper<?php echo $is_active ?>" role="tabpanel" aria-labelledby="tab-<?php echo sanitize_title($name) ?>" id="tabpanel-<?php echo sanitize_title($name) ?>">
+          <div class="info-wrapper<?php echo $is_active ?>" data-postid="<?php echo $data->ID ?>" role="tabpanel" aria-labelledby="tab-<?php echo sanitize_title($name) ?>" id="tabpanel-<?php echo sanitize_title($name) ?>">
             <!-- ACTIVITY SCHEDULE -->
             <div data-schedule-single="<?php echo $slug ?>" class="activity-schedule-modal schedule-single">
               <?php  
@@ -116,10 +142,18 @@ $date_title = ($customDate) ?  date('l, F j, Y', strtotime($customDate)) : date(
               $schedules2  = get_field('schedules_2', $pid);
               $column_class = ($schedules1 && $schedules2) ? 'half':'full';
               ?>
-              <div class="modal-title">
+              <?php //This section will be VISIBLE in the popup on Calendar page ?>
+              <div class="modal-title-calendar" style="display:none;">
+                <?php if ( $pass_hours ) { ?>
+                Pass Hours: <span><?php echo strtoupper($pass_hours) ?></span>
+                <?php } ?>
+              </div>
+
+              <?php //This section will be HIDDEN in the popup on Calendar page ?>
+              <div class="modal-title modal-title-page">
                 <h2>Activity Schedule</h2>
                 <p class="hours-info">
-                  <?php //echo $today_date ?>
+                  <span class="pass-date" style="display:none;"><?php echo $today_date ?></span>
                   <?php if ( $pass_hours ) { ?>
                   <span class="pass-hours">
                     Pass Hours: <span><?php echo strtoupper($pass_hours) ?></span>

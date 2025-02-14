@@ -3896,6 +3896,26 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
   }
 }
 
+.activity-schedule-modal.calendar-activity-schedule {
+  .modal-title.modal-title-page {
+    display: none!important;
+  }
+  .modal-title-calendar {
+    display: block!important;
+    text-align: center;
+  }
+  .info-wrapper.active {
+    display: flex!important;
+  }
+  .todaySnapshotInfo {
+    border-bottom: none!important;
+    padding-bottom: 0!important;
+  }
+  .activity-schedule-modal {
+    padding: 0 0!important;
+  }
+}
+
 body.page-template-page-bike-ranch.subpage #banner:has(.image-wrapper .mobile) {
   @media screen and (max-width: 768px) {
     height: auto!important;

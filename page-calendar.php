@@ -26,79 +26,77 @@ get_header(); ?>
       </header>
     <?php endwhile; ?>
 
-      <?php get_template_part('parts-calendar/todays-snapshot') ?>
+    <?php get_template_part('parts-calendar/todays-snapshot') ?>
 
-			<section class="text-centered-section calendar-tab-section">
-				<div class="text-center">
-					<?php 
+		<section class="text-centered-section calendar-tab-section">
+			<div class="text-center">
+				<?php 
 
-          if( get_the_content() ) { ?>
-          <div class="page-intro-text"><?php the_content(); ?></div>
-          <?php } ?>  
+        if( get_the_content() ) { ?>
+        <div class="page-intro-text"><?php the_content(); ?></div>
+        <?php } ?>  
+
+        <?php  
+          $calendar_tabs = array(
+            'calendar'=>'Calendar',
+            'events'=>'Events'
+          );
+        ?>
+				
+        <?php if ( do_shortcode('[tribe_events]') ) { ?>
+        <div class="calendar-grid-wrapper">
+          <div class="tabs-calendar-wrapper">
+            <?php $tb=1; foreach ($calendar_tabs as $key => $name) { 
+              $is_tab_active = ($tb==1) ? ' active':'';
+              $aria_selected = ($tb==1) ? 'true':'false';
+              if($has_filter) {
+                $is_tab_active = ($key=='events') ? ' active' : '';
+              }
+              if($current_tab) {
+                $is_tab_active = ($current_tab==$key) ? ' active' : '';
+              }
+              ?>
+              <div class="tabname--<?php echo $key ?>"><button role="tab" aria-selected="<?php echo $aria_selected ?>" aria-controls="<?php echo $key ?>Grid" class="tab-item<?php echo $is_tab_active?>"><?php echo $name ?></button></div>
+            <?php $tb++; } ?>
+          </div>
 
           <?php  
-            $calendar_tabs = array(
-              'calendar'=>'Calendar',
-              'events'=>'Events'
-            );
-          ?>
-					
-          <?php if ( do_shortcode('[tribe_events]') ) { ?>
-          <div class="calendar-grid-wrapper">
-            <div class="tabs-calendar-wrapper">
-              <?php $tb=1; foreach ($calendar_tabs as $key => $name) { 
-                $is_tab_active = ($tb==1) ? ' active':'';
-                $aria_selected = ($tb==1) ? 'true':'false';
-                if($has_filter) {
-                  $is_tab_active = ($key=='events') ? ' active' : '';
-                }
-                if($current_tab) {
-                  $is_tab_active = ($current_tab==$key) ? ' active' : '';
-                }
-                ?>
-                <div class="tabname--<?php echo $key ?>"><button role="tab" aria-selected="<?php echo $aria_selected ?>" aria-controls="<?php echo $key ?>Grid" class="tab-item<?php echo $is_tab_active?>"><?php echo $name ?></button></div>
-              <?php $tb++; } ?>
-            </div>
-
-            <?php  
-            $ctb=1; foreach ($calendar_tabs as $key => $name) { 
-                $tabClass = '';
-                $tabcontent_active = ($ctb==1) ? ' active':'';
-                if($has_filter) {
-                  $tabcontent_active = ($key=='events') ? ' active' : '';
-                }
-                if($current_tab) {
-                  $tabcontent_active = ($current_tab==$key) ? ' active' : '';
-                }
-                if($key=='calendar') {
-                  $tabClass = ' customCalendarGrid ';
-                }
-              ?>
-              <div id="<?php echo $key ?>Grid" data-panel-name="<?php echo $name ?>" class="tab-calendar-panel<?php echo $tabClass?><?php echo $tabcontent_active?>">
-                
-                <?php //CALENDAR ?>
-                <?php if($key=='calendar') { ?>
-                  <?php if ( do_shortcode('[tribe_events]') ) { ?>
-                  <div id="calendar-info">
-                    <?php echo do_shortcode('[tribe_events]'); ?>
-                  </div>
-                  <?php } ?>
-
-                <?php //EVENTS ?>
-                <?php } else if($key=='events') { ?>
-                  <?php get_template_part('parts-calendar/calendar-events-tab'); ?>
-                <?php } ?>
+          $ctb=1; foreach ($calendar_tabs as $key => $name) { 
+              $tabClass = '';
+              $tabcontent_active = ($ctb==1) ? ' active':'';
+              if($has_filter) {
+                $tabcontent_active = ($key=='events') ? ' active' : '';
+              }
+              if($current_tab) {
+                $tabcontent_active = ($current_tab==$key) ? ' active' : '';
+              }
+              if($key=='calendar') {
+                $tabClass = ' customCalendarGrid ';
+              }
+            ?>
+            <div id="<?php echo $key ?>Grid" data-panel-name="<?php echo $name ?>" class="tab-calendar-panel<?php echo $tabClass?><?php echo $tabcontent_active?>">
               
-              </div>
-            <?php $ctb++; } ?>
-            
-            
-          </div>
-          <?php } ?>
-				</div>
-			</section>
+              <?php //CALENDAR ?>
+              <?php if($key=='calendar') { ?>
+                <?php if ( do_shortcode('[tribe_events]') ) { ?>
+                <div id="calendar-info">
+                  <?php echo do_shortcode('[tribe_events]'); ?>
+                </div>
+                <?php } ?>
 
-		
+              <?php //EVENTS ?>
+              <?php } else if($key=='events') { ?>
+                <?php get_template_part('parts-calendar/calendar-events-tab'); ?>
+              <?php } ?>
+            
+            </div>
+          <?php $ctb++; } ?>
+          
+          
+        </div>
+        <?php } ?>
+			</div>
+		</section>
 
 	</main><!-- #main -->
 </div><!-- #primary -->
