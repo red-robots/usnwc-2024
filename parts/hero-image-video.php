@@ -233,7 +233,7 @@ if($is_default_slide) { ?>
           }
         }
         if ($registerLink) { ?>
-					<div class="stats open teaser"><a href="<?php echo $register_link; ?>" target="<?php echo $registerTarget ?>" class="registerBtn"><?php echo 'register' ?></a></div>
+					<div class="stats open teaser is-register-tag"><a href="<?php echo $register_link; ?>" target="<?php echo $registerTarget ?>" class="registerBtn"><?php echo 'register' ?></a></div>
 				<?php } ?>
 			<?php } else if($status=='closed') { ?>
 				<div class="stats closed teaser"><span class="registerBtn">SOLD OUT</span></div>
