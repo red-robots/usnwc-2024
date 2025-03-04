@@ -3858,9 +3858,11 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
   .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-month__multiday-event-wrapper {
     height: auto!important;
   }
+
+  .tribe-events .tribe-events-calendar-month__multiday-event-bar,
   .tribe-events-calendar-month__multiday-event {
-    border-radius: 200px;
-    overflow: hidden;
+    border-radius: 200px!important;
+    // overflow: hidden;
   }
   
   .activity-schedule-link {

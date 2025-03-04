@@ -20371,6 +20371,17 @@ body.modal-open {
       object-fit: cover;
       object-position: center;
     }
+    img.mobile-feat-image {
+      display: none;
+    }
+    @media screen and (max-width: 768px) {
+      img.desktop-feat-image {
+        display: none!important;
+      }
+      img.mobile-feat-image {
+        display: block!important;
+      }
+    }
   }
   .banner-bottom {
     position: absolute;
