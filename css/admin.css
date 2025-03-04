@@ -847,6 +847,15 @@ body.toplevel_page_acf-options-today-options ul.acf-tab-group > li:has([data-key
   display: none!important;
 }
 
-
+/* Change Featured Image to `Desktop Image version` */
+body.post-type-dining #side-sortables #postimagediv .postbox-header h2 {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  gap: .4em;
+}
+body.post-type-dining #side-sortables #postimagediv .postbox-header h2:before {
+  content: "Desktop";
+}
 
 
