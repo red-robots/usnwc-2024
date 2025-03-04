@@ -20375,12 +20375,14 @@ body.modal-open {
       display: none;
     }
     @media screen and (max-width: 768px) {
-      padding-bottom: 100%;
+      padding-bottom: 0;
       img.desktop-feat-image {
         display: none!important;
       }
       img.mobile-feat-image {
         display: block!important;
+        position: relative!important;
+        height: auto!important;
       }
     }
   }

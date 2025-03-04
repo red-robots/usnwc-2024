@@ -8,6 +8,8 @@ if($imageUrl) { ?>
     <img src="<?php echo $imageUrl ?>" alt="<?php echo get_the_title() ?>" class="desktop-feat-image" />
     <?php if ($mobile_image) { ?>
     <img src="<?php echo $mobile_image['url'] ?>" alt="" class="mobile-feat-image" />
+    <?php } else { ?>
+    <img src="<?php echo $imageUrl ?>" alt="<?php echo get_the_title() ?>" class="mobile-feat-image from-desktop-image" />
     <?php } ?>
   </figure>
   <div class="banner-bottom">

@@ -6598,9 +6598,9 @@ section.full-bleed-promo .poster-mobile{display:block}
 .repeatable-section.section-image-cards .imagecard{width:100%}
 .stories-feeds-section .storyBlock{width:100% !important}
 .stories-feeds-section .storyBlock figure{padding-bottom:66% !important}
-#hero--single figure{padding-bottom:100%}
+#hero--single figure{padding-bottom:0}
 #hero--single figure img.desktop-feat-image{display:none !important}
-#hero--single figure img.mobile-feat-image{display:block !important}
+#hero--single figure img.mobile-feat-image{display:block !important;position:relative !important;height:auto !important}
 .schedule-items-wrap .dash-item .line .right-info .text-desktop{display:none}
 .schedule-items-wrap .dash-item .right-info.right-info-mobile{display:block;width:100%;text-align:left}
 .schedule-items-wrap .dash-item{border-bottom:1px dashed #888}
