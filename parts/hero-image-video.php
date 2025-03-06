@@ -242,10 +242,23 @@ if($is_default_slide) { ?>
 				<?php 
         $status_custom_message = get_field('status_custom_message', $post_id);
         if ( $status_custom_message ) { ?>
-				<div class="stats closed teaser"><span class="registerBtn"><?php echo $status_custom_message ?></span></div>
+				<div class="stats custom-message teaser"><span class="registerBtn"><?php echo $status_custom_message ?></span></div>
 				<?php } ?>
 
-			<?php } ?>
+			<?php } else if($status=='custom_button') { ?>
+
+        <?php if( $custom_button = get_field('status_custom_button', $post_id) ) { 
+          $statBtnName = (isset($custom_button['title']) && $custom_button['title']) ? $custom_button['title'] : '';
+          $statBtnUrl = (isset($custom_button['url']) && $custom_button['url']) ? $custom_button['url'] : '';
+          $statBtnTarget = (isset($custom_button['target']) && $custom_button['target']) ? $custom_button['target'] : '_self';
+          if($statBtnName && $statBtnUrl) { ?>
+          <div class="stats custom-button teaser">
+            <a href="<?php echo $statBtnUrl ?>" target="<?php echo $statBtnTarget ?>" class="registerBtn customButton"><?php echo $statBtnName ?></a>
+          </div>
+          <?php } ?>
+        <?php } ?>
+
+      <?php } ?>
 		<?php } ?>
 		
 
