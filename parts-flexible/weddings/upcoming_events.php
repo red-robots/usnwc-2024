@@ -72,14 +72,17 @@
                 <?php } ?>
                 
                 <?php if ($image && isset($image['url'])) { ?>
+                <a href="<?php echo $pagelink ?>" class="postPageLink">
                 <figure class="event-image">
                   <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" />
                 </figure>
+                </a> 
                 <?php } ?>
 
                 <?php if ($title) { ?>
                 <h3 class="event-title"><?php echo $title ?></h3>
                 <?php } ?>
+
                 <div class="button-block">
                   <a href="<?php echo $pagelink ?>" class="button-pill">See Details</a>
                 </div>

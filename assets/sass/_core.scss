@@ -18988,6 +18988,7 @@ body.subpage.single.single-activity {
         line-height: 1.2;
         color: #000;
       }
+
       figure {
         margin: 10px 0;
         position: relative;
@@ -19002,6 +19003,29 @@ body.subpage.single.single-activity {
           left: 0;
           object-fit: cover;
           object-position: center;
+        }
+      }
+
+      .postPageLink {
+        display: block;
+        text-decoration: none;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all ease .3s;
+        margin: 10px 0;
+        figure {
+          margin: 0 0!important;
+        }
+        img {
+          transition: transform ease .5s;
+        }
+        &:hover, &:focus {
+          img {
+            transform: scale(1.1);
+          }
+        }
+        &:focus {
+          outline: 2px dotted $red;
         }
       }
 

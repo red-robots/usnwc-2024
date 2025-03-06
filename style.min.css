@@ -4614,6 +4614,11 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-upcoming_events .flexwrap .infobox .event-date{font-family:"Brandon Bold";font-size:22px;line-height:1.2;color:#000}
 .section-upcoming_events .flexwrap .infobox figure{margin:10px 0;position:relative;padding-bottom:60%;overflow:hidden;border-radius:12px}
 .section-upcoming_events .flexwrap .infobox figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.section-upcoming_events .flexwrap .infobox .postPageLink{display:block;text-decoration:none;border-radius:12px;overflow:hidden;-webkit-transition:all ease .3s;transition:all ease .3s;margin:10px 0}
+.section-upcoming_events .flexwrap .infobox .postPageLink figure{margin:0 0 !important}
+.section-upcoming_events .flexwrap .infobox .postPageLink img{-webkit-transition:-webkit-transform ease .5s;transition:-webkit-transform ease .5s;transition:transform ease .5s;transition:transform ease .5s,-webkit-transform ease .5s}
+.section-upcoming_events .flexwrap .infobox .postPageLink:hover img,.section-upcoming_events .flexwrap .infobox .postPageLink:focus img{-webkit-transform:scale(1.1);transform:scale(1.1)}
+.section-upcoming_events .flexwrap .infobox .postPageLink:focus{outline:2px dotted #ba0d30}
 .section-upcoming_events .flexwrap .infobox h3{font-family:"Brandon Bold";font-size:25px;line-height:1.2;text-transform:uppercase;margin:0 0 18px;color:#000}
 .section-upcoming_events.monthly-events{margin-bottom:70px}
 .section-upcoming_events.monthly-events .flexwrap .infobox figure{background-color:#eee;padding-bottom:130%;margin-bottom:15px;position:relative}
