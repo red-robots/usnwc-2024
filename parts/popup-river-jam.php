@@ -18,6 +18,14 @@
 jQuery(document).ready(function($){
   $("#activityModal").appendTo('body');
 
+  $(document).on('click', '.image-post-link.post---music', function(e){
+    e.preventDefault();
+    var parent = $(this).parents('.infoBox');
+    if( parent.find('.popupDetailsBtn').length ) {
+      parent.find('.popupDetailsBtn').trigger('click');
+    }
+  });
+
   $(document).on("click", ".popdata, .popupDetailsBtn",function(e){
     e.preventDefault();
     var pageURL = $(this).attr('data-url');

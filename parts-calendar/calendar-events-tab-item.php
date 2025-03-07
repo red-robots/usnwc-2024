@@ -1,12 +1,19 @@
 <div class="infoBox animated fadeIn post-type--<?php echo $post_type ?>" data-postid="<?php echo $post_id ?>">
   <div class="wrap">
-    <figure>
-      <?php if ($thumbnail && isset($thumbnail['url'])) { ?>
-        <img src="<?php echo $thumbnail['url'] ?>" alt="" />
-      <?php } else { ?>
-        <img src="<?php echo get_template_directory_uri(); ?>/images/image-not-available.jpg" alt="" />
-      <?php } ?>
-    </figure>
+    <?php if ($post_type=='music') { ?>
+      <a href="javascript:void(0)" class="image-post-link popUp post---<?php echo $post_type ?>">
+    <?php } else { ?>
+      <a href="<?php echo $pagelink; ?>" class="image-post-link">
+    <?php } ?>
+    
+      <figure>
+        <?php if ($thumbnail && isset($thumbnail['url'])) { ?>
+          <img src="<?php echo $thumbnail['url'] ?>" alt="" />
+        <?php } else { ?>
+          <img src="<?php echo get_template_directory_uri(); ?>/images/image-not-available.jpg" alt="" />
+        <?php } ?>
+      </figure>
+    </a>
     <div class="text">
       <h3><?php echo $page_title; ?></h3>
       <?php if ($event_dates) { ?>

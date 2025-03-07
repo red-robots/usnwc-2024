@@ -4370,6 +4370,7 @@ section.visit .tile.full-bleed div.img{border-radius:0}
 .calendar-tab-events-posts .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-12px;margin-right:-12px}
 .calendar-tab-events-posts .infoBox{width:33.333%;padding:12px;margin-bottom:70px}
 .calendar-tab-events-posts .infoBox h3{margin:0;text-transform:uppercase;font-weight:500;font-size:18px;line-height:1.2;color:#000}
+.calendar-tab-events-posts .infoBox a.image-post-link{display:block;text-decoration:none}
 .calendar-tab-events-posts .infoBox figure{margin:0 0 15px;position:relative;width:100%;padding-bottom:65%;overflow:hidden;border-radius:15px}
 .calendar-tab-events-posts .infoBox figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .calendar-tab-events-posts .infoBox .text{text-align:left}
