@@ -4585,6 +4585,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 #customModalContainer #customModalClose:hover,#customModalContainer #customModalClose:focus{opacity:.5}
 #customModalContainer #customModalClose:focus{border:1px dotted #ccc}
 #customModalContainer:has(.info-popup-content) #customModalInner{max-width:800px}
+#customModalContainer:has(.info-popup-content).filmSeriesInfo #customModalInner{max-width:1000px}
 #customModalContainer:has(.info-popup-content) .info-modal-title{background:#707070;color:#fff;text-align:center;padding:25px 15px}
 #customModalContainer:has(.info-popup-content) .info-modal-title h2{font-size:25px;font-weight:500;line-height:1.2;letter-spacing:.05em;text-transform:uppercase;margin:0}
 #customModalContainer:has(.info-popup-content) .info-popup-content{border-radius:20px;overflow:hidden}
@@ -4727,7 +4728,7 @@ body.page-template-page-salesforce .text-centered-section .wrapper{max-width:120
 body.page-template-page-salesforce .gform_wrapper{background:#f7f7f7;padding:30px;border-radius:20px}
 body.page-template-page-salesforce .gform_wrapper h2.gform_title{font-size:36px}
 body.page-template-page-salesforce .gform_wrapper input[type=text],body.page-template-page-salesforce .gform_wrapper input[type=email],body.page-template-page-salesforce .gform_wrapper input[type=phone],body.page-template-page-salesforce .gform_wrapper input[type=tel],body.page-template-page-salesforce .gform_wrapper input[type=number],body.page-template-page-salesforce .gform_wrapper textarea,body.page-template-page-salesforce .gform_wrapper select{border-radius:0;border:1px solid #787878}
-#customModalContainer.filmSeriesInfo.show{display:block;background-color:rgba(0,0,0,.96)}
+#customModalContainer.filmSeriesInfo.show{display:block;background-color:rgba(0,0,0,.85)}
 #customModalContainer.filmSeriesInfo.show #customModalInner{-webkit-animation-delay:.2s;animation-delay:.2s;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:fadeInDown;animation-name:fadeInDown}
 #customModalContainer.filmSeriesInfo.show #customModalClose:before,#customModalContainer.filmSeriesInfo.show #customModalClose:after{background:#848484}
 body.modal-open{overflow:hidden}

@@ -1313,6 +1313,7 @@ var getGridSize = function() {
 
   //Popup Film Series
   $(document).on('click', '.button-popup-details', function(){
+    var button = $(this);
     var postid = $(this).attr('data-postid');
     $('body').addClass('modal-open');
     $.ajax({
@@ -1329,8 +1330,13 @@ var getGridSize = function() {
       success:function( obj ) {
         $("#loaderDiv").hide();
         if(obj.result) {
-          $('#customModalContainer #customModalContent').html(obj.result);
-          $('#customModalContainer').addClass('filmSeriesInfo show');
+          if( button.hasClass('is-calendar-page') ) {
+            $('#customModalContainer #customModalContent').append(obj.result);
+            $('#customModalContainer').addClass('filmSeriesInfo show');
+          } else {
+            $('#customModalContainer #customModalContent').html(obj.result);
+            $('#customModalContainer').addClass('filmSeriesInfo show');
+          }
         }
       },
       error:function() {
@@ -1344,7 +1350,7 @@ var getGridSize = function() {
     $('body').removeClass('modal-open');
     $('#customModalContainer').removeClass("filmSeriesInfo show");
     setTimeout(function(){
-      $('#customModalContent').html("");
+      $('#customModalContent .details-film-series').remove();
     },80);
   });
 

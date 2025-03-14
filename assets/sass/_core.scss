@@ -18824,6 +18824,11 @@ body.subpage.single.single-activity {
   #customModalInner {
     max-width: 800px;
   }
+  &.filmSeriesInfo {
+    #customModalInner {
+      max-width: 1000px;
+    }
+  }
   .info-modal-title {
     background: #707070;
     color: #fff;
@@ -19792,7 +19797,7 @@ body.page-template-page-salesforce {
 
 #customModalContainer.filmSeriesInfo.show {
   display: block;
-  background-color: rgba(0,0,0,.96);
+  background-color: rgba(0,0,0,.85);
   #customModalInner {
     animation-delay: 0.2s;
     animation-duration: 1s;

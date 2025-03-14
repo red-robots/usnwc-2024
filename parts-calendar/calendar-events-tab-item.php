@@ -25,6 +25,8 @@
       <div class="buttonwrap">
         <?php if ($post_type=='music') { ?>
         <a href="javascript:void(0)" data-url="<?php echo get_permalink($post_id); ?>" data-action="ajaxGetPageData" data-id="<?php echo $post_id ?>" class="more-btn popupDetailsBtn">See Details</a>
+        <?php } else if($post_type=='film-series') { ?>
+          <a href="javascript:void(0)" class="more-btn is-calendar-page button-popup-details" data-postid="<?php echo $post_id ?>">See Details</a>
         <?php } else { ?>
         <a href="<?php echo $pagelink; ?>" class="more-btn">See Details</a>
         <?php } ?>
