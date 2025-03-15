@@ -2,6 +2,8 @@
   <div class="wrap">
     <?php if ($post_type=='music') { ?>
       <a href="javascript:void(0)" class="image-post-link popUp post---<?php echo $post_type ?>">
+    <?php } else if($post_type=='film-series') { ?>
+      <a href="javascript:void(0)" class="image-post-link is-calendar-page button-popup-details" data-postid="<?php echo $post_id ?>">
     <?php } else { ?>
       <a href="<?php echo $pagelink; ?>" class="image-post-link">
     <?php } ?>
