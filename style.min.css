@@ -4590,6 +4590,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 #customModalContainer:has(.info-popup-content) .info-modal-title h2{font-size:25px;font-weight:500;line-height:1.2;letter-spacing:.05em;text-transform:uppercase;margin:0}
 #customModalContainer:has(.info-popup-content) .info-popup-content{border-radius:20px;overflow:hidden}
 #customModalContainer:has(.info-popup-content) .info-text{padding:40px 30px}
+body.logged-in.admin-bar #customModalContainer{padding-top:50px}
 .activity-schedule-modal .schedule-container{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-top:40px}
 .activity-schedule-modal .schedule-container .fxcol{width:100%;color:#000}
 .activity-schedule-modal .schedule-container .items{margin-bottom:2.5em}

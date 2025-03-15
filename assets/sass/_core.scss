@@ -18852,6 +18852,10 @@ body.subpage.single.single-activity {
   }
 }
 
+body.logged-in.admin-bar #customModalContainer {
+  padding-top: 50px;
+}
+
 .activity-schedule-modal {
   .schedule-container {
     display: flex;
