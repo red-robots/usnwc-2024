@@ -20,16 +20,16 @@ if($status){ ?>
       }
     }
     if ($registerLink) { ?>
-      <div class="stats open teaser is-register-tag"><a href="<?php echo $register_link; ?>" target="<?php echo $registerTarget ?>" class="registerBtn"><?php echo 'register' ?></a></div>
+      <div class="stats open teaser is-register-tag redtag"><a href="<?php echo $register_link; ?>" target="<?php echo $registerTarget ?>" class="registerBtn"><?php echo 'register' ?></a></div>
     <?php } ?>
   <?php } else if($status=='closed') { ?>
-    <div class="stats closed teaser"><span class="registerBtn">SOLD OUT</span></div>
+    <div class="stats closed teaser redtag"><span class="registerBtn">SOLD OUT</span></div>
   <?php } else if($status=='custom') { ?>
 
     <?php 
     $status_custom_message = get_field('status_custom_message', $post_id);
     if ( $status_custom_message ) { ?>
-    <div class="stats custom-message teaser"><span class="registerBtn"><?php echo $status_custom_message ?></span></div>
+    <div class="stats custom-message teaser redtag"><span class="registerBtn"><?php echo $status_custom_message ?></span></div>
     <?php } ?>
 
   <?php } else if($status=='custom_button') { ?>
@@ -39,7 +39,7 @@ if($status){ ?>
       $statBtnUrl = (isset($custom_button['url']) && $custom_button['url']) ? $custom_button['url'] : '';
       $statBtnTarget = (isset($custom_button['target']) && $custom_button['target']) ? $custom_button['target'] : '_self';
       if($statBtnName && $statBtnUrl) { ?>
-      <div class="stats custom-button teaser">
+      <div class="stats custom-button teaser redtag">
         <a href="<?php echo $statBtnUrl ?>" target="<?php echo $statBtnTarget ?>" class="registerBtn customButton"><?php echo $statBtnName ?></a>
       </div>
       <?php } ?>
