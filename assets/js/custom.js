@@ -1564,6 +1564,12 @@ jQuery(document).ready(function ($) {
     }
   }
 
+  if ($('.red-ribbon-top .redtag').length) {
+    if ($('.site-header .navbar .redtag').length == 0) {
+      $('.red-ribbon-top .redtag').appendTo('.site-header .navbar');
+    }
+  }
+
   var mySwiper = new Swiper('#activities--swiper', (_Swiper = {
     speed: 400,
     spaceBetween: 10,

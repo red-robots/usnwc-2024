@@ -1676,6 +1676,12 @@ var getGridSize = function() {
 		}
 	}
 
+  if( $('.red-ribbon-top .redtag').length ) {
+    if( $('.site-header .navbar .redtag').length==0 ) {
+      $('.red-ribbon-top .redtag').appendTo('.site-header .navbar');
+    }
+  }
+
   var mySwiper = new Swiper ('#activities--swiper', {
     speed: 400,
     spaceBetween: 10,
