@@ -3938,3 +3938,63 @@ body.logged-in.admin-bar #customModalContainer.open {
   padding-top: 60px;
 }
 
+
+.fancybox-container.fancybox-is-open {
+  z-index: 9999999999999!important;
+}
+.new-nav-v2.desktop-navigation li.v-menu-item.has-children a span:after {
+  font-family: "Font Awesome 6 Pro";
+  content: "\f078";
+  font-weight: 400;
+  font-size: 11px;
+  position: relative;
+  top: -1px;
+}
+/* Adventure Dining */
+
+body.page-id-292 #banner .static-banner .image-wrapper,
+body.single-dining #hero--single figure {
+  padding-bottom: 48vw;
+  position: relative;
+}
+body.page-id-292 #banner .static-banner .image-wrapper img.desktop,
+body.single-dining #hero--single figure img.desktop {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media screen and (max-width: 768px) {
+  body.page-id-292 #banner .static-banner .image-wrapper,
+  body.single-dining #hero--single figure {
+    padding-bottom: 60vw;
+  }
+  
+  body.page-id-292 #banner .static-banner .image-wrapper img.mobile-feat-image,
+  body.single-dining #hero--single figure img.mobile-feat-image {
+  display: block;
+  position: absolute!important;
+  top: 0;
+  left: 0;
+  width: 100%!important;
+  height: 100%!important;
+  object-fit: cover;
+  object-position: center;
+  }
+  #hero--single .banner-bottom {
+    bottom: -1px;
+  }
+  .site-header-mobile .mobileMenuToggle {
+    top: 0!important;
+  }
+  .site-header-mobile .site-logo-mobile {
+    top: 2px!important;
+  }
+}
+
+
