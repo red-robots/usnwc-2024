@@ -145,6 +145,14 @@ if( $template = get_page_template() ) {
   </div>
 
 	<?php 
+  //RED TAG
+  if ( is_single() ) {
+    $postListRedTags = ['special-events'];
+    if( in_array(get_post_type(), $postListRedTags) ) {
+      get_template_part('parts/red-ribbon');
+    }
+  }
+
 	if( is_front_page() ){
 		get_template_part('parts/homepage-hero');
 	} else {
