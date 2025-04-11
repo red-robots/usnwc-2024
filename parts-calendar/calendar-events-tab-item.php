@@ -1,4 +1,10 @@
-<div class="infoBox animated fadeIn post-type--<?php echo $post_type ?>" data-postid="<?php echo $post_id ?>">
+<?php 
+$parentId = ( isset($post_parent) && $post_parent ) ? $post_parent : ''; 
+if ($parentId && $post_type=='dining') {
+  $pagelink = get_permalink($parentId);
+}
+?>
+<div class="infoBox animated fadeIn post-type--<?php echo $post_type ?>" data-postid="<?php echo $post_id ?>" data-parent-id="<?php echo $parentId ?>">
   <div class="wrap">
     <?php if ($post_type=='music') { ?>
       <a href="javascript:void(0)" class="image-post-link popUp post---<?php echo $post_type ?>">
@@ -17,7 +23,12 @@
       </figure>
     </a>
     <div class="text">
-      <h3><?php echo $page_title; ?></h3>
+      <?php if ($parentId && $post_type=='dining') { ?>
+        <h3 data-parent-id="<?php echo $parentId ?>" class="child-title"><?php echo get_the_title($parentId); ?></h3>
+      <?php } else { ?>
+        <h3><?php echo $page_title; ?></h3>
+      <?php } ?>
+
       <?php if ($event_dates) { ?>
       <div class="event-date"><?php echo $event_dates ?></div>
       <?php } ?>

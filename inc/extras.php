@@ -2987,3 +2987,181 @@ function getActivityScheduleIdByDate($date) {
 }
 
 
+/* Create Adventure Dining Sub Event */
+add_action('acf/save_post', 'adv_dining_acf_save_post');
+function adv_dining_acf_save_post( $post_id ) {
+  global $table_prefix, $wpdb;
+  // Get newly saved values.
+  //$values = get_fields( $post_id );
+  $postTable = $table_prefix.'posts';
+  $tableMetaExtension = $table_prefix.'postmeta_extension';
+
+  // Check the new value of a specific field.
+  $sub_events = get_field('sub_events', $post_id);
+  $posttype = getCPTPostType($post_id);
+  $parent_title = get_the_title($post_id);
+  $info = get_post($post_id);
+  $post_date = $info->post_date;
+  //$featuredImage = get_post_thumbnail_id($post_id);
+  $featuredImageId = get_field('post_image_thumb', $post_id);
+
+  if( $sub_events ) {
+    //Create Sub Events only for `dining` post type
+    if($posttype=='dining') {
+      $newEvents = [];
+      foreach($sub_events as $ss) {
+        $date = $ss['date'];
+        if($date && preg_replace('/\s+/', '', $date)) {
+          $date = preg_replace('/\s+/', '', $date);
+          $dateStr = date('F j, Y', strtotime($date));
+          $post_title = $parent_title .' - ' . $dateStr;
+          $post_slug = sanitize_title($post_title);
+          $newEvents[] = $post_slug;
+        }
+      }
+
+      //Compare new data with existing data
+      $existingItems = getAllDiningSubEvents($post_id);
+      if($existingItems) {
+        foreach($existingItems as $e) {
+          $xslug = $e->post_name;
+          $xId = $e->ID;
+          if($newEvents) {
+            foreach($newEvents as $slug) {
+              if($xslug!=$slug) {
+                wp_delete_post($xId, true);
+              }
+            }
+          }
+        }
+      }
+
+
+      foreach($sub_events as $s) {
+        $date = $s['date'];
+        if($date && preg_replace('/\s+/', '', $date)) {
+          $date = preg_replace('/\s+/', '', $date);
+          $dateStr = date('F j, Y', strtotime($date));
+          $post_title = $parent_title .' - ' . $dateStr;
+          $post_slug = sanitize_title($post_title);
+          $exist = isPostExists($post_id,$post_slug,$posttype);
+          //If not exists
+          if(empty($exist)) {
+            $newData = array(
+              'post_title' => $post_title,
+              'post_name' => $post_slug,
+              'post_parent' => $post_id,
+              'post_type' => $posttype,
+              'post_status' => 'publish',
+              'post_date' => $post_date,
+              'post_modified' => date('Y-m-d H:i:s')
+            );
+            $wpdb->insert($postTable, $newData);
+            $new_id = $wpdb->insert_id;
+            update_field( 'start_date', $date, $new_id );
+            update_field( 'end_date', $date, $new_id );
+            update_field( 'post_image_thumb', $featuredImageId, $new_id );
+
+            //Insert to Postmeta Extension
+            $meta_id = getLastIDMetaExtension();
+            if($meta_id) {
+              $meta_new_id = $meta_id+1;
+              $wpdb->insert($tableMetaExtension, array(
+                'id'=> $meta_new_id,
+                'post_id' => $new_id,
+                'start_date' => $date,
+                'end_date' => $date, 
+                'post_created' => date('Y-m-d H:i:s')
+              ));
+            }
+            
+          }
+        }
+      }
+
+    }
+  } else {
+
+    if($posttype=='dining') {
+      $existingItems = getAllDiningSubEvents($post_id);
+      if($existingItems) {
+        foreach($existingItems as $e) {
+          $xId = $e->ID;
+          wp_delete_post($xId, true);
+        }
+      }
+    }
+
+  }
+}
+
+function getLastIDMetaExtension() {
+  global $table_prefix, $wpdb;
+  $n = $wpdb->get_row("SELECT id FROM ".$table_prefix."postmeta_extension ORDER BY id DESC LIMIT 1");
+  return ($n) ? $n->id : null;
+}
+
+function getCPTPostType($id) {
+  global $table_prefix, $wpdb;
+  $query = "SELECT post_type FROM {$table_prefix}posts WHERE ID=".$id;
+  $result = $wpdb->get_row($query);
+  return ($result) ? $result->post_type : '';
+}
+
+function isPostExists($pid,$slug,$posttype) {
+  global $table_prefix, $wpdb;
+  $query = "SELECT p.ID, p.post_title FROM {$table_prefix}posts p WHERE p.post_type='".$posttype."' 
+            AND p.post_parent=" . $pid . " AND p.post_name='".$slug."'";
+  $result = $wpdb->get_results($query);
+  return ($result) ? true : false;
+}
+
+function getAllDiningSubEvents($pid) {
+  global $table_prefix, $wpdb;
+  $query = "SELECT * FROM {$table_prefix}posts p WHERE p.post_type='dining'  
+            AND p.post_parent=" . $pid . " AND p.post_status='publish'";
+  $result = $wpdb->get_results($query);
+  return $result;
+}
+
+function postHasChildren($pid, $posttype) {
+  global $table_prefix, $wpdb;
+  $query = "SELECT ID FROM {$table_prefix}posts p WHERE p.post_parent=".$pid." AND p.post_type='".$posttype."' AND p.post_status='publish'";
+  $result = $wpdb->get_results($query);
+  return ($result) ? $result : '';
+}
+
+function listAllDiningSubEvents() {
+  global $pagenow, $table_prefix, $wpdb;
+  $dining_query = "SELECT ID FROM {$table_prefix}posts p 
+                  WHERE (p.post_parent IS NOT NULL AND p.post_parent!='') 
+                  AND p.post_type='dining' AND p.post_status='publish'";
+  $dining_result = $wpdb->get_results($dining_query);
+  $dining_children_ids = [];
+  if($dining_result) {
+    foreach($dining_result as $d) {
+      $dining_children_ids[] = $d->ID;
+    }
+  }
+  return $dining_children_ids;
+}
+
+add_action( 'pre_get_posts' ,'exclude_children_dining_posts' );
+function exclude_children_dining_posts( $query ) {
+    if( !is_admin() )
+        return $query;
+    global $pagenow;
+    $dining_children = listAllDiningSubEvents();
+    $show_children = ( isset($_GET['showchildren']) && $_GET['showchildren']==1 ) ? true : false;
+
+    if( $show_children==false ) {
+      if($dining_children) {
+        if( 'edit.php' == $pagenow && ( get_query_var('post_type') && 'dining' == get_query_var('post_type') ) )
+        $query->set( 'post__not_in', $dining_children ); // array page ids
+      }
+    }
+    return $query;
+}
+
+
+

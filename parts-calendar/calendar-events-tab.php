@@ -51,25 +51,48 @@ if( isset($_GET['type']) && $_GET['type']!='all' ) {
 
 if( count($thePostTypesArr) == 1 ) {
   $selected_post_type = end($thePostTypesArr);
-   $query_meta = "SELECT p.ID, p.post_title, p.post_name, p.post_type, ext.start_date, ext.end_date FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext 
-              WHERE p.ID=ext.post_id AND p.post_status='publish' ".$where." AND p.post_type='".$selected_post_type."'
+  $query_meta = "SELECT p.ID, p.post_title, p.post_name, p.post_type, p.post_parent, ext.start_date, ext.end_date 
+              FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext 
+              WHERE p.ID=ext.post_id AND p.post_status='publish' ".$where." AND p.post_type='".$selected_post_type."' 
               AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date)";
-
 } else {
-
-  $query_meta = "SELECT p.ID, p.post_title, p.post_name, p.post_type, ext.start_date, ext.end_date FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext 
-              WHERE p.ID=ext.post_id AND p.post_status='publish' ".$where." AND p.post_type IN ('".implode("','", $thePostTypesArr)."') 
-              AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date)";
-
+  $query_meta = "SELECT p.ID, p.post_title, p.post_name, p.post_type, p.post_parent, ext.start_date, ext.end_date 
+                FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext 
+                WHERE p.ID=ext.post_id AND p.post_status='publish' ".$where." AND p.post_type IN ('".implode("','", $thePostTypesArr)."') 
+                AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date)";
 }
 
-
 $new_query = $query_meta . " GROUP BY p.ID ORDER BY UNIX_TIMESTAMP(ext.start_date) ASC LIMIT ".$per_page." OFFSET ".$offset;
-
-
 $posts = $wpdb->get_results($new_query);
 $total = $wpdb->get_results($query_meta);
 $total_records = ($total) ? count($total) : 0;
+
+if($total) {
+  $newPosts = [];
+  foreach($total as $e) {
+    $posttype = $e->post_type;
+    if($posttype=='dining') {
+      $post_parent = $e->post_parent;
+      $has_children = postHasChildren($e->ID, $posttype);
+      if(empty($has_children)) {
+        $newPosts[] = $e;
+      }
+    }
+  }
+
+  foreach($posts as $x=>$ps) {
+    $posttype = $ps->post_type;
+    if($posttype=='dining') {
+      $post_parent = $ps->post_parent;
+      $has_children = postHasChildren($ps->ID, $posttype);
+      if($has_children) {
+        unset($posts[$x]);
+      }
+    }
+  }
+
+  $total_records = ($newPosts) ? count($newPosts) : 0;
+}
 ?>
 <section id="events-feed" class="calendar-tab-events-posts<?php echo ($filter_type && $filter_type!='all') ? ' is-filtered':'' ?>">
   <div data-selected="<?php echo ($filter_type) ? $filter_type :'all' ?>" data-baseUrl="<?php echo get_permalink() ?>" class="custom-dropdown dropdown-posttypes">
@@ -102,9 +125,12 @@ $total_records = ($total) ? count($total) : 0;
         }
 
         $CURRENT_DATE = date('Ymd');
-        $i=1; foreach ($posts as $p) { 
+        $i=1; foreach ($posts as $p) {
         $post_id = $p->ID;
         $post_type = $p->post_type;
+        $post_parent = ( isset($p->post_parent) && $p->post_parent ) ? $p->post_parent : '';
+
+        //$post_parent = $p->post_parent;
         $pagelink = get_permalink($post_id);
         //$is_featured = isFeaturedEvent($pagelink);
 
