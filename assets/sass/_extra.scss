@@ -3997,6 +3997,21 @@ body.single-dining #hero--single figure img.desktop {
   }
 }
 
+.site-header .navbar .right .navlink-today.today:after,
+.site-header .new-nav-v2.desktop-navigation li.v-menu-item.has-children a span:after {
+  content: "";
+  position: relative;
+  top: -2px;
+  right: -8px;
+  display: inline-block;
+  width: 5px;
+  height: 9px;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  transform: rotate(45deg) scale(0.75);
+}
+
+
 /* Tribe Calendar */
 .calendar-grid-wrapper .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-month__multiday-event-wrapper {
   height: auto !important;
