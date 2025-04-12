@@ -4011,6 +4011,26 @@ body.single-dining #hero--single figure img.desktop {
   transform: rotate(45deg) scale(0.75);
 }
 
+body.home {
+  .site-header .navbar .right .navlink-today.today:after,
+  .site-header .new-nav-v2.desktop-navigation li.v-menu-item.has-children a span:after {
+    border-right-color: #FFF;
+    border-bottom-color: #FFF;
+  }
+  .site-header.mouseover .navbar .right .navlink-today.today:after,
+  .site-header.mouseover .new-nav-v2.desktop-navigation li.v-menu-item.has-children a span:after {
+    border-right-color: #000;
+    border-bottom-color: #000;
+  }
+  &.scrolled {
+    .site-header .navbar .right .navlink-today.today:after,
+    .site-header .new-nav-v2.desktop-navigation li.v-menu-item.has-children a span:after {
+      border-right-color: #000;
+      border-bottom-color: #000;
+    }
+  }
+}
+
 
 /* Tribe Calendar */
 .calendar-grid-wrapper .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-month__multiday-event-wrapper {
