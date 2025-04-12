@@ -62,37 +62,50 @@ if( count($thePostTypesArr) == 1 ) {
                 AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date)";
 }
 
+$total_query = $query_meta . " GROUP BY p.ID ORDER BY UNIX_TIMESTAMP(ext.start_date) ASC";
+
 $new_query = $query_meta . " GROUP BY p.ID ORDER BY UNIX_TIMESTAMP(ext.start_date) ASC LIMIT ".$per_page." OFFSET ".$offset;
 $posts = $wpdb->get_results($new_query);
-$total = $wpdb->get_results($query_meta);
-$total_records = ($total) ? count($total) : 0;
+$total = $wpdb->get_results($total_query);
+//$total_before = ($total) ? count($total) : 0;
 
+$hasChildrenPosts = [];
 if($total) {
-  $newPosts = [];
-  foreach($total as $e) {
+  foreach($total as $ii=>$e) {
     $posttype = $e->post_type;
     if($posttype=='dining') {
       $post_parent = $e->post_parent;
       $has_children = postHasChildren($e->ID, $posttype);
-      if(empty($has_children)) {
-        $newPosts[] = $e;
-      }
-    }
-  }
-
-  foreach($posts as $x=>$ps) {
-    $posttype = $ps->post_type;
-    if($posttype=='dining') {
-      $post_parent = $ps->post_parent;
-      $has_children = postHasChildren($ps->ID, $posttype);
       if($has_children) {
-        unset($posts[$x]);
+        $hasChildrenPosts[] = $e->ID;
+        unset($total[$ii]);
       }
     }
   }
-
-  $total_records = ($newPosts) ? count($newPosts) : 0;
 }
+
+if($hasChildrenPosts) {
+  $posts = array();
+  $missing = count($hasChildrenPosts);
+  $remains = $per_page-$missing;
+  $new_per_page = $remains+$missing;
+  $start = $offset;
+  $end = $start + $per_page;
+
+  $posts = array();
+  $new_posts = array();
+  if($total) {
+    $new_total = array_values($total);
+    for($i=$start; $i<$end; $i++) {
+      if( isset($new_total[$i]) ) {
+        $item = $new_total[$i];
+        $posts[] = $item;
+      }
+    }
+  }
+}
+
+$total_records = ($total) ? count($total) : 0;
 ?>
 <section id="events-feed" class="calendar-tab-events-posts<?php echo ($filter_type && $filter_type!='all') ? ' is-filtered':'' ?>">
   <div data-selected="<?php echo ($filter_type) ? $filter_type :'all' ?>" data-baseUrl="<?php echo get_permalink() ?>" class="custom-dropdown dropdown-posttypes">
