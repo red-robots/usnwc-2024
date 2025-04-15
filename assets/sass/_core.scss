@@ -17466,7 +17466,7 @@ body.home {
   }
   .tribe-events-calendar-month__day {
     .hentry:not(.tribe-events-calendar-month__multiday-event) {
-      margin: 4px 0!important;
+      margin: 0 0 4px!important;
       padding: 3px!important;
     }
     // .hentry[data-child-series] {
