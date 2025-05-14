@@ -73,7 +73,34 @@ $show_content = false;
   			<?php $this->setup_postdata( $event ); ?>
 
         <?php if($is_hours_operation) { ?>
-          <?php if($event_content) { ?>
+          <?php if($event_content) { 
+            $metaExtra = ['passactivities', 'waterrelease'];
+            $newContent = '';
+            //This function is found in hours generator plugin
+            if (function_exists('getHoursGeneratorPlaces')) {
+              $hrgen = getHoursGeneratorPlaces();
+              $the_places = (isset($hrgen['places']) && $hrgen['places']) ? $hrgen['places'] : '';
+              if($the_places) {
+                foreach($metaExtra as $mx) {
+                  if( isset($the_places[$mx]) && $the_places[$mx] ) {
+                    $placeName = $the_places[$mx];
+                    $placeNameStr = strtolower($placeName);
+                    $placeSlug = $mx;
+                    $metaxhours = get_post_meta($event->ID, $placeSlug.'_hours',true);
+                    if (strpos( strtolower($event_content), $placeNameStr) == false) {
+                      if($metaxhours) {
+                        $newContent .= '<p><strong>'.$placeName.'</strong><br><em>'.$metaxhours.'</em></p>';
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            if($newContent) {
+              $event_content = $newContent . $event_content;
+            }
+
+            ?>
   			   <div class="hours-of-operation-mobile">
               <?php echo $event_content ?>
            </div>

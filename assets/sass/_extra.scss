@@ -4036,6 +4036,12 @@ body.home {
 
 
 /* Tribe Calendar */
+.hours-of-operation-mobile {
+  padding-bottom: 20px!important;
+  p {
+    margin: 10px 0!important;
+  }
+}
 .calendar-grid-wrapper .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-month__multiday-event-wrapper {
   height: auto !important;
   min-height: 10px;
@@ -4043,7 +4049,7 @@ body.home {
 .tribe-events-view--shortcode {
   .tribe-events-calendar-month__events:has(.tribe-events-calendar-month__multiday-event-wrapper) {
     article.hentry {
-      margin-top: 15px!important;
+      margin-top: 18px!important;
       position: relative;
       z-index: 50;
     }
@@ -4055,5 +4061,6 @@ body.home {
     }
   }
 }
+
 
 
