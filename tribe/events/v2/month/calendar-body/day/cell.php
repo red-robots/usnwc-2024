@@ -73,7 +73,33 @@ $day_id = 'tribe-events-calendar-day-' . $day_date;
       $content = ($info->post_content) ? $info->post_content : '';
       $content = ($content) ? apply_filters('the_content', $content) : '';
       $show_content = (strpos($info->post_content,'Guest Services') !== false) ? true :'';
-      if($content && $show_content) { ?>
+      if($content && $show_content) { 
+        $metaExtra = ['passactivities', 'waterrelease'];
+        $newContent = '';
+        //This function is found in hours generator plugin
+        if (function_exists('getHoursGeneratorPlaces')) {
+          $hrgen = getHoursGeneratorPlaces();
+          $the_places = (isset($hrgen['places']) && $hrgen['places']) ? $hrgen['places'] : '';
+          if($the_places) {
+            foreach($metaExtra as $mx) {
+              if( isset($the_places[$mx]) && $the_places[$mx] ) {
+                $placeName = $the_places[$mx];
+                $placeNameStr = strtolower($placeName);
+                $placeSlug = $mx;
+                $metaxhours = get_post_meta($info->ID, $placeSlug.'_hours',true);
+                if (strpos( strtolower($content), $placeNameStr) == false) {
+                  if($metaxhours) {
+                    $newContent .= '<p><strong>'.$placeName.'</strong><br><em>'.$metaxhours.'</em></p>';
+                  }
+                }
+              }
+            }
+          }
+        }
+        if($newContent) {
+          $content = $newContent . $content;
+        }
+      ?>
       <div class="date-event-info" data-info="<?php echo $slug ?>"><?php echo $content ?></div>
       <?php } ?>
     <?php } ?>

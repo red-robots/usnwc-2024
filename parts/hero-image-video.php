@@ -115,9 +115,9 @@ if($is_default_slide) { ?>
 													}
 
 													if($youtubeId) {
-														$embed_url = 'https://www.youtube.com/embed/'.$youtubeId.'?version=3&rel=0&loop=0';	
+														$embed_url = 'https://www.youtube.com/embed/'.$youtubeId.'?version=3&rel=0&loop=0&controls=0&showinfo=0&modestbranding=1&wmode=opaque&enablejsapi=1&iv_load_policy=3';	
 														$mainImage = 'https://i.ytimg.com/vi/'.$youtubeId.'/maxresdefault.jpg'
-														?>
+                            ?>
 														<div class="outer-video-wrap">
 															<div class="videoIframeDiv video-youtube video__youtube" style="background-image:url('<?php echo $mainImage?>');">
 																<div id="playYoutube" class="playButtonDiv">
