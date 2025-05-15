@@ -4046,21 +4046,21 @@ body.home {
   height: auto !important;
   min-height: 10px;
 }
-.tribe-events-view--shortcode {
-  .tribe-events-calendar-month__events:has(.tribe-events-calendar-month__multiday-event-wrapper) {
-    article.hentry {
-      margin-top: 18px!important;
-      position: relative;
-      z-index: 50;
-    }
-    .tribe-events-calendar-month__multiday-event-wrapper {
-      article.hentry {
-        margin-top: 12px!important;
-        z-index: 2;
-      }
-    }
-  }
-}
+// .tribe-events-view--shortcode {
+//   .tribe-events-calendar-month__events:has(.tribe-events-calendar-month__multiday-event-wrapper) {
+//     article.hentry {
+//       margin-top: 18px!important;
+//       position: relative;
+//       z-index: 50;
+//     }
+//     .tribe-events-calendar-month__multiday-event-wrapper {
+//       article.hentry {
+//         margin-top: 12px!important;
+//         z-index: 2;
+//       }
+//     }
+//   }
+// }
 
 
 
