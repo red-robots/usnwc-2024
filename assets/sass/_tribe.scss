@@ -83,6 +83,19 @@
       * {
         white-space: nowrap!important; 
       }
+      h3, h3 a {
+        width: 100%;
+        height: 17px!important;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+      }
+      a {
+        top: -1px!important;
+      }
     }
   }
 
