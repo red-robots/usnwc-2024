@@ -5640,6 +5640,8 @@ body.page-template-page-bike-ranch.subpage:has(#banner).scrolled .navbar .right-
 .calendar-grid-wrapper .customCalendarGrid .tribe-events-calendar-month__calendar-event-details a:before{content:"";display:block;width:25px;height:20px;background:#cd0d0d;position:absolute;top:-1px;right:-5px;z-index:2}
 .calendar-grid-wrapper .customCalendarGrid .tribe-events-calendar-month__calendar-event-details a:after{content:"";display:block;width:7px;height:7px;border-right:1px solid #fff;border-top:1px solid #fff;position:absolute;top:4px;right:2px;z-index:3;-webkit-transform:rotate(45deg);transform:rotate(45deg)}
 .calendar-grid-wrapper .customCalendarGrid .tribe-events-calendar-month .tribe-events-calendar-month__day .hentry:not(.tribe-events-calendar-month__multiday-event){padding:0 0 !important}
+.calendar-grid-wrapper .customCalendarGrid .tribe-events-calendar-month__multiday-event-bar .tribe-events-calendar-month__multiday-event-bar-title{color:#fff !important}
+.calendar-grid-wrapper .customCalendarGrid .tribe-events-calendar-month__multiday-event-bar .tribe-events-calendar-month__multiday-event-bar-title *{color:#fff !important}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}

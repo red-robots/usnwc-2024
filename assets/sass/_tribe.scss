@@ -186,6 +186,15 @@
   .tribe-events-calendar-month .tribe-events-calendar-month__day .hentry:not(.tribe-events-calendar-month__multiday-event) {
     padding: 0 0!important;
   }
+
+  .tribe-events-calendar-month__multiday-event-bar {
+    .tribe-events-calendar-month__multiday-event-bar-title {
+      color: #FFF!important;
+      * {
+        color: #FFF!important;
+      }
+    }
+  }
 }
 
 
