@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="<?php bloginfo("template_url") ?>/css/select2.min.css">
 <link rel="stylesheet" href="https://use.typekit.net/wpd4otp.css">
+<link rel="stylesheet" href="https://use.typekit.net/six0azp.css">
 <meta name="facebook-domain-verification" content="vcbl42j06vfl4vocp07qka3fcdtyir" />
 <?php if ( is_singular(array('post')) ) { 
 global $post;

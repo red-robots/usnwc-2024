@@ -210,4 +210,18 @@
   }
 }
 
+.calendar-grid-wrapper .tribe-events .tribe-events-calendar-month__events {
+  flex: unset!important;
+}
+.calendar-grid-wrapper .customCalendarGrid .tribe-events-calendar-month__calendar-event .tribe-events-calendar-month__calendar-event-details h3 a {
+  text-align: left;
+  justify-content: flex-start;
+  width: auto !important;
+  display: inline-flex;
+  padding-right: 20px!important;
+}
+
+
+
+
 

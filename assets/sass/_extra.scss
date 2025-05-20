@@ -20,6 +20,7 @@
     width: 100%;
     text-align: left;
     font-family: $font-brandon-bold;
+    font-weight: 700;
     font-size: 18px;
     line-height: 1.2;
     letter-spacing: 0.02em;
@@ -115,6 +116,7 @@
     margin-top: 20px;
     h3 {
       font-family: $font-brandon-bold;
+      font-weight: 700;
       font-size: 18px;
       line-height: 1.2;
       text-transform: uppercase;
@@ -290,6 +292,7 @@ body.subpage.single.single-special-events {
 
       .start-date {
         font-family: $font-brandon-bold;
+        font-weight: 700;
         font-size: 20px;
       }
       &:hover, &:focus {
@@ -358,6 +361,7 @@ body.subpage.single.single-special-events {
         }
         .name {
           font-family: $font-brandon-bold;
+          font-weight: 700;
           padding-right: 5px;
           letter-spacing: 0.02em;
         }
@@ -525,6 +529,7 @@ body.page-template-page-about.subpage {
       }
       h2 {
         font-family: $font-brandon-bold;
+        font-weight: 700;
         font-size: 3rem;
         line-height: 1.2;
         text-transform: uppercase;
@@ -801,6 +806,7 @@ body.page-template-page-about.subpage {
             padding: 30px;
             h2 {
               font-family: $font-brandon-bold;
+              font-weight: 700;
               font-size: 50px;
               text-transform: uppercase;
               line-height: 1.2;
@@ -980,6 +986,7 @@ body.page-template-page-about.subpage {
             text-transform: uppercase;
             z-index: 10;
             font-family: $font-brandon-bold;
+            font-weight: 700;
             line-height: 1.2;
             padding: 8px 15px;
           }
@@ -1084,6 +1091,8 @@ body.page-template-page-about.subpage {
   blockquote,
   blockquote.large {
     font-family: $font-brandon-medium-italic;
+    font-style: italic;
+    font-weight: 500;
     font-size: 2.3em;
     line-height: 1.2;
     color: #000;
@@ -1103,6 +1112,8 @@ body.page-template-page-about.subpage {
       padding-bottom: 60px;
       blockquote {
         font-family: $font-brandon-light-italic;
+        font-style: italic;
+        font-weight: 300;
         font-size: 1.2em;
         line-height: 1.3;
         text-align: center;
@@ -1274,6 +1285,7 @@ body.single-post {
     }
     .author {
       font-family: $font-brandon-bold;
+      font-weight: 700;
     }
     .bio {
       margin: 10px 0 0;
@@ -1351,6 +1363,7 @@ body.single-post {
   }
   h3 {
     font-family: $font-brandon-bold;
+    font-weight: 700;
     font-size: 20px;
     margin-bottom: 5px;
   }
@@ -1472,6 +1485,7 @@ body.page-template-page-visit section.visit {
       }
       .cardTitle {
         font-family: $font-brandon-medium;
+        font-weight: 500;
         font-size: 1.75rem;
         line-height: 1.2;
         text-transform: uppercase;
@@ -1541,6 +1555,7 @@ body.page-template-page-visit section.visit {
     h2 {
       margin: 0 0 20px;
       font-family: $font-brandon-bold;
+      font-weight: 700;
       font-size: 40px;
       line-height: 1.2;
       text-transform: uppercase;
@@ -1837,6 +1852,7 @@ section.visit.flexible-image-cards,
       a {
         display: inline-block;
         font-family: $font-brandon-medium;
+        font-weight: 500;
         font-size: 14px;
         line-height: 1.2;
         letter-spacing: .05em;
@@ -2109,6 +2125,7 @@ section.visit.flexible-image-cards,
       width: 100% !important;
       display: block;
       font-family: $font-brandon-bold;
+      font-weight: 700;
       font-size: 16px;
       text-transform: uppercase;
       text-align: left;
@@ -2133,6 +2150,7 @@ section.visit.flexible-image-cards,
   }
   .menu-link {
     font-family: $font-brandon-regular;
+    font-weight: 400;
     text-transform: uppercase;
     font-size: 14px;
     letter-spacing: 1px;
@@ -2255,6 +2273,7 @@ section.visit.flexible-image-cards,
       }
       li.main a {
         font-family: $font-brandon-medium;
+        font-weight: 500;
         font-size: 16px;
         color: #575757;
         &:hover, &:focus {
@@ -2283,6 +2302,7 @@ section.visit.flexible-image-cards,
         &.lodge {
           a {
             font-family: $font-brandon-medium;
+            font-weight: 500;
           }
           span.desc {
             padding-left: 3px;
@@ -2383,6 +2403,7 @@ header.site-header {
       text-decoration: none;
       display: inline-block;
       font-family: $font-brandon-regular;
+      font-weight: 400;
       font-size: 14px;
       text-transform: uppercase;
       color: #000;
@@ -2555,6 +2576,7 @@ body.scrolled {
 
     .info-title {
       font-family: $font-brandon-bold;
+      font-weight: 700;
       font-size: 23px;
       line-height: 1.2;
       text-transform: uppercase;
@@ -2749,6 +2771,7 @@ body.logged-in.admin-bar.subpage {
     text-align: left;
     margin: 0 auto;
     font-family: $font-brandon-medium;
+    font-weight: 500;
     font-size: 14px;
     text-transform: uppercase;
     padding: 0 5px;
@@ -2790,6 +2813,7 @@ body.logged-in.admin-bar.subpage {
       text-align: center;
       border-bottom: 1px dotted #dedede;
       font-family: $font-brandon-medium;
+      font-weight: 500;
       font-size: 14px;
       text-transform: uppercase;
       line-height: 1.2;
@@ -2992,13 +3016,15 @@ body.logged-in.admin-bar.subpage {
           transition: all ease .3s;
         }
         .name {
-          // font-family: $font-brandon-bold;
           font-family: $font-brandon-regular;
+          font-weight: 400;
           font-size: 22px;
           text-transform: uppercase;
         }
         .city {
           font-family: $font-brandon-regular-italic;
+          font-style: italic;
+          font-weight: 400;
           font-size: 12px;
         }
         &:hover, &:focus {
@@ -3012,6 +3038,7 @@ body.logged-in.admin-bar.subpage {
           }
           .name {
             font-family: $font-brandon-bold;
+            font-weight: 700;
           }
         }
       }
@@ -3023,12 +3050,14 @@ body.logged-in.admin-bar.subpage {
       list-style: none;
       .tlabel {
         font-family: $font-brandon-medium;
+        font-weight: 500;
         font-size: 14px;
         text-transform: uppercase;
         color: #777;
       }
       .tVal {
         font-family: $font-brandon-regular;
+        font-weight: 400;
         font-size: 20px;
         color: #000;
         letter-spacing: 0.01em;
@@ -3609,6 +3638,7 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
     }
     .parent-menu-link {
       font-family: $font-brandon-bold;
+      font-weight: 700;
       font-size: 20px;
       text-transform: uppercase;
       margin-bottom: 10px;
@@ -3622,6 +3652,7 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
       background: #FFF;
       .main a {
         font-family: $font-brandon-medium;
+        font-weight: 500;
         font-size: 18px;
         text-transform: uppercase;
       }
@@ -3662,6 +3693,7 @@ body.home .full-bleed-promo:not(.rounded_with_padding) div.img {
   }
   .link-title {
     font-family: $font-brandon-bold;
+    font-weight: 700;
     font-size: 18px;
     text-transform: uppercase;
   }

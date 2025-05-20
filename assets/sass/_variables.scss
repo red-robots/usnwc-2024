@@ -16,66 +16,14 @@ $limegreen:#71C943;
 $submenu_color: #191919;
 $teal: #6FA2B6;
 
-//$font_primary: 'Libre Franklin', sans-serif;
-//$font_secondary: 'Poppins', sans-serif;
-//$font_primary: 'Brandon', sans-serif;
-@font-face {
-  font-family: 'Brandon Light';
-  src: url('fonts/brandon-grotesque/brandon-light.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Brandon Light Italic';
-  src: url('fonts/brandon-grotesque/brandon-light-it.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Brandon';
-  src: url('fonts/brandon-grotesque/brandon-reg.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Brandon Italic';
-  src: url('fonts/brandon-grotesque/brandon-reg-it.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Brandon Medium';
-  src: url('fonts/brandon-grotesque/brandon-med.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Brandon Medium Italic';
-  src: url('fonts/brandon-grotesque/brandon-med-it.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Brandon Bold';
-  src: url('fonts/brandon-grotesque/Brandon_bld.woff') format('woff');
-  // font-weight: normal;
-  // font-style: normal;
-}
-@font-face {
-  font-family: 'Brandon Black';
-  src: url('fonts/brandon-grotesque/Brandon_blk.woff') format('woff');
-  // font-weight: normal;
-  // font-style: normal;
-}
-
-$font-brandon-light: 'Brandon Light';
-$font-brandon-light-italic: 'Brandon Light Italic';
-$font-brandon-regular: 'Brandon';
-$font-brandon-regular-italic: 'Brandon Italic';
-$font-brandon-medium: 'Brandon Medium';
-$font-brandon-medium-italic: 'Brandon Medium Italic';
-$font-brandon-bold: 'Brandon Bold';
-$font-brandon-black: 'Brandon Black';
+$font-brandon-light: 'brandon-grotesque';
+$font-brandon-light-italic: 'brandon-grotesque';
+$font-brandon-regular: 'brandon-grotesque';
+$font-brandon-regular-italic: 'brandon-grotesque';
+$font-brandon-medium: 'brandon-grotesque';
+$font-brandon-medium-italic: 'brandon-grotesque';
+$font-brandon-bold: 'brandon-grotesque';
+$font-brandon-black: 'brandon-grotesque';
 
 $font_primary: $font-brandon-regular;
 $font_secondary: 'Lato', sans-serif;

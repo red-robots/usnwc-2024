@@ -1,5 +1,6 @@
 @mixin H2_STYTLE() {
   font-family: $font-brandon-bold;
+  font-weight: 700;
   font-size: 40px;
   line-height: 1.2;
   text-transform: uppercase;
@@ -12,6 +13,7 @@
 
 @mixin H3_STYTLE() {
   font-family: $font-brandon-bold;
+  font-weight: 700;
   font-size: 25px;
   line-height: 1.2;
   text-transform: uppercase;
@@ -67,6 +69,7 @@ body {
 }
 b, strong {
   font-family: $font-brandon-bold;
+  font-weight: 700;
 }
 p {
   color: #555;
@@ -239,6 +242,7 @@ nav.new-nav {
 	.menu-item {
 	    // display: inline-block;
 	    font-family: $font-brandon-regular;
+      font-weight: 400;
 	    text-transform: uppercase;
 	    font-size: 16px;
 	    letter-spacing: 1px;
@@ -339,23 +343,27 @@ nav.new-nav {
 		    	top: 140px;
 		    	&.main {
 		    		font-family: $font-brandon-medium;
+            font-weight: 500;
 		    		font-size: 18px;
 		    		margin-bottom: 20px;
 		    		span.desc {
 		    			font-size: 12px;
 		    			width: 100%;
 		    			font-family: $font-brandon-regular;
+              font-weight: 400;
 		    			padding-left: 5px;
 		    			display: block;
 		    		}
 		    	}
 		    	&.child {
 		    		font-family: $font-brandon-regular;
+            font-weight: 400;
 		    		font-size: 14px;
 		    		margin-bottom: 10px;
 		    	}
 		    	&.lodge {
 		    		font-family: $font-brandon-medium;
+            font-weight: 500;
 		    		display: flex;
 		    		flex-direction: row;
 		    		align-items: center;
@@ -364,6 +372,7 @@ nav.new-nav {
 		    			width: auto;
 		    			display: inline-block;
 		    			font-family: $font-brandon-regular;
+              font-weight: 400;
 		    			font-size: 12px;
 		    		}
 		    	}
@@ -439,6 +448,7 @@ nav.new-nav {
 		flex-direction: row;
 		font-size: 16px;
 		font-family: $font-brandon-light;
+    font-weight: 300;
 		letter-spacing: 1px;
 		position: relative;
 		span {
@@ -463,8 +473,10 @@ nav.new-nav {
 			text-decoration: none;
 			cursor: pointer;
       font-family: $font-brandon-regular;
+      font-weight: 400;
 			a {
         font-family: $font-brandon-regular;
+        font-weight: 400;
 				color: #fff;
 				text-decoration: none;
 			}
@@ -709,10 +721,12 @@ nav.new-nav-mobile {
 				text-decoration: none;
 				padding: 10px 25px 10px 25px;
 				font-family: $font-brandon-regular;
+        font-weight: 400;
 				font-size: 22px;
 			}
 			&.active a {
 				font-family: $font-brandon-bold;
+        font-weight: 700;
 				padding: 10px 25px 10px 35px;
 				&:after {
 				    position: absolute;
@@ -735,6 +749,8 @@ nav.new-nav-mobile {
 				clear: both;
 				font-size: 12px;
 				font-family: $font-brandon-regular-italic;
+        font-style: italic;
+        font-weight: 400;
 			}
 		}
 
@@ -774,6 +790,7 @@ nav.new-nav-mobile {
 			}
 			.tName {
         font-family: $font-brandon-medium;
+        font-weight: 500;
 				font-size: 14px;
 				// margin-bottom: 20px;
 				text-transform: uppercase;
@@ -786,10 +803,12 @@ nav.new-nav-mobile {
 				// color: rgba(#000, 1);
 				letter-spacing: 0;
 				font-family: $font-brandon-regular;
+        font-weight: 400;
 				margin-bottom: 5px;
 			}
 			.see-details {
 				font-family: $font-brandon-regular;
+        font-weight: 400;
 				i {
 					font-size: 12px;
 				}
@@ -873,10 +892,12 @@ nav.new-nav-mobile {
 				text-decoration: none;
 				padding: 10px 25px 10px 25px;
 				font-family: $font-brandon-regular;
+        font-weight: 400;
 				font-size: 22px;
 			}
 			&.active a {
 				font-family: $font-brandon-bold;
+        font-weight: 700;
 				padding: 10px 25px 10px 35px;
 				&:after {
 				    position: absolute;
@@ -899,6 +920,8 @@ nav.new-nav-mobile {
 				clear: both;
 				font-size: 12px;
 				font-family: $font-brandon-regular-italic;
+        font-style: italic;
+        font-weight: 400;
 			}
 		}
 
@@ -938,6 +961,7 @@ nav.new-nav-mobile {
 			}
 			.tName {
         font-family: $font-brandon-medium;
+        font-weight: 500;
 				font-size: 14px;
 				// margin-bottom: 20px;
 				text-transform: uppercase;
@@ -950,10 +974,12 @@ nav.new-nav-mobile {
 				color: rgba(#000, 1);
 				letter-spacing: 0;
 				font-family: $font-brandon-regular;
+        font-weight: 400;
 				margin-bottom: 5px;
 			}
 			.see-details {
 				font-family: $font-brandon-regular;
+        font-weight: 400;
 				i {
 					font-size: 12px;
 				}
@@ -1567,6 +1593,7 @@ h2.gform_title,
 .h2, .title-wrapper h2.section-title {
 	margin: 0 0;
 	font-family: $font-brandon-bold;
+  font-weight: 700;
   font-size: 40px;
   line-height: 1.2;
   text-transform: uppercase;
@@ -1690,6 +1717,7 @@ section.homepage-hero {
 			}
 			p {
         font-family: $font-brandon-regular;
+        font-weight: 400;
 				font-size: 1.5rem;
         font-weight: normal!important;
         color: #FFF!important;
@@ -1856,6 +1884,7 @@ section.full-bleed-promo {
 			p {
 				font-size: 20px;
 				font-family: $font-brandon-regular;
+        font-weight: 400;
 				margin-bottom: 0;
         color: #FFF;
 				@include tab {
@@ -2361,6 +2390,7 @@ body.subpage h1.pagetitle,
 body.subpage h1.page-title,
 .h1 {
   font-family: $font-brandon-bold;
+  font-weight: 700;
   font-size: 45px;
   line-height: 1.3;
   letter-spacing: 0.01em;
@@ -2522,6 +2552,7 @@ section.stories-whats {
 			padding: 5px 8px;
 			border-radius: 5px;
 			font-family: $font-brandon-medium;
+      font-weight: 500;
 		}
 		.wn-box-contents {
 			width: 100%;
@@ -2538,17 +2569,20 @@ section.stories-whats {
 			background-color: $slight-gray;
 			h2 {
 				font-family: $font-brandon-bold;
+        font-weight: 700;
 				text-transform: uppercase;
 				margin: 0 0 0px 0;
 				font-size: 34px;
 			}
 			.date {
 				font-family: $font-brandon-light;
+        font-weight: 300;
 				margin-bottom: 25px;
 				font-size: 16px;
 			}
 			.excerpt {
 				font-family: $font-brandon-regular;
+        font-weight: 400;
 				font-size: 20px;
 				margin-bottom: 25px;
 			}
@@ -2635,6 +2669,7 @@ section.stories-whats {
 	  //   color: #000;
 
     font-family: $font-brandon-bold;
+    font-weight: 700;
     font-size: 45px;
     line-height: 1.3;
     letter-spacing: .01em;
@@ -3350,6 +3385,7 @@ section.stories-whats {
 			h6 {font-size:13px}
       h2 {
         font-family: $font-brandon-bold;
+        font-weight: 700;
         font-size: 30px;
       }
 			.caption {
@@ -3780,6 +3816,7 @@ section.stories-whats {
         display: block;
         padding: 6px 20px 5px;
         font-family: $font-brandon-medium;
+        font-weight: 500;
         font-size: 12px;
         line-height: 1.2;
         color: $gray_dark;
@@ -3929,6 +3966,7 @@ h1.page-title {
 	font-size: 22px;
 	line-height: 1.4;
 	font-family: $font-brandon-light;
+  font-weight: 300;
 	color: rgba(#000, .6);
 	max-width: 900px;
 	margin: 0 auto;
@@ -4372,6 +4410,7 @@ a.button {
 
 .button-rounded {
   font-family: $font-brandon-regular!important;
+  font-weight: 400;
   font-size: 16px;
 	line-height: 1.2;
   text-transform: uppercase;
@@ -4399,6 +4438,7 @@ a.button {
   background-color: transparent!important;
   color: #5a5959!important;
   font-family: $font-brandon-regular!important;
+  font-weight: 400;
   font-size: 13px!important;
   line-height: 1.2!important;
   letter-spacing: 0.05em!important;
@@ -4475,6 +4515,7 @@ a.button {
   border: 1px solid #a2a2a2;
   background-color: #FFF;
   font-family: $font-brandon-regular;
+  font-weight: 400;
   font-size: 16px;
   text-decoration: none!important;
   min-width: 120px;
@@ -4783,6 +4824,7 @@ a.button {
   }
   h2 {
     font-family: $font-brandon-bold;
+    font-weight: 700;
     font-size: 40px;
     line-height: 1.2;
     margin: 0 0 45px;
@@ -4834,6 +4876,7 @@ a.button {
       }
       .option-name {
         font-family: $font-brandon-bold;
+        font-weight: 700;
         text-transform: uppercase;
       }
       @media screen and (min-width: 1500px) {
@@ -4867,6 +4910,7 @@ a.button {
   h2.section-title {
     text-align: center;
     font-family: $font-brandon-bold;
+    font-weight: 700;
     font-size: 40px;
     line-height: 1.2;
     text-transform: uppercase;
@@ -4905,6 +4949,7 @@ a.button {
     }
     h3 {
       font-family: $font-brandon-bold;
+      font-weight: 700;
       text-transform: uppercase;
       color: #000!important;
       padding-top: 28px;
@@ -4957,6 +5002,7 @@ a.button {
   padding: 25px 20px 50px;
   h3 {
     font-family: $font-brandon-bold;
+    font-weight: 700;
     font-size: 40px;
     line-height: 1.2;
     color: #000!important;
@@ -5982,6 +6028,7 @@ body.single-instructions {
       // }
       h3.mstitle {
         font-family: $font-brandon-bold;
+        font-weight: 700;
         font-size: 35px;
         line-height: 1.2;
         color: #000;
@@ -6186,6 +6233,7 @@ body.single-instructions {
 
   .textcol .fulltext h3 {
     font-family: $font-brandon-bold;
+    font-weight: 700;
     font-size: 18px;
     line-height: 1.2;
     margin: 0 0 10px;
@@ -6830,6 +6878,7 @@ body.single-instructions {
 	.text-centered-section {
 		color: #000;
 		font-family: $font-brandon-regular;
+    font-weight: 400;
 	}
   .visit .tile.no-description {
     .link {
@@ -8697,6 +8746,7 @@ body.pageNoBanner {
 			.event {
 				color: $gray_dark;
         font-family: $font-brandon-bold;
+        font-weight: 700;
         font-size: 16px;
         text-transform: uppercase;
         color: #000;
@@ -12708,6 +12758,7 @@ body.page-template-page-food-beverage {
     text-align: left;
     font-size: 35px;
     font-family: $font-brandon-medium;
+    font-weight: 500;
     border-bottom: 1px solid #000;
     padding-bottom: 10px;
   }
@@ -12825,6 +12876,7 @@ body.page-template-page-food-beverage {
 	}
   h3.title {
     font-family: $font-brandon-bold;
+    font-weight: 700;
     font-size: 25px;
     color: #000;
     text-transform: uppercase;
@@ -12880,6 +12932,7 @@ body.page-template-page-food-beverage {
         b {
           display: inline-block;
           font-family: $font-brandon-bold;
+
           background: #FFF;
           padding-right: 3px;
           position: relative;
@@ -13555,6 +13608,7 @@ body.page-template-page-race {
     padding-bottom: 30px;
     .text-wrap {
       font-family: $font-brandon-light;
+      font-weight: 300;
       font-size: 22px;
       line-height: 1.4;
       max-width: 1000px;
@@ -13613,7 +13667,7 @@ body.page-template-page-race {
         h3,.h3 {
           font-family: $font-brandon-bold;
           font-size: 20px;
-          font-weight: 600;
+          font-weight: 700;
           line-height: 1.2;
         }
         .cta-buttons.buttondiv {
@@ -13807,6 +13861,7 @@ body.page-template-page-race {
   }
   h2 {
     font-family: $font-brandon-bold;
+    font-weight: 700;
     font-size: 2rem;
     line-height: 1.3;
     margin: 0 0;
@@ -13831,6 +13886,7 @@ body.page-template-page-race {
     @media screen and (max-width: 900px) {
       h2 {
         font-family: $font-brandon-regular;
+        font-weight: 400;
         font-size: 2rem;
         line-height: 1.3;
         margin-bottom: 35px;
@@ -13967,6 +14023,7 @@ body.page-template-page-race {
     }
     h2 {
       font-family: $font-brandon-bold;
+      font-weight: 700;
       font-size: 35px;
       line-height: 1.2;
       color: #000;
@@ -14300,6 +14357,7 @@ body.single-race .filter-wrapper {
     width: 100%;
     marign: 0 auto;
     font-family: $font-brandon-light;
+    font-weight: 300;
     font-size: 22px;
     line-height: 1.4;
     max-width: 800px;
@@ -14357,6 +14415,7 @@ body.single-race .filter-wrapper {
         display: block;
         padding: 20px 20px;
         font-family: $font-brandon-bold;
+        font-weight: 700;
         font-size: 25px;
         line-height: 1.2;
         letter-spacing: 0.015em;
@@ -14416,6 +14475,7 @@ body.single-race .filter-wrapper {
     }
     h2,h3,h4 {
       font-family: $font-brandon-bold!important;
+      font-weight: 700;
     }
     h2 {
       font-size: 35px;
@@ -14531,6 +14591,7 @@ body.single-race .filter-wrapper {
       }
       .card-title {
         font-family: $font-brandon-bold;
+        font-weight: 700;
         font-size: 20px;
         line-height: 1.2;
         text-transform: uppercase;
@@ -14586,6 +14647,7 @@ body.single-race .filter-wrapper {
         }
         .name {
           font-family: $font-brandon-bold;
+          font-weight: 700;
           font-size: 15px;
           line-height: 1.2;
           text-transform: uppercase;
@@ -15582,6 +15644,7 @@ section.instr-schedule {
     padding-right: 0;
     text-align: left;
     font-family: $font-brandon-bold;
+    font-weight: 700;
     font-size: 35px;
     border-bottom: 1px solid #000;
     padding-bottom: 10px;
@@ -15932,6 +15995,7 @@ section.teasers {
 
     h2 {
       font-family: $font-brandon-bold;
+      font-weight: 700;
       color: #000;
     }
     div.button a {
@@ -15989,6 +16053,7 @@ section.teasers {
 			}
 			h2 {
 				font-family: $font-brandon-bold;
+        font-weight: 700;
         font-size: 35px;
         line-height: 1.2;
         color: #000;
@@ -16503,6 +16568,7 @@ section.visit {
 		text-transform: uppercase;
 		margin-left: 20px;
 		font-family: $font-brandon-light;
+    font-weight: 300;
 		@include tab {
 			margin-left: 30px;
 		}
@@ -16539,6 +16605,7 @@ section.visit {
 .heading-center {
   text-align: center;
   font-family: $font-brandon-bold;
+  font-weight: 700;
   font-size: 45px;
   line-height: 1.2;
   letter-spacing: 0.03em;
@@ -16552,6 +16619,7 @@ section.visit {
     margin-block: 50px;
     h3 {
       font-family: $font-brandon-medium;
+      font-weight: 500;
       font-size: 25px;
       line-height: 1.2;
       letter-spacing: 0.03em;
@@ -16958,6 +17026,7 @@ section.visit {
     }
     .status-text {
       font-family: $font-brandon-bold;
+      font-weight: 700;
       font-size: 28px;
       line-height: 1;
       text-transform: uppercase;
@@ -17151,6 +17220,7 @@ section.visit {
       h3 {
         margin: 0 0 5px;
         font-family: $font-brandon-bold;
+        font-weight: 700;
         font-size: 18px;
         font-weight: 600;
         line-height: 1.2;
@@ -17241,6 +17311,7 @@ section.visit {
     padding: 5px 0;
     background-color: transparent;
     font-family: $font-brandon-medium;
+    font-weight: 500;
     font-size: 14px;
     line-height: 1;
     letter-spacing: 0.02em;
@@ -17291,6 +17362,7 @@ section.visit {
       text-align: center;
       border-bottom: 1px dotted #dedede;
       font-family: $font-brandon-medium;
+      font-weight: 500;
       font-size: 14px;
       text-transform: uppercase;
       line-height: 1.2;
@@ -17751,6 +17823,7 @@ body.subpage.single.single-activity {
               text-align: left;
               h2 {
                 font-family: $font-brandon-bold;
+                font-weight: 700;
                 font-size: 18px;
                 line-height: 1.2;
                 text-transform: uppercase;
@@ -17794,6 +17867,7 @@ body.subpage.single.single-activity {
       }
       h3 {
         font-family: $font-brandon-bold;
+        font-weight: 700;
         font-size: 40px;
         line-height: 1.2;
         margin: 0 0 25px;
@@ -17832,6 +17906,7 @@ body.subpage.single.single-activity {
         }
         strong {
           font-family: $font-brandon-medium;
+          font-weight: 500;
         }
         @include max($tabwidth) {
           padding-left: 0;
@@ -17841,6 +17916,7 @@ body.subpage.single.single-activity {
       .info-left {
         .name {
           font-family: $font-brandon-bold;
+          font-weight: 700;
           font-size: 18px;
           text-transform: uppercase;
         }
@@ -17946,6 +18022,7 @@ body.subpage.single.single-activity {
         margin: 0 0;
         padding: 20px 30px;
         font-family: $font-brandon-bold;
+        font-weight: 700;
         font-size: 2.75rem;
         line-height: 1.2;
         color: #FFF;
@@ -18006,6 +18083,7 @@ body.subpage.single.single-activity {
   }
   h3 {
     font-family: $font-brandon-bold;
+    font-weight: 700;
     font-size: 18px;
     line-height: 1.2;
     text-transform: uppercase;
@@ -18120,6 +18198,7 @@ body.subpage.single.single-activity {
   }
   h3 {
     font-family: $font-brandon-bold;
+    font-weight: 700;
     font-size: 18px;
     line-height: 1.2;
     text-transform: uppercase;
@@ -18209,6 +18288,7 @@ body.subpage.single.single-activity {
         padding: 15px 18px;
         h3 {
           font-family: $font-brandon-bold;
+          font-weight: 700;
           font-size: 30px;
           line-height: 1.2;
           text-transform: uppercase;
@@ -18376,6 +18456,7 @@ body.subpage.single.single-activity {
           z-index: 10;
           padding: 20px;
           font-family: $font-brandon-bold;
+          font-weight: 700;
           font-size: 2.2rem;
           line-height: 1.2;
           text-transform: uppercase;
@@ -18488,6 +18569,7 @@ body.subpage.single.single-activity {
     }
     h2 {
       font-family: $font-brandon-bold;
+      font-weight: 700;
       font-size: 35px;
       line-height: 1.2;
       text-transform: uppercase;
@@ -18888,6 +18970,7 @@ body.logged-in.admin-bar #customModalContainer {
       margin-bottom: 7px;
       text-transform: uppercase;
       font-family: $font-brandon-medium;
+      font-weight: 500;
       font-size: 18px;
       line-height: 1.2;
     }
@@ -18981,6 +19064,7 @@ body.logged-in.admin-bar #customModalContainer {
   }
   .section-title {
     font-family: $font-brandon-medium;
+    font-weight: 500;
     font-size: 40px;
     line-height: 1.2;
     text-transform: uppercase;
@@ -19008,6 +19092,7 @@ body.logged-in.admin-bar #customModalContainer {
       }
       .event-date {
         font-family: $font-brandon-bold;
+        font-weight: 700;
         font-size: 22px;
         line-height: 1.2;
         color: #000;
@@ -19169,6 +19254,7 @@ body.logged-in.admin-bar #customModalContainer {
         text-transform: uppercase;
         color: #6d6d6d;
         font-family: $font-brandon-medium;
+        font-weight: 500;
         font-size: 12px;
         transition: all ease .3s;
         position: relative;
@@ -19540,6 +19626,7 @@ section.route-details.route-details-new {
   .text-intro {
     h1,h2 {
       font-family: $font-brandon-medium;
+      font-weight: 500;
       font-size: 40px;
       line-height: 1.2;
       text-transform: uppercase;
@@ -19836,6 +19923,7 @@ body.modal-open {
     padding: 50px 30px;
     text-align: center;
     font-family: $font-brandon-bold;
+    font-weight: 700;
     font-size: 35px;
     line-height: 1.2;
     margin: 0 0;
@@ -19891,6 +19979,7 @@ body.modal-open {
     h2.section-title {
       text-align: center;
       font-family: $font-brandon-bold;
+      font-weight: 700;
       font-size: 35px;
       line-height: 1.2;
       margin: 0 0 50px;
@@ -19946,6 +20035,7 @@ body.modal-open {
     .infoDate {
       div {
         font-family: $font-brandon-bold;
+        font-weight: 700;
         font-size: 35px;
         line-height: 1.2;
         margin: 0 0;
@@ -20057,6 +20147,7 @@ body.modal-open {
     .post-title {
       text-transform: uppercase;
       font-family: $font-brandon-bold;
+      font-weight: 700;
       font-size: 15px;
       line-height: 1.2;
       color: #000;
@@ -20297,6 +20388,7 @@ body.modal-open {
       display: block;
       padding: 6px 20px 5px;
       font-family: $font-brandon-medium;
+      font-weight: 500;
       font-size: 12px;
       line-height: 1.2;
       color: #707070;
@@ -20503,6 +20595,7 @@ body.modal-open {
   padding-bottom: 30px;
   h2 {
     font-family: $font-brandon-bold;
+    font-weight: 700;
     font-size: 32px;
     line-height: 1.2;
     text-transform: uppercase;
@@ -20548,6 +20641,7 @@ body.modal-open {
   padding-bottom: 70px;
   .section-title {
     font-family: $font-brandon-bold;
+    font-weight: 700;
     font-size: 36px;
     line-height: 1.2;
     color: #000;
@@ -20692,12 +20786,14 @@ body.modal-open {
     .title-small {
       margin: 0 0 5px;
       font-family: $font-brandon-regular;
+      font-weight: 400;
       font-size: 22px;
       line-height: 1.2;
       color: #000;
     }
     .text-large {
       font-family: $font-brandon-bold;
+      font-weight: 700;
       font-size: 35px;
       line-height: 1.2;
       color: #555;
@@ -20982,6 +21078,7 @@ body.modal-open {
 .introtext-wrapper {
   text-align: center;
   font-family: $font-brandon-light;
+  font-weight: 300;
   font-size: 22px;
   line-height: 1.4;
   max-width: 1000px;
@@ -21051,6 +21148,7 @@ body.modal-open {
       }
       h3 {
         font-family: $font-brandon-bold;
+        font-weight: 700;
         font-size: 22px;
         line-height: 1.2;
         margin: 0 0 10px;
@@ -21176,6 +21274,7 @@ body.modal-open {
       }
       span.name {
         font-family: $font-brandon-bold;
+        font-weight: 700;
         font-size: 14px;
         line-height: 1.2;
         text-transform: uppercase;
@@ -21280,6 +21379,7 @@ body.modal-open {
       width: 100%;
       text-align: left;
       font-family: $font-brandon-bold;
+      font-weight: 700;
       font-size: 20px;
       font-weight: 500;
       text-transform: uppercase;
@@ -21319,6 +21419,7 @@ body.modal-open {
     }
     .dash-item .line span.name {
       font-family: $font-brandon-regular;
+      font-weight: 400;
       text-transform: none!important;
       @media screen and (min-width: 769px) {
         max-width: 72%;
@@ -21351,6 +21452,7 @@ body.modal-open {
   margin: 60px 0;
   .section-title {
     font-family: $font-brandon-medium;
+    font-weight: 500;
     font-size: 40px;
     line-height: 1.2;
     text-transform: uppercase;
@@ -21394,6 +21496,7 @@ body.modal-open {
     }
     .cardTopTitle {
       font-family: $font-brandon-medium;
+      font-weight: 500;
       font-size: 18px;
       line-height: 1.2;
       color: #000;
@@ -21401,6 +21504,7 @@ body.modal-open {
     }
     .cardMainTitle {
       font-family: $font-brandon-bold;
+      font-weight: 700;
       font-size: 23px;
       line-height: 1.2;
       text-transform: uppercase;
