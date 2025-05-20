@@ -1699,9 +1699,9 @@ section.homepage-hero {
 			}
 			h1 {
 				font-size: 32px;
-				// font-weight: 800;
 				text-transform: uppercase;
 				font-family: $font-brandon-black;
+        font-weight: 800;
 				line-height: 1;
 				margin-bottom: 15px;
 				@include tab {
@@ -1867,6 +1867,7 @@ section.full-bleed-promo {
 				// font-weight: 800;
 				text-transform: uppercase;
 				font-family: $font-brandon-black;
+        font-weight: 800;
 				line-height: 1;
 				margin-bottom: 15px;
         color: #FFF;
@@ -16510,6 +16511,7 @@ section.visit {
 			bottom: 20px;
 			left: 20px;
 			font-family: $font-brandon-black;
+      font-weight: 800;
 			font-size: 30px;
 			text-transform: uppercase;
 			line-height: .9;
