@@ -5638,6 +5638,7 @@ body.page-template-page-bike-ranch.subpage:has(#banner).scrolled .navbar .right-
 .calendar-grid-wrapper .customCalendarGrid .tribe-events-calendar-month__multiday-event-bar .tribe-events-calendar-month__multiday-event-bar-title *{color:#fff !important}
 .calendar-grid-wrapper .tribe-events .tribe-events-calendar-month__events{-webkit-box-flex:unset !important;-ms-flex:unset !important;flex:unset !important}
 .calendar-grid-wrapper .customCalendarGrid .tribe-events-calendar-month__calendar-event .tribe-events-calendar-month__calendar-event-details h3 a{text-align:left;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;width:auto !important;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;padding-right:20px !important}
+h3.tribe-events-calendar-month-mobile-events__mobile-event-title.tribe-common-h7{margin-bottom:14px}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
