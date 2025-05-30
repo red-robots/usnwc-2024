@@ -189,6 +189,14 @@ function js_custom_init() {
             'menu_icon' => 'dashicons-palmtree',
             'supports'  => array('title','editor','thumbnail')
         ),
+        // array(
+        //     'post_type' => 'yoga',
+        //     'menu_name' => 'Yoga',
+        //     'plural'    => 'Yogas',
+        //     'single'    => 'Yoga',
+        //     'menu_icon' => 'dashicons-universal-access',
+        //     'supports'  => array('title','editor','thumbnail')
+        // ),
         array(
             'post_type' => 'race',
             'menu_name' => 'Race Series',
@@ -497,6 +505,15 @@ function build_taxonomies() {
       'plural'    => 'Route Type',
       'single'    => 'Route Type',
       'taxonomy'  => 'route-type',
+      'query_var' => false,
+      'show_admin_column'=>1
+    ),
+    array(
+      'post_type' => array('special-events'),
+      'menu_name' => 'Special Event Categories',
+      'plural'    => 'Special Event Categories',
+      'single'    => 'Special Event Category',
+      'taxonomy'  => 'special-event-category',
       'query_var' => false,
       'show_admin_column'=>1
     ),

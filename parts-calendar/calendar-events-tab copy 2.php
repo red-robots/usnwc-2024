@@ -19,35 +19,6 @@ $cpttypes = [
   'special-events'   => 'Special Events'
 ];
 
-$special_events_taxonomy = 'special-event-category';
-$special_events_terms = get_terms([
-  'taxonomy'    => $special_events_taxonomy,
-  'hide_empty'  => true,
-  'exclude'     => 1
-]);
-
-$special_types = []; 
-$special_events_categories = []; 
-if($special_events_terms) {
-  foreach($special_events_terms as $se) {
-    $se_name = trim($se->name);
-    $se_slug = $se->slug;
-    $special_events_categories[] = $se_slug;
-    $uniq = '';
-    if($cpttypes) {
-      foreach($cpttypes as $k=>$v) {
-        if( strtolower($v) == strtolower($se_name) ){
-          $special_types[$se_slug] = $se_name;
-        }
-      }
-      if( !array_key_exists($se_slug, $special_types) ) {
-        $cpttypes[$se_slug] = $se_name;
-      }
-    }
-  }
-}
-
-
 $selected_filter_name = ($filter_type && isset($cpttypes[$filter_type])) ? $cpttypes[$filter_type]:'';
 $postTypes = $cpttypes;
 
@@ -93,15 +64,8 @@ if( count($thePostTypesArr) == 1 ) {
 
 $total_query = $query_meta . " GROUP BY p.ID ORDER BY UNIX_TIMESTAMP(ext.start_date) ASC";
 
-
-
-if( isset($_GET['type']) && $_GET['type']!='all' ) {
-  $posts = $wpdb->get_results($total_query);
-} else {
-  $new_query = $query_meta . " GROUP BY p.ID ORDER BY UNIX_TIMESTAMP(ext.start_date) ASC LIMIT ".$per_page." OFFSET ".$offset;
-  $posts = $wpdb->get_results($new_query);
-}
-
+$new_query = $query_meta . " GROUP BY p.ID ORDER BY UNIX_TIMESTAMP(ext.start_date) ASC LIMIT ".$per_page." OFFSET ".$offset;
+$posts = $wpdb->get_results($new_query);
 $total = $wpdb->get_results($total_query);
 //$total_before = ($total) ? count($total) : 0;
 
@@ -141,98 +105,7 @@ if($hasChildrenPosts) {
   }
 }
 
-$filteredSpecialEventTerms = array();
-if($special_events_terms && $cpttypes) {
-  if($filter_type && $filter_type!='all') {
-    //print_r($special_types);
-    foreach($special_events_terms as $se) {
-      $se_name = trim($se->name);
-      $se_slug = $se->slug;
-      $uniq = '';
-      if($cpttypes) {
-        foreach($cpttypes as $k=>$v) {
-          if($filter_type==$k) {
-            if( strtolower($v) == strtolower($se_name) ){
-              $filteredSpecialEventTerms[$k] = $se_slug;
-            } else {
-              $filteredSpecialEventTerms[$se_slug] = $se_slug;
-            }
-          }
-        }
-      }
-    }
-  } 
-}
-
 $total_records = ($total) ? count($total) : 0;
-
-if($special_events_categories) {
-  if($filter_type && $filter_type!='all') {
-    $countExisting = ($posts) ? count($posts) : 0; 
-    if( isset($filteredSpecialEventTerms[$filter_type]) && $filteredSpecialEventTerms[$filter_type] ) {
-      $special_term = $filteredSpecialEventTerms[$filter_type];
-      $se_args = array(
-        'posts_per_page'   => -1,
-        'post_type'        => 'special-events',
-        'post_status'      => 'publish',
-        'tax_query'        => array(
-          array(
-            'taxonomy' => 'special-event-category',
-            'terms' => $special_term,
-            'field' => 'slug',
-            'include_children' => true,
-            'operator' => 'IN'
-          )
-        )
-      );
-      $se_post = get_posts($se_args);
-      if($se_post) {
-        $total_records += count($se_post);
-
-        $j=$countExisting;
-        foreach($se_post as $se) {
-          $start_date = get_field('start_date', $se->ID);
-          $end_date = get_field('end_date', $se->ID);
-          $se->start_date = $start_date;
-          $se->end_date = $end_date;
-          $posts[$j] = $se;
-          $j++;
-        }
-      }
-    }
-  } 
-
-  if($posts) {
-    foreach($posts as $p) {
-      $start__date = (isset($p->start_date) && $p->start_date) ? $p->start_date : '';
-      $start__date = ($start__date) ? str_replace('-','',$start__date) : '';
-      $start__date = ($start__date) ? strtotime($start__date) : '';
-      $p->start_date_unix = $start__date;
-    }
-  }
-
-  usort($posts, function($a, $b) {
-    return $a->start_date_unix - $b->start_date_unix;
-  });
-}
-
-if( isset($_GET['type']) && $_GET['type']!='all' ) {
-  if($posts) {
-    $posts_paged = [];
-    $ix = $offset;
-    $max = $per_page * $paged;
-    $j=1;
-    for($i=$offset; $i<$max; $i++) {
-      $entry = $posts[$i];
-      $posts_paged[$i] = $entry;
-    }
-    $posts = [];
-    $posts = $posts_paged;
-  }
-}
-
-
-
 ?>
 <section id="events-feed" class="calendar-tab-events-posts<?php echo ($filter_type && $filter_type!='all') ? ' is-filtered':'' ?>">
   <div data-selected="<?php echo ($filter_type) ? $filter_type :'all' ?>" data-baseUrl="<?php echo get_permalink() ?>" class="custom-dropdown dropdown-posttypes">

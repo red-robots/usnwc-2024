@@ -4957,6 +4957,8 @@ body.modal-open{overflow:hidden}
 section.main-description .wrapper p{color:#707070;max-width:600px;width:100%;margin:0 auto 20px;font-size:20px;line-height:1.4}
 body.scrolled .film-event-status{position:fixed;top:80px}
 body.page-template-page-repeatable .fullwidth-red-bar-section{margin-top:50px}
+.site-content{z-index:100}
+.site-footer{position:relative;width:100%;float:left}
 .accordion{max-width:1100px;width:100%;margin:0 auto;padding:0;list-style:none}
 .accordion .accordion-item{overflow:hidden;border-radius:10px;border:1px solid #f2f2f2;margin-bottom:18px;-webkit-transition:all ease .3s;transition:all ease .3s}
 .accordion .accordion-handle{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;background-color:#f2f2f2;padding:25px 35px;display:block;width:100%;text-align:left;font-family:"brandon-grotesque";font-weight:700;font-size:18px;line-height:1.2;letter-spacing:.02em;text-transform:uppercase;color:#000;position:relative;-webkit-transition:all ease .3s;transition:all ease .3s}

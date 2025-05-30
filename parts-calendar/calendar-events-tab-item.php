@@ -3,8 +3,11 @@ $parentId = ( isset($post_parent) && $post_parent ) ? $post_parent : '';
 if ($parentId && $post_type=='dining') {
   $pagelink = get_permalink($parentId);
 }
+
+$customLink = get_post_meta($post_id,'_links_to',true);
+$has_custom_link = ($customLink) ? ' has-custom-link':'';
 ?>
-<div class="infoBox animated fadeIn post-type--<?php echo $post_type ?>" data-postid="<?php echo $post_id ?>" data-parent-id="<?php echo $parentId ?>">
+<div class="infoBox animated fadeIn post-type--<?php echo $post_type ?><?php echo $has_custom_link ?>" data-postid="<?php echo $post_id ?>" data-parent-id="<?php echo $parentId ?>">
   <div class="wrap">
     <?php if ($post_type=='music') { ?>
       <a href="javascript:void(0)" class="image-post-link popUp post---<?php echo $post_type ?>">
