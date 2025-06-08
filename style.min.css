@@ -3887,6 +3887,7 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap.section-grid-images.section-content .fbox .details,.flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap .fbox .details{background-color:transparent;padding:0;text-align:left}
 .flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap.section-grid-images.section-content .fbox .details h3,.flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap.section-grid-images.section-content .fbox .details .h3,.flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap .fbox .details h3,.flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap .fbox .details .h3{font-family:"brandon-grotesque";font-size:20px;font-weight:700;line-height:1.2}
 .flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap.section-grid-images.section-content .fbox .details .cta-buttons.buttondiv,.flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap .fbox .details .cta-buttons.buttondiv{margin-left:-8px;margin-right:-8px}
+.flexibleContentWrap .three-columns-block.three-columns-block-v2[data-columns=column2].section-grid-images.section-content .fbox{width:100%}
 .modal.customModal .cta-buttons a{margin:0 8px}
 .modal.customModal .modal-header{position:relative}
 .modal.customModal .modal-header #eventStatusTxt{display:inline-block;position:absolute;top:0;left:0}
@@ -6008,6 +6009,7 @@ body.single-festival .filter-wrapper.filterstyle .select-wrap{width:75%}
 .faq-categories #faqSelect{display:none}
 .film-series-page .post-type-entries .flex-inner.films-count-1,.film-series-page .post-type-entries .flex-inner.films-count-2,.film-series-page .post-type-entries .flex-inner.films-count-3{-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap{max-width:90vw}
+.flexibleContentWrap .three-columns-block.three-columns-block-v2[data-columns=column2].section-grid-images.section-content .fbox{width:50%}
 .accomodations .flexwrap .leftcol{width:35%;padding:0 4vw}
 .accomodations .flexwrap .leftcol span.img{display:block}
 .accomodations .flexwrap .leftcol img.logo-img{display:none}

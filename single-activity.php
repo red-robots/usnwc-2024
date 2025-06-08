@@ -322,6 +322,9 @@ $post_type = get_post_type();
       <?php } ?>
 
       
+      <?php /* FLEXIBLE CONTENT */ ?>
+      <?php include( locate_template('parts-flexible/activity/activity_flexible_content.php') ); ?>
+
 
 
       <?php

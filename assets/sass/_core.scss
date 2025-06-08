@@ -13678,6 +13678,16 @@ body.page-template-page-race {
       }
     }
   }
+  &[data-columns="column2"] {
+    &.section-grid-images.section-content {
+      .fbox {
+        width: 100%;
+        @include tab {
+          width: 50%;
+        }
+      }
+    }
+  }
 }
 
 .modal.customModal {

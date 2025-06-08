@@ -322,9 +322,6 @@
           </div>
         </section>
         <?php } ?>
-
-
-
     <?php } ?>
   </div>  
 <?php  } ?>

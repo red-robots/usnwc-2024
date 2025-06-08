@@ -223,8 +223,10 @@ if( isset($_GET['type']) && $_GET['type']!='all' ) {
     $max = $per_page * $paged;
     $j=1;
     for($i=$offset; $i<$max; $i++) {
-      $entry = $posts[$i];
-      $posts_paged[$i] = $entry;
+      if( isset($posts[$i]) ) {
+        $entry = $posts[$i];
+        $posts_paged[$i] = $entry;
+      }
     }
     $posts = [];
     $posts = $posts_paged;
