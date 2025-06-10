@@ -192,10 +192,41 @@ $post_type = get_post_type();
               </div>  
               <?php } ?>
 
-              <?php if ($single_pass_price) { ?>
-              <div class="pass-item">
-                <span class="name"><span>SINGLE ACTIVITY PASS</span></span>
-                <span class="price"><span><?php echo $single_pass_price ?></span></span>
+              <?php  
+              $single_access_price_multiple = get_field('single_access_price_multiple');
+              $single_access_price_multiple_options = get_field('single_access_price_multiple_options');
+              $has_multiple_options = ($single_access_price_multiple && $single_access_price_multiple_options) ? ' has-multiple-options':'';
+              ?>
+              <?php if ($single_pass_price || ($single_access_price_multiple && $single_access_price_multiple_options) ) { ?>
+              <div class="pass-item<?php echo $has_multiple_options ?>">
+                <?php if ($single_access_price_multiple && $single_access_price_multiple_options) { ?>
+                  <div class="name"><span>SINGLE ACTIVITY PASS:</span></div>
+                  <?php if ($single_access_price_multiple_options) { ?>
+                  <div class="price--options">
+                    <?php //echo $single_access_price_multiple_options ?>
+                    <?php foreach ($single_access_price_multiple_options as $sp) { 
+                      $s__name = $sp['name'];
+                      $s__price = $sp['price'];
+                      $s_has_price = ($s__price) ? 'has-price' : 'no-price';
+                    ?>
+                      <div class="singleItemRow <?php echo $s_has_price ?>">
+                        <?php if ($s__name) { ?>
+                        <span class="sName"><?php echo $s__name ?></span>
+                        <?php } ?>
+                        <?php if ($s__price) { ?>
+                        <span class="sPrice"><?php echo $s__price ?></span>
+                        <?php } ?>
+                      </div>
+                    <?php } ?>
+                  </div>
+                  <?php } ?>
+                  
+                <?php } else { ?>
+                  <?php if ($single_pass_price) { ?>
+                    <span class="name"><span>SINGLE ACTIVITY PASS</span></span>
+                    <span class="price"><span><?php echo $single_pass_price ?></span></span>
+                  <?php } ?>
+                <?php } ?>
               </div>  
               <?php } ?>
 

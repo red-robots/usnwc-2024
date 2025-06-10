@@ -17935,6 +17935,11 @@ body.subpage.single.single-activity {
         .price {
           font-size: 18px;
           color: $primary;
+          @media screen and (min-width: 1025px) {
+            max-width: 215px;
+            display: inline-block;
+            text-align: right;
+          }
         }
         .name, .price {
           position: relative;
@@ -17949,6 +17954,9 @@ body.subpage.single.single-activity {
           display: flex;
           justify-content: space-between;
           position: relative;
+          @media screen and (min-width: 1025px) {
+            align-items: flex-start;
+          }
           &:after {
             content:"";
             display: block;
@@ -17960,6 +17968,55 @@ body.subpage.single.single-activity {
           }
           &.nopass:after {
             display: none;
+          }
+          &.has-multiple-options {
+            display: flex;
+            flex-wrap: wrap;
+            .name span {
+              padding-left: 0;
+              padding-right: 0;
+            }
+            .name,
+            .price--options {
+              width: 100%;
+            }
+            .price--options {
+              position: relative;
+              top: -4px;
+              .singleItemRow {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                position: relative;
+                padding: 5px 0;
+                &:after {
+                  content:"";
+                  display: block;
+                  width: 100%;
+                  border-bottom: 1px dashed #000;
+                  position: absolute;
+                  left: 0;
+                  bottom: 0;
+                }
+                span {
+                  display: inline-block;
+                  background: #FFF;
+                  position: relative;
+                  top: 12px;
+                  z-index: 10;
+                }
+                .sName {
+                  padding-right: 5px;
+                }
+                .sPrice {
+                  text-align: right;
+                  padding-left: 5px;
+                }
+              }
+            }
+            &:after {
+              display: none;
+            }
           }
         }
         @include max($tabwidth) {

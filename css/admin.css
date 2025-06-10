@@ -877,6 +877,21 @@ body.post-type-activity [data-layout="flex_content_block"] [data-name="single_im
   object-fit: cover;
 }
 
+body.post-type-activity .acf-field-true-false[data-name="single_access_price_multiple"]{
+  position: relative;
+  padding-bottom: 5px;
+}
+body.post-type-activity .acf-field-true-false[data-name="single_access_price_multiple"] .acf-label {
+  padding-left: 26px;
+}
+body.post-type-activity .acf-field-true-false[data-name="single_access_price_multiple"] .acf-input {
+  display: inline-block;
+  width: auto;
+  position: absolute;
+  top: 16px;
+  left: 19px;
+}
+
 /* HIDE TODAY OPTIONS */
 body.toplevel_page_acf-options-today-options ul.acf-tab-group > li:has([data-key="field_5f460015a1a67"]) {
   display: none!important;

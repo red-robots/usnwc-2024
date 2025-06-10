@@ -4434,6 +4434,16 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item{margin:0 0 18px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item:after{content:"";display:block;width:100%;border-bottom:1px dashed #707070;position:absolute;left:0;bottom:6px}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item.nopass:after{display:none}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item.has-multiple-options{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item.has-multiple-options .name span{padding-left:0;padding-right:0}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item.has-multiple-options .name,body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item.has-multiple-options .price--options{width:100%}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item.has-multiple-options .price--options{position:relative;top:-4px}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item.has-multiple-options .price--options .singleItemRow{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative;padding:5px 0}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item.has-multiple-options .price--options .singleItemRow:after{content:"";display:block;width:100%;border-bottom:1px dashed #000;position:absolute;left:0;bottom:0}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item.has-multiple-options .price--options .singleItemRow span{display:inline-block;background:#fff;position:relative;top:12px;z-index:10}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item.has-multiple-options .price--options .singleItemRow .sName{padding-right:5px}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item.has-multiple-options .price--options .singleItemRow .sPrice{text-align:right;padding-left:5px}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item.has-multiple-options:after{display:none}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .button{margin-top:10px}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options.full .inner:after{display:none}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options.full .info-left,body.subpage.single.single-activity .content-default.new-layout .pass-price-options.full .info-right{width:100% !important}
@@ -6230,6 +6240,8 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .hero-wrapper .stats.teaser{visibility:hidden;pointer-events:none}
 .bike-ranch-sections .section--fullwidth_image figure{padding-bottom:55%}
 }@media screen and (min-width:1025px){#primary .upcoming-posts .entry{width:33.333%}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .price{max-width:215px;display:inline-block;text-align:right}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}
 }@media(min-width:1200px){section.route-details .flexcol{width:25%}
 section.route-map .map-frame{height:60vh}
 .information-tabs-wrap .tabs-info ul a span.arrow:before,.information-tabs-wrap .tabs-info ul a span.arrow:after{top:14px}
