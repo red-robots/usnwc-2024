@@ -18012,6 +18012,12 @@ body.subpage.single.single-activity {
                   text-align: right;
                   padding-left: 5px;
                 }
+                &.no-price {
+                  display: block;
+                }
+                &.no-price:after {
+                  display: none;
+                }
               }
             }
             &:after {
