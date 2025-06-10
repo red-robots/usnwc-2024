@@ -841,6 +841,41 @@ body.toplevel_page_acf-options-today-options [data-name="whitewaterLocations"] [
 [data-name="logo_images_gallery"] .acf-gallery .acf-gallery-attachment {
   width: 10%!important;
 }
+body.post-type-activity [data-layout="flex_content_block"] *,
+body.post-type-activity [data-layout="flex_content_block"] :before,
+body.post-type-activity [data-layout="flex_content_block"] :after {
+  box-sizing: border-box;
+}
+body.post-type-activity [data-layout="flex_content_block"] [data-name="description"] {
+  clear: none;
+  width: 72%;
+  float: left;
+}
+body.post-type-activity [data-layout="flex_content_block"] [data-name="description"] .mce-container iframe {
+  border-right: 1px solid #CCC;
+}
+body.post-type-activity [data-layout="flex_content_block"] [data-name="single_image"]{
+  clear: none;
+  width: 28%;
+  float: left;
+}
+body.post-type-activity [data-layout="flex_content_block"] [data-name="single_image"] .acf-image-uploader div.image-wrap {
+  max-width: 100%!important;
+  width: 100%;
+  padding-bottom: 70%;
+  position: relative;
+}
+body.post-type-activity [data-layout="flex_content_block"] [data-name="single_image"] .acf-image-uploader div.image-wrap img[data-name="image"] {
+  max-width: 100%!important;
+  width: 100%!important;
+  max-height: 100%!important;
+  height: 100%!important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-position: center;
+  object-fit: cover;
+}
 
 /* HIDE TODAY OPTIONS */
 body.toplevel_page_acf-options-today-options ul.acf-tab-group > li:has([data-key="field_5f460015a1a67"]) {

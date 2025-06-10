@@ -13,7 +13,7 @@
 
       	<div class="modalText">
       		<div class="text"><?php echo ( isset($modal_text) ) ? $modal_text:""?></div>
-      		<?php if ($buttons) { ?>
+      		<?php if ( isset($buttons) && $buttons ) { ?>
 					<div class="cta-buttons buttondiv text-center">
 						<?php foreach ($buttons as $b) { 
 							$btn = $b['button'];

@@ -42,6 +42,9 @@ $placeholder = THEMEURI . 'images/rectangle.png';
               <?php if( get_row_layout() == 'flex_content_block' ) { ?>
                 <?php  
                 $single_image = get_sub_field('single_image');
+                $has_popup = get_sub_field('has_popup');
+                $popup_button_name = get_sub_field('popup_button_name');
+                $popup_details = get_sub_field('popup_details');
                 $s_title = get_sub_field('title'); 
                 $s_text = get_sub_field('description');  
                 $boxClass = ( ($s_title || $s_text) && $single_image ) ? 'half':'full';
@@ -66,9 +69,26 @@ $placeholder = THEMEURI . 'images/rectangle.png';
                         <?php if ($s_text) { ?>
                         <div class="text"><?php echo anti_email_spam($s_text) ?></div>
                         <?php } ?>
+
+                        <?php if ($has_popup && ($popup_details && $popup_button_name) ) { ?>
+
+                          <?php 
+                            $modal_id = 'modal-activity-' . $ni . '_parent_' . $actr;
+                            $modal_title = $s_title;
+                            $modal_text = $popup_details;
+                          ?>
+                          <div class="cta-buttons buttondiv">
+                            <a role="button" data-toggle="modal" data-target="#<?php echo $modal_id ?>" class="button-element button"><span><?php echo $popup_button_name ?></span></a>
+                          </div>
+
+                          <?php include( locate_template('parts/flexible-content-popup.php') );  ?>
+
+                        <?php } ?>
                       </div>
                       <?php } ?>
                     </div>
+
+                    
                   </div>
                 <?php } ?>
               <?php } ?>
@@ -85,3 +105,14 @@ $placeholder = THEMEURI . 'images/rectangle.png';
 </section>
 </div>
 <?php } ?>
+
+
+<script type="text/javascript">
+jQuery(document).ready(function($){
+  if( $(".customModal").length>0 ) {
+    $(".customModal.modal").each(function(){
+      $(this).insertAfter('#page');
+    });
+  }
+});
+</script>
