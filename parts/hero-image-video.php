@@ -67,7 +67,7 @@ if($is_default_slide) { ?>
 						$is_video = ( isset($row['video']) && $row['video'] ) ? $row['video'] : '';
 						$slideType = ($is_video) ? 'type-video':'type-image';
 						$featuredType = ( isset($row['video_or_image']) && $row['video_or_image'] ) ? $row['video_or_image'] : ''; 
-						$placeThumb = $row['placeholder']; ?>
+						$placeThumb = ( isset($row['placeholder']) && $row['placeholder'] ) ? $row['placeholder'] : ''; ?>
 						<?php if( $featuredType=='video' && ($row['video']||$row['native_video']) ) { ?>
 							<li class="slideItem <?php echo $slideType; ?>">
 								<?php if($logoOverlay) { ?>
@@ -79,7 +79,11 @@ if($is_default_slide) { ?>
 									    <a href="<?php echo $row['link']; ?>" class="slideLink" <?php if ( $row['target'] ):echo 'target="_blank"'; endif; ?>></a>
 									<?php endif;?>
 										<?php if($row['native_video']):?>
-											<video class="desktop" autoPlay loop muted playsinline  poster="<?php echo $placeThumb['url']; ?>">
+                      <?php if ($placeThumb) { ?>
+                      <video class="desktop" autoPlay loop muted playsinline  poster="<?php echo $placeThumb['url']; ?>">
+                      <?php } else { ?>
+                      <video class="desktop" autoPlay loop muted playsinline>
+                      <?php } ?>
 												<source src="<?php echo $row['native_video'];?>" type="video/mp4">
 											</video>
 										<?php elseif($row['video']):?>
@@ -156,7 +160,11 @@ if($is_default_slide) { ?>
 										
 										<?php endif;
 										if($row['mobile_video']):?>
-											<video class="mobile" autoPlay loop muted playsinline poster="<?php echo $placeThumb['url']; ?>">
+                      <?php if ( isset($placeThumb['url']) && $placeThumb['url'] ) { ?>
+                      <video class="mobile" autoPlay loop muted playsinline poster="<?php echo $placeThumb['url']; ?>">
+                      <?php } else { ?>
+                      <video class="mobile" autoPlay loop muted playsinline>
+                      <?php } ?>
 												<source src="<?php echo $row['mobile_video'];?>" type="video/mp4">
 											</video>
 										<?php elseif($row['mobile_image']):?>

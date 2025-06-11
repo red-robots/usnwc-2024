@@ -5517,6 +5517,10 @@ body.page-id-292 #banner .static-banner .image-wrapper img.desktop,body.single-d
 body.home .site-header .navbar .right .navlink-today.today:after,body.home .site-header .new-nav-v2.desktop-navigation li.v-menu-item.has-children a span:after{border-right-color:#fff;border-bottom-color:#fff}
 body.home .site-header .navbar .right .navlink-today.today:hover:after,body.home .site-header .navbar .right .navlink-today.today:focus:after,body.home .site-header .navbar .right .navlink-today.today:focus-within:after,body.home .site-header.mouseover .navbar .right .navlink-today.today:after,body.home .site-header.mouseover .new-nav-v2.desktop-navigation li.v-menu-item.has-children a span:after{border-right-color:#000;border-bottom-color:#000}
 body.home.scrolled .site-header .navbar .right .navlink-today.today:after,body.home.scrolled .site-header .new-nav-v2.desktop-navigation li.v-menu-item.has-children a span:after{border-right-color:#000;border-bottom-color:#000}
+.homepage-hero:has(video){overflow:hidden}
+.homepage-hero:has(video):before{content:"";display:block;position:absolute;top:-5%;left:0;width:100%;height:60%;background:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0.88)),to(rgba(0,0,0,0)));background:linear-gradient(to bottom,rgba(0,0,0,0.88) 0,rgba(0,0,0,0) 100%);z-index:50;-webkit-filter:blur(20px);filter:blur(20px);pointer-events:none;-webkit-transform:scale(1.3);transform:scale(1.3)}
+.homepage-hero:has(video) video{position:absolute;top:0;left:0;width:100%;height:auto}
+.homepage-hero:has(video) .desktop{display:none}
 .hours-of-operation-mobile{padding-bottom:20px !important}
 .hours-of-operation-mobile p{margin:10px 0 !important}
 .calendar-grid-wrapper .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-month__multiday-event-wrapper{height:auto !important;min-height:10px}
@@ -6132,6 +6136,8 @@ body.page-template-page-salesforce .gform_wrapper{padding-left:5vw;padding-right
 .mobileRedTag a.registerBtn:after{height:51%;bottom:0;-webkit-transform:skew(-40deg);transform:skew(-40deg)}
 .mobileRedTag a.registerBtn:hover{background:#000}
 .mobileRedTag a.registerBtn:hover:before,.mobileRedTag a.registerBtn:hover:after{background-color:#000}
+.homepage-hero:has(video) .desktop{display:block}
+.homepage-hero:has(video) .mobile{display:none}
 }@media screen and (min-width:820px){#banner.taxonomy-banner .static-banner img.desktop{display:block}
 #banner.taxonomy-banner .static-banner img.mobile{display:none}
 .post-type-entries .imagediv.mobile{display:none}
