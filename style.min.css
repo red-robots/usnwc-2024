@@ -4431,6 +4431,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .price{font-size:18px;color:#191919}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .name,body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .price{position:relative;z-index:2}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .name span,body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .price span{background:#fff;padding:0 5px}
+body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .name span{padding-left:0 !important}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item{margin:0 0 18px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;position:relative}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item:after{content:"";display:block;width:100%;border-bottom:1px dashed #707070;position:absolute;left:0;bottom:6px}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left .pass-item.nopass:after{display:none}
