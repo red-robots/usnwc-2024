@@ -4109,7 +4109,29 @@ body.home {
       display: none;
     }
   }
+  @media screen and (max-width: 840px) {
+    height: 50vh;
+    video {
+      width: auto;
+      height: 50vh;
+      transform: translateX(-50vw) scale(1.3);
+    }
+  }
 }
+
+@media screen and (max-width: 840px) {
+  body.scrolled:has(.homepage-hero video) {
+    .site-header-mobile {
+      background-color: #FFF;
+      box-shadow: 0 2px 8px rgba(0,0,0,.2);
+      .logo-original,
+      .mobileMenuToggle:not(.active) {
+        filter: invert(1);
+      }
+    }
+  }
+}
+
 
 /* Tribe Calendar */
 .hours-of-operation-mobile {
