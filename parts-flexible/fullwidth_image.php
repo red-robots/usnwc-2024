@@ -15,12 +15,10 @@
           <div class="video-container">
             <?php /* YOUTUBE VIDEO */ ?>
             <?php 
-              $is__youtube = array();
-              $is__youtube[] = (strpos( strtolower($videoURL), 'youtu.be') !== false) ? true : false;
-              $is__youtube[] = (strpos( strtolower($videoURL), 'youtube.com') !== false) ? true : false;
-              $it_is_youtube = ( $is__youtube && array_filter($is__youtube) ) ? array_filter($is__youtube) : '';
-
-              
+            $is__youtube = array();
+            $is__youtube[] = (strpos( strtolower($videoURL), 'youtu.be') !== false) ? true : false;
+            $is__youtube[] = (strpos( strtolower($videoURL), 'youtube.com') !== false) ? true : false;
+            $it_is_youtube = ( $is__youtube && array_filter($is__youtube) ) ? array_filter($is__youtube) : '';
 
             if ( $it_is_youtube ) {
               $youtubeId = '';
