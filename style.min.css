@@ -3859,7 +3859,7 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .instruction-taxonomy-page .postbox .other-info .text a{color:#707070;text-decoration:none}
 .instruction-taxonomy-page .postbox .other-info .text a:hover{color:#ba0d30}
 .filter-wrapper.optionsnum2 .wrapper{max-width:900px}
-.fullwidth{width:100%;float:left}
+.fullwidth,.fullwidth-video-section{width:100%;float:left}
 .flexibleContentWrap{width:100%;float:left}
 .flexibleContentWrap .column-style,.flexibleContentWrap .two-columns-block,.flexibleContentWrap .three-columns-block{width:100%;float:left;margin:0 0 !important}
 .flexibleContentWrap .two-columns-block .columns-2{position:relative;bottom:-15px}
