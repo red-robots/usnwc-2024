@@ -14,15 +14,27 @@
           
           <div class="video-container">
             <?php /* YOUTUBE VIDEO */ ?>
-            <?php if (strpos( strtolower($videoURL), 'youtube.com') !== false) {
+            <?php 
+              $is__youtube = array();
+              $is__youtube[] = (strpos( strtolower($videoURL), 'youtu.be') !== false) ? true : false;
+              $is__youtube[] = (strpos( strtolower($videoURL), 'youtube.com') !== false) ? true : false;
+              $it_is_youtube = ( $is__youtube && array_filter($is__youtube) ) ? array_filter($is__youtube) : '';
+
+              
+
+            if ( $it_is_youtube ) {
               $youtubeId = '';
 
               /* if iframe */
               if (strpos( strtolower($videoURL), 'youtube.com/embed') !== false) {
                 $parts = extractURLFromString($videoURL);
                 $youtubeId = basename($parts);
-              } else {
+              } else if(strpos( strtolower($videoURL), 'youtube.com')) {
                 $youtubeId = (isset($query['v']) && $query['v']) ? $query['v']:''; 
+              } else if(strpos( strtolower($videoURL), 'youtu.be')) {
+                $v_parts = explode('youtu.be/',$videoURL);
+                $vpart1 = explode('?',$v_parts[1]);
+                $youtubeId = $vpart1[0];
               }
 
               if($youtubeId) {
