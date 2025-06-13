@@ -6696,7 +6696,6 @@ section.full-bleed-promo.rounded_with_padding div.img div.info{padding:20px 20px
 body.home .full-bleed-promo:not(.rounded_with_padding) div.img{padding-bottom:75vw}
 body.home .full-bleed-promo:not(.rounded_with_padding) div.img .info{padding-left:20px;padding-right:20px;padding-bottom:20px}
 body.home .full-bleed-promo:not(.rounded_with_padding) div.img .info .words h2{margin-bottom:0}
-body.home .full-bleed-promo:not(.rounded_with_padding) div.img .info p{display:none}
 .activities--desktop{display:none}
 .carousel-activities-mobile{padding-top:10px;padding-bottom:30px;display:block;width:100%;float:left}
 .carousel-activities-mobile #activities--carousel .owl-stage{left:-20px}
