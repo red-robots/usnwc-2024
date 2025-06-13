@@ -15,32 +15,30 @@
 
  ?>
 <section class="homepage-hero">
-  <?php if( $hero_title || $hero_description ) { ?>
-  <div class="home-info">
-    <div class="info">
-      <?php if( $hero_title ) { ?>
-        <h1><?php echo $hero_title; ?></h1>
-      <?php } ?>
-      <?php if( $hero_description ) { ?>
-        <p><?php echo $hero_description; ?></p>
-      <?php } ?>
-      <?php if( $hero_cta_links ) { ?>
-        <?php foreach( $hero_cta_links as $link ) { ?>
-          <div class="cta">
-            <a href="<?php echo $link['link']['url']; ?>"><?php echo $link['link']['title']; ?></a>
-          </div>
-        <?php } ?>
-      <?php } ?>
-    </div>
-    <?php if ( isset($hero_branding['url']) ) { ?>
-    <div class="branding">
-      <img src="<?php echo $hero_branding['url']; ?>"  alt="<?php echo $hero_branding['alt']; ?>">
-    </div>
-    <?php } ?>
-  </div>
-  <?php } ?>
-
 	<?php if( $video_image == 'Image' ) { ?>
+
+		<div class="home-info">
+			<div class="info">
+				<?php if( $hero_title ) { ?>
+					<h1><?php echo $hero_title; ?></h1>
+				<?php } ?>
+				<?php if( $hero_description ) { ?>
+					<p><?php echo $hero_description; ?></p>
+				<?php } ?>
+				<?php if( $hero_cta_links ) { ?>
+					<?php foreach( $hero_cta_links as $link ) { ?>
+						<div class="cta">
+							<a href="<?php echo $link['link']['url']; ?>"><?php echo $link['link']['title']; ?></a>
+						</div>
+					<?php } ?>
+				<?php } ?>
+			</div>
+      <?php if ( isset($hero_branding['url']) ) { ?>
+			<div class="branding">
+				<img src="<?php echo $hero_branding['url']; ?>"  alt="<?php echo $hero_branding['alt']; ?>">
+			</div>
+      <?php } ?>
+		</div>
 
 		<?php if( $hero_image ) { ?>
 			<div class="img-holder desktop" style="background-image: url(<?php echo $hero_image['url']; ?>);"></div>
@@ -49,8 +47,7 @@
 			<div class="img-holder mobile" style="background-image: url(<?php echo $hero_image_mobile['url']; ?>);"></div>
 		<?php } ?>
 	<?php } elseif( $video_image == 'Video' ) { ?>
-		
-    <?php if( $hero_image ) { ?>
+		<?php if( $hero_image ) { ?>
       <?php if (isset($hero_video) && $hero_video) { 
         $heroVideoUrl = ( is_array($hero_video) && ( isset($hero_video['url']) && $hero_video['url'] ) ) ? $hero_video['url'] : ''; 
         if($heroVideoUrl) { ?>
@@ -64,16 +61,8 @@
         <?php } ?>
       <?php } ?>
 		<?php } ?>
+		<?php if( $hero_image_mobile ) { 
 
-		<?php 
-    $hero_mobile_image = get_field('hero_use_image_on_mobile');
-    $hero_video_mobile_image = get_field('hero_video_mobile_image');
-    if( $hero_mobile_image &&  $hero_video_mobile_image ) {  ?>
-      <figure class="hero--mobile--image">
-        <img src="<?php echo $hero_video_mobile_image['url'] ?>" alt="">
-      </figure>
-		<?php } else { 
-      
       $hero_video_mobile_url = ( is_array($hero_video_mobile) && ( isset($hero_video_mobile['url']) && $hero_video_mobile['url'] ) ) ? $hero_video_mobile['url'] : ''; 
       if( $hero_video_mobile_url ) { ?>
         <?php if ( isset($placeThumb['url']) && $placeThumb['url'] ) { ?>
@@ -81,11 +70,9 @@
         <?php } else { ?>
         <video class="mobile" autoPlay loop muted playsinline>
         <?php } ?>
-          <source src="<?php echo $hero_video_mobile_url; ?>" type="video/mp4">
-        </video>
+  				<source src="<?php echo $hero_video_mobile_url; ?>" type="video/mp4">
+  			</video>
       <?php } ?>
-    
-    <?php } ?>
-
+		<?php } ?>
 	<?php } else { echo 'No Media'; } ?>
 </section>

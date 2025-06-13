@@ -1687,7 +1687,7 @@ section.homepage-hero {
 			flex-wrap: nowrap;
 			justify-content: space-between;
 			align-items: flex-end;
-			padding: 60px;
+			padding: 60px 60px 100px;
 		}
 		.info {
 			width: 100%;
@@ -1750,6 +1750,7 @@ section.homepage-hero {
 		}
 	}
 }
+
 .cta {
 	width: auto;
 	display: inline-block;
