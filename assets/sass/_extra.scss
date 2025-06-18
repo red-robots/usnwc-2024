@@ -4164,8 +4164,82 @@ body.home {
   }
 }
 
+.stories-feeds-section {
+  .wrapper {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: fadeIn;
+  }
+  .stories-entries {
+    .storyBlock.hidden {
+      pointer-events: none;
+      visibility: hidden;
+      overflow: hidden;
+      height: 0;
+    }
+    .storyBlock[data-index="1"] {
 
-
+    }
+  }
+  .stories-entries:has(.storyBlock[data-index="1"][data-is-featured="true"]) {
+    .storyBlock[data-index="1"][data-is-featured="true"] {
+      display: none;
+    }
+    .storyBlock[data-index="2"],
+    .storyBlock[data-index="3"] {
+      width: 50%;
+      figure {
+        padding-bottom: 70%!important;
+      }
+    }
+  }
+  .stories-entries:has(.storyBlock[data-index="2"][data-is-featured="true"]) {
+    .storyBlock[data-index="2"][data-is-featured="true"] {
+      display: none;
+    }
+    .storyBlock[data-index="1"],
+    .storyBlock[data-index="3"] {
+      width: 50%;
+      figure {
+        padding-bottom: 70%!important;
+      }
+    }
+  }
+  .stories-entries:has( .storyBlock.hidden[data-is-featured="true"]:not([data-index="1"]):not([data-index="2"]):not([data-index="3"]) ) {
+    .storyBlock.hidden[data-is-featured="true"]:not([data-index="1"]):not([data-index="2"]):not([data-index="3"]) {
+      display: none;
+    }
+    .storyBlock[data-index="3"] {
+      width: 33.333%;
+      figure {
+        padding-bottom: 70%!important;
+      }
+    }
+  }
+  .featured-story-container {
+    .storyBlock.is-featured-post {
+      width: 100%!important;
+      padding: 0 0!important;
+      figure {
+        margin: 0 0!important;
+        padding-bottom: 46%;
+      }
+      figure[data-image-focal="center"] img {
+        object-position: center!important;
+      }
+      figure[data-image-focal="top"] img {
+        object-position: top!important;
+      }
+      figure[data-image-focal="bottom"] img {
+        object-position: bottom!important;
+      }
+    }
+    &:has(.is-featured-post) {
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+  }
+}
 
 
 /* Tribe Calendar */

@@ -5522,6 +5522,23 @@ body.home.scrolled .site-header .navbar .right .navlink-today.today:after,body.h
 .homepage-hero:has(video):before{content:"";display:block;position:absolute;top:-5%;left:0;width:100%;height:60%;background:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0.88)),to(rgba(0,0,0,0)));background:linear-gradient(to bottom,rgba(0,0,0,0.88) 0,rgba(0,0,0,0) 100%);z-index:50;-webkit-filter:blur(20px);filter:blur(20px);pointer-events:none;-webkit-transform:scale(1.3);transform:scale(1.3)}
 .homepage-hero:has(video) video{position:absolute;top:0;left:0;width:100%;height:auto;-webkit-transform:scale(1.3);transform:scale(1.3)}
 .homepage-hero:has(video) .desktop{display:none}
+.stories-feeds-section .wrapper{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:fadeIn;animation-name:fadeIn}
+.stories-feeds-section .stories-entries .storyBlock.hidden{pointer-events:none;visibility:hidden;overflow:hidden;height:0}
+.stories-feeds-section .stories-entries:has(.storyBlock[data-index="1"][data-is-featured=true]) .storyBlock[data-index="1"][data-is-featured=true]{display:none}
+.stories-feeds-section .stories-entries:has(.storyBlock[data-index="1"][data-is-featured=true]) .storyBlock[data-index="2"],.stories-feeds-section .stories-entries:has(.storyBlock[data-index="1"][data-is-featured=true]) .storyBlock[data-index="3"]{width:50%}
+.stories-feeds-section .stories-entries:has(.storyBlock[data-index="1"][data-is-featured=true]) .storyBlock[data-index="2"] figure,.stories-feeds-section .stories-entries:has(.storyBlock[data-index="1"][data-is-featured=true]) .storyBlock[data-index="3"] figure{padding-bottom:70% !important}
+.stories-feeds-section .stories-entries:has(.storyBlock[data-index="2"][data-is-featured=true]) .storyBlock[data-index="2"][data-is-featured=true]{display:none}
+.stories-feeds-section .stories-entries:has(.storyBlock[data-index="2"][data-is-featured=true]) .storyBlock[data-index="1"],.stories-feeds-section .stories-entries:has(.storyBlock[data-index="2"][data-is-featured=true]) .storyBlock[data-index="3"]{width:50%}
+.stories-feeds-section .stories-entries:has(.storyBlock[data-index="2"][data-is-featured=true]) .storyBlock[data-index="1"] figure,.stories-feeds-section .stories-entries:has(.storyBlock[data-index="2"][data-is-featured=true]) .storyBlock[data-index="3"] figure{padding-bottom:70% !important}
+.stories-feeds-section .stories-entries:has(.storyBlock.hidden[data-is-featured=true]:not([data-index="1"]):not([data-index="2"]):not([data-index="3"])) .storyBlock.hidden[data-is-featured=true]:not([data-index="1"]):not([data-index="2"]):not([data-index="3"]){display:none}
+.stories-feeds-section .stories-entries:has(.storyBlock.hidden[data-is-featured=true]:not([data-index="1"]):not([data-index="2"]):not([data-index="3"])) .storyBlock[data-index="3"]{width:33.333%}
+.stories-feeds-section .stories-entries:has(.storyBlock.hidden[data-is-featured=true]:not([data-index="1"]):not([data-index="2"]):not([data-index="3"])) .storyBlock[data-index="3"] figure{padding-bottom:70% !important}
+.stories-feeds-section .featured-story-container .storyBlock.is-featured-post{width:100% !important;padding:0 0 !important}
+.stories-feeds-section .featured-story-container .storyBlock.is-featured-post figure{margin:0 0 !important;padding-bottom:46%}
+.stories-feeds-section .featured-story-container .storyBlock.is-featured-post figure[data-image-focal=center] img{-o-object-position:center !important;object-position:center !important}
+.stories-feeds-section .featured-story-container .storyBlock.is-featured-post figure[data-image-focal=top] img{-o-object-position:top !important;object-position:top !important}
+.stories-feeds-section .featured-story-container .storyBlock.is-featured-post figure[data-image-focal=bottom] img{-o-object-position:bottom !important;object-position:bottom !important}
+.stories-feeds-section .featured-story-container:has(.is-featured-post){margin-top:30px;margin-bottom:40px}
 .hours-of-operation-mobile{padding-bottom:20px !important}
 .hours-of-operation-mobile p{margin:10px 0 !important}
 .calendar-grid-wrapper .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-month__multiday-event-wrapper{height:auto !important;min-height:10px}

@@ -4,7 +4,6 @@
  */
 
 get_header(); 
-
 $filter = ( isset($_GET['filter']) && $_GET['filter'] ) ? $_GET['filter'] : '';
 $filterVal = $filter;
 if($filter && $filter!='all') {
@@ -24,6 +23,9 @@ if($filter && $filter!='all') {
 
 
   <?php  
+  $featured_story_post_id = get_field('featured_story');
+  $FocalPoint = get_field('featured_story_image_focal_point');
+  $FocalPoint = ($FocalPoint) ? $FocalPoint:'center';
   $posttype = array('post','whats-new');
   $perpage = 15;
   $paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
@@ -85,8 +87,9 @@ if($filter && $filter!='all') {
 
   <section class="stories-feeds-section ">
     <div class="wrapper stories-wrapper">
+      <div id="featured__story" class="featured-story-container"></div>
       <div id="container" class="flexwrap stories-entries <?php echo $stories_class ?>">
-        <?php while ( $posts->have_posts() ) : $posts->the_post(); 
+        <?php $ctr=1; while ( $posts->have_posts() ) : $posts->the_post(); 
           $post_id = get_the_ID();
           $thumbnail_id = get_post_thumbnail_id($post_id);
           $photo = wp_get_attachment_image_url($thumbnail_id,'full');
@@ -104,12 +107,20 @@ if($filter && $filter!='all') {
             $obj = $currentBoxes->$post_id;
             $v_width = $obj->width;
           }
+          $is_featured_story = ($post_id==$featured_story_post_id) ? 'true' : '';
           ?>
-          <div class="storyBlock animated fadeIn resizable" data-pid="<?php echo $post_id ?>" tabindex="0">
+          <div class="storyBlock animated fadeIn resizable" data-index="<?php echo $ctr ?>" data-is-featured="<?php echo $is_featured_story ?>" data-pid="<?php echo $post_id ?>" tabindex="0">
             <div class="inner">
+              <?php if ($is_featured_story) { ?>
+              <figure data-image-focal="<?php echo $FocalPoint ?>">
+                <img src="<?php echo $photo ?>" alt="<?php echo get_the_title() ?>" />
+              </figure>
+              <?php } else { ?>
               <figure>
                 <img src="<?php echo $photo ?>" alt="<?php echo get_the_title() ?>" />
               </figure>
+              <?php } ?>
+              
               <div class="post-title"><?php the_title(); ?></div>
               <?php if ($excerpt || ($btnUrl && $btnTitle)) { ?>
               <div class="textwrap">
@@ -126,7 +137,7 @@ if($filter && $filter!='all') {
             </div>
           </div>
 
-        <?php endwhile; wp_reset_postdata(); ?>
+        <?php $ctr++; endwhile; wp_reset_postdata(); ?>
       </div>
     </div>
     <div id="hiddenData" style="display:none;"></div>
@@ -226,6 +237,17 @@ jQuery(document).ready(function($){
       }
     });
   });
+
+  if( $('[data-is-featured]').length ) {
+    $('[data-is-featured]').each(function(){
+      var entry = $(this);
+      var isFeatured = $(this).attr('data-is-featured');
+      if(isFeatured=='true') {
+        entry.addClass('hidden');
+        entry.clone().addClass('is-featured-post').appendTo('#featured__story');
+      }
+    });
+  }
 
 }); 
 </script>
