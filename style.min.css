@@ -5543,6 +5543,10 @@ body.home.scrolled .site-header .navbar .right .navlink-today.today:after,body.h
 .hours-of-operation-mobile{padding-bottom:20px !important}
 .hours-of-operation-mobile p{margin:10px 0 !important}
 .calendar-grid-wrapper .tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-month__multiday-event-wrapper{height:auto !important;min-height:10px}
+#hostaway-booking-widget label{font-family:"brandon-grotesque" !important;font-weight:400 !important}
+#hostaway-booking-widget .hsbw-grid_buttons a{font-family:"brandon-grotesque" !important;font-weight:400 !important;font-size:18px !important}
+#hostaway-booking-widget .hsbw-grid_locations,#hostaway-booking-widget .hsbw-dates{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+#hostaway-booking-widget .hsbw-dates{gap:2em}
 body.enchilada .banner-bottom svg{fill:#fef9e7}
 body.enchilada .main-description{color:#7f7c73}
 body.enchilada #pageTabs a,body.enchilada .title-w-icon h2,body.enchilada h2.stitle,body.enchilada .stitle,body.enchilada .text-and-image-blocks .textcol .mstitle,body.enchilada .sectionTitle,body.enchilada .information-tabs-wrap{font-family:novecento-sans-narrow}
