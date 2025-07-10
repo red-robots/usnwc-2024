@@ -195,8 +195,25 @@ if($special_events_categories) {
           $end_date = get_field('end_date', $se->ID);
           $se->start_date = $start_date;
           $se->end_date = $end_date;
-          $posts[$j] = $se;
-          $j++;
+          $is_present_or_future = true;
+          if($end_date) {
+            if( strtotime($end_date) < strtotime(date('Ymd')) ) {
+              $is_present_or_future = false;
+            }
+          } else {
+            if($start_date) {
+              if( strtotime($start_date) < strtotime(date('Ymd')) ) {
+                $is_present_or_future = false;
+              }
+            }
+          }
+          if($is_present_or_future) {
+            $posts[$j] = $se;
+            $j++;
+          }
+
+          // $posts[$j] = $se;
+          // $j++;
         }
       }
     }
@@ -303,8 +320,14 @@ if( isset($_GET['type']) && $_GET['type']!='all' ) {
           $start = $end;
         }
 
+        $start = ($start) ? str_replace('-','',$start) : '';
+        $end = ($end) ? str_replace('-','',$end) : '';
+
         $start_str = ($start) ? strtotime($start) : '';
         $end_str = ($end) ? strtotime($end) : $start_str;
+
+        // print_r('START: ' . date('m j, Y',strtotime($start)));
+        // print_r('END: ' . date('m j, Y',strtotime($end)));
 
         $event_dates = '';
         if($start || $end) {
@@ -323,6 +346,8 @@ if( isset($_GET['type']) && $_GET['type']!='all' ) {
                 } else {
                   $event_dates .= $start_date_month . '-' . $end_date_month;
                 }
+
+
                 
               } else {
                 //Different months
@@ -330,9 +355,9 @@ if( isset($_GET['type']) && $_GET['type']!='all' ) {
                 
                 //Check if start month is past, 
                 //then change month to current if end date is future
-                if( strtotime($start) < strtotime(date('Ymd')) ) {
-                  $start_date_month = date('M j');
-                } 
+                // if( strtotime($start) < strtotime(date('Ymd')) ) {
+                //   $start_date_month = date('M j');
+                // } 
 
                 $end_date_month = date('M j, Y', strtotime($end));
                 $event_dates .= $start_date_month . '-' . $end_date_month;
@@ -340,6 +365,8 @@ if( isset($_GET['type']) && $_GET['type']!='all' ) {
             }
           }
         }
+
+        //print_r($event_dates);
 
         include( get_template_directory() . '/parts-calendar/calendar-events-tab-item.php');
       ?>  

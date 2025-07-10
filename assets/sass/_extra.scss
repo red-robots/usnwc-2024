@@ -4289,6 +4289,24 @@ body.home {
 //   }
 // }
 
-
+#hostaway-booking-widget {
+  label {
+    font-family: 'brandon-grotesque' !important;
+    font-weight: 400!important;
+  }
+  .hsbw-grid_buttons a {
+    font-family: 'brandon-grotesque' !important;
+    font-weight: 400!important;
+    font-size: 18px!important;
+  }
+  .hsbw-grid_locations,
+  .hsbw-dates {
+    display: flex;
+    align-items: center;
+  }
+  .hsbw-dates {
+    gap: 2em;
+  }
+}
 
 
