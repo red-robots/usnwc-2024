@@ -11,6 +11,7 @@ $rectangle = THEMEURI . "images/rectangle-narrow.png";
 		if( have_rows('homepage_layouts') ):
 
 		    // Loop through rows.
+        $ctr=1;
 		    while ( have_rows('homepage_layouts') ) : the_row();
 
 		        // Case: Paragraph layout.
@@ -18,13 +19,21 @@ $rectangle = THEMEURI . "images/rectangle-narrow.png";
 		            $poster = get_sub_field('poster');
                 $poster_mobile = get_sub_field('poster_portrait_mobile');
 		            $title = get_sub_field('title');
+                $title_width = get_sub_field('title_width');
 		            $description = get_sub_field('description');
 		            $full_cta_link = get_sub_field('full_cta_link');
 		            $full_type = get_sub_field('full_type');
-		            // echo '<pre>';
-		            // print_r($full_type);
                 if($poster) { ?>
-		            <section class="full-bleed-promo <?php echo $full_type; ?>">
+                <?php if ($title_width) { ?>
+                <style>
+                  @media screen and (min-width: 961px) {
+                    .full-bleed-promo--<?php echo $ctr ?> .info .words {
+                      width: <?php echo $title_width ?>%!important;
+                    }
+                  }
+                </style>
+                <?php } ?>
+		            <section class="full-bleed-promo full-bleed-promo--<?php echo $ctr ?> <?php echo $full_type; ?>">
 		            	<div class="img">
 		            		<img src="<?php echo $poster['url']; ?>" alt="<?php echo $poster['alt']; ?>" class="poster-desktop">
 
@@ -112,7 +121,8 @@ $rectangle = THEMEURI . "images/rectangle-narrow.png";
 		        <?php endif;
 
 		    // End loop.
-		    endwhile;
+		    $ctr++;
+        endwhile;
 
 		// No value.
 		else :

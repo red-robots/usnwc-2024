@@ -5425,6 +5425,7 @@ body.subpage.pageNoBanner.logged-in.admin-bar:not(.page-template-page-about) .si
 body.single:has(.hero-wrapper .single-slide .type-video) .hero-wrapper{margin-bottom:60px}
 body.single:has(.hero-wrapper .single-slide .type-video) #main .featured-image{display:none}
 body.single:has(.hero-wrapper .single-slide .type-video) #main .contentWrap.quote{padding-bottom:0}
+body.home section.full-bleed-promo .img{overflow:hidden}
 section.full-bleed-promo.rounded_with_padding img.poster-mobile{display:none}
 .carousel-activities-mobile{display:none;overflow:hidden}
 .carousel-activities-mobile .swiper-container{padding-left:45px !important}

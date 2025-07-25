@@ -3295,6 +3295,10 @@ body.single:has(.hero-wrapper .single-slide .type-video) {
   }
 }
 
+body.home section.full-bleed-promo .img {
+  overflow: hidden;
+}
+
 body.home .full-bleed-promo .cta a {
   @media screen and (max-width:768px) {
     padding: 8px 20px 6px!important;
