@@ -4372,6 +4372,11 @@ a.button {
     background: $red!important;
     color: #FFF!important;
   }
+
+  &.btn-outline-red {
+    border: 1px solid $red;
+    color: $red;
+  }
 }
 .btn-sm,
 .btn-default,
@@ -19140,6 +19145,7 @@ body.logged-in.admin-bar #customModalContainer {
   .buttonMiddle {
     display: flex;
     justify-content: center;
+    gap: 1.5rem;
     margin: 50px 0;
   }
   .section-title {

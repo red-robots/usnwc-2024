@@ -7,6 +7,13 @@
     $btnUrl = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
     $btnTitle = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
     $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
+
+    $btn2 = get_sub_field('button_2');
+    $btnUrl2 = (isset($btn2['url']) && $btn2['url']) ? $btn2['url'] : '';
+    $btnTitle2 = (isset($btn2['title']) && $btn2['title']) ? $btn2['title'] : '';
+    $btnTarget2 = (isset($btn2['target']) && $btn2['target']) ? $btn2['target'] : '_self';
+
+
     $current_date = date('Y-m-d');
     $current_year = date('Y');
     if($post_type) { 
@@ -166,9 +173,17 @@
           <?php } ?>
           </div>
 
-          <?php if($btnUrl && $btnTitle) { ?>
+          <?php if(  ($btnUrl && $btnTitle) || ($btnUrl2 && $btnTitle2) ) { ?>
           <div class="buttonBlock buttonMiddle">
+            
+            <?php if($btnUrl && $btnTitle) { ?>
             <a href="<?php echo $btnUrl ?>" target="<?php echo $btnTarget ?>" class="button uppercase"><?php echo $btnTitle ?></a>
+            <?php } ?>
+
+            <?php if($btnUrl2 && $btnTitle2) { ?>
+            <a href="<?php echo $btnUrl2 ?>" target="<?php echo $btnTarget2 ?>" class="button btn-outline-red uppercase"><?php echo $btnTitle2 ?></a>
+            <?php } ?>
+
           </div>
           <?php } ?>
 
