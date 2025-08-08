@@ -181,7 +181,7 @@
             <?php } ?>
 
             <?php if($btnUrl2 && $btnTitle2) { ?>
-            <a href="<?php echo $btnUrl2 ?>" target="<?php echo $btnTarget2 ?>" class="button btn-outline-red uppercase"><?php echo $btnTitle2 ?></a>
+            <a href="<?php echo $btnUrl2 ?>" target="<?php echo $btnTarget2 ?>" class="button uppercase"><?php echo $btnTitle2 ?></a>
             <?php } ?>
 
           </div>
