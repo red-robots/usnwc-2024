@@ -79,6 +79,7 @@
                     $i_start_time = $a['start_time'];
                     $i_end_time = $a['end_time'];
                     $i_status = $a['status'];
+                    $custom_time_text = ( isset($a['custom_text']) ) ? $a['custom_text'] : '';
                     $timeArr = array($i_start_time, $i_end_time);
                     $time = '';
                     if($timeArr && array_filter($timeArr)) {
@@ -93,8 +94,12 @@
                     <div class="line-item">
                       <span class="stat <?php echo $i_status ?>"></span>
                       <span class="name"><?php echo $i_name ?></span>
-                      <?php if ($time) { ?>
-                      <span class="time"><?php echo strtoupper($time) ?></span>
+                      <?php if ($custom_time_text) { ?>
+                        <span class="time"><?php echo $custom_time_text ?></span>
+                      <?php } else { ?>
+                        <?php if ($time) { ?>
+                        <span class="time"><?php echo strtoupper($time) ?></span>
+                        <?php } ?>
                       <?php } ?>
                     </div>
                     <?php } ?>
@@ -126,6 +131,7 @@
                     $i_start_time = $a['start_time'];
                     $i_end_time = $a['end_time'];
                     $i_status = $a['status'];
+                    $custom_time_text = ( isset($a['custom_text']) ) ? $a['custom_text'] : '';
                     $timeArr = array($i_start_time, $i_end_time);
                     $time = '';
                     if($timeArr && array_filter($timeArr)) {
@@ -140,8 +146,12 @@
                     <div class="line-item">
                       <span class="stat <?php echo $i_status ?>"></span>
                       <span class="name"><?php echo $i_name ?></span>
-                      <?php if ($time) { ?>
-                      <span class="time"><?php echo strtoupper($time) ?></span>
+                      <?php if ($custom_time_text) { ?>
+                        <span class="time"><?php echo $custom_time_text ?></span>
+                      <?php } else { ?>
+                        <?php if ($time) { ?>
+                        <span class="time"><?php echo strtoupper($time) ?></span>
+                        <?php } ?>
                       <?php } ?>
                     </div>
                     <?php } ?>
