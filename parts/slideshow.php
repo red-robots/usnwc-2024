@@ -51,7 +51,16 @@ if($is_default_slide) { ?>
 		$has_red_tag = true;
 	}
 
-	?>
+
+  $hero_alt_text = get_field('hero_alternative_text');
+  $hero_opacity = get_field('hero_overlay_opacity');
+  if($hero_opacity) { ?>
+  <style>
+    .hero-alt-text-wrap {
+      background-color: <?php echo $hero_opacity ?>;
+    }
+  </style>
+  <?php } ?>
 
 	<?php if ( $flexslider ) { ?>
 	<div class="hero-wrapper hero-register-button">
@@ -79,13 +88,21 @@ if($is_default_slide) { ?>
 								<?php if($logoOverlay) { ?>
 									<div class="logo-overlay"><img src="<?php echo $logoOverlay['url'] ?>"></div>
 								<?php } ?>
+
+                <?php if ($hero_alt_text) { ?>
+                <div class="hero-alt-text-wrap">
+                  <div class="innerText">
+                    <?php echo anti_email_spam($hero_alt_text); ?>
+                  </div>
+                </div>
+                <?php } ?>
 								
 								<div class="iframe-wrapper <?php echo ($row['mobile_video']||$row['mobile_image'])?'yes-mobile':'no-mobile';?>">
 			                            <?php if($row['link']):?>
 									    <a href="<?php echo $row['link']; ?>" class="slideLink" <?php if ( $row['target'] ):echo 'target="_blank"'; endif; ?>></a>
 									<?php endif;?>
-										<?php if($row['native_video']):?>
-											<video class="desktop" autoPlay loop muted playsinline  poster="<?php echo $placeThumb['url']; ?>">
+										<?php if( isset($row['native_video']) && $row['native_video'] ):?>
+											<video class="desktop" autoPlay loop muted playsinline  poster="<?php echo (isset($placeThumb['url'])) ? $placeThumb['url'] : ''; ?>">
 												<source src="<?php echo $row['native_video'];?>" type="video/mp4">
 											</video>
 										<?php elseif($row['video']):?>
@@ -162,7 +179,7 @@ if($is_default_slide) { ?>
 										
 										<?php endif;
 										if($row['mobile_video']):?>
-											<video class="mobile" autoPlay loop muted playsinline poster="<?php echo $placeThumb['url']; ?>">
+											<video class="mobile" autoPlay loop muted playsinline poster="<?php echo (isset($placeThumb['url'])) ? $placeThumb['url'] : ''; ?>">
 												<source src="<?php echo $row['mobile_video'];?>" type="video/mp4">
 											</video>
 										<?php elseif($row['mobile_image']):?>
@@ -174,6 +191,15 @@ if($is_default_slide) { ?>
 						<?php } 
 						elseif($featuredType=='image' && $row['image']) { ?>
 						<li class="slideItem <?php echo $slideType; ?>">
+
+              <?php if ($hero_alt_text) { ?>
+              <div class="hero-alt-text-wrap">
+                <div class="innerText">
+                  <?php echo anti_email_spam($hero_alt_text); ?>
+                </div>
+              </div>
+              <?php } ?>
+
 							<div class="image-wrapper <?php echo $row['mobile_image']?'yes-mobile':'no-mobile';?>"
 							     style="background-image: url(<?php if($row['mobile_image']):
 								     echo $row['mobile_image']['url'];

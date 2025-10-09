@@ -3164,4 +3164,20 @@ function exclude_children_dining_posts( $query ) {
 }
 
 
+function remove_editor_on_specific_page() {
+  if ( is_admin() ) { // Ensure this only runs in the admin area
+    $post_id = (isset($_GET['post']) && $_GET['post']) ? $_GET['post'] : '';
+    $template_filename = get_post_meta( $post_id, '_wp_page_template', true );
+    $template = ($template_filename) ? str_replace('.php','',$template_filename) : '';
+    // $page_id_to_remove_editor = YOUR_PAGE_ID; // Replace with your page ID
+    // Check if we are on the edit screen for the specific page
+    // if ( isset( $_GET['post'] ) && (int) $_GET['post'] === $page_id_to_remove_editor ) {
+    //     remove_post_type_support( 'page', 'editor' );
+    // }
+    if( $post_id && $template=='page-winter' ) {
+      remove_post_type_support( 'page', 'editor' );
+    }
+  }
+}
+add_action( 'admin_init', 'remove_editor_on_specific_page' );
 

@@ -79,7 +79,7 @@
                     $i_start_time = $a['start_time'];
                     $i_end_time = $a['end_time'];
                     $i_status = $a['status'];
-                    $custom_time_text = ( isset($a['custom_text']) ) ? $a['custom_text'] : '';
+				    $custom_time_text = ( isset($a['custom_text']) ) ? $a['custom_text'] : '';
                     $timeArr = array($i_start_time, $i_end_time);
                     $time = '';
                     if($timeArr && array_filter($timeArr)) {
@@ -131,7 +131,7 @@
                     $i_start_time = $a['start_time'];
                     $i_end_time = $a['end_time'];
                     $i_status = $a['status'];
-                    $custom_time_text = ( isset($a['custom_text']) ) ? $a['custom_text'] : '';
+				    $custom_time_text = ( isset($a['custom_text']) ) ? $a['custom_text'] : '';
                     $timeArr = array($i_start_time, $i_end_time);
                     $time = '';
                     if($timeArr && array_filter($timeArr)) {

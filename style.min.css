@@ -5683,6 +5683,45 @@ body.page-template-page-bike-ranch.subpage:has(#banner).scrolled .navbar .right-
 .calendar-grid-wrapper .tribe-events .tribe-events-calendar-month__events{-webkit-box-flex:unset !important;-ms-flex:unset !important;flex:unset !important}
 .calendar-grid-wrapper .customCalendarGrid .tribe-events-calendar-month__calendar-event .tribe-events-calendar-month__calendar-event-details h3 a{text-align:left;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;width:auto !important;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;padding-right:20px !important}
 h3.tribe-events-calendar-month-mobile-events__mobile-event-title.tribe-common-h7{margin-bottom:14px}
+.page-template-page-winter #banner .banner-bottom{display:none}
+.page-template-page-winter #banner .slideItem .hero-alt-text-wrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:30px;width:100%;height:100%;position:absolute;top:0;left:0;z-index:300}
+.page-template-page-winter #banner .slideItem .hero-alt-text-wrap .innerText{text-align:center;color:#fff}
+.page-template-page-winter #banner .slideItem .hero-alt-text-wrap .innerText h2{font-size:clamp(40px,6vw,4rem);font-weight:800;line-height:1.2;margin:0}
+.page-template-page-winter #banner .slideItem .hero-alt-text-wrap .innerText p{font-size:1.25rem;color:#fff}
+.page-template-page-winter .text_content_center_block{height:auto;min-height:40em}
+.page-template-page-winter .text_content_center_block .wrapper{-webkit-transform:none;transform:none}
+.page-template-page-winter .text_content_center_block .wrapper h2,.page-template-page-winter .text_content_center_block .wrapper .h2{font-size:35px;font-weight:500}
+.page-template-page-winter .text_content_center_block .buttonsBlock{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1.2rem}
+.page-template-page-winter .text_content_center_block .buttonsBlock .button.button-red,.page-template-page-winter .text_content_center_block .buttonsBlock .button{background-color:transparent !important;color:#fff;text-transform:uppercase;letter-spacing:.08em !important;font-size:15px !important;font-weight:500 !important;min-width:200px;min-height:35px;text-align:center;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;border:1px solid #fff}
+.page-template-page-winter .text_content_center_block .buttonsBlock .button.button-red:hover,.page-template-page-winter .text_content_center_block .buttonsBlock .button.button-red:focus,.page-template-page-winter .text_content_center_block .buttonsBlock .button:hover,.page-template-page-winter .text_content_center_block .buttonsBlock .button:focus{border-color:#fff !important;background-color:#fff !important;color:#000 !important}
+.page-template-page-winter .text_content_center_block .wrapper:has(h1):has(.buttonsBlock) .buttonsBlock,.page-template-page-winter .text_content_center_block .wrapper:has(h2):has(.buttonsBlock) .buttonsBlock,.page-template-page-winter .text_content_center_block .wrapper:has(h3):has(.buttonsBlock) .buttonsBlock,.page-template-page-winter .text_content_center_block .wrapper:has(.textwrap):has(.buttonsBlock) .buttonsBlock{margin-top:50px}
+.page-template-page-winter .image_and_text_two_column.section-two_column_row .textBlock h2{font-size:clamp(40px,5vw,5rem);font-weight:800;line-height:1.1;margin:0}
+.page-template-page-winter .repeatable_masonry_infocards{padding-top:60px;padding-bottom:60px;margin-top:45px;margin-bottom:45px;background:#f2f2f2}
+.page-template-page-winter .repeatable_masonry_infocards .wrapper{max-width:1700px}
+.page-template-page-winter .repeatable_masonry_infocards .page--title--wrapper h2,.page-template-page-winter .repeatable_masonry_infocards .page--title--wrapper .h2{font-size:clamp(40px,5vw,5rem);font-weight:800;line-height:1.1;margin:0}
+.page-template-page-winter .repeatable_masonry_infocards .infocards{padding-left:20px;padding-right:20px}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-left:-15px;margin-right:-15px}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item{padding:15px}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figure{border-radius:15px;margin:0;height:clamp(250px,30vw,400px);position:relative;overflow:hidden}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figure:has(a.imageLink){overflow:visible}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item a.imageLink{display:block;width:100%;height:100%;position:relative;text-decoration:none;color:#fff;border-radius:15px;overflow:hidden;-webkit-transition:all ease .3s;transition:all ease .3s}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item a.imageLink:hover,.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item a.imageLink:focus{-webkit-box-shadow:0 5px 15px rgba(0,0,0,.25);box-shadow:0 5px 15px rgba(0,0,0,.25);-webkit-transform:translateY(-5px);transform:translateY(-5px)}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figcaption{position:absolute;top:0;left:0;width:100%;height:100%;z-index:10;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figcaption:after{content:"";display:block;width:100%;height:100%;position:absolute;top:0;left:0;background:rgba(0,0,0,.25)}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figcaption .text{position:relative;z-index:10;text-align:left;padding:20px;color:#fff}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figcaption .text h2,.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figcaption .text h3{font-size:30px !important;font-weight:600 !important;line-height:1.1;text-transform:uppercase;margin:0 0 5px}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figcaption .text h2,.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figcaption .text h3,.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figcaption .text h4,.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figcaption .text p{color:#fff !important}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figcaption .text a.button-element.button{border:1px solid #ba0d30 !important;background-color:#ba0d30 !important;color:#fff !important;padding:6px 20px 5px;font-size:14px !important}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figcaption .text a.button-element.button:hover,.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figcaption .text a.button-element.button:focus{border-color:#fff !important;background-color:#fff !important;color:#ba0d30 !important}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figcaption p:has(.custom-button-element){margin:0}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item .imagediv{position:relative;top:0;left:0;width:100%;height:100%}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item .imagediv img{display:block;width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-4 .card-item figure{height:clamp(250px,30vw,450px)}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-4 .card-item figure figcaption h2,.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-4 .card-item figure figcaption h3{font-size:20px !important}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-4 .card-item figure figcaption p:last-child{margin-bottom:0}
+.page-template-page-winter .repeatable_masonry_infocards .bottom-information .custom-button-element{display:inline-block;margin-top:10px}
+.page-template-page-winter .repeatable_masonry_infocards .bottom-information .button-element.button{min-width:150px;text-align:center}
+.page-template-page-winter .repeatable_masonry_infocards:has(.infocards) .bottom-information,.page-template-page-winter .repeatable_masonry_infocards:has(.page--title--wrapper) .bottom-information{margin-top:30px}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -6343,6 +6382,9 @@ body.page-template-page-visit section.visit .cards-row-section figure{width:25%}
 section.homepage-hero .home-info .info h1{font-size:60px}
 section.full-bleed-promo .info .words h2{font-size:100px}
 .archive-posts-wrap .entry{width:33.33%}
+.page-template-page-winter #banner{height:80vh;overflow:hidden}
+.page-template-page-winter #banner .slides-wrapper{position:relative;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
+.page-template-page-winter .repeatable_masonry_infocards .bottom-information{padding-left:10vw;padding-right:10vw}
 }@media screen and (min-width:1300px){.image_cards_columns{padding:80px 5vw}
 }@media screen and (min-width:1400px){#section-faqs .faq-item{padding:0 20px 0 40px}
 .bike-ranch-sections .section--fullwidth_image figure figcaption h2{font-size:100px}
@@ -6355,6 +6397,10 @@ section.full-bleed-promo .info .words h2{font-size:100px}
 .repeatable-section.section-image-cards .inner-content{padding-left:10vw;padding-right:10vw}
 }@media screen and (max-width:1400px){.homepage-hero:has(video){height:780px}
 .homepage-hero:has(video) video{width:110% !important;left:50%;-webkit-transform:translateX(-50%) scale(1.3) !important;transform:translateX(-50%) scale(1.3) !important}
+}@media screen and (max-width:1250px){.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-1 .card-item{width:100% !important}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-3 .card-item{width:50% !important}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-3 .card-item:nth-child(3){width:100% !important}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-4 .card-item{width:50% !important}
 }@media screen and (max-width:1230px){.jobs.resetBtn{position:relative;right:12px;top:3px;float:left}
 }@media screen and (max-width:1200px){.homepage-hero:has(video){height:680px}
 .homepage-hero:has(video) video{width:140% !important}
@@ -6762,6 +6808,10 @@ body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery
 .bike-ranch-sections .section--two_column_layout_text_image .section-buttons .button-traditional{width:100% !important}
 }@media screen and (max-width:500px){body.home .homerow .imagebox a{padding-bottom:105%}
 .section_columns_bottom_text .infobox{width:100% !important}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-1 .card-item{width:100% !important}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-3 .card-item{width:100% !important}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-3 .card-item:nth-child(3){width:100% !important}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-4 .card-item{width:100% !important}
 }@media screen and (max-width:480px){.featured-events-section .postbox{width:100%}
 .section-links-icons .block{width:100% !important}
 .facility-map-section.half .mapcol{width:100% !important}
