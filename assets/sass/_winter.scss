@@ -132,9 +132,15 @@
         figure {
           border-radius: 15px;
           margin: 0 0;
-          height: clamp(250px,30vw,400px);
+          height: clamp(300px,30vw,400px);
           position: relative;
           overflow: hidden;
+          @media screen and (max-width: 768px) {
+            height: 330px;
+          }
+          @media screen and (max-width: 500px) {
+            height: 350px;
+          }
         }
         figure:has(a.imageLink) {
           overflow: visible;
@@ -227,7 +233,7 @@
       }
       .cards-row.count-4 {
         .card-item figure {
-          height: clamp(250px,30vw,450px);
+          height: clamp(300px,30vw,450px);
           figcaption {
             h2,h3 {
               font-size: 20px!important;
@@ -254,16 +260,11 @@
         }
       }
 
-      @media screen and (max-width:500px) {
-        .cards-row.count-1 .card-item {
-          width: 100%!important;
-        }
-        .cards-row.count-3 .card-item {
-          width: 100%!important;
-        }
-        .cards-row.count-3 .card-item:nth-child(3) {
-          width: 100%!important;
-        }
+      @media screen and (max-width:768px) {
+        .cards-row.count-1 .card-item,
+        .cards-row.count-2 .card-item,
+        .cards-row.count-3 .card-item,
+        .cards-row.count-3 .card-item:nth-child(3),
         .cards-row.count-4 .card-item {
           width: 100%!important;
         }

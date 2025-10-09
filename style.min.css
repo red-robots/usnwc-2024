@@ -5702,7 +5702,7 @@ h3.tribe-events-calendar-month-mobile-events__mobile-event-title.tribe-common-h7
 .page-template-page-winter .repeatable_masonry_infocards .infocards{padding-left:20px;padding-right:20px}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-left:-15px;margin-right:-15px}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .card-item{padding:15px}
-.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figure{border-radius:15px;margin:0;height:clamp(250px,30vw,400px);position:relative;overflow:hidden}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figure{border-radius:15px;margin:0;height:clamp(300px,30vw,400px);position:relative;overflow:hidden}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figure:has(a.imageLink){overflow:visible}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .card-item a.imageLink{display:block;width:100%;height:100%;position:relative;text-decoration:none;color:#fff;border-radius:15px;overflow:hidden;-webkit-transition:all ease .3s;transition:all ease .3s}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .card-item a.imageLink:hover,.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item a.imageLink:focus{-webkit-box-shadow:0 5px 15px rgba(0,0,0,.25);box-shadow:0 5px 15px rgba(0,0,0,.25);-webkit-transform:translateY(-5px);transform:translateY(-5px)}
@@ -5716,7 +5716,7 @@ h3.tribe-events-calendar-month-mobile-events__mobile-event-title.tribe-common-h7
 .page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figcaption p:has(.custom-button-element){margin:0}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .card-item .imagediv{position:relative;top:0;left:0;width:100%;height:100%}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .card-item .imagediv img{display:block;width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
-.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-4 .card-item figure{height:clamp(250px,30vw,450px)}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-4 .card-item figure{height:clamp(300px,30vw,450px)}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-4 .card-item figure figcaption h2,.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-4 .card-item figure figcaption h3{font-size:20px !important}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-4 .card-item figure figcaption p:last-child{margin-bottom:0}
 .page-template-page-winter .repeatable_masonry_infocards .bottom-information .custom-button-element{display:inline-block;margin-top:10px}
@@ -6797,6 +6797,8 @@ body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery
 body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img4{width:100%;height:auto !important}
 body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img4 .span-image{display:none !important}
 body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img4 img.image-block{display:block;width:100% !important;height:auto !important}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figure{height:330px}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-1 .card-item,.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-2 .card-item,.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-3 .card-item,.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-3 .card-item:nth-child(3),.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-4 .card-item{width:100% !important}
 }@media screen and (max-width:600px){section.route-stories .block .feat-image.no-image .bg:before{width:30vw;height:30vw}
 .topinfo .businessHours{left:-37vw}
 #section-featured-posts .block .feat-image.no-image .bg:before{width:30vw;height:30vw}
@@ -6808,10 +6810,7 @@ body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery
 .bike-ranch-sections .section--two_column_layout_text_image .section-buttons .button-traditional{width:100% !important}
 }@media screen and (max-width:500px){body.home .homerow .imagebox a{padding-bottom:105%}
 .section_columns_bottom_text .infobox{width:100% !important}
-.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-1 .card-item{width:100% !important}
-.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-3 .card-item{width:100% !important}
-.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-3 .card-item:nth-child(3){width:100% !important}
-.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-4 .card-item{width:100% !important}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figure{height:350px}
 }@media screen and (max-width:480px){.featured-events-section .postbox{width:100%}
 .section-links-icons .block{width:100% !important}
 .facility-map-section.half .mapcol{width:100% !important}
