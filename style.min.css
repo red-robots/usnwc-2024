@@ -6382,7 +6382,7 @@ body.page-template-page-visit section.visit .cards-row-section figure{width:25%}
 section.homepage-hero .home-info .info h1{font-size:60px}
 section.full-bleed-promo .info .words h2{font-size:100px}
 .archive-posts-wrap .entry{width:33.33%}
-.page-template-page-winter #banner{height:80vh;overflow:hidden}
+.page-template-page-winter #banner{height:85vh;overflow:hidden}
 .page-template-page-winter #banner .slides-wrapper{position:relative;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
 .page-template-page-winter .repeatable_masonry_infocards .bottom-information{padding-left:10vw;padding-right:10vw}
 }@media screen and (min-width:1300px){.image_cards_columns{padding:80px 5vw}
