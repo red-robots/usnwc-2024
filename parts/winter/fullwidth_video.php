@@ -1,11 +1,15 @@
 <?php if( get_row_layout() == 'fullwidth_video' ) { ?>
   <?php  
+  $html_anchor = get_sub_field('html_anchor');
   //$video_type = get_sub_field('video_type');
   $video_url = get_sub_field('video_url');
   $video_text = get_sub_field('video_text');
   $text_alignment = get_sub_field('text_alignment');
   if($video_url) { ?>
   <section id="fullwidth_video_<?php echo $ctr ?>" class="fullwidth_video_block text--<?php echo $text_alignment ?>">
+    <?php if ($html_anchor) { ?>
+    <div id="<?php echo $html_anchor ?>" class="html-anchor"></div>
+    <?php } ?>
     <?php if ($video_text) { ?>
     <div class="textOverlay">
       <div class="wrapper"><?php echo anti_email_spam($video_text) ?></div>

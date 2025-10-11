@@ -1,10 +1,14 @@
 <?php if( get_row_layout() == 'carousel_section' ) { ?>
   <?php  
+  $html_anchor = get_sub_field('html_anchor');
   $text_content = get_sub_field('text_content');
   $carousel_items = get_sub_field('carousel_items');
   $video_embed = get_sub_field('video_embed');
   if($text_content || $carousel_items || $video_embed) { ?>
   <section id="<?php echo get_row_layout() ?>_<?php echo $ctr ?>" class="repeatable repeatable_<?php echo get_row_layout() ?>">
+    <?php if ($html_anchor) { ?>
+    <div id="<?php echo $html_anchor ?>" class="html-anchor"></div>
+    <?php } ?>
     <div class="section-inner">
       <?php if ($text_content) { ?>
       <div class="section-intro">

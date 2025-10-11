@@ -1,5 +1,6 @@
 <?php if( get_row_layout() == 'masonry_infocards' ) { ?>
   <?php  
+  $html_anchor = get_sub_field('html_anchor');
   $section_title = get_sub_field('section_title');
   $infocards = get_sub_field('infocards');
   $bottom_information = get_sub_field('bottom_information');
@@ -7,6 +8,9 @@
   //$buttons = get_sub_field('buttons');
   if($section_title || $infocards || $bottom_information) { ?>
   <section id="<?php echo get_row_layout() ?>_<?php echo $ctr ?>" class="repeatable repeatable_<?php echo get_row_layout() ?>">
+    <?php if ($html_anchor) { ?>
+    <div id="<?php echo $html_anchor ?>" class="html-anchor"></div>
+    <?php } ?>
     <div class="wrapper textCenter">
       <?php if ($section_title) { ?>
       <div class="page--title--wrapper">

@@ -1,5 +1,6 @@
 <?php if( get_row_layout() == 'image_cards_columns' ) { ?>
   <?php  
+  $html_anchor = get_sub_field('html_anchor');
   $section_title = get_sub_field('section_title');
   $section_text = get_sub_field('section_text');
   $text_position = get_sub_field('section_text_position');
@@ -7,6 +8,9 @@
   $buttons = get_sub_field('buttons');
   if($section_title || $section_text) { ?>
   <section id="image-cards-columns-<?php echo $ctr ?>" class="image_cards_columns text--<?php echo $text_position ?>">
+    <?php if ($html_anchor) { ?>
+    <div id="<?php echo $html_anchor ?>" class="html-anchor"></div>
+    <?php } ?>
     <div class="wrapper">
       <?php if($section_title || $section_text) { ?>
       <div class="title-wrapper text-center">

@@ -1,9 +1,13 @@
 <?php if( get_row_layout() == 'faqs_accordion_section' ) { ?>
   <?php  
+  $html_anchor = get_sub_field('html_anchor');
   $text_content = get_sub_field('text_content');
   $faqs = get_sub_field('faqs');
   if($text_content || $faqs) { ?>
   <section id="<?php echo get_row_layout() ?>_<?php echo $ctr ?>" class="repeatable repeatable_<?php echo get_row_layout() ?>">
+    <?php if ($html_anchor) { ?>
+    <div id="<?php echo $html_anchor ?>" class="html-anchor"></div>
+    <?php } ?>
     <div class="section-inner">
       <?php if ($text_content) { ?>
       <div class="section-intro">

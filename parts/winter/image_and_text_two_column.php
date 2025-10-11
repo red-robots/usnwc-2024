@@ -1,5 +1,6 @@
 <?php if( get_row_layout() == 'image_and_text_two_column' ) { ?>
   <?php  
+  $html_anchor = get_sub_field('html_anchor');
   $section_title = get_sub_field('section_title');
   $image_position = get_sub_field('image_position');
   $image = get_sub_field('image');
@@ -43,6 +44,9 @@
       }
       <?php } ?>
     </style>
+    <?php } ?>
+    <?php if ($html_anchor) { ?>
+    <div id="<?php echo $html_anchor ?>" class="html-anchor"></div>
     <?php } ?>
     <div class="section-inner<?php echo ($image_position) ? ' image-'.$image_position:'' ?>">
       <div class="flexwrap <?php echo $section_class ?>">
