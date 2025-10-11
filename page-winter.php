@@ -21,6 +21,8 @@ get_header();
         <?php include( locate_template('parts/winter/image_and_text_two_column.php') ); ?>
         <?php include( locate_template('parts/winter/image_cards_columns.php') ); ?>
         <?php include( locate_template('parts/winter/masonry_infocards.php') ); ?>
+        <?php include( locate_template('parts/winter/carousel_section.php') ); ?>
+        <?php include( locate_template('parts/winter/faqs_accordion_section.php') ); ?>
       
       <?php $ctr++; endwhile;  ?>
     <?php  } ?>

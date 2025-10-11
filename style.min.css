@@ -2475,7 +2475,7 @@ h1.page-title span:after{content:"";display:block;width:30%;height:2px;backgroun
 .title-w-icon{text-align:center;padding-top:30px;padding-bottom:35px}
 .title-w-icon h2{font-family:"Lato",sans-serif;font-weight:400;font-size:25px;line-height:1.2;text-transform:uppercase;letter-spacing:2px;margin:0}
 .title-w-icon .title-icon span{display:inline-block;width:30px;height:30px;background-size:100%;background-position:center;background-repeat:no-repeat}
-.btn-sm,.btn-default,.section-image-cards .button.button-type-button,.button-pill,input.button,button.button,a.button{display:inline-block;-webkit-appearance:none;-moz-appearance:none;appearance:none;font-family:"brandon-grotesque" !important;font-size:13px !important;line-height:1.2 !important;letter-spacing:.05em !important;text-transform:uppercase;border-radius:100px;background-color:transparent;padding:7px 15px 6px;color:#5a5959;border:1px solid #a2a2a2;text-decoration:none !important}
+.btn-sm,.btn-default,.section-image-cards .button.button-type-button,.button-pill,input.button,button.button,a.button{display:inline-block;-webkit-appearance:none;-moz-appearance:none;appearance:none;font-family:"brandon-grotesque" !important;font-size:13px !important;line-height:1.2 !important;letter-spacing:.05em !important;text-transform:uppercase;border-radius:100px;background-color:transparent;padding:7px 15px 5px;color:#5a5959;border:1px solid #a2a2a2;text-decoration:none !important}
 .btn-sm:hover,.btn-sm:focus,.btn-default:hover,.btn-default:focus,.section-image-cards .button.button-type-button:hover,.section-image-cards .button.button-type-button:focus,.button-pill:hover,.button-pill:focus,input.button:hover,input.button:focus,button.button:hover,button.button:focus,a.button:hover,a.button:focus{text-decoration:none !important;border-color:#ba0d30 !important;background:#ba0d30 !important;color:#fff !important}
 .btn-sm.btn-outline-red,.btn-default.btn-outline-red,.section-image-cards .button.button-type-button.btn-outline-red,.button-pill.btn-outline-red,input.button.btn-outline-red,button.button.btn-outline-red,a.button.btn-outline-red{border:1px solid #ba0d30;color:#ba0d30}
 .btn-sm:before,.btn-default:before,.section-image-cards .button.button-type-button:before,.button-pill:before{display:none !important}
@@ -5695,17 +5695,18 @@ h3.tribe-events-calendar-month-mobile-events__mobile-event-title.tribe-common-h7
 .page-template-page-winter .text_content_center_block .buttonsBlock .button.button-red,.page-template-page-winter .text_content_center_block .buttonsBlock .button{background-color:transparent !important;color:#fff;text-transform:uppercase;letter-spacing:.08em !important;font-size:15px !important;font-weight:500 !important;min-width:200px;min-height:35px;text-align:center;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;border:1px solid #fff}
 .page-template-page-winter .text_content_center_block .buttonsBlock .button.button-red:hover,.page-template-page-winter .text_content_center_block .buttonsBlock .button.button-red:focus,.page-template-page-winter .text_content_center_block .buttonsBlock .button:hover,.page-template-page-winter .text_content_center_block .buttonsBlock .button:focus{border-color:#fff !important;background-color:#fff !important;color:#000 !important}
 .page-template-page-winter .text_content_center_block .wrapper:has(h1):has(.buttonsBlock) .buttonsBlock,.page-template-page-winter .text_content_center_block .wrapper:has(h2):has(.buttonsBlock) .buttonsBlock,.page-template-page-winter .text_content_center_block .wrapper:has(h3):has(.buttonsBlock) .buttonsBlock,.page-template-page-winter .text_content_center_block .wrapper:has(.textwrap):has(.buttonsBlock) .buttonsBlock{margin-top:50px}
-.page-template-page-winter .image_and_text_two_column.section-two_column_row .textBlock h2{font-size:clamp(40px,5vw,5rem);font-weight:800;line-height:1.1;margin:0}
+.page-template-page-winter .image_and_text_two_column.section-two_column_row .textBlock h2{font-size:clamp(40px,6vw,4rem);font-weight:800;line-height:1.1;margin:0}
+.page-template-page-winter .image_and_text_two_column.section-two_column_row .textBlock:has(h2):has(p) h2{margin-bottom:15px}
 .page-template-page-winter .repeatable_masonry_infocards{padding-top:60px;padding-bottom:60px;margin-top:45px;margin-bottom:45px;background:#f2f2f2}
 .page-template-page-winter .repeatable_masonry_infocards .wrapper{max-width:1700px}
-.page-template-page-winter .repeatable_masonry_infocards .page--title--wrapper h2,.page-template-page-winter .repeatable_masonry_infocards .page--title--wrapper .h2{font-size:clamp(40px,5vw,5rem);font-weight:800;line-height:1.1;margin:0}
+.page-template-page-winter .repeatable_masonry_infocards .page--title--wrapper h2,.page-template-page-winter .repeatable_masonry_infocards .page--title--wrapper .h2{font-size:clamp(40px,6vw,4rem);font-weight:800;line-height:1.1;margin:0}
 .page-template-page-winter .repeatable_masonry_infocards .infocards{padding-left:20px;padding-right:20px}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-left:-15px;margin-right:-15px}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .card-item{padding:15px}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figure{border-radius:15px;margin:0;height:clamp(300px,30vw,400px);position:relative;overflow:hidden}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figure:has(a.imageLink){overflow:visible}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .card-item a.imageLink{display:block;width:100%;height:100%;position:relative;text-decoration:none;color:#fff;border-radius:15px;overflow:hidden;-webkit-transition:all ease .3s;transition:all ease .3s}
-.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item a.imageLink:hover,.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item a.imageLink:focus{-webkit-box-shadow:0 5px 15px rgba(0,0,0,.25);box-shadow:0 5px 15px rgba(0,0,0,.25);-webkit-transform:translateY(-5px);transform:translateY(-5px)}
+.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item a.imageLink:hover,.page-template-page-winter .repeatable_masonry_infocards .infocards .card-item a.imageLink:focus{-webkit-transform:translateY(-5px);transform:translateY(-5px)}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figcaption{position:absolute;top:0;left:0;width:100%;height:100%;z-index:10;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figcaption:after{content:"";display:block;width:100%;height:100%;position:absolute;top:0;left:0;background:rgba(0,0,0,.25)}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figcaption .text{position:relative;z-index:10;text-align:left;padding:20px;color:#fff}
@@ -5722,6 +5723,57 @@ h3.tribe-events-calendar-month-mobile-events__mobile-event-title.tribe-common-h7
 .page-template-page-winter .repeatable_masonry_infocards .bottom-information .custom-button-element{display:inline-block;margin-top:10px}
 .page-template-page-winter .repeatable_masonry_infocards .bottom-information .button-element.button{min-width:150px;text-align:center}
 .page-template-page-winter .repeatable_masonry_infocards:has(.infocards) .bottom-information,.page-template-page-winter .repeatable_masonry_infocards:has(.page--title--wrapper) .bottom-information{margin-top:30px}
+.page-template-page-winter .repeatable_carousel_section{padding:50px 15px;background:#414042;color:#fff}
+.page-template-page-winter .repeatable_carousel_section .section-intro{margin-bottom:50px}
+.page-template-page-winter .repeatable_carousel_section .section-intro h2{font-size:clamp(40px,6vw,4rem);font-weight:800;line-height:1.1;margin:0 0 10px}
+.page-template-page-winter .repeatable_carousel_section .section-intro p{color:#fff}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section{display:none;position:relative}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section:has(.item){display:block}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .wrapper{max-width:100%}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .owl-custom-nav{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;background-color:transparent;width:30px;height:50px;color:#fff;position:absolute;top:40%;-webkit-transform:translateY(-50%);transform:translateY(-50%);z-index:100}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .owl-custom-nav.nav-prev{left:-25px}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .owl-custom-nav.nav-next{right:-25px}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .owl-dots{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:.45rem;margin-top:40px}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .owl-dots .owl-dot{-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;width:8px;height:8px;border-radius:100%;background:#fff;-webkit-transition:all ease .3s;transition:all ease .3s}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .owl-dots .owl-dot.active{-webkit-transform:scale(1.3);transform:scale(1.3)}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .owl-dots .owl-dot:not(.active):hover{opacity:.65}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;overflow:hidden;max-width:90vw;width:100%;margin:0 auto;padding-bottom:20px}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item{width:25%;padding:10px}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure{margin:0;overflow:hidden;border-radius:15px;position:relative;padding-bottom:115%}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure .category,.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure .title{position:absolute;left:0;z-index:10;color:#fff;display:block;padding:15px}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure .category{font-size:20px;font-weight:600;line-height:1.1;text-transform:uppercase;top:0}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure .title{bottom:0;font-size:30px;font-weight:600;text-transform:uppercase;line-height:1}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure div.image{position:absolute;top:0;left:0;width:100%;height:100%}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure:has(.title) div.image:before,.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure:has(.category) div.image:before{content:"";display:block;width:100%;height:100%;position:absolute;top:0;left:0;z-index:5;background:#000;opacity:.25;-webkit-transition:opacity ease .5s;transition:opacity ease .5s}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure.has-link{border-radius:0;overflow:visible;padding-bottom:0}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure.has-link a.imagelink{display:block;position:relative;border-radius:15px;padding-bottom:115%;overflow:hidden;border:2px solid transparent}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure.has-link a.imagelink:hover,.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure.has-link a.imagelink:focus{border-color:#fff}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure.has-link a.imagelink:hover div.image:before,.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure.has-link a.imagelink:focus div.image:before{opacity:.65}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure.has-link a.imagelink:focus{outline:0}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .owl-nav{height:0;visibility:hidden;overflow:hidden}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider.owl-loaded{display:block;width:100%}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider.owl-loaded .owl-stage-outer{padding-right:2px}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider.owl-loaded .owl-stage{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider.owl-loaded .owl-item{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider.owl-loaded .owl-item .item{width:100%;padding:0}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section:has(.owl-loaded){display:block;width:92vw;margin:0 auto 0}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section:has(.owl-loaded) .wrapper{padding-left:0;padding-right:0}
+.page-template-page-winter .repeatable_carousel_section .video-section{margin-top:30px}
+.page-template-page-winter .repeatable_carousel_section .video-section .wrapper{max-width:100%}
+.page-template-page-winter .repeatable_carousel_section .video-section .videoWrap{position:relative;overflow:hidden;border-radius:20px;background:#000}
+.page-template-page-winter .repeatable_carousel_section .video-section .videoWrap iframe{width:100% !important;height:100% !important;margin:0 0 !important;position:absolute;top:0;left:0;z-index:5}
+.page-template-page-winter .repeatable_carousel_section .video-section .videoWrap img.video-resizer{width:100%;height:auto;pointer-events:none;position:relative}
+.page-template-page-winter .repeatable_faqs_accordion_section .section-intro{margin-bottom:25px}
+.page-template-page-winter .repeatable_faqs_accordion_section .wrapper{max-width:800px;width:100%;margin:0 auto}
+.page-template-page-winter .repeatable_faqs_accordion_section .faqs .faq-item{margin-bottom:10px}
+.page-template-page-winter .repeatable_faqs_accordion_section .faqs .faq-question{margin:0;font-size:20px;font-weight:500;line-height:1.1;padding:10px 35px 10px 15px;background:#f2f2f2;color:#000;border-radius:8px;position:relative;-webkit-transition:all ease .3s;transition:all ease .3s}
+.page-template-page-winter .repeatable_faqs_accordion_section .faqs .faq-question svg,.page-template-page-winter .repeatable_faqs_accordion_section .faqs .faq-question i{display:inline-block;position:absolute;top:50%;right:20px;font-size:13px;-webkit-transform:translateY(-50%);transform:translateY(-50%);-webkit-transition:-webkit-transform ease .3s;transition:-webkit-transform ease .3s;transition:transform ease .3s;transition:transform ease .3s,-webkit-transform ease .3s}
+.page-template-page-winter .repeatable_faqs_accordion_section .faqs .faq-question:hover{background:#ba0d30;color:#fff}
+.page-template-page-winter .repeatable_faqs_accordion_section .faqs .faq-question[aria-expanded=true]{background:#ba0d30;color:#fff}
+.page-template-page-winter .repeatable_faqs_accordion_section .faqs .faq-question[aria-expanded=true] svg,.page-template-page-winter .repeatable_faqs_accordion_section .faqs .faq-question[aria-expanded=true] i{-webkit-transform:translateY(-50%) scaleY(-1);transform:translateY(-50%) scaleY(-1)}
+.page-template-page-winter .repeatable_faqs_accordion_section .faqs .faq-answer{border:1px solid #cfcfcf;padding:15px;border-radius:8px;margin:5px 0 15px;display:none}
+.page-template-page-winter .repeatable_faqs_accordion_section .faqs .faq-answer p:last-child{margin-bottom:0}
 @media screen and (max-device-width:1024px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -6202,6 +6254,7 @@ body.page-template-page-salesforce .gform_wrapper{padding-left:5vw;padding-right
 .mobileRedTag a.registerBtn:hover:before,.mobileRedTag a.registerBtn:hover:after{background-color:#000}
 .homepage-hero:has(video) .desktop{display:block}
 .homepage-hero:has(video) .mobile{display:none}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure .title{font-size:clamp(25px,3vw,35px)}
 }@media screen and (min-width:820px){#banner.taxonomy-banner .static-banner img.desktop{display:block}
 #banner.taxonomy-banner .static-banner img.mobile{display:none}
 .post-type-entries .imagediv.mobile{display:none}
@@ -6340,6 +6393,8 @@ section.visit .img h2{font-size:50px}
 .buttons-section-wrapper{margin-top:80px;margin-bottom:90px}
 body.subpage.single.single-festival .column-data-section,body.subpage.single.single-special-events .column-data-section{padding-bottom:40px}
 .two-column-layout-vist .flex-wrapper{min-height:575px}
+.page-template-page-winter .repeatable_carousel_section .section-intro p{max-width:800px;width:100%;margin:0 auto 20px}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .owl-custom-nav{top:45%}
 }@media screen and (min-width:1200px){body.page-template-page-visit section.visit.flexible-image-cards .tile,section.visit.flexible-image-cards .tile,.flexible-image-cards .tile{margin-bottom:100px}
 }@media screen and (min-width:1201px){.bike-ranch-sections .section--two_column_layout_text_image.half .flexcol{width:47%;margin-top:0;margin-bottom:0}
 .bike-ranch-sections .section--fullwidth_image figure figcaption p{font-size:20px}
@@ -6799,6 +6854,8 @@ body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery
 body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img4 img.image-block{display:block;width:100% !important;height:auto !important}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figure{height:330px}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-1 .card-item,.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-2 .card-item,.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-3 .card-item,.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-3 .card-item:nth-child(3),.page-template-page-winter .repeatable_masonry_infocards .infocards .cards-row.count-4 .card-item{width:100% !important}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure .category{font-size:16px}
+.page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure .title{font-size:20px}
 }@media screen and (max-width:600px){section.route-stories .block .feat-image.no-image .bg:before{width:30vw;height:30vw}
 .topinfo .businessHours{left:-37vw}
 #section-featured-posts .block .feat-image.no-image .bg:before{width:30vw;height:30vw}

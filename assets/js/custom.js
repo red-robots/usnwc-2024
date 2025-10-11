@@ -71,6 +71,102 @@ jQuery(document).ready(function ($) {
       }
     }
   });
+  do_repeater_carousel_section();
+  $(window).on('resize', function () {
+    if ($('.repeater-carousel-section .carousel-slider.owl-carousel').length) {
+      $('.repeater-carousel-section .carousel-slider.owl-carousel').each(function () {
+        $(this).trigger('destroy.owl.carousel');
+        setTimeout(function () {
+          do_repeater_carousel_section();
+        }, 100);
+      });
+    }
+  });
+
+  function do_repeater_carousel_section() {
+    if ($('.repeater-carousel-section').length) {
+      $('.repeater-carousel-section').each(function () {
+        var carouselWrap = $(this);
+
+        if ($(this).find('.carousel-slider.owl-carousel').length) {
+          $(this).find('.carousel-slider.owl-carousel').each(function () {
+            var carouselTarget = $(this);
+            var count_items = $(this).find('.item').length;
+            var max_items = 4;
+
+            if (count_items) {
+              if ($(window).width() > 1199) {
+                if (count_items > max_items) {
+                  carouselTarget.on('initialized.owl.carousel', function (event) {
+                    carouselWrap.find('.custom-nav-buttons').html('<button class="owl-custom-nav nav-prev"><i class="fa fa-chevron-left" aria-hidden="true"></i><span class="sr-only">Previous Items</span></button><button class="owl-custom-nav nav-next"><i class="fa fa-chevron-right" aria-hidden="true"></i><span class="sr-only">Next Items</span></button>');
+                  });
+                  carouselTarget.owlCarousel({
+                    loop: true,
+                    margin: 16,
+                    nav: true,
+                    dots: true,
+                    items: 1,
+                    autoplay: true,
+                    autoplayTimeout: 10000,
+                    responsiveClass: true,
+                    responsive: {
+                      0: {
+                        center: true,
+                        items: 1
+                      },
+                      600: {
+                        center: true,
+                        items: 3
+                      },
+                      1000: {
+                        margin: 20,
+                        items: 4
+                      }
+                    }
+                  });
+                }
+              } else {
+                if (count_items > 1) {
+                  carouselTarget.on('initialized.owl.carousel', function (event) {
+                    carouselWrap.find('.custom-nav-buttons').html('<button class="owl-custom-nav nav-prev"><i class="fa fa-chevron-left" aria-hidden="true"></i><span class="sr-only">Previous Items</span></button><button class="owl-custom-nav nav-next"><i class="fa fa-chevron-right" aria-hidden="true"></i><span class="sr-only">Next Items</span></button>');
+                  });
+                  carouselTarget.owlCarousel({
+                    loop: true,
+                    center: true,
+                    margin: 13,
+                    nav: true,
+                    dots: true,
+                    items: 3,
+                    autoplay: true,
+                    autoplayTimeout: 10000,
+                    responsive: {
+                      300: {
+                        items: 2
+                      }
+                    }
+                  });
+                }
+              }
+            }
+          });
+          $(document).on('click', '.owl-custom-nav', function (e) {
+            e.preventDefault();
+            var parent = $(this).parents('.repeater-carousel-section');
+
+            if ($(this).hasClass('nav-prev')) {
+              if (parent.find('.owl-prev').length) {
+                parent.find('.owl-prev').trigger('click');
+              }
+            } else if ($(this).hasClass('nav-next')) {
+              if (parent.find('.owl-next').length) {
+                parent.find('.owl-next').trigger('click');
+              }
+            }
+          });
+        }
+      });
+    }
+  }
 
   if ($('#activities--carousel').length) {
     $('#activities--carousel').owlCarousel({
@@ -1796,6 +1892,15 @@ jQuery(document).ready(function ($) {
           }
         }
       }
+    });
+  }
+
+  if ($('.repeatable_faqs_accordion_section .faqs-section').length) {
+    $('.repeatable_faqs_accordion_section .faqs-section .faq-question').on('click', function (e) {
+      e.preventDefault();
+      var isExpanded = $(this).attr('aria-expanded') === 'true';
+      $(this).attr('aria-expanded', !isExpanded);
+      $(this).next('.faq-answer').slideToggle();
     });
   }
 }); // END #####################################    END

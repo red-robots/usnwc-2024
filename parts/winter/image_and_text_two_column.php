@@ -5,9 +5,45 @@
   $image = get_sub_field('image');
   $text_content = get_sub_field('text_content');
   $buttons = get_sub_field('buttons');
+  $bgcolor = get_sub_field('bgcolor');
+  $textcolor = get_sub_field('textcolor');
+  $buttoncolor = get_sub_field('buttoncolor');
   $section_class = ($text_content && $image) ? 'half' : 'full';
   if($section_title || $text_content) { ?>
   <section id="image-text-two-column-<?php echo $ctr ?>" class="image_and_text_two_column section-two_column_row">
+    <?php if ($bgcolor || $textcolor || $buttonColor) { ?>
+    <style>
+      <?php if ($bgcolor) { ?>
+      .section-two_column_row#image-text-two-column-<?php echo $ctr ?> .flexwrap {
+        background-color: <?php echo $bgcolor ?>;
+      }
+      <?php } ?>
+      <?php if ($textcolor) { ?>
+      .section-two_column_row#image-text-two-column-<?php echo $ctr ?> .textBlock,
+      .section-two_column_row#image-text-two-column-<?php echo $ctr ?> .textBlock h2,
+      .section-two_column_row#image-text-two-column-<?php echo $ctr ?> .textBlock h3,
+      .section-two_column_row#image-text-two-column-<?php echo $ctr ?> .textBlock h4,
+      .section-two_column_row#image-text-two-column-<?php echo $ctr ?> .textBlock table,
+      .section-two_column_row#image-text-two-column-<?php echo $ctr ?> .textBlock div,
+      .section-two_column_row#image-text-two-column-<?php echo $ctr ?> .textBlock p {
+        color: <?php echo $textcolor ?>;
+      }
+      <?php } ?>
+      <?php if ($buttoncolor) { ?>
+      .section-two_column_row#image-text-two-column-<?php echo $ctr ?> .textBlock .button,
+      .section-two_column_row#image-text-two-column-<?php echo $ctr ?> .textBlock .cta-buttons a {
+        border-color: <?php echo $buttoncolor ?>!important;
+        color: <?php echo $buttoncolor ?>!important;
+      }
+      .section-two_column_row#image-text-two-column-<?php echo $ctr ?> .textBlock .button:hover,
+      .section-two_column_row#image-text-two-column-<?php echo $ctr ?> .textBlock .cta-buttons a:hover {
+        border-color: #ba0d30!important;
+        color: #FFF!important;
+        transform: translateY(-3px);
+      }
+      <?php } ?>
+    </style>
+    <?php } ?>
     <div class="section-inner<?php echo ($image_position) ? ' image-'.$image_position:'' ?>">
       <div class="flexwrap <?php echo $section_class ?>">
         <?php if ($section_title || $section_text) { ?>
