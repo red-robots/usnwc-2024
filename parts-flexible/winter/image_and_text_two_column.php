@@ -3,6 +3,8 @@
   $html_anchor = get_sub_field('html_anchor');
   $section_title = get_sub_field('section_title');
   $image_position = get_sub_field('image_position');
+  $featured_image_type = get_sub_field('featured_image_type');
+  $gallery = get_sub_field('gallery');
   $image = get_sub_field('image');
   $text_content = get_sub_field('text_content');
   $buttons = get_sub_field('buttons');
@@ -76,10 +78,29 @@
         <?php } ?>
 
         <?php if ($image) { ?>
-        <div class="imageBlock">
-          <figure>
-            <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" />
-          </figure>
+        <div class="imageBlock <?php echo ($featured_image_type=='slider') ? 'is-slider':'is-static-image' ?>">
+          <?php if ($featured_image_type=='slider') { ?>
+
+            <?php if ($gallery) { ?>
+            <div class="galleryWrapper">
+              <div id="winterGallerySlider<?php echo $ctr ?>" class="swiper winterGallerySlider">
+                <div class="swiper-wrapper">
+                  <?php foreach ($gallery as $img) { ?>
+                  <div class="swiper-slide">
+                    <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" />
+                  </div>
+                  <?php } ?>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+            <?php } ?>
+
+          <?php } else { ?>
+          <figure class="static-image"><img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" /></figure>
+          <?php } ?>
         </div>
         <?php } ?>
       </div>
