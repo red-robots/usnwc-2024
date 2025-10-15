@@ -18,7 +18,8 @@
   text-transform: uppercase;
   letter-spacing: .02em;
   line-height: 1.2;
-  padding: 14px 20px 13px!important;
+  /*padding: 14px 20px 13px!important;*/
+  padding: 9px 18px 8px!important;
   border-radius: 6px!important;
   text-align: center;
   transition: all ease .3s;

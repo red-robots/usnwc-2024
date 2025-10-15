@@ -1044,6 +1044,11 @@ body.post-type-dining #side-sortables #postimagediv .postbox-header h2:before {
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field {
     width: 100%;
   }
+  body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=bgcolor],
+body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=textcolor],
+body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=buttoncolor] {
+    width: 33.33% !important;
+  }
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=section_title],
 body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=text_content] {
     width: 60%;
@@ -1090,10 +1095,68 @@ body:has(select option[value="page-winter.php"][selected=selected]) [data-layout
     border-top: none;
   }
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields:has(div.acf-field[data-name=image][hidden]) div.acf-field[data-name=text_content] {
-    margin-bottom: 175px;
+    margin-bottom: 204px;
   }
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields:has(div.acf-field[data-name=image][hidden]) div.acf-field[data-name=image_position] {
     top: 560px;
+  }
+}
+@media screen and (min-width: 1381px) {
+  body:has(select option[value="page-winter.php"][selected=selected]) [data-name=infocards] [data-name=cards_per_row] .acf-repeater table.acf-table td.acf-fields {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  body:has(select option[value="page-winter.php"][selected=selected]) [data-name=infocards] [data-name=cards_per_row] .acf-repeater table.acf-table td.acf-fields div.acf-field {
+    min-height: unset !important;
+  }
+  body:has(select option[value="page-winter.php"][selected=selected]) [data-name=infocards] [data-name=cards_per_row] .acf-repeater table.acf-table td.acf-fields div.acf-field[data-name=image] .acf-image-uploader .image-wrap {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: 170px;
+    overflow: hidden;
+    position: relative;
+  }
+  body:has(select option[value="page-winter.php"][selected=selected]) [data-name=infocards] [data-name=cards_per_row] .acf-repeater table.acf-table td.acf-fields div.acf-field[data-name=image] .acf-image-uploader .image-wrap img {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    max-height: unset !important;
+    height: 100% !important;
+  }
+  body:has(select option[value="page-winter.php"][selected=selected]) [data-name=infocards] [data-name=cards_per_row] .acf-repeater table.acf-table td.acf-fields div.acf-field[data-name=image_width] {
+    position: absolute;
+    top: 220px;
+    left: 0;
+    width: 20% !important;
+    border-top: none !important;
+  }
+  body:has(select option[value="page-winter.php"][selected=selected]) [data-name=infocards] [data-name=cards_per_row] .acf-repeater table.acf-table td.acf-fields div.acf-field[data-name=text] {
+    width: 70% !important;
+    margin-bottom: 13px;
+    border-top: none !important;
+  }
+  body:has(select option[value="page-winter.php"][selected=selected]) [data-name=infocards] [data-name=cards_per_row] .acf-repeater table.acf-table td.acf-fields div.acf-field[data-name=text] div.acf-label {
+    display: inline-block;
+    width: auto !important;
+    position: absolute;
+    top: 18px;
+  }
+  body:has(select option[value="page-winter.php"][selected=selected]) [data-name=infocards] div.acf-field[data-name=has_popup_details] {
+    position: absolute;
+    left: 0;
+    top: 295px;
+    z-index: 50;
+    border-top: none !important;
+  }
+  body:has(select option[value="page-winter.php"][selected=selected]) [data-name=infocards] div.acf-field[data-name=full_details] {
+    width: 100% !important;
+    border-top: none;
+    padding-top: 5px;
   }
 }
 

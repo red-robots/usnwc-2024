@@ -26,6 +26,9 @@
           <div class="cards-row count-<?php echo count($cards_per_row); ?>">
             <?php foreach ($cards_per_row as $card) { 
               $image = $card['image'];
+              $has_popup_details = $card['has_popup_details'];
+              $full_details = $card['full_details'];
+              $has_popup = ($has_popup_details && $full_details) ? ' has-popup' : '';
               $colwidth = ($card['image_width']) ? $card['image_width'] : '100';
               $text = $card['text'];
               //$stripped_text = ($text) ? $text : ''; 
@@ -42,7 +45,7 @@
                   $text = ($text) ? strip_tags($text, '<h1><h2><h3><h4><p><b><strong><i><em>') : ''; 
                 }
               ?>
-              <div class="card-item" style="width:<?php echo $colwidth ?>%">
+              <div class="card-item<?php echo $has_popup ?>" style="width:<?php echo $colwidth ?>%">
                 <figure>
                   <?php echo $openLink ?>
                   <div class="imagediv">
@@ -57,6 +60,10 @@
                   <?php } ?>
                   <?php echo $closeLink ?>
                 </figure>
+
+                <?php if ($has_popup_details && $full_details) { ?>
+                <div class="popup-details-container" tabindex="-1" aria-hidden="true" style="display:none"><div class="popupDetails"><?php echo anti_email_spam($full_details); ?></div></div>
+                <?php } ?>
               </div>
               <?php } ?>
             <?php } ?>
