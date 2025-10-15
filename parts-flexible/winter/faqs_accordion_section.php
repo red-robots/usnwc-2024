@@ -21,18 +21,28 @@
       <div class="faqs-section">
         <div class="wrapper">
           <div class="faqs">
-            <?php $fi=1; foreach ($faqs as $faq) { 
+            <?php 
+              $max_faqs = 3;
+              $count_faqs = count($faqs);
+              $fi=1; foreach ($faqs as $faq) { 
               $question = $faq['question'];
               $answer = $faq['answer'];
               $faq_id = 'faqsection_' . $ctr . '_faq_item' . $fi;
+              $is_hide = ($fi>$max_faqs) ? 'hidden':'visible';
+              //$is_visible = ($fi<=$max_faqs) ? ' visible':'';
               if($question && $answer) { ?>
-              <div class="faq-item">
+              <div class="faq-item <?php echo $is_hide ?>">
                 <h2 role="button" tabindex="0" aria-expanded="false" aria-controls="<?php echo $faq_id ?>" class="faq-question"><span><?php echo $question ?></span><i class="fa fa-chevron-down" aria-hidden="true"></i></h2>
                 <div id="<?php echo $faq_id ?>" class="faq-answer"><?php echo anti_email_spam($answer); ?></div>
               </div>
               <?php $fi++; } ?>
             <?php } ?>
           </div>
+          <?php if ($count_faqs>3) { ?>
+          <div class="faqs-button-bottom">
+            <button class="repeaterFAQs btn-sm xs"><span>See More</span></button>
+          </div>
+          <?php } ?>
         </div>
       </div>
       <?php } ?>

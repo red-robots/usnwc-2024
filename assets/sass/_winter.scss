@@ -201,6 +201,8 @@
             background: rgba(0,0,0,.25);
           }
           .text {
+            max-width: 500px;
+            width: 100%;
             position: relative;
             z-index: 10;
             text-align: left;
@@ -227,6 +229,9 @@
                 background-color: #FFF!important;
                 color: $red!important;
               }
+            }
+            p {
+              line-height: 1.2;
             }
           }
           p:has(.custom-button-element) {
@@ -328,8 +333,8 @@
       }
       p {
         color: #FFF;
-        @include desk {
-          max-width: 800px;
+        @include mid {
+          max-width: 780px;
           width: 100%;
           margin: 0 auto 20px;
         }
@@ -580,50 +585,80 @@
     }
     .faqs {
       .faq-item {
-        margin-bottom: 10px;
+        border: 1px solid transparent;
+        overflow: hidden;
+        border-radius: 12px;
+        margin-bottom: 18px;
+        animation-fill-mode: both;
+        animation-duration: 0.8s;
+        &.hidden {
+          display: none;
+        }
+        &.show {
+          animation-name: fadeIn;
+        }
       }
       .faq-question {
         margin: 0 0;
-        font-size: 20px;
-        font-weight: 500;
+        font-size: 18px;
+        font-weight: 700;
         line-height: 1.1;
-        padding: 10px 35px 10px 15px;
+        text-transform: uppercase;
+        padding: 30px 40px 25px;
         background: #f2f2f2;
         color: #000;
-        border-radius: 8px;
+        border-radius: 12px;
         position: relative;
         transition: all ease .3s;
         svg, i {
           display: inline-block;
           position: absolute;
-          top: 50%;
-          right: 20px;
+          top: 52%;
+          right: 30px;
           font-size: 13px;
           transform: translateY(-50%);
           transition: transform ease .3s;
         }
-        &:hover {
-          background: $red;
-          color: #FFF;
-        }
+        // &:hover {
+        //   background: $red;
+        //   color: #FFF;
+        // }
         &[aria-expanded="true"] {
-          background: $red;
-          color: #FFF;
+          // background: $red;
+          // color: #FFF;
           svg, i {
+            color: $red;
             transform: translateY(-50%) scaleY(-1);
+          }
+          svg path {
+            fill: $red;
           }
         }
       }
       .faq-answer {
-        border: 1px solid #cfcfcf;
-        padding: 15px;
+        padding: 0 40px 15px;
         border-radius: 8px;
-        margin: 5px 0 15px;
+        margin: 0 0;
+        position: relative;
+        top: -10px;
         display: none;
         p:last-child {
           margin-bottom: 0;
         }
       }
+      .faq-item:has(.faq-question[aria-expanded="true"]) {
+        border: 1px solid #000;
+        .faq-question[aria-expanded="true"] {
+          background: #FFF;
+        }
+      }
+    }
+    .faqs-button-bottom {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 60px;
     }
   }
 

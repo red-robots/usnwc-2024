@@ -132,5 +132,34 @@ get_header();
         closeWinterModal();
       }
     });
+
+    $(document).on('click','.repeaterFAQs', function(e){
+      e.preventDefault();
+      var moreButton = $(this);
+      var parent = $(this).parents('.repeatable_faqs_accordion_section');
+      if( parent.find('.faq-item.hidden').length ) {
+        parent.find('.faq-item.hidden').each(function(){
+          $(this).removeClass('hidden');
+          $(this).addClass('show');
+        });
+      }
+      moreButton.hide();
+    });
+
+    if( $('.repeatable_faqs_accordion_section .faqs-section').length ) {
+      $('.repeatable_faqs_accordion_section .faqs-section .faq-question').on('click', function(e){
+        e.preventDefault();
+        var current = $(this);
+        var parent = $(this).parents('.faqs');
+        var isExpanded = $(this).attr('aria-expanded') === 'true';
+        parent.find('.faq-question').not(current).each(function(){
+          if( $(this).attr('aria-expanded') == 'true' ) {
+            $(this).trigger('click');
+          }
+        });
+        $(this).attr('aria-expanded', !isExpanded);
+        $(this).next('.faq-answer').slideToggle();
+      });
+    }
   });
 </script>

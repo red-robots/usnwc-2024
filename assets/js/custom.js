@@ -1894,15 +1894,6 @@ jQuery(document).ready(function ($) {
       }
     });
   }
-
-  if ($('.repeatable_faqs_accordion_section .faqs-section').length) {
-    $('.repeatable_faqs_accordion_section .faqs-section .faq-question').on('click', function (e) {
-      e.preventDefault();
-      var isExpanded = $(this).attr('aria-expanded') === 'true';
-      $(this).attr('aria-expanded', !isExpanded);
-      $(this).next('.faq-answer').slideToggle();
-    });
-  }
 }); // END #####################################    END
 "use strict";
 
