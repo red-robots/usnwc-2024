@@ -48,7 +48,9 @@
 
   .text_content_center_block {
     height: auto;
-    min-height: 25em;
+    min-height: 20em;
+    padding-top: 60px;
+    padding-bottom: 60px;
     .wrapper {
       transform: none;
       h2, .h2 {

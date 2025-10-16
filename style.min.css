@@ -5716,7 +5716,7 @@ h3.tribe-events-calendar-month-mobile-events__mobile-event-title.tribe-common-h7
 .page-template-page-winter #banner .slideItem .hero-alt-text-wrap .innerText{text-align:center;color:#fff}
 .page-template-page-winter #banner .slideItem .hero-alt-text-wrap .innerText h2{font-size:clamp(40px,6vw,4rem);font-weight:800;line-height:1.2;margin:0}
 .page-template-page-winter #banner .slideItem .hero-alt-text-wrap .innerText p{font-size:1.25rem;color:#fff}
-.page-template-page-winter .text_content_center_block{height:auto;min-height:25em}
+.page-template-page-winter .text_content_center_block{height:auto;min-height:20em;padding-top:60px;padding-bottom:60px}
 .page-template-page-winter .text_content_center_block .wrapper{-webkit-transform:none;transform:none}
 .page-template-page-winter .text_content_center_block .wrapper h2,.page-template-page-winter .text_content_center_block .wrapper .h2{font-size:35px;font-weight:500}
 .page-template-page-winter .text_content_center_block .buttonsBlock{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1.2rem}
