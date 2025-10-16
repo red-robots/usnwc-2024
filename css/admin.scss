@@ -1052,4 +1052,57 @@ body:has(select option[value="page-winter.php"][selected="selected"]) {
   }
 }
 
+.acf-flexible-content:has([data-name="what_to_wear_options"]) {
+  [data-name="default_image"] {
+    .image-wrap img {
+      max-height: 280px!important;
+    }
+  }
+
+  [data-name="what_to_wear_options"] {
+    .acf-repeater {
+      .image-wrap img {
+        max-height: 160px!important;
+      }
+    }
+  }
+  .acf-fields {
+    @media screen and (min-width: 1481px) {
+      display: flex;
+      flex-wrap: wrap;
+      div.acf-field {
+        width: 100%;
+        &[data-name="default_image"] {
+          width: 18%;
+        }
+        &[data-name="what_to_wear_options"] {
+          width: 82%;
+        }
+      }
+    }
+  }
+}
+
+.acf-fields.-top.-sidebar:has([data-name="wtw_options"]) {
+  @media screen and (min-width: 1481px) {
+    display: flex;
+    flex-wrap: wrap;
+    div.acf-field {
+      width: 100%;
+      &[data-name="wtw_default_image"] {
+        width: 18%;
+        .image-wrap img {
+          max-height: 280px!important;
+        }
+      }
+      &[data-name="wtw_options"] {
+        width: 82%;
+        .image-wrap img {
+          max-height: 160px!important;
+        }
+      }
+    }
+  }
+}
+
 

@@ -30,6 +30,34 @@ jQuery(document).ready(function ($) {
         }, 800);
       }
     }
+  } //Accordion
+
+
+  if ($('ul.whatToWearAccordion').length) {
+    $(document).on('click', '.whatToWearAccordion .accordion-title', function (e) {
+      e.preventDefault();
+      var currentTarget = $(this);
+      var parent = currentTarget.parents('.repeatable_what_to_wear');
+      var isExpanded = $(this).attr('aria-expanded') === 'true';
+      $(this).attr('aria-expanded', !isExpanded);
+      $(this).next().slideToggle();
+      var imageSrc = $(this).attr('data-image');
+
+      if (imageSrc) {
+        if (parent.find('.model-image img').length) {
+          parent.find('.model-image img').attr('src', imageSrc);
+        }
+      }
+
+      if (parent.find('.accordion-title').length && parent.find('.accordion-title').length > 1) {
+        parent.find('.accordion-title').not(currentTarget).each(function () {
+          if ($(this).attr('aria-expanded') == 'true') {
+            $(this).attr('aria-expanded', 'false');
+            $(this).next().slideUp();
+          }
+        });
+      }
+    });
   }
 
   $('.site-header .new-nav-v2 li.has-children').hover(function () {

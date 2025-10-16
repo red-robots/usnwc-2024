@@ -1160,4 +1160,48 @@ body:has(select option[value="page-winter.php"][selected=selected]) [data-layout
   }
 }
 
+.acf-flexible-content:has([data-name=what_to_wear_options]) [data-name=default_image] .image-wrap img {
+  max-height: 280px !important;
+}
+.acf-flexible-content:has([data-name=what_to_wear_options]) [data-name=what_to_wear_options] .acf-repeater .image-wrap img {
+  max-height: 160px !important;
+}
+@media screen and (min-width: 1481px) {
+  .acf-flexible-content:has([data-name=what_to_wear_options]) .acf-fields {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .acf-flexible-content:has([data-name=what_to_wear_options]) .acf-fields div.acf-field {
+    width: 100%;
+  }
+  .acf-flexible-content:has([data-name=what_to_wear_options]) .acf-fields div.acf-field[data-name=default_image] {
+    width: 18%;
+  }
+  .acf-flexible-content:has([data-name=what_to_wear_options]) .acf-fields div.acf-field[data-name=what_to_wear_options] {
+    width: 82%;
+  }
+}
+
+@media screen and (min-width: 1481px) {
+  .acf-fields.-top.-sidebar:has([data-name=wtw_options]) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .acf-fields.-top.-sidebar:has([data-name=wtw_options]) div.acf-field {
+    width: 100%;
+  }
+  .acf-fields.-top.-sidebar:has([data-name=wtw_options]) div.acf-field[data-name=wtw_default_image] {
+    width: 18%;
+  }
+  .acf-fields.-top.-sidebar:has([data-name=wtw_options]) div.acf-field[data-name=wtw_default_image] .image-wrap img {
+    max-height: 280px !important;
+  }
+  .acf-fields.-top.-sidebar:has([data-name=wtw_options]) div.acf-field[data-name=wtw_options] {
+    width: 82%;
+  }
+  .acf-fields.-top.-sidebar:has([data-name=wtw_options]) div.acf-field[data-name=wtw_options] .image-wrap img {
+    max-height: 160px !important;
+  }
+}
+
 /*# sourceMappingURL=admin.css.map */

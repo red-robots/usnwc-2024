@@ -53,6 +53,7 @@ $show_faqs = get_field('show_faqs_items');
         <?php include( locate_template('parts-flexible/social_media_section.php') ); ?>
         <?php include( locate_template('parts-flexible/sponsors.php') ); ?>
         <?php include( locate_template('parts-flexible/gallery_featured_posts.php') ); ?>
+        <?php include( locate_template('parts-flexible/what_to_wear.php') ); ?>
 
       <?php $ctr++; endwhile;  ?>
     </div>

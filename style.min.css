@@ -2287,17 +2287,45 @@ section.stories-whats .wn-box .wn-box-contents .flex{display:-webkit-box;display
 .btn-border-white{display:inline-block;text-decoration:none;cursor:pointer;border:1px solid #fff;color:#fff;font-size:12px;line-height:1.2;padding:8px 10px}
 .btn-border-white:hover{background:#fff;color:#ba0d30}
 .sectionTitle{font-family:"Lato",sans-serif;font-size:23px;font-weight:400;line-height:1.3;text-transform:uppercase;letter-spacing:2px;color:#191919;margin:0}
-#section-whattowear{padding-top:80px;padding-bottom:80px;background:#f2f2f2}
-#section-whattowear .model,#section-whattowear .options{width:100%;float:left;position:relative}
-#section-whattowear.half .model img.model-image{width:100%;height:auto}
-#section-whattowear.half .options{width:100%}
-#section-whattowear .model{min-height:20em;-webkit-transition:all ease .3s;transition:all ease .3s}
-#section-whattowear .model.hide{opacity:0;visibility:hidden}
-#section-whattowear .model .default{position:relative}
-#section-whattowear .model .default,#section-whattowear .model .part{width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat;-webkit-transition:all ease .3s;transition:all ease .3s}
-#section-whattowear .model .part{position:absolute;top:0;left:0;z-index:2;display:none;-webkit-animation-duration:1s;animation-duration:1s}
-#section-whattowear .model .part.fadeIn{display:block;-webkit-animation-name:fadeIn;animation-name:fadeIn}
-#section-whattowear .options .titlediv{margin-bottom:20px}
+.section-whattowear-repeatable,#section-whattowear{padding-top:80px;padding-bottom:80px;background:#f2f2f2}
+.section-whattowear-repeatable .model,.section-whattowear-repeatable .options,#section-whattowear .model,#section-whattowear .options{width:100%;float:left;position:relative}
+.section-whattowear-repeatable.half .model img.model-image,#section-whattowear.half .model img.model-image{width:100%;height:auto}
+.section-whattowear-repeatable.half .options,#section-whattowear.half .options{width:100%}
+.section-whattowear-repeatable .model,#section-whattowear .model{min-height:20em;-webkit-transition:all ease .3s;transition:all ease .3s}
+.section-whattowear-repeatable .model.hide,#section-whattowear .model.hide{opacity:0;visibility:hidden}
+.section-whattowear-repeatable .model .default,#section-whattowear .model .default{position:relative}
+.section-whattowear-repeatable .model .default,.section-whattowear-repeatable .model .part,#section-whattowear .model .default,#section-whattowear .model .part{width:100%;height:100%;background-size:contain;background-position:center;background-repeat:no-repeat;-webkit-transition:all ease .3s;transition:all ease .3s}
+.section-whattowear-repeatable .model .part,#section-whattowear .model .part{position:absolute;top:0;left:0;z-index:2;display:none;-webkit-animation-duration:1s;animation-duration:1s}
+.section-whattowear-repeatable .model .part.fadeIn,#section-whattowear .model .part.fadeIn{display:block;-webkit-animation-name:fadeIn;animation-name:fadeIn}
+.section-whattowear-repeatable .options .titlediv,#section-whattowear .options .titlediv{margin-bottom:20px}
+#primary:has(.column-style) .repeatable_what_to_wear{width:100%;float:left}
+.repeatable_what_to_wear{position:relative;background:#fff;padding-left:30px;padding-right:30px}
+.repeatable_what_to_wear .wrapper{max-width:100%;padding:0}
+.repeatable_what_to_wear .flexwrap{overflow:hidden;border-radius:15px;border:3px solid #f2f2f2}
+.repeatable_what_to_wear .flexwrap .fxcol{width:100%}
+.repeatable_what_to_wear .flexwrap .fxcol.model{background:#f2f2f2}
+.repeatable_what_to_wear .flexwrap .fxcol.model figure{margin:0;padding:30px 20px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.repeatable_what_to_wear .flexwrap .fxcol.model figure img{width:auto;height:330px}
+.repeatable_what_to_wear .flexwrap .fxcol.options{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.repeatable_what_to_wear .flexwrap .fxcol.options .inside{width:100%;padding:35px 30px}
+.repeatable_what_to_wear .flexwrap .fxcol.options .sectionTitle{font-family:"brandon-grotesque";font-weight:700;font-size:40px;line-height:1.2;margin:0 0 45px;color:#000}
+.repeatable_what_to_wear .flexwrap .fxcol.options .section-intro:has(.sectionText) .sectionTitle{margin:0}
+.repeatable_what_to_wear .flexwrap .fxcol.options .section-intro{margin-bottom:35px}
+.repeatable_what_to_wear .flexwrap .fxcol ul.section-accordion{margin:15px 0 0;padding:0;list-style:none}
+.repeatable_what_to_wear .flexwrap .fxcol ul.section-accordion>li{margin:25px 0 0}
+.repeatable_what_to_wear .flexwrap .fxcol ul.section-accordion>li:first-child{margin-top:0}
+.repeatable_what_to_wear .flexwrap .fxcol ul.section-accordion .accordion-title{font-family:"brandon-grotesque";font-size:18px;font-weight:700;line-height:1.3;text-transform:uppercase;margin:0;position:relative;-webkit-transition:all ease .3s;transition:all ease .3s}
+.repeatable_what_to_wear .flexwrap .fxcol ul.section-accordion .accordion-title:hover{opacity:.75}
+.repeatable_what_to_wear .flexwrap .fxcol ul.section-accordion .accordion-title .arrow{display:inline-block;position:absolute;top:50%;right:20px;-webkit-transform:translateY(-50%);transform:translateY(-50%);width:8px;height:8px;-webkit-transition:-webkit-transform ease .3s;transition:-webkit-transform ease .3s;transition:transform ease .3s;transition:transform ease .3s,-webkit-transform ease .3s}
+.repeatable_what_to_wear .flexwrap .fxcol ul.section-accordion .accordion-title .arrow:before,.repeatable_what_to_wear .flexwrap .fxcol ul.section-accordion .accordion-title .arrow:after{content:"";display:block;width:100%;height:2px;background:#191919;position:absolute;top:10px;left:0}
+.repeatable_what_to_wear .flexwrap .fxcol ul.section-accordion .accordion-title .arrow:before{-webkit-transform:translateX(0) rotate(45deg);transform:translateX(0) rotate(45deg)}
+.repeatable_what_to_wear .flexwrap .fxcol ul.section-accordion .accordion-title .arrow:after{-webkit-transform:translateX(5px) rotate(-45deg);transform:translateX(5px) rotate(-45deg)}
+.repeatable_what_to_wear .flexwrap .fxcol ul.section-accordion .accordion-title[aria-expanded=true]{color:#ba0d30}
+.repeatable_what_to_wear .flexwrap .fxcol ul.section-accordion .accordion-title[aria-expanded=true]:hover{opacity:1}
+.repeatable_what_to_wear .flexwrap .fxcol ul.section-accordion .accordion-title[aria-expanded=true] .arrow{-webkit-transform:scaleY(-1);transform:scaleY(-1)}
+.repeatable_what_to_wear .flexwrap .fxcol ul.section-accordion .accordion-title[aria-expanded=true] .arrow:before,.repeatable_what_to_wear .flexwrap .fxcol ul.section-accordion .accordion-title[aria-expanded=true] .arrow:after{background:#ba0d30}
+.repeatable_what_to_wear .flexwrap .fxcol ul.section-accordion .accordion-details{padding:0;margin-top:5px;margin-bottom:40px;display:none}
+.repeatable_what_to_wear .flexwrap .fxcol ul.section-accordion .accordion-details p:last-child{margin-bottom:0}
 .collapsible,.collapsiblewtw{padding:30px 20px;border-top:1px solid #bdbdbd;-webkit-transition:all ease .3s;transition:all ease .3s;cursor:pointer;position:relative;-webkit-animation-duration:1s;animation-duration:1s}
 .collapsible.first,.collapsiblewtw.first{border-top:0}
 .collapsible:before,.collapsiblewtw:before{content:"";display:block;width:100%;height:0;position:absolute;top:0;left:0;background:#ba0d30;-webkit-transition:all ease .3s;transition:all ease .3s}
@@ -5947,8 +5975,12 @@ body.subpage.single .intro-galleries.half .rightcol{width:70%;padding-left:15px}
 .section-content#section-options .flex-items .item.headings{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 .section-content#section-options .categories{width:30%}
 .section-content#section-options .categories .box-content li{padding-left:28px;display:inline-block;width:auto}
-#section-whattowear.half .model{padding-right:10vw;width:100%}
-#section-whattowear.half .options{width:65%}
+.section-whattowear-repeatable.half .model,#section-whattowear.half .model{padding-right:10vw;width:100%}
+.section-whattowear-repeatable.half .options,#section-whattowear.half .options{width:65%}
+.repeatable_what_to_wear .flexwrap .fxcol{width:50%}
+.repeatable_what_to_wear .flexwrap .fxcol.model figure{padding:80px 20px}
+.repeatable_what_to_wear .flexwrap .fxcol.model figure img{height:550px}
+.repeatable_what_to_wear .flexwrap .fxcol.options .inside{padding:70px 8vw}
 #section-checkin.section-content .col-left,#section-checkin.section-content .col-right{width:50%}
 #section-checkin.section-content .image-only{background-size:cover}
 #section-checkin.section-content .col-left .flex-content{height:50%}
@@ -6336,7 +6368,7 @@ body.logged-in.admin-bar:has(#banner) .site-header,body.logged-in.admin-bar.subp
 body.logged-in.admin-bar:has(#banner).scrolled .site-header,body.logged-in.admin-bar:has(#banner).scrolled .site-header.scrolling,body.logged-in.admin-bar:has(#banner) .site-header.scrolling,body.logged-in.admin-bar.subpage:has(#banner).scrolled .site-header,body.logged-in.admin-bar.subpage:has(#banner).scrolled .site-header.scrolling,body.logged-in.admin-bar.subpage:has(#banner) .site-header.scrolling{top:32px !important;background-color:#fff !important}
 body.logged-in.admin-bar:has(#banner).page-template-page-bike-ranch.subpage.scrolled .site-header,body.logged-in.admin-bar.page-template-page-bike-ranch.subpage:has(#banner) .site-header.scrolling{top:32px !important}
 .bike-ranch-sections .section--fullwidth_image figure figcaption h2{font-size:40px}
-}@media(min-width:820px)and (min-width:820px){#section-whattowear.half .model{width:35%}
+}@media(min-width:820px)and (min-width:820px){.section-whattowear-repeatable.half .model,#section-whattowear.half .model{width:35%}
 }@media screen and (min-width:901px){.section-fullwidth-black .column1{padding-right:15px}
 .section-fullwidth-black .column2{padding-left:15px}
 }@media(min-width:960px){.topinfo span.el{font-size:12px}
@@ -6414,6 +6446,7 @@ section.homepage-hero .home-info .info{width:50%;text-align:left}
 section.homepage-hero .home-info .info h1{font-size:60px;line-height:.8}
 section.homepage-hero .home-info .branding{width:300px;margin:0}
 section.full-bleed-promo .info .words h2{font-size:80px;line-height:.8}
+.repeatable_what_to_wear{padding-left:10vw;padding-right:10vw}
 #section-awards .col-content.col-count-2 .result-data{width:50%;margin-top:0}
 .team-staff-section .photo{width:25%}
 .team-staff-section .bio{width:75%}
@@ -6691,7 +6724,7 @@ body.scrolled:has(.homepage-hero video) .site-header-mobile .logo-original,body.
 #banner .banner-bottom img{display:none}
 #banner ul.slides.single-slide #playYoutube{display:none}
 #banner ul.slides.single-slide .type-video .videoIframe{z-index:101}
-#section-whattowear .model #defaultModel.default{height:330px !important}
+.section-whattowear-repeatable .model #defaultModel.default,#section-whattowear .model #defaultModel.default{height:330px !important}
 #pageTabs #tabcontent{padding:8px !important;border:0}
 #pageTabs #tabcontent span.mini-nav,#pageTabs #tabcontent span.mini-nav:last-child{border:1px solid #707070;border-radius:100px;margin:8px 8px}
 .schedule-activities-info.new-layout .activities .activity-info ul.list li.data{display:block;width:100%;float:left;font-size:18px}
