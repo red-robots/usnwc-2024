@@ -1,5 +1,5 @@
 .page-template-page-winter {
-  $h2_font_size: clamp(40px,6vw,4rem);
+  $h2_font_size: 45px;
 
   #banner {
     @include xxl {
@@ -114,7 +114,7 @@
     margin-bottom: 25px;
     .textBlock h2 {
       font-size: $h2_font_size;
-      font-weight: 800;
+      font-weight: 700;
       line-height: 1.1;
       margin:0 0;
     }
