@@ -14867,6 +14867,12 @@ body.logged-in.admin-bar {
 	z-index: 99999999;
 }
 .modal.customModal {
+  .modal-dialog {
+    border-radius: 13px !important;
+    overflow: hidden;
+    border: none;
+    background: #FFF;
+  }
 	.modal-content {
 		border-radius: 0px;
 		text-align: left;

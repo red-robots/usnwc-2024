@@ -4061,6 +4061,7 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 body.logged-in.admin-bar .site-header,body.logged-in.admin-bar .mobile-nav{top:32px}
 .modal-open .modal{z-index:100000000}
 .modal-backdrop.show{opacity:.8;z-index:99999999}
+.modal.customModal .modal-dialog{border-radius:13px !important;overflow:hidden;border:0;background:#fff}
 .modal.customModal .modal-content{border-radius:0;text-align:left}
 .modal.customModal .modal-header{border-bottom:0}
 .modal.customModal .modal-title{text-align:center}
