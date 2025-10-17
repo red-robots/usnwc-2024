@@ -14871,13 +14871,14 @@ body.logged-in.admin-bar {
 }
 .modal.customModal {
   .modal-dialog {
-    border-radius: 13px !important;
+    border-radius: 13px;
+    overflow: hidden;
+  }
+	.modal-content {
+		border-radius: 13px;
     overflow: hidden;
     border: none;
     background: #FFF;
-  }
-	.modal-content {
-		border-radius: 0px;
 		text-align: left;
 	}
 	.modal-header {
