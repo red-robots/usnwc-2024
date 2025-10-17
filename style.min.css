@@ -3926,6 +3926,7 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .modal.customModal#additionEventInfo .modalText h3{font-size:18px}
 .modal.customModal#additionEventInfo .modalText h4{font-size:16px}
 .modal.customModal#additionEventInfo .modalText h5{font-size:14px}
+.modal.customModal .modal-content{border-bottom:0}
 .accomodations{width:100%;float:left;margin-top:30px;margin-bottom:30px}
 .accomodations.nopadtop{margin-top:-20px}
 .accomodations .info{width:100%;float:left;border-top:2px solid #f2f2f2;padding-top:15px;padding-bottom:15px}
@@ -5834,6 +5835,7 @@ h3.tribe-events-calendar-month-mobile-events__mobile-event-title.tribe-common-h7
 .page-template-page-winter #infocardsModal.modal{padding:30px}
 .page-template-page-winter #infocardsModal.modal .modal-dialog{margin:0 auto;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:.7s;animation-duration:.7s}
 .page-template-page-winter #infocardsModal.modal .modal-dialog .modal-body{padding:15px 30px 30px}
+.page-template-page-winter #infocardsModal.modal .modal-content{border-bottom:none !important}
 .page-template-page-winter #infocardsModal.modal .popupDetails p:has(img){margin-bottom:35px}
 .page-template-page-winter #infocardsModal.modal .close.modal-close-button{-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:0;display:inline-block;width:30px;height:30px;border:1px solid #000;border-radius:100px;font-size:23px;line-height:28px;position:absolute;top:25px;right:25px;z-index:50}
 .page-template-page-winter #infocardsModal.modal .close.modal-close-button:before,.page-template-page-winter #infocardsModal.modal .close.modal-close-button:after{content:"";display:block;width:15px;height:2px;background:#000;position:absolute;top:50%;left:50%;-webkit-transition:all ease .3s;transition:all ease .3s}

@@ -797,6 +797,9 @@
         padding: 15px 30px 30px;
       }
     }
+    .modal-content {
+      border-bottom: none!important;
+    }
     .popupDetails {
       @include desk {
         padding-left: 40px;
