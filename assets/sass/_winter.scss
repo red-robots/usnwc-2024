@@ -52,16 +52,19 @@
     padding-top: 60px;
     padding-bottom: 60px;
     .wrapper {
+      max-width: 920px;
+      width: 100%;
+      margin: 0 auto;
       transform: none;
       h2, .h2 {
-        font-size: 35px;
-        font-weight: 500;
+        font-size: 45px;
+        font-weight: 800;
       }
     }
     .buttonsBlock {
       display: flex;
       justify-content: center;
-      gap: 1.2rem;
+      gap: 1.35rem;
       .button.button-red,
       .button {
         background-color: transparent!important;
