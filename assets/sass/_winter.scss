@@ -301,6 +301,10 @@
     }
 
     .bottom-information {
+      max-width: 1000px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
       .custom-button-element {
         display: inline-block;
         margin-top: 10px;
@@ -790,6 +794,15 @@
         padding: 15px 30px 30px;
       }
     }
+    .popupDetails {
+      @include desk {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+      p:has(img) {
+        margin-bottom: 35px;
+      }
+    }
     .close.modal-close-button {
       appearance: none;
       padding: 0 0;
@@ -848,6 +861,86 @@
       }
     }
   }
+
+  #infocardsModal .modal-body .gallery.swiper {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto 35px;
+    overflow: hidden;
+    .swiper-wrapper {
+      height: 370px;
+      background-color: #CCC;
+      .swiper-slide {
+        width: 100%!important;
+        height: 100%!important;
+        .gallery-item {
+          margin: 0 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          div, a, img {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+          img {
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      opacity: 0;
+      transition: transform ease .3s, opacity ease .5s;
+    }
+    .swiper-button-next {
+      transform: translateX(20vw);
+    }
+    .swiper-button-prev {
+      transform: translateX(-20vw);
+    }
+    .swiper-button-next:after, 
+    .swiper-button-prev:after {
+      font-size: 25px;
+      color: #FFF;
+      text-shadow: 0 1px 2px rgba(0,0,0,.5);
+    }
+
+    .swiper-pagination-bullets {
+      .swiper-pagination-bullet {
+        background: #FFF!important;
+        opacity: .75;
+        transition: all ease .3s!important;
+        &.swiper-pagination-bullet-active {
+          opacity: 1;
+          transform: scale(1.25);
+        }
+        &:not(.swiper-pagination-bullet-active):hover {
+          transform: translateY(-2px);
+        }
+      }
+    }
+
+    &:hover, &:focus-within {
+      .swiper-button-next {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .swiper-button-prev {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
 }
 
 

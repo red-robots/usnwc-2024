@@ -100,11 +100,48 @@ get_header();
         let details = detailsContainer.find('.popupDetails');
         detailsContainer.addClass('show-popup');
         details.appendTo('#infocardsModal.modal .modal-body');
-        $('#infocardsModal.modal').addClass('show');
-        $('body').addClass('modal-open');
-        $('#infocardsModal.modal').attr('aria-modal','true');
+        setTimeout(function(){
+          run_gallery_slider();
+        },5);
+        setTimeout(function(){
+          $('#infocardsModal.modal').addClass('show');
+          $('body').addClass('modal-open');
+          $('#infocardsModal.modal').attr('aria-modal','true'); 
+        },10);
       }
     });
+
+    function run_gallery_slider() {
+      if( $('#infocardsModal .modal-body .gallery-item').length ) {
+        $('#infocardsModal .modal-body .gallery').addClass('swiper');
+        $('#infocardsModal .modal-body .gallery').wrapInner('<div class="swiper-wrapper" />');
+        $('#infocardsModal .modal-body .gallery').append('<div class="swiper-button-next"></div> <div class="swiper-button-prev"></div> <div class="swiper-pagination"></div>');
+        $('#infocardsModal .modal-body .gallery-item').each(function(){
+          $(this).wrap('<div class="swiper-slide" />');
+        });
+
+        setTimeout(function(){
+          var galleryId = '#' + $('#infocardsModal .modal-body .gallery').attr('id');
+          var gallerySwiper = new Swiper (galleryId, {
+            speed: 500,
+            loop: true,
+            effect: 'fade',
+            slidesPerView: 1,
+            autoplay: {
+              delay: 5000,
+            },
+            navigation: {
+              nextEl: galleryId + ' .swiper-button-next',
+              prevEl: galleryId + ' .swiper-button-prev',
+            },
+            pagination: {
+              el: galleryId +  ' .swiper-pagination', // Target the pagination container
+              clickable: true, // Allow clicking on dots to navigate
+            },
+          });
+        },5);
+      }
+    }
 
     
     $(document).on('click','.close.modal-close-button', function(e){

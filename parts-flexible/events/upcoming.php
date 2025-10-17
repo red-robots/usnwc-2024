@@ -69,7 +69,9 @@
                   $images_repeater = get_field('flexslider_banner', $pid);
                   if($images_repeater) {
                     $img = $images_repeater[0];
-                    $image = ( isset($img['image']) ) ? $img['image'] : ''; 
+                    if(!$image) {
+                      $image = ( isset($img['image']) ) ? $img['image'] : ''; 
+                    }
                   }
                 ?>
 
@@ -78,7 +80,7 @@
                   <div class="start-date"><?php echo $start_date ?></div>
                   <?php } ?>
                   <?php if ($image && isset($image['url'])) { ?>
-                  <figure class="event-image">
+                  <figure class="event-image THIS--">
                     <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['url'] ?>" />
                   </figure>
                   <?php } else { ?>
