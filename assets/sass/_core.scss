@@ -14923,14 +14923,52 @@ body.logged-in.admin-bar {
 		}
 	}
 	.close {
+    appearance: none;
+    padding: 0 0;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 100px;
+    font-size: 23px;
+    line-height: 28px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 50;
+    &:before, &:after {
+      content:"";
+      display: block;
+      width: 15px;
+      height: 2px;
+      background: #000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transition: all ease .3s;
+    }
+    &:before {
+      transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    }
+    &:after {
+      transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    }
+    &:hover, &:focus {
+      border-color: $red;
+      &:before, &:after {
+        background: $red;
+      }
+    }
 		span {
-			display: inline-block;
-			width: 30px;
-			height: 30px;
-			border: 1px solid #000;
-			border-radius: 100px;
-			font-size: 23px;
-			line-height: 28px;
+			position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
 		}
 	}
 }
