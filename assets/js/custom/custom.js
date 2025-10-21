@@ -105,6 +105,56 @@ $(window).on('resize', function(){
   }
 });
 
+infocards_carousel();
+function infocards_carousel() {
+  if( $('.infocards.convert-to-carousel').length ) {
+    $('.infocards.convert-to-carousel').each(function(){
+      let infoCard = $(this).parent().find('.infoCardsCarousel');
+      let infoCardId = '#' + infoCard.attr('id');
+      let carouselContainer = infoCard.find('.infoCardsCarouselSlider');
+      $(this).find('.card-item').each(function(){
+        $(this).find('figure').clone().appendTo(carouselContainer).wrap('<div class="item" />');
+      });
+    });
+
+    $('.infoCardsCarouselSlider').each(function(){
+      var carouselSliderDiv = $(this);
+      var sliderParent = $(this).parent();
+      if( carouselSliderDiv.find('.item').length ) {
+        var infocard_owl = carouselSliderDiv.owlCarousel({
+          loop:true,
+          center:true,
+          margin: 13,
+          nav: false,
+          dots: false,
+          items:2,
+          autoplay:true,
+          autoplayTimeout:10000,
+          responsive:{
+            300:{
+              items:2,
+            },
+            830:{
+              items:3,
+            },
+            1250:{
+              items:3,
+            }
+          }
+        });
+
+        sliderParent.find(".infocard-next-btn").click(function(){
+          infocard_owl.trigger('next.owl.carousel'); // Trigger next slide
+        });
+
+        sliderParent.find(".infocard-prev-btn").click(function(){
+          infocard_owl.trigger('prev.owl.carousel'); // Trigger previous slide
+        });
+      }
+    });
+  }
+}
+
 function do_repeater_carousel_section() {
   if( $('.repeater-carousel-section').length ) {
     $('.repeater-carousel-section').each(function(){

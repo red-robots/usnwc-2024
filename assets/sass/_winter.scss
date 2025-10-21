@@ -327,6 +327,141 @@
         margin-top: 30px;
       }
     }
+    
+    .infoCardsCarousel {
+      display: none;
+      padding:0 25px;
+      position: relative;
+      @media screen and (max-width: 480px) {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      .infoCardsCarouselSlider {
+        .item {
+          figure {
+            margin: 0 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            height: 50vw;
+            @include tab {
+              height: 60vw;
+            }
+            img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+            a.imageLink {
+              text-decoration: none;
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              padding: 30px;
+            }
+            
+            figcaption {
+              display: block;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              z-index: 15;
+              color: #FFF;
+              &:after {
+                content:"";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 200%;
+                background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+              }
+              .text {
+                text-align: left;
+                position: relative;
+                z-index: 5;
+                padding: 15px;
+              }
+              h2,h3 {
+                text-transform: uppercase;
+                font-size: 20px!important;
+                font-weight: 600!important;
+                margin: 0 0 3px;
+              }
+              h2,h3,p {
+                color: #FFF;
+              }
+              p {
+                line-height: 1.2!important;
+              }
+              p:last-child {
+                margin-bottom: 0;
+              }
+            }
+            // &:has(.imageLink) {
+            //   overflow: visible;
+            //   border-radius: 0;
+            //   padding-bottom: 0;
+            //   .imageLink {
+            //     display: block;
+            //     text-decoration: none;
+            //     position: relative;
+            //     overflow: hidden;
+            //     border-radius: 15px;
+            //     padding-bottom: 120%;
+            //   }
+            // }
+          }
+        }
+      }
+      .owl-dots {
+        display: none!important;
+      }
+      .infocard-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        z-index: 50;
+        appearance: none;
+        border: none;
+        display: inline-block;
+        background: transparent;
+        padding: 5px;
+      }
+      .infocard-prev-btn {
+        left: -8px;
+      }
+      .infocard-next-btn {
+        right: -8px;
+      }
+      @media screen and (max-width: 480px) {
+        .infocard-prev-btn {
+          left: -18px;
+        }
+        .infocard-next-btn {
+          right: -18px;
+        }
+      }
+    }
+
+    @media screen and (max-width:960px) {
+      .infocards.convert-to-carousel  {
+        display: none;
+      }
+      .infoCardsCarousel {
+        display: block;
+      }
+    }
   }
 
 

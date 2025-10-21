@@ -5762,6 +5762,21 @@ h3.tribe-events-calendar-month-mobile-events__mobile-event-title.tribe-common-h7
 .page-template-page-winter .repeatable_masonry_infocards .bottom-information .custom-button-element{display:inline-block;margin-top:10px}
 .page-template-page-winter .repeatable_masonry_infocards .bottom-information .button-element.button{min-width:150px;text-align:center}
 .page-template-page-winter .repeatable_masonry_infocards:has(.infocards) .bottom-information,.page-template-page-winter .repeatable_masonry_infocards:has(.page--title--wrapper) .bottom-information{margin-top:30px}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel{display:none;padding:0 25px;position:relative}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infoCardsCarouselSlider .item figure{margin:0;position:relative;overflow:hidden;border-radius:15px;height:50vw}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infoCardsCarouselSlider .item figure img{display:block;width:100%;height:100%;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center;position:absolute;top:0;left:0}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infoCardsCarouselSlider .item figure a.imageLink{text-decoration:none;display:block;position:absolute;top:0;left:0;width:100%;height:100%;padding:30px}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infoCardsCarouselSlider .item figure figcaption{display:block;position:absolute;bottom:0;left:0;z-index:15;color:#fff}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infoCardsCarouselSlider .item figure figcaption:after{content:"";display:block;position:absolute;bottom:0;left:0;width:100%;height:200%;background:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0)),to(rgba(0,0,0,0.65)));background:linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,0.65) 100%)}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infoCardsCarouselSlider .item figure figcaption .text{text-align:left;position:relative;z-index:5;padding:15px}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infoCardsCarouselSlider .item figure figcaption h2,.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infoCardsCarouselSlider .item figure figcaption h3{text-transform:uppercase;font-size:20px !important;font-weight:600 !important;margin:0 0 3px}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infoCardsCarouselSlider .item figure figcaption h2,.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infoCardsCarouselSlider .item figure figcaption h3,.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infoCardsCarouselSlider .item figure figcaption p{color:#fff}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infoCardsCarouselSlider .item figure figcaption p{line-height:1.2 !important}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infoCardsCarouselSlider .item figure figcaption p:last-child{margin-bottom:0}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .owl-dots{display:none !important}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infocard-nav{position:absolute;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);font-size:20px;z-index:50;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;display:inline-block;background:transparent;padding:5px}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infocard-prev-btn{left:-8px}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infocard-next-btn{right:-8px}
 .page-template-page-winter .repeatable_carousel_section{padding:60px 15px;background:#414042;color:#fff}
 .page-template-page-winter .repeatable_carousel_section .page--title--wrapper{text-align:center;margin-bottom:40px}
 .page-template-page-winter .repeatable_carousel_section .page--title--wrapper h2{font-size:45px;font-weight:700;line-height:1.1;color:#fff !important}
@@ -6353,6 +6368,7 @@ body.page-template-page-salesforce .gform_wrapper{padding-left:5vw;padding-right
 .mobileRedTag a.registerBtn:hover:before,.mobileRedTag a.registerBtn:hover:after{background-color:#000}
 .homepage-hero:has(video) .desktop{display:block}
 .homepage-hero:has(video) .mobile{display:none}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infoCardsCarouselSlider .item figure{height:60vw}
 .page-template-page-winter .repeatable_carousel_section .repeater-carousel-section .carousel-slider .item figure .title{font-size:clamp(25px,3vw,35px)}
 .page-template-page-winter .image_and_text_two_column:has(.textBlock):has(.galleryWrapper) .imageBlock{position:absolute;top:0;left:0;height:100%}
 .page-template-page-winter .image_and_text_two_column:has(.textBlock):has(.galleryWrapper) .imageBlock .galleryWrapper{position:absolute;top:0;left:0;width:100%;height:100%}
@@ -6727,6 +6743,8 @@ body.subpage.scrolled.page-template-page-bike-ranch .site-header-mobile.menu-ope
 .site-header-mobile.menu-open .site-header-flex{background-color:rgba(0,0,0,.88) !important}
 .page-template-page-winter .text_content_center_block .buttonsBlock{-ms-flex-wrap:wrap;flex-wrap:wrap;gap:1.35rem}
 .page-template-page-winter .text_content_center_block .buttonsBlock a.button{min-width:180px !important;min-height:40px !important}
+.page-template-page-winter .repeatable_masonry_infocards .infocards.convert-to-carousel{display:none}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel{display:block}
 }@media screen and (max-width:900px){.featured-events-section{background-color:#fff}
 .featured-events-section .flexwrap{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .featured-events-section .postbox{width:50%;float:left}
@@ -6998,6 +7016,9 @@ body.page-template-page-instructions .select2-dropdown.select2-dropdown--below{t
 .todaySnapshotInfo .info-wrapper .infocol:nth-child(1){border-bottom:1px solid #ccc}
 .activity-schedule-modal .schedule-container .line-item{-ms-flex-wrap:wrap;flex-wrap:wrap}
 .activity-schedule-modal .schedule-container .line-item .time{display:block;width:100%;padding-left:0;padding-bottom:5px}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel{padding-left:5px;padding-right:5px}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infocard-prev-btn{left:-18px}
+.page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infocard-next-btn{right:-18px}
 }@media screen and (max-width:400px){.new-nav-v2.desktop-navigation .mega-menu-content .menu-col{width:100% !important}
 }@media screen and (max-width:380px){.page-template-page-winter .text_content_center_block .buttonsBlock{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 .page-template-page-winter .text_content_center_block .buttonsBlock a.button{min-width:190px !important}
