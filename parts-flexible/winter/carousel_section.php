@@ -1,6 +1,7 @@
 <?php if( get_row_layout() == 'carousel_section' ) { ?>
   <?php  
   $html_anchor = get_sub_field('html_anchor');
+  $section_title = get_sub_field('section_title');
   $text_content = get_sub_field('text_content');
   $carousel_items = get_sub_field('carousel_items');
   $video_embed = get_sub_field('video_embed');
@@ -10,13 +11,15 @@
     <div id="<?php echo $html_anchor ?>" class="html-anchor"></div>
     <?php } ?>
     <div class="section-inner">
-      <?php if ($text_content) { ?>
-      <div class="section-intro">
+
+      <?php if ($section_title) { ?>
+      <div class="page--title--wrapper">
         <div class="wrapper">
-          <?php echo anti_email_spam($text_content); ?>
+          <h2 class="h2"><?php echo $section_title ?></h2>
         </div>
       </div>
       <?php } ?>
+
 
       <?php if ($carousel_items) { ?>
       <div class="repeater-carousel-section">
@@ -51,6 +54,14 @@
               <?php } ?>
             <?php } ?>
           </div>
+        </div>
+      </div>
+      <?php } ?>
+
+      <?php if ($text_content) { ?>
+      <div class="section-intro section-bottom-text">
+        <div class="wrapper">
+          <?php echo anti_email_spam($text_content); ?>
         </div>
       </div>
       <?php } ?>
