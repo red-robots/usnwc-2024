@@ -5825,6 +5825,7 @@ h3.tribe-events-calendar-month-mobile-events__mobile-event-title.tribe-common-h7
 .page-template-page-winter .repeatable_carousel_section .video-section .videoWrap{position:relative;overflow:hidden;border-radius:20px;background:#000}
 .page-template-page-winter .repeatable_carousel_section .video-section .videoWrap iframe{width:100% !important;height:100% !important;margin:0 0 !important;position:absolute;top:0;left:0;z-index:5}
 .page-template-page-winter .repeatable_carousel_section .video-section .videoWrap img.video-resizer{width:100%;height:auto;pointer-events:none;position:relative}
+.page-template-page-winter .repeatable_faqs_accordion_section{padding-top:50px;padding-bottom:20px}
 .page-template-page-winter .repeatable_faqs_accordion_section .section-intro{margin-bottom:25px}
 .page-template-page-winter .repeatable_faqs_accordion_section .wrapper{max-width:800px;width:100%;margin:0 auto}
 .page-template-page-winter .repeatable_faqs_accordion_section .faqs .faq-item{border:1px solid transparent;overflow:hidden;border-radius:12px;margin-bottom:18px;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:.8s;animation-duration:.8s}
