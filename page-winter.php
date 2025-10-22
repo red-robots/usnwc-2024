@@ -23,6 +23,7 @@ get_header();
         <?php include( locate_template('parts-flexible/winter/masonry_infocards.php') ); ?>
         <?php include( locate_template('parts-flexible/winter/carousel_section.php') ); ?>
         <?php include( locate_template('parts-flexible/winter/faqs_accordion_section.php') ); ?>
+        <?php include( locate_template('parts-flexible/winter/sponsors_section.php') ); ?>
       
       <?php $ctr++; endwhile;  ?>
     <?php  } ?>

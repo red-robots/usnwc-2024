@@ -758,7 +758,7 @@
 
   .repeatable_faqs_accordion_section {
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 60px;
     .section-intro {
       margin-bottom: 25px;
     }
@@ -842,7 +842,7 @@
       justify-content: center;
       text-align: center;
       margin-top: 40px;
-      margin-bottom: 60px;
+      margin-bottom: 0;
     }
   }
 
@@ -1120,6 +1120,38 @@
     }
   }
 
+  .repeatable_sponsors_section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .sponsors {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      figure {
+        margin: 0 0;
+        a {
+          display: inline-block;
+          text-decoration: none;
+        }
+        img {
+          width: auto;
+          height: 40px;
+          @media screen and (max-width: 480px) {
+            width: 380px;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+
+  #main section:last-child {
+    padding-bottom: 60px;
+    &.repeatable_sponsors_section {
+      padding-top: 0;
+      padding-bottom: 50px;
+    }
+  }
 }
 
 
