@@ -4882,6 +4882,13 @@ body.modal-open{overflow:hidden}
 .checkin-section-images .flexcol.images-4 figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .checkin-section-images .flexcol.images-4 figure.frame1,.checkin-section-images .flexcol.images-4 figure.frame2,.checkin-section-images .flexcol.images-4 figure.frame3,.checkin-section-images .flexcol.images-4 figure.frame4{width:100%}
 .text-and-image-blocks.text-and-image-blocks--gallery .image-position-left{-webkit-box-orient:horizontal !important;-webkit-box-direction:normal !important;-ms-flex-direction:row !important;flex-direction:row !important}
+.sponsors-section.sponsors-section--bottom{padding-top:60px;padding-bottom:40px;background:#fff;width:100%;float:left}
+.sponsors-section.sponsors-section--bottom .shead-icon{margin-bottom:15px}
+.sponsors-section.sponsors-section--bottom .sponsors{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1rem}
+.sponsors-section.sponsors-section--bottom .sponsors figure{margin:0}
+.sponsors-section.sponsors-section--bottom .sponsors figure a{display:inline-block;text-decoration:none}
+.sponsors-section.sponsors-section--bottom .sponsors figure img{width:auto;height:65px}
+body.single-dining #main:has(.text-and-image-blocks--gallery):has(.sponsors-section--bottom) .text-and-image-blocks--gallery #section2{margin-bottom:0}
 .column-data-section{margin:30px 0 40px}
 .column-data-section .button-simple{margin-top:8px}
 .column-data-section .button-simple a.simple-link{display:inline-block;position:relative}
@@ -7024,6 +7031,7 @@ body.page-template-page-instructions .select2-dropdown.select2-dropdown--below{t
 .todaySnapshotInfo .info-wrapper .infocol:nth-child(1){border-bottom:1px solid #ccc}
 .activity-schedule-modal .schedule-container .line-item{-ms-flex-wrap:wrap;flex-wrap:wrap}
 .activity-schedule-modal .schedule-container .line-item .time{display:block;width:100%;padding-left:0;padding-bottom:5px}
+.sponsors-section.sponsors-section--bottom .sponsors figure img{width:380px;height:auto}
 .page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel{padding-left:5px;padding-right:5px}
 .page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infocard-prev-btn{left:-18px}
 .page-template-page-winter .repeatable_masonry_infocards .infoCardsCarousel .infocard-next-btn{right:-18px}

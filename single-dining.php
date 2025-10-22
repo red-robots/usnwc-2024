@@ -189,6 +189,44 @@ get_header();
       ?>
     <?php } ?>
 
+    <?php  
+      /* LAST SECTION */
+      $sponsors_section_title = get_field('sponsors_section_title');
+      $sponsors = get_field('sponsors');
+      if($sponsors) { ?>
+      <div id="sponsors--section" class="sponsors-section sponsors-section--bottom">
+          <div class="wrapper">
+            <?php if ($sponsors_section_title) { ?>
+            <div class="shead-icon text-center">
+              <h2 class="stitle" data-anchor-target="#sponsors"><?php echo $sponsors_section_title ?></h2>
+            </div>
+            <?php } ?>
+            <?php if ($sponsors) { ?>
+            <div class="sponsors">
+              <?php foreach ($sponsors as $s) { 
+                $logo = $s['logo'];
+                $logoUrl = $s['url'];
+                $logo_link = (isset($logoUrl['url']) && $logoUrl['url']) ? $logoUrl['url'] : '';
+                $logo_name = (isset($logoUrl['title']) && $logoUrl['title']) ? $logoUrl['title'] : '';
+                $logo_target = (isset($logoUrl['target']) && $logoUrl['target']) ? $logoUrl['target'] : '';
+                if($logo) { ?>
+                  <figure class="sponsor-logo">
+                  <?php if ($logo_link) { ?>
+                    <a href="<?php echo $logo_link ?>" target="<?php echo $logo_target ?>">
+                      <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['title'] ?>">
+                    </a>
+                  <?php } else { ?>
+                    <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['title'] ?>">
+                  <?php } ?>
+                  </figure>
+                <?php } ?>
+              <?php } ?>
+            </div>
+            <?php } ?>
+          </div>
+      </div>
+      <?php } ?>
+
   </main>
 </div>
 <?php
