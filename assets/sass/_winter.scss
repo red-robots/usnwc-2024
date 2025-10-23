@@ -1138,9 +1138,15 @@
         }
         img {
           width: auto;
-          height: 40px;
-          @media screen and (max-width: 480px) {
-            width: 380px;
+          height: 65px;
+          @media screen and (max-width: 1080px) {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+          }
+          @media screen and (max-width: 768px) {
+            max-width: 400px;
+            width: 95%;
             height: auto;
           }
         }
