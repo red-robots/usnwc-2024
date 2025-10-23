@@ -5893,6 +5893,7 @@ h3.tribe-events-calendar-month-mobile-events__mobile-event-title.tribe-common-h7
 .page-template-page-winter #infocardsModal .modal-body .gallery.swiper:hover .swiper-button-next,.page-template-page-winter #infocardsModal .modal-body .gallery.swiper:focus-within .swiper-button-next{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}
 .page-template-page-winter #infocardsModal .modal-body .gallery.swiper:hover .swiper-button-prev,.page-template-page-winter #infocardsModal .modal-body .gallery.swiper:focus-within .swiper-button-prev{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}
 .page-template-page-winter .repeatable_sponsors_section{padding-top:50px;padding-bottom:50px}
+.page-template-page-winter .repeatable_sponsors_section .page--title--wrapper{margin-bottom:10px}
 .page-template-page-winter .repeatable_sponsors_section .sponsors{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1rem}
 .page-template-page-winter .repeatable_sponsors_section .sponsors figure{margin:0}
 .page-template-page-winter .repeatable_sponsors_section .sponsors figure a{display:inline-block;text-decoration:none}

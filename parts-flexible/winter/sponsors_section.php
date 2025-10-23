@@ -8,7 +8,7 @@
     <?php if ($html_anchor) { ?>
     <div id="<?php echo $html_anchor ?>" class="html-anchor"></div>
     <?php } ?>
-    <div class="wrapper">
+    <div class="wrapper textCenter">
       <?php if ($section_title) { ?>
       <div class="page--title--wrapper">
         <h2 class="h2"><?php echo $section_title ?></h2>

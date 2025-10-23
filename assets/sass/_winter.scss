@@ -1123,6 +1123,9 @@
   .repeatable_sponsors_section {
     padding-top: 50px;
     padding-bottom: 50px;
+    .page--title--wrapper {
+      margin-bottom: 10px;
+    }
     .sponsors {
       display: flex;
       justify-content: center;
