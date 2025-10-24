@@ -4313,4 +4313,16 @@ body.home {
   }
 }
 
+@media screen and (max-width:860px) {
+  body.single-dining .site #hero--single {
+    figure {
+      padding-bottom: 0!important;
+      img.mobile-feat-image {
+        position: relative!important;
+        height: auto!important;
+      }
+    }
+  }
+}
+
 
