@@ -6787,8 +6787,8 @@ body.subpage.scrolled.page-template-page-bike-ranch .site-header-mobile.menu-ope
 }@media screen and (max-width:860px){.flex-direction-nav .flex-prev{opacity:1;left:10px}
 .flex-direction-nav .flex-next{opacity:1;right:10px}
 .content-area-single .text-content-gallery .gallery-wrapper .imagewrap{width:100% !important}
-body.single-dining .site #hero--single figure{padding-bottom:0 !important}
-body.single-dining .site #hero--single figure img.mobile-feat-image{position:relative !important;height:auto !important}
+body.single-dining .site #hero--single figure:has(.mobile-feat-image){padding-bottom:0 !important}
+body.single-dining .site #hero--single figure:has(.mobile-feat-image) img.mobile-feat-image{position:relative !important;height:auto !important}
 }@media screen and (max-width:840px){body.scrolled:has(.homepage-hero video) .site-header-mobile{background-color:#fff;-webkit-box-shadow:0 2px 8px rgba(0,0,0,.2);box-shadow:0 2px 8px rgba(0,0,0,.2)}
 body.scrolled:has(.homepage-hero video) .site-header-mobile .logo-original,body.scrolled:has(.homepage-hero video) .site-header-mobile .mobileMenuToggle:not(.active){-webkit-filter:invert(1);filter:invert(1)}
 }@media screen and (max-width:821px){body.logged-in.admin-bar.scrolled .film-event-status{top:125px}
