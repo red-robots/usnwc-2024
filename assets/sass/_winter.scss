@@ -257,6 +257,14 @@
                   position: absolute;
                   left: 0;
                   bottom: 3px;
+                  transition: all ease .3s;
+                }
+                &:hover, &:focus {
+                  color: $red!important;
+                  transform: translateY(-1px);
+                  &:after {
+                    background: $red!important;
+                  }
                 }
               }
             }
