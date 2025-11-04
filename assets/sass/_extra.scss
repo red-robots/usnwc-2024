@@ -2116,10 +2116,15 @@ section.visit.flexible-image-cards,
       img {
         width: auto;
         height: 65px;
+        @media screen and (max-width:768px) {
+          width: 350px;
+          height: auto;
+        }
       }
     }
   }
 }
+
 
 #section-schedule.section-content {
   .schedules-list li.item {
