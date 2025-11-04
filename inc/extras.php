@@ -3181,3 +3181,66 @@ function remove_editor_on_specific_page() {
 }
 add_action( 'admin_init', 'remove_editor_on_specific_page' );
 
+//Check if a string is a date format
+function is_date_string($string) {
+  // Normalize spacing and capitalization
+  $string = trim($string);
+  $string = ucwords(strtolower($string));
+
+  // Define regex pattern for "Month Day"
+  $pattern = '/^(January|February|March|April|May|June|July|August|September|October|November|December)\s+([1-9]|[12][0-9]|3[01])$/i';
+
+  if (preg_match($pattern, $string, $matches)) {
+      // Extract month and day
+      $month = $matches[1];
+      $day = (int)$matches[2];
+
+      // Convert month to number
+      $monthNumber = date('n', strtotime($month));
+
+      // Validate actual date (e.g., no Feb 30)
+      return checkdate($monthNumber, $day, date('Y'));
+  }
+
+  return false;
+}
+
+//Check if a string is a date and if its future date
+function is_future_date($dateString) {
+  // Normalize the string
+  $dateString = trim($dateString);
+  $dateString = ucwords(strtolower($dateString));
+
+  // If only "Month Day" is provided (e.g. "January 9")
+  $pattern = '/^(January|February|March|April|May|June|July|August|September|October|November|December)\s+([1-9]|[12][0-9]|3[01])$/i';
+
+  if (preg_match($pattern, $dateString, $matches)) {
+      $month = $matches[1];
+      $day = (int)$matches[2];
+      $year = date('Y');
+
+      // Validate date for current year
+      if (!checkdate(date('n', strtotime($month)), $day, $year)) {
+          return false; // Invalid date (e.g., Feb 30)
+      }
+
+      $dateThisYear = strtotime("$month $day $year");
+      $today = strtotime('today');
+
+      // If date already passed, assume next year
+      if ($dateThisYear < $today) {
+          $dateThisYear = strtotime("$month $day " . ($year + 1));
+      }
+
+      return $dateThisYear > $today;
+  }
+
+  // Otherwise, try to parse a full date (YYYY-MM-DD or similar)
+  $timestamp = strtotime($dateString);
+  if ($timestamp === false) {
+      return false; // Not a recognizable date
+  }
+
+  return $timestamp > strtotime('today');
+}
+

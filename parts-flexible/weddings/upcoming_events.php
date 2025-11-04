@@ -125,11 +125,11 @@
                             }
                           }
 
-                          if($start_date_year) {
-                            if($start_date_year!=$current_year) {
-                              $date .= ' ' . $start_date_year;
-                            } 
-                          }
+                          // if($start_date_year) {
+                          //   if($start_date_year!=$current_year) {
+                          //     $date .= ' ' . $start_date_year;
+                          //   } 
+                          // }
 
                           if($date) {
                             $date = strtoupper($date);
