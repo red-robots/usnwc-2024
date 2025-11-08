@@ -47,6 +47,7 @@ get_header();
 <?php get_footer(); ?>
 <script src="https://player.vimeo.com/api/player.js"></script>
 <script>
+  let gallerySwiper;
   var iframe = document.querySelector('.iframe-vimeo');
   if(iframe) {
     var player = new Vimeo.Player(iframe);
@@ -97,18 +98,31 @@ get_header();
       var parent = $(this).parents('.card-item');
       if( parent.find('.popup-details-container').length ) {
         $('#infocardsModal.modal .modal-body').html("");
+
         let detailsContainer = parent.find('.popup-details-container');
-        let details = detailsContainer.find('.popupDetails');
-        detailsContainer.addClass('show-popup');
-        details.appendTo('#infocardsModal.modal .modal-body');
-        setTimeout(function(){
-          run_gallery_slider();
-        },5);
-        setTimeout(function(){
-          $('#infocardsModal.modal').addClass('show');
-          $('body').addClass('modal-open');
-          $('#infocardsModal.modal').attr('aria-modal','true'); 
-        },10);
+        let details = detailsContainer.find('.popupDetailsTextBox').val();
+        if(details) {
+          $('#infocardsModal.modal .modal-body').html(`<div class="popupDetails">${details}</div>`);
+          setTimeout(function(){
+            run_gallery_slider();
+          },5);
+          setTimeout(function(){
+            $('#infocardsModal.modal').addClass('show');
+            $('body').addClass('modal-open');
+            $('#infocardsModal.modal').attr('aria-modal','true'); 
+          },10);
+        }
+
+        // detailsContainer.addClass('show-popup');
+        // details.appendTo('#infocardsModal.modal .modal-body');
+        // setTimeout(function(){
+        //   run_gallery_slider();
+        // },5);
+        // setTimeout(function(){
+        //   $('#infocardsModal.modal').addClass('show');
+        //   $('body').addClass('modal-open');
+        //   $('#infocardsModal.modal').attr('aria-modal','true'); 
+        // },10);
       }
     });
 
@@ -120,10 +134,9 @@ get_header();
         $('#infocardsModal .modal-body .gallery-item').each(function(){
           $(this).wrap('<div class="swiper-slide" />');
         });
-
         setTimeout(function(){
           var galleryId = '#' + $('#infocardsModal .modal-body .gallery').attr('id');
-          var gallerySwiper = new Swiper (galleryId, {
+          gallerySwiper = new Swiper (galleryId, {
             speed: 500,
             loop: true,
             effect: 'fade',
@@ -140,7 +153,7 @@ get_header();
               clickable: true, // Allow clicking on dots to navigate
             },
           });
-        },5);
+        },200);
       }
     }
 
@@ -152,16 +165,20 @@ get_header();
 
     function closeWinterModal() {
       $('#infocardsModal.modal').addClass('closed');
+      if(gallerySwiper) {
+        gallerySwiper.destroy(true, true);
+      }
       setTimeout(function(){
         $('#infocardsModal.modal').removeClass('show closed');
         $('#infocardsModal.modal').attr('aria-modal','false');
         $('body').removeClass('modal-open');
-      },300);
+        $('#infocardsModal.modal .modal-body').html("");
+      },200);
       setTimeout(function(){
-        let modalContent = $('#infocardsModal.modal .modal-body').html();
-        $('.popup-details-container.show-popup').html(modalContent);
+        // let modalContent = $('#infocardsModal.modal .modal-body').html();
+        // $('.popup-details-container.show-popup').html(modalContent);
         $('.popup-details-container').removeClass('show-popup');
-      },350);
+      },250);
     }
 
     $(document).on('click','#infocardsModal', function(e){

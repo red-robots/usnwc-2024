@@ -64,7 +64,11 @@
                   </figure>
 
                   <?php if ($has_popup_details && $full_details) { ?>
-                  <div class="popup-details-container" tabindex="-1" aria-hidden="true" style="display:none"><div class="popupDetails"><?php echo anti_email_spam($full_details); ?></div></div>
+                  <div class="popup-details-container" tabindex="-1" aria-hidden="true" style="display:none">
+                    <!-- <div class="popupDetails"><?php //echo anti_email_spam($full_details); ?></div> -->
+                    <?php $encodedDetails = htmlentities($full_details, ENT_QUOTES, 'UTF-8'); ?>
+                    <textarea class="popupDetailsTextBox" style="display:none;"><?php echo $encodedDetails; ?></textarea>
+                  </div>
                   <?php } ?>
                 </div>
                 <?php } ?>
