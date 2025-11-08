@@ -9,6 +9,9 @@ $filterVal = $filter;
 if($filter && $filter!='all') {
   $filter = explode('_', $filter);
 }
+
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+$currentBaseUrl = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 ?>
 
 <div id="primary" data-post="<?php echo get_the_ID()?>" class="content-area-full activities-parent">
@@ -55,6 +58,7 @@ if($filter && $filter!='all') {
 
   if ( $posts->have_posts() ) { 
     $count = $posts->found_posts; 
+
     $stories_class = 'stories-count-'.$count;
     if($count>5) {
       $stories_class .= ' items-6-or-more';
@@ -147,7 +151,7 @@ if($filter && $filter!='all') {
     $found_posts = $posts->found_posts;
     if ($found_posts > $perpage) { ?>
     <div id="pagination" class="pagination-wrapper loadMoreWrapper">
-      <a href="javascript:void(0)" data-baseurl="<?php echo get_permalink() ?>" id="loadMorePosts" data-next="2" data-total-pages="<?php echo $total_pages ?>" class="button button-pill">See More</a>
+      <a href="javascript:void(0)" data-baseurl="<?php echo $currentBaseUrl ?>" id="loadMorePosts" data-next="2" data-total-pages="<?php echo $total_pages ?>" class="button button-pill">See More</a>
     </div>
     <?php } ?>
 
@@ -170,9 +174,11 @@ jQuery(document).ready(function($){
     var next = $(this).attr('data-next');
     var nextPlus = parseInt(next) + 1;
     var totalPages = parseInt( $(this).attr('data-total-pages') );
-    var baseUrl = $(this).attr('data-baseurl') + '?pg=' + next;
+    var baseUrl = $(this).attr('data-baseurl');
+    var symbol = ( baseUrl.includes('?') ) ? '&' : '?';
+        baseUrl += symbol + 'pg=' + next;
     loadMoreButton.attr('data-next', nextPlus);
-
+    
     $('#hiddenData').load(baseUrl + ' .stories-entries', function(){
       if( $('#hiddenData .storyBlock').length ) {
         var items = $('#hiddenData .stories-entries').html();
