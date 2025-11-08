@@ -17997,6 +17997,24 @@ body.subpage {
     text-decoration: none!important;
   }
 }
+
+.repeater--custom-buttons {
+  display: flex;
+  gap: 1rem;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  @include max(600px) {
+    justify-content: center;
+    // gap: .5rem;
+    // flex-wrap: wrap;
+    // flex-direction: column;
+    // .button {
+    //   width: 100%;
+    // }
+  }
+}
+
 body.subpage.single.single-activity {
   .content-default.new-layout {
     .main-description {

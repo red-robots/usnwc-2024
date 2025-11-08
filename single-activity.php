@@ -170,6 +170,8 @@ $post_type = get_post_type();
 
       $a_column_class = ( ($has_price_options && array_filter($has_price_options) || $pass_other_into) && $res_text ) ? 'twocol' : 'full';
 
+      $custom_buttons = get_field('pass_custom_buttons');
+
       if( ($has_price_options && array_filter($has_price_options)) || $res_text || $pass_other_into) { ?>
       <section id="pass-options-section" class="pass-price-options <?php echo $a_column_class ?>" data-section="Options">
         <div class="inner">
@@ -238,6 +240,21 @@ $post_type = get_post_type();
               </div>
               <?php } ?>
             
+            <?php } ?>
+
+
+            <?php if ($custom_buttons) { ?>
+            <div class="repeater--custom-buttons">
+              <?php foreach ($custom_buttons as $b) { 
+                $btn  = $b['custom_button'];
+                $btnName = ( isset($btn['title']) && $btn['title'] ) ? $btn['title'] : '';
+                $btnLink = ( isset($btn['url']) && $btn['url'] ) ? $btn['url'] : '';
+                $btnTarget = ( isset($btn['target']) && $btn['target'] ) ? $btn['target'] : '';
+                if($btnName && $btnLink) { ?>
+                  <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="button btn-gray"><?php echo $btnName ?></a>
+                <?php } ?>
+              <?php } ?>
+            </div>
             <?php } ?>
 
           </div> 

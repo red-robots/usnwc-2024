@@ -85,6 +85,10 @@
           background-color: #FFF!important;
           color: #000!important;
         }
+        @include max(600px) {
+          display: flex;
+          width: 100%;
+        }
       }
 
       @include max($midwidth) {

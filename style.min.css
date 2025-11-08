@@ -4444,6 +4444,7 @@ body.subpage .site-header.start-position{position:relative !important;z-index:99
 body.subpage nav.new-nav .menu-item a,body.subpage .site-header .navbar .right .cal a,body.subpage .site-header .navbar .right .today{color:#000 !important}
 .button-element{display:inline-block;text-decoration:none;background-color:#ba0d30;color:#fff;padding:10px 25px;border-radius:8px;font-size:23px;font-weight:500;line-height:1.2;-webkit-transition:all ease .3s;transition:all ease .3s}
 .button-element:hover,.button-element:focus{color:#fff !important;background-color:#191919;text-decoration:none !important}
+.repeater--custom-buttons{display:-webkit-box;display:-ms-flexbox;display:flex;gap:1rem;text-align:center;margin-top:20px;margin-bottom:20px}
 body.subpage.single.single-activity .content-default.new-layout .main-description p{color:#707070;max-width:600px;width:100%;margin:0 auto 20px;font-size:20px;line-height:1.4}
 body.subpage.single.single-activity .content-default.new-layout .intro-galleries{background:#f2f2f2}
 body.subpage.single.single-activity .content-default.new-layout .intro-galleries .leftcol .wrap{padding-top:5vw;padding-bottom:5vw}
@@ -7017,8 +7018,10 @@ body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery
 .section-flex-columns .flexcol{width:100% !important;background-image:none !important}
 .section-flex-columns .flexcol img{visibility:visible}
 #primary .upcoming-posts .photo.no-image:before{width:30vw;height:30vw}
+.repeater--custom-buttons{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .image_cards_columns .cards .flexwrap .imageBlock{width:100%}
 .bike-ranch-sections .section--two_column_layout_text_image .section-buttons .button-traditional{width:100% !important}
+.page-template-page-winter .text_content_center_block .buttonsBlock .button.button-red,.page-template-page-winter .text_content_center_block .buttonsBlock .button{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%}
 }@media screen and (max-width:500px){body.home .homerow .imagebox a{padding-bottom:105%}
 .section_columns_bottom_text .infobox{width:100% !important}
 .page-template-page-winter .repeatable_masonry_infocards .infocards .card-item figure{height:350px}
