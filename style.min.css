@@ -1870,6 +1870,8 @@ p{color:#555}
 section:focus,div:focus{outline:0}
 a,input,button,select,textarea{font-family:"brandon-grotesque";-webkit-transition:all ease .3s;transition:all ease .3s}
 .tribe-events-c-subscribe-dropdown__button button{font-family:"brandon-grotesque" !important;font-weight:700}
+#hostaway-booking-widget .hsbw-dates .hsbw-calendar-container table,#hostaway-booking-widget .hsbw-dates .hsbw-calendar:before,.hsbw-location-item{font-family:"brandon-grotesque" !important}
+.hsbw-location-item.active{font-weight:700 !important}
 a{color:#ba0d30}
 a:hover{color:#dd8698}
 .textalign-right{text-align:right}
@@ -3910,7 +3912,7 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .flexibleContentWrap .title-wrapper.no-section-text .titlediv,.flexibleContentWrap .title-wrapper.no-section-text .shead-icon{margin-bottom:0}
 .flexibleContentWrap .last-element-section:not(.cards-multiple-wrapper),.flexibleContentWrap .last-element-section:not(.cards-multiple-wrapper) .last-child-element{margin-bottom:10px}
 .flexibleContentWrap .three-columns-block.three-columns-block-v2{padding-left:20px;padding-right:20px}
-.flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap{max-width:100%;width:100%;margin:0 auto}
+.flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap{max-width:100%;width:100%;margin:0 auto;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap.section-grid-images.section-content .fbox,.flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap .fbox{padding:12px;margin-top:15px;margin-bottom:15px}
 .flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap.section-grid-images.section-content .fbox .inside,.flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap .fbox .inside{background:transparent}
 .flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap.section-grid-images.section-content .fbox .inside .imagediv,.flexibleContentWrap .three-columns-block.three-columns-block-v2 .entryList.flexwrap .fbox .inside .imagediv{overflow:hidden;border-radius:10px;margin-bottom:18px}

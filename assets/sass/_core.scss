@@ -87,6 +87,16 @@ a,input,button,select,textarea {
   font-family: $font-brandon-bold!important;
   font-weight: 700;
 }
+#hostaway-booking-widget .hsbw-dates .hsbw-calendar-container table,
+#hostaway-booking-widget .hsbw-dates .hsbw-calendar-container table th,
+#hostaway-booking-widget .hsbw-dates .hsbw-calendar-container table td,
+#hostaway-booking-widget .hsbw-dates .hsbw-calendar:before,
+.hsbw-location-item {
+  font-family: $font-brandon-regular!important;
+}
+.hsbw-location-item.active {
+  font-weight: 700!important;
+}
 a {
 	color: $red;
 	&:hover {
