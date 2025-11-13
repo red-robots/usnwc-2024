@@ -1869,6 +1869,7 @@ b,strong{font-family:"brandon-grotesque";font-weight:700}
 p{color:#555}
 section:focus,div:focus{outline:0}
 a,input,button,select,textarea{font-family:"brandon-grotesque";-webkit-transition:all ease .3s;transition:all ease .3s}
+.tribe-events-c-subscribe-dropdown__button button{font-family:"brandon-grotesque" !important;font-weight:700}
 a{color:#ba0d30}
 a:hover{color:#dd8698}
 .textalign-right{text-align:right}

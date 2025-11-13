@@ -12059,6 +12059,7 @@ body.single-festival {
 #section-activities.section-content.countItems2 {
 	.entryList.flexwrap {
 		@include flexbox-justify(center);
+    justify-content: center;
 	}
 }
 /* Sitemap */
