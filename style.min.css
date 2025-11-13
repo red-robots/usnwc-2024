@@ -1870,7 +1870,7 @@ p{color:#555}
 section:focus,div:focus{outline:0}
 a,input,button,select,textarea{font-family:"brandon-grotesque";-webkit-transition:all ease .3s;transition:all ease .3s}
 .tribe-events-c-subscribe-dropdown__button button{font-family:"brandon-grotesque" !important;font-weight:700}
-#hostaway-booking-widget .hsbw-dates .hsbw-calendar-container table,#hostaway-booking-widget .hsbw-dates .hsbw-calendar-container table th,#hostaway-booking-widget .hsbw-dates .hsbw-calendar-container table td,#hostaway-booking-widget .hsbw-dates .hsbw-calendar:before,.hsbw-location-item{font-family:"brandon-grotesque" !important}
+#hostaway-booking-widget .hsbw-dates .hsbw-calendar-container table,#hostaway-booking-widget .hsbw-dates .hsbw-calendar-container table th,#hostaway-booking-widget .hsbw-dates .hsbw-calendar-container table td,.hsbw div,#hostaway-booking-widget .hsbw-dates .hsbw-calendar:before,.hsbw-location-item{font-family:"brandon-grotesque" !important}
 .hsbw-location-item.active{font-weight:700 !important}
 a{color:#ba0d30}
 a:hover{color:#dd8698}
@@ -2452,7 +2452,7 @@ h1.page-title span{display:inline-block;position:relative}
 h1.page-title span:after{content:"";display:block;width:30%;height:2px;background:#ba0d30;margin:25px auto 0}
 .intro-text-wrap{width:100%;float:left;text-align:center;padding:70px 20px}
 .intro-text-wrap .btn-sm.btn-cta{margin-top:20px}
-.intro-text{font-size:22px;line-height:1.4;font-family:"brandon-grotesque";font-weight:300;color:rgba(0,0,0,.6);max-width:900px;margin:0 auto}
+.intro-text{font-size:17px;line-height:1.4;font-family:"brandon-grotesque";font-weight:400;color:rgba(0,0,0,.6);max-width:900px;margin:0 auto}
 .intro-text p:last-child{margin-bottom:0}
 .festival-page{width:100%;float:left}
 .post-type-entries{width:100%;float:left}
@@ -4497,7 +4497,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 #primary.buy-page.buy-page-new .access-pass-options .flexwrap{margin-left:-15px;margin-right:-15px}
 #primary.buy-page.buy-page-new .access-pass-options .infobox{width:100%;padding:15px}
 #primary.buy-page.buy-page-new .access-pass-options .text{margin-top:15px;padding:0 30px;text-align:left}
-#primary.buy-page.buy-page-new .access-pass-options .text p{font-size:18px;line-height:1.5}
+#primary.buy-page.buy-page-new .access-pass-options .text p{font-size:16px;line-height:1.4}
 #primary.buy-page.buy-page-new .access-pass-options figure{margin:0;position:relative;padding-bottom:65%;overflow:hidden;border-radius:15px}
 #primary.buy-page.buy-page-new .access-pass-options figure h2{position:absolute;left:0;bottom:0;z-index:5;width:100%;margin:0;padding:20px 30px;font-family:"brandon-grotesque";font-weight:700;font-size:2.75rem;line-height:1.2;color:#fff;text-transform:uppercase}
 #primary.buy-page.buy-page-new .access-pass-options figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
@@ -4514,19 +4514,19 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .pass-options-wrap div.buttondiv{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .single-activity-options{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-top:35px;padding-left:30px;padding-right:30px}
 .single-activity-options .firstCol,.single-activity-options .secondCol{width:100%}
-.single-activity-options .option{font-size:17px;line-height:1.4;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-bottom:10px;position:relative}
+.single-activity-options .option{font-size:16px;line-height:1.4;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-bottom:10px;position:relative}
 .single-activity-options .option:before{content:"";display:block;width:100%;border-bottom:1px dashed #707070;position:absolute;left:0;bottom:8px}
 .single-activity-options .name,.single-activity-options .price{position:relative;z-index:10}
 .single-activity-options .name span,.single-activity-options .price span{background-color:#fff;display:inline-block;position:relative;z-index:5}
 .single-activity-options .name span{padding-right:5px}
 .single-activity-options .price span{padding-left:5px}
-.single-activity-options h3{font-family:"brandon-grotesque";font-weight:700;font-size:18px;line-height:1.2;text-transform:uppercase;color:#000;margin:0 0 !important}
+.single-activity-options h3{font-family:"brandon-grotesque";font-weight:700;font-size:17px;line-height:1.2;text-transform:uppercase;color:#000;margin:0 0 !important}
 .infobox.single div.buttons{margin-top:20px;padding-left:30px;padding-right:30px}
 .repeatable-section{width:100%;float:left}
 .repeatable-section.section-intro{margin-top:60px;margin-bottom:0}
 .repeatable-section.section-intro .inner-content{padding-left:5vw;padding-right:5vw;max-width:1200px;width:100%;margin:0 auto;text-align:center}
 .repeatable-section.section-intro .inner-content h2{margin-bottom:15px}
-.repeatable-section.section-intro .inner-content p{font-size:18px;line-height:1.3}
+.repeatable-section.section-intro .inner-content p{font-size:16px;line-height:1.3}
 .repeatable-section.section-intro .inner-content p:last-child{margin-bottom:0}
 .repeatable-section.section-image-cards{width:100%;float:left;padding-top:60px;padding-bottom:20px}
 .repeatable-section.section-image-cards .inner-content{padding-left:5vw;padding-right:5vw}
@@ -5263,7 +5263,6 @@ body.page-template-page-visit section.visit.flexible-image-cards .tile figure .i
 body.page-template-page-visit section.visit.flexible-image-cards .tile figure .image-wrapper img,section.visit.flexible-image-cards .tile figure .image-wrapper img,.flexible-image-cards .tile figure .image-wrapper img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 body.page-template-page-visit section.visit.flexible-image-cards .tile figure h2,section.visit.flexible-image-cards .tile figure h2,.flexible-image-cards .tile figure h2{display:block;width:100%;position:absolute;left:0;bottom:0;z-index:10;padding:20px;font-family:"brandon-grotesque";font-size:3.5rem;line-height:1.2;text-transform:uppercase;color:#fff;margin:0}
 body.page-template-page-visit section.visit.flexible-image-cards .tile figcaption,section.visit.flexible-image-cards .tile figcaption,.flexible-image-cards .tile figcaption{padding:30px}
-body.page-template-page-visit section.visit.flexible-image-cards .tile figcaption p,section.visit.flexible-image-cards .tile figcaption p,.flexible-image-cards .tile figcaption p{font-size:18px}
 body.page-template-page-visit section.visit.flexible-image-cards .tile figcaption:has(.text) .buttons,section.visit.flexible-image-cards .tile figcaption:has(.text) .buttons,.flexible-image-cards .tile figcaption:has(.text) .buttons{margin-top:25px}
 body.page-template-page-visit section.visit.flexible-image-cards .tile .buttons,section.visit.flexible-image-cards .tile .buttons,.flexible-image-cards .tile .buttons{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;gap:1.2em}
 body.page-template-page-visit section.visit.flexible-image-cards .tile .buttons a,section.visit.flexible-image-cards .tile .buttons a,.flexible-image-cards .tile .buttons a{display:inline-block;font-family:"brandon-grotesque";font-weight:500;font-size:14px;line-height:1.2;letter-spacing:.05em;text-transform:uppercase;color:#5a5959;text-decoration:none;position:relative;-webkit-transition:all ease .3s;transition:all ease .3s}

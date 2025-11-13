@@ -4138,10 +4138,10 @@ h1.page-title {
   }
 }
 .intro-text {
-	font-size: 22px;
+	font-size: 17px;
 	line-height: 1.4;
 	font-family: $font-brandon-light;
-  font-weight: 300;
+  font-weight: 400;
 	color: rgba(#000, .6);
 	max-width: 900px;
 	margin: 0 auto;
@@ -18329,8 +18329,8 @@ body.subpage.single.single-activity {
       padding: 0 30px;
       text-align: left;
       p {
-        font-size: 18px;
-        line-height: 1.5;
+        font-size: 16px;
+        line-height: 1.4;
       }
     }
     figure {
@@ -18487,7 +18487,7 @@ body.subpage.single.single-activity {
     }
   }
   .option {
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.4;
     width: 100%;
     display: flex;
@@ -18525,7 +18525,7 @@ body.subpage.single.single-activity {
   h3 {
     font-family: $font-brandon-bold;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.2;
     text-transform: uppercase;
     color: #000;
@@ -18557,7 +18557,7 @@ body.subpage.single.single-activity {
         margin-bottom: 15px;
       }
       p {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.3;
       }
       p:last-child {
