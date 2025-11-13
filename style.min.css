@@ -3634,7 +3634,7 @@ body.single-festival .entryList div.excerpt{margin-top:10px}
 .main-post-text.job-description{padding-top:50px;padding-bottom:50px}
 .activities-parent .intro-text-wrap{padding-top:70px;padding-bottom:30px}
 #section-activities.activities-parent-page.camp-activities{padding-top:20px;padding-bottom:5px}
-#section-activities.section-content.countItems1 .entryList.flexwrap,#section-activities.section-content.countItems2 .entryList.flexwrap{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+#section-activities.section-content.countItems1 .entryList.flexwrap,#section-activities.section-content.countItems2 .entryList.flexwrap{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;justify-content:center}
 .sitemappage.content-default.hasbanner{padding-top:0}
 .sitemappage .text-centered-section{padding-bottom:50px}
 .sitemappage .site-map{padding-bottom:50px}
