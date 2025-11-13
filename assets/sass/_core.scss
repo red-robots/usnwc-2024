@@ -80,7 +80,12 @@ section, div {
 	}
 }
 a,input,button,select,textarea {
+  font-family: $font-brandon-regular;
 	transition: all ease .3s;
+}
+.tribe-events-c-subscribe-dropdown__button button {
+  font-family: $font-brandon-bold!important;
+  font-weight: 700;
 }
 a {
 	color: $red;
