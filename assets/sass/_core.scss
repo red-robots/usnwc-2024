@@ -4529,6 +4529,7 @@ a.button {
   display: inline-block;
   appearance: none;
   font-family: $font-brandon-regular!important;
+  font-weight: 400;
   font-size: 13px!important;
   line-height: 1.2!important;
   letter-spacing: 0.05em!important;
@@ -18005,9 +18006,11 @@ body.subpage {
   color: #FFF;
   padding: 10px 25px;
   border-radius: 8px;
-  font-size: 23px;
-  font-weight: 500;
+  font-size: 13px;
   line-height: 1.2;
+  // font-size: 23px;
+  // font-weight: 500;
+  // line-height: 1.2;
   transition: all ease .3s;
   &:hover, &:focus {
     color: #FFF!important;
