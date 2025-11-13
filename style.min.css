@@ -1870,7 +1870,7 @@ p{color:#555}
 section:focus,div:focus{outline:0}
 a,input,button,select,textarea{font-family:"brandon-grotesque";-webkit-transition:all ease .3s;transition:all ease .3s}
 .tribe-events-c-subscribe-dropdown__button button{font-family:"brandon-grotesque" !important;font-weight:700}
-#hostaway-booking-widget .hsbw-dates .hsbw-calendar-container table,#hostaway-booking-widget .hsbw-dates .hsbw-calendar:before,.hsbw-location-item{font-family:"brandon-grotesque" !important}
+#hostaway-booking-widget .hsbw-dates .hsbw-calendar-container table,#hostaway-booking-widget .hsbw-dates .hsbw-calendar-container table th,#hostaway-booking-widget .hsbw-dates .hsbw-calendar-container table td,#hostaway-booking-widget .hsbw-dates .hsbw-calendar:before,.hsbw-location-item{font-family:"brandon-grotesque" !important}
 .hsbw-location-item.active{font-weight:700 !important}
 a{color:#ba0d30}
 a:hover{color:#dd8698}
