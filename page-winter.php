@@ -24,6 +24,7 @@ get_header();
         <?php include( locate_template('parts-flexible/winter/carousel_section.php') ); ?>
         <?php include( locate_template('parts-flexible/winter/faqs_accordion_section.php') ); ?>
         <?php include( locate_template('parts-flexible/winter/sponsors_section.php') ); ?>
+        <?php include( locate_template('parts-flexible/winter/fullwidth_text_content_normal.php') ); ?>
       
       <?php $ctr++; endwhile;  ?>
     <?php  } ?>

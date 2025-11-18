@@ -11,7 +11,7 @@
   $bgcolor = get_sub_field('bgcolor');
   $textcolor = get_sub_field('textcolor');
   $buttoncolor = get_sub_field('buttoncolor');
-  $section_class = ($text_content && $image) ? 'half' : 'full';
+  $section_class = ( ($text_content || $section_title) && $image) ? 'half' : 'full';
   if($section_title || $text_content) { ?>
   <section id="image-text-two-column-<?php echo $ctr ?>" class="image_and_text_two_column section-two_column_row">
     <?php if ($bgcolor || $textcolor || $buttonColor) { ?>
