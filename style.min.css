@@ -7021,7 +7021,9 @@ body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery
 .section-flex-columns .flexcol img{visibility:visible}
 #primary .upcoming-posts .photo.no-image:before{width:30vw;height:30vw}
 .repeater--custom-buttons{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+#customModalContainer .activity-schedule-modal .modal-title .hours-info .pass-hours{display:block;border-left:0;padding-left:0;margin-left:0}
 .image_cards_columns .cards .flexwrap .imageBlock{width:100%}
+#customModalContainer .activity-schedule-modal .modal-title .scheduleNav{margin-top:20px}
 .bike-ranch-sections .section--two_column_layout_text_image .section-buttons .button-traditional{width:100% !important}
 .page-template-page-winter .text_content_center_block .buttonsBlock .button.button-red,.page-template-page-winter .text_content_center_block .buttonsBlock .button{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%}
 }@media screen and (max-width:500px){body.home .homerow .imagebox a{padding-bottom:105%}

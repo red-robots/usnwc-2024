@@ -19202,6 +19202,14 @@ body.subpage.single.single-activity {
         }
       }
     }
+    @media screen and (max-width:600px) {
+      .modal-title .hours-info .pass-hours {
+        display: block;
+        border-left: none;
+        padding-left: 0;
+        margin-left: 0;
+      }
+    }
   }
   #customModalContent {
     border-radius: 20px;
