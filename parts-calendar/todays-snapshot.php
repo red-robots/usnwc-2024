@@ -162,14 +162,19 @@
                       //Get Activity Schedule
                       $slug = str_replace('#','', trim($nLink));
                       $slug = str_replace('-hours','', $slug);
-                      $data = getActivityScheduleToday($slug); 
+                      $location_slug = $slug;
+                      //$data = getActivityScheduleToday($slug); 
+                      $post_limit = 7;
+                      $array_key = 0;
+                      //$start_from_date = date('Ymd', strtotime('-1 day')); /* yesterday */
+                      $start_from_date = date('Ymd'); /* today's date */
+                      $entries = getUpcomingEventsCustom($post_limit, $array_key, $start_from_date);
                       ?>
-                      <?php if($data) { ?>
+                      <?php if($entries) { ?>
                         <a href="javascript:void(0)" data-schedule="<?php echo $slug ?>" class="popupSchedule"><?php echo $nTitle ?> <i class="fa-light fa-angle-right"></i></a>
 
                         <!-- ACTIVITY SCHEDULE -->
                         <?php include( locate_template('parts-calendar/activity-schedule-popup.php') ); ?>
-
                       <?php } ?>
                     <?php } else { ?>
                       <a href="<?php echo $nLink ?>" target="<?php echo $nTarget ?>"><?php echo $nTitle ?> <i class="fa-light fa-angle-right"></i></a>

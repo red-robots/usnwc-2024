@@ -98,7 +98,7 @@ const zipIgnoreGlob = [
 	'!./vscode',
 	'!./package.json',
 	'!./package-lock.json',
-	'!./assets/css/**/*',
+	'!./assets/sass/**/*',
 	'!./assets/css',
 	'!./assets/img/raw/**/*',
 	'!./assets/img/raw',

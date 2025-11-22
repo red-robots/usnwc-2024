@@ -1889,52 +1889,101 @@ jQuery(document).ready(function ($) {
 
 
   $(document).on('click', '#customModalContent .scheduleNav', function (e) {
-    e.preventDefault();
-    var modalContainer = $('#customModalContent');
-    var previousButton = $('#customModalContent .scheduleNav.previous-schedule');
-    var nextButton = $('#customModalContent .scheduleNav.next-schedule');
-    var button = $(this);
-    var dataNext = $(this).attr('data-index');
-    var dataStatus = $(this).attr('data-action');
-    var slug = $(this).attr('data-for');
-    var max = 5;
-    var newStat = dataNext;
+    var navButton = $(this);
+    var navType = $(this).attr('data-action');
+    var arrayKey = $(this).attr('data-index');
+    var location = $(this).attr('data-for');
+    var postLimit = $(this).attr('data-limit');
+    var startDate = $(this).attr('data-startdate');
+    var siteUr = $(this).attr('data-siteUrl');
+    var nextIndex = parseInt(arrayKey) + 1;
+    var prevIndex = parseInt(arrayKey) - 1;
+    fetch(siteUr + "/wp-json/custom/v1/todays_activities?startfrom=".concat(startDate, "&limit=").concat(postLimit, "&location=").concat(location, "&key=").concat(arrayKey)).then(function (res) {
+      return res.json();
+    }).then(function (data) {
+      if (data.success) {
+        var currentId = data.ID;
+        var htmlContent = data.htmlContent;
+        var nextPost = data.nextPost;
+        var prevPost = data.prevPost; //Remove
 
-    if (dataStatus == 'next') {
-      newStat = parseInt(dataNext) + 1;
-      var prevStat = newStat - 2;
-      previousButton.attr('data-index', prevStat);
-    } else if (dataStatus == 'previous') {
-      newStat = parseInt(dataNext) - 1;
-    }
+        $('#customModalContent .activity-schedule-modal').addClass('fadeOut');
+        $(htmlContent).prependTo('#customModalContent');
+        $('#customModalContent .activity-schedule-modal').show();
+        setTimeout(function () {
+          $('#customModalContent .activity-schedule-modal.fadeOut').remove();
+        }, 50);
+        setTimeout(function () {
+          $('#customModalContent .activity-schedule-modal').removeClass('fadeIn');
+        }, 100);
+        var newInfo = $('#customModalContent .activity-schedule-modal[data-pid="' + currentId + '"]');
+        newInfo.find('button.previous-schedule').attr('data-index', prevIndex);
+        newInfo.find('button.next-schedule').attr('data-index', nextIndex); //NEXT
 
-    $(this).attr('data-index', newStat);
+        if (navType == 'next') {
+          if (!nextPost) {
+            newInfo.find('button.next-schedule').addClass('hide');
+          }
 
-    if (dataStatus == 'next') {
-      previousButton.removeClass('hide');
+          newInfo.find('button.previous-schedule').removeClass('hide');
+        } //PREVIOUS
 
-      if (newStat == max) {
-        nextButton.addClass('hide');
+
+        if (navType == 'previous') {
+          if (prevPost) {
+            newInfo.find('button.previous-schedule').removeClass('hide');
+          } else {
+            newInfo.find('button.previous-schedule').addClass('hide');
+          }
+        }
       }
-    } else if (dataStatus == 'previous') {
-      nextButton.removeClass('hide');
-      var nextIndex = newStat + 1;
-
-      if (newStat < 0) {
-        previousButton.addClass('hide');
-        nextButton.attr('data-index', 1);
-      } else {
-        nextButton.attr('data-index', nextIndex);
-      }
-    }
-
-    var params = {
-      action: 'activity_schedule_func',
-      status: dataStatus,
-      index: dataNext
-    };
-    getActivityScheduleContent(params);
-  });
+    }).catch(function (err) {
+      console.error("REST Error:", err);
+    });
+  }); // $(document).on('click', '#customModalContent .scheduleNav', function(e){
+  //   e.preventDefault();
+  //   var modalContainer = $('#customModalContent');
+  //   var previousButton = $('#customModalContent .scheduleNav.previous-schedule');
+  //   var nextButton = $('#customModalContent .scheduleNav.next-schedule');
+  //   var button = $(this);
+  //   var dataNext = $(this).attr('data-index');
+  //   var dataStatus = $(this).attr('data-action');
+  //   var slug = $(this).attr('data-for');
+  //   var max = 5;
+  //   var newStat = dataNext;
+  //   if(dataStatus=='next') {
+  //     newStat = parseInt(dataNext) + 1;
+  //     var prevStat = newStat-2;
+  //     previousButton.attr('data-index', prevStat);
+  //   } 
+  //   else if(dataStatus=='previous') {
+  //     newStat = parseInt(dataNext) - 1;
+  //   } 
+  //   $(this).attr('data-index', newStat);
+  //   if(dataStatus=='next') {
+  //     previousButton.removeClass('hide');
+  //     if(newStat==max) {
+  //       nextButton.addClass('hide');
+  //     }
+  //   }
+  //   else if(dataStatus=='previous') {
+  //     nextButton.removeClass('hide');
+  //     var nextIndex = newStat+1;
+  //     if(newStat<0) {
+  //       previousButton.addClass('hide');
+  //       nextButton.attr('data-index', 1);
+  //     } else {
+  //       nextButton.attr('data-index', nextIndex);
+  //     }
+  //   }
+  //   var params = {
+  //     action  : 'activity_schedule_func',
+  //     status : dataStatus,
+  //     index : dataNext
+  //   };
+  //   console.log(params);
+  //   getActivityScheduleContent(params);
+  // });
 
   function getActivityScheduleContent(params) {
     var modalContainer = $('#customModalContent');
@@ -1949,24 +1998,27 @@ jQuery(document).ready(function ($) {
       data: params,
       beforeSend: function beforeSend(obj) {},
       success: function success(obj) {
-        if (obj.result) {
-          var postId = obj.ID;
-          var content = $.parseHTML(obj.result);
-          var modalTitle = $(content).find('.modal-title-inner').html();
-          var modalBody = $(content).find('.modal-body').html();
-          modalContainer.find('.modal-title-inner').html(modalTitle);
-          modalContainer.find('.modal-title-inner').addClass('animated fadeIn');
-          modalContainer.find('.modal-body').html(modalBody);
-          modalContainer.find('.modal-body-inner').addClass('animated fadeInUp');
-          $('.activity-schedule-modal').attr('data-pid', postId);
-
-          if (isReset) {
-            previousButton.attr('data-index', 0);
-            previousButton.addClass('hide');
-            nextButton.attr('data-index', 1);
-            nextButton.removeClass('hide');
-          }
-        }
+        console.log(obj); // if(obj.result) {
+        //   var postId = obj.ID;
+        //   var content = $.parseHTML(obj.result);
+        //   var modalTitle = $(content).find('.modal-title-inner').html();
+        //   var modalBody = $(content).find('.modal-body').html();
+        //   modalContainer.find('.modal-title-inner').html(modalTitle);
+        //   modalContainer.find('.modal-title-inner').addClass('animated fadeIn');
+        //   modalContainer.find('.modal-body').html(modalBody);
+        //   modalContainer.find('.modal-body-inner').addClass('animated fadeInUp');
+        //   $('.activity-schedule-modal').attr('data-pid', postId);
+        //   if(isReset) {
+        //     previousButton.attr('data-index',0);
+        //     previousButton.addClass('hide');
+        //     nextButton.attr('data-index',1);
+        //     nextButton.removeClass('hide');
+        //   }
+        // }
+      },
+      error: function error(jqXHR, textStatus, errorThrown) {
+        // AJAX ERROR (network, server, 500, 404, CORS, etc.)
+        console.error("AJAX Error:", textStatus, errorThrown);
       }
     });
   }

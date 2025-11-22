@@ -1,45 +1,37 @@
-<?php if( isset($entries) && $entries ) { 
-  $count = count($entries);
-  $index = (isset($array_key)) ? $array_key : 0;
-  $entry = $entries[$index];
-  $pid = $entry->ID;
-  $schedule = get_field('eventDateSchedule', $pid);
-  $schedule_date = ($schedule) ? str_replace('-','',$schedule) : '';
-  $phFrom = get_field('pass_hours_from', $pid);
-  $phTo = get_field('pass_hours_to', $pid);
-  $note = get_field('note', $pid);
-  $pass = array($phFrom, $phTo);
-  $pass_hours = ( $pass && array_filter($pass) ) ? array_filter($pass):'';
-  if( $pass_hours ) {
-    if( count($pass_hours) == 1 ) {
-      $pass_hours = $pass_hours[0];
-    } else {
-      $pass_hours = implode(' - ', $pass_hours);
+<?php if( isset($data->ID) ) {
+  $has_future_schedule = queryActivitySchedulePosts(5); ?>
+  <div data-schedule="<?php echo $slug ?>" data-pid="<?php echo $data->ID ?>" class="activity-schedule-modal today-activity-schedule" style="display:none;">
+    <?php  
+    $pid = $data->ID;
+    $schedule = get_field('eventDateSchedule', $pid);
+    $schedule_date = ($schedule) ? str_replace('-','',$schedule) : '';
+    $phFrom = get_field('pass_hours_from', $pid);
+    $phTo = get_field('pass_hours_to', $pid);
+    $note = get_field('note', $pid);
+    $pass = array($phFrom, $phTo);
+    $pass_hours = ( $pass && array_filter($pass) ) ? array_filter($pass):'';
+    if( $pass_hours ) {
+      if( count($pass_hours) == 1 ) {
+        $pass_hours = $pass_hours[0];
+      } else {
+        $pass_hours = implode(' - ', $pass_hours);
+      }
     }
-  }
-  $today_date = date('l, F d');
-  $event_start_date = ($schedule) ? date('l, F d', strtotime($schedule_date)) : '';
-  $activity_date = ($index==0) ? $today_date : $event_start_date;
-  $schedules1  = get_field('schedules', $pid);
-  $schedules2  = get_field('schedules_2', $pid);
-  $column_class = ($schedules1 && $schedules2) ? 'half':'full';
-  if( isset($is_navigate) && $is_navigate ) {
-    if($schedule_date) {
-      $today_date = date('l, F d', strtotime($schedule_date));
+    $today_date = date('l, F d');
+    $schedules1  = get_field('schedules', $pid);
+    $schedules2  = get_field('schedules_2', $pid);
+    $column_class = ($schedules1 && $schedules2) ? 'half':'full';
+    if( isset($is_navigate) && $is_navigate ) {
+      if($schedule_date) {
+        $today_date = date('l, F d', strtotime($schedule_date));
+      }
     }
-  }
-  $slug = (isset($location_slug)) ? $location_slug : '';
-  $limit = (isset($post_limit)) ? $post_limit : 7;
-  $start_date_from_query = (isset($start_from_date) && $start_from_date) ? $start_from_date : date('Ymd');
-  $fadeIn = ($index>0) ? ' fadeIn':'';
-  ?>
-
-  <div data-schedule="<?php echo $slug ?>" data-pid="<?php echo $pid ?>" data-index="<?php echo $index ?>" class="activity-schedule-modal today-activity-schedule animated<?php echo $fadeIn ?>" style="display:none;">
+    ?>
     <div class="modal-title">
       <div class="modal-title-inner">
         <h2>Activity Schedule</h2>
         <p class="hours-info">
-          <?php echo $event_start_date ?>
+          <?php echo $today_date ?>
           <?php if ( $pass_hours ) { ?>
           <span class="pass-hours">
             Pass Hours: <span><?php echo strtoupper($pass_hours) ?></span>
@@ -47,14 +39,13 @@
           <?php } ?>
         </p>
       </div>
-
-      <?php if ( $count > 1 ) { ?>
-        <button class="scheduleNav previous-schedule hide" data-siteUrl="<?php echo get_site_url() ?>" data-for="<?php echo $slug ?>" data-action="previous" data-index="0" data-startdate="<?php echo $start_date_from_query ?>" data-limit="<?php echo $limit ?>"><span class="sr-only">Previous Schedule</span></button>
-        <button class="scheduleNav next-schedule" data-siteUrl="<?php echo get_site_url() ?>" data-for="<?php echo $slug ?>" data-action="next" data-index="<?php echo $index+1 ?>" data-startdate="<?php echo $start_date_from_query ?>" data-limit="<?php echo $limit ?>"><span class="sr-only">Next Schedule</span></button>
+      <?php if ($has_future_schedule) { ?>
+      <button class="scheduleNav previous-schedule hide" data-for="<?php echo $slug ?>" data-action="previous" data-index="4"><span class="sr-only">Previous Schedule</span></button>
+      <button class="scheduleNav next-schedule" data-for="<?php echo $slug ?>" data-action="next" data-index="1"><span class="sr-only">Next Schedule</span></button>
       <?php } ?>
     </div>
     <div class="modal-body">
-      <div class="modal-body-inner" data-event-date="<?php echo $schedule ?>" data-pid="<?php echo $pid ?>">
+      <div class="modal-body-inner" data-event-date="<?php echo $schedule ?>" data-pid="<?php echo $data->ID ?>">
         <?php if ($note) { ?>
          <div class="note">
             <div class="inner">
@@ -88,7 +79,7 @@
                     $i_start_time = $a['start_time'];
                     $i_end_time = $a['end_time'];
                     $i_status = $a['status'];
-                    $custom_time_text = ( isset($a['custom_text']) ) ? $a['custom_text'] : '';
+				    $custom_time_text = ( isset($a['custom_text']) ) ? $a['custom_text'] : '';
                     $timeArr = array($i_start_time, $i_end_time);
                     $time = '';
                     if($timeArr && array_filter($timeArr)) {
@@ -140,7 +131,7 @@
                     $i_start_time = $a['start_time'];
                     $i_end_time = $a['end_time'];
                     $i_status = $a['status'];
-                    $custom_time_text = ( isset($a['custom_text']) ) ? $a['custom_text'] : '';
+				    $custom_time_text = ( isset($a['custom_text']) ) ? $a['custom_text'] : '';
                     $timeArr = array($i_start_time, $i_end_time);
                     $time = '';
                     if($timeArr && array_filter($timeArr)) {
@@ -179,5 +170,4 @@
       </div>
     </div>
   </div>
-
 <?php } ?>

@@ -2868,9 +2868,6 @@ function isFeaturedEvent($postUrl) {
 }
 
 
-// function get_activity_schedule_locations() {
-//   global $wpdb;
-// }
 
 /*===== REMOVE WP EDITOR ON SPECIFIC PAGE =====*/
 function remove_pages_editor(){
@@ -2885,6 +2882,99 @@ function remove_pages_editor(){
   // }
 }
 add_action( 'add_meta_boxes', 'remove_pages_editor' );
+
+
+add_action('rest_api_init', function () {
+  register_rest_route('custom/v1', '/todays_activities', array(
+    'methods'  => 'GET',
+    'callback' => 'rest_get_todays_activities',
+  ));
+});
+
+function rest_get_todays_activities(WP_REST_Request $request) {
+  $yesterday = date('Ymd', strtotime('-1 day'));
+  $today = date('Ymd');
+  $default_start_from = $today;
+  $htmlContent = '';
+  $result = array();
+  $response['success'] = false;
+
+  $location_slug = $request->get_param('location') ?: ''; /* i.e. whitewater-center */
+  $post_limit = $request->get_param('limit') ?: 7;
+  $array_key  = $request->get_param('key') ?: 0;
+  $start_from_date = $request->get_param('startfrom') ?: $default_start_from;
+  $entries = getUpcomingEventsCustom($post_limit=7, $start_from_date);
+
+  $next_array_key = $array_key + 1;
+  $prev_array_key = $array_key - 1;
+
+  if( isset($entries[$array_key]) && $entries[$array_key] ) {
+    ob_start();
+    include( locate_template('parts-calendar/activity-schedule-popup.php') );
+    $htmlContent = ob_get_contents();
+    ob_end_clean();
+
+    foreach($entries as $entry) {
+      $arr = array(
+        'ID'=>$entry->ID,
+        'post_title'=>$entry->post_title
+      );
+      $result[] = $arr;
+    }
+
+    $next_post = ( isset($result[$next_array_key]) && $result[$next_array_key] ) ? $result[$next_array_key] : '';
+    $prev_post = ( isset($result[$prev_array_key]) && $result[$prev_array_key] ) ? $result[$prev_array_key] : '';
+    $item = $entries[$array_key];
+    $response['ID'] = $item->ID;
+    $response['entries'] = $item;
+    $response['htmlContent'] = $htmlContent;
+    $response['nextPost'] = $next_post;
+    $response['prevPost'] = $prev_post;
+    $response['success'] = true;
+  }
+  
+
+  return $response;
+}
+
+
+function getUpcomingEventsCustom($limit=7, $start_from_date=null) {
+  // If a custom date was passed, use it; otherwise default to today
+  $yesterday = date('Ymd', strtotime('-1 day'));
+  $today = date('Ymd');
+  $start_date = $start_from_date ? $start_from_date : $today;
+
+  $args = array(
+      'post_type'      => 'activity_schedule',
+      'posts_per_page' => $limit,
+      'post_status'    => 'publish',
+      'meta_key'       => 'eventDateSchedule',
+      'orderby'        => 'meta_value',
+      'order'          => 'ASC',
+      'meta_query'     => array(
+          //'relation' => 'AND',
+
+          // Start date must be >= given date
+          array(
+            'key'     => 'eventDateSchedule',
+            'value'   => $start_date,
+            'compare' => '>=',
+            'type'    => 'DATE',
+          ),
+
+          // Optional: ensure event hasn't already ended
+          // array(
+          //     'key'     => 'end_date',
+          //     'value'   => $start_date,
+          //     'compare' => '>=',
+          //     'type'    => 'DATE',
+          // ),
+      ),
+  );
+
+  $activities = get_posts($args);
+  return $activities;
+}
 
 
 function queryActivitySchedulePosts($limit=5,$selectedDate=null) {
@@ -2912,7 +3002,8 @@ function queryActivitySchedulePosts($limit=5,$selectedDate=null) {
   
   return $result;
 }
-add_action('wp_ajax_activity_schedule_func', 'activity_schedule_func');
+
+add_action('wp_ajax_nopriv_wp_ajax_activity_schedule_func', 'activity_schedule_func');
 add_action('wp_ajax_activity_schedule_func', 'activity_schedule_func');
 function activity_schedule_func(){
   if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
@@ -2920,6 +3011,7 @@ function activity_schedule_func(){
     $slug = $_REQUEST['slug'];
     $status = $_REQUEST['status'];
     $posts = queryActivitySchedulePosts(6);
+    //$posts = getUpcomingEventsCustom(7);
     $content = '';
     $post_id = '';
     if($posts) {
@@ -2934,6 +3026,7 @@ function activity_schedule_func(){
       }
     }
     $response['ID'] = $post_id;
+    $response['data'] = $posts;
     $response['result'] = $content;
     echo json_encode($response);
 

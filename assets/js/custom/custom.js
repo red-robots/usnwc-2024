@@ -2016,48 +2016,108 @@ var getGridSize = function() {
 
   //ACTIVITY SCHEDULE POPUP with Previous/Next
   $(document).on('click', '#customModalContent .scheduleNav', function(e){
-    e.preventDefault();
-    var modalContainer = $('#customModalContent');
-    var previousButton = $('#customModalContent .scheduleNav.previous-schedule');
-    var nextButton = $('#customModalContent .scheduleNav.next-schedule');
-    var button = $(this);
-    var dataNext = $(this).attr('data-index');
-    var dataStatus = $(this).attr('data-action');
-    var slug = $(this).attr('data-for');
-    var max = 5;
-    var newStat = dataNext;
-    if(dataStatus=='next') {
-      newStat = parseInt(dataNext) + 1;
-      var prevStat = newStat-2;
-      previousButton.attr('data-index', prevStat);
-    } 
-    else if(dataStatus=='previous') {
-      newStat = parseInt(dataNext) - 1;
-    } 
-    $(this).attr('data-index', newStat);
-    if(dataStatus=='next') {
-      previousButton.removeClass('hide');
-      if(newStat==max) {
-        nextButton.addClass('hide');
-      }
-    }
-    else if(dataStatus=='previous') {
-      nextButton.removeClass('hide');
-      var nextIndex = newStat+1;
-      if(newStat<0) {
-        previousButton.addClass('hide');
-        nextButton.attr('data-index', 1);
-      } else {
-        nextButton.attr('data-index', nextIndex);
-      }
-    }
-    var params = {
-      action  : 'activity_schedule_func',
-      status : dataStatus,
-      index : dataNext
-    };
-    getActivityScheduleContent(params);
+    let navButton = $(this);
+    let navType = $(this).attr('data-action');
+    let arrayKey = $(this).attr('data-index');
+    let location = $(this).attr('data-for');
+    let postLimit = $(this).attr('data-limit');
+    let startDate = $(this).attr('data-startdate');
+    let siteUr = $(this).attr('data-siteUrl');
+    let nextIndex = parseInt(arrayKey) + 1;
+    let prevIndex = parseInt(arrayKey) - 1;
+
+    fetch(siteUr + `/wp-json/custom/v1/todays_activities?startfrom=${startDate}&limit=${postLimit}&location=${location}&key=${arrayKey}`)
+      .then(res => res.json())
+      .then(data => {
+
+        if(data.success) {
+          let currentId = data.ID;
+          let htmlContent = data.htmlContent;
+          let nextPost = data.nextPost;
+          let prevPost = data.prevPost;
+
+          //Remove
+          $('#customModalContent .activity-schedule-modal').addClass('fadeOut');
+          $(htmlContent).prependTo('#customModalContent');
+          $('#customModalContent .activity-schedule-modal').show();
+          setTimeout(function(){
+            $('#customModalContent .activity-schedule-modal.fadeOut').remove();
+          },50);
+          setTimeout(function(){
+            $('#customModalContent .activity-schedule-modal').removeClass('fadeIn');
+          },100);
+
+          let newInfo = $('#customModalContent .activity-schedule-modal[data-pid="'+currentId+'"]');
+          newInfo.find('button.previous-schedule').attr('data-index',prevIndex);
+          newInfo.find('button.next-schedule').attr('data-index',nextIndex);
+
+          //NEXT
+          if(navType=='next') {
+            if(!nextPost) {
+              newInfo.find('button.next-schedule').addClass('hide');
+            }
+            newInfo.find('button.previous-schedule').removeClass('hide');
+          }
+
+          //PREVIOUS
+          if(navType=='previous') {
+            if(prevPost) {
+              newInfo.find('button.previous-schedule').removeClass('hide');
+            } else {
+              newInfo.find('button.previous-schedule').addClass('hide');
+            }
+          }
+        }
+      })
+      .catch(err => {
+        console.error("REST Error:", err);
+      });
   });
+
+  // $(document).on('click', '#customModalContent .scheduleNav', function(e){
+  //   e.preventDefault();
+  //   var modalContainer = $('#customModalContent');
+  //   var previousButton = $('#customModalContent .scheduleNav.previous-schedule');
+  //   var nextButton = $('#customModalContent .scheduleNav.next-schedule');
+  //   var button = $(this);
+  //   var dataNext = $(this).attr('data-index');
+  //   var dataStatus = $(this).attr('data-action');
+  //   var slug = $(this).attr('data-for');
+  //   var max = 5;
+  //   var newStat = dataNext;
+  //   if(dataStatus=='next') {
+  //     newStat = parseInt(dataNext) + 1;
+  //     var prevStat = newStat-2;
+  //     previousButton.attr('data-index', prevStat);
+  //   } 
+  //   else if(dataStatus=='previous') {
+  //     newStat = parseInt(dataNext) - 1;
+  //   } 
+  //   $(this).attr('data-index', newStat);
+  //   if(dataStatus=='next') {
+  //     previousButton.removeClass('hide');
+  //     if(newStat==max) {
+  //       nextButton.addClass('hide');
+  //     }
+  //   }
+  //   else if(dataStatus=='previous') {
+  //     nextButton.removeClass('hide');
+  //     var nextIndex = newStat+1;
+  //     if(newStat<0) {
+  //       previousButton.addClass('hide');
+  //       nextButton.attr('data-index', 1);
+  //     } else {
+  //       nextButton.attr('data-index', nextIndex);
+  //     }
+  //   }
+  //   var params = {
+  //     action  : 'activity_schedule_func',
+  //     status : dataStatus,
+  //     index : dataNext
+  //   };
+  //   console.log(params);
+  //   getActivityScheduleContent(params);
+  // });
 
   function getActivityScheduleContent(params) {
     var modalContainer = $('#customModalContent');
@@ -2073,24 +2133,31 @@ var getGridSize = function() {
       beforeSend:function(obj){
       },
       success:function( obj ) {
-        if(obj.result) {
-          var postId = obj.ID;
-          var content = $.parseHTML(obj.result);
-          var modalTitle = $(content).find('.modal-title-inner').html();
-          var modalBody = $(content).find('.modal-body').html();
-          modalContainer.find('.modal-title-inner').html(modalTitle);
-          modalContainer.find('.modal-title-inner').addClass('animated fadeIn');
-          modalContainer.find('.modal-body').html(modalBody);
-          modalContainer.find('.modal-body-inner').addClass('animated fadeInUp');
-          $('.activity-schedule-modal').attr('data-pid', postId);
+        console.log(obj);
 
-          if(isReset) {
-            previousButton.attr('data-index',0);
-            previousButton.addClass('hide');
-            nextButton.attr('data-index',1);
-            nextButton.removeClass('hide');
-          }
-        }
+        // if(obj.result) {
+        //   var postId = obj.ID;
+        //   var content = $.parseHTML(obj.result);
+        //   var modalTitle = $(content).find('.modal-title-inner').html();
+        //   var modalBody = $(content).find('.modal-body').html();
+        //   modalContainer.find('.modal-title-inner').html(modalTitle);
+        //   modalContainer.find('.modal-title-inner').addClass('animated fadeIn');
+        //   modalContainer.find('.modal-body').html(modalBody);
+        //   modalContainer.find('.modal-body-inner').addClass('animated fadeInUp');
+        //   $('.activity-schedule-modal').attr('data-pid', postId);
+
+        //   if(isReset) {
+        //     previousButton.attr('data-index',0);
+        //     previousButton.addClass('hide');
+        //     nextButton.attr('data-index',1);
+        //     nextButton.removeClass('hide');
+        //   }
+        // }
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        // AJAX ERROR (network, server, 500, 404, CORS, etc.)
+        console.error("AJAX Error:", textStatus, errorThrown);
+
       }
     });
   }

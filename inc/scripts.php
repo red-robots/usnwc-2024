@@ -122,12 +122,15 @@ function bellaworks_scripts() {
     true 
   );
 
-  wp_enqueue_script( 
-    'bellaworks-custom', 
-    get_template_directory_uri() . '/assets/js/custom.js', 
-    array(), '2.37', 
-    true 
-  );
+  // wp_enqueue_script( 
+  //   'bellaworks-custom', 
+  //   get_template_directory_uri() . '/assets/js/custom.js', 
+  //   array(), '2.37', 
+  //   true 
+  // );
+
+  wp_enqueue_script('bellaworks-jscustom', get_template_directory_uri() . '/assets/js/custom.js', ['jquery'], null, true);
+
   wp_enqueue_script( 
     'cusom-calendar', 
     get_template_directory_uri() . '/assets/js/calendar.js', 
@@ -135,7 +138,7 @@ function bellaworks_scripts() {
     true 
   );
 
-	wp_localize_script( 'bellaworks-custom', 'frontajax', array(
+	wp_localize_script( 'bellaworks-jscustom', 'frontajax', array(
 		'ajaxurl' => admin_url( 'admin-ajax.php' )
 	));
 
