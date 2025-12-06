@@ -191,10 +191,6 @@ body.wp-admin.post-type-activity_schedule #poststuff #edit-slug-box {
   clear: none !important;
 }
 
-.acf-field-flexible-content[data-name=flexible_blocks] [data-layout=image_cards] .acf-fc-layout-handle:after {
-  content: "Image Cards";
-}
-
 /* Custom Icons */
 #customIconsContainer,
 #customIconsContainer * {

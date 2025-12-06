@@ -34,11 +34,19 @@
                   <?php foreach ($buttons as $b) { 
                     $btn = $b['button'];
                     $button_type = $b['button_type'];
+                    $popup_details = $b['pop_up_details'];
                     $btnLink = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
                     $btnTitle = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
                     $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
                     if($btnTitle && $btnLink) { ?>
-                    <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="button button-type-<?php echo $button_type ?>"><span class="link-inner"><?php echo $btnTitle ?></span></a>
+                      <?php if ($btnLink=='#popup') { ?>
+                        <a href="javascript:void(0)" class="button button-popup-infobox button-type-<?php echo $button_type ?>"><span class="link-inner"><?php echo $btnTitle ?></span></a>
+                        <?php if ($popup_details) { ?>
+                        <div class="popup-details-wrapper popup-details-pass" style="display:none;" aria-hidden="true"><div class="pass-details-content"><?php echo anti_email_spam($popup_details) ?></div></div>
+                        <?php } ?>
+                      <?php } else { ?>
+                        <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="button button-type-<?php echo $button_type ?>"><span class="link-inner"><?php echo $btnTitle ?></span></a>
+                      <?php } ?>
                     <?php } ?>
                   <?php } ?>
                 </div>

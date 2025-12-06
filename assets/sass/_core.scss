@@ -18432,7 +18432,7 @@ body.subpage.single.single-activity {
     @include tab {
       margin-bottom: 0;
       justify-content: flex-start;
-      width: auto;
+      width: 31%;
     }
     .wrap {
       display: flex;
@@ -18637,6 +18637,7 @@ body.subpage.single.single-activity {
         }
       }
       .image-wrapper {
+        background-color: #CCC;
         position: absolute;
         top: 0;
         left: 0;
@@ -19247,6 +19248,24 @@ body.subpage.single.single-activity {
     }
     &:focus {
       border: 1px dotted #CCC;
+    }
+  }
+
+  &.open:has(.pass-details-content) {
+    #customModalInner {
+      max-width: 800px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .pass-details-content {
+      width: 100%;
+      padding: 30px;
+    }
+    #customModalClose {
+      &:before, &:after {
+        background: #000;
+      }
     }
   }
 }

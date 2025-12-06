@@ -87,11 +87,11 @@ $day_id = 'tribe-events-calendar-day-' . $day_date;
                 $placeNameStr = strtolower($placeName);
                 $placeSlug = $mx;
                 $metaxhours = get_post_meta($info->ID, $placeSlug.'_hours',true);
-                if (strpos( strtolower($content), $placeNameStr) == false) {
-                  if($metaxhours) {
-                    $newContent .= '<p><strong>'.$placeName.'</strong><br><em>'.$metaxhours.'</em></p>';
-                  }
-                }
+                // if (strpos( strtolower($content), $placeNameStr) == false) {
+                //   if($metaxhours) {
+                //     $newContent .= '<p><strong>'.$placeName.':</strong><br><em>'.$metaxhours.'</em></p>';
+                //   }
+                // }
               }
             }
           }

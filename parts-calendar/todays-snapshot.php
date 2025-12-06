@@ -164,7 +164,7 @@
                       $slug = str_replace('-hours','', $slug);
                       $location_slug = $slug;
                       //$data = getActivityScheduleToday($slug); 
-                      $post_limit = 7;
+                      $post_limit = 30; /* 30 days */
                       $array_key = 0;
                       //$start_from_date = date('Ymd', strtotime('-1 day')); /* yesterday */
                       $start_from_date = date('Ymd'); /* today's date */

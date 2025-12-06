@@ -65,6 +65,7 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
                       $name = $p['title'];
                       $items = $p['items'];
                       $btn = $p['button'];
+                      $popup_details = $p['pop_up_details'];
                       $btnLink = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
                       $btnTitle = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
                       $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
@@ -90,8 +91,20 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
                           </div>
                           <?php if ($btnLink && $btnTitle) { ?>
                           <div class="buttondiv">
+                            <?php if ($btnLink=='#popup') { ?>
+                              <a href="javascript:void(0)" class="button btn-white-shadow button-popup-infobox"><?php echo $btnTitle ?></a>
+
+                              <?php if ($popup_details) { ?>
+                              <div class="popup-details-wrapper popup-details-pass" style="display:none;" aria-hidden="true"><div class="pass-details-content"><?php echo anti_email_spam($popup_details) ?></div></div>
+                              <?php } ?>
+
+                            <?php } else { ?>
                             <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="button btn-white-shadow"><?php echo $btnTitle ?></a>
+                            <?php } ?>
                           </div>
+
+                          
+
                           <?php } ?>
                         </div>
                       </div>
@@ -179,6 +192,28 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
 
 </div><!-- #primary -->
 
+<script>
+jQuery(document).ready(function($){
+  $('a.button-popup-infobox').on('click', function(e){
+    e.preventDefault();
+    let parent = $(this).parent();
+    if( parent.find('.popup-details-pass').length ) {
+      let details = parent.find('.popup-details-pass').html();
+      $('#customModalContent').html(details);
+      setTimeout(function(){
+        $('#customModalContainer').addClass('open');
+      },10);
+    }
+  });
+
+  $(document).on('click', '#customModalClose', function(e){
+    e.preventDefault();
+    setTimeout(function(){
+      $('#customModalContent').html("");
+    },500);
+  });
+});
+</script>
 <?php
 include( locate_template('inc/pagetabs-script.php') );
 get_footer();
