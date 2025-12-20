@@ -87,11 +87,11 @@ $show_content = false;
                     $placeNameStr = strtolower($placeName);
                     $placeSlug = $mx;
                     $metaxhours = get_post_meta($event->ID, $placeSlug.'_hours',true);
-                    if (strpos( strtolower($event_content), $placeNameStr) == false) {
-                      if($metaxhours) {
-                        $newContent .= '<p><strong>'.$placeName.'</strong><br><em>'.$metaxhours.'</em></p>';
-                      }
-                    }
+//                     if (strpos( strtolower($event_content), $placeNameStr) == false) {
+//                       if($metaxhours) {
+//                         $newContent .= '<p><strong>'.$placeName.'</strong><br><em>'.$metaxhours.'</em></p>';
+//                       }
+//                     }
                   }
                 }
               }
@@ -101,9 +101,30 @@ $show_content = false;
             }
 
             ?>
-  			   <div class="hours-of-operation-mobile">
+  		   <div class="hours-of-operation-mobile">
               <?php echo $event_content ?>
            </div>
+			<?php  
+				$activityLink = '';
+				$activityScheduleId = getActivityScheduleIdByDate($day['date']);
+				$activityLink = '';
+				$compareDate = strtotime($day['date']);
+				$todayDate = strtotime( date('Ymd') );
+
+				if($activityScheduleId) {
+				  $dateInfo = date('Ymd', strtotime($day['date']));
+				  if($compareDate >= $todayDate) {
+					$activityLink = get_site_url() . '/daily-activity-schedule/?date=' . $dateInfo;
+				  }
+				}
+			  ?>
+
+			<?php if ($activityLink) { ?>
+			<div class="activity-schedule-link is--mobile" style="padding-top:0;padding-bottom:0;margin-bottom:30px;">
+			  <a href="<?php echo $activityLink ?>" class="button">View Activity Schedule</a>
+			</div>
+			<?php } ?>
+	
           <?php } ?>
         <?php } else { ?>
           <?php $this->template( 'month/mobile-events/mobile-day/mobile-event', [ 'event' => $event ] ); ?>
