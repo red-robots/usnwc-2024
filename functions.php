@@ -7,7 +7,8 @@
  * @package bellaworks
  */
 
-date_default_timezone_set('America/New_York');
+
+/* date_default_timezone_set('America/New_York'); */
 
 /**
  * Implement the Custom Header feature.
