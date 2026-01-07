@@ -45,7 +45,7 @@ $classes['tribe-events-calendar-month-mobile-events__mobile-event--featured'] = 
     ?>
 
     <?php if ($activityLink) { ?>
-    <div class="activity-schedule-link is--mobile" style="display:none!important;">
+    <div class="activity-schedule-link is--mobile is--mobile-event">
       <a href="<?php echo $activityLink ?>" class="button">View Activity Schedule</a>
     </div>
     <?php } ?>

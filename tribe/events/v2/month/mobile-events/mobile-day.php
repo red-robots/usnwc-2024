@@ -120,15 +120,18 @@ $show_content = false;
 			  ?>
 
 			<?php if ($activityLink) { ?>
-			<div class="activity-schedule-link is--mobile" style="padding-top:0;padding-bottom:0;margin-bottom:30px;">
+			<div class="activity-schedule-link is--mobile is--mobile-day" style="padding-top:0;padding-bottom:0;margin-bottom:30px;">
 			  <a href="<?php echo $activityLink ?>" class="button">View Activity Schedule</a>
 			</div>
 			<?php } ?>
 	
           <?php } ?>
+
         <?php } else { ?>
           <?php $this->template( 'month/mobile-events/mobile-day/mobile-event', [ 'event' => $event ] ); ?>
         <?php } ?>
+
+
   		<?php endforeach; ?>
 
   		<?php $this->template( 'month/mobile-events/mobile-day/more-events', [ 'more_events' => $day['more_events'], 'more_url' => $day['day_url'] ] ); ?>
