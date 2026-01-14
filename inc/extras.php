@@ -2940,8 +2940,8 @@ function rest_get_todays_activities(WP_REST_Request $request) {
 
 function getUpcomingEventsCustom($limit=7, $start_from_date=null) {
   // If a custom date was passed, use it; otherwise default to today
-  $yesterday = date('Ymd', strtotime('-1 day'));
-  $today = date('Ymd');
+  $yesterday = wp_date('Ymd', strtotime('-1 day'));
+  $today = wp_date('Ymd');
   $start_date = $start_from_date ? $start_from_date : $today;
 
   $args = array(

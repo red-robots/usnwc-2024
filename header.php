@@ -24,12 +24,12 @@ $featImg = wp_get_attachment_image_src($thumbId,'full'); ?>
 
 
 <meta property="og:site_name" content="<?php bloginfo('name'); ?>"/>
-<meta property="og:url"   content="<?php echo get_permalink(); ?>" />
-<meta property="og:type"  content="article" />
-<meta property="og:title" content="<?php echo get_the_title(); ?>" />
-<meta property="og:description" content="<?php echo (get_the_excerpt()) ? strip_tags(get_the_excerpt()):''; ?>" />
+<meta property="og:url"		content="<?php echo get_permalink(); ?>" />
+<meta property="og:type"	content="article" />
+<meta property="og:title"	content="<?php echo get_the_title(); ?>" />
+<meta property="og:description"	content="<?php echo (get_the_excerpt()) ? strip_tags(get_the_excerpt()):''; ?>" />
 <?php if ($featImg) { ?>
-<meta property="og:image" content="<?php echo $featImg[0] ?>" />
+<meta property="og:image"	content="<?php echo $featImg[0] ?>" />
 <?php } ?>
 <!-- end of SOCIAL MEDIA META TAGS -->
 <?php } ?>
@@ -56,15 +56,15 @@ var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){
 <script>!function(e,t,n,s,a,c,p,i,o,u){e[a]||((i=e[a]=function(){i.process?i.process.apply(i,arguments):i.queue.push(arguments)}).queue=[],i.pixelId="cbd42ac9-c947-41a0-a340-cc2163106c8c",i.t=1*new Date,(o=t.createElement(n)).async=1,o.src="https://found.ee/dmp/pixel.js?t="+864e5*Math.ceil(new Date/864e5),(u=t.getElementsByTagName(n)[0]).parentNode.insertBefore(o,u))}(window,document,"script",0,"foundee");foundee('', 'Y');</script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+	
 <?php wp_head(); ?>
 <style>
-  .site:has(#banner .iframe-wrapper video) .site-content {
-    background-color: #FFF;
-  }
-  .calendar-grid-wrapper:has(.activity-schedule-link.is--mobile-event):has(.activity-schedule-link.is--mobile-day) .activity-schedule-link.is--mobile-day {
-    display:none!important;
-  }
+	.site:has(#banner .iframe-wrapper video) .site-content {
+		background-color: #FFF;
+	}
+	.calendar-grid-wrapper:has(.activity-schedule-link.is--mobile-event):has(.activity-schedule-link.is--mobile-day) .activity-schedule-link.is--mobile-day {
+		display:none!important;
+	}
 </style>
 </head>
 <?php
@@ -74,14 +74,14 @@ $flexbanner = get_field("flexslider_banner");
 $xBodyClass = 'pageNoBanner';
 $custom_class = '';
 if($heroImage) {
-  $xBodyClass = ($heroImage) ? 'pageHasBanner':'pageNoBannerr';
+	$xBodyClass = ($heroImage) ? 'pageHasBanner':'pageNoBannerr';
 } else {
-  if($flexbanner) {
-    $xBodyClass = ($flexbanner) ? 'pageHasBanner':'pageNoBanner';
-  }
+	if($flexbanner) {
+		$xBodyClass = ($flexbanner) ? 'pageHasBanner':'pageNoBanner';
+	}
 }
 if($postHeroImage) {
-  $xBodyClass = ($postHeroImage) ? 'pageHasBanner':'pageNoBanner';
+	$xBodyClass = ($postHeroImage) ? 'pageHasBanner':'pageNoBanner';
 }
 if( is_single() ) {
   $custom_class = get_field('custom_class');
@@ -99,26 +99,26 @@ if( $template = get_page_template() ) {
 
 ?>
 <body <?php body_class($xBodyClass); ?>>
-  <?php if( is_page('employment') ) { get_template_part('inc/employment-tracking'); } ?>
+	<?php if( is_page('employment') ) { get_template_part('inc/employment-tracking'); } ?>
 <div id="page" class="site cf">
-  <div id="overlay"></div>
-  <a class="skip-link sr" href="#content"><?php esc_html_e( 'Skip to content', 'bellaworks' ); ?></a>
+	<div id="overlay"></div>
+	<a class="skip-link sr" href="#content"><?php esc_html_e( 'Skip to content', 'bellaworks' ); ?></a>
 
-  <?php //get_template_part('parts/topbar'); ?>
+	<?php //get_template_part('parts/topbar'); ?>
 
-  <header id="masthead" class="site-header-desktop site-header start-position" role="banner">
-    <div id="topSearchBar" class="top-search-bar">
-      <div class="wrapper">
-        <div class="form-wrapper">
-          <?php echo get_search_form(); ?>
-          <a href="#" id="topsearchBtn"><i class="fas fa-search"></i></a>
-          <a href="#" id="closeTopSearch"><span>Close</span></a>
-        </div>
-      </div>
-    </div>
+	<header id="masthead" class="site-header-desktop site-header start-position" role="banner">
+		<div id="topSearchBar" class="top-search-bar">
+			<div class="wrapper">
+				<div class="form-wrapper">
+					<?php echo get_search_form(); ?>
+					<a href="#" id="topsearchBtn"><i class="fas fa-search"></i></a>
+					<a href="#" id="closeTopSearch"><span>Close</span></a>
+				</div>
+			</div>
+		</div>
 
-    <div class="navbar">
-      <div class="flexer">
+		<div class="navbar">
+			<div class="flexer">
 
         <div class="left-nav left">
           <div class="logo">
@@ -129,13 +129,13 @@ if( $template = get_page_template() ) {
         <?php get_template_part("parts/navigation-main"); ?>
        </div>
 
-        <div class="right-nav navs">    
+        <div class="right-nav navs">		
           <?php get_template_part("parts/navigation-right"); ?>
         </div>
 
-      </div>
-    </div>
-  </header><!-- #masthead -->
+		  </div>
+		</div>
+	</header><!-- #masthead -->
 
   <div class="site-header-mobile">
     <div class="site-header-flex">
@@ -156,7 +156,7 @@ if( $template = get_page_template() ) {
     <div class="mobileRedTag"></div>
   </div>
 
-  <?php 
+	<?php 
   //RED TAG
   if ( is_single() ) {
     $postListRedTags = ['special-events'];
@@ -165,13 +165,13 @@ if( $template = get_page_template() ) {
     }
   }
 
-  if( is_front_page() ){
-    get_template_part('parts/homepage-hero');
-  } else {
+	if( is_front_page() ){
+		get_template_part('parts/homepage-hero');
+	} else {
     if(empty($custom_class)) {
       get_template_part("parts/hero");  
     } 
-  }
-  ?>
+	}
+	?>
 
-  <div id="content" class="site-content">
+	<div id="content" class="site-content">

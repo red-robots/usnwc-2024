@@ -24,7 +24,7 @@ $heroImage = get_field("full_image");
   </div><!-- #primary -->
 
 <?php } else { ?>
-<div id="primary" data-post="<?php echo get_the_ID()?>" class="content-area-full festival-page">
+<div id="primary" class="content-area-full festival-page">
 	<?php while ( have_posts() ) : the_post(); ?>
 		
 		<div class="intro-text-wrap">
@@ -36,7 +36,7 @@ $heroImage = get_field("full_image");
 			</div>
 		</div>
 
-  <?php endwhile;  ?>
+  <?php endwhile; ?>
 
 
     <?php if ($show_subnav) { ?>
@@ -65,7 +65,7 @@ $heroImage = get_field("full_image");
         <?php include( locate_template('parts-flexible/sponsors.php') ); ?>
         <?php include( locate_template('parts-flexible/columns_bottom_text.php') ); ?>
 
-      <?php $ctr++; endwhile;  ?>
+      <?php $ctr++; endwhile; ?>
     </div>
     <?php  } ?>
 

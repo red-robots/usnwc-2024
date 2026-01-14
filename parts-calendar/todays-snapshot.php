@@ -2,14 +2,15 @@
   $wwlocations = get_field('whitewaterLocations','option');
   $branchName = ( isset($snapshot_branch) && $snapshot_branch ) ? $snapshot_branch : '';
   $branchNameSlug = ( isset($branchName->slug) && $branchName->slug ) ? $branchName->slug : '';
-  date_default_timezone_set('America/New_York');
+  //date_default_timezone_set('America/New_York');
+  //print_r( wp_date('Y-m-d H:i:s') );
 ?>
 
 <section id="todays-snapshot" class="snapshop-wrapper">
   <div class="wrapper">
     <div class="titlediv">
       <h3>Today's Snapshot</h3>
-      <div class="dateToday"><?php echo date('l, F d') ?></div>
+      <div class="dateToday"><?php echo wp_date('l, F d') ?></div>
     </div>
   </div>
 
@@ -165,10 +166,11 @@
                       $slug = str_replace('-hours','', $slug);
                       $location_slug = $slug;
                       //$data = getActivityScheduleToday($slug); 
-                      $post_limit = 30; /* 30 days */
+                      $post_limit = 31; /* 31 days */
                       $array_key = 0;
                       //$start_from_date = date('Ymd', strtotime('-1 day')); /* yesterday */
-                      $start_from_date = date('Ymd'); /* today's date */
+                      //$start_from_date = date('Ymd'); /* today's date */
+                      $start_from_date = wp_date('Ymd');
                       $entries = getUpcomingEventsCustom($post_limit, $array_key, $start_from_date);
                       ?>
                       <?php if($entries) { ?>

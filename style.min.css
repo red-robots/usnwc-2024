@@ -3988,7 +3988,11 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .section-middle-card .fxcol.right figure{margin:0;height:100%;padding:20vh;position:relative}
 .section-middle-card .fxcol.right figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .site-footer{background-color:#fff}
-.site-footer .wrapper{width:100%;padding:30px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.site-footer .wrapper{max-width:1700px;width:100%;margin:0 auto;padding-top:30px;padding-bottom:30px;padding-left:20px;padding-right:20px}
+.site-footer .wrapper .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.site-footer .foot-social-media{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:.75rem}
+.site-footer .foot-social-media a{display:inline-block;text-decoration:none;font-size:20px;line-height:1;color:#000;-webkit-transition:all ease .3s;transition:all ease .3s}
+.site-footer .foot-social-media a:hover,.site-footer .foot-social-media a:focus{color:#ba0d30}
 .site-footer .footlinks a{text-decoration:none}
 .site-footer .logo{width:50px;margin-bottom:20px}
 .site-footer .logo img{-webkit-filter:invert(100%);filter:invert(100%);width:100%}
@@ -6295,7 +6299,7 @@ body.single-festival .filter-wrapper.filterstyle .select-wrap{width:75%}
 .section-middle-card .fxcol{width:50%}
 .section-middle-card .fxcol.left .inside{padding:5vw}
 .section-middle-card .fxcol.right figure{padding:33vh}
-.site-footer .wrapper{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+.site-footer .wrapper{padding-left:5vw;padding-right:5vw}
 .site-footer .logo{margin-right:20px;margin-bottom:0}
 .site-footer li{width:auto;margin:0 2rem}
 .teaser-form{width:40%}
@@ -6468,6 +6472,9 @@ body.logged-in.admin-bar:has(#banner).page-template-page-bike-ranch.subpage.scro
 .sectionTwoCol .textCol .text{padding-left:5vw;padding-right:5vw}
 .section-middle-card{padding:10vw}
 .section-middle-card .fxcol.left .inside{padding:3vw 4vw}
+.site-footer .wrapper{padding-left:10vw;padding-right:10vw}
+.site-footer .wrapper .flexwrap{gap:1rem}
+.site-footer .foot-social-media{padding-left:20px}
 .cardsWrapper{padding-left:7vw;padding-right:7vw}
 .cardsWrapper .imageWrap{width:25%}
 #timeline-area .horizontal-timeline .events-wrapper{max-width:80%}
@@ -6844,6 +6851,8 @@ body.single-race .filter-wrapper form .filter-field-group .select-wrap{left:0;pa
 body.single-race .filter-wrapper form .filter-field-group .filter-label{padding-left:0;padding-right:0}
 body.single-race .filter-wrapper form .filter-field-group .filter-label .inside{overflow:hidden}
 body.single-race .filter-wrapper form .filter-field-group .filter-label span{padding:0;font-size:13px;line-height:1}
+.site-footer .wrapper .flexwrap{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
+.site-footer .wrapper .flexwrap .foot-social-media{margin-top:25px}
 body.home .homerow .wrappe-full{padding:20px 20px}
 body.home .homerow .imagebox{width:50%;padding:10px}
 body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-left,body.subpage.single.single-activity .content-default.new-layout .pass-price-options .info-right{padding-left:0;padding-right:0}
@@ -7024,6 +7033,7 @@ body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery
 .section-flex-columns .flexcol{width:100% !important;background-image:none !important}
 .section-flex-columns .flexcol img{visibility:visible}
 #primary .upcoming-posts .photo.no-image:before{width:30vw;height:30vw}
+.site-footer .foot-social-media{width:100%;margin-top:25px}
 .repeater--custom-buttons{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 #customModalContainer .activity-schedule-modal .modal-title .hours-info .pass-hours{display:block;border-left:0;padding-left:0;margin-left:0}
 .image_cards_columns .cards .flexwrap .imageBlock{width:100%}

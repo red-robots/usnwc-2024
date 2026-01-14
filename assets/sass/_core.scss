@@ -14385,63 +14385,111 @@ body.single-race .filter-wrapper {
 
 /* FOOTER */
 .site-footer {
-	background-color: #fff;
-	.wrapper {
-		width: 100%;
-		padding: 30px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		@include tab {
-			flex-direction: row;
-
-		}
-	}
+  background-color: #fff;
+  .wrapper {
+    max-width: 1700px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include tab {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
+    @include mid {
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+    .flexwrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      @include mid {
+        gap: 1rem;
+      }
+    }
+  }
+  .foot-social-media {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    @include mid {
+      padding-left: 20px;
+    }
+    a {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 20px;
+      line-height: 1;
+      color: #000;
+      transition: all ease .3s;
+      &:hover, &:focus {
+        color: #ba0d30
+      }
+    }
+    @include max($xswidth) {
+      width: 100%;
+      margin-top: 25px;
+    }
+  }
   .footlinks a {
     text-decoration: none;
   }
-	.logo {
-		width: 50px;
-		margin-bottom: 20px;
-		@include tab {
-			margin-right: 20px;
-			margin-bottom: 0;
-		}
-		img {
-			filter: invert(100%);
-			width: 100%;
-		}
+  .logo {
+    width: 50px;
+    margin-bottom: 20px;
+    @include tab {
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+    img {
+      filter: invert(100%);
+      width: 100%;
+    }
     &.footLogo {
       width: 210px;
       img {
         filter: none;
       }
     }
-	}
-	ul {
-		width: auto;
-		margin: 0;
-		padding: 0;
-	}
-	li {
-		display: inline-block;
-		text-transform: uppercase;
-		margin:  10px 0;
-		width: 100%;
-		text-align: center;
-		@include tab {
-			width: auto;
-			margin: 0 2rem;
-		}
-	}
-	a {
+  }
+  ul {
+    width: auto;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    text-transform: uppercase;
+    margin:  10px 0;
+    width: 100%;
+    text-align: center;
+    @include tab {
+      width: auto;
+      margin: 0 2rem;
+    }
+  }
+  a {
     font-size: 13px;
-		color: rgba(#000, .9);
+    color: rgba(#000, .9);
     &:hover, &:focus {
       color: $red;
     }
-	}
+  }
+
+  @include max($tabwidth) {
+    .wrapper .flexwrap {
+      flex-direction: column;
+      .foot-social-media {
+        margin-top: 25px;
+      }
+    }
+  }
 }
 
 .subscribeForm {

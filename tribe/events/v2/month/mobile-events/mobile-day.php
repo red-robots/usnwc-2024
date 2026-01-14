@@ -126,12 +126,9 @@ $show_content = false;
 			<?php } ?>
 	
           <?php } ?>
-
         <?php } else { ?>
           <?php $this->template( 'month/mobile-events/mobile-day/mobile-event', [ 'event' => $event ] ); ?>
         <?php } ?>
-
-
   		<?php endforeach; ?>
 
   		<?php $this->template( 'month/mobile-events/mobile-day/more-events', [ 'more_events' => $day['more_events'], 'more_url' => $day['day_url'] ] ); ?>

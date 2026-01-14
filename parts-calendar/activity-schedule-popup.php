@@ -1,4 +1,4 @@
-<?php if( isset($entries) && $entries ) { 
+<?php if( isset($entries) && $entries ) { 	
   $count = count($entries);
   $index = (isset($array_key)) ? $array_key : 0;
   $entry = $entries[$index];
@@ -17,7 +17,7 @@
       $pass_hours = implode(' - ', $pass_hours);
     }
   }
-  $today_date = date('l, F d');
+  $today_date = wp_date('l, F d');
   $event_start_date = ($schedule) ? date('l, F d', strtotime($schedule_date)) : '';
   $activity_date = ($index==0) ? $today_date : $event_start_date;
   $schedules1  = get_field('schedules', $pid);
@@ -30,7 +30,7 @@
   }
   $slug = (isset($location_slug)) ? $location_slug : '';
   $limit = (isset($post_limit)) ? $post_limit : 7;
-  $start_date_from_query = (isset($start_from_date) && $start_from_date) ? $start_from_date : date('Ymd');
+  $start_date_from_query = (isset($start_from_date) && $start_from_date) ? $start_from_date : wp_date('Ymd');
   $fadeIn = ($index>0) ? ' fadeIn':'';
   ?>
 
