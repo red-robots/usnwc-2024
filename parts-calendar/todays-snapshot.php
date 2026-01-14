@@ -2,8 +2,6 @@
   $wwlocations = get_field('whitewaterLocations','option');
   $branchName = ( isset($snapshot_branch) && $snapshot_branch ) ? $snapshot_branch : '';
   $branchNameSlug = ( isset($branchName->slug) && $branchName->slug ) ? $branchName->slug : '';
-  //date_default_timezone_set('America/New_York');
-  //print_r( wp_date('Y-m-d H:i:s') );
 ?>
 
 <section id="todays-snapshot" class="snapshop-wrapper">
