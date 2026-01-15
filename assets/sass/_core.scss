@@ -1144,9 +1144,9 @@ body.nav-open {
 				video {
 					width: 100%;
           height: auto;
-          @media screen and (min-width:1300px) and (min-height:800px) {
-            transform: scale(1.8);
-          }
+          // @media screen and (min-width:1300px) and (min-height:800px) {
+          //   transform: scale(1.8);
+          // }
 				}
 				&.yes-mobile {
 

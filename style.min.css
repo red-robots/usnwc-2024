@@ -6595,7 +6595,6 @@ section.full-bleed-promo .info .words h2{font-size:100px}
 .page-template-page-winter #banner{height:85vh;overflow:hidden}
 .page-template-page-winter #banner .slides-wrapper{position:relative;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
 .page-template-page-winter .repeatable_masonry_infocards .bottom-information{padding-left:30px;padding-right:30px}
-}@media screen and (min-width:1300px)and (min-height:800px){#banner .static-banner .slides .iframe-wrapper video,#banner .flexslider .slides .iframe-wrapper video{-webkit-transform:scale(1.8);transform:scale(1.8)}
 }@media screen and (min-width:1300px){.image_cards_columns{padding:80px 5vw}
 }@media screen and (min-width:1400px){#section-faqs .faq-item{padding:0 20px 0 40px}
 .bike-ranch-sections .section--fullwidth_image figure figcaption h2{font-size:100px}
