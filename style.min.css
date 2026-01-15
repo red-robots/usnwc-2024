@@ -2037,7 +2037,7 @@ body.nav-open .menu-toggle{opacity:0}
 #banner .logo-overlay img{width:100%}
 #banner .static-banner,#banner .flexslider{border-radius:0}
 #banner .static-banner .slides .iframe-wrapper,#banner .flexslider .slides .iframe-wrapper{padding:0;position:relative;width:100%}
-#banner .static-banner .slides .iframe-wrapper video,#banner .flexslider .slides .iframe-wrapper video{width:100%}
+#banner .static-banner .slides .iframe-wrapper video,#banner .flexslider .slides .iframe-wrapper video{width:100%;height:auto}
 #banner .static-banner .slides .iframe-wrapper.yes-mobile .desktop,#banner .flexslider .slides .iframe-wrapper.yes-mobile .desktop{display:none}
 #banner .static-banner .slides .iframe-wrapper.yes-mobile .mobile,#banner .flexslider .slides .iframe-wrapper.yes-mobile .mobile{display:block}
 #banner .static-banner .slides img.image-size-ref,#banner .flexslider .slides img.image-size-ref{visibility:hidden}
