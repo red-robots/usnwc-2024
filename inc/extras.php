@@ -241,7 +241,8 @@ function social_icons() {
         'facebook'  => 'fab fa-facebook-square',
         'twitter'   => 'fab fa-twitter-square',
         'linkedin'  => 'fab fa-linkedin',
-        'instagram' => 'fab fa-instagram',
+        // 'instagram' => 'fab fa-instagram',
+        'instagram' => 'fa-brands fa-square-instagram',
         'youtube'   => 'fab fa-youtube',
         'vimeo'  => 'fab fa-vimeo',
     );

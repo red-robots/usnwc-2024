@@ -8,36 +8,42 @@
   <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="wrapper">
       <div class="flexwrap">
-        <?php if ($footLogo) { ?>
-        <div class="logo footLogo">
-          <img src="<?php echo $footLogo['url'] ?>" alt="<?php echo $footLogo['title'] ?>" />
-        </div>
-        <?php } ?>
-              
-        
-        <?php if ($footerLinks) { 
-          $links = (isset($footerLinks['links']) && $footerLinks['links']) ? $footerLinks['links'] : '';
-          if($links) { ?>
-          <div class="footcol footlinks">
-            <ul class="flinks">
-              <?php foreach ($links as $a) { 
-                $link = $a['link'];
-                $pageTitle = ( isset($link['title']) && $link['title'] ) ? $link['title'] : '';
-                $pageLink = ( isset($link['url']) && $link['url'] ) ? $link['url'] : '';
-                $target = ( isset($link['target']) && $link['target'] ) ? $link['target'] : '_self';  ?>
-                <?php if ($pageTitle && $pageLink) { ?>
-                  <li><a href="<?php echo $pageLink ?>" target="<?php echo $target ?>"><?php echo $pageTitle ?></a></li>
-                <?php } ?>
-              <?php } ?>
-            </ul>
+
+        <?php if ($footLogo || $footerLinks) { ?>
+        <div class="footLeft">
+          <?php if ($footLogo) { ?>
+          <div class="logo footLogo">
+            <img src="<?php echo $footLogo['url'] ?>" alt="<?php echo $footLogo['title'] ?>" />
           </div>
           <?php } ?>
+        
+          <?php if ($footerLinks) { 
+            $links = (isset($footerLinks['links']) && $footerLinks['links']) ? $footerLinks['links'] : '';
+            if($links) { ?>
+            <div class="footcol footlinks">
+              <ul class="flinks">
+                <?php foreach ($links as $a) { 
+                  $link = $a['link'];
+                  $pageTitle = ( isset($link['title']) && $link['title'] ) ? $link['title'] : '';
+                  $pageLink = ( isset($link['url']) && $link['url'] ) ? $link['url'] : '';
+                  $target = ( isset($link['target']) && $link['target'] ) ? $link['target'] : '_self';  ?>
+                  <?php if ($pageTitle && $pageLink) { ?>
+                    <li><a href="<?php echo $pageLink ?>" target="<?php echo $target ?>"><?php echo $pageTitle ?></a></li>
+                  <?php } ?>
+                <?php } ?>
+              </ul>
+            </div>
+            <?php } ?>
+          <?php } ?>
+        </div>
         <?php } ?>
 
         <?php if ($social_media) { ?>
-        <div class="foot-social-media">
-          <?php get_template_part("parts/social-media-footer"); ?>   
-        </div>  
+        <div class="footRight">
+          <div class="foot-social-media">
+            <?php get_template_part("parts/social-media-footer"); ?>   
+          </div>  
+        </div>
         <?php } ?>
       </div>
     </div>

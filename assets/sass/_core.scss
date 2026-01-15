@@ -14395,40 +14395,56 @@ body.single-race .filter-wrapper {
     padding-bottom: 30px;
     padding-left: 20px;
     padding-right: 20px;
-    @include tab {
-      padding-left: 5vw;
-      padding-right: 5vw;
-    }
     @include mid {
-      padding-left: 10vw;
-      padding-right: 10vw;
+      padding-left: 3.5vw;
+      padding-right: 3.5vw;
     }
     .flexwrap {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      @include mid {
-        gap: 1rem;
+      .footLeft {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        @include mid {
+          width: 70%;
+          flex-direction: row;
+        }
+      }
+      .footRight {
+        width: 100%;
+        @include mid {
+          width: 30%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }
       }
     }
   }
   .foot-social-media {
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: .75rem;
+    gap: .8rem;
     @include mid {
       padding-left: 20px;
     }
     a {
       display: inline-block;
       text-decoration: none;
-      font-size: 20px;
+      font-size: 30px;
       line-height: 1;
       color: #000;
       transition: all ease .3s;
+      &:has([class*="-youtube"]) {
+        font-size: 33px;
+      }
       &:hover, &:focus {
         color: #ba0d30
       }

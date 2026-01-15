@@ -3990,8 +3990,11 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .site-footer{background-color:#fff}
 .site-footer .wrapper{max-width:1700px;width:100%;margin:0 auto;padding-top:30px;padding-bottom:30px;padding-left:20px;padding-right:20px}
 .site-footer .wrapper .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
-.site-footer .foot-social-media{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:.75rem}
-.site-footer .foot-social-media a{display:inline-block;text-decoration:none;font-size:20px;line-height:1;color:#000;-webkit-transition:all ease .3s;transition:all ease .3s}
+.site-footer .wrapper .flexwrap .footLeft{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.site-footer .wrapper .flexwrap .footRight{width:100%}
+.site-footer .foot-social-media{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:.8rem}
+.site-footer .foot-social-media a{display:inline-block;text-decoration:none;font-size:30px;line-height:1;color:#000;-webkit-transition:all ease .3s;transition:all ease .3s}
+.site-footer .foot-social-media a:has([class*=-youtube]){font-size:33px}
 .site-footer .foot-social-media a:hover,.site-footer .foot-social-media a:focus{color:#ba0d30}
 .site-footer .footlinks a{text-decoration:none}
 .site-footer .logo{width:50px;margin-bottom:20px}
@@ -6299,7 +6302,6 @@ body.single-festival .filter-wrapper.filterstyle .select-wrap{width:75%}
 .section-middle-card .fxcol{width:50%}
 .section-middle-card .fxcol.left .inside{padding:5vw}
 .section-middle-card .fxcol.right figure{padding:33vh}
-.site-footer .wrapper{padding-left:5vw;padding-right:5vw}
 .site-footer .logo{margin-right:20px;margin-bottom:0}
 .site-footer li{width:auto;margin:0 2rem}
 .teaser-form{width:40%}
@@ -6472,8 +6474,9 @@ body.logged-in.admin-bar:has(#banner).page-template-page-bike-ranch.subpage.scro
 .sectionTwoCol .textCol .text{padding-left:5vw;padding-right:5vw}
 .section-middle-card{padding:10vw}
 .section-middle-card .fxcol.left .inside{padding:3vw 4vw}
-.site-footer .wrapper{padding-left:10vw;padding-right:10vw}
-.site-footer .wrapper .flexwrap{gap:1rem}
+.site-footer .wrapper{padding-left:3.5vw;padding-right:3.5vw}
+.site-footer .wrapper .flexwrap .footLeft{width:70%;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+.site-footer .wrapper .flexwrap .footRight{width:30%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
 .site-footer .foot-social-media{padding-left:20px}
 .cardsWrapper{padding-left:7vw;padding-right:7vw}
 .cardsWrapper .imageWrap{width:25%}
