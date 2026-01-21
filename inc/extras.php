@@ -3338,3 +3338,20 @@ function is_future_date($dateString) {
   return $timestamp > strtotime('today');
 }
 
+
+function get_root_name_from_url( $url ) {
+  $host = parse_url( $url, PHP_URL_HOST );
+
+  if ( ! $host ) {
+      return false;
+  }
+
+  // Remove "www."
+  $host = preg_replace( '/^www\./', '', $host );
+
+  // Split by dots and return the main domain name
+  $parts = explode( '.', $host );
+
+  return $parts[0];
+}
+

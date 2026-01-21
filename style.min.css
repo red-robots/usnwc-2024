@@ -3991,11 +3991,15 @@ body.page-template-page-race .post-type-entries .flex-inner.countItems1,body.pag
 .site-footer .wrapper{max-width:1700px;width:100%;margin:0 auto;padding-top:30px;padding-bottom:30px;padding-left:20px;padding-right:20px}
 .site-footer .wrapper .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .site-footer .wrapper .flexwrap .footLeft{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
-.site-footer .wrapper .flexwrap .footRight{width:100%}
+.site-footer .wrapper .flexwrap .footRight{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .site-footer .foot-social-media{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:.8rem}
-.site-footer .foot-social-media a{display:inline-block;text-decoration:none;font-size:30px;line-height:1;color:#000;-webkit-transition:all ease .3s;transition:all ease .3s}
+.site-footer .foot-social-media a{display:inline-block;text-decoration:none;font-size:30px;line-height:1;color:#000;position:relative;-webkit-transition:all ease .3s;transition:all ease .3s;width:28px;height:28px;background-size:100%;background-position:center;background-repeat:no-repeat}
 .site-footer .foot-social-media a:has([class*=-youtube]){font-size:33px}
-.site-footer .foot-social-media a:hover,.site-footer .foot-social-media a:focus{color:#ba0d30}
+.site-footer .foot-social-media a [class*=fa-],.site-footer .foot-social-media a svg{display:none !important}
+.site-footer .foot-social-media a.social-icon-facebook{background-image:url("images/_icons/facebook.png");height:35px;left:6px}
+.site-footer .foot-social-media a.social-icon-instagram{background-image:url("images/_icons/instagram.png")}
+.site-footer .foot-social-media a.social-icon-youtube{background-image:url("images/_icons/youtube.png");width:35px;height:35px}
+.site-footer .foot-social-media a:hover,.site-footer .foot-social-media a:focus{color:#ba0d30;-webkit-transform:translateY(-2px);transform:translateY(-2px)}
 .site-footer .footlinks a{text-decoration:none}
 .site-footer .logo{width:50px;margin-bottom:20px}
 .site-footer .logo img{-webkit-filter:invert(100%);filter:invert(100%);width:100%}
@@ -6476,7 +6480,7 @@ body.logged-in.admin-bar:has(#banner).page-template-page-bike-ranch.subpage.scro
 .section-middle-card .fxcol.left .inside{padding:3vw 4vw}
 .site-footer .wrapper{padding-left:3.5vw;padding-right:3.5vw}
 .site-footer .wrapper .flexwrap .footLeft{width:70%;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
-.site-footer .wrapper .flexwrap .footRight{width:30%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
+.site-footer .wrapper .flexwrap .footRight{width:30%;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
 .site-footer .foot-social-media{padding-left:20px}
 .cardsWrapper{padding-left:7vw;padding-right:7vw}
 .cardsWrapper .imageWrap{width:25%}

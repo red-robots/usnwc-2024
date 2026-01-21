@@ -21,8 +21,12 @@
 			if( isset($social_media[$v]) && $social_media[$v] ) { 
 				$m = $social_media[$v]; 
 				$social_link = $m['link'];
-				$social_icon = $m['icon']; ?>
-				<a href="<?php echo $social_link ?>" target="_blank"><i class="<?php echo $social_icon ?>"></i></a>	
+				$social_icon = $m['icon']; 
+        if($social_link && $social_icon) {
+          $socialName = get_root_name_from_url($social_link);
+          ?>
+				  <a href="<?php echo $social_link ?>" target="_blank" class="social-icon-<?php echo $socialName ?>"><i class="<?php echo $social_icon ?>"></i><span class="sr-only"><?php echo ucwords($socialName) ?></span></a>	
+        <?php } ?>
 			<?php
 			}	
 		} 

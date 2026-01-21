@@ -14417,10 +14417,11 @@ body.single-race .filter-wrapper {
       }
       .footRight {
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         @include mid {
           width: 30%;
-          display: flex;
-          align-items: center;
           justify-content: flex-end;
         }
       }
@@ -14441,12 +14442,35 @@ body.single-race .filter-wrapper {
       font-size: 30px;
       line-height: 1;
       color: #000;
+      position: relative;
       transition: all ease .3s;
+      width: 28px;
+      height: 28px;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
       &:has([class*="-youtube"]) {
         font-size: 33px;
       }
+      [class*="fa-"], svg {
+        display: none!important;
+      }
+      &.social-icon-facebook {
+        background-image: url('images/_icons/facebook.png');
+        height: 35px;
+        left: 6px;
+      }
+      &.social-icon-instagram {
+        background-image: url('images/_icons/instagram.png');
+      }
+      &.social-icon-youtube {
+        background-image: url('images/_icons/youtube.png');
+        width: 35px;
+        height: 35px;
+      }
       &:hover, &:focus {
-        color: #ba0d30
+        color: #ba0d30;
+        transform: translateY(-2px);
       }
     }
     @include max($xswidth) {
