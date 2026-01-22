@@ -4890,10 +4890,10 @@ body.modal-open{overflow:hidden}
 .checkin-section-images figure{width:100%;margin:0;position:relative;border:4px solid #fff}
 .checkin-section-images img{width:100%;height:auto}
 .checkin-section-images .flexcol.images-1 figure{height:100%}
-.checkin-section-images .flexcol.images-1 figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
-.checkin-section-images .flexcol.images-2 figure{padding-bottom:50%}
+.checkin-section-images .flexcol.images-1 figure img{width:100%;height:auto}
+.checkin-section-images .flexcol.images-2 figure{padding-bottom:65%}
 .checkin-section-images .flexcol.images-2 figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
-.checkin-section-images .flexcol.images-3 figure{padding-bottom:50%}
+.checkin-section-images .flexcol.images-3 figure{padding-bottom:65%}
 .checkin-section-images .flexcol.images-3 figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .checkin-section-images .flexcol.images-3 figure.frame2,.checkin-section-images .flexcol.images-3 figure.frame3{width:100%}
 .checkin-section-images .flexcol.images-4 figure{padding-bottom:50%}
@@ -6383,6 +6383,9 @@ body.page-template-page-salesforce .gform_wrapper{padding-left:5vw;padding-right
 .popup-content-wrapper.details-film-series .infoboxes .infobox:last-child{border-right:0}
 .stories-feeds-section .wrapper{max-width:85vw}
 .checkin-section-images .flexcol{width:50%}
+.checkin-section-images .flexcol.images-1 figure img{height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
+.checkin-section-images .flexcol.images-2 figure{padding-bottom:50%}
+.checkin-section-images .flexcol.images-3 figure{padding-bottom:50%}
 .checkin-section-images .flexcol.images-3 figure.frame2,.checkin-section-images .flexcol.images-3 figure.frame3{width:50%}
 .checkin-section-images .flexcol.images-4 figure.frame1,.checkin-section-images .flexcol.images-4 figure.frame2,.checkin-section-images .flexcol.images-4 figure.frame3,.checkin-section-images .flexcol.images-4 figure.frame4{width:50%}
 .column-data-section.column-count-4 .fxcol{width:25%}
