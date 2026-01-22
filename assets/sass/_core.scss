@@ -19780,12 +19780,16 @@ body.logged-in.admin-bar #customModalContainer {
         position: relative;
         img {
           width: 100%;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
-          object-fit: cover;
-          object-position: center;
+          height: auto;
+          @include mid {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            object-position: center;
+          }
         }
       }
       .gallery-content {
@@ -19929,6 +19933,24 @@ body.logged-in.admin-bar #customModalContainer {
   //     color: #FFF;
   //   }
   // }
+
+  &.section--schedules:has(.textBlock):has(.imageBlock) {
+    @media screen and (max-width:819px) {
+      .flexwrap {
+        min-height: unset!important;
+        flex-direction: column-reverse;
+        .textBlock {
+          min-height: unset!important;
+          padding-bottom: 50px;
+        }
+        .imageBlock img {
+          position: relative!important;
+          width: 100%!important;
+          height: auto!important;
+        }
+      }
+    }
+  }
 
   @media screen and (max-width: 960px) {
     .gallery-content {
