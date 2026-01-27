@@ -14444,29 +14444,18 @@ body.single-race .filter-wrapper {
       color: #000;
       position: relative;
       transition: all ease .3s;
-      width: 28px;
-      height: 28px;
       background-size: 100%;
       background-position: center;
       background-repeat: no-repeat;
-      &:has([class*="-youtube"]) {
-        font-size: 33px;
-      }
       [class*="fa-"], svg {
         display: none!important;
       }
       &.social-icon-facebook {
-        background-image: url('images/_icons/facebook.png');
-        height: 35px;
-        left: 6px;
+        left: 10px;
       }
-      &.social-icon-instagram {
-        background-image: url('images/_icons/instagram.png');
-      }
-      &.social-icon-youtube {
-        background-image: url('images/_icons/youtube.png');
-        width: 35px;
-        height: 35px;
+      img {
+        width: auto;
+        height: 40px;
       }
       &:hover, &:focus {
         color: #ba0d30;
@@ -14523,12 +14512,29 @@ body.single-race .filter-wrapper {
     }
   }
 
-  @include max($tabwidth) {
+  @media screen and (max-width:1250px) {
     .wrapper .flexwrap {
       flex-direction: column;
+      .footLeft, .footRight {
+        width: 100%;
+        justify-content: center;
+      }
       .foot-social-media {
         margin-top: 25px;
+        padding-left: 0!important;
       }
+    }
+  }
+  @media screen and (max-width:1024px) {
+    .wrapper .flexwrap .footLeft {
+      .footcol.footlinks {
+        padding-top:20px;
+      }
+    }
+  }
+  @media screen and (max-width:768px) {
+    .wrapper .flexwrap .footLeft .footcol.footlinks {
+      padding-top: 0;
     }
   }
 }
