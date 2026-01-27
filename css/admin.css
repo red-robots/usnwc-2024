@@ -1037,29 +1037,35 @@ body.post-type-dining #side-sortables #postimagediv .postbox-header h2:before {
     justify-content: flex-end;
     position: relative;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field {
     width: 100%;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=bgcolor],
 body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=textcolor],
 body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=buttoncolor] {
     width: 33.33% !important;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=section_title],
 body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=text_content] {
     width: 60%;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=text_content] {
     position: relative;
     top: 90px;
     border-top: none;
     margin-bottom: 100px;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=section_title] {
     position: absolute;
     top: 91px;
     right: 0;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=image],
 body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=image_position],
 body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=featured_image_type],
@@ -1068,31 +1074,39 @@ body:has(select option[value="page-winter.php"][selected=selected]) [data-layout
     left: 0;
     width: 40%;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=gallery] {
     top: 170px;
     border-top: none;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=gallery] div.acf-gallery {
     height: 338px !important;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=gallery] div.acf-gallery .acf-gallery-attachment {
     width: 25% !important;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=featured_image_type] {
     top: 91px;
     z-index: 20;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=image] {
     top: 170px;
     border-top: none;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields div.acf-field[data-name=image_position] {
     top: 420px;
     border-top: none;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields:has(div.acf-field[data-name=image][hidden]) div.acf-field[data-name=text_content] {
     margin-bottom: 204px;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-layout=image_and_text_two_column] div.acf-fields:has(div.acf-field[data-name=image][hidden]) div.acf-field[data-name=image_position] {
     top: 560px;
   }
@@ -1103,9 +1117,11 @@ body:has(select option[value="page-winter.php"][selected=selected]) [data-layout
     flex-wrap: wrap;
     position: relative;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-name=infocards] [data-name=cards_per_row] .acf-repeater table.acf-table td.acf-fields div.acf-field {
     min-height: unset !important;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-name=infocards] [data-name=cards_per_row] .acf-repeater table.acf-table td.acf-fields div.acf-field[data-name=image] .acf-image-uploader .image-wrap {
     max-width: 100% !important;
     width: 100% !important;
@@ -1113,6 +1129,7 @@ body:has(select option[value="page-winter.php"][selected=selected]) [data-layout
     overflow: hidden;
     position: relative;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-name=infocards] [data-name=cards_per_row] .acf-repeater table.acf-table td.acf-fields div.acf-field[data-name=image] .acf-image-uploader .image-wrap img {
     display: block;
     object-fit: cover;
@@ -1124,6 +1141,7 @@ body:has(select option[value="page-winter.php"][selected=selected]) [data-layout
     max-height: unset !important;
     height: 100% !important;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-name=infocards] [data-name=cards_per_row] .acf-repeater table.acf-table td.acf-fields div.acf-field[data-name=image_width] {
     position: absolute;
     top: 220px;
@@ -1131,17 +1149,20 @@ body:has(select option[value="page-winter.php"][selected=selected]) [data-layout
     width: 20% !important;
     border-top: none !important;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-name=infocards] [data-name=cards_per_row] .acf-repeater table.acf-table td.acf-fields div.acf-field[data-name=text] {
     width: 70% !important;
     margin-bottom: 13px;
     border-top: none !important;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-name=infocards] [data-name=cards_per_row] .acf-repeater table.acf-table td.acf-fields div.acf-field[data-name=text] div.acf-label {
     display: inline-block;
     width: auto !important;
     position: absolute;
     top: 18px;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-name=infocards] div.acf-field[data-name=has_popup_details] {
     position: absolute;
     left: 0;
@@ -1149,55 +1170,69 @@ body:has(select option[value="page-winter.php"][selected=selected]) [data-layout
     z-index: 50;
     border-top: none !important;
   }
+
   body:has(select option[value="page-winter.php"][selected=selected]) [data-name=infocards] div.acf-field[data-name=full_details] {
     width: 100% !important;
     border-top: none;
     padding-top: 5px;
   }
 }
-
 .acf-flexible-content:has([data-name=what_to_wear_options]) [data-name=default_image] .image-wrap img {
   max-height: 280px !important;
 }
+
 .acf-flexible-content:has([data-name=what_to_wear_options]) [data-name=what_to_wear_options] .acf-repeater .image-wrap img {
   max-height: 160px !important;
 }
+
+body.toplevel_page_acf-options-global-options .acf-field-image .image-wrap img[style*="max-height: 150px"] {
+  max-height: 80px !important;
+}
+
 @media screen and (min-width: 1481px) {
   .acf-flexible-content:has([data-name=what_to_wear_options]) .acf-fields {
     display: flex;
     flex-wrap: wrap;
   }
+
   .acf-flexible-content:has([data-name=what_to_wear_options]) .acf-fields div.acf-field {
     width: 100%;
   }
+
   .acf-flexible-content:has([data-name=what_to_wear_options]) .acf-fields div.acf-field[data-name=default_image] {
     width: 18%;
   }
+
   .acf-flexible-content:has([data-name=what_to_wear_options]) .acf-fields div.acf-field[data-name=what_to_wear_options] {
     width: 82%;
   }
 }
-
 @media screen and (min-width: 1481px) {
   .acf-fields.-top.-sidebar:has([data-name=wtw_options]) {
     display: flex;
     flex-wrap: wrap;
   }
+
   .acf-fields.-top.-sidebar:has([data-name=wtw_options]) div.acf-field {
     width: 100%;
   }
+
   .acf-fields.-top.-sidebar:has([data-name=wtw_options]) div.acf-field[data-name=wtw_default_image] {
     width: 18%;
   }
+
   .acf-fields.-top.-sidebar:has([data-name=wtw_options]) div.acf-field[data-name=wtw_default_image] .image-wrap img {
     max-height: 280px !important;
   }
+
   .acf-fields.-top.-sidebar:has([data-name=wtw_options]) div.acf-field[data-name=wtw_options] {
     width: 82%;
   }
+
   .acf-fields.-top.-sidebar:has([data-name=wtw_options]) div.acf-field[data-name=wtw_options] .image-wrap img {
     max-height: 160px !important;
   }
 }
+/*# sourceMappingURL=admin.scss.map */
 
 /*# sourceMappingURL=admin.css.map */
