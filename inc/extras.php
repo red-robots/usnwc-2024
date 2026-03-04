@@ -1597,30 +1597,14 @@ function update_event_date_postmeta_extention() {
     if($post_type=='wildwoods') {
       $start_date = get_field('start_date', $post_id);
       $end_date = get_field('end_date', $post_id);
-      //global $table_prefix, $wpdb;
       $result = $wpdb->get_row("SELECT * FROM ".$table_prefix."postmeta_extension ext WHERE ext.post_id=".$post_id);
       $start = ($start_date) ? date('Ymd',strtotime($start_date)) : '';
       $end = ($end_date) ? date('Ymd',strtotime($end_date)) : '';
-      if($start) {
-
-      }
-
       if($result) {
         //Update
-        // echo "<pre style='margin-left: 300px; margin-top: 100px; margin-bottom: 100px; background: #FFF; padding: 20px; width: 70%;'>";
-        // print_r($result);
-        // echo "</pre>";
-
-        // print_r($start_date. '<br>');
-        // print_r($end_date. '<br>');
         $x_start_date = $result->start_date;
         $x_end_date = $result->end_date;
-
         if($start!=$x_start_date || $end!=$x_end_date) {
-          // echo "<pre style='margin-left: 300px; margin-top: 100px; margin-bottom: 100px; background: #FFF; padding: 20px; width: 70%;'>";
-          // print_r($start);
-          // echo "</pre>";
-
           $data = array(
             'start_date'    => $start,
             'end_date'      => $end,
