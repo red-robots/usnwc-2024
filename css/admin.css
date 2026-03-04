@@ -1189,6 +1189,16 @@ body.toplevel_page_acf-options-global-options .acf-field-image .image-wrap img[s
   max-height: 80px !important;
 }
 
+[data-name=is_recurring][data-type=true_false] .acf-input {
+  display: inline-block;
+  position: absolute;
+  top: 15px;
+  left: 14px;
+}
+[data-name=is_recurring][data-type=true_false] .acf-label {
+  padding-left: 23px;
+}
+
 @media screen and (min-width: 1481px) {
   .acf-flexible-content:has([data-name=what_to_wear_options]) .acf-fields {
     display: flex;

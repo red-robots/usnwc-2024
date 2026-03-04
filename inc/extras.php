@@ -1556,35 +1556,93 @@ function activity_location_catid($post_id) {
 
 add_action('acf/save_post', 'my_custom_acf_save_post');
 function my_custom_acf_save_post( $post_id ) {
-    $post_type = get_post_type($post_id);
-    if($post_type=='activity_schedule') {
-        /* Update slug when event date is changed */
-        $event_date = get_field("eventDateSchedule");
+  $post_type = get_post_type($post_id);
+  if($post_type=='activity_schedule') {
+      /* Update slug when event date is changed */
+      $event_date = get_field("eventDateSchedule");
 
 
 
 
-        if($event_date) {
-            $post_title = date('l, F jS, Y',strtotime($event_date));
-            $post_slug = sanitize_title($event_date);
+      if($event_date) {
+          $post_title = date('l, F jS, Y',strtotime($event_date));
+          $post_slug = sanitize_title($event_date);
 
-            $term = activity_location_catid($post_id);
-            if($term) {
-              $post_title .= ' - ' . $term->name;
-              $post_slug .= '-' . $term->slug;
-            }
+          $term = activity_location_catid($post_id);
+          if($term) {
+            $post_title .= ' - ' . $term->name;
+            $post_slug .= '-' . $term->slug;
+          }
 
-            $my_post = array(
-                'ID'            =>  $post_id,
-                'post_title'    => $post_title,
-                'post_name'     => $post_slug
-            );
-            wp_update_post( $my_post );
-        }
-    }
+          $my_post = array(
+              'ID'            =>  $post_id,
+              'post_title'    => $post_title,
+              'post_name'     => $post_slug
+          );
+          wp_update_post( $my_post );
+      }
+  }
 }
 
+//Update postmeta_extension (start and end date)
+add_action('admin_init', 'update_event_date_postmeta_extention');
+function update_event_date_postmeta_extention() {
+  global $table_prefix, $wpdb;
+  $table_name = $table_prefix."postmeta_extension";
 
+  //if ( is_admin() && current_user_can( 'manage_options' ) ) {}
+  if( isset($_GET['post']) && $_GET['post'] ) {
+    $post_id = $_GET['post'];
+    $post_type = get_post_type($post_id);
+    if($post_type=='wildwoods') {
+      $start_date = get_field('start_date', $post_id);
+      $end_date = get_field('end_date', $post_id);
+      //global $table_prefix, $wpdb;
+      $result = $wpdb->get_row("SELECT * FROM ".$table_prefix."postmeta_extension ext WHERE ext.post_id=".$post_id);
+      $start = ($start_date) ? date('Ymd',strtotime($start_date)) : '';
+      $end = ($end_date) ? date('Ymd',strtotime($end_date)) : '';
+      if($start) {
+
+      }
+
+      if($result) {
+        //Update
+        // echo "<pre style='margin-left: 300px; margin-top: 100px; margin-bottom: 100px; background: #FFF; padding: 20px; width: 70%;'>";
+        // print_r($result);
+        // echo "</pre>";
+
+        // print_r($start_date. '<br>');
+        // print_r($end_date. '<br>');
+        $x_start_date = $result->start_date;
+        $x_end_date = $result->end_date;
+
+        if($start!=$x_start_date || $end!=$x_end_date) {
+          // echo "<pre style='margin-left: 300px; margin-top: 100px; margin-bottom: 100px; background: #FFF; padding: 20px; width: 70%;'>";
+          // print_r($start);
+          // echo "</pre>";
+
+          $data = array(
+            'start_date'    => $start,
+            'end_date'      => $end,
+            'post_updated'  => date('Y-m-d H:i:s')
+          );
+          $where = array( 'post_id' => $post_id );
+          $success = $wpdb->update( $table_name, $data, $where);
+        }
+
+      } else {
+        //insert
+        $data = array(
+          'post_id'       => $post_id,
+          'start_date'    => $start,
+          'end_date'      => $end,
+          'post_created'  => date('Y-m-d H:i:s')
+        );
+        $success = $wpdb->insert($table_name, $data);
+      }
+    }
+  }
+}
 
 
 /* Shortcode for Company Name */

@@ -81,14 +81,14 @@ if( isset($_GET['type']) && $_GET['type']!='all' ) {
 if( count($thePostTypesArr) == 1 ) {
   $selected_post_type = end($thePostTypesArr);
   $query_meta = "SELECT p.ID, p.post_title, p.post_name, p.post_type, p.post_parent, ext.start_date, ext.end_date 
-              FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext 
-              WHERE p.ID=ext.post_id AND p.post_status='publish' ".$where." AND p.post_type='".$selected_post_type."' 
-              AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date)";
+                FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext 
+                WHERE p.ID=ext.post_id AND p.post_status='publish' ".$where." AND p.post_type='".$selected_post_type."' 
+                AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date)";
 } else {
   $query_meta = "SELECT p.ID, p.post_title, p.post_name, p.post_type, p.post_parent, ext.start_date, ext.end_date 
-                FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext 
-                WHERE p.ID=ext.post_id AND p.post_status='publish' ".$where." AND p.post_type IN ('".implode("','", $thePostTypesArr)."') 
-                AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date)";
+          FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext 
+          WHERE p.ID=ext.post_id AND p.post_status='publish' ".$where." AND p.post_type IN ('".implode("','", $thePostTypesArr)."') 
+          AND ".strtotime(date('Ymd'))." <= UNIX_TIMESTAMP(ext.end_date)";
 }
 
 $total_query = $query_meta . " GROUP BY p.ID ORDER BY UNIX_TIMESTAMP(ext.start_date) ASC";
@@ -102,7 +102,65 @@ if( isset($_GET['type']) && $_GET['type']!='all' ) {
   $posts = $wpdb->get_results($new_query);
 }
 
+
+
+//Is recurring event
+$recur_selected_post_type = 'wildwoods';
+$recur_posts = array();
+$recurring_query = "SELECT p.ID, p.post_title, p.post_name, p.post_type, p.post_parent, ext.start_date, ext.end_date 
+                FROM ".$table_prefix."posts p, ".$table_prefix."postmeta_extension ext, ".$table_prefix."postmeta meta  
+                WHERE p.ID=ext.post_id AND p.post_status='publish' ".$where." AND p.post_type='".$recur_selected_post_type."' 
+                AND  p.ID=meta.post_id AND ext.post_id=meta.post_id AND (meta.meta_key='is_recurring' AND meta.meta_value='1')";
+$recur_posts = $wpdb->get_results($recurring_query);
 $total = $wpdb->get_results($total_query);
+$total_records = ($total) ? count($total) : 0;
+
+//Set recurring events to false if `wildwoods` is not selected in the filter
+if( isset($_GET['type']) ) {
+  if( $_GET['type']=='all' ) {
+    //include recurring events
+  } else {
+    if($_GET['type']!=$recur_selected_post_type) {
+      $recur_posts = array();
+    }
+  }
+}
+
+if($recur_posts) {
+  $today = new DateTime('now');
+  $endOfYear = new DateTime('last day of December this year');
+  $today_date = $today->format('Ymd');
+  $endOfYear_date = $endOfYear->format('Ymd');
+
+  if($posts) {
+    $ir = count($posts);
+    foreach($posts as $k=>$p) {
+      $p_id = $p->ID;
+      foreach($recur_posts as $rk=>$rp) {
+        $rp_id = $rp->ID;
+        $rp->start_date = $today_date;
+        $rp->end_date = $endOfYear_date;
+        if($rp_id!=$p_id) {
+          $new_count = $rk+1;
+          $j = count($posts) + $new_count;
+          $posts[$j] = $rp;
+          $total_records += $new_count;
+        }
+      }
+    }
+      
+  } else {
+    $posts = array();
+    $total_records = count($recur_posts);
+    foreach($recur_posts as $rk=>$rp) {
+      $rp->start_date = $today_date;
+      $rp->end_date = $endOfYear_date;
+      $posts[] = $rp;
+    }
+  }
+}
+
+
 //$total_before = ($total) ? count($total) : 0;
 
 $hasChildrenPosts = [];
