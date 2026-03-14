@@ -955,6 +955,16 @@ body.toplevel_page_acf-options-today-options [data-name=whitewaterLocations] [da
   width: 10% !important;
 }
 
+.acf-field-true-false[data-name=hide_pass_hours] .acf-input {
+  display: inline-block;
+  position: absolute;
+  top: 15px;
+  left: 14px;
+}
+.acf-field-true-false[data-name=hide_pass_hours] .acf-label {
+  padding-left: 23px;
+}
+
 body.post-type-activity [data-layout=flex_content_block] *,
 body.post-type-activity [data-layout=flex_content_block] :before,
 body.post-type-activity [data-layout=flex_content_block] :after {

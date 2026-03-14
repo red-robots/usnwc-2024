@@ -8,6 +8,8 @@
   $phFrom = get_field('pass_hours_from', $pid);
   $phTo = get_field('pass_hours_to', $pid);
   $note = get_field('note', $pid);
+  $hide_pass_hours = get_field('hide_pass_hours', $pid);
+  $show_pass_hours = ($hide_pass_hours) ? false : true;
   $pass = array($phFrom, $phTo);
   $pass_hours = ( $pass && array_filter($pass) ) ? array_filter($pass):'';
   if( $pass_hours ) {
@@ -40,10 +42,12 @@
         <h2>Activity Schedule</h2>
         <p class="hours-info">
           <?php echo $event_start_date ?>
-          <?php if ( $pass_hours ) { ?>
-          <span class="pass-hours">
-            Pass Hours: <span><?php echo strtoupper($pass_hours) ?></span>
-          </span>
+          <?php if ($show_pass_hours) { ?>
+            <?php if ( $pass_hours ) { ?>
+            <span class="pass-hours">
+              Pass Hours: <span><?php echo strtoupper($pass_hours) ?></span>
+            </span>
+            <?php } ?>
           <?php } ?>
         </p>
       </div>
