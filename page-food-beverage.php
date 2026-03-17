@@ -77,7 +77,7 @@ get_header(); ?>
             $buttons = get_sub_field('buttons');
             $is_custom_time = get_sub_field('is_custom_time');
             $custom_times = get_sub_field('custom_times');
-
+            $locationSectionClass = '';
             if($auto_closed && $branch_status=='closed') {
               $e_time = '';
               $locationSectionClass = ' operation--status--closed';
@@ -138,12 +138,13 @@ get_header(); ?>
                                 $hours_info = do_shortcode($e_time);
                                 $hours_info = strtolower($hours_info);
                                 $has_hours = '';
-                                if ( (strpos($hours_info, 'am') !== false) || strpos($hours_info, 'pm') !== false ) {
+                                if ( strpos($hours_info, ':') !== false && (strpos($hours_info, 'am') !== false || strpos($hours_info, 'pm') !== false) ) {
                                   $has_hours = ' has-hours';
                                 } 
-                                if($has_hours) { ?>
+                                if($hours_info) { ?>
                                 <div class="mstime shcode<?php echo $has_hours ?>"><?php echo do_shortcode($e_time); ?></div>
                                 <?php } ?>
+                                
                               <?php } ?>
                             <?php } else { ?>
                               <div class="mstime"><?php echo $e_time ?></div>

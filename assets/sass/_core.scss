@@ -6591,6 +6591,13 @@ body.single-instructions {
 	}
 }
 
+.hrgen-hours:has(.hours-val):has(.is-closed) .hours-val {
+  display: none;
+}
+.hrgen-hours .is-closed {
+  color: #ba0d30;
+}
+
 .section-text-and-image {
 	width: 100%;
 	float: left;
