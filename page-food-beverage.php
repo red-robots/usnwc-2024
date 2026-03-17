@@ -141,10 +141,11 @@ get_header(); ?>
                                 if ( strpos($hours_info, ':') !== false && (strpos($hours_info, 'am') !== false || strpos($hours_info, 'pm') !== false) ) {
                                   $has_hours = ' has-hours';
                                 } 
+                                $has_hours .= ( strpos(strtolower($hours_info), 'closed') !== false ) ? ' has--closed':'';
                                 if($hours_info) { ?>
                                 <div class="mstime shcode<?php echo $has_hours ?>"><?php echo do_shortcode($e_time); ?></div>
                                 <?php } ?>
-                                
+
                               <?php } ?>
                             <?php } else { ?>
                               <div class="mstime"><?php echo $e_time ?></div>

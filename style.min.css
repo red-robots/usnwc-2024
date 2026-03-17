@@ -2818,7 +2818,8 @@ body.single-instructions #primary #section-faqs{padding-top:60px;padding-bottom:
 .text-and-gallery .textcol .mstime{font-size:20px;font-weight:600;line-height:1.2}
 .text-and-gallery .textcol .buttondiv{margin-top:25px}
 .hrgen-hours:has(.hours-val):has(.is-closed) .hours-val{display:none}
-.hrgen-hours .is-closed{color:#ba0d30}
+.has--closed .hrgen-hours,.hrgen-hours .is-closed{color:#ba0d30}
+.has--closed .hrgen-hours:has(.hours-val){color:#444}
 .section-text-and-image{width:100%;float:left}
 .section-text-and-image .leftcol,.section-text-and-image .rightcol{width:100%;position:relative}
 .section-text-and-image .leftcol{background:#f2f2f2}

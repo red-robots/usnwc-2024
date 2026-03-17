@@ -6594,8 +6594,12 @@ body.single-instructions {
 .hrgen-hours:has(.hours-val):has(.is-closed) .hours-val {
   display: none;
 }
+.has--closed .hrgen-hours,
 .hrgen-hours .is-closed {
   color: #ba0d30;
+}
+.has--closed .hrgen-hours:has(.hours-val) {
+  color: #444;
 }
 
 .section-text-and-image {
