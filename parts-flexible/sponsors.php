@@ -4,10 +4,11 @@
   $section_text = get_sub_field('section_text');
   $sponsor_images = get_sub_field('sponsor_images');
   $bgcolor = get_sub_field('bgcolor');
+  $has_bgcolor = ($bgcolor=='gray') ? ' has-bgcolor':'';
   $color = ($bgcolor=='gray') ? '#F2F2F2' : '#FFF';
   ?>
   <?php if ($section_title) { ?>
-    <div id="sponsor-section--<?php echo sanitize_title($section_title) ?>" data-section="<?php echo $section_title ?>" class="text_and_image_block_section sponsors-section column-style column-style-<?php echo $ctr ?>" style="background-color: <?php echo $color ?>">
+    <div id="sponsor-section--<?php echo sanitize_title($section_title) ?>" data-section="<?php echo $section_title ?>" class="text_and_image_block_section sponsors-section column-style column-style-<?php echo $ctr ?><?php echo $has_bgcolor ?>" style="background-color: <?php echo $color ?>">
   <?php } else { ?>
     <div class="column-style sponsors-section column-style-<?php echo $ctr ?>" style="background-color: <?php echo $color ?>">
   <?php } ?>

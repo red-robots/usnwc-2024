@@ -42,6 +42,7 @@ $show_subnav = get_field('show_subnav');
        <?php include( locate_template('parts-flexible/weddings/pricing_cards.php') ); ?>
        <?php include( locate_template('parts-flexible/fullwidth_red_bgcolor.php') ); ?>
        <?php include( locate_template('parts-flexible/what_to_wear.php') ); ?>
+       <?php include( locate_template('parts-flexible/sponsors.php') ); ?>
 
       <?php $ctr++; endwhile; ?>
     </section>

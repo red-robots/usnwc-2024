@@ -4901,6 +4901,7 @@ body.modal-open{overflow:hidden}
 .checkin-section-images .flexcol.images-4 figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .checkin-section-images .flexcol.images-4 figure.frame1,.checkin-section-images .flexcol.images-4 figure.frame2,.checkin-section-images .flexcol.images-4 figure.frame3,.checkin-section-images .flexcol.images-4 figure.frame4{width:100%}
 .text-and-image-blocks.text-and-image-blocks--gallery .image-position-left{-webkit-box-orient:horizontal !important;-webkit-box-direction:normal !important;-ms-flex-direction:row !important;flex-direction:row !important}
+.sponsors-section.has-bgcolor{padding-top:35px;padding-bottom:30px}
 .sponsors-section.sponsors-section--bottom{padding-top:60px;padding-bottom:40px;background:#fff;width:100%;float:left}
 .sponsors-section.sponsors-section--bottom .shead-icon{margin-bottom:15px}
 .sponsors-section.sponsors-section--bottom .sponsors{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:1rem}
