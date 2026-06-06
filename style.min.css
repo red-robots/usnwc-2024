@@ -6384,6 +6384,7 @@ body.page-template-page-salesforce .gform_wrapper{padding-left:5vw;padding-right
 .popup-content-wrapper.details-film-series .infoboxes .infobox{width:33.33%;border-right:1px solid #ccc}
 .popup-content-wrapper.details-film-series .infoboxes .infobox:last-child{border-right:0}
 .stories-feeds-section .wrapper{max-width:85vw}
+.loading-more-posts .stories-feeds-section .stories-entries .storyBlock.loaded-item{width:33.333% !important}
 .checkin-section-images .flexcol{width:50%}
 .checkin-section-images .flexcol.images-1 figure img{height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .checkin-section-images .flexcol.images-2 figure{padding-bottom:50%}

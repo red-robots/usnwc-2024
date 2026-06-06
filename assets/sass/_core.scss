@@ -20737,6 +20737,13 @@ body.modal-open {
     }
   }
 }
+.loading-more-posts .stories-feeds-section {
+  .stories-entries .storyBlock.loaded-item {
+    @include tab {
+      width: 33.333%!important;
+    }
+  }
+}
 
 #saveBoxesWidth {
   position: fixed;

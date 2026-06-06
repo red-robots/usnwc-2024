@@ -158,10 +158,15 @@ jQuery(document).ready(function($){
     var symbol = ( baseUrl.includes('?') ) ? '&' : '?';
         baseUrl += symbol + 'pg=' + next;
     loadMoreButton.attr('data-next', nextPlus);
-    
+
+    $('body').addClass('loading-more-posts');
     $('#hiddenData').load(baseUrl + ' .stories-entries', function(){
       if( $('#hiddenData .storyBlock').length ) {
-        var items = $('#hiddenData .stories-entries').html();
+        //var items = $('#hiddenData .stories-entries').html();
+        var items = '';
+        $('#hiddenData .storyBlock').each(function(){
+          items += $(this).clone(true).addClass('loaded-item').prop('outerHTML');
+        });
         $('.stories-wrapper .stories-entries').append(items);
         $('#hiddenData').html("");
       }
