@@ -1,8 +1,9 @@
 <?php
 /**
- * Template Name: Race Series Single Post
- * Template Post Type: race
+ * Template Name: Festival Single Post
+ * Template Post Type: festival
  */
+
 
 get_header(); 
 $post_id = get_the_ID(); 
@@ -71,22 +72,25 @@ body.single-festival .info2 {
     <div class="flexibleContentWrap">
       <?php $ctr=1; while( have_rows('flexible_content_page') ): the_row(); ?>
         
-        <?php include( locate_template('parts-flexible/text_and_image_block.php') ); ?>
-        <?php include( locate_template('parts-flexible/two_column_text.php') ); ?>
-        <?php include( locate_template('parts-flexible/middle_card.php') ); ?>
-        <?php include( locate_template('parts-flexible/cards_row.php') ); ?>
-        <?php include( locate_template('parts-flexible/fullwidth_red_bar.php') ); ?>
-        <?php include( locate_template('parts-flexible/events.php') ); ?>
-        <?php include( locate_template('parts-flexible/columns_vline.php') ); ?>
-        <?php include( locate_template('parts-flexible/fullwidth_image.php') ); ?>
-        <?php include( locate_template('parts-flexible/carousel_fullwidth.php') ); ?>
-        <?php include( locate_template('parts-flexible/upcoming_events.php') ); ?>
-        <?php include( locate_template('parts-flexible/schedule_cards.php') ); ?>
-        <?php include( locate_template('parts-flexible/simple_intro_text.php') ); ?>
-        <?php include( locate_template('parts-flexible/accordion_elements.php') ); ?>
-        <?php include( locate_template('parts-flexible/buttons_section.php') ); ?>
-        <?php include( locate_template('parts-flexible/schedule_dash_listings.php') ); ?>
-        <?php include( locate_template('parts-flexible/fullwdith_text.php') ); ?>
+        <?php 
+          include( locate_template('parts-flexible/text_and_image_block.php') );
+          include( locate_template('parts-flexible/two_column_text.php') );
+          include( locate_template('parts-flexible/middle_card.php') );
+          include( locate_template('parts-flexible/cards_row.php') );
+          include( locate_template('parts-flexible/fullwidth_red_bar.php') );
+          include( locate_template('parts-flexible/events.php') );
+          include( locate_template('parts-flexible/columns_vline.php') );
+          include( locate_template('parts-flexible/fullwidth_image.php') );
+          include( locate_template('parts-flexible/carousel_fullwidth.php') );
+          include( locate_template('parts-flexible/upcoming_events.php') );
+          include( locate_template('parts-flexible/schedule_cards.php') );
+          include( locate_template('parts-flexible/simple_intro_text.php') );
+          include( locate_template('parts-flexible/accordion_elements.php') );
+          include( locate_template('parts-flexible/buttons_section.php') );
+          include( locate_template('parts-flexible/schedule_dash_listings.php') );
+          include( locate_template('parts-flexible/fullwdith_text.php') );
+          include( locate_template('parts-flexible/sponsors.php') );
+        ?>
 
       <?php $ctr++; endwhile;  ?>
     </div>
