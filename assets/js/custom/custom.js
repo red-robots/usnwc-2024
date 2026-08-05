@@ -1396,8 +1396,10 @@ var getGridSize = function() {
     $('.select-event-type').on('click', function(e){
       e.preventDefault();
       $(this).toggleClass('open');
-      $(this).parents('.custom-dropdown').find('.dropdownlist').slideToggle();
-      $(this).parents('.custom-dropdown').addClass('open');
+      // $(this).parents('.custom-dropdown').find('.dropdownlist').slideToggle();
+      // $(this).parents('.custom-dropdown').addClass('open');
+      $(this).parent().next('.dropdown-inner').find('.dropdownlist').slideToggle();
+      $(this).parent().parent().toggleClass('open');
     });
     $(document).on('click','.select-posttype', function(e){
       e.preventDefault();
@@ -1418,6 +1420,26 @@ var getGridSize = function() {
       // $('#eventsGrid').load(newUrl+'&d='+d.getTime()+ ' .calendar-tab-events-posts',function(){
       // });
     });
+
+    $(document).on('click','.select-race-subfilter', function(e){
+      e.preventDefault();
+      var d = new Date();
+      var parent = $(this).parents('.custom-dropdown');
+      var opt = $(this).text();
+      var subfilter = $(this).attr('data-val');
+      var baseUrl = parent.attr('data-baseUrl');
+      // parent.find('.select-event-type span').text(opt);
+      // parent.attr('data-selected', type);
+      // parent.find('.dropdownlist li.default').removeClass('hidden');
+      // parent.find('.dropdownlist').slideUp();
+      // parent.removeClass('open');
+      if( typeof params.type!=undefined || params.type!=null ) {
+        var newUrl = baseUrl + '?type=' + params.type + '&subfilter=' + subfilter;
+        window.location.href = newUrl;
+      }
+      
+    });
+
   }
 
   if( typeof params.type!=undefined || params.type!=null ) {

@@ -17651,6 +17651,9 @@ section.visit {
   margin: 0 auto;
   position: relative;
   z-index: 20;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
   .selectwrap {
     width: 100%;
     display: flex;

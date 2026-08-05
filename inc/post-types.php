@@ -544,6 +544,15 @@ function build_taxonomies() {
       'query_var' => false,
       'show_admin_column'=>1
     ),
+    array(
+      'post_type' => array('race'),
+      'menu_name' => 'Event Filters',
+      'plural'    => 'Event Filters',
+      'single'    => 'Event Filter',
+      'taxonomy'  => 'event-filters',
+      'query_var' => false,
+      'show_admin_column'=>1
+    ),
     // array(
     //   'post_type' => array('jam-programs'),
     //   'menu_name' => 'Programming',

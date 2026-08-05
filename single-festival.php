@@ -4,7 +4,6 @@
  * Template Post Type: festival
  */
 
-
 get_header(); 
 $post_id = get_the_ID(); 
 $blank_image = THEMEURI . "images/square.png";
@@ -91,7 +90,7 @@ body.single-festival .info2 {
           include( locate_template('parts-flexible/fullwdith_text.php') );
           include( locate_template('parts-flexible/sponsors.php') );
         ?>
-
+		
       <?php $ctr++; endwhile;  ?>
     </div>
     <?php  } ?>

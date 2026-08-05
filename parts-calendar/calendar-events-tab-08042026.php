@@ -7,10 +7,6 @@ $filter_type = ( isset($_GET['type']) && $_GET['type'] ) ? $_GET['type'] : '';
 if($filter_type=='all') {
   $filter_type = '';
 }
-$filter_subfilter = ( isset($_GET['subfilter']) && $_GET['subfilter'] ) ? sanitize_text_field($_GET['subfilter']) : '';
-if($filter_subfilter=='all') {
-  $filter_subfilter = '';
-}
 $featured_event = get_field('featured_event','option'); /* will return a post id */
 
 $cpttypes = [
@@ -295,62 +291,6 @@ if($special_events_categories) {
   });
 }
 
-// Race posts filtered by event-filters taxonomy (URL: type=race&subfilter=slug)
-if($filter_type=='race' && $filter_subfilter) {
-  $today_ymd = date('Ymd');
-  $race_args = array(
-    'posts_per_page' => -1,
-    'post_type'      => 'race',
-    'post_status'    => 'publish',
-    'tax_query'      => array(
-      array(
-        'taxonomy' => 'event-filters',
-        'field'    => 'slug',
-        'terms'    => $filter_subfilter,
-      )
-    ),
-    'meta_key' => 'start_date',
-    'orderby'  => 'meta_value',
-    'order'    => 'ASC',
-  );
-  $race_posts = get_posts($race_args);
-  $posts = array();
-  $total_records = 0;
-
-  if($race_posts) {
-    foreach($race_posts as $rp) {
-      $start_date = get_field('start_date', $rp->ID);
-      $end_date = get_field('end_date', $rp->ID);
-      $rp->start_date = $start_date;
-      $rp->end_date = $end_date;
-
-      // Only include races that are happening today or in the future
-      $is_present_or_future = true;
-      if($end_date) {
-        if( strtotime(str_replace('-', '', $end_date)) < strtotime($today_ymd) ) {
-          $is_present_or_future = false;
-        }
-      } elseif($start_date) {
-        if( strtotime(str_replace('-', '', $start_date)) < strtotime($today_ymd) ) {
-          $is_present_or_future = false;
-        }
-      }
-
-      if($is_present_or_future) {
-        $start__date = ($start_date) ? str_replace('-', '', $start_date) : '';
-        $rp->start_date_unix = ($start__date) ? strtotime($start__date) : 0;
-        $posts[] = $rp;
-      }
-    }
-
-    usort($posts, function($a, $b) {
-      return $a->start_date_unix - $b->start_date_unix;
-    });
-
-    $total_records = count($posts);
-  }
-}
-
 if( isset($_GET['type']) && $_GET['type']!='all' ) {
   if($posts) {
     $posts_paged = [];
@@ -369,21 +309,13 @@ if( isset($_GET['type']) && $_GET['type']!='all' ) {
 }
 
 $race_subfilters = '';
-$selected_subfilter_name = '';
 if($filter_type=='race') {
   $race_subfilters = get_terms([
     'taxonomy'    => 'event-filters',
     'hide_empty'  => true,
     'exclude'     => 1,
+    'post_type'   => $filter_type
   ]);
-  if($filter_subfilter && $race_subfilters && !is_wp_error($race_subfilters)) {
-    foreach($race_subfilters as $sf) {
-      if($sf->slug === $filter_subfilter) {
-        $selected_subfilter_name = $sf->name;
-        break;
-      }
-    }
-  }
 }
 
 ?>
@@ -406,18 +338,16 @@ if($filter_type=='race') {
       </div>
     </div>
 
-    <?php if($race_subfilters && !is_wp_error($race_subfilters)) { ?>
-    <div class="group-dropdown dropdown-race-subfilter" data-selected="<?php echo ($filter_subfilter) ? esc_attr($filter_subfilter) : 'all' ?>">
+    <?php if($race_subfilters) { ?>
+    <div class="group-dropdown dropdown-race-subfilter">
       <div class="selectwrap">
-        <button class="select-event-type selector"><span><?php echo ($selected_subfilter_name) ? esc_html($selected_subfilter_name) : 'All' ?></span></button>
+        <button class="select-event-type selector"><span>All</span></button>
       </div>
       <div class="dropdown-inner">
         <ul class="dropdownlist">
-          <li class="option default<?php echo ($filter_subfilter) ? '' :' hidden' ?>"><a href="javascript:void(0)" class="select-race-subfilter" data-val="all">All</a></li>
-          <?php foreach ($race_subfilters as $subfilter) {
-            $is_sub_selected = ($filter_subfilter && $filter_subfilter==$subfilter->slug) ? ' selected':'';
-          ?>
-            <li class="option<?php echo $is_sub_selected ?>"><a href="javascript:void(0)" class="select-race-subfilter" data-val="<?php echo esc_attr($subfilter->slug) ?>"><?php echo esc_html($subfilter->name) ?></a></li>
+          <li class="option default<?php echo ($filter_type) ? '' :' hidden' ?>"><a href="javascript:void(0)" class="select-race-subfilter" data-val="all">All</a></li>
+          <?php foreach ($race_subfilters as $subfilter) { ?>
+            <li class="option"><a href="javascript:void(0)" class="select-race-subfilter" data-val="<?php echo $subfilter->slug ?>"><?php echo $subfilter->name ?></a></li>
           <?php } ?>
         </ul>
       </div>
@@ -529,7 +459,6 @@ if($filter_type=='race') {
 
     <?php 
     $filteredType = ( isset($_GET['type']) && $_GET['type'] ) ? $_GET['type'] : '';
-    $filteredSubfilter = ( isset($_GET['subfilter']) && $_GET['subfilter'] ) ? sanitize_text_field($_GET['subfilter']) : '';
     if( $total_records>$per_page ) {
       $perpage_count = $total_records/$per_page;
       //$total_pages = round($total_records/$per_page); 
@@ -537,7 +466,7 @@ if($filter_type=='race') {
       ?>
       <div id="hiddenData" style="display:none;"></div>
       <div id="pagination" class="pagination-wrapper loadMoreWrappe">
-        <a href="javascript:void(0)" data-filter="<?php echo esc_attr($filteredType) ?>" data-subfilter="<?php echo esc_attr($filteredSubfilter) ?>" data-baseurl="<?php echo get_permalink() ?>" id="loadMorePosts" data-perpage="<?php echo $per_page ?>" data-count="<?php echo $total_records ?>" data-next="2" data-total-pages="<?php echo $total_pages ?>" class="button button-pill">See More</a>
+        <a href="javascript:void(0)" data-filter="<?php echo $filteredType ?>" data-baseurl="<?php echo get_permalink() ?>" id="loadMorePosts" data-perpage="<?php echo $per_page ?>" data-count="<?php echo $total_records ?>" data-next="2" data-total-pages="<?php echo $total_pages ?>" class="button button-pill">See More</a>
       </div>
     <?php } ?>
   </div>
@@ -562,12 +491,8 @@ jQuery(document).ready(function($){
     var totalPages = parseInt( $(this).attr('data-total-pages') );
     var baseUrl = $(this).attr('data-baseurl');
     var filter = $(this).attr('data-filter');
-    var subfilter = $(this).attr('data-subfilter');
     if(filter) {
       baseUrl += '?type=' + filter + '&pg=' + next;
-      if(subfilter && subfilter !== 'all') {
-        baseUrl += '&subfilter=' + subfilter;
-      }
     } else {
       baseUrl += '?pg=' + next;
     }
