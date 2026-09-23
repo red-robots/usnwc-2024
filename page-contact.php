@@ -44,7 +44,7 @@ get_header(); ?>
 							<?php if ($contact_map) { ?>
 								<div class="map col">
 									<?php echo $contact_map; ?>
-									<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="helper">
+									<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'helper' ) ); ?>
 								</div>	
 							<?php } ?>
 						</div>

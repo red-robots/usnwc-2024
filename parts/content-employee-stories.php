@@ -40,7 +40,7 @@ if( $stories->have_posts() ) { ?>
 						<?php if ($img) { ?>
 						<span class="img" style="background-image:url('<?php echo $img[0] ?>')"></span>
 						<?php } ?>
-						<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder">
+						<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'placeholder' ) ); ?>
 					</div>
 					<div class="titlediv">
 						<p class="name"><?php the_title(); ?></p>

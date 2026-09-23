@@ -44,7 +44,7 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
           <?php if ($all_access_feat_image) { ?>
           <figure class="flexcol image-block">
             <?php if($all_access_feat_image) { ?>
-            <img src="<?php echo $all_access_feat_image['url'] ?>" alt="<?php echo $all_access_feat_image['title'] ?>">
+            <?php echo bellaworks_image( $all_access_feat_image, 'large', array( 'alt' => $all_access_feat_image['title'] ) ); ?>
             <?php } ?>
           </figure>
           <?php } ?>
@@ -124,7 +124,7 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
         <div class="inner">
           <figure>
             <?php if($single_access_feat_image) { ?>
-            <img src="<?php echo $single_access_feat_image['url'] ?>" alt="<?php echo $single_access_feat_image['title'] ?>">
+            <?php echo bellaworks_image( $single_access_feat_image, 'large', array( 'alt' => $single_access_feat_image['title'] ) ); ?>
             <?php } ?>
           </figure>
 

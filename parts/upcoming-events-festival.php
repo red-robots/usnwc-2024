@@ -79,13 +79,13 @@ $dateNow = date('Y-m-d');
 					<?php if ($mobileThumbURL) { ?>
 						<div class="imagediv image-square">
 							<div class="img" style="background-image:url('<?php echo $mobileThumbURL ?>')">
-								<img src="<?php echo $square ?>" alt="" class="feat-img placeholder no-image">
-								<img src="<?php echo $mobileThumbURL ?>" alt="<?php echo $mobileThumbALT ?>" class="feat-img image-square" style="display:none!important;">
+								<?php echo bellaworks_image( $square, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder no-image' ) ); ?>
+								<?php echo bellaworks_image( $mobileThumbURL, 'large', array( 'alt' => $mobileThumbALT, 'class' => 'feat-img image-square', 'style' => 'display:none!important;' ) ); ?>
 							</div>
 						</div>
 					<?php } else { ?>
 						<div class="imagediv noImage">
-							<img src="<?php echo $square ?>" alt="" class="feat-img placeholder no-image">
+							<?php echo bellaworks_image( $square, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder no-image' ) ); ?>
 						</div>
 					<?php } ?>
 

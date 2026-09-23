@@ -98,7 +98,7 @@ get_header(); ?>
 						<ul class="slides">
 							<?php foreach ($galleries as $g) { ?>
 								<li>
-									<img src="<?php echo $g['url']; ?>" alt="" aria-hidden="true" />
+									<?php echo bellaworks_image( $g, 'large', array( 'alt' => '', 'aria-hidden' => 'true' ) ); ?>
 								</li>
 							<?php } ?>
 						</ul>
@@ -109,7 +109,7 @@ get_header(); ?>
 					<?php foreach ($galleries as $g) { ?>
 						<div class="item">
 							<div class="image" style="background-image:url('<?php echo $g['url']?>')">
-								<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
+								<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true' ) ); ?>
 							</div>
 						</div>
 					<?php } ?>
@@ -189,9 +189,9 @@ if($sponsors) { ?>
 				?>
 				<span class="sponsor">
 					<?php if ($link) { ?>
-						<a href="<?php echo $link ?>" target="_blank"><img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>"></a>
+						<a href="<?php echo $link ?>" target="_blank"><?php echo bellaworks_image( $s, 'large', array( 'alt' => $s['title'] ) ); ?></a>
 					<?php } else { ?>
-						<img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>">
+						<?php echo bellaworks_image( $s, 'large', array( 'alt' => $s['title'] ) ); ?>
 					<?php } ?>
 				</span>	
 				<?php } ?>

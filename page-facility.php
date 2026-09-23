@@ -55,7 +55,7 @@ get_header(); ?>
               <div id="map-info-<?php echo $map_slug ?>" class="mapcol" data-section="<?php echo $map_name ?>">
                 <figure>
                   <a href="<?php echo $map_image['url'] ?>" data-fancybox>
-                    <img src="<?php echo $map_image['url'] ?>" alt="<?php echo ($map_name) ? $map_name : $map_image['title'] ?>" />
+                    <?php echo bellaworks_image( $map_image, 'large', array( 'alt' => ($map_name) ? $map_name : $map_image['title'] ) ); ?>
                     <span class="zoom-icon"><i class="fas fa-search"></i></span>
                   </a>
                 </figure>

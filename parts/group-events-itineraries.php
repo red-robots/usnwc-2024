@@ -44,7 +44,7 @@ if($accordion) { ?>
 								<?php if ($e_image) { ?>
 									<div class="subcol right image">
 										<div class="image" style="background-image:url('<?php echo $e_image['sizes']['medium_large'] ?>')"></div>
-										<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true">
+										<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true' ) ); ?>
 									</div>
 								<?php } ?>
 								</div>

@@ -480,9 +480,9 @@ if($sponsors) { ?>
 				?>
 				<span class="sponsor">
 					<?php if ($link) { ?>
-						<a href="<?php echo $link ?>" target="_blank"><img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>"></a>
+						<a href="<?php echo $link ?>" target="_blank"><?php echo bellaworks_image( $s, 'large', array( 'alt' => $s['title'] ) ); ?></a>
 					<?php } else { ?>
-						<img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>">
+						<?php echo bellaworks_image( $s, 'large', array( 'alt' => $s['title'] ) ); ?>
 					<?php } ?>
 				</span>	
 				<?php } ?>
@@ -530,7 +530,7 @@ $popup_link = get_field('popup_link');
 		<?php if($popup_link) {?><a href="<?php echo $popup_link['url']; ?>" target="<?php echo $popup_link['target']; ?>"><?php } ?>
 			<?php if($popup_creative){ ?>
 				<div class="race-pop-img">
-					<img src="<?php echo $popup_creative['url']; ?>" width="<?php echo $popup_creative['width']; ?>" height="<?php echo $popup_creative['height']; ?>" >
+					<?php echo bellaworks_image( $popup_creative, 'large' ); ?>
 				</div>
 			<?php } ?>
 			<?php if($popup_text){ ?>

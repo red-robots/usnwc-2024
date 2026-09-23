@@ -28,7 +28,7 @@ $filmCat = 'yes';
 						<div class="blurred" style="background-image:url('<?php echo $featThumb[0] ?>')"></div>
 						<div class="image fadeIn wow" data-wow-delay="<?php echo $sec;?>s" style="background-image:url('<?php echo $featImg[0] ?>')">
 
-							<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="helper">
+							<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'helper' ) ); ?>
 						</div>
 					</div>
 					<?php } ?>

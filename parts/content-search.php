@@ -28,7 +28,7 @@
 			<?php if ($image_src) { ?>
 			<figure class="image-col">
 				<div class="imagediv" style="background-image:url('<?php echo $image_src ?>')"></div>
-				<img src="<?php echo $blank_image ?>" alt="" aria-hidden="true">
+				<?php echo bellaworks_image( $blank_image, 'large', array( 'alt' => '', 'aria-hidden' => 'true' ) ); ?>
 			</figure>
 			<?php } ?>
 

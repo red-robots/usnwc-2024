@@ -55,7 +55,7 @@ jQuery(document).ready(function($){
           content += '<div class="modaltitleDiv text-center"><h5 class="modal-title">'+obj.post_title+'</h5></div>';
           if(obj.featured_image) {
             var img = obj.featured_image;
-            content += '<div class="modalImage"><img src="'+img.url+'" alt="'+img.title+'p" class="feat-image"></div>';
+            content += '<div class="modalImage"><img src="'+img.url+'" alt="'+img.title+'" class="feat-image" loading="lazy" decoding="async"></div>';
           }
           content += '<div class="modalText"></div>';
 

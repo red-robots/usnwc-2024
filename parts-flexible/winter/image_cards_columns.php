@@ -53,10 +53,10 @@
                     <?php } ?>
                   </span>
                   <?php } ?>
-                  <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" />
+                  <?php echo bellaworks_image( $img, 'large', array( 'alt' => $img['title'] ) ); ?>
                 </a>
                 <?php } else { ?>
-                  <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" />
+                  <?php echo bellaworks_image( $img, 'large', array( 'alt' => $img['title'] ) ); ?>
                 <?php } ?>
               </figure>
             </div>

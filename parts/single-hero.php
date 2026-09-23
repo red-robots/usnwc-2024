@@ -5,11 +5,11 @@ $mobile_image = get_field('mobile_featured_image');
 if($imageUrl) { ?>
 <section id="hero--single">
   <figure>
-    <img src="<?php echo $imageUrl ?>" alt="<?php echo get_the_title() ?>" class="desktop-feat-image" />
+    <?php echo bellaworks_image( $imageUrl, 'full', array( 'loading' => 'eager', 'fetchpriority' => 'high', 'alt' => get_the_title(), 'class' => 'desktop-feat-image' ) ); ?>
     <?php if ($mobile_image) { ?>
-    <img src="<?php echo $mobile_image['url'] ?>" alt="" class="mobile-feat-image" />
+    <?php echo bellaworks_image( $mobile_image, 'full', array( 'loading' => 'eager', 'fetchpriority' => 'high', 'alt' => '', 'class' => 'mobile-feat-image' ) ); ?>
     <?php } else { ?>
-    <img src="<?php echo $imageUrl ?>" alt="<?php echo get_the_title() ?>" class="mobile-feat-image from-desktop-image" />
+    <?php echo bellaworks_image( $imageUrl, 'full', array( 'loading' => 'eager', 'fetchpriority' => 'high', 'alt' => get_the_title(), 'class' => 'mobile-feat-image from-desktop-image' ) ); ?>
     <?php } ?>
   </figure>
   <div class="banner-bottom">

@@ -60,11 +60,11 @@ $paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
 									<a href="<?php echo $pagelink ?>" class="photo wave-effect js-blocks">
 										<?php if ($thumbImage) { ?>
 											<span class="imagediv" style="background-image:url('<?php echo $thumbImage['sizes']['medium_large'] ?>')"></span>
-											<img src="<?php echo $thumbImage['url']; ?>" alt="<?php echo $thumbImage['title'] ?>" class="feat-img" style="display:none;">
-											<img src="<?php echo $blank_image ?>" alt="" class="feat-img placeholder">
+											<?php echo bellaworks_image( $thumbImage, 'large', array( 'alt' => $thumbImage['title'], 'class' => 'feat-img', 'style' => 'display:none;' ) ); ?>
+											<?php echo bellaworks_image( $blank_image, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder' ) ); ?>
 										<?php } else { ?>
 											<span class="imagediv"></span>
-											<img src="<?php echo $blank_image ?>" alt="" class="feat-img placeholder">
+											<?php echo bellaworks_image( $blank_image, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder' ) ); ?>
 										<?php } ?>
 										<span class="boxTitle">
 											<span class="twrap">
@@ -76,7 +76,7 @@ $paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
 
 										<?php if ($eventStatus=='canceled') { ?>
 										<span class="canceledStat">
-											<img src="<?php echo $canceledImage ?>" alt="" aria-hidden="true">
+											<?php echo bellaworks_image( $canceledImage, 'large', array( 'alt' => '', 'aria-hidden' => 'true' ) ); ?>
 										</span>	
 										<?php } ?>
 									</a>

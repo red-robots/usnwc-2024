@@ -27,10 +27,10 @@
               <figure class="sponsor-logo">
               <?php if ($logo_link) { ?>
                 <a href="<?php echo $logo_link ?>" target="<?php echo $logo_target ?>">
-                  <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['title'] ?>">
+                  <?php echo bellaworks_image( $logo, 'large', array( 'alt' => $logo['title'] ) ); ?>
                 </a>
               <?php } else { ?>
-                <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['title'] ?>">
+                <?php echo bellaworks_image( $logo, 'large', array( 'alt' => $logo['title'] ) ); ?>
               <?php } ?>
               </figure>
             <?php } ?>

@@ -16,9 +16,9 @@
         if($image) { ?>
         <figure class="img<?php echo $imgctr ?>">
           <span class="span-image" style="background-image:url('<?php echo $image['url'] ?>')"></span>
-          <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" class="image-block" />
+          <?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['title'], 'class' => 'image-block' ) ); ?>
           <?php if ($logo_overlay) { ?>
-           <img src="<?php echo $logo_overlay['url'] ?>" alt="<?php echo $logo_overlay['title'] ?>" class="logo-overlay" /> 
+           <?php echo bellaworks_image( $logo_overlay, 'large', array( 'alt' => $logo_overlay['title'], 'class' => 'logo-overlay' ) ); ?> 
           <?php } ?>
           <?php if ($details) { ?>
           <figcaption>

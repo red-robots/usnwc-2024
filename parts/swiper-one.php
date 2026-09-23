@@ -33,7 +33,7 @@
 							    	<?php foreach( $gallery as $g ) { ?>
 									      <div class="swiper-slide">
 									        <div class="image-gallery__picture">
-									        	<img class="image-gallery__img" src="<?php echo $g['sizes']['medium']; ?>"/>
+									        	<?php echo bellaworks_image( $g, 'medium', array( 'class' => 'image-gallery__img' ) ); ?>
 									        	<?php if( $g['description'] ){ ?>
 									        		<div class="img-desc">
 									        			<?php echo $g['description']; ?>

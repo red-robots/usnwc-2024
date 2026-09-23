@@ -50,7 +50,7 @@ get_header(); ?>
 						<?php foreach ($imageList as $m) { 
 							$img = $m['image']; 
 							if($img) { ?>
-							<li><img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" /></li>
+							<li><?php echo bellaworks_image( $img, 'large', array( 'alt' => $img['title'] ) ); ?></li>
 					    <?php } ?>
 						<?php } ?>
 						</ul>
@@ -206,8 +206,8 @@ get_header(); ?>
                         <?php $helper = THEMEURI . 'images/rectangle-narrow.png'; ?>
                         <?php foreach ($slides as $s) { ?>
                           <li class="slide-item" style="background-image:url('<?php echo $s['url']?>')">
-                            <img src="<?php echo $helper ?>" alt="" aria-hidden="true" class="placeholder">
-                            <img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>" class="actual-image" />
+                            <?php echo bellaworks_image( $helper, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'placeholder' ) ); ?>
+                            <?php echo bellaworks_image( $s, 'large', array( 'alt' => $s['title'], 'class' => 'actual-image' ) ); ?>
                           </li>
                         <?php } ?>
                       </ul>
@@ -224,7 +224,7 @@ get_header(); ?>
                     <div class="gallerycol fb-static-images count-<?php echo count($images) ?>">
                       <div class="flexwrap">
                         <?php foreach ($images as $imgUrl) { ?>
-                        <figure><img src="<?php echo $imgUrl ?>" alt=""></figure>  
+                        <figure><?php echo bellaworks_image( $imgUrl, 'large', array( 'alt' => '' ) ); ?></figure>  
                         <?php } ?>
                       </div>
                     </div>
@@ -256,7 +256,7 @@ get_header(); ?>
 						</div>
 					</div>
 					<div class="full-map-image">
-						<img src="<?php echo $fbmap['url'] ?>" alt="<?php echo $fbmap['title'] ?>">
+						<?php echo bellaworks_image( $fbmap, 'large', array( 'alt' => $fbmap['title'] ) ); ?>
 					</div>
 				</div>
 			</section>

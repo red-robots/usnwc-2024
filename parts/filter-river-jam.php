@@ -133,15 +133,15 @@ if ( $entries->have_posts() ) { ?>
 								<a href="#" data-url="<?php echo $pagelink ?>" data-action="ajaxGetPageData" data-id="<?php echo $id ?>" class="photo popdata">
 									<?php if ($thumbImage) { ?>
 										<span class="imagediv" style="background-image:url('<?php echo $thumbImage['sizes']['medium_large'] ?>')"></span>
-										<img src="<?php echo $rectangle ?>" alt="" class="feat-img placeholder">
-										<img src="<?php echo $thumbImage['url']; ?>" alt="<?php echo $thumbImage['title'] ?>" class="feat-img" style="display:none">
+										<?php echo bellaworks_image( $rectangle, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder' ) ); ?>
+										<?php echo bellaworks_image( $thumbImage, 'large', array( 'alt' => $thumbImage['title'], 'class' => 'feat-img', 'style' => 'display:none' ) ); ?>
 									<?php } else { ?>
 										<span class="imagediv"></span>
-										<img src="<?php echo $rectangle ?>" alt="" class="feat-img placeholder">
+										<?php echo bellaworks_image( $rectangle, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder' ) ); ?>
 									<?php } ?>
 									<?php if ($eventStatus=='canceled') { ?>
 									<span class="canceledStat">
-										<img src="<?php echo $canceledImage ?>" alt="" aria-hidden="true">
+										<?php echo bellaworks_image( $canceledImage, 'large', array( 'alt' => '', 'aria-hidden' => 'true' ) ); ?>
 									</span>	
 									<?php } ?>
 								</a>

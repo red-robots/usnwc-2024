@@ -33,13 +33,46 @@ $rectangle = THEMEURI . "images/rectangle-narrow.png";
                   }
                 </style>
                 <?php } ?>
+		            <?php if ( $ctr === 1 ) { ?>
+                <style>
+                  /* <picture> hero (2026-09-23): one <img> serves both breakpoints, so it must stay visible
+                     where the old two-image markup hid .poster-desktop, and the mobile aspect placeholder
+                     that keyed off :has(img.poster-mobile) needs to key off the <picture> instead. */
+                  .full-bleed-promo picture img.poster-desktop { display: block !important; }
+                  @media screen and (max-width:768px) {
+                    section.full-bleed-promo.rounded_with_padding div.img:has(picture) { padding-bottom: 120vw; }
+                  }
+                </style>
+                <?php } ?>
 		            <section class="full-bleed-promo full-bleed-promo--<?php echo $ctr ?> <?php echo $full_type; ?>">
 		            	<div class="img">
-		            		<img src="<?php echo $poster['url']; ?>" alt="<?php echo $poster['alt']; ?>" class="poster-desktop">
-
-                    <?php if ($poster_mobile) { ?>
-                    <img src="<?php echo $poster_mobile['url']; ?>" alt="<?php echo $poster_mobile['alt']; ?>" class="poster-mobile">
-                    <?php } ?>
+		            		<?php
+		            		// Hero images: srcset from the registered sizes, and <picture> so a phone downloads only the
+		            		// portrait file (the CSS swaps them at 768px). The first promo is the LCP candidate, so it loads
+		            		// eagerly with high priority; later promos are lazy. (2026-09-23)
+		            		$hero_first  = ( $ctr === 1 );
+		            		$hero_attrs  = array(
+		            			'class'    => 'poster-desktop',
+		            			'sizes'    => '100vw',
+		            			'loading'  => $hero_first ? 'eager' : 'lazy',
+		            			'decoding' => 'async',
+		            		);
+		            		if ( $hero_first ) { $hero_attrs['fetchpriority'] = 'high'; }
+		            		if ( $poster_mobile ) {
+		            			$mobile_src = wp_get_attachment_image_src( $poster_mobile['ID'], 'full' );
+		            			$mobile_srcset = wp_get_attachment_image_srcset( $poster_mobile['ID'], 'full' );
+		            			$desktop_srcset = wp_get_attachment_image_srcset( $poster['ID'], 'full' );
+		            			?>
+		            			<picture>
+		            				<source media="(max-width: 768px)" srcset="<?php echo esc_attr( $mobile_srcset ? $mobile_srcset : $mobile_src[0] ); ?>" sizes="100vw">
+		            				<source media="(min-width: 769px)" srcset="<?php echo esc_attr( $desktop_srcset ? $desktop_srcset : $poster['url'] ); ?>" sizes="100vw">
+		            				<?php echo wp_get_attachment_image( $poster['ID'], 'full', false, $hero_attrs ); ?>
+		            			</picture>
+		            			<?php
+		            		} else {
+		            			echo wp_get_attachment_image( $poster['ID'], 'full', false, $hero_attrs );
+		            		}
+		            		?>
 
 		            		<div class="info">
 			            		<div class="words">
@@ -81,8 +114,10 @@ $rectangle = THEMEURI . "images/rectangle-narrow.png";
                               <div class="title"><?php echo $card_title; ?></div>
                               <div class="bg-overlay"></div>
                             </div>
-                            <?php if ( isset($card_poster['url']) ) { ?>
-                            <img class="poster" src="<?php echo $card_poster['url']; ?>" alt="" aria-hidden="true">
+                            <?php if ( isset($card_poster['ID']) ) {
+                              echo wp_get_attachment_image( $card_poster['ID'], 'large', false, array( 'class' => 'poster', 'alt' => '', 'aria-hidden' => 'true', 'loading' => 'lazy', 'decoding' => 'async', 'sizes' => '(max-width: 768px) 90vw, 25vw' ) );
+                            } elseif ( isset($card_poster['url']) ) { ?>
+                            <img class="poster" src="<?php echo $card_poster['url']; ?>" alt="" aria-hidden="true" loading="lazy">
                             <?php } ?>
                           </a>
                         </div>
@@ -108,7 +143,11 @@ $rectangle = THEMEURI . "images/rectangle-narrow.png";
                                   <div class="title"><?php echo $card_title; ?></div>
                                   <div class="bg-overlay"></div>
                                 </div>
-                                <img class="poster" src="<?php echo $card_poster['url']; ?>" alt="" aria-hidden="true">
+                                <?php if ( isset($card_poster['ID']) ) {
+                                  echo wp_get_attachment_image( $card_poster['ID'], 'large', false, array( 'class' => 'poster', 'alt' => '', 'aria-hidden' => 'true', 'loading' => 'lazy', 'decoding' => 'async', 'sizes' => '90vw' ) );
+                                } else { ?>
+                                <img class="poster" src="<?php echo $card_poster['url']; ?>" alt="" aria-hidden="true" loading="lazy">
+                                <?php } ?>
                               </a>
                             </div>
                           </figure>

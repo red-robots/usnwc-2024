@@ -13,7 +13,7 @@
         <div class="footLeft">
           <?php if ($footLogo) { ?>
           <div class="logo footLogo">
-            <img src="<?php echo $footLogo['url'] ?>" alt="<?php echo $footLogo['title'] ?>" />
+            <?php echo bellaworks_image( $footLogo, 'medium', array( 'alt' => $footLogo['title'], 'loading' => 'lazy' ) ); ?>
           </div>
           <?php } ?>
         
@@ -76,7 +76,7 @@ jQuery(document).ready(function($){
 	});
 });
 </script>
-<script src="https://player.vimeo.com/api/player.js"></script>
+<?php // Vimeo player.js is already enqueued by inc/scripts.php ('vimeo-player'); duplicate tag removed 2026-09-23. ?>
 <script type="text/javascript" src="https://whitewater.secure-cdn.na3.accessoticketing.com/embed/accesso.js" data-accesso-integration-version="5"></script>
 <!-- Center specific code ---------  Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L51KQDPENF"></script>

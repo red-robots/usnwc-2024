@@ -27,7 +27,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
 				<?php foreach ($galleries as $g) { ?>
 					<div class="item">
 						<div class="image" style="background-image:url('<?php echo $g['url']?>')">
-							<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
+							<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true' ) ); ?>
 						</div>
 					</div>
 				<?php } ?>

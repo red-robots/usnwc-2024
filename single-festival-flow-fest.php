@@ -86,7 +86,7 @@ $is_filtered = ( isset($_GET['programming']) && $_GET['programming'] ) ? $_GET['
 					<?php foreach ($galleries as $g) { ?>
 						<div class="item">
 							<div class="image" style="background-image:url('<?php echo $g['url']?>')">
-								<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
+								<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true' ) ); ?>
 							</div>
 						</div>
 					<?php } ?>
@@ -404,7 +404,7 @@ $is_filtered = ( isset($_GET['programming']) && $_GET['programming'] ) ? $_GET['
 				<div id="eventMap" data-section="Event Map" class="schedule-image-wrap full">
 					<div class="wrapper">
 						<a href="<?php echo $schedule_image['url']; ?>" target="_blank">
-							<img src="<?php echo $schedule_image['url'] ?>" alt="<?php echo $schedule_image['title'] ?>" class="feat-img">
+							<?php echo bellaworks_image( $schedule_image, 'large', array( 'alt' => $schedule_image['title'], 'class' => 'feat-img' ) ); ?>
 						</a>
 					</div>
 				</div>					
@@ -462,7 +462,7 @@ $is_filtered = ( isset($_GET['programming']) && $_GET['programming'] ) ? $_GET['
 											<span class="img" style="background-image:url('<?php echo $thumbnail['url']?>')"></span>
 										</a>
 								<?php } ?>
-								<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder">
+								<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'placeholder' ) ); ?>
 							</div>
 							<div class="titlediv">
 								<p class="name"><?php echo $title ?></p>
@@ -525,9 +525,9 @@ if($sponsors = get_field("sponsors_logo")) { ?>
 				?>
 				<span class="sponsor">
 					<?php if ($link) { ?>
-						<a href="<?php echo $link ?>" target="_blank"><img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>"></a>
+						<a href="<?php echo $link ?>" target="_blank"><?php echo bellaworks_image( $s, 'large', array( 'alt' => $s['title'] ) ); ?></a>
 					<?php } else { ?>
-						<img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>">
+						<?php echo bellaworks_image( $s, 'large', array( 'alt' => $s['title'] ) ); ?>
 					<?php } ?>
 				</span>	
 				<?php } ?>
@@ -639,7 +639,7 @@ jQuery(document).ready(function($){
 					content += '<div class="modaltitleDiv text-center"><h5 class="modal-title">'+obj.post_title+'</h5></div>';
 					if(obj.featured_image) {
 						var img = obj.featured_image;
-						content += '<div class="modalImage"><img src="'+img.url+'" alt="'+img.title+'p" class="feat-image"></div>';
+						content += '<div class="modalImage"><img src="'+img.url+'" alt="'+img.title+'" class="feat-image" loading="lazy" decoding="async"></div>';
 					}
 					content += '<div class="modalText"></div>';
 

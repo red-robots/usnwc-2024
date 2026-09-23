@@ -24,7 +24,7 @@
           <div class="carousel-center-loop owl-carousel owl-theme">
           <?php foreach ($carousel_images as $img) {  ?>
             <figure>
-              <img src="<?php echo $img['url']; ?>" alt="<?php echo $img['title']; ?>"  />
+              <?php echo bellaworks_image( $img, 'full', array( 'alt' => $img['title'] ) ); ?>
             </figure>
           <?php } ?>
           </div>

@@ -38,9 +38,9 @@ get_header(); ?>
 					<div class="team-info">
 						<div class="photo <?php echo $hasphoto ?>">
 							<?php if ($photo) { ?>
-							<div class="pic" style="background-image:url('<?php echo $photo['url']?>')"><img src="<?php echo $photo_helper ?>" alt="" aria-hidden="true" class="resizer"></div>
+							<div class="pic" style="background-image:url('<?php echo $photo['url']?>')"><?php echo bellaworks_image( $photo_helper, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'resizer' ) ); ?></div>
 							<?php } else { ?>
-								<div class="nopic"><img src="<?php echo $photo_helper ?>" alt="" aria-hidden="true" class="resizer"></div>
+								<div class="nopic"><?php echo bellaworks_image( $photo_helper, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'resizer' ) ); ?></div>
 							<?php } ?>
 						</div>
 

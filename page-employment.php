@@ -64,8 +64,8 @@ $defaultLocation = get_default_job_location();
 								<?php $helper = THEMEURI . 'images/rectangle-narrow.png'; ?>
 								<?php foreach ($gallery1 as $s) { ?>
 									<li class="slide-item" style="background-image:url('<?php echo $s['url']?>')">
-										<img src="<?php echo $helper ?>" alt="" aria-hidden="true" class="placeholder">
-										<img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>" class="actual-image" />
+										<?php echo bellaworks_image( $helper, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'placeholder' ) ); ?>
+										<?php echo bellaworks_image( $s, 'large', array( 'alt' => $s['title'], 'class' => 'actual-image' ) ); ?>
 									</li>
 								<?php } ?>
 							</ul>
@@ -87,7 +87,7 @@ $defaultLocation = get_default_job_location();
 				<div class="wrapper narrow">
 					<div class="video-frame">
 						<?php echo $video_code ?>
-						<img src="<?php echo $blank_image ?>" alt="" aria-hidden="true" class="video-helper" />		
+						<?php echo bellaworks_image( $blank_image, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'video-helper' ) ); ?>		
 					</div>
 				</div>
 			</section>
@@ -113,7 +113,7 @@ $defaultLocation = get_default_job_location();
 					<?php if ($left_image || $left_text) { ?>
 					<div class="imagecol">
 						<?php if ($left_image) { ?>
-							<div class="r1"><img src="<?php echo $left_image['url'] ?>" alt="<?php echo $left_image['title'] ?>" class="left-image"></div>
+							<div class="r1"><?php echo bellaworks_image( $left_image, 'large', array( 'alt' => $left_image['title'], 'class' => 'left-image' ) ); ?></div>
 						<?php } ?>
 						<?php if ($left_text) { ?>
 							<div class="r2">

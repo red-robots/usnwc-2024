@@ -117,11 +117,11 @@ $currentBaseUrl = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
             <div class="inner">
               <?php if ($is_featured_story) { ?>
               <figure data-image-focal="<?php echo $FocalPoint ?>">
-                <img src="<?php echo $photo ?>" alt="<?php echo get_the_title() ?>" />
+                <?php echo bellaworks_image( $photo, 'large', array( 'alt' => get_the_title() ) ); ?>
               </figure>
               <?php } else { ?>
               <figure>
-                <img src="<?php echo $photo ?>" alt="<?php echo get_the_title() ?>" />
+                <?php echo bellaworks_image( $photo, 'large', array( 'alt' => get_the_title() ) ); ?>
               </figure>
               <?php } ?>
               

@@ -33,13 +33,13 @@
             <figure>
               <?php if ($btnName && $btnUrl) { ?>
               <a href="<?php echo $btnUrl ?>" target="<?php echo $btnTarget ?>" class="card-link">
-                <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" />
+                <?php echo bellaworks_image( $img, 'large', array( 'alt' => $img['title'] ) ); ?>
                 <div class="imageText">
                   <div class="title"><?php echo $btnName ?></div>
                 </div>
               </a>
               <?php } else { ?>
-              <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" />
+              <?php echo bellaworks_image( $img, 'large', array( 'alt' => $img['title'] ) ); ?>
               <?php } ?>
             </figure>
           </div>  
@@ -63,7 +63,7 @@
           <div class="imageWrap">
             <figure>
               <div class="image">
-                <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" />
+                <?php echo bellaworks_image( $img, 'large', array( 'alt' => $img['title'] ) ); ?>
               </div>
               <?php if ($card_item_title || $card_item_details) { ?>
               <figcaption>

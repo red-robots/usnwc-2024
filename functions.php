@@ -80,3 +80,8 @@ require get_template_directory() . '/inc/func-activity-passes.php';
  * Gravity Forms: hide Stripe card + billing fields at a $0 total (replaces Total-based conditional logic, which loops in GF 3.x).
  */
 require get_template_directory() . '/inc/gf-zero-total.php';
+
+/**
+ * Responsive + lazy-loaded image helper for templates (bellaworks_image()).
+ */
+require get_template_directory() . '/inc/images.php';

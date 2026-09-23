@@ -40,7 +40,7 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
 			<div class="race-popup ajax" id="race-pop">
 					<?php if($popup_creative){ ?>
 						<div class="race-pop-img">
-							<img src="<?php echo $popup_creative['url']; ?>" width="<?php echo $popup_creative['width']; ?>" height="<?php echo $popup_creative['height']; ?>" >
+							<?php echo bellaworks_image( $popup_creative, 'large' ); ?>
 						</div>
 					<?php } ?>
 					<?php if($popup_text){ ?>

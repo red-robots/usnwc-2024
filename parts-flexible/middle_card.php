@@ -26,7 +26,7 @@
         <?php if ($image) { ?>
           <div class="fxcol right">
             <figure>
-              <img src="<?php echo $image['url'] ?>" alt="" />
+              <?php echo bellaworks_image( $image, 'large', array( 'alt' => '' ) ); ?>
             </figure>
           </div>
         <?php } ?>

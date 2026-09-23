@@ -95,7 +95,7 @@ while ( have_posts() ) : the_post(); ?>
                 <div class="item">
                   <div class="image">
                     <div class="bg" style="background-image:url('<?php echo $img['url']?>')"></div>
-                    <img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
+                    <?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true' ) ); ?>
                   </div>
                 </div>
               <?php } ?>
@@ -222,7 +222,7 @@ while ( have_posts() ) : the_post(); ?>
 
                         <div class="feat-image <?php echo $r_img_class ?>">
                           <div class="bg"<?php echo $r_image_bg ?>>
-                            <img src="<?php echo $placeholder ?>" alt="">
+                            <?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '' ) ); ?>
                           </div>
                         </div>
                       </div>

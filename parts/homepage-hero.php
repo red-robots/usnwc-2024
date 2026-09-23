@@ -34,7 +34,7 @@
     </div>
     <?php if ( isset($hero_branding['url']) ) { ?>
     <div class="branding">
-      <img src="<?php echo $hero_branding['url']; ?>"  alt="<?php echo $hero_branding['alt']; ?>">
+      <?php echo bellaworks_image( $hero_branding, 'full', array( 'loading' => 'eager', 'fetchpriority' => 'high', 'alt' => $hero_branding['alt'] ) ); ?>
     </div>
     <?php } ?>
   </div>
@@ -70,7 +70,7 @@
     $hero_video_mobile_image = get_field('hero_video_mobile_image');
     if( $hero_mobile_image &&  $hero_video_mobile_image ) {  ?>
       <figure class="hero--mobile--image">
-        <img src="<?php echo $hero_video_mobile_image['url'] ?>" alt="">
+        <?php echo bellaworks_image( $hero_video_mobile_image, 'full', array( 'loading' => 'eager', 'fetchpriority' => 'high', 'alt' => '' ) ); ?>
       </figure>
 		<?php } else { 
       

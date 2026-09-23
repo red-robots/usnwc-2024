@@ -388,7 +388,7 @@ $cat_data = get_option("category_$cat_id");
     if (isset($cat_data['img'])){ 
     
 
-echo '<img src="'.$cat_data['img'].'" alt="'.$category->cat_name.'">';
+echo bellaworks_image( $cat_data['img'], 'large', array( 'alt' => $category->cat_name ) );
 }
     ?>
     
@@ -434,7 +434,7 @@ $cat_data = get_option("category_$cat_id");
     if (isset($cat_data['img'])){ 
     
 
-echo '<img src="'.$cat_data['img'].'" alt="'.$category->cat_name.'">';
+echo bellaworks_image( $cat_data['img'], 'large', array( 'alt' => $category->cat_name ) );
 }
     ?>
     

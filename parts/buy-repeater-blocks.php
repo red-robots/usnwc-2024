@@ -16,7 +16,7 @@
               <div class="imagecard">
                 <figure>
                   <div class="image-wrapper">
-                    <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>">
+                    <?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['title'] ) ); ?>
                     <?php if ($title || $small_text) { ?>
                   </div>
                   <figcaption>

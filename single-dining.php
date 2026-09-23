@@ -34,7 +34,7 @@ get_header();
 
                 <?php if($day_image) { ?>
                 <div class="imageBlock">
-                  <img src="<?php echo $day_image['url'] ?>" alt="<?php echo $day_image['title'] ?>" />    
+                  <?php echo bellaworks_image( $day_image, 'large', array( 'alt' => $day_image['title'] ) ); ?>    
                 </div>
                 <?php } ?>
 
@@ -213,10 +213,10 @@ get_header();
                   <figure class="sponsor-logo">
                   <?php if ($logo_link) { ?>
                     <a href="<?php echo $logo_link ?>" target="<?php echo $logo_target ?>">
-                      <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['title'] ?>">
+                      <?php echo bellaworks_image( $logo, 'large', array( 'alt' => $logo['title'] ) ); ?>
                     </a>
                   <?php } else { ?>
-                    <img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['title'] ?>">
+                    <?php echo bellaworks_image( $logo, 'large', array( 'alt' => $logo['title'] ) ); ?>
                   <?php } ?>
                   </figure>
                 <?php } ?>

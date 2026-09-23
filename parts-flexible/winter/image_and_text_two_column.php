@@ -87,7 +87,7 @@
                 <div class="swiper-wrapper">
                   <?php foreach ($gallery as $img) { ?>
                   <div class="swiper-slide">
-                    <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" />
+                    <?php echo bellaworks_image( $img, 'large', array( 'alt' => $img['title'] ) ); ?>
                   </div>
                   <?php } ?>
                 </div>
@@ -99,7 +99,7 @@
             <?php } ?>
 
           <?php } else { ?>
-          <figure class="static-image"><img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" /></figure>
+          <figure class="static-image"><?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['title'] ) ); ?></figure>
           <?php } ?>
         </div>
         <?php } ?>

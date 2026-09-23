@@ -44,7 +44,7 @@
               <div class="inner">
                 <figure class="<?php echo $image_class; ?>">
                   <?php if ($image) { ?>
-                  <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" />
+                  <?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['title'] ) ); ?>
                   <?php } ?>
                 </figure>
                 <?php if ($title || $description) { ?>

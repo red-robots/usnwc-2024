@@ -27,7 +27,7 @@ $textImageData = get_field("textImageCol"); ?>
             <div class="flexcol fxcol-<?php echo $key ?> images-<?php echo $count_images ?>">
               <?php $im=1; foreach ($images as $img) {  ?>
                <figure class="frame<?php echo $im ?>">
-                 <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" />
+                 <?php echo bellaworks_image( $img, 'large', array( 'alt' => $img['title'] ) ); ?>
                </figure> 
               <?php $im++; } ?>
             </div>
@@ -67,8 +67,8 @@ $textImageData = get_field("textImageCol"); ?>
               <?php $helper = THEMEURI . 'images/rectangle-narrow.png'; ?>
               <?php foreach ($slides as $s) { ?>
                 <li class="slide-item" style="background-image:url('<?php echo $s['url']?>')">
-                  <img src="<?php echo $helper ?>" alt="" aria-hidden="true" class="placeholder">
-                  <img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>" class="actual-image" />
+                  <?php echo bellaworks_image( $helper, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'placeholder' ) ); ?>
+                  <?php echo bellaworks_image( $s, 'large', array( 'alt' => $s['title'], 'class' => 'actual-image' ) ); ?>
                 </li>
               <?php } ?>
             </ul>
@@ -117,7 +117,7 @@ $textImageData = get_field("textImageCol"); ?>
 			<section class="section-break" data-section="<?php echo $sHeading ?>" id="<?php echo $ptID ?>">
 				<?php if($s_icon){ ?>
 					<div class="icon">
-						<img src="<?php echo $s_icon['url']; ?>">
+						<?php echo bellaworks_image( $s_icon, 'large' ); ?>
 					</div>
 				<?php } ?>
 				<h2 class="stitle"><?php echo $sHeading; ?></h2>

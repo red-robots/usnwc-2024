@@ -73,10 +73,10 @@ $square = THEMEURI . "images/square.png";
 							<a href="<?php echo $pagelink ?>" class="photo">
 								<?php if ($thumbImage) { ?>
 									<span class="imagediv" style="background-image:url('<?php echo $thumbImage['sizes']['large'] ?>')"></span>
-									<img src="<?php echo $rectangle ?>" alt="" class="feat-img placeholder">
+									<?php echo bellaworks_image( $rectangle, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder' ) ); ?>
 								<?php } else { ?>
 									<span class="imagediv"></span>
-									<img src="<?php echo $rectangle ?>" alt="" class="feat-img placeholder">
+									<?php echo bellaworks_image( $rectangle, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder' ) ); ?>
 								<?php } ?>
 							</a>
 

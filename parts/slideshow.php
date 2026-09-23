@@ -86,7 +86,7 @@ if($is_default_slide) { ?>
 						<?php if( $featuredType=='video' && ($row['video']||$row['native_video']) ) { ?>
 							<li class="slideItem <?php echo $slideType; ?>">
 								<?php if($logoOverlay) { ?>
-									<div class="logo-overlay"><img src="<?php echo $logoOverlay['url'] ?>"></div>
+									<div class="logo-overlay"><?php echo bellaworks_image( $logoOverlay, 'full' ); ?></div>
 								<?php } ?>
 
                 <?php if ($hero_alt_text) { ?>
@@ -115,13 +115,13 @@ if($is_default_slide) { ?>
 												?>
 
 												<?php if ($slidesCount==1) { ?>
-													<img src="<?php echo $videoHelper ?>" alt="" aria-hidden="true" class="image-size-ref-helper">	
-													<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="image-helper-mobile">	
+													<?php echo bellaworks_image( $videoHelper, 'full', array( 'loading' => 'eager', 'fetchpriority' => 'high', 'alt' => '', 'aria-hidden' => 'true', 'class' => 'image-size-ref-helper' ) ); ?>	
+													<?php echo bellaworks_image( $placeholder, 'full', array( 'loading' => 'eager', 'fetchpriority' => 'high', 'alt' => '', 'aria-hidden' => 'true', 'class' => 'image-helper-mobile' ) ); ?>	
 												<?php } else { ?>
 													<?php if ( isset($firstImg[0]) && $firstImg[0] ) { ?>
-														<img src="<?php echo $firstImg[0] ?>" alt="" class="image-size-ref uploadedImg">	
+														<?php echo bellaworks_image( $firstImg[0], 'full', array( 'loading' => 'eager', 'fetchpriority' => 'high', 'alt' => '', 'class' => 'image-size-ref uploadedImg' ) ); ?>	
 													<?php } else { ?>
-														<img src="<?php echo $placeholder; ?>" alt="" aria-hidden="true" class="blank-image image-size-ref">
+														<?php echo bellaworks_image( $placeholder, 'full', array( 'loading' => 'eager', 'fetchpriority' => 'high', 'alt' => '', 'aria-hidden' => 'true', 'class' => 'blank-image image-size-ref' ) ); ?>
 													<?php } ?>
 												<?php } ?>
 
@@ -210,7 +210,7 @@ if($is_default_slide) { ?>
 								    <a href="<?php echo $row['link']; ?>" class="slideLink" <?php if ( $row['target'] ):echo 'target="_blank"'; endif; ?>>
 								<?php endif;?>
 								<?php if($logoOverlay) { ?>
-									<div class="logo-overlay"><img src="<?php echo $logoOverlay['url'] ?>"></div>
+									<div class="logo-overlay"><?php echo bellaworks_image( $logoOverlay, 'full' ); ?></div>
 								<?php } ?>
 
 								<?php if( $templateSlug == 'page-teaser-child-v2.php' ){ ?>

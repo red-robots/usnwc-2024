@@ -119,7 +119,7 @@ while ( have_posts() ) : the_post();
 						<?php foreach ($galleries as $g) { ?>
 						<li class="sub-slide-item">
 							<div class="slide-image" style="background-image:url('<?php echo $g['url']?>')">
-								<img src="<?php echo $placeholder ?>" alt="">
+								<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '' ) ); ?>
 							</div>
 						</li>	
 						<?php } ?>
@@ -258,7 +258,7 @@ while ( have_posts() ) : the_post();
 
 								<?php if ($imageCount==1) { ?>
 								<div class="singlepic">
-									<img src="<?php echo $f_image[0]['url'] ?>" alt="<?php echo $f_image[0]['title'] ?>">
+									<?php echo bellaworks_image( $f_image[0], 'large', array( 'alt' => $f_image[0]['title'] ) ); ?>
 								</div>
 								<?php } else { ?>
 									<div class="flexslider">
@@ -266,8 +266,8 @@ while ( have_posts() ) : the_post();
 											<?php $helper = THEMEURI . 'images/rectangle-narrow.png'; ?>
 											<?php foreach ($f_image as $s) { ?>
 												<li class="slide-item" style="background-image:url('<?php echo $s['url']?>')">
-													<img src="<?php echo $helper ?>" alt="" aria-hidden="true" class="placeholder">
-													<img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>" class="actual-image" />
+													<?php echo bellaworks_image( $helper, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'placeholder' ) ); ?>
+													<?php echo bellaworks_image( $s, 'large', array( 'alt' => $s['title'], 'class' => 'actual-image' ) ); ?>
 												</li>
 											<?php } ?>
 										</ul>
@@ -423,7 +423,7 @@ while ( have_posts() ) : the_post();
 						<div class="inside">
 						<?php if ($has_text_image) { ?>
 							<div class="imagediv" style="background-image:url('<?php echo $image['url'] ?>')">
-								<img src="<?php echo $rectangle ?>" alt="">
+								<?php echo bellaworks_image( $rectangle, 'large', array( 'alt' => '' ) ); ?>
 							</div>
 							<div class="caption">
 								<div class="text"><?php echo $verbiage ?></div>
@@ -438,7 +438,7 @@ while ( have_posts() ) : the_post();
 
 							<?php if ($image) { ?>
 								<div class="image-only" style="background-image:url('<?php echo $image['url'] ?>')">
-									<img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>">
+									<?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['title'] ) ); ?>
 								</div>
 							<?php } ?>
 
@@ -462,7 +462,7 @@ while ( have_posts() ) : the_post();
 							<div class="inside">
 							<?php if ($has_text_image) { ?>
 								<div class="imagediv" style="background-image:url('<?php echo $image['url'] ?>')">
-									<img src="<?php echo $rectangle ?>" alt="">
+									<?php echo bellaworks_image( $rectangle, 'large', array( 'alt' => '' ) ); ?>
 								</div>
 							<?php } else { ?>
 								<?php if ($verbiage) { ?>
@@ -473,7 +473,7 @@ while ( have_posts() ) : the_post();
 
 								<?php if ($image) { ?>
 									<div class="image-only" style="background-image:url('<?php echo $image['url'] ?>')">
-										<img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" class="actual">
+										<?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['title'], 'class' => 'actual' ) ); ?>
 									</div>
 								<?php } ?>
 							<?php } ?>
@@ -515,7 +515,7 @@ while ( have_posts() ) : the_post();
 				$width = ($width) ? str_replace('%','',$width) : '';
 				if($image) { ?>
 				<div class="flexcol" style="width:<?php echo $width ?>%;background-image:url('<?php echo $image['url'] ?>')">
-					<img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>">
+					<?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['title'] ) ); ?>
 				</div>
 				<?php } ?>
 			<?php } ?>

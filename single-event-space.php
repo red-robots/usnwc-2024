@@ -114,7 +114,7 @@ get_header(); ?>
 					<?php foreach ($galleries as $g) { ?>
 						<div class="item">
 							<div class="image" style="background-image:url('<?php echo $g['url']?>')">
-								<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
+								<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true' ) ); ?>
 							</div>
 						</div>
 					<?php } ?>
@@ -157,7 +157,7 @@ get_header(); ?>
 							<?php if ($map_image_1) { ?>
 								<div class="flex-content largebox has-image">
 									<div class="image" style="background-image:url('<?php echo $map_image_1['url']?>')">
-										<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
+										<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true' ) ); ?>
 									</div>
 								</div>
 							<?php } ?>
@@ -167,7 +167,7 @@ get_header(); ?>
 						<div class="col-right column">
 							<div class="flex-content largebox  has-image">
 								<div class="inside">
-									<img src="<?php echo $map_image_2['url'] ?>" alt="<?php echo $map_image_2['title'] ?>" class="big-image">
+									<?php echo bellaworks_image( $map_image_2, 'large', array( 'alt' => $map_image_2['title'], 'class' => 'big-image' ) ); ?>
 								</div>
 							</div>
 						</div>

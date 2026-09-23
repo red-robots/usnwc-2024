@@ -43,7 +43,7 @@ if ( $entries->have_posts() ) { ?>
 										$openLink = '<a href="'.$imgWebURL.'" target="_blank">';
 										$closeLink = '</a>';
 									} ?>
-									<div class="brand"><?php echo $openLink ?><span style="background-image:url('<?php echo $b['url'] ?>');"><img src="<?php echo $b['url'] ?>" alt="<?php echo $b['title'] ?>"></span><?php echo $closeLink ?></div>
+									<div class="brand"><?php echo $openLink ?><span style="background-image:url('<?php echo $b['url'] ?>');"><?php echo bellaworks_image( $b, 'large', array( 'alt' => $b['title'] ) ); ?></span><?php echo $closeLink ?></div>
 								<?php } ?>
 							</div>
 							<?php } ?>
@@ -60,8 +60,8 @@ if ( $entries->have_posts() ) { ?>
 									<?php $helper = THEMEURI . 'images/rectangle-narrow.png'; ?>
 									<?php foreach ($slides as $s) { ?>
 										<li class="slide-item" style="background-image:url('<?php echo $s['url']?>')">
-											<img src="<?php echo $helper ?>" alt="" aria-hidden="true" class="placeholder">
-											<img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>" class="actual-image" />
+											<?php echo bellaworks_image( $helper, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'placeholder' ) ); ?>
+											<?php echo bellaworks_image( $s, 'large', array( 'alt' => $s['title'], 'class' => 'actual-image' ) ); ?>
 										</li>
 									<?php } ?>
 								</ul>

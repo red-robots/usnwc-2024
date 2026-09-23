@@ -57,7 +57,7 @@ $num = count(get_field('sections'));
 
         <div class="swiper-slide swiper-slide-nocfl " data-swiper-parallax="-300" data-swiper-parallax-duration="600">
 	        <div class="slide-guts">
-	        	<img src="<?php echo $hImg['url']; ?>">
+	        	<?php echo bellaworks_image( $hImg, 'large' ); ?>
 	        	<div class="cont-wrap first">
 		        	<div class="cont first">
 			        	<h1><?php echo $hTitle; ?><?php //echo $num ?></h1>
@@ -89,7 +89,7 @@ $num = count(get_field('sections'));
 				        	<?php $j=0; foreach( $gallery as $g ) { $j++; ?>
 				        		<div class="swiper-slide swiper-slide-nocfl" data-swiper-parallax-y="-23%">
 				        			<div class="slide-guts" >
-					        			<img src="<?php echo $g['card']['url']; ?>" >
+					        			<?php echo bellaworks_image( $g['card'], 'large' ); ?>
 					        			<?php if($g['title']) { ?>
 					        				<div id="status" class="dis-title animated delay-.5s">
 					        					<?php echo $g['title'] ?>

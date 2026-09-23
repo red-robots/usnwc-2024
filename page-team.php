@@ -51,7 +51,7 @@ get_header(); ?>
 						<div class="block b2">
 							<div class="inside">
 								<span class="image" style="background-image:url('<?php echo $store_image['url'] ?>')"></span>
-								<img src="<?php echo $store_image['url'] ?>" alt="<?php echo $store_image['title'] ?>" class="mapImg" />
+								<?php echo bellaworks_image( $store_image, 'large', array( 'alt' => $store_image['title'], 'class' => 'mapImg' ) ); ?>
 							</div>
 						</div>	
 						<?php } ?>
@@ -61,7 +61,7 @@ get_header(); ?>
 
 					<?php if ($map_image) { ?>
 					<div class="infocol second mapcol">
-						<img src="<?php echo $map_image['url'] ?>" alt="<?php echo $map_image['title'] ?>" class="map-image" />
+						<?php echo bellaworks_image( $map_image, 'large', array( 'alt' => $map_image['title'], 'class' => 'map-image' ) ); ?>
 					</div>
 					<?php } ?>
 

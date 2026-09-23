@@ -47,7 +47,7 @@
                   <?php echo $link_open ?>
                   <?php if ($category) { ?><span class="category"><?php echo anti_email_spam($category); ?></span><?php } ?>
                   <?php if ($title) { ?><span class="title"><?php echo anti_email_spam($title); ?></span><?php } ?>
-                  <div class="image"><img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>"></div>
+                  <div class="image"><?php echo bellaworks_image( $image, 'full', array( 'alt' => $image['title'] ) ); ?></div>
                   <?php echo $link_close ?>
                 </figure>
               </div>

@@ -40,9 +40,9 @@ if( $passport == 'all' ) {
 <div id="primary" class="content-area-full  outfitters post-type-dining single-post <?php echo $has_hero ?>">
 	<?php if ($heroImage) { ?>
 		<div class="post-hero-image <?php echo $status; ?>">
-			<img src="<?php echo $heroImage['url'] ?>" alt="<?php echo $heroImage['title'] ?>" class="featured-image <?php echo $dClass; ?>">
+			<?php echo bellaworks_image( $heroImage, 'large', array( 'alt' => $heroImage['title'], 'class' => 'featured-image ' . ($dClass) ) ); ?>
 
-			<img src="<?php echo $mobileBanner['url'] ?>" alt="<?php echo $mobileBanner['title'] ?>" class="featured-image <?php echo $mClass; ?>">
+			<?php echo bellaworks_image( $mobileBanner, 'large', array( 'alt' => $mobileBanner['title'], 'class' => 'featured-image ' . ($mClass) ) ); ?>
 			<?php if ($status=='open') { ?>
 
 				<?php if($passport != 'none'){ ?>
@@ -133,7 +133,7 @@ if( $passport == 'all' ) {
 							<div class="day">
 								<?php if($day_image){ ?>
 									<div class="image">
-										<img src="<?php echo $day_image['url']; ?>">
+										<?php echo bellaworks_image( $day_image, 'large' ); ?>
 									</div>
 								<?php } ?>
 								<div class="contents js-blocks">
@@ -281,7 +281,7 @@ if( $passport == 'all' ) {
 						<div class="imageBlock">
 							<div class="inside">
 								<span class="image" style="background-image:url('<?php echo $map_image_1['url'] ?>')"></span>
-								<img src="<?php echo $map_image_1['url'] ?>" alt="<?php echo $map_image_1['title'] ?>" />
+								<?php echo bellaworks_image( $map_image_1, 'large', array( 'alt' => $map_image_1['title'] ) ); ?>
 							</div>
 						</div>
 						<?php } ?>
@@ -290,7 +290,7 @@ if( $passport == 'all' ) {
 						<div class="imageBlock">
 							<div class="inside">
 								<span class="image" style="background-image:url('<?php echo $map_image_2['url'] ?>')"></span>
-								<img src="<?php echo $map_image_2['url'] ?>" alt="<?php echo $map_image_2['title'] ?>" />
+								<?php echo bellaworks_image( $map_image_2, 'large', array( 'alt' => $map_image_2['title'] ) ); ?>
 							</div>
 						</div>
 						<?php } ?>

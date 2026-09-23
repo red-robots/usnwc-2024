@@ -42,9 +42,9 @@ if($camp_activities) { ?>
 						<?php } ?>
 
 						<?php if ($isFull) { ?>
-							<img src="<?php echo $thumbnail['url'] ?>" alt="<?php echo $thumbnail['title'] ?>" class="placeholder">
+							<?php echo bellaworks_image( $thumbnail, 'large', array( 'alt' => $thumbnail['title'], 'class' => 'placeholder' ) ); ?>
 						<?php } else { ?>
-							<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder">
+							<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'placeholder' ) ); ?>
 						<?php } ?>
 					</div>
 					<div class="titlediv">
@@ -90,7 +90,7 @@ if($camp_activities) { ?>
 
 					      	<?php if ($thumbnail) { ?>
 					      	<div class="modalImage">
-					      		<img src="<?php echo $thumbnail['url'] ?>" alt="<?php echo $thumbnail['title'] ?>" class="feat-image">
+					      		<?php echo bellaworks_image( $thumbnail, 'large', array( 'alt' => $thumbnail['title'], 'class' => 'feat-image' ) ); ?>
 					      	</div>
 									<?php } ?>
 

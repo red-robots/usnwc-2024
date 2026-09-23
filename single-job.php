@@ -19,7 +19,7 @@ get_header();
 					<?php if ($film_trailer_video_code) { ?>
 					<div class="video-frame">
 						<?php echo $film_trailer_video_code ?>
-						<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="helper">		
+						<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'helper' ) ); ?>		
 					</div>	
 					<?php } ?>
 				</div>

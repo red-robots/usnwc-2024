@@ -105,7 +105,7 @@ if( is_faqs_visible() ) {
 
 				<?php if ($faq_image) { ?>
 				<div class="col faq-image">
-					<img src="<?php echo $faq_image['url'] ?>" alt="<?php echo $faq_image['title'] ?>" />
+					<?php echo bellaworks_image( $faq_image, 'large', array( 'alt' => $faq_image['title'] ) ); ?>
 				</div>
 				<?php } ?>
 			</div>

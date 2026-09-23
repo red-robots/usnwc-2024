@@ -107,7 +107,7 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
               <p class="event-date"><?php echo $event_date_format ?></p>
 						</div>
 						<div class="photo <?php echo $has_image ?>"<?php echo $style ?>>
-							<img src="<?php echo $helper ?>" alt="" aria-hidden="true" class="helper">
+							<?php echo bellaworks_image( $helper, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'helper' ) ); ?>
 						</div>
             <h3 class="title"><?php echo $title ?></h3>
             <div class="button">
@@ -266,8 +266,8 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
 							<ul class="slides">
 								<?php foreach ($slides as $s) { ?>
 									<li class="slide-item" style="background-image:url('<?php echo $s['url']?>')">
-										<img src="<?php echo $helper ?>" alt="" aria-hidden="true" class="placeholder">
-										<img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>" class="actual-image" />
+										<?php echo bellaworks_image( $helper, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'placeholder' ) ); ?>
+										<?php echo bellaworks_image( $s, 'large', array( 'alt' => $s['title'], 'class' => 'actual-image' ) ); ?>
 									</li>
 								<?php } ?>
 							</ul>
@@ -306,9 +306,9 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
 						$link = get_field('image_website', $s['ID']); ?>
 						<figure>
 						  <?php if ($link) { ?>
-						  <a href="<?php echo $link ?>" target="_blank"><img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>"></a>
+						  <a href="<?php echo $link ?>" target="_blank"><?php echo bellaworks_image( $s, 'large', array( 'alt' => $s['title'] ) ); ?></a>
 						  <?php } else { ?>
-							<img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>">
+							<?php echo bellaworks_image( $s, 'large', array( 'alt' => $s['title'] ) ); ?>
 						  <?php } ?>
 						</figure>  
 					  <?php } ?>

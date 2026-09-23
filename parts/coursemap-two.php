@@ -51,7 +51,7 @@ if($course_section_title) { ?>
 						<div class="img" style="width:<?php echo $percent?>%">
 							<a href="<?php echo $img['url'] ?>" class="zoomPic zoom-image">
 								<div class="wrap" style="background-image:url('<?php echo $img['url'] ?>')">
-									<img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" style="visibility:hidden"/>
+									<?php echo bellaworks_image( $img, 'large', array( 'alt' => $img['title'], 'style' => 'visibility:hidden' ) ); ?>
 								</div>
 							</a>
 						</div>

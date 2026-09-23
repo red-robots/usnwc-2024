@@ -84,12 +84,12 @@ if( $wrs_banner_type == 'video' ) {
 			<ul class="slides">
 				<li class="slideItem type-image">
 					<div class="image-wrapper yes-mobile" style="background-image: url('<?php echo $heroImage['url']?>');">
-						<img class="desktop " src="<?php echo $heroImage['url']?>" alt="<?php echo $heroImage['title']?>">
+						<?php echo bellaworks_image( $heroImage, 'full', array( 'loading' => 'eager', 'fetchpriority' => 'high', 'class' => 'desktop ', 'alt' => $heroImage['title'] ) ); ?>
 						<?php if( $mobile_image ){ ?>
-							<img class="mobile " src="<?php echo $mobile_image['url']?>" alt="<?php echo $mobile_image['title']?>">
+							<?php echo bellaworks_image( $mobile_image, 'full', array( 'loading' => 'eager', 'fetchpriority' => 'high', 'class' => 'mobile ', 'alt' => $mobile_image['title'] ) ); ?>
 						<?php } ?>
 						<?php if( $mobile_image_fest ){ ?>
-							<img class="mobile " src="<?php echo $mobile_image_fest['url']?>" alt="<?php echo $mobile_image_fest['title']?>">
+							<?php echo bellaworks_image( $mobile_image_fest, 'full', array( 'loading' => 'eager', 'fetchpriority' => 'high', 'class' => 'mobile ', 'alt' => $mobile_image_fest['title'] ) ); ?>
 						<?php } ?>
 					</div>
 					<?php if ($heroImageText) { ?>

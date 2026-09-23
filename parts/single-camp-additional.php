@@ -39,7 +39,7 @@
 								<?php if ($img) { ?>
 								<div class="pic" style="background-image:url('<?php echo $img['url']?>')"></div>
 								<?php } ?>
-								<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="helper">
+								<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'helper' ) ); ?>
 							</div>
 							<div class="reqText">
 								<?php if ($title) { ?>

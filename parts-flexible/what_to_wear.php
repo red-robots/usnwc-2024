@@ -10,7 +10,7 @@
         <?php if ($default_image) { ?>
         <div class="fxcol model">
           <figure class="model-image">
-            <img src="<?php echo $default_image['url'] ?>" alt="" class="default-model" />
+            <?php echo bellaworks_image( $default_image, 'large', array( 'alt' => '', 'class' => 'default-model' ) ); ?>
           </figure>
         </div>
         <?php } ?>

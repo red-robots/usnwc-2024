@@ -41,7 +41,7 @@
                 <div class="inside">
                   <figure class="event-image <?php echo ($imageUrl) ? 'has-image':'no-image'; ?>">
                     <?php if ($imageUrl) { ?>
-                    <img src="<?php echo $imageUrl ?>" alt="" />
+                    <?php echo bellaworks_image( $imageUrl, 'large', array( 'alt' => '' ) ); ?>
                     <?php } ?>
                   </figure>
                   <h3 class="event-title"><?php echo $post_title ?></h3>

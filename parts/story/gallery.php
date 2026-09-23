@@ -6,7 +6,7 @@
     <div class="gallery-wrapper count-<?php echo $count ?>">
       <?php foreach ($gallery as $g) { ?>
       <div class="imagewrap">
-        <figure><img src="<?php echo $g['url'] ?>" alt="<?php echo $g['title'] ?>"></figure>
+        <figure><?php echo bellaworks_image( $g, 'large', array( 'alt' => $g['title'] ) ); ?></figure>
       </div>
       <?php } ?>
     </div>

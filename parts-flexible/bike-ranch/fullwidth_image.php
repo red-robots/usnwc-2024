@@ -12,7 +12,7 @@
     <section class="section section--<?php echo get_row_layout() ?>">
       <div class="content-inner-image">
         <figure>
-          <img src="<?php echo $featured_image['url'] ?>" alt="<?php echo $featured_image['title'] ?>">
+          <?php echo bellaworks_image( $featured_image, 'full', array( 'alt' => $featured_image['title'] ) ); ?>
           <?php if ($image_title || $image_text) { ?>
           <figcaption>
             <div class="inside">

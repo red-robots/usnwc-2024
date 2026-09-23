@@ -83,11 +83,11 @@ $flexClass = ($total<3) ? ' align-middle':'';
 										<a href="<?php echo $pagelink ?>" class=" ">
 											<?php if ($thumbImage) { ?>
 												<span class="imagediv" style="background-image:url('<?php echo $thumbImage['sizes']['medium_large'] ?>')"></span>
-												<img src="<?php echo $thumbImage['url']; ?>" alt="<?php echo $thumbImage['title'] ?>" class="feat-img" style="display:none;">
-												<img src="<?php echo $blank_image ?>" alt="" class="feat-img placeholder">
+												<?php echo bellaworks_image( $thumbImage, 'large', array( 'alt' => $thumbImage['title'], 'class' => 'feat-img', 'style' => 'display:none;' ) ); ?>
+												<?php echo bellaworks_image( $blank_image, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder' ) ); ?>
 											<?php } else { ?>
 												<span class="imagediv"></span>
-												<img src="<?php echo $blank_image ?>" alt="" class="feat-img placeholder">
+												<?php echo bellaworks_image( $blank_image, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder' ) ); ?>
 											<?php } ?>
 										</a>
 									</div>
@@ -104,11 +104,11 @@ $flexClass = ($total<3) ? ' align-middle':'';
 									<div class="photo">
 										<?php if ($thumbImage) { ?>
 											<span class="imagediv" style="background-image:url('<?php echo $thumbImage['sizes']['medium_large'] ?>')"></span>
-											<img src="<?php echo $thumbImage['url']; ?>" alt="<?php echo $thumbImage['title'] ?>" class="feat-img" style="display:none;">
-											<img src="<?php echo $blank_image ?>" alt="" class="feat-img placeholder">
+											<?php echo bellaworks_image( $thumbImage, 'large', array( 'alt' => $thumbImage['title'], 'class' => 'feat-img', 'style' => 'display:none;' ) ); ?>
+											<?php echo bellaworks_image( $blank_image, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder' ) ); ?>
 										<?php } else { ?>
 											<span class="imagediv"></span>
-											<img src="<?php echo $blank_image ?>" alt="" class="feat-img placeholder">
+											<?php echo bellaworks_image( $blank_image, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder' ) ); ?>
 										<?php } ?>
 									</div>
 									<div class="details">
@@ -210,7 +210,7 @@ $flexClass = ($total<3) ? ' align-middle':'';
 								      
 								      	<?php if ($instructor_photo) { ?>
 								      	<div class="modalImage">
-								      		<img src="<?php echo $instructor_photo['url'] ?>" alt="<?php echo $instructor_photo['title'] ?>" class="feat-image">
+								      		<?php echo bellaworks_image( $instructor_photo, 'large', array( 'alt' => $instructor_photo['title'], 'class' => 'feat-image' ) ); ?>
 								      	</div>
 												<?php } ?>
 

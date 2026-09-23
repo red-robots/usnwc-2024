@@ -51,7 +51,7 @@
                   <figure>
                     <?php echo $openLink ?>
                     <div class="imagediv">
-                      <img src="<?php echo $image['url'] ?>" alt="" />
+                      <?php echo bellaworks_image( $image, 'large', array( 'alt' => '' ) ); ?>
                     </div>
                     <?php if ($text) { ?>
                     <figcaption>

@@ -101,7 +101,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
                                     <li class="sub-slide-item">
                                         <a href="<?php echo $g['url'] ?>" class="zoomPic zoom-image" data-fancybox="gallery">
                                             <div class="slide-image" style="background-image:url('<?php echo $g['url']?>')">
-                                                <img src="<?php echo $g['url']?>" alt="">
+                                                <?php echo bellaworks_image( $g, 'large', array( 'alt' => '' ) ); ?>
                                             </div>
                                         </a>
                                     </li>   
@@ -114,7 +114,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
                             </div>
                         <?php } else { ?>
                             <div class="full-bleed-img">
-                               <img src="<?php echo $creative['url']; ?>">
+                               <?php echo bellaworks_image( $creative, 'large' ); ?>
                             </div>
                         <?php } ?>
                     </div>
@@ -162,7 +162,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
                                     <li class="sub-slide-item">
                                         <a href="<?php echo $g['url'] ?>" class="zoomPic zoom-image" data-fancybox="gallery">
                                             <div class="slide-image" style="background-image:url('<?php echo $g['url']?>')">
-                                                <img src="<?php echo $g['url']?>" alt="">
+                                                <?php echo bellaworks_image( $g, 'large', array( 'alt' => '' ) ); ?>
                                             </div>
                                         </a>
                                     </li>   
@@ -175,7 +175,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
                             </div>
                         <?php } else { ?>
                             <div class="full-bleed-img" >
-                               <img src="<?php echo $creative_w['url']; ?>">
+                               <?php echo bellaworks_image( $creative_w, 'large' ); ?>
                             </div>
                         <?php } ?>
                     </div>
@@ -216,7 +216,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
             <div class="wrapper">
               <?php if ($fb_image_icon) { ?>
               <div class="icon">
-                  <img src="<?php echo $fb_image_icon['url']; ?>">
+                  <?php echo bellaworks_image( $fb_image_icon, 'large' ); ?>
               </div>
               <?php } ?>
               <?php if ($fb_image_title) { ?>
@@ -224,7 +224,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
               <?php } ?>
             </div>
             <div class="full-bleed-img " style="--aspect-ratio: 16/9">
-                <img src="<?php echo $fb_image['url']; ?>">
+                <?php echo bellaworks_image( $fb_image, 'large' ); ?>
             </div>
           </section>
           <?php } ?>
@@ -253,7 +253,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
                         <!-- <h3 style="color:<?php echo $tC; ?>" class="mobile"><?php echo $title; ?></h3> -->
                     <?php } ?>
                 </div>
-                <img src="<?php echo $pImage['url']; ?>" alt="<?php echo $pImage['alt']; ?>" class="hero__image">
+                <?php echo bellaworks_image( $pImage, 'large', array( 'alt' => $pImage['alt'], 'class' => 'hero__image' ) ); ?>
             </section>
     		
 

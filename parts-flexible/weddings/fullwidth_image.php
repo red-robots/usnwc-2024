@@ -7,7 +7,7 @@
   <div id="section-fullwidth_image-<?php echo $ctr ?>" class="repeatable-block section  section-fullwidth_image <?php echo $hasText ?>">
     <div class="section-inner">
       <figure>
-        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>">
+        <?php echo bellaworks_image( $image, 'full', array( 'alt' => $image['title'] ) ); ?>
         <?php if ($add_text_overlay && $text) { ?>
         <div class="text-overlay">
           <div class="text-inner">

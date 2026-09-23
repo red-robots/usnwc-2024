@@ -90,7 +90,7 @@ get_header();
     <div class="inner">
       <?php if ($authorPhoto) { ?>
       <figure class="authorPhoto">
-        <img src="<?php echo $authorPhoto['url'] ?>" alt="<?php echo $authorPhoto['title'] ?>">
+        <?php echo bellaworks_image( $authorPhoto, 'large', array( 'alt' => $authorPhoto['title'] ) ); ?>
       </figure>
       <?php } ?>
       <div class="author"><?php echo $authorName ?></div>

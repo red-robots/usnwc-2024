@@ -89,7 +89,7 @@
     if($image) { ?>
     <section id="fullwidth-image--<?php echo $ctr ?>" class="fullwidth-image-section">
       <figure>
-        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" />
+        <?php echo bellaworks_image( $image, 'full', array( 'alt' => $image['title'] ) ); ?>
       </figure>
     </section>
     <?php  } ?>

@@ -38,7 +38,7 @@ if($use_global_options=='no') {
 											<div class="title"><?php echo $s_title ?></div>
 										<?php } ?>
 									</div>
-									<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder">
+									<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'placeholder' ) ); ?>
 								</div>
 							</div>	
 							<?php $n++; } ?>
@@ -255,7 +255,7 @@ if($use_global_options=='no') {
 											<div class="title"><?php echo $s_title ?></div>
 										<?php } ?>
 									</div>
-									<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder">
+									<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'placeholder' ) ); ?>
 								</div>
 							</div>	
 							<?php $n++; } ?>

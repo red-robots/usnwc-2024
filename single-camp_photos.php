@@ -35,7 +35,7 @@ get_header();
 				<div class="wrapper photo-flex">
 					<?php foreach( $gallery as $g ) { ?>
 						<div class="photo">
-							<img src="<?php echo $g['url']; ?>">
+							<?php echo bellaworks_image( $g, 'large' ); ?>
 							<a href="<?php echo $g['url']; ?>" download>Download</a>
 						</div>
 					<?php } ?>

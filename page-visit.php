@@ -114,7 +114,7 @@ get_header(); ?>
                             
                             <?php if ($image) { ?>
                               
-                              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+                              <?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['alt'] ) ); ?>
                               <?php if ($title) { ?>
                               <h2><?php echo $title; ?></h2>
                               <?php } ?>
@@ -170,7 +170,7 @@ get_header(); ?>
                   if($image) { ?>
                   <div class="flexcol image">
                     <figure>
-                      <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" />
+                      <?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['title'] ) ); ?>
                     </figure>
                   </div>  
                   <?php  
@@ -247,7 +247,7 @@ get_header(); ?>
                         <figure>
                           <div class="inside">
                             <div class="image">
-                              <img src="<?php echo $card_image['url'] ?>" alt="<?php echo $card_image['title'] ?>" />
+                              <?php echo bellaworks_image( $card_image, 'large', array( 'alt' => $card_image['title'] ) ); ?>
 
                               <?php if ($card_title) { ?>
                               <div class="cardInfo">

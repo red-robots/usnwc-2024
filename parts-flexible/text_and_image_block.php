@@ -161,7 +161,7 @@
                         <div class="imageListing" style="display:none">
                           <?php foreach ($imageListing as $img) { ?>
                           <figure class="bizlogo">
-                            <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>">
+                            <?php echo bellaworks_image( $img, 'large', array( 'alt' => $img['title'] ) ); ?>
                           </figure>
                           <?php } ?>
                         </div>
@@ -183,8 +183,8 @@
                           <?php $helper = THEMEURI . 'images/rectangle-narrow.png'; ?>
                           <?php foreach ($slides as $s) { ?>
                             <li class="slide-item" style="background-image:url('<?php echo $s['url']?>')">
-                              <img src="<?php echo $helper ?>" alt="" aria-hidden="true" class="placeholder">
-                              <img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>" class="actual-image" />
+                              <?php echo bellaworks_image( $helper, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'placeholder' ) ); ?>
+                              <?php echo bellaworks_image( $s, 'large', array( 'alt' => $s['title'], 'class' => 'actual-image' ) ); ?>
                             </li>
                           <?php } ?>
                         </ul>
@@ -263,7 +263,7 @@
                   <?php if ($thumbnail) { ?>
                     <span class="img" style="background-image:url('<?php echo $thumbnail['url']?>')"></span>
                   <?php } ?>
-                  <img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder">
+                  <?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'placeholder' ) ); ?>
                 </div>
 
                 <?php if ($e_title || $e_text) { ?>

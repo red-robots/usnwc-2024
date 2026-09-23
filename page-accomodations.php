@@ -50,9 +50,9 @@ $rectangle = THEMEURI . "images/rectangle-lg.png";
 						<div class="leftcol">
 							<?php echo $link_open ?>
 								<span class="img" style="background-image:url('<?php echo $logo['url'] ?>')">
-									<img src="<?php echo $square ?>" alt="" aria-hidden="true" class="helper">
+									<?php echo bellaworks_image( $square, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'helper' ) ); ?>
 								</span>
-								<img src="<?php echo $logo['url'] ?>" alt="<?php echo $logo['title'] ?>" class="logo-img">
+								<?php echo bellaworks_image( $logo, 'large', array( 'alt' => $logo['title'], 'class' => 'logo-img' ) ); ?>
 							<?php echo $link_close ?>
 						</div>	
 						<?php } ?>

@@ -12,7 +12,7 @@
   <h2 class="eventName"><?php echo $post->post_title; ?></h2>
   <?php if ($full_image) { ?>
   <figure class="featured-image">
-    <img src="<?php echo $full_image['url'] ?>" alt="<?php echo $full_image['title'] ?>" class="post-image" />
+    <?php echo bellaworks_image( $full_image, 'large', array( 'alt' => $full_image['title'], 'class' => 'post-image' ) ); ?>
     <div class="banner-bottom">
       <img src="<?php echo get_stylesheet_directory_uri() ?>/images/banner-bottom.svg" alt="">
     </div>

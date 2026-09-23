@@ -75,7 +75,7 @@ $stories_edit_link = admin_url() . 'admin.php?page=acf-options-global-options&fs
 
 					<div class="feat-image <?php echo $r_img_class ?>">
 						<div class="bg"<?php echo $r_image_bg ?>>
-							<img src="<?php echo $placeholder ?>" alt="">
+							<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '' ) ); ?>
 						</div>
 					</div>
 

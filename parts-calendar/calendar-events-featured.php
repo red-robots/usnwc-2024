@@ -76,7 +76,7 @@
       <a href="<?php echo $pagelink; ?>" class="image-post-link">
         <figure>
           <?php if ($thumbnail && isset($thumbnail['url'])) { ?>
-            <img src="<?php echo $thumbnail['url'] ?>" alt="" />
+            <?php echo bellaworks_image( $thumbnail, 'large', array( 'alt' => '' ) ); ?>
           <?php } else { ?>
             <img src="<?php echo get_template_directory_uri(); ?>/images/image-not-available.jpg" alt="" />
           <?php } ?>

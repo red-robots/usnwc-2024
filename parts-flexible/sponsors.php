@@ -37,9 +37,9 @@
         ?>
         <figure>
           <?php if ($link) { ?>
-          <a href="<?php echo $link ?>" target="_blank"><img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>"></a>
+          <a href="<?php echo $link ?>" target="_blank"><?php echo bellaworks_image( $s, 'large', array( 'alt' => $s['title'] ) ); ?></a>
           <?php } else { ?>
-            <img src="<?php echo $s['url'] ?>" alt="<?php echo $s['title'] ?>">
+            <?php echo bellaworks_image( $s, 'large', array( 'alt' => $s['title'] ) ); ?>
           <?php } ?>
         </figure>  
       <?php } ?>

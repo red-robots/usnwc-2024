@@ -38,7 +38,7 @@ if( have_rows('the_story') ): ?>
 									<div class="item">
 										<div class="image" style="background-image:url('<?php echo $g['url']?>')">
 											<a href="<?php echo $g['url']?>" data-fancybox class="popup-image">
-											<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
+											<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true' ) ); ?>
 											</a>
 										</div>
 									</div>
@@ -47,7 +47,7 @@ if( have_rows('the_story') ): ?>
 							</div>
 							<?php } else { ?>
 								<div class="single-image">
-									<img src="<?php echo $new_galleries[0]['url']?>" alt="" aria-hidden="true" />	
+									<?php echo bellaworks_image( $new_galleries[0], 'large', array( 'alt' => '', 'aria-hidden' => 'true' ) ); ?>	
 								</div>
 							<?php } ?>
 				        <?php endif;
@@ -77,7 +77,7 @@ if( have_rows('the_story') ): ?>
 
 						<div class="masonry top<?php echo ($imgClass) ? ' ' . $imgClass:'' ?>">
 							<div class="block first">
-								<a href="<?php echo $imgMain['url'] ?>" data-fancybox class="popup-image"><img src="<?php echo $imgMain['url'] ?>" alt="<?php echo $imgMain['title'] ?>"></a>
+								<a href="<?php echo $imgMain['url'] ?>" data-fancybox class="popup-image"><?php echo bellaworks_image( $imgMain, 'large', array( 'alt' => $imgMain['title'] ) ); ?></a>
 								
 							</div>
 						</div>
@@ -96,7 +96,7 @@ if( have_rows('the_story') ): ?>
 							?>
 							<div class="block photoframe <?php echo ($g_class) ? ' ' . $g_class:'' ?>">
 								<a href="<?php echo $g['url'] ?>" data-fancybox class="popup-image">
-									<img src="<?php echo $g['url'] ?>" alt="<?php echo $g['title'] ?>">
+									<?php echo bellaworks_image( $g, 'large', array( 'alt' => $g['title'] ) ); ?>
 								</a>
 								<?php if ( $photographer||$photolocation ) { ?>
 								<a class="view-photo-credit"><span class="camera-icon"><i class="fas fa-camera"></i></span></a>
@@ -113,7 +113,7 @@ if( have_rows('the_story') ): ?>
 
 					<div class="masonry top<?php echo ($imgClass) ? ' ' . $imgClass:'' ?>">
 						<div class="block first">
-							<img src="<?php echo $imgMain['url'] ?>" alt="<?php echo $imgMain['title'] ?>">
+							<?php echo bellaworks_image( $imgMain, 'large', array( 'alt' => $imgMain['title'] ) ); ?>
 						</div>
 					</div>
 

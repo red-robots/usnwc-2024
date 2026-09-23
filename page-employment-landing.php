@@ -58,7 +58,7 @@ if( is_page('waiver') ) {
 								<a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
 									<?php if( $icon ) { ?>
 										<div class="cf-icon">
-											<img src="<?php echo $icon['url']; ?>">
+											<?php echo bellaworks_image( $icon, 'large' ); ?>
 										</div>
 									<?php } ?>
 									<?php if( $title ) { ?>

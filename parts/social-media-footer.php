@@ -27,7 +27,7 @@
           $icon = get_field( strtolower($socialName).'_icon','option');
           if($icon) { ?>
 				  <a href="<?php echo $social_link ?>" target="_blank" class="social-icon-<?php echo $socialName ?>"><span class="sr-only"><?php echo ucwords($socialName) ?></span>
-            <img src="<?php echo $icon ?>" alt="<?php echo ucwords($socialName) ?> icon" />
+            <?php echo bellaworks_image( $icon, 'large', array( 'alt' => (ucwords($socialName)) . ' icon' ) ); ?>
           </a>
           <?php } ?>	
         <?php } ?>

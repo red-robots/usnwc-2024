@@ -52,7 +52,7 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
 				<div class="inner">
 					<?php if ($fImage) { ?>
 						<div class="photo">
-							<div class="img" style="background-image:url('<?php echo $fImage['url'] ?>');"><img src="<?php echo $blank_image ?>" alt="" aria-hidden="true" class="helper"></div>
+							<div class="img" style="background-image:url('<?php echo $fImage['url'] ?>');"><?php echo bellaworks_image( $blank_image, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'helper' ) ); ?></div>
 						</div>
 					<?php } ?>
 

@@ -66,7 +66,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
 									<?php if ($thumbnail) { ?>
 										<span class="img" style="background-image:url('<?php echo $thumbnail ?>')"></span>
 									<?php } ?>
-									<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder">
+									<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'placeholder' ) ); ?>
 								</a>
 							</div>
 							<div class="titlediv">

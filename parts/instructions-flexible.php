@@ -80,7 +80,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
          ?>
          		<div class="wrapper">
 					<div class="shead-icon text-center">
-						<div class="icon-via-img"><img src="<?php echo $icon['url']; ?>"></div>
+						<div class="icon-via-img"><?php echo bellaworks_image( $icon, 'large' ); ?></div>
 						<h2 class="stitle"><?php echo $title; ?></h2>
 					</div>
 				</div>
@@ -109,7 +109,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
 						<?php foreach ($photo_gallery as $g) { ?>
 							<div class="item">
 								<div class="image" style="background-image:url('<?php echo $g['url']?>')">
-									<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
+									<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true' ) ); ?>
 								</div>
 							</div>
 						<?php } ?>
@@ -135,7 +135,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
 						?>
 							<div class="item">
 								<div class="image" >
-									<img src="<?php echo $photo; ?>" alt=""  />
+									<?php echo bellaworks_image( $photo, 'large', array( 'alt' => '' ) ); ?>
 								</div>
 								<div class="carousel-item-text js-blocks">
 									<?php echo $info; ?>
@@ -169,7 +169,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
                                     <li class="sub-slide-item">
                                         <a href="<?php echo $g['url'] ?>" class="zoomPic zoom-image" data-fancybox="gallery">
                                             <div class="slide-image" style="background-image:url('<?php echo $g['url']?>')">
-                                                <img src="<?php echo $g['url']?>" alt="">
+                                                <?php echo bellaworks_image( $g, 'large', array( 'alt' => '' ) ); ?>
                                             </div>
                                         </a>
                                     </li>   
@@ -182,7 +182,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
                             </div>
                         <?php } else { ?>
                             <div class="full-bleed-img">
-                               <img src="<?php echo $creative['url']; ?>">
+                               <?php echo bellaworks_image( $creative, 'large' ); ?>
                             </div>
                         <?php } ?>
                     </div>

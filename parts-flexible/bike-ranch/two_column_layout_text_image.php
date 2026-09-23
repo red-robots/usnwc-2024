@@ -47,7 +47,7 @@
         <?php if ($featured_image) { ?>
           <div class="flexcol imageCol">
             <figure>
-              <img src="<?php echo $featured_image['url'] ?>" alt="<?php echo $featured_image['title'] ?>" />
+              <?php echo bellaworks_image( $featured_image, 'large', array( 'alt' => $featured_image['title'] ) ); ?>
             </figure>
           </div>
         <?php } ?>

@@ -29,7 +29,7 @@
             
             <section class="alt-cards">
             	<div class="creative <?php echo $cClass; ?>">
-            		<img src="<?php echo $creative['url']; ?>" alt="<?php echo $creative['alt']; ?>">
+            		<?php echo bellaworks_image( $creative, 'large', array( 'alt' => $creative['alt'] ) ); ?>
             	</div>
             	<div class="info <?php echo $iClass; ?>">
             		<h2><?php echo $title; ?></h2>
@@ -75,7 +75,7 @@
         			?>
         			<div class="small-card">
         				<div class="image">
-        					<img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>">
+        					<?php echo bellaworks_image( $img, 'large', array( 'alt' => $img['alt'] ) ); ?>
         				</div>
         				<div class="desc">
         					<?php if($title){ ?><h3><?php echo $title; ?></h3><?php } ?>

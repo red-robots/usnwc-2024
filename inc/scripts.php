@@ -10,7 +10,6 @@ function bellaworks_scripts() {
 		 '2.01'
 	);
   wp_enqueue_style( 'swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css' );
-  wp_enqueue_style( 'jquery-ui-style', 'https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css' );
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js', false, '3.5.1', false);
 	wp_enqueue_script('jquery');
@@ -21,24 +20,21 @@ function bellaworks_scripts() {
   	false 
   );
 
-  wp_enqueue_script( 
-    'jquery-ui','https://code.jquery.com/ui/1.13.3/jquery-ui.js', 
-    array(), '1.13.3', 
-    false 
-  );
+  // jQuery UI (full unminified CDN build + smoothness theme CSS) removed 2026-09-23: nothing in the theme
+  // calls a jQuery UI widget, and plugins that need one load WordPress's bundled copies with their own deps.
 
 
 	wp_enqueue_script( 
 			'gsap',
 			get_template_directory_uri() . '/assets/js/vendors/gsap.min.js', 
 			array(), '20200713', 
-			false 
+			true 
 		);
 	wp_enqueue_script( 
 			'gsap-easepack',
 			get_template_directory_uri() . '/assets/js/vendors/gsap-easepack.min.js', 
 			array(), '20200713', 
-			false 
+			true 
 		);
 	// wp_enqueue_script( 
 	// 		'scrolltrigger','https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js', 
@@ -143,12 +139,7 @@ function bellaworks_scripts() {
 	));
 
 	
-	wp_enqueue_script( 
-		'font-awesome', 
-		'https://use.fontawesome.com/8f931eabc1.js', 
-		array(), '20180424', 
-		true 
-	);
+	// Legacy Font Awesome 5 CDN loader removed 2026-09-23; the Pro Kit in header.php covers all icons.
 
 
 

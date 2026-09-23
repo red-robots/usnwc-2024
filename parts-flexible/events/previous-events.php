@@ -73,7 +73,7 @@
           <?php } ?>
           <?php if ($image) { ?>
           <figure class="event-image">
-            <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['url'] ?>" />
+            <?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['url'] ) ); ?>
           </figure>
           <?php } else { ?>
           <figure class="no-event-image"><span>Photo Not Available</span></figure>

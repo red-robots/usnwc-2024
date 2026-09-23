@@ -81,7 +81,7 @@
                 <?php if ($image && isset($image['url'])) { ?>
                 <a href="<?php echo $pagelink ?>" class="postPageLink">
                 <figure class="event-image">
-                  <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" />
+                  <?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['title'] ) ); ?>
                 </figure>
                 </a> 
                 <?php } ?>

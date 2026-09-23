@@ -57,7 +57,7 @@ $post_id = get_the_ID(); ?>
 			<div class="video-frame">
 				<div class="video">
 					<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $videoId?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-					<img src="<?php echo $rectangle_placeholder ?>" alt="" aria-hidden="true" class="helper">
+					<?php echo bellaworks_image( $rectangle_placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'helper' ) ); ?>
 				</div>
 			</div>	
 		</div>
@@ -70,9 +70,9 @@ $post_id = get_the_ID(); ?>
 						<script src="https://player.vimeo.com/api/player.js"></script>
 						<?php if ($featImg) {  $hero_alt = get_the_title($thumbId);  ?>
 						<a id="videoCustomImage" style="background-image:url('<?php echo $featImg[0] ?>')" class="videoCustomImage"><span class="sr-only">play video</span></a>
-						<img src="<?php echo $featImg[0] ?>" alt="" aria-hidden="true" class="helper" style="visibility:hidden;">
+						<?php echo bellaworks_image( $featImg[0], 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'helper', 'style' => 'visibility:hidden;' ) ); ?>
 						<?php } else { ?>
-						<img src="<?php echo $rectangle_placeholder ?>" alt="" aria-hidden="true" class="helper">
+						<?php echo bellaworks_image( $rectangle_placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'helper' ) ); ?>
 						<?php } ?>
 					</div>
 				</div>
@@ -88,7 +88,7 @@ $post_id = get_the_ID(); ?>
 				$photolocation = get_field("location",$thumbId);
 			?>
 			<div class="post-hero-image">
-				<img src="<?php echo $featImg[0] ?>" alt="<?php echo $hero_alt ?>" class="featured-image">
+				<?php echo bellaworks_image( $featImg[0], 'large', array( 'alt' => $hero_alt, 'class' => 'featured-image' ) ); ?>
 				<?php if ( $photographer||$photolocation ) { ?>
 				<a class="view-photo-credit"><span class="camera-icon"><i class="fas fa-camera"></i></span></a>
 				<span class="photo-credit">

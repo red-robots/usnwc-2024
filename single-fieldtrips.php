@@ -102,7 +102,7 @@ get_template_part("parts/subpage-banner");
 								<?php if ($p_image) { ?>
 								<div class="feat-image" style="background-image:url('<?php echo $p_image['url'] ?>')"></div>
 								<?php } ?>
-								<img src="<?php echo $rectangle ?>" alt="" aria-hidden="true" class="helper">
+								<?php echo bellaworks_image( $rectangle, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'helper' ) ); ?>
 							</div>
 							<div class="details">
 								<?php if ($p_title) { ?>
@@ -186,10 +186,10 @@ get_template_part("parts/subpage-banner");
 										<div class="photo">
 											<?php if ($thumbImage) { ?>
 												<span class="imagediv" style="background-image:url('<?php echo $thumbImage['sizes']['medium_large'] ?>')"></span>
-												<img src="<?php echo $rectangle ?>" alt="" class="feat-img placeholder">
+												<?php echo bellaworks_image( $rectangle, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder' ) ); ?>
 											<?php } else { ?>
 												<span class="imagediv"></span>
-												<img src="<?php echo $rectangle ?>" alt="" class="feat-img placeholder">
+												<?php echo bellaworks_image( $rectangle, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder' ) ); ?>
 											<?php } ?>
 										</div>
 
@@ -271,10 +271,10 @@ get_template_part("parts/subpage-banner");
 											<?php echo $link_open; ?>
 											<?php if ($thumbImage) { ?>
 												<span class="imagediv" style="background-image:url('<?php echo $thumbImage['sizes']['medium_large'] ?>')"></span>
-												<img src="<?php echo $rectangle ?>" alt="" class="feat-img placeholder">
+												<?php echo bellaworks_image( $rectangle, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder' ) ); ?>
 											<?php } else { ?>
 												<span class="imagediv"></span>
-												<img src="<?php echo $rectangle ?>" alt="" class="feat-img placeholder">
+												<?php echo bellaworks_image( $rectangle, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder' ) ); ?>
 											<?php } ?>
 											<?php echo $link_close; ?>
 										</div>

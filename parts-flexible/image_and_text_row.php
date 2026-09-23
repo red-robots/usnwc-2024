@@ -13,7 +13,7 @@
       <?php if ($image) { ?>
       <div class="fxcol imageCol">
         <figure>
-          <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" />
+          <?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['title'] ) ); ?>
         </figure>
       </div>
       <?php } ?>

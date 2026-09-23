@@ -19,7 +19,7 @@ $has_custom_link = ($customLink) ? ' has-custom-link':'';
     
       <figure>
         <?php if ($thumbnail && isset($thumbnail['url'])) { ?>
-          <img src="<?php echo $thumbnail['url'] ?>" alt="" />
+          <?php echo bellaworks_image( $thumbnail, 'large', array( 'alt' => '' ) ); ?>
         <?php } else { ?>
           <img src="<?php echo get_template_directory_uri(); ?>/images/image-not-available.jpg" alt="" />
         <?php } ?>

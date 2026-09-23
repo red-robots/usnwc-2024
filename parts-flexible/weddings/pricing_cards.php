@@ -31,7 +31,7 @@
           <div class="fxcol">
             <div class="inner">
               <?php if ($image) { ?>
-              <figure><img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>"></figure> 
+              <figure><?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['title'] ) ); ?></figure> 
               <?php } ?>
 
               <?php if ($title) { ?>

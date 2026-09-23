@@ -81,7 +81,7 @@
                   <?php } ?>
                   <?php if ($image && isset($image['url'])) { ?>
                   <figure class="event-image THIS--">
-                    <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['url'] ?>" />
+                    <?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['url'] ) ); ?>
                   </figure>
                   <?php } else { ?>
                   <figure class="event-image no-image">
@@ -100,7 +100,7 @@
                 <?php } ?>
                 <?php if ( $image && isset($image['url']) ) { ?>
                 <figure class="event-image">
-                  <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['url'] ?>" />
+                  <?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['url'] ) ); ?>
                 </figure>
                 <?php } ?>
                 <?php if ($title) { ?>

@@ -60,7 +60,7 @@ if( have_rows('checkin_box') ) {
 					<div class="inside">
 					<?php if ($has_text_image) { ?>
 						<div class="imagediv" style="background-image:url('<?php echo $image['url'] ?>')">
-							<img src="<?php echo $rectangle ?>" alt="">
+							<?php echo bellaworks_image( $rectangle, 'large', array( 'alt' => '' ) ); ?>
 						</div>
 						<div class="caption">
 							<div class="text"><?php echo $verbiage ?></div>
@@ -75,7 +75,7 @@ if( have_rows('checkin_box') ) {
 
 						<?php if ($image) { ?>
 							<div class="image-only" style="background-image:url('<?php echo $image['url'] ?>')">
-								<img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>">
+								<?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['title'] ) ); ?>
 							</div>
 						<?php } ?>
 
@@ -96,7 +96,7 @@ if( have_rows('checkin_box') ) {
 						<div class="inside">
 						<?php if ($has_text_image) { ?>
 							<div class="imagediv" style="background-image:url('<?php echo $image['url'] ?>')">
-								<img src="<?php echo $rectangle ?>" alt="">
+								<?php echo bellaworks_image( $rectangle, 'large', array( 'alt' => '' ) ); ?>
 							</div>
 						<?php } else { ?>
 							<?php if ($verbiage) { ?>
@@ -107,7 +107,7 @@ if( have_rows('checkin_box') ) {
 
 							<?php if ($image) { ?>
 								<div class="image-only" style="background-image:url('<?php echo $image['url'] ?>')">
-									<img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" class="actual">
+									<?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['title'], 'class' => 'actual' ) ); ?>
 								</div>
 							<?php } ?>
 						<?php } ?>

@@ -119,10 +119,10 @@ $entries = new WP_Query($args); ?>
 									<a href="#" data-href="<?php echo $pagelink ?>?display=ajax" class="photo popupinfo wave-effect js-blocks">
 										<?php if ($thumbImage) { ?>
 											<div class="imagediv" style="background-image:url('<?php echo $thumbImage['sizes']['medium_large'] ?>')"></div>
-											<img src="<?php echo $thumbImage['url']; ?>" alt="<?php echo $thumbImage['title'] ?>" class="feat-img">
+											<?php echo bellaworks_image( $thumbImage, 'large', array( 'alt' => $thumbImage['title'], 'class' => 'feat-img' ) ); ?>
 										<?php } else { ?>
 											<div class="imagediv"></div>
-											<img src="<?php echo $blank_image ?>" alt="" class="feat-img placeholder">
+											<?php echo bellaworks_image( $blank_image, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder' ) ); ?>
 										<?php } ?>
 										<span class="boxTitle">
 											<span class="twrap">
@@ -137,7 +137,7 @@ $entries = new WP_Query($args); ?>
 
 										<?php if ($eventStatus=='canceled') { ?>
 										<span class="canceledStat">
-											<img src="<?php echo $canceledImage ?>" alt="" aria-hidden="true">
+											<?php echo bellaworks_image( $canceledImage, 'large', array( 'alt' => '', 'aria-hidden' => 'true' ) ); ?>
 										</span>	
 										<?php } ?>
 									</a>

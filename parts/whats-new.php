@@ -9,7 +9,7 @@
  	
  	<div class="imagediv" style="background-image: url(<?php echo $thumb; ?>);">
  		<div class="date-overlay"><?php echo $date; ?></div>
- 		<img src="<?php echo $rectangle; ?>" class="blankImg">
+ 		<?php echo bellaworks_image( $rectangle, 'large', array( 'class' => 'blankImg' ) ); ?>
  	</div>
  	<div class="wn-box-contents">
 		<a href="<?php the_permalink(); ?>">

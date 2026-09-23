@@ -12,7 +12,7 @@ if($show_content_only) {
 					?>
 					<div class="slideOuterWrap">
 						<?php if ($slidesCount>1) { ?>
-							<img src="<?php echo $rectangle ?>" alt="" aria-hidden="true" id="initImage" class="helper">
+							<?php echo bellaworks_image( $rectangle, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'id' => 'initImage', 'class' => 'helper' ) ); ?>
 						<?php } ?>
 						<div class="slides-wrapper <?php echo $slide_class ?>">
 							<ul class="slides <?php echo $numSlides ?>">
@@ -20,11 +20,11 @@ if($show_content_only) {
 									<?php if ($img) { ?>
 										<?php if ($slidesCount>1) { ?>
 										<li class="slideItem slide<?php echo $i?>" style="background-image:url('<?php echo $img['url'] ?>')">
-											<img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" class="actual-image">
+											<?php echo bellaworks_image( $img, 'large', array( 'alt' => $img['title'], 'class' => 'actual-image' ) ); ?>
 										</li>
 										<?php } else { ?>
 										<li class="slideItem slide<?php echo $i?>">
-											<img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" class="actual-image">
+											<?php echo bellaworks_image( $img, 'large', array( 'alt' => $img['title'], 'class' => 'actual-image' ) ); ?>
 										</li>
 										<?php } ?>
 									<?php $i++; } ?>

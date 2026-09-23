@@ -44,7 +44,7 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
 				<div class="inner">
 					<?php if ($all_access_feat_image) { ?>
 						<div class="photo">
-							<div class="img" style="background-image:url('<?php echo $all_access_feat_image['url'] ?>');"><img src="<?php echo $blank_image ?>" alt="" aria-hidden="true" class="helper"></div>
+							<div class="img" style="background-image:url('<?php echo $all_access_feat_image['url'] ?>');"><?php echo bellaworks_image( $blank_image, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'helper' ) ); ?></div>
 						</div>
 					<?php } ?>
 
@@ -134,7 +134,7 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
 				<div class="inner">
 					<?php if ($single_access_feat_image) { ?>
 						<div class="photo">
-							<div class="img" style="background-image:url('<?php echo $single_access_feat_image['url'] ?>');"><img src="<?php echo $blank_image ?>" alt="" aria-hidden="true" class="helper"></div>
+							<div class="img" style="background-image:url('<?php echo $single_access_feat_image['url'] ?>');"><?php echo bellaworks_image( $blank_image, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'helper' ) ); ?></div>
 						</div>
 					<?php } ?>
 
@@ -293,7 +293,7 @@ $has_banner = ($banner) ? 'hasbanner':'nobanner';
 										<?php echo $video_iframe ?>
 									<?php } ?>
 								<?php } ?>
-								<img src="<?php echo $blank_image ?>" alt="" aria-hidden="true" class="placeholder">
+								<?php echo bellaworks_image( $blank_image, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'placeholder' ) ); ?>
 							</div>
 						</a>
 						<div class="titlediv">

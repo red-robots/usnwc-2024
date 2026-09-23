@@ -209,10 +209,10 @@ $i=1;
 										<a href="<?php echo $pagelink ?>" class="photo wave-effect js-blocksz">
 											<?php if ($thumbImage) { ?>
 												<!-- <div class="imagediv" style="background-image:url('<?php //echo $thumbImage['sizes']['medium_large'] ?>')"></div> -->
-												<img src="<?php echo $thumbImage['url']; ?>" alt="<?php echo $thumbImage['title'] ?>" class="feat-img" style="visibility:visible;">
+												<?php echo bellaworks_image( $thumbImage, 'large', array( 'alt' => $thumbImage['title'], 'class' => 'feat-img', 'style' => 'visibility:visible;' ) ); ?>
 											<?php } else { ?>
 												<div class="imagediv"></div>
-												<img src="<?php echo $blank_image ?>" alt="" class="feat-img placeholder">
+												<?php echo bellaworks_image( $blank_image, 'large', array( 'alt' => '', 'class' => 'feat-img placeholder' ) ); ?>
 											<?php } ?>
 											<span class="boxTitle">
 												<span class="twrap">
@@ -227,11 +227,11 @@ $i=1;
 
 											<?php if ($eventStatus=='canceled') { ?>
 											<span class="canceledStat">
-												<img src="<?php echo $canceledImage ?>" alt="" aria-hidden="true">
+												<?php echo bellaworks_image( $canceledImage, 'large', array( 'alt' => '', 'aria-hidden' => 'true' ) ); ?>
 											</span>	
 											<?php } ?>
 										</a>
-										<img src="<?php echo $portrait_spacer; ?>" alt="" aria-hidden="true" class="rectangle-spacer">
+										<?php echo bellaworks_image( $portrait_spacer, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'rectangle-spacer' ) ); ?>
 									</div>
 									<div class="details">
 										<div class="info">

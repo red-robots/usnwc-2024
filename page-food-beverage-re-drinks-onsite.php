@@ -194,7 +194,7 @@ $square = THEMEURI . "images/square.png";
 				<div class="drink-wrapper">
 					<?php if($logo) { ?>
 						<div class="fnb-logo">
-							<img src="<?php echo $logo['url']; ?>">
+							<?php echo bellaworks_image( $logo, 'large' ); ?>
 						</div>
 						<div class="clear"></div>
 					<?php } ?>

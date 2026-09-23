@@ -53,9 +53,9 @@ $dateNow = date('Y-m-d');
 				<a href="<?php echo $pagelink ?>" class="inside boxlink">
 					<?php if ($thumbImage) { ?>
 						<div class="imagediv" style="background-image:url('<?php echo $thumbImage['url'] ?>')"></div>
-						<img src="<?php echo $thumbImage['url']; ?>" alt="<?php echo $thumbImage['title'] ?>" class="feat-img">
+						<?php echo bellaworks_image( $thumbImage, 'large', array( 'alt' => $thumbImage['title'], 'class' => 'feat-img' ) ); ?>
 					<?php } else { ?>
-						<img src="<?php echo $blank_image ?>" alt="" class="feat-img no-image">
+						<?php echo bellaworks_image( $blank_image, 'large', array( 'alt' => '', 'class' => 'feat-img no-image' ) ); ?>
 					<?php } ?>
 					<div class="details">
 						<div class="info">

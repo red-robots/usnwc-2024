@@ -31,7 +31,7 @@ if( $catId == '16' ) {
 						<div class="blurred" style="background-image:url('<?php echo $featThumb; ?>')"></div>
 						<div class="image fadeIn wow" data-wow-delay="<?php echo $sec;?>s" style="background-image:url('<?php echo $featImg; ?>')">
 							<a href="<?php echo $pagelink ?>" target="_blank">
-								<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="helper">
+								<?php echo bellaworks_image( $placeholder, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'helper' ) ); ?>
 							</a>
 						</div>
 					</div>

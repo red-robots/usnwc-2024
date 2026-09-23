@@ -84,13 +84,13 @@ if ($image_cards) { ?>
           <?php if ($cUrl && $cTitle) { ?>
             <a href="<?php echo $cUrl ?>" target="<?php echo $cTarget ?>" class="image-link">
               <span class="image-title"><?php echo $cTitle ?></span>
-              <img src="<?php echo $c_image['url'] ?>" alt="<?php echo $c_image['title'] ?>" />
+              <?php echo bellaworks_image( $c_image, 'large', array( 'alt' => $c_image['title'] ) ); ?>
             </a>
           <?php } else { ?>
             <?php if ($cTitle) { ?>
             <span class="image-title"><?php echo $cTitle ?></span> 
             <?php } ?>
-            <img src="<?php echo $c_image['url'] ?>" alt="<?php echo $c_image['title'] ?>" />
+            <?php echo bellaworks_image( $c_image, 'large', array( 'alt' => $c_image['title'] ) ); ?>
           <?php } ?>
         </figure>
       </div>

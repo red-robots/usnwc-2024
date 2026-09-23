@@ -44,7 +44,7 @@
                 
                 <?php if ($image) { ?>
                 <figure class="cardImage">
-                  <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" />
+                  <?php echo bellaworks_image( $image, 'large', array( 'alt' => $image['title'] ) ); ?>
                 </figure>
                 <?php } ?>
 

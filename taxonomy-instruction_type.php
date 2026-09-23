@@ -40,11 +40,11 @@ if( $category_image_mobile ) {
 if($category_image) { ?>
 <div id="banner" class="taxonomy-banner">
 	<div class="slides-wrapper static-banner" style="background-image:url('<?php echo $category_image['url'] ?>')">
-		<img src="<?php echo $category_image['url'] ?>" alt="<?php echo $category_image['title'] ?>" class=" <?php echo $dMlass; ?>">
+		<?php echo bellaworks_image( $category_image, 'large', array( 'alt' => $category_image['title'], 'class' => $dMlass ) ); ?>
 		<?php if( $category_image_mobile ) { ?>
-			<img src="<?php echo $category_image_mobile['url'] ?>" alt="<?php echo $category_image_mobile['title'] ?>" class=" <?php echo $mMlass; ?>">
+			<?php echo bellaworks_image( $category_image_mobile, 'large', array( 'alt' => $category_image_mobile['title'], 'class' => $mMlass ) ); ?>
 		<?php } ?>
-		<img src="<?php echo $blank_image ?>" alt="" aria-hidden="true" class="helper">
+		<?php echo bellaworks_image( $blank_image, 'large', array( 'alt' => '', 'aria-hidden' => 'true', 'class' => 'helper' ) ); ?>
 	</div>
 </div>
 <?php	} ?>
