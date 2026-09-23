@@ -42,7 +42,9 @@ class RW_GF_Total_Field_Logic {
     }
   
 }
-new RW_GF_Total_Field_Logic();
+// Disabled 2026-09-23: this let editors base conditional logic on the Total field, which freezes forms
+// on Gravity Forms 3.x. The $0-total behaviour now lives in inc/gf-zero-total.php.
+// new RW_GF_Total_Field_Logic();
 /*-------------------------------------
   Custom client login, link and title.
 ---------------------------------------*/
