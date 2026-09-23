@@ -274,7 +274,7 @@ $placeholder = THEMEURI . 'images/rectangle.png';
     		?>
     		<div class="video-wrapper">
                 <?php if( $vid_type == 'file' ){ ?>
-    	    		<video class="desktop" autoPlay loop muted playsinline  poster="https://center.whitewater.org/wp-content/uploads/2023/02/Homepage-Spring-02.jpg">
+    	    		<video class="desktop" autoPlay loop muted playsinline  poster="<?php echo esc_url( content_url( "/uploads/2023/02/Homepage-Spring-02.jpg" ) ); ?>">
     					<source src="<?php echo $vid_url['url']; ?>" type="video/mp4">
     				</video>
                 <?php } else { ?>
