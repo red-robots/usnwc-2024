@@ -85,3 +85,8 @@ require get_template_directory() . '/inc/gf-zero-total.php';
  * Responsive + lazy-loaded image helper for templates (bellaworks_image()).
  */
 require get_template_directory() . '/inc/images.php';
+
+/**
+ * Block oversized image uploads (PDFs and other documents are not limited).
+ */
+require get_template_directory() . '/inc/upload-limits.php';
