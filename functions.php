@@ -82,6 +82,11 @@ require get_template_directory() . '/inc/func-activity-passes.php';
 require get_template_directory() . '/inc/gf-zero-total.php';
 
 /**
+ * Race registration experience: full-screen, one-question-at-a-time skin for race Gravity Forms (per-form configs in inc/race-registration/).
+ */
+require get_template_directory() . '/inc/race-registration.php';
+
+/**
  * Responsive + lazy-loaded image helper for templates (bellaworks_image()).
  */
 require get_template_directory() . '/inc/images.php';

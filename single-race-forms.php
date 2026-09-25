@@ -3,6 +3,12 @@
  *
  */
 
+// Race registration experience (inc/race-registration.php) takes over the whole page when it's on for this form.
+if ( function_exists( 'bellaworks_regx_current' ) && bellaworks_regx_current() ) {
+	get_template_part( 'parts/race-registration' );
+	return;
+}
+
 $placeholder = THEMEURI . 'images/rectangle.png';
 $banner = get_field("flexslider_banner");
 $has_banner = ($banner) ? 'hasbanner':'nobanner';
