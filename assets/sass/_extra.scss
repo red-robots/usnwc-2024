@@ -2120,6 +2120,33 @@ section.visit.flexible-image-cards,
   }
 }
 
+/* Race pages, mobile: sponsor logos swipe sideways instead of stacking */
+@media screen and (max-width:768px) {
+  body.single-race .sponsor-images .flexwrap {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 20%;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    figure {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      text-align: center;
+      img {
+        width: 100%;
+        max-height: 140px;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
 
 #section-schedule.section-content {
   .schedules-list li.item {
