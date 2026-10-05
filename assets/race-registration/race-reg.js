@@ -125,6 +125,27 @@
 		}
 	}
 
+	// A frame with 'needs' only counts when that field's value is high enough (e.g. runner 3 of a party of 2).
+	function counts( cfg ) {
+		if ( ! cfg.needs ) {
+			return true;
+		}
+		var n = fieldEl( cfg.needs.field ),
+			input = n ? n.querySelector( 'select, input:checked, input[type="number"], input[type="text"]' ) : null;
+		return ( input ? toNumber( input.value ) : 0 ) >= cfg.needs.min;
+	}
+
+	// {name} in a title or lede becomes the first name typed into the frame's nameField.
+	function fill( text, cfg ) {
+		if ( ! text || text.indexOf( '{name}' ) === -1 ) {
+			return text || '';
+		}
+		var n = cfg.nameField ? fieldEl( cfg.nameField ) : null,
+			first = n ? n.querySelector( 'input[type="text"]' ) : null,
+			name = first ? first.value.trim() : '';
+		return text.replace( /\{name\}/g, name || 'this runner' );
+	}
+
 	function frameAt( offset ) {
 		for ( var i = idx + offset; i >= 0 && i < frames.length; i += offset ) {
 			if ( frameVisible( frames[ i ] ) ) {
@@ -226,20 +247,29 @@
 
 		// Big clickable cards for a select (e.g. division product).
 		cards: function ( f ) {
-			var field = f.fields[0], select = field.querySelector( 'select' );
-			if ( ! select ) {
+			var field = f.fields[0], select = field.querySelector( 'select' ),
+				radios = select ? [] : Array.prototype.slice.call( field.querySelectorAll( '.gfield_radio input[type="radio"]' ) );
+			if ( ! select && ! radios.length ) {
 				return;
 			}
+			var options = select ? Array.prototype.map.call( select.options, function ( opt ) {
+				return { value: opt.value, text: opt.text, disabled: opt.disabled };
+			} ) : radios.map( function ( r ) {
+				var l = field.querySelector( 'label[for="' + r.id + '"]' );
+				return { value: r.value, text: l ? l.textContent.trim() : r.value, disabled: r.disabled, input: r };
+			} );
 			var wrap = document.createElement( 'div' );
 			wrap.className = 'rx-cards';
 			wrap.setAttribute( 'role', 'radiogroup' );
-			Array.prototype.forEach.call( select.options, function ( opt ) {
+			options.forEach( function ( opt ) {
 				if ( ! opt.value ) {
 					return;
 				}
 				var parts = opt.value.split( '|' ),
 					price = parts.length > 1 ? toNumber( parts[1] ) : null,
-					desc = ( f.cfg.cards || {} )[ opt.text ] || '',
+					// "Half Marathon - $75" reads better as a title plus the price line.
+					title = price !== null ? productName( opt.text ) : opt.text,
+					desc = ( f.cfg.cards || {} )[ title ] || ( f.cfg.cards || {} )[ opt.text ] || '',
 					b = document.createElement( 'button' );
 				b.type = 'button';
 				b.className = 'rx-card';
@@ -247,25 +277,39 @@
 				b.dataset.value = opt.value;
 				b.disabled = opt.disabled;
 				b.innerHTML = '<span class="rx-card-check" aria-hidden="true"></span>' +
-					'<span class="rx-card-title">' + esc( opt.text ) + '</span>' +
+					'<span class="rx-card-title">' + esc( title ) + '</span>' +
 					( desc ? '<span class="rx-card-desc">' + esc( desc ) + '</span>' : '' ) +
 					( price !== null ? '<span class="rx-card-price">' + esc( niceMoney( price ) ) + '</span>' : '' );
 				b.addEventListener( 'click', function () {
-					select.value = opt.value;
-					change( select );
+					if ( select ) {
+						select.value = opt.value;
+						change( select );
+					} else if ( ! opt.input.checked ) {
+						opt.input.click(); // GF recalculates the total from the click
+					}
 					sync();
 					clearFieldError( field );
 				} );
 				wrap.appendChild( b );
 			} );
+			function current() {
+				if ( select ) {
+					return select.value;
+				}
+				var on = radios.filter( function ( r ) { return r.checked; } )[0];
+				return on ? on.value : null;
+			}
 			function sync() {
+				var value = current();
 				Array.prototype.forEach.call( wrap.children, function ( b ) {
-					var on = b.dataset.value === select.value;
+					var on = b.dataset.value === value;
 					b.classList.toggle( 'is-selected', on );
 					b.setAttribute( 'aria-checked', on ? 'true' : 'false' );
 				} );
 			}
-			select.addEventListener( 'change', sync );
+			( select ? [ select ] : radios ).forEach( function ( i ) {
+				i.addEventListener( 'change', sync );
+			} );
 			sync();
 			field.classList.add( 'rx-has-widget' );
 			field.appendChild( wrap );
@@ -285,7 +329,7 @@
 				}
 				var m = opt.text.match( /^(.*?)\s+at\s+(.+)$/i ),
 					day = m ? m[1] : '',
-					time = m ? m[2] : opt.text;
+					time = ( f.cfg.labels || {} )[ opt.text ] || ( m ? m[2] : opt.text );
 				if ( ! byDay[ day ] ) {
 					byDay[ day ] = [];
 					groups.push( day );
@@ -439,6 +483,14 @@
 		}
 	};
 
+	// Plain option chips are the time chips without the day grouping.
+	widgets.chips = widgets.slots;
+
+	// "Half Marathon - $75" -> "Half Marathon"
+	function productName( text ) {
+		return String( text ).replace( /\s*[-\u2013\u2014:]\s*\$[\d.,]+\s*$/, '' );
+	}
+
 	function readField( id ) {
 		var n = fieldEl( id );
 		if ( ! n ) {
@@ -470,11 +522,30 @@
 				} );
 			}
 		} );
+		// Which frame each field belongs to, for 'needs' (skipped runners) and 'nameField' (whose item it is).
+		var owner = {};
+		( C.frames || [] ).forEach( function ( cfg ) {
+			( cfg.fields || [] ).forEach( function ( id ) {
+				owner[ id ] = cfg;
+			} );
+		} );
 		form.querySelectorAll( '.gfield--type-product' ).forEach( function ( n ) {
-			if ( ! isShown( n ) ) {
+			var id = fieldId( n ), cfg = owner[ id ] || {};
+			if ( ! isShown( n ) || ! counts( cfg ) ) {
 				return;
 			}
-			var id = fieldId( n ), sel = n.querySelector( 'select' );
+			var who = cfg.nameField ? readField( cfg.nameField ) : '',
+				picked = n.querySelector( '.gfield_radio input[type="radio"]:checked' );
+			if ( picked ) {
+				var pl = n.querySelector( 'label[for="' + picked.id + '"]' ),
+					name = productName( pl ? pl.textContent.trim() : picked.value.split( '|' )[0] );
+				items.push( { label: who ? who + ' \u00b7 ' + name : name, qty: 1, price: toNumber( picked.value.split( '|' )[1] || 0 ) } );
+				return;
+			}
+			if ( n.querySelector( '.gfield_radio' ) ) {
+				return;
+			}
+			var sel = n.querySelector( 'select' );
 			if ( sel ) {
 				var o = sel.options[ sel.selectedIndex ];
 				if ( o && o.value ) {
@@ -544,6 +615,9 @@
 
 	function fieldProblem( n ) {
 		var t = fieldType( n ), required = n.classList.contains( 'gfield_contains_required' );
+		if ( t === 'product' && n.querySelector( '.gfield_radio' ) ) {
+			t = 'radio';
+		}
 		if ( t === 'stripe_creditcard' || t === 'html' || t === 'section' || t === 'total' || t === 'coupon' ) {
 			return '';
 		}
@@ -654,8 +728,8 @@
 		}
 
 		el.kicker.textContent = cfg.kicker || ( 'Step ' + ( position() + 1 ) );
-		el.title.textContent = cfg.title || '';
-		el.lede.textContent = cfg.lede || '';
+		el.title.textContent = fill( cfg.title, cfg );
+		el.lede.textContent = fill( cfg.lede, cfg );
 		el.lede.hidden = ! cfg.lede;
 
 		el.tip.hidden = ! cfg.tip;
@@ -690,7 +764,7 @@
 	function position() {
 		var before = 0;
 		( C.frames || [] ).forEach( function ( cfg ) {
-			if ( ( cfg.page || 1 ) < page ) {
+			if ( ( cfg.page || 1 ) < page && counts( cfg ) ) {
 				before++;
 			}
 		} );
@@ -700,7 +774,7 @@
 	function totalFrames() {
 		var n = 0;
 		( C.frames || [] ).forEach( function ( cfg ) {
-			if ( ( cfg.page || 1 ) !== page ) {
+			if ( ( cfg.page || 1 ) !== page && counts( cfg ) ) {
 				n++;
 			}
 		} );
@@ -953,6 +1027,10 @@
 			var n = e.target.closest( '.gfield' );
 			if ( n && n.classList.contains( 'rx-invalid' ) && ! fieldProblem( n ) ) {
 				clearFieldError( n );
+			}
+			// An answer can change how many screens are left (e.g. the number of runners).
+			if ( idx >= 0 && root.dataset.view === 'frames' ) {
+				updateProgress();
 			}
 		} );
 

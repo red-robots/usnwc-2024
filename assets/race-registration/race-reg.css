@@ -15,7 +15,10 @@ body.regx .rx {
 	--rx-panel: rgba(255, 255, 255, 0.045);
 	--rx-panel-2: rgba(255, 255, 255, 0.08);
 	--rx-mint: #6fc28a;
-	--rx-mint-soft: rgba(111, 194, 138, 0.18);
+	--rx-mint-rgb: 111, 194, 138;
+	--rx-orange-rgb: 224, 112, 42;
+	--rx-bg-rgb: 5, 33, 36;
+	--rx-mint-soft: rgba(var(--rx-mint-rgb), 0.18);
 	--rx-orange: #e0702a;
 	--rx-orange-deep: #c65a1b;
 	--rx-orange-shade: #7a330d;
@@ -250,8 +253,9 @@ body.regx .site-content {
 }
 .rx-frame-inner.is-leaving.to-left  { animation: rxOutLeft 0.23s cubic-bezier(0.5, 0, 0.75, 0) both; }
 .rx-frame-inner.is-leaving.to-right { animation: rxOutRight 0.23s cubic-bezier(0.5, 0, 0.75, 0) both; }
-.rx-frame-inner.is-entering-fwd  { animation: rxInRight 0.55s var(--rx-ease-pop) both; }
-.rx-frame-inner.is-entering-back { animation: rxInLeft 0.55s var(--rx-ease-pop) both; }
+/* "backwards", not "both": a transform left on this box after the animation would trap the fixed mobile nav inside it. */
+.rx-frame-inner.is-entering-fwd  { animation: rxInRight 0.55s var(--rx-ease-pop) backwards; }
+.rx-frame-inner.is-entering-back { animation: rxInLeft 0.55s var(--rx-ease-pop) backwards; }
 @keyframes rxOutLeft  { to { opacity: 0; transform: translateX(-70px) scale(0.97); } }
 @keyframes rxOutRight { to { opacity: 0; transform: translateX(70px) scale(0.97); } }
 @keyframes rxInRight  { from { opacity: 0; transform: translateX(80px) scale(0.97); } }
@@ -437,7 +441,7 @@ body.regx .site-content {
 }
 @keyframes rxGlow {
 	0%, 100% { transform: scale(1); filter: none; }
-	50%      { transform: scale(1.12); filter: drop-shadow(0 0 6px rgba(224, 112, 42, 0.7)); }
+	50%      { transform: scale(1.12); filter: drop-shadow(0 0 6px rgba(var(--rx-orange-rgb), 0.7)); }
 }
 .rx-error {
 	margin-top: 18px;
@@ -583,7 +587,7 @@ body.regx .site-content {
 	line-height: 1.3 !important;
 	color: var(--rx-text) !important;
 	background: var(--rx-panel) !important;
-	border: 2px solid rgba(111, 194, 138, 0.45) !important;
+	border: 2px solid rgba(var(--rx-mint-rgb), 0.45) !important;
 	border-radius: 14px !important;
 	padding: 15px 18px !important;
 	min-height: 58px;
@@ -613,7 +617,7 @@ body.regx .site-content {
 .rx .gform_wrapper.gravity-theme select:focus {
 	border-color: var(--rx-orange) !important;
 	background-color: var(--rx-panel-2) !important;
-	box-shadow: 0 0 0 5px rgba(224, 112, 42, 0.22) !important;
+	box-shadow: 0 0 0 5px rgba(var(--rx-orange-rgb), 0.22) !important;
 }
 .rx .gform_wrapper.gravity-theme .rx-invalid input:not([type="radio"]):not([type="checkbox"]),
 .rx .gform_wrapper.gravity-theme .rx-invalid select,
@@ -688,7 +692,7 @@ body.regx .site-content {
 	letter-spacing: 0.02em;
 	color: var(--rx-text) !important;
 	background: var(--rx-panel);
-	border: 2px solid rgba(111, 194, 138, 0.55);
+	border: 2px solid rgba(var(--rx-mint-rgb), 0.55);
 	border-radius: 999px;
 	padding: 13px 38px !important;
 	margin: 0 !important;
@@ -715,7 +719,7 @@ body.regx .site-content {
 .rx .gform_wrapper.gravity-theme .gfield--type-checkbox,
 .rx .gform_wrapper.gravity-theme .gfield--type-consent {
 	background: var(--rx-panel);
-	border: 2px solid rgba(111, 194, 138, 0.25) !important;
+	border: 2px solid rgba(var(--rx-mint-rgb), 0.25) !important;
 	border-radius: var(--rx-radius);
 	padding: 18px 20px !important;
 	transition: border-color 0.2s, background 0.2s;
@@ -723,7 +727,7 @@ body.regx .site-content {
 .rx .gform_wrapper.gravity-theme .gfield--type-checkbox:has(input:checked),
 .rx .gform_wrapper.gravity-theme .gfield--type-consent:has(input:checked) {
 	border-color: var(--rx-mint) !important;
-	background: rgba(111, 194, 138, 0.1);
+	background: rgba(var(--rx-mint-rgb), 0.1);
 }
 .rx .gform_wrapper.gravity-theme .gfield--type-checkbox.rx-invalid,
 .rx .gform_wrapper.gravity-theme .gfield--type-checkbox.gfield_error {
@@ -811,7 +815,7 @@ body.regx .site-content {
 	font-weight: 800;
 	color: var(--rx-orange) !important;
 	text-decoration: none !important;
-	border-bottom: 2px solid rgba(224, 112, 42, 0.4);
+	border-bottom: 2px solid rgba(var(--rx-orange-rgb), 0.4);
 }
 .rx .gform_wrapper.gravity-theme .gfield--type-html a::after { content: "\2197"; }
 .rx .gform_wrapper.gravity-theme .gfield--type-html a:hover { border-bottom-color: var(--rx-orange); }
@@ -836,7 +840,7 @@ body.regx .site-content {
 	padding: 20px 18px 18px;
 	border-radius: var(--rx-radius);
 	background: var(--rx-panel);
-	border: 2px solid rgba(111, 194, 138, 0.35);
+	border: 2px solid rgba(var(--rx-mint-rgb), 0.35);
 	color: var(--rx-text);
 	cursor: pointer;
 	transition: transform 0.18s var(--rx-ease-pop), border-color 0.2s, background 0.2s, box-shadow 0.2s;
@@ -844,9 +848,9 @@ body.regx .site-content {
 .rx .rx-card:hover { transform: translateY(-4px); border-color: var(--rx-mint); }
 .rx .rx-card:focus-visible { outline: 3px solid var(--rx-orange); outline-offset: 3px; }
 .rx .rx-card.is-selected {
-	background: rgba(111, 194, 138, 0.14);
+	background: rgba(var(--rx-mint-rgb), 0.14);
 	border-color: var(--rx-mint);
-	box-shadow: 0 0 0 4px rgba(111, 194, 138, 0.18), 0 16px 30px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 0 4px rgba(var(--rx-mint-rgb), 0.18), 0 16px 30px rgba(0, 0, 0, 0.3);
 	animation: rxChoicePop 0.35s var(--rx-ease-pop);
 }
 .rx-card-title {
@@ -875,7 +879,7 @@ body.regx .site-content {
 	width: 24px;
 	height: 24px;
 	border-radius: 50%;
-	border: 2px solid rgba(111, 194, 138, 0.55);
+	border: 2px solid rgba(var(--rx-mint-rgb), 0.55);
 	transition: background 0.2s, border-color 0.2s;
 }
 .rx-card.is-selected .rx-card-check {
@@ -908,7 +912,7 @@ body.regx .site-content {
 	letter-spacing: 0.02em;
 	color: var(--rx-text);
 	background: var(--rx-panel);
-	border: 2px solid rgba(111, 194, 138, 0.45);
+	border: 2px solid rgba(var(--rx-mint-rgb), 0.45);
 	border-radius: 999px;
 	padding: 10px 20px;
 	cursor: pointer;
@@ -948,12 +952,12 @@ body.regx .site-content {
 	padding: 12px 14px 12px 20px;
 	border-radius: 16px;
 	background: var(--rx-panel);
-	border: 2px solid rgba(111, 194, 138, 0.2);
+	border: 2px solid rgba(var(--rx-mint-rgb), 0.2);
 	transition: border-color 0.2s, background 0.2s;
 }
 .rx-stepper.has-qty {
 	border-color: var(--rx-mint);
-	background: rgba(111, 194, 138, 0.1);
+	background: rgba(var(--rx-mint-rgb), 0.1);
 }
 .rx-stepper-label {
 	display: flex;
@@ -1005,14 +1009,14 @@ body.regx .site-content {
 	padding: 20px 22px;
 	border-radius: var(--rx-radius);
 	background: var(--rx-panel);
-	border: 2px solid rgba(111, 194, 138, 0.25);
+	border: 2px solid rgba(var(--rx-mint-rgb), 0.25);
 }
 .rx-recap {
 	display: grid;
 	gap: 8px;
 	margin: 0 0 16px;
 	padding-bottom: 16px;
-	border-bottom: 2px dashed rgba(111, 194, 138, 0.25);
+	border-bottom: 2px dashed rgba(var(--rx-mint-rgb), 0.25);
 }
 .rx-recap-row {
 	display: grid;
@@ -1054,7 +1058,7 @@ body.regx .site-content {
 	justify-content: space-between;
 	align-items: baseline;
 	padding-top: 12px;
-	border-top: 2px solid rgba(111, 194, 138, 0.25);
+	border-top: 2px solid rgba(var(--rx-mint-rgb), 0.25);
 	font-family: var(--rx-font-head);
 	font-size: 1.4rem;
 }
@@ -1102,13 +1106,13 @@ body.regx .site-content {
 .rx .gform_wrapper.gravity-theme .StripeElement {
 	background: #fff !important;
 	padding: 18px 16px !important;
-	border: 2px solid rgba(111, 194, 138, 0.45) !important;
+	border: 2px solid rgba(var(--rx-mint-rgb), 0.45) !important;
 	border-radius: 14px !important;
 	min-height: 58px;
 }
 .rx .gform_wrapper.gravity-theme .StripeElement--focus {
 	border-color: var(--rx-orange) !important;
-	box-shadow: 0 0 0 5px rgba(224, 112, 42, 0.22) !important;
+	box-shadow: 0 0 0 5px rgba(var(--rx-orange-rgb), 0.22) !important;
 }
 .rx .gform_wrapper.gravity-theme .gform_card_icon_container { margin: 0 0 10px; }
 
@@ -1174,7 +1178,7 @@ body.regx .site-content {
 	padding: 18px 22px;
 	border-radius: var(--rx-radius);
 	background: var(--rx-panel);
-	border: 2px solid rgba(111, 194, 138, 0.25);
+	border: 2px solid rgba(var(--rx-mint-rgb), 0.25);
 }
 .rx-ready-title {
 	font-family: var(--rx-font-head);
@@ -1252,7 +1256,7 @@ body.regx .site-content {
 	font-weight: 800;
 	color: var(--rx-muted) !important;
 	text-decoration: none !important;
-	border-bottom: 2px solid rgba(111, 194, 138, 0.4);
+	border-bottom: 2px solid rgba(var(--rx-mint-rgb), 0.4);
 	transition: color 0.2s, border-color 0.2s;
 }
 .rx .rx-done-home:hover {
@@ -1299,7 +1303,7 @@ body.regx .site-content {
 		margin: 0;
 		padding: 14px 16px calc(14px + env(safe-area-inset-bottom));
 		justify-content: space-between;
-		background: linear-gradient(180deg, rgba(5, 33, 36, 0) 0%, rgba(5, 33, 36, 0.92) 30%, var(--rx-bg) 100%);
+		background: linear-gradient(180deg, rgba(var(--rx-bg-rgb), 0) 0%, rgba(var(--rx-bg-rgb), 0.92) 30%, var(--rx-bg) 100%);
 	}
 	.rx .rx-nav .rx-btn {
 		flex: 1 1 auto;
@@ -1328,4 +1332,124 @@ body.regx .site-content {
 	}
 	.rx-contours path { stroke-dashoffset: 0; }
 	.rx-pop { opacity: 1; }
+}
+
+/* ---------- theme: Eastbound (plum, sage, coral; poster type) ---------- */
+
+html:has(body.regx--eastbound),
+body.regx--eastbound {
+	background: #463c45;
+}
+body.regx--eastbound .rx {
+	--rx-bg: #463c45;
+	--rx-bg-2: #54474f;
+	--rx-bg-rgb: 70, 60, 69;
+	--rx-mint: #b7cf9f;
+	--rx-mint-rgb: 183, 207, 159;
+	--rx-mint-soft: rgba(183, 207, 159, 0.2);
+	--rx-orange: #ed675b;
+	--rx-orange-rgb: 237, 103, 91;
+	--rx-orange-deep: #dc5244;
+	--rx-orange-shade: #0a0702;
+	--rx-text: #f4f0ea;
+	--rx-muted: #c9bcc5;
+	--rx-danger: #ffc4b8;
+	--rx-radius: 8px;
+	--rx-font-head: 'Anton', 'Montserrat', sans-serif;
+	--rx-font-body: 'Jost', 'Lato', sans-serif;
+}
+
+/* topo lines instead of water: fainter, and no bubbles */
+body.regx--eastbound .rx-bg { opacity: 0.16; }
+body.regx--eastbound .rx-contours { stroke-width: 2; }
+body.regx--eastbound .rx-contours circle { display: none; }
+
+body.regx--eastbound .rx .rx-h1,
+body.regx--eastbound .rx .rx-h2 {
+	text-transform: uppercase;
+	letter-spacing: 0.015em;
+	color: var(--rx-mint);
+}
+body.regx--eastbound .rx .rx-h1 { font-size: clamp(2.6rem, 6.5vw, 4.6rem); line-height: 1; }
+body.regx--eastbound .rx .rx-h2 { font-size: clamp(1.9rem, 4.2vw, 3rem); line-height: 1.06; }
+body.regx--eastbound .rx .rx-lede { font-weight: 500; }
+
+/* the coral-on-black band from the race art */
+body.regx--eastbound .rx-kicker,
+body.regx--eastbound .rx-ready-title {
+	display: inline-block;
+	font-family: var(--rx-font-body);
+	font-weight: 700;
+	font-size: 0.82rem;
+	letter-spacing: 0.24em;
+	color: var(--rx-orange);
+	background: #0a0702;
+	padding: 6px 10px 6px 12px;
+	margin-bottom: 14px;
+}
+
+body.regx--eastbound .rx .rx-btn {
+	color: #0a0702 !important;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	border-radius: 6px;
+	background: var(--rx-orange);
+}
+body.regx--eastbound .rx .rx-btn.is-loading .rx-arrow {
+	border-color: rgba(10, 7, 2, 0.3);
+	border-top-color: #0a0702;
+}
+body.regx--eastbound .rx .rx-back,
+body.regx--eastbound .rx .rx-chip,
+body.regx--eastbound .rx-card-title,
+body.regx--eastbound .rx-card-price,
+body.regx--eastbound .rx-total-value,
+body.regx--eastbound .rx-progress-pct,
+body.regx--eastbound .rx-sum-total,
+body.regx--eastbound .rx .gform_wrapper.gravity-theme .gfield--type-radio .gchoice label,
+body.regx--eastbound .rx .gform_wrapper.gravity-theme .gfield_checkbox .gchoice label,
+body.regx--eastbound .rx .gform_wrapper.gravity-theme .ginput_container_coupon input[type="button"] {
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+}
+body.regx--eastbound .rx .rx-chip,
+body.regx--eastbound .rx-total,
+body.regx--eastbound .rx-progress-pct,
+body.regx--eastbound .rx .gform_wrapper.gravity-theme .gfield--type-radio .gchoice label,
+body.regx--eastbound .rx .gform_wrapper.gravity-theme .ginput_container_coupon input[type="button"] {
+	border-radius: 6px !important;
+}
+body.regx--eastbound .rx .gform_wrapper.gravity-theme input[type="text"],
+body.regx--eastbound .rx .gform_wrapper.gravity-theme input[type="email"],
+body.regx--eastbound .rx .gform_wrapper.gravity-theme input[type="tel"],
+body.regx--eastbound .rx .gform_wrapper.gravity-theme input[type="number"],
+body.regx--eastbound .rx .gform_wrapper.gravity-theme select,
+body.regx--eastbound .rx .gform_wrapper.gravity-theme .StripeElement,
+body.regx--eastbound .rx-tip {
+	border-radius: 8px !important;
+	font-weight: 600 !important;
+}
+body.regx--eastbound .rx-progress-fill { border-radius: 0; }
+body.regx--eastbound .rx-ready li { font-weight: 600; }
+body.regx--eastbound .rx-ready li::before { border-radius: 0; top: 4px; width: 14px; height: 14px; }
+
+/* the elevation chart beside each question rises instead of bobbing */
+body.regx--eastbound .rx-art {
+	max-width: 300px;
+	filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.3));
+}
+body.regx--eastbound .rx-art img { animation: none; }
+body.regx--eastbound .is-entering-fwd .rx-art img,
+body.regx--eastbound .is-entering-back .rx-art img {
+	animation: rxClimbIn 0.9s var(--rx-ease-out) both;
+}
+@keyframes rxClimbIn {
+	from { clip-path: inset(100% 0 0 0); }
+	to   { clip-path: inset(0 0 0 0); }
+}
+body.regx--eastbound .rx-welcome-logo { filter: none; }
+body.regx--eastbound .rx-welcome.is-in .rx-welcome-logo { animation-name: rxPopIn; }
+
+@media (max-width: 720px) {
+	body.regx--eastbound .rx-art { max-width: 92px; }
 }
