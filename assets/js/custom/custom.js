@@ -2017,7 +2017,7 @@ var getGridSize = function() {
 
 
   //MOBILE ONLY
-  $(window).load('load resize', function(){
+  $(window).on('load resize', function(){
     moveTodayMenuLink();
   });
   function moveTodayMenuLink() {
