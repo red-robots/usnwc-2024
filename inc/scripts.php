@@ -125,7 +125,9 @@ function bellaworks_scripts() {
   //   true 
   // );
 
-  wp_enqueue_script('bellaworks-jscustom', get_template_directory_uri() . '/assets/js/custom.js', ['jquery'], null, true);
+  // Versioned by file time so edits bust the cache.
+  $custom_js = get_template_directory() . '/assets/js/custom.js';
+  wp_enqueue_script('bellaworks-jscustom', get_template_directory_uri() . '/assets/js/custom.js', ['jquery'], file_exists( $custom_js ) ? (string) filemtime( $custom_js ) : '1.0', true);
 
   wp_enqueue_script( 
     'cusom-calendar', 
