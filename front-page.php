@@ -83,7 +83,7 @@ $rectangle = THEMEURI . "images/rectangle-narrow.png";
 				            			<p><?php echo $description; ?></p>
 				            		<?php } ?>
 			            		</div>
-			            		<?php if( $title ) { ?>
+			            		<?php if( $title && is_array( $full_cta_link ) && ! empty( $full_cta_link['url'] ) ) { ?>
 			            			<div class="cta">
 			            				<a href="<?php echo $full_cta_link['url']; ?>"><?php echo $full_cta_link['title']; ?></a>
 			            			</div>
