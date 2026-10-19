@@ -50,6 +50,14 @@ function bellaworks_image_id( $image ) {
 		if ( empty( $uploads['baseurl'] ) || false === strpos( $url, $uploads['baseurl'] ) ) {
 			return $cache[ $image ] = 0;
 		}
+		// attachment_url_to_postid() scans postmeta on meta_value (~25 ms each here), so keep
+		// the answer in the persistent object cache. A stale ID is harmless: bellaworks_image()
+		// checks wp_attachment_is_image() and falls back to a plain tag.
+		$cache_key = 'id_' . md5( $url );
+		$id        = wp_cache_get( $cache_key, 'bellaworks_image_id' );
+		if ( false !== $id ) {
+			return $cache[ $image ] = (int) $id;
+		}
 		$id = attachment_url_to_postid( $url );
 		if ( ! $id ) {
 			// Sized URL (…-300x200.jpg) → try the original.
@@ -58,6 +66,7 @@ function bellaworks_image_id( $image ) {
 				$id = attachment_url_to_postid( $original );
 			}
 		}
+		wp_cache_set( $cache_key, (int) $id, 'bellaworks_image_id', DAY_IN_SECONDS );
 		return $cache[ $image ] = (int) $id;
 	}
 	return 0;
