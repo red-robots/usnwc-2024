@@ -46,6 +46,15 @@ if($is_default_slide) { ?>
 	$status = get_field('registration_status');
 	$registerLink = get_field('registrationLink');
 	$regTarget = get_field('registrationLinkTarget');
+	$registerTarget = ( isset($regTarget[0]) && $regTarget[0]=='yes' ) ? '_blank':'_self';
+
+	// registrationLink is a Link field (array) in some field groups and a URL field (string) in others
+	$register_link = '';
+	if( is_array($registerLink) ) {
+		$register_link = ( isset($registerLink['url']) && $registerLink['url'] ) ? $registerLink['url'] : '';
+	} else if( $registerLink && filter_var($registerLink, FILTER_VALIDATE_URL) ) {
+		$register_link = $registerLink;
+	}
 
 	if($registerLink) {
 		$has_red_tag = true;
@@ -253,8 +262,8 @@ if($is_default_slide) { ?>
 
 
 			<?php if ($status=='open') { ?>
-				<?php if ($registerLink) { ?>
-					<div class="stats open teaser"><a href="<?php echo $registerLink['url']; ?>" target="<?php echo $registerTarget ?>" class="registerBtn"><?php echo 'register' ?></a></div>
+				<?php if ($register_link) { ?>
+					<div class="stats open teaser"><a href="<?php echo esc_url($register_link); ?>" target="<?php echo $registerTarget ?>" class="registerBtn"><?php echo 'register' ?></a></div>
 				<?php } ?>
 			<?php } else if($status=='closed') { ?>
 				<!-- <div class="stats closed">SOLD OUT</div> -->
