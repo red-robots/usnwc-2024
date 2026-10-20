@@ -3397,3 +3397,26 @@ function get_root_name_from_url( $url ) {
   return $parts[0];
 }
 
+
+
+/**
+ * TEC Pro shortcode views sometimes push URLs like /default/month/?pagename=calendar&popup=schedule.
+ * WordPress then flags the request as a page while TEC sets the events post type as the queried
+ * object, so every is_page()/is_singular() check logs a PHP warning (~300 per hit).
+ * Send these to the real page, keeping the other query args (popup=schedule is handled by custom.js there).
+ */
+function bellaworks_redirect_tec_pagename_views( $wp ) {
+  if ( empty( $_GET['pagename'] ) || strpos( $wp->request, 'default/' ) !== 0 ) {
+    return;
+  }
+
+  $page = get_page_by_path( sanitize_title( wp_unslash( $_GET['pagename'] ) ) );
+  if ( ! $page ) {
+    return;
+  }
+
+  $args = array_filter( array_diff_key( wp_unslash( $_GET ), array_flip( array( 'pagename', 'shortcode' ) ) ), 'is_scalar' );
+  wp_safe_redirect( add_query_arg( array_map( 'rawurlencode', $args ), get_permalink( $page ) ), 301 );
+  exit;
+}
+add_action( 'parse_request', 'bellaworks_redirect_tec_pagename_views', 1 );

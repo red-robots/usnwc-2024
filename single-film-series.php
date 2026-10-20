@@ -103,7 +103,7 @@ if ( isset($_GET['display']) && $_GET['display']=='ajax' ) { ?>
 	get_template_part("parts/subpage-banner");
 	?>
 
-	<div id="primary" class="content-area-full film-series-page <?php echo $has_banner ?>">
+	<div id="primary" class="content-area-full film-series-page <?php echo $has_hero ?>">
 		<main id="main" class="site-main full" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>

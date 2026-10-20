@@ -13,12 +13,6 @@ $placeholder = THEMEURI . 'images/rectangle.png';
 $banner = get_field("flexslider_banner");
 $has_banner = ($banner) ? 'hasbanner':'nobanner';
 get_header(); 
-
-// if( is_page('waiver') ) {
-// 	$pageClass = ' waiver';
-// } else {
-// 	$pageClass = '';
-// }
 ?>
 
 <div id="primary" class="raceform content-area-full content-default page-default-template <?php echo $has_banner ?>">
@@ -32,7 +26,7 @@ get_header();
 						<h1 class="page-title"><?php the_title(); ?></h1>
 					</div>
 					<?php if ( get_the_content() ) { ?>
-          <div class="defaultTextContent<?php echo $pageClass; ?>">
+          <div class="defaultTextContent">
             <?php the_content(); ?>
           </div>
           <?php } ?>
