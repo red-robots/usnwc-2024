@@ -95,3 +95,8 @@ require get_template_directory() . '/inc/images.php';
  * Block oversized image uploads (PDFs and other documents are not limited).
  */
 require get_template_directory() . '/inc/upload-limits.php';
+
+/**
+ * Purge the page cache just after midnight so date-driven calendar content stays current.
+ */
+require get_template_directory() . '/inc/nightly-cache-purge.php';
