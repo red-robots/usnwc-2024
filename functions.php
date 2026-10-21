@@ -100,3 +100,8 @@ require get_template_directory() . '/inc/upload-limits.php';
  * Purge the page cache just after midnight so date-driven calendar content stays current.
  */
 require get_template_directory() . '/inc/nightly-cache-purge.php';
+
+/**
+ * Google Ads lead conversions: fire the conversion when an inquiry form shows its confirmation.
+ */
+require get_template_directory() . '/inc/google-ads-conversions.php';
