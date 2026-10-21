@@ -53,8 +53,8 @@
       </div>
 
       <?php if ( $count > 1 ) { ?>
-        <button class="scheduleNav previous-schedule hide" data-siteUrl="<?php echo get_site_url() ?>" data-for="<?php echo $slug ?>" data-action="previous" data-index="0" data-startdate="<?php echo $start_date_from_query ?>" data-limit="<?php echo $limit ?>"><span class="sr-only">Previous Schedule</span></button>
-        <button class="scheduleNav next-schedule" data-siteUrl="<?php echo get_site_url() ?>" data-for="<?php echo $slug ?>" data-action="next" data-index="<?php echo $index+1 ?>" data-startdate="<?php echo $start_date_from_query ?>" data-limit="<?php echo $limit ?>"><span class="sr-only">Next Schedule</span></button>
+        <button class="scheduleNav previous-schedule<?php echo ($index > 0) ? '' : ' hide' ?>" data-siteUrl="<?php echo get_site_url() ?>" data-for="<?php echo $slug ?>" data-action="previous" data-index="<?php echo max($index-1, 0) ?>" data-startdate="<?php echo $start_date_from_query ?>" data-limit="<?php echo $limit ?>"><span class="sr-only">Previous Schedule</span></button>
+        <button class="scheduleNav next-schedule<?php echo ($index < $count-1) ? '' : ' hide' ?>" data-siteUrl="<?php echo get_site_url() ?>" data-for="<?php echo $slug ?>" data-action="next" data-index="<?php echo $index+1 ?>" data-startdate="<?php echo $start_date_from_query ?>" data-limit="<?php echo $limit ?>"><span class="sr-only">Next Schedule</span></button>
       <?php } ?>
     </div>
     <div class="modal-body">

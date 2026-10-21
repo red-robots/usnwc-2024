@@ -2942,11 +2942,26 @@ function rest_get_todays_activities(WP_REST_Request $request) {
   $result = array();
   $response['success'] = false;
 
-  $location_slug = $request->get_param('location') ?: ''; /* i.e. whitewater-center */
-  $post_limit = $request->get_param('limit') ?: 7;
-  $array_key  = $request->get_param('key') ?: 0;
-  $start_from_date = $request->get_param('startfrom') ?: $default_start_from;
-  $entries = getUpcomingEventsCustom($post_limit=7, $start_from_date);
+  $location_slug = sanitize_title( $request->get_param('location') ?: '' ); /* i.e. whitewater-center */
+  $post_limit = min( absint( $request->get_param('limit') ?: 7 ), 62 );
+  $array_key  = absint( $request->get_param('key') ?: 0 );
+  $start_from_date = preg_replace( '/\D/', '', $request->get_param('startfrom') ?: '' ) ?: wp_date('Ymd');
+  $entries = getUpcomingEventsCustom($post_limit, $start_from_date);
+
+  /* Calendar "View Activity Schedule" button: open on that date (Ymd), with earlier days reachable via Previous */
+  $open_date = preg_replace( '/\D/', '', $request->get_param('date') ?: '' );
+  if ( $open_date ) {
+    $array_key = -1;
+    foreach ( $entries as $i => $entry ) {
+      if ( get_post_meta( $entry->ID, 'eventDateSchedule', true ) === $open_date ) {
+        $array_key = $i;
+        break;
+      }
+    }
+    if ( $array_key < 0 ) {
+      return $response;
+    }
+  }
 
   $next_array_key = $array_key + 1;
   $prev_array_key = $array_key - 1;

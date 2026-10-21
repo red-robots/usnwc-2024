@@ -1738,33 +1738,34 @@ var getGridSize = function() {
     },300);
   });
 
+  //Calendar "View Activity Schedule" pop-up (same pop-up as Today's Snapshot, with Previous/Next days)
   $(document).on('click','.calendar-grid-wrapper .activity-schedule-link a', function(e){
     e.preventDefault();
     var pageLink = $(this).attr('href');
-    var d = new Date();
-    $('#calendarPopHidden').load(pageLink + '&tmp='+d.getTime() + ' .schedule-activities-info ', function(content){
-      var eventDate = $('#calendarPopHidden').find('h2.event-date').text();
-      var eventContent = $('#calendarPopHidden').find('.todaySnapshotInfo').html();
-      var content = '<div class="activity-schedule-modal calendar-activity-schedule" style="display:none">';
-          content += '<div class="modal-title"><div class="modal-title-inner"><h2>Activity Schedule</h2><p class="hours-info">'+eventDate+'</p></div></div>';
-          content += '<div class="modal-body"><div class="modal-body-inner"><div class="todaySnapshotInfo">'+eventContent+'</div></div></div>';
-          content += '</div>';
-      $('#customModalContent').append(content);
-      $('#customModalClose').removeClass('customModalClose1').addClass('customModalClose2');
-      $('#customModalContainer .calendar-activity-schedule').show();
-      
-      //Remove a Branch if there's no activity schedule
-      // $('#customModalContainer .calendar-activity-schedule .location-tabs li.tab').each(function(){
-      //   var tabContent = $(this).find('button').attr("aria-controls");
-      //   if( $('.calendar-activity-schedule .info-wrapper#' + tabContent).length==0 ) {
-      //     $(this).remove();
-      //   }
-      // });
-      setTimeout(function(){
-        $('#customModalContainer').addClass('open');
-      },80);
-      
-    });
+    var openDate = (pageLink.match(/[?&]date=(\d{8})/) || [])[1];
+    var siteUrl = pageLink.split('/daily-activity-schedule/')[0];
+    if( !openDate ) {
+      window.location.href = pageLink;
+      return;
+    }
+    fetch(siteUrl + '/wp-json/custom/v1/todays_activities?date=' + openDate + '&limit=62&location=calendar')
+      .then(res => res.json())
+      .then(data => {
+        if( !data.success ) {
+          window.location.href = pageLink;
+          return;
+        }
+        $('#customModalContent .calendar-activity-schedule').remove();
+        $($.parseHTML(data.htmlContent.trim())).filter('.activity-schedule-modal').addClass('calendar-activity-schedule').appendTo('#customModalContent').show();
+        $('#customModalClose').removeClass('customModalClose1').addClass('customModalClose2');
+        setTimeout(function(){
+          $('#customModalContainer').addClass('open');
+        },80);
+      })
+      .catch(err => {
+        console.error("REST Error:", err);
+        window.location.href = pageLink;
+      });
   });
 
   $(document).on('click','a[data-todayinfo]', function(e){
@@ -2053,23 +2054,25 @@ var getGridSize = function() {
       .then(data => {
 
         if(data.success) {
-          let currentId = data.ID;
           let htmlContent = data.htmlContent;
           let nextPost = data.nextPost;
           let prevPost = data.prevPost;
 
-          //Remove
-          $('#customModalContent .activity-schedule-modal').addClass('fadeOut');
-          $(htmlContent).prependTo('#customModalContent');
-          $('#customModalContent .activity-schedule-modal').show();
+          //Swap only the pop-up this button is in (the calendar page also holds Today's Snapshot pop-up)
+          let currentInfo = navButton.closest('.activity-schedule-modal');
+          let newInfo = $($.parseHTML(htmlContent.trim())).filter('.activity-schedule-modal');
+          if( currentInfo.hasClass('calendar-activity-schedule') ) {
+            newInfo.addClass('calendar-activity-schedule');
+          }
+          currentInfo.addClass('fadeOut');
+          newInfo.insertBefore(currentInfo).show();
           setTimeout(function(){
-            $('#customModalContent .activity-schedule-modal.fadeOut').remove();
+            currentInfo.remove();
           },50);
           setTimeout(function(){
-            $('#customModalContent .activity-schedule-modal').removeClass('fadeIn');
+            newInfo.removeClass('fadeIn');
           },100);
 
-          let newInfo = $('#customModalContent .activity-schedule-modal[data-pid="'+currentId+'"]');
           newInfo.find('button.previous-schedule').attr('data-index',prevIndex);
           newInfo.find('button.next-schedule').attr('data-index',nextIndex);
 
