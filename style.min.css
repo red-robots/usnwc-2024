@@ -5615,6 +5615,40 @@ body.home.scrolled .site-header .navbar .right .navlink-today.today:after,body.h
 #hostaway-booking-widget .hsbw-grid_locations,#hostaway-booking-widget .hsbw-dates{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 #hostaway-booking-widget .hsbw-dates{gap:2em}
 :where(img[width][height]){height:auto}
+.cards_carousel_popup_section{float:left;width:100%;padding:60px 0;background:#fff}
+.cards_carousel_popup_section.bg-gray{background:#f2f2f2}
+.cards_carousel_popup_section.bg-black{background:#191919}
+.cards_carousel_popup_section.bg-black .title-wrapper .stitle,.cards_carousel_popup_section.bg-black .title-wrapper .text-wrap{color:#fff}
+.cards_carousel_popup_section.bg-black .swiper-pagination-bullet{background:#fff}
+.cards_carousel_popup_section.bg-black .cards-carousel-nav span{border-color:#fff}
+.cards_carousel_popup_section .title-wrapper{max-width:900px;margin:0 auto 35px;text-align:center}
+.cards_carousel_popup_section .title-wrapper .stitle{margin:0}
+.cards_carousel_popup_section .title-wrapper .text-wrap{margin-top:15px}
+.cards_carousel_popup_section .title-wrapper .text-wrap p:last-child{margin-bottom:0}
+.cards_carousel_popup_section .cards-carousel{position:relative}
+.cards_carousel_popup_section .cards-carousel-swiper{padding-bottom:40px}
+.cards_carousel_popup_section .swiper-slide{height:auto;display:-webkit-box;display:-ms-flexbox;display:flex}
+.cards_carousel_popup_section .ccard{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;width:100%;background:#fff;border-radius:10px;overflow:hidden}
+.cards_carousel_popup_section.bg-white .ccard{-webkit-box-shadow:0 2px 14px rgba(0,0,0,.12);box-shadow:0 2px 14px rgba(0,0,0,.12)}
+.cards_carousel_popup_section .ccard-image{margin:0;aspect-ratio:4/3;background:#f2f2f2}
+.cards_carousel_popup_section .ccard-image img{display:block;width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
+.cards_carousel_popup_section .ccard-body{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-flex:1;-ms-flex:1;flex:1;padding:22px 22px 25px;text-align:center}
+.cards_carousel_popup_section .ccard-title{margin:0 0 10px;font-family:"brandon-grotesque";font-weight:700;font-size:22px;line-height:1.2;text-transform:uppercase;color:#191919}
+.cards_carousel_popup_section .ccard-text{margin:0 0 20px;font-size:16px;line-height:1.4;color:#404040}
+.cards_carousel_popup_section .ccard-button{margin-top:auto}
+.cards_carousel_popup_section .ccard-button a{cursor:pointer}
+.cards_carousel_popup_section .swiper-pagination{bottom:0}
+.cards_carousel_popup_section .swiper-pagination-bullet-active{background:#191919}
+.cards_carousel_popup_section.bg-black .swiper-pagination-bullet-active{background:#fff}
+.cards_carousel_popup_section .cards-carousel-nav{display:none;position:absolute;top:50%;width:40px;height:60px;margin-top:-30px;padding:0;border:0;background:0;cursor:pointer}
+.cards_carousel_popup_section .cards-carousel-nav span{display:block;width:22px;height:22px;margin:0 auto;border-top:3px solid #191919;border-left:3px solid #191919}
+.cards_carousel_popup_section .cards-carousel-nav.cards-carousel-prev{left:0}
+.cards_carousel_popup_section .cards-carousel-nav.cards-carousel-prev span{-webkit-transform:translateX(4px) rotate(-45deg);transform:translateX(4px) rotate(-45deg)}
+.cards_carousel_popup_section .cards-carousel-nav.cards-carousel-next{right:0}
+.cards_carousel_popup_section .cards-carousel-nav.cards-carousel-next span{-webkit-transform:translateX(-4px) rotate(135deg);transform:translateX(-4px) rotate(135deg)}
+.cards_carousel_popup_section .cards-carousel-nav.swiper-button-disabled{opacity:.25;cursor:default}
+.cards_carousel_popup_section .cards-carousel-nav.is-locked{display:none}
+.cards_carousel_popup_section .swiper-pagination.is-locked{display:none}
 body.enchilada .banner-bottom svg{fill:#fef9e7}
 body.enchilada .main-description{color:#7f7c73}
 body.enchilada #pageTabs a,body.enchilada .title-w-icon h2,body.enchilada h2.stitle,body.enchilada .stitle,body.enchilada .text-and-image-blocks .textcol .mstitle,body.enchilada .sectionTitle,body.enchilada .information-tabs-wrap{font-family:novecento-sans-narrow}
@@ -6528,6 +6562,10 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-two_column_row .flexwrap .imageBlock figure img{width:100%;height:100%;position:absolute;top:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center}
 .section-cards_bottom_text .wrapper{max-width:85vw}
 .cardsContainer .infocard{width:33.333%}
+.cards_carousel_popup_section .cards-carousel{padding:0 50px}
+.cards_carousel_popup_section .cards-carousel-swiper{padding-bottom:0}
+.cards_carousel_popup_section .swiper-pagination{display:none}
+.cards_carousel_popup_section .cards-carousel-nav{display:block}
 .page-template-page-winter .repeatable_carousel_section .section-intro p{max-width:780px;width:100%;margin:0 auto 20px}
 }@media screen and (min-width:960px){.section--schedules .section-two_column_row .flexwrap{min-height:480px}
 }@media screen and (min-width:961px){.activity-schedule-modal .schedule-container.half .fxcol{width:46%}

@@ -1964,6 +1964,46 @@ jQuery(document).ready(function ($) {
       }
     });
   }
+
+  /* Cards Carousel with Popup (flexible layout cards_carousel_popup) */
+  $('.cards_carousel_popup_section').each(function () {
+    var section = this;
+    var swiperEl = section.querySelector('.cards-carousel-swiper');
+    if (!swiperEl || typeof Swiper === 'undefined') {
+      return;
+    }
+    new Swiper(swiperEl, {
+      slidesPerView: 1.15,
+      spaceBetween: 16,
+      loop: false,
+      watchOverflow: true,
+      centerInsufficientSlides: true,
+      navigation: {
+        nextEl: section.querySelector('.cards-carousel-next'),
+        prevEl: section.querySelector('.cards-carousel-prev'),
+        lockClass: 'is-locked'
+      },
+      pagination: {
+        el: section.querySelector('.swiper-pagination'),
+        clickable: true,
+        lockClass: 'is-locked'
+      },
+      a11y: {
+        prevSlideMessage: 'Previous card',
+        nextSlideMessage: 'Next card'
+      },
+      breakpoints: {
+        600: {
+          slidesPerView: 2,
+          spaceBetween: 24
+        },
+        960: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        }
+      }
+    });
+  });
 }); // END #####################################    END
 "use strict";
 

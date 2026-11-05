@@ -4364,3 +4364,126 @@ body.home {
 :where(img[width][height]) {
   height: auto;
 }
+
+
+// Cards Carousel with Popup (flexible layout cards_carousel_popup), e.g. "Meet the Animals" on Whitewater Farms.
+.cards_carousel_popup_section {
+  float: left;
+  width: 100%;
+  padding: 60px 0;
+  background: #fff;
+  &.bg-gray { background: $gray; }
+  &.bg-black {
+    background: $dark;
+    .title-wrapper .stitle,
+    .title-wrapper .text-wrap { color: #fff; }
+    .swiper-pagination-bullet { background: #fff; }
+    .cards-carousel-nav span { border-color: #fff; }
+  }
+  .title-wrapper {
+    max-width: 900px;
+    margin: 0 auto 35px;
+    text-align: center;
+    .stitle { margin: 0; }
+    .text-wrap {
+      margin-top: 15px;
+      p:last-child { margin-bottom: 0; }
+    }
+  }
+  .cards-carousel {
+    position: relative;
+    @include mid { padding: 0 50px; }
+  }
+  .cards-carousel-swiper {
+    padding-bottom: 40px;
+    @include mid { padding-bottom: 0; }
+  }
+  .swiper-slide {
+    height: auto;
+    display: flex;
+  }
+  .ccard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  &.bg-white .ccard { box-shadow: 0 2px 14px rgba(0, 0, 0, 0.12); }
+  .ccard-image {
+    margin: 0;
+    aspect-ratio: 4 / 3;
+    background: $gray;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .ccard-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 22px 22px 25px;
+    text-align: center;
+  }
+  .ccard-title {
+    margin: 0 0 10px;
+    font-family: $font_primary;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: $dark;
+  }
+  .ccard-text {
+    margin: 0 0 20px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: $color_text_main;
+  }
+  .ccard-button {
+    margin-top: auto;
+    a { cursor: pointer; }
+  }
+  .swiper-pagination {
+    bottom: 0;
+    @include mid { display: none; }
+  }
+  .swiper-pagination-bullet-active { background: $dark; }
+  &.bg-black .swiper-pagination-bullet-active { background: #fff; }
+  .cards-carousel-nav {
+    display: none;
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 60px;
+    margin-top: -30px;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    @include mid { display: block; }
+    span {
+      display: block;
+      width: 22px;
+      height: 22px;
+      margin: 0 auto;
+      border-top: 3px solid $dark;
+      border-left: 3px solid $dark;
+    }
+    &.cards-carousel-prev {
+      left: 0;
+      span { transform: translateX(4px) rotate(-45deg); }
+    }
+    &.cards-carousel-next {
+      right: 0;
+      span { transform: translateX(-4px) rotate(135deg); }
+    }
+    &.swiper-button-disabled { opacity: 0.25; cursor: default; }
+    &.is-locked { display: none; }
+  }
+  .swiper-pagination.is-locked { display: none; }
+}

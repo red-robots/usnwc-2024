@@ -55,6 +55,7 @@ $show_faqs = get_field('show_faqs_items');
         <?php include( locate_template('parts-flexible/gallery_featured_posts.php') ); ?>
         <?php include( locate_template('parts-flexible/what_to_wear.php') ); ?>
         <?php include( locate_template('parts-flexible/fullwdith_text.php') ); ?>
+        <?php include( locate_template('parts-flexible/cards_carousel_popup.php') ); ?>
 
       <?php $ctr++; endwhile;  ?>
     </div>
