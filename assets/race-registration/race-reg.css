@@ -502,7 +502,8 @@ body.regx .site-content {
 .rx[data-state="ready"] .gform_required_legend,
 .rx[data-state="ready"] .gform_heading,
 .rx[data-state="ready"] .gfield--type-section,
-.rx[data-state="ready"] .gfield--type-total {
+.rx[data-state="ready"] .gfield--type-total,
+.rx[data-state="ready"] .gfield--type-subtotal {
 	display: none !important;
 }
 
@@ -2768,4 +2769,108 @@ body.regx--seek .rx-welcome-logo { filter: none; }
 
 @media (max-width: 720px) {
 	body.regx--seek .rx-art { max-width: 190px; }
+}
+
+/* ---------- theme: Run of the Mill (deep teal-green, golden live oak, olive Western slab) ---------- */
+
+html:has(body.regx--mill),
+body.regx--mill {
+	background: #174946;
+}
+body.regx--mill .rx {
+	--rx-bg: #174946;
+	--rx-bg-2: #1f5a56;
+	--rx-bg-rgb: 23, 73, 70;
+	--rx-panel: rgba(243, 239, 217, 0.06);
+	--rx-panel-2: rgba(243, 239, 217, 0.1);
+	--rx-mint: #cbc37a;
+	--rx-mint-rgb: 203, 195, 122;
+	--rx-mint-soft: rgba(203, 195, 122, 0.16);
+	--rx-orange: #e6a44d;
+	--rx-orange-rgb: 230, 164, 77;
+	--rx-orange-deep: #d8933a;
+	--rx-orange-shade: #0d302e;
+	--rx-text: #f3efd9;
+	--rx-muted: #bccab9;
+	--rx-danger: #ffbfa9;
+	--rx-radius: 6px;
+	--rx-font-head: 'Zilla Slab', 'Rockwell', serif;
+	--rx-font-body: 'Libre Franklin', 'Lato', sans-serif;
+}
+
+body.regx--mill .rx-bg { opacity: 0.12; color: #cbc37a; }
+body.regx--mill .rx-contours circle { display: none; }
+
+/* type: the poster's fat Western slab for the welcome, a readable slab for questions */
+body.regx--mill .rx .rx-h1 {
+	font-family: 'Holtwood One SC', var(--rx-font-head);
+	font-weight: 400;
+	font-size: clamp(2rem, 4.8vw, 3.3rem);
+	line-height: 1.12;
+	color: #cbc37a;
+}
+body.regx--mill .rx .rx-h2 {
+	font-weight: 700;
+	font-size: clamp(2rem, 4.4vw, 3rem);
+	line-height: 1.05;
+	color: #cbc37a;
+}
+body.regx--mill .rx .rx-lede { font-weight: 500; }
+/* "5K TRAIL RACE" tracking in gold, with the poster's wheat sprig */
+body.regx--mill .rx-kicker,
+body.regx--mill .rx-ready-title {
+	font-family: 'Josefin Sans', var(--rx-font-body);
+	font-weight: 700;
+	font-size: 0.86rem;
+	letter-spacing: 0.28em;
+	text-transform: uppercase;
+	color: #e6a44d;
+}
+body.regx--mill .rx-kicker::before {
+	content: '';
+	display: inline-block;
+	width: 3em;
+	height: 1em;
+	margin-right: 0.7em;
+	vertical-align: -0.12em;
+	background: url('mill/wheat.webp') left center / contain no-repeat;
+}
+
+body.regx--mill .rx .rx-btn {
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	color: #0d302e !important;
+	border-radius: 6px;
+}
+body.regx--mill .rx .rx-btn.is-loading .rx-arrow { border-color: rgba(13, 48, 46, 0.3); border-top-color: #0d302e; }
+body.regx--mill .rx .rx-chip,
+body.regx--mill .rx-total,
+body.regx--mill .rx .gform_wrapper.gravity-theme .gfield--type-radio .gchoice label,
+body.regx--mill .rx .gform_wrapper.gravity-theme .ginput_container_coupon input[type="button"] {
+	border-radius: 6px !important;
+}
+body.regx--mill .rx-person-num { background: #e6a44d; color: #0d302e; }
+body.regx--mill .rx-tip { border-left-color: #cbc37a; }
+body.regx--mill .rx-tip-icon { color: #e6a44d; }
+
+/* the oak sways a little in the breeze, its moss hanging still */
+body.regx--mill .rx-art { max-width: 320px; filter: drop-shadow(0 18px 24px rgba(6, 25, 24, 0.4)); }
+body.regx--mill .rx-art img,
+body.regx--mill .rx-mart {
+	transform-origin: 50% 95%;
+	animation: rxOakSway 7s ease-in-out infinite;
+}
+body.regx--mill .is-entering-fwd .rx-art img,
+body.regx--mill .is-entering-back .rx-art img {
+	animation: rxPopIn 0.7s var(--rx-ease-pop) both, rxOakSway 7s ease-in-out 0.7s infinite;
+}
+@keyframes rxOakSway {
+	0%, 100% { transform: rotate(-1deg); }
+	50%      { transform: rotate(1deg); }
+}
+body.regx--mill .rx-mart { width: 140px; }
+body.regx--mill .rx-welcome-logo { filter: none; }
+
+@media (max-width: 720px) {
+	body.regx--mill .rx-art { max-width: 150px; }
 }

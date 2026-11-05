@@ -81,8 +81,19 @@
 	}
 
 	function fieldType( node ) {
+		// GF 3's "multi_choice" field renders like a classic radio or checkbox field.
+		if ( node.classList.contains( 'gfield--type-multi_choice' ) ) {
+			return node.classList.contains( 'gfield--input-type-checkbox' ) ? 'checkbox' : 'radio';
+		}
 		var m = node.className.match( /gfield--type-([a-z_]+)/ );
 		return m ? m[1] : '';
+	}
+
+	// Let multi_choice fields pick up the classic radio/checkbox styles too.
+	function normalizeChoiceFields( container ) {
+		container.querySelectorAll( '.gfield--type-multi_choice' ).forEach( function ( n ) {
+			n.classList.add( n.classList.contains( 'gfield--input-type-checkbox' ) ? 'gfield--type-checkbox' : 'gfield--type-radio' );
+		} );
 	}
 
 	// Hidden by GF conditional logic (or by gf-zero-total.js), as opposed to parked by us.
@@ -172,7 +183,7 @@
 	function frameVisible( f ) {
 		return f.fields.some( function ( n ) {
 			var t = fieldType( n );
-			return t !== 'html' && t !== 'section' && t !== 'total' && isShown( n );
+			return t !== 'html' && t !== 'section' && t !== 'total' && t !== 'subtotal' && isShown( n );
 		} );
 	}
 
@@ -232,6 +243,7 @@
 
 	// Turn a container's GF fields into frames: configured ones first, then anything left over.
 	function collectFrames( container, cfgs, fid ) {
+		normalizeChoiceFields( container );
 		var nodes = Array.prototype.slice.call( container.querySelectorAll( '.gfield' ) ).filter( function ( n ) {
 			return fieldId( n ) !== null;
 		} );
@@ -258,7 +270,7 @@
 			if ( claimed[ id ] || t === 'page' || t === 'hidden' || n.classList.contains( 'gfield_visibility_hidden' ) || n.classList.contains( 'gform_hidden' ) || n.classList.contains( 'rx-controlled' ) ) {
 				return;
 			}
-			if ( t === 'section' || t === 'total' ) {
+			if ( t === 'section' || t === 'total' || t === 'subtotal' ) {
 				return;
 			}
 			if ( t === 'html' && frames.length ) {
@@ -854,7 +866,7 @@
 		if ( t === 'product' && n.querySelector( '.gfield_radio' ) ) {
 			t = 'radio';
 		}
-		if ( t === 'stripe_creditcard' || t === 'html' || t === 'section' || t === 'total' || t === 'coupon' ) {
+		if ( t === 'stripe_creditcard' || t === 'html' || t === 'section' || t === 'total' || t === 'subtotal' || t === 'coupon' ) {
 			return '';
 		}
 		if ( t === 'checkbox' || t === 'radio' || t === 'consent' ) {
