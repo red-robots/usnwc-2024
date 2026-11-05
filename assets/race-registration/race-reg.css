@@ -2359,3 +2359,141 @@ body.regx--rocky .rx-mart { width: 96px; }
 @media (max-width: 720px) {
 	body.regx--rocky .rx-art { max-width: 104px; }
 }
+
+/* ---------- theme: Frigid (bone, slate-blue water, maroon groovy type; light) ---------- */
+
+html:has(body.regx--frigid),
+body.regx--frigid {
+	background: #e9dfd3;
+}
+body.regx--frigid .rx {
+	--rx-bg: #e9dfd3;
+	--rx-bg-2: #f4ede4;
+	--rx-bg-rgb: 233, 223, 211;
+	--rx-panel: rgba(69, 95, 132, 0.06);
+	--rx-panel-2: rgba(69, 95, 132, 0.1);
+	--rx-mint: #455f84;
+	--rx-mint-rgb: 69, 95, 132;
+	--rx-mint-soft: rgba(69, 95, 132, 0.12);
+	--rx-orange: #60060f;
+	--rx-orange-rgb: 96, 6, 15;
+	--rx-orange-deep: #4d050c;
+	--rx-orange-shade: #2e0307;
+	--rx-text: #2a3549;
+	--rx-muted: #5f6b80;
+	--rx-danger: #a3241f;
+	--rx-radius: 14px;
+	--rx-font-head: 'Saira Condensed', 'Oswald', sans-serif;
+	--rx-font-body: 'Barlow', 'Lato', sans-serif;
+}
+
+/* the poster's pour of water runs in from the left edge and ripples slowly */
+body.regx--frigid .rx-bg { opacity: 1; }
+body.regx--frigid .rx-contours { display: none; }
+body.regx--frigid .rx-bg::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: min(80vw, 820px);
+	background: url('frigid/pour.webp') left center / auto 100% no-repeat;
+	/* fade out to the right so the art never ends in a hard edge */
+	-webkit-mask-image: linear-gradient(to right, #000 55%, transparent 95%);
+	mask-image: linear-gradient(to right, #000 55%, transparent 95%);
+	opacity: 0.16;
+	transform-origin: left center;
+	animation: rxRipple 9s ease-in-out infinite;
+}
+@keyframes rxRipple {
+	0%, 100% { transform: skewY(0) scaleX(1); }
+	50%      { transform: skewY(-1.2deg) scaleX(1.03); }
+}
+@media (min-width: 1400px) {
+	/* wide screens have a gutter to show it at full strength */
+	body.regx--frigid .rx-bg::before { opacity: 0.9; width: calc((100vw - 1080px) / 2 + 40px); background-position: right center; }
+}
+
+body.regx--frigid .rx-brand img {
+	/* white site logo, tinted water blue */
+	filter: brightness(0) invert(34%) sepia(23%) saturate(1083%) hue-rotate(178deg) brightness(92%);
+	opacity: 1;
+}
+
+/* type: the groovy maroon wordmark for the welcome, condensed blue caps for questions */
+body.regx--frigid .rx .rx-h1 {
+	font-family: 'Shrikhand', var(--rx-font-head);
+	font-weight: 400;
+	font-size: clamp(2.5rem, 6vw, 4.2rem);
+	line-height: 1.05;
+	color: #60060f;
+}
+body.regx--frigid .rx .rx-h2 {
+	font-weight: 700;
+	font-size: clamp(2rem, 4.4vw, 3rem);
+	line-height: 1.04;
+	letter-spacing: 0.01em;
+	text-transform: uppercase;
+	color: var(--rx-mint);
+}
+body.regx--frigid .rx .rx-lede { font-weight: 500; }
+body.regx--frigid .rx-kicker,
+body.regx--frigid .rx-ready-title {
+	font-family: var(--rx-font-head);
+	font-weight: 700;
+	font-size: 0.95rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: #60060f;
+}
+
+/* round maroon buttons, like the wordmark's soft corners */
+body.regx--frigid .rx .rx-btn {
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: #f4ede4 !important;
+	background: #60060f;
+	border-radius: 999px;
+	box-shadow: 0 6px 0 #2e0307, 0 12px 22px rgba(46, 3, 7, 0.2);
+}
+body.regx--frigid .rx .rx-btn:hover { box-shadow: 0 9px 0 #2e0307, 0 16px 26px rgba(46, 3, 7, 0.22); }
+body.regx--frigid .rx .rx-btn:active { box-shadow: 0 3px 0 #2e0307, 0 8px 14px rgba(46, 3, 7, 0.18); }
+body.regx--frigid .rx .rx-back,
+body.regx--frigid .rx .rx-add,
+body.regx--frigid .rx .rx-chip,
+body.regx--frigid .rx-card-title,
+body.regx--frigid .rx-progress-pct,
+body.regx--frigid .rx-sum-total,
+body.regx--frigid .rx .gform_wrapper.gravity-theme .gfield--type-radio .gchoice label {
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+body.regx--frigid .rx-card-price,
+body.regx--frigid .rx-sum-total-val { color: #60060f !important; }
+body.regx--frigid .rx-progress-fill { background: var(--rx-mint); }
+body.regx--frigid .rx-person-num { background: var(--rx-mint); color: #f4ede4; }
+body.regx--frigid .rx-tip { border-left-color: var(--rx-mint); }
+body.regx--frigid .rx-tip-icon { color: var(--rx-mint); }
+
+/* the 5K + 10K splash bobs like it's floating in the pool */
+body.regx--frigid .rx-art { max-width: 300px; }
+body.regx--frigid .rx-art img,
+body.regx--frigid .rx-mart { animation: rxFloatBob 4.5s ease-in-out infinite; }
+body.regx--frigid .is-entering-fwd .rx-art img,
+body.regx--frigid .is-entering-back .rx-art img {
+	animation: rxSplashIn 0.8s var(--rx-ease-pop) both, rxFloatBob 4.5s ease-in-out 0.8s infinite;
+}
+@keyframes rxFloatBob {
+	0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+	50%      { transform: translateY(-8px) rotate(1.5deg); }
+}
+@keyframes rxSplashIn {
+	from { opacity: 0; transform: translateY(30px) scale(0.6); }
+	to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+body.regx--frigid .rx-mart { width: 120px; }
+
+@media (max-width: 720px) {
+	body.regx--frigid .rx-art { max-width: 130px; }
+}
