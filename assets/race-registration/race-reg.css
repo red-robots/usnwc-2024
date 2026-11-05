@@ -572,7 +572,20 @@ body.regx .site-content {
 	font-weight: 700 !important;
 	letter-spacing: 0.04em;
 	color: var(--rx-muted) !important;
-	padding-top: 6px !important;
+	padding: 0 0 6px !important;
+	margin: 0 !important;
+}
+/* Sub-labels (First / Last, Street Address / City / ZIP) above their boxes, whatever the
+   form's sub-label setting: below the box they read as the title of the next one. */
+.rx .gform_wrapper.gravity-theme .ginput_complex > span,
+.rx .gform_wrapper.gravity-theme .ginput_complex > div {
+	display: flex;
+	flex-direction: column;
+}
+.rx .gform_wrapper.gravity-theme .ginput_complex > span > label,
+.rx .gform_wrapper.gravity-theme .ginput_complex > div > label,
+.rx .gform_wrapper.gravity-theme .ginput_complex .gform-field-label--type-sub {
+	order: -1;
 }
 
 /* text-like inputs */
