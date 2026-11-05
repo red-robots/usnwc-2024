@@ -721,6 +721,13 @@ body.regx .site-content {
 	color: var(--rx-bg) !important;
 	animation: rxChoicePop 0.35s var(--rx-ease-pop);
 }
+/* choices GF or GP Inventory has switched off (e.g. sold out) */
+.rx .gform_wrapper.gravity-theme .gchoice input:disabled + label {
+	opacity: 0.4;
+	cursor: not-allowed;
+	text-decoration: line-through;
+	transform: none !important;
+}
 .rx .gform_wrapper.gravity-theme .gfield--type-radio .gchoice input:focus-visible + label {
 	outline: 3px solid var(--rx-orange);
 	outline-offset: 3px;
@@ -1926,4 +1933,138 @@ body.regx--sitd .rx-mart { width: 64px; filter: drop-shadow(0 0 22px rgba(125, 5
 @media (max-width: 720px) {
 	body.regx--sitd .rx-art { max-width: 84px; }
 	body.regx--sitd .rx-art::after { width: 14px; height: 14px; }
+}
+
+/* ---------- theme: Pond Hockey (cream ice, navy lettering, sweater red; the one light theme) ---------- */
+
+html:has(body.regx--hockey),
+body.regx--hockey {
+	background: #e7e1d1;
+}
+body.regx--hockey .rx {
+	--rx-bg: #e7e1d1;
+	--rx-bg-2: #f5f2ea;
+	--rx-bg-rgb: 231, 225, 209;
+	--rx-panel: rgba(23, 76, 92, 0.05);
+	--rx-panel-2: rgba(23, 76, 92, 0.09);
+	--rx-mint: #174c5c;
+	--rx-mint-rgb: 23, 76, 92;
+	--rx-mint-soft: rgba(23, 76, 92, 0.1);
+	--rx-orange: #ab1e24;
+	--rx-orange-rgb: 171, 30, 36;
+	--rx-orange-deep: #94191e;
+	--rx-orange-shade: #5c0f13;
+	--rx-red: #ab1e24;
+	--rx-text: #173b47;
+	--rx-muted: #556a6d;
+	--rx-danger: #b3261e;
+	--rx-radius: 6px;
+	--rx-font-head: 'Big Shoulders Display', 'Oswald', sans-serif;
+	--rx-font-body: 'Figtree', 'Lato', sans-serif;
+}
+
+/* skate tracks scratched into the ice instead of water contours */
+body.regx--hockey .rx-bg { opacity: 0.14; color: #174c5c; }
+body.regx--hockey .rx-contours { stroke-width: 2.5; }
+body.regx--hockey .rx-contours circle { display: none; }
+
+/* things the dark themes get for free */
+body.regx--hockey .rx-brand img {
+	/* the white site logo, tinted to the lettering navy */
+	filter: brightness(0) invert(24%) sepia(37%) saturate(1046%) hue-rotate(152deg) brightness(92%);
+}
+body.regx--hockey .rx-progress { background: rgba(23, 76, 92, 0.1); }
+body.regx--hockey .rx-progress-fill { background: var(--rx-orange); }
+body.regx--hockey .rx .gform_wrapper.gravity-theme input[type="text"],
+body.regx--hockey .rx .gform_wrapper.gravity-theme input[type="email"],
+body.regx--hockey .rx .gform_wrapper.gravity-theme input[type="tel"],
+body.regx--hockey .rx .gform_wrapper.gravity-theme input[type="number"],
+body.regx--hockey .rx .gform_wrapper.gravity-theme textarea,
+body.regx--hockey .rx .gform_wrapper.gravity-theme select {
+	background-color: rgba(255, 255, 255, 0.6) !important;
+	border-radius: 6px !important;
+}
+body.regx--hockey .rx .gform_wrapper.gravity-theme input::placeholder,
+body.regx--hockey .rx .gform_wrapper.gravity-theme textarea::placeholder {
+	color: rgba(23, 76, 92, 0.45);
+}
+body.regx--hockey .rx .rx-card.is-selected {
+	box-shadow: 0 0 0 4px rgba(23, 76, 92, 0.16), 0 12px 24px rgba(23, 76, 92, 0.18);
+}
+body.regx--hockey .rx-error {
+	background: rgba(179, 38, 30, 0.08);
+	border-color: rgba(179, 38, 30, 0.45);
+}
+
+/* type: the badge's tall navy caps, and "PRESENTED BY" spacing for the kicker */
+body.regx--hockey .rx .rx-h1,
+body.regx--hockey .rx .rx-h2 {
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: 0.01em;
+	color: var(--rx-mint);
+}
+body.regx--hockey .rx .rx-h1 { font-size: clamp(2.9rem, 7vw, 5.2rem); line-height: 0.95; }
+body.regx--hockey .rx .rx-h2 { font-size: clamp(2.2rem, 4.8vw, 3.4rem); line-height: 1; }
+body.regx--hockey .rx .rx-lede { font-weight: 500; color: var(--rx-muted); }
+body.regx--hockey .rx-kicker,
+body.regx--hockey .rx-ready-title {
+	font-family: 'Josefin Sans', var(--rx-font-body);
+	font-weight: 700;
+	font-size: 0.85rem;
+	letter-spacing: 0.28em;
+	text-transform: uppercase;
+	color: var(--rx-orange);
+}
+
+/* sweater-red buttons with cream lettering */
+body.regx--hockey .rx .rx-btn {
+	font-weight: 800;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+	color: #f5f2ea !important;
+	border-radius: 6px;
+	box-shadow: 0 6px 0 var(--rx-orange-shade), 0 12px 22px rgba(92, 15, 19, 0.22);
+}
+body.regx--hockey .rx .rx-btn:hover { box-shadow: 0 9px 0 var(--rx-orange-shade), 0 16px 26px rgba(92, 15, 19, 0.25); }
+body.regx--hockey .rx .rx-btn:active { box-shadow: 0 3px 0 var(--rx-orange-shade), 0 8px 14px rgba(92, 15, 19, 0.2); }
+body.regx--hockey .rx .rx-back,
+body.regx--hockey .rx .rx-chip,
+body.regx--hockey .rx-card-title,
+body.regx--hockey .rx-progress-pct,
+body.regx--hockey .rx-sum-total,
+body.regx--hockey .rx .gform_wrapper.gravity-theme .gfield--type-radio .gchoice label {
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+body.regx--hockey .rx .rx-chip,
+body.regx--hockey .rx-total,
+body.regx--hockey .rx .gform_wrapper.gravity-theme .gfield--type-radio .gchoice label,
+body.regx--hockey .rx .gform_wrapper.gravity-theme .ginput_container_coupon input[type="button"] {
+	border-radius: 6px !important;
+}
+body.regx--hockey .rx-card-title,
+body.regx--hockey .rx .rx-chip { font-weight: 800; }
+
+/* the badge slides in like a puck across the ice, then sits still */
+body.regx--hockey .rx-art {
+	max-width: 250px;
+	filter: drop-shadow(0 16px 20px rgba(23, 76, 92, 0.22));
+}
+body.regx--hockey .rx-art img { animation: none; }
+body.regx--hockey .is-entering-fwd .rx-art img { animation: rxPuckIn 0.75s var(--rx-ease-pop) both; }
+body.regx--hockey .is-entering-back .rx-art img { animation: rxPuckBack 0.75s var(--rx-ease-pop) both; }
+@keyframes rxPuckIn {
+	from { opacity: 0; transform: translateX(-90px) rotate(-10deg); }
+	to   { opacity: 1; transform: translateX(0) rotate(0); }
+}
+@keyframes rxPuckBack {
+	from { opacity: 0; transform: translateX(90px) rotate(10deg); }
+	to   { opacity: 1; transform: translateX(0) rotate(0); }
+}
+body.regx--hockey .rx-welcome-logo { filter: drop-shadow(0 18px 24px rgba(23, 76, 92, 0.2)); }
+body.regx--hockey .rx-welcome.is-in .rx-welcome-logo { animation-name: rxPuckIn; }
+
+@media (max-width: 720px) {
+	body.regx--hockey .rx-art { max-width: 86px; }
 }

@@ -216,14 +216,15 @@
 				}
 			} );
 			if ( fields.length ) {
-				frames.push( { cfg: cfg, fields: fields } );
+				frames.push( { cfg: cfg, fields: fields, primary: fields[0] } ); // primary: the first field the config lists, before DOM sorting
 			}
 		} );
 
 		// Anything the config doesn't mention still gets shown somewhere.
 		nodes.forEach( function ( n ) {
 			var id = fieldId( n ), t = fieldType( n );
-			if ( claimed[ id ] || t === 'page' || t === 'hidden' || n.classList.contains( 'gfield_visibility_hidden' ) ) {
+			// gform_hidden: hidden products (a flat registration fee) have nothing to ask but still count toward the total.
+			if ( claimed[ id ] || t === 'page' || t === 'hidden' || n.classList.contains( 'gfield_visibility_hidden' ) || n.classList.contains( 'gform_hidden' ) ) {
 				return;
 			}
 			if ( t === 'section' || t === 'total' ) {
@@ -260,7 +261,7 @@
 
 		// Big clickable cards for a select (e.g. division product).
 		cards: function ( f ) {
-			var field = f.fields[0], select = field.querySelector( 'select' ),
+			var field = f.primary || f.fields[0], select = field.querySelector( 'select' ),
 				radios = select ? [] : Array.prototype.slice.call( field.querySelectorAll( '.gfield_radio input[type="radio"]' ) );
 			if ( ! select && ! radios.length ) {
 				return;
@@ -330,7 +331,7 @@
 
 		// Day-grouped time chips for a select whose options read "Day at Time".
 		slots: function ( f ) {
-			var field = f.fields[0], select = field.querySelector( 'select' );
+			var field = f.primary || f.fields[0], select = field.querySelector( 'select' );
 			if ( ! select ) {
 				return;
 			}
@@ -366,7 +367,7 @@
 					b.setAttribute( 'role', 'radio' );
 					b.dataset.value = s.opt.value;
 					b.disabled = s.opt.disabled;
-					b.innerHTML = esc( s.time.replace( /\s*(am|pm)$/i, ' $1' ) ) + ( s.opt.disabled ? ' <small>Full</small>' : '' );
+					b.innerHTML = esc( s.time.replace( /(\d)\s*(am|pm)$/i, '$1 $2' ) ) + ( s.opt.disabled ? ' <small>Full</small>' : '' );
 					b.addEventListener( 'click', function () {
 						select.value = s.opt.value;
 						change( select );
@@ -693,6 +694,10 @@
 				items.push( { label: what ? who + ' · ' + what : who, qty: 1, price: toNumber( e.total ) } );
 			} );
 		}
+		function push( id, item ) {
+			item.id = id;
+			items.push( item );
+		}
 		form.querySelectorAll( '.gfield--type-product' ).forEach( function ( n ) {
 			var id = fieldId( n ), cfg = owner[ id ] || {};
 			if ( skip[ id ] || ! isShown( n ) || ! counts( cfg ) ) {
@@ -703,7 +708,7 @@
 			if ( picked ) {
 				var pl = n.querySelector( 'label[for="' + picked.id + '"]' ),
 					name = productName( pl ? pl.textContent.trim() : picked.value.split( '|' )[0] );
-				items.push( { label: who ? who + ' \u00b7 ' + name : name, qty: 1, price: toNumber( picked.value.split( '|' )[1] || 0 ) } );
+				push( id, { label: who ? who + ' \u00b7 ' + name : name, qty: 1, price: toNumber( picked.value.split( '|' )[1] || 0 ) } );
 				return;
 			}
 			if ( n.querySelector( '.gfield_radio' ) ) {
@@ -713,7 +718,7 @@
 			if ( sel ) {
 				var o = sel.options[ sel.selectedIndex ];
 				if ( o && o.value ) {
-					items.push( { label: o.text, qty: 1, price: toNumber( ( o.value.split( '|' )[1] ) || 0 ) } );
+					push( id, { label: o.text, qty: 1, price: toNumber( ( o.value.split( '|' )[1] ) || 0 ) } );
 				}
 				return;
 			}
@@ -722,10 +727,23 @@
 				qty = qtyInput ? parseInt( qtyInput.value, 10 ) || 0 : 1;
 			if ( base && qty > 0 ) {
 				var label = shirtLabels[ id ] || ( n.querySelector( '.gfield_label_product' ) || n.querySelector( '.gfield_label' ) || {} ).textContent || 'Item';
-				items.push( { label: label.trim(), qty: qty, price: toNumber( base.value ) } );
+				push( id, { label: label.replace( /\*\s*$/, '' ).trim(), qty: qty, price: toNumber( base.value ) } );
 			}
 		} );
-		return items;
+
+		// Free picks ("No" to an add-on, a $0 size) aren't purchases. Config 'lineItems' renames a
+		// product's line ({ID} = another field's answer, e.g. "Hoodie ({58})") or drops it (false).
+		var names = C.lineItems || {};
+		return items.filter( function ( it ) {
+			return it.price * it.qty !== 0 && names[ it.id ] !== false;
+		} ).map( function ( it ) {
+			if ( typeof names[ it.id ] === 'string' ) {
+				it.label = names[ it.id ].replace( /\{(\d+)\}/g, function ( m, other ) {
+					return readField( parseInt( other, 10 ) );
+				} ).replace( /\s*\(\s*\)/, '' );
+			}
+			return it;
+		} );
 	}
 
 	function summaryHtml( cfg ) {
@@ -792,6 +810,11 @@
 			return '';
 		}
 		if ( t === 'checkbox' || t === 'radio' || t === 'consent' ) {
+			// GP Inventory removes every choice once they're gone and leaves its own message in their place.
+			if ( required && ! n.querySelector( 'input[type="radio"], input[type="checkbox"]' ) ) {
+				var gone = n.querySelector( '.ginput_container' );
+				return ( gone && gone.textContent.trim() ) || 'There are no spots left for this one.';
+			}
 			return required && ! n.querySelector( 'input:checked' ) ? ( t === 'radio' ? 'Pick one to keep going.' : 'Please check this to continue.' ) : '';
 		}
 		var inputs = Array.prototype.filter.call( n.querySelectorAll( 'input, select, textarea' ), function ( i ) {
@@ -933,24 +956,34 @@
 		updateSubmitLabel();
 	}
 
+	// Whether a configured screen on another GF page will be shown. GF runs conditional logic
+	// for every page's fields up front, so a branch the visitor isn't on doesn't count.
+	function cfgShown( cfg ) {
+		if ( ! counts( cfg ) ) {
+			return false;
+		}
+		var nodes = ( cfg.fields || [] ).map( function ( id ) { return fieldEl( id ); } ).filter( Boolean );
+		return ! nodes.length || frameVisible( { fields: nodes } );
+	}
+
 	function position() {
 		var before = 0;
 		( C.frames || [] ).forEach( function ( cfg ) {
-			if ( ( cfg.page || 1 ) < page && counts( cfg ) ) {
+			if ( ( cfg.page || 1 ) < page && cfgShown( cfg ) ) {
 				before++;
 			}
 		} );
-		return before + Math.max( idx, 0 );
+		return before + frames.slice( 0, Math.max( idx, 0 ) ).filter( frameVisible ).length;
 	}
 
 	function totalFrames() {
 		var n = 0;
 		( C.frames || [] ).forEach( function ( cfg ) {
-			if ( ( cfg.page || 1 ) !== page && counts( cfg ) ) {
+			if ( ( cfg.page || 1 ) !== page && cfgShown( cfg ) ) {
 				n++;
 			}
 		} );
-		return n + frames.length;
+		return n + frames.filter( frameVisible ).length;
 	}
 
 	function updateProgress( pctOverride ) {
@@ -1540,6 +1573,13 @@
 		if ( window.ResizeObserver ) {
 			new ResizeObserver( checkTall ).observe( el.inner.querySelector( '.rx-copy' ) );
 		}
+
+		// GF runs conditional logic after the first paint; recount the screens once it has.
+		$( document ).on( 'gform_post_conditional_logic', function ( e, formId ) {
+			if ( parseInt( formId, 10 ) === FID && idx >= 0 && root.dataset.view === 'frames' ) {
+				updateProgress();
+			}
+		} );
 
 		if ( window.gform && typeof window.gform.addFilter === 'function' ) {
 			window.gform.addFilter( 'gform_product_total', function ( t, formId ) {
