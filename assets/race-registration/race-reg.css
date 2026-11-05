@@ -2607,3 +2607,165 @@ body.regx--dogdays .rx-welcome-logo { filter: none; }
 @media (max-width: 720px) {
 	body.regx--dogdays .rx-art { max-width: 120px; }
 }
+
+/* ---------- theme: Ride & Seek (cream, rust, navy outlines, periwinkle, highlighter yellow; light) ---------- */
+
+html:has(body.regx--seek),
+body.regx--seek {
+	background: #faf2df;
+}
+body.regx--seek .rx {
+	--rx-bg: #faf2df;
+	--rx-bg-2: #fffaef;
+	--rx-bg-rgb: 250, 242, 223;
+	--rx-panel: rgba(13, 24, 56, 0.04);
+	--rx-panel-2: rgba(13, 24, 56, 0.08);
+	--rx-mint: #0d1838;
+	--rx-mint-rgb: 13, 24, 56;
+	--rx-mint-soft: rgba(85, 102, 174, 0.14);
+	--rx-orange: #b15030;
+	--rx-orange-rgb: 177, 80, 48;
+	--rx-orange-deep: #9a4428;
+	--rx-orange-shade: #0d1838;
+	--rx-text: #0d1838;
+	--rx-muted: #4b5272;
+	--rx-danger: #b3261e;
+	--rx-radius: 4px;
+	--rx-font-head: 'Passion One', 'Oswald', sans-serif;
+	--rx-font-body: 'Nunito Sans', 'Lato', sans-serif;
+	--rx-peri: #5566ae;
+	--rx-yellow: #ece563;
+}
+
+/* the course: dashed routes with checkpoint X's dotted along them */
+body.regx--seek .rx-bg { opacity: 1; color: #5566ae; }
+body.regx--seek .rx-contours { opacity: 0.22; stroke-width: 3; }
+body.regx--seek .rx-contours path {
+	stroke-dasharray: 2 12;
+	stroke-dashoffset: 0;
+	animation: rxDrift 22s ease-in-out infinite alternate;
+}
+body.regx--seek .rx-contours circle { display: none; }
+body.regx--seek .rx-bg::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	opacity: 0.32;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 560'%3E%3Cdefs%3E%3Cg id='x'%3E%3Ccircle r='15' fill='%23ece563' stroke='%230d1838' stroke-width='3'/%3E%3Cpath d='M-6-6 6 6M6-6-6 6' stroke='%230d1838' stroke-width='4' stroke-linecap='round'/%3E%3C/g%3E%3C/defs%3E%3Cuse href='%23x' x='90' y='120'/%3E%3Cuse href='%23x' x='470' y='70'/%3E%3Cuse href='%23x' x='560' y='380'/%3E%3Cuse href='%23x' x='230' y='470'/%3E%3C/svg%3E");
+	background-size: 640px 560px;
+	animation: rxCheckpoint 3.6s ease-in-out infinite;
+}
+@keyframes rxCheckpoint {
+	0%, 100% { opacity: 0.16; }
+	50%      { opacity: 0.32; }
+}
+/* boxes are solid here so the checkpoints never show through what people type */
+body.regx--seek .rx .gform_wrapper.gravity-theme input[type="text"],
+body.regx--seek .rx .gform_wrapper.gravity-theme input[type="email"],
+body.regx--seek .rx .gform_wrapper.gravity-theme input[type="tel"],
+body.regx--seek .rx .gform_wrapper.gravity-theme input[type="number"],
+body.regx--seek .rx .gform_wrapper.gravity-theme textarea,
+body.regx--seek .rx .gform_wrapper.gravity-theme select,
+body.regx--seek .rx .gform_wrapper.gravity-theme .StripeElement {
+	background-color: #fffdf7 !important;
+}
+body.regx--seek .rx-summary,
+body.regx--seek .rx-ready,
+body.regx--seek .rx-person,
+body.regx--seek .rx .rx-card:not(.is-selected),
+body.regx--seek .rx .rx-chip:not(.is-selected),
+body.regx--seek .rx .gform_wrapper.gravity-theme .gfield--type-radio .gchoice input:not(:checked) + label,
+body.regx--seek .rx .gform_wrapper.gravity-theme .gfield--type-checkbox,
+body.regx--seek .rx-total {
+	background-color: #fffaef !important;
+}
+
+body.regx--seek .rx-brand img {
+	/* white site logo, tinted navy */
+	filter: brightness(0) invert(9%) sepia(32%) saturate(2789%) hue-rotate(212deg) brightness(92%);
+	opacity: 1;
+}
+
+/* type: the poster's hand-cut caps, and "MTB ADVENTURE RACE" tracking for the kicker */
+body.regx--seek .rx .rx-h1,
+body.regx--seek .rx .rx-h2 {
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.01em;
+}
+body.regx--seek .rx .rx-h1 { font-size: clamp(2.8rem, 6.6vw, 4.8rem); line-height: 0.95; color: #b15030; }
+body.regx--seek .rx .rx-h2 { font-size: clamp(2.1rem, 4.6vw, 3.2rem); line-height: 1; color: #0d1838; }
+body.regx--seek .rx .rx-lede { font-weight: 600; }
+body.regx--seek .rx-kicker,
+body.regx--seek .rx-ready-title {
+	font-family: 'Josefin Sans', var(--rx-font-body);
+	font-weight: 700;
+	font-size: 0.85rem;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	color: var(--rx-peri);
+}
+
+/* comic-panel outlines: navy borders and hard offset shadows */
+body.regx--seek .rx .rx-btn {
+	font-weight: 700;
+	font-size: clamp(1.3rem, 2.4vw, 1.5rem);
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: #fffaef !important;
+	background: #b15030;
+	border: 3px solid #0d1838;
+	border-radius: 4px;
+	box-shadow: 5px 5px 0 #0d1838;
+}
+body.regx--seek .rx .rx-btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 #0d1838; }
+body.regx--seek .rx .rx-btn:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 #0d1838; }
+body.regx--seek .rx .rx-btn.is-loading .rx-arrow { border-color: rgba(255, 250, 239, 0.35); border-top-color: #fffaef; }
+body.regx--seek .rx .rx-card,
+body.regx--seek .rx .rx-chip,
+body.regx--seek .rx-person,
+body.regx--seek .rx .rx-add,
+body.regx--seek .rx .gform_wrapper.gravity-theme .gfield--type-radio .gchoice label,
+body.regx--seek .rx .gform_wrapper.gravity-theme input[type="text"],
+body.regx--seek .rx .gform_wrapper.gravity-theme input[type="email"],
+body.regx--seek .rx .gform_wrapper.gravity-theme input[type="tel"],
+body.regx--seek .rx .gform_wrapper.gravity-theme input[type="number"],
+body.regx--seek .rx .gform_wrapper.gravity-theme select {
+	border-width: 2px !important;
+	border-color: #0d1838 !important;
+	border-radius: 4px !important;
+}
+body.regx--seek .rx .rx-card.is-selected,
+body.regx--seek .rx .rx-chip.is-selected,
+body.regx--seek .rx .gform_wrapper.gravity-theme .gfield--type-radio .gchoice input:checked + label {
+	box-shadow: 4px 4px 0 #0d1838 !important;
+}
+body.regx--seek .rx .rx-card.is-selected { background: rgba(236, 229, 99, 0.35); }
+body.regx--seek .rx .rx-add { border-style: dashed !important; color: #0d1838; }
+body.regx--seek .rx-card-price,
+body.regx--seek .rx-sum-total-val { color: #b15030 !important; }
+body.regx--seek .rx-progress { background: rgba(13, 24, 56, 0.08); }
+body.regx--seek .rx-progress-fill { background: #ece563; box-shadow: inset 0 -2px 0 #0d1838; }
+body.regx--seek .rx-tip { border-left-color: #ece563; background: rgba(236, 229, 99, 0.2); }
+body.regx--seek .rx-tip-icon { color: #b15030; }
+body.regx--seek .rx-person-num { background: #ece563; color: #0d1838; box-shadow: inset 0 0 0 2px #0d1838; }
+body.regx--seek .rx-add-plus { background: #b15030; color: #fffaef; }
+
+/* each panel slides in like the next frame of the comic */
+body.regx--seek .rx-art { max-width: 340px; filter: drop-shadow(5px 5px 0 rgba(13, 24, 56, 0.85)); }
+body.regx--seek .rx-art img,
+body.regx--seek .rx-mart { animation: none; }
+body.regx--seek .is-entering-fwd .rx-art img,
+body.regx--seek .is-entering-back .rx-art img {
+	animation: rxPanelIn 0.7s var(--rx-ease-out) both;
+}
+@keyframes rxPanelIn {
+	from { clip-path: inset(0 100% 0 0); }
+	to   { clip-path: inset(0 0 0 0); }
+}
+body.regx--seek .rx-mart { width: 180px; }
+body.regx--seek .rx-welcome-logo { filter: none; }
+
+@media (max-width: 720px) {
+	body.regx--seek .rx-art { max-width: 190px; }
+}

@@ -667,6 +667,10 @@
 	// ({ fieldId: 'hoodie' }) -> "Half Marathon + hoodie". The entry's total already includes them.
 	function entryWhat( e ) {
 		var what = N.productField ? productName( entryText( e, N.productField ) ) : '';
+		// Config 'productNames' shortens long product choices for cards and summary lines.
+		if ( N.productNames && N.productNames[ what ] ) {
+			what = N.productNames[ what ];
+		}
 		Object.keys( N.addons || {} ).forEach( function ( id ) {
 			var v = e[ id ] ? String( e[ id ].value == null ? '' : e[ id ].value ) : '';
 			if ( toNumber( v.split( '|' )[1] || 0 ) > 0 ) {
