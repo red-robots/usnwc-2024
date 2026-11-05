@@ -122,6 +122,11 @@
 		// GF listens through jQuery; also fire a native event for anything else.
 		$( input ).trigger( 'change' );
 		input.dispatchEvent( new Event( 'input', { bubbles: true } ) );
+		// jQuery's change doesn't reach native listeners, so recount here: an answer can add or
+		// remove screens (party size, a branch).
+		if ( idx >= 0 && root.dataset.view === 'frames' ) {
+			updateProgress();
+		}
 	}
 
 	function recalc() {

@@ -2068,3 +2068,139 @@ body.regx--hockey .rx-welcome.is-in .rx-welcome-logo { animation-name: rxPuckIn;
 @media (max-width: 720px) {
 	body.regx--hockey .rx-art { max-width: 86px; }
 }
+
+/* ---------- theme: Channel The Holidays (deep teal, white Victorian lettering, sage flourishes, snow) ---------- */
+
+html:has(body.regx--holidays),
+body.regx--holidays {
+	background: #2c555b;
+}
+body.regx--holidays .rx {
+	--rx-bg: #2c555b;
+	--rx-bg-2: #376770;
+	--rx-bg-rgb: 44, 85, 91;
+	--rx-panel: rgba(252, 255, 254, 0.07);
+	--rx-panel-2: rgba(252, 255, 254, 0.12);
+	--rx-mint: #fcfffe;
+	--rx-mint-rgb: 252, 255, 254;
+	--rx-mint-soft: rgba(252, 255, 254, 0.14);
+	--rx-orange: #a9c4c9;
+	--rx-orange-rgb: 169, 196, 201;
+	--rx-orange-deep: #93b2b8;
+	--rx-orange-shade: #1b3a3f;
+	--rx-text: #fcfffe;
+	--rx-muted: #b9d0d4;
+	--rx-danger: #ffc2b3;
+	--rx-radius: 8px;
+	--rx-font-head: 'Alfa Slab One', 'Rockwell', serif;
+	--rx-font-body: 'Work Sans', 'Lato', sans-serif;
+	--rx-sage: #7899a2;
+}
+
+/* snow drifting down, and the banner's ornate corners framing the page */
+body.regx--holidays .rx-bg { opacity: 1; }
+body.regx--holidays .rx-contours { display: none; }
+body.regx--holidays .rx-bg::before {
+	content: '';
+	position: absolute;
+	inset: 86px 20px 20px; /* top corners sit below the logo and "Race info" */
+	background:
+		url('holidays/corner-tl.webp') left top / 120px auto no-repeat,
+		url('holidays/corner-tr.webp') right top / 120px auto no-repeat,
+		url('holidays/corner-bl.webp') left bottom / 120px auto no-repeat,
+		url('holidays/corner-br.webp') right bottom / 120px auto no-repeat;
+	opacity: 0.55;
+}
+body.regx--holidays .rx-bg::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	/* four layers with mismatched tile sizes so the flakes don't line up into a grid;
+	   each layer moves exactly one tile per loop, so the loop is seamless */
+	background-image:
+		radial-gradient(circle at 23% 31%, rgba(252, 255, 254, 0.85) 0 1.7px, transparent 2.3px),
+		radial-gradient(circle at 71% 64%, rgba(252, 255, 254, 0.6) 0 1.1px, transparent 1.6px),
+		radial-gradient(circle at 48% 12%, rgba(212, 223, 225, 0.45) 0 2.6px, transparent 3.2px),
+		radial-gradient(circle at 86% 83%, rgba(252, 255, 254, 0.5) 0 1.3px, transparent 1.8px);
+	background-size: 193px 211px, 127px 149px, 283px 311px, 157px 233px;
+	background-position: 0 0, 41px 67px, 113px 29px, 77px 151px;
+	animation: rxSnow 26s linear infinite;
+}
+@keyframes rxSnow {
+	to { background-position: 193px 211px, 41px 365px, 113px 340px, -80px 384px; }
+}
+
+/* type: Victorian display for the welcome, Clarendon-style slab for the questions */
+body.regx--holidays .rx .rx-h1 {
+	font-family: 'Rye', var(--rx-font-head);
+	font-size: clamp(2.4rem, 5.8vw, 4rem);
+	line-height: 1.05;
+	letter-spacing: 0.01em;
+}
+body.regx--holidays .rx .rx-h2 {
+	font-size: clamp(1.8rem, 3.9vw, 2.6rem);
+	line-height: 1.12;
+}
+body.regx--holidays .rx .rx-lede { font-weight: 500; }
+body.regx--holidays .rx-kicker,
+body.regx--holidays .rx-ready-title {
+	font-family: var(--rx-font-head);
+	font-size: 0.82rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--rx-orange); /* light sage; the art's darker sage is too faint on teal at this size */
+}
+body.regx--holidays .rx-kicker::before,
+body.regx--holidays .rx-kicker::after {
+	content: '\2022';
+	margin: 0 0.6em;
+	color: var(--rx-muted);
+}
+body.regx--holidays .rx-kicker::before { margin-left: 0; }
+
+/* white buttons with teal lettering, like the race type on the shirt */
+body.regx--holidays .rx .rx-btn {
+	color: #2c555b !important;
+	background: #fcfffe;
+	border-radius: 8px;
+	letter-spacing: 0.04em;
+	box-shadow: 0 6px 0 #1b3a3f, 0 14px 26px rgba(10, 30, 33, 0.35);
+}
+body.regx--holidays .rx .rx-btn:hover { box-shadow: 0 9px 0 #1b3a3f, 0 18px 30px rgba(10, 30, 33, 0.35); }
+body.regx--holidays .rx .rx-btn:active { box-shadow: 0 3px 0 #1b3a3f, 0 8px 16px rgba(10, 30, 33, 0.3); }
+body.regx--holidays .rx .rx-btn.is-loading .rx-arrow {
+	border-color: rgba(44, 85, 91, 0.3);
+	border-top-color: #2c555b;
+}
+body.regx--holidays .rx .rx-chip,
+body.regx--holidays .rx-total,
+body.regx--holidays .rx .gform_wrapper.gravity-theme .gfield--type-radio .gchoice label,
+body.regx--holidays .rx .gform_wrapper.gravity-theme .ginput_container_coupon input[type="button"] {
+	border-radius: 8px !important;
+}
+body.regx--holidays .rx-tip { border-left-color: var(--rx-sage); }
+body.regx--holidays .rx-tip-icon { color: #fcfffe; }
+body.regx--holidays .rx-progress-fill { background: linear-gradient(90deg, var(--rx-sage), #fcfffe); }
+
+/* the lettering floats gently instead of bobbing like a boat */
+body.regx--holidays .rx-art {
+	max-width: 280px;
+	filter: drop-shadow(0 16px 24px rgba(10, 30, 33, 0.35));
+}
+body.regx--holidays .rx-art img { animation: rxFloat 6s ease-in-out infinite; }
+body.regx--holidays .is-entering-fwd .rx-art img,
+body.regx--holidays .is-entering-back .rx-art img {
+	animation: rxPopIn 0.7s var(--rx-ease-pop) both, rxFloat 6s ease-in-out 0.7s infinite;
+}
+@keyframes rxFloat {
+	0%, 100% { transform: translateY(0); }
+	50%      { transform: translateY(-10px); }
+}
+body.regx--holidays .rx-welcome-logo { filter: drop-shadow(0 18px 30px rgba(10, 30, 33, 0.4)); }
+
+@media (max-width: 900px) {
+	body.regx--holidays .rx-bg::before { display: none; }
+}
+@media (max-width: 720px) {
+	body.regx--holidays .rx-art { max-width: 96px; }
+}
