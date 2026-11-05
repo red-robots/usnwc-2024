@@ -204,6 +204,32 @@
 		} ), FID );
 	}
 
+	// Config 'mirror' ({ duplicate: original }): a form that asks the same question twice (a copied
+	// field left in by mistake) gets asked once; the duplicate is parked and copies the answer.
+	function applyMirrors( map, fid ) {
+		Object.keys( map || {} ).forEach( function ( target ) {
+			var t = fieldEl( target, fid ), s = fieldEl( map[ target ], fid );
+			if ( ! t || ! s ) {
+				return;
+			}
+			t.classList.add( 'rx-controlled', 'rx-parked' );
+			t.setAttribute( 'inert', '' );
+			var tIn = t.querySelector( 'select, textarea, input:not([type="hidden"])' ),
+				sIn = s.querySelector( 'select, textarea, input:not([type="hidden"])' );
+			if ( ! tIn || ! sIn ) {
+				return;
+			}
+			var sync = function () {
+				if ( tIn.value !== sIn.value ) {
+					tIn.value = sIn.value;
+					$( tIn ).trigger( 'change' );
+				}
+			};
+			$( sIn ).on( 'change', sync );
+			sync();
+		} );
+	}
+
 	// Turn a container's GF fields into frames: configured ones first, then anything left over.
 	function collectFrames( container, cfgs, fid ) {
 		var nodes = Array.prototype.slice.call( container.querySelectorAll( '.gfield' ) ).filter( function ( n ) {
@@ -229,7 +255,7 @@
 		nodes.forEach( function ( n ) {
 			var id = fieldId( n ), t = fieldType( n );
 			// gform_hidden: hidden products (a flat registration fee) have nothing to ask but still count toward the total.
-			if ( claimed[ id ] || t === 'page' || t === 'hidden' || n.classList.contains( 'gfield_visibility_hidden' ) || n.classList.contains( 'gform_hidden' ) ) {
+			if ( claimed[ id ] || t === 'page' || t === 'hidden' || n.classList.contains( 'gfield_visibility_hidden' ) || n.classList.contains( 'gform_hidden' ) || n.classList.contains( 'rx-controlled' ) ) {
 				return;
 			}
 			if ( t === 'section' || t === 'total' ) {
@@ -1300,6 +1326,7 @@
 		var cfgs = ( N.frames || [] ).map( function ( cfg ) {
 			return $.extend( { fid: N.formId, nameField: N.nameField, nameFallback: N.nameFallback }, cfg );
 		} );
+		applyMirrors( N.mirror, N.formId );
 		NF.frames = collectFrames( form, cfgs, N.formId );
 		NF.frames.forEach( function ( f ) {
 			if ( f.cfg.widget && widgets[ f.cfg.widget ] && f.cfg.widget !== 'roster' && f.cfg.widget !== 'summary' ) {
@@ -1661,6 +1688,7 @@
 		}
 
 		findPage();
+		applyMirrors( C.mirror, FID );
 		buildFrames();
 		frames.forEach( function ( f ) {
 			if ( f.cfg.widget && widgets[ f.cfg.widget ] ) {

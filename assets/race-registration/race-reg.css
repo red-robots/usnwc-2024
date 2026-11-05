@@ -2497,3 +2497,113 @@ body.regx--frigid .rx-mart { width: 120px; }
 @media (max-width: 720px) {
 	body.regx--frigid .rx-art { max-width: 130px; }
 }
+
+/* ---------- theme: Dog Days of Winter (forest green, geometric dogs in mauve, sage and white; snow) ---------- */
+
+html:has(body.regx--dogdays),
+body.regx--dogdays {
+	background: #112b22;
+}
+body.regx--dogdays .rx {
+	--rx-bg: #112b22;
+	--rx-bg-2: #1a3a2f;
+	--rx-bg-rgb: 17, 43, 34;
+	--rx-panel: rgba(251, 252, 254, 0.06);
+	--rx-panel-2: rgba(251, 252, 254, 0.1);
+	--rx-mint: #9db1b2;
+	--rx-mint-rgb: 157, 177, 178;
+	--rx-mint-soft: rgba(157, 177, 178, 0.16);
+	--rx-orange: #8b575b;
+	--rx-orange-rgb: 139, 87, 91;
+	--rx-orange-deep: #7a4b4f;
+	--rx-orange-shade: #4a2c2f;
+	--rx-text: #fbfcfe;
+	--rx-muted: #aebfba;
+	--rx-danger: #f5b5ac;
+	--rx-radius: 12px;
+	--rx-font-head: 'Fredoka', 'Nunito', sans-serif;
+	--rx-font-body: 'Jost', 'Lato', sans-serif;
+}
+
+/* the art's faint contour lines, plus light snow */
+body.regx--dogdays .rx-bg { opacity: 1; color: #9db1b2; }
+body.regx--dogdays .rx-contours { opacity: 0.14; }
+body.regx--dogdays .rx-contours circle { display: none; }
+body.regx--dogdays .rx-bg::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-image:
+		radial-gradient(circle at 30% 20%, rgba(251, 252, 254, 0.9) 0 2px, transparent 2.6px),
+		radial-gradient(circle at 70% 60%, rgba(157, 177, 178, 0.8) 0 2.6px, transparent 3.2px),
+		radial-gradient(circle at 50% 85%, rgba(251, 252, 254, 0.6) 0 1.5px, transparent 2px);
+	background-size: 223px 241px, 167px 193px, 311px 283px;
+	opacity: 0.55;
+	animation: rxSnowDog 30s linear infinite;
+}
+@keyframes rxSnowDog {
+	to { background-position: 223px 241px, 0 386px, -311px 283px; }
+}
+
+body.regx--dogdays .rx .rx-h1,
+body.regx--dogdays .rx .rx-h2 {
+	font-weight: 700;
+	color: #fbfcfe;
+	letter-spacing: 0.01em;
+}
+body.regx--dogdays .rx .rx-h1 { font-size: clamp(2.6rem, 6.2vw, 4.4rem); line-height: 1; text-transform: uppercase; }
+body.regx--dogdays .rx .rx-h2 { font-size: clamp(1.9rem, 4.2vw, 2.9rem); line-height: 1.08; }
+body.regx--dogdays .rx .rx-lede { font-weight: 500; }
+body.regx--dogdays .rx-kicker,
+body.regx--dogdays .rx-ready-title {
+	font-family: var(--rx-font-body);
+	font-weight: 600;
+	font-size: 0.9rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--rx-mint);
+}
+
+body.regx--dogdays .rx .rx-btn {
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	border-radius: 12px;
+}
+body.regx--dogdays .rx .rx-chip,
+body.regx--dogdays .rx-total,
+body.regx--dogdays .rx .gform_wrapper.gravity-theme .gfield--type-radio .gchoice label,
+body.regx--dogdays .rx .gform_wrapper.gravity-theme .ginput_container_coupon input[type="button"] {
+	border-radius: 12px !important;
+}
+body.regx--dogdays .rx-card-price,
+body.regx--dogdays .rx-sum-total-val { color: #e6a9ae !important; } /* mauve, lifted for contrast on green */
+body.regx--dogdays .rx-tip { border-left-color: var(--rx-mint); }
+body.regx--dogdays .rx-tip-icon { color: var(--rx-mint); }
+body.regx--dogdays .rx-person-num { background: var(--rx-orange); color: #fbfcfe; }
+
+/* the dogs run in from the left, then keep bounding */
+body.regx--dogdays .rx-art { max-width: 300px; filter: none; }
+body.regx--dogdays .rx-art img,
+body.regx--dogdays .rx-mart { animation: rxBound 0.7s ease-in-out infinite; }
+body.regx--dogdays .is-entering-fwd .rx-art img,
+body.regx--dogdays .is-entering-back .rx-art img {
+	animation: rxRunIn 0.8s var(--rx-ease-out) both, rxBound 0.7s ease-in-out 0.8s infinite;
+}
+@keyframes rxBound {
+	0%, 100% { transform: translateY(0) rotate(0); }
+	50%      { transform: translateY(-9px) rotate(-3deg); }
+}
+@keyframes rxRunIn {
+	from { opacity: 0; transform: translateX(-140px); }
+	to   { opacity: 1; transform: translateX(0); }
+}
+body.regx--dogdays .rx-mart { width: 120px; }
+body.regx--dogdays .rx-welcome-logo { filter: none; }
+
+@media (prefers-reduced-motion: reduce) {
+	body.regx--dogdays .rx-art img,
+	body.regx--dogdays .rx-mart { animation: none; }
+}
+@media (max-width: 720px) {
+	body.regx--dogdays .rx-art { max-width: 120px; }
+}
