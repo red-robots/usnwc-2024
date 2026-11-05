@@ -12,6 +12,11 @@
  * display:none product field as not selected and drops it from the total.
  *
  * Config comes from window.RWRegx (inc/race-registration/form-{ID}.php).
+ *
+ * Forms that collect people through a GP Nested Forms field (config 'nested')
+ * get a roster screen instead of GPNF's table, and GPNF's modal becomes a
+ * full-screen, one-question-at-a-time flow of the child form. GPNF still opens,
+ * submits, edits and deletes the child entries; we only drive its buttons.
  */
 ( function ( $ ) {
 	'use strict';
@@ -66,8 +71,8 @@
 		del: function ( k ) { try { window.sessionStorage.removeItem( KEY + k ); } catch ( e ) {} }
 	};
 
-	function fieldEl( id ) {
-		return document.getElementById( 'field_' + FID + '_' + id );
+	function fieldEl( id, fid ) {
+		return document.getElementById( 'field_' + ( fid || FID ) + '_' + id );
 	}
 
 	function fieldId( node ) {
@@ -140,15 +145,19 @@
 		if ( ! text || text.indexOf( '{name}' ) === -1 ) {
 			return text || '';
 		}
-		var n = cfg.nameField ? fieldEl( cfg.nameField ) : null,
+		var n = cfg.nameField ? fieldEl( cfg.nameField, cfg.fid ) : null,
 			first = n ? n.querySelector( 'input[type="text"]' ) : null,
 			name = first ? first.value.trim() : '';
-		return text.replace( /\{name\}/g, name || 'this runner' );
+		return text.replace( /\{name\}/g, name || cfg.nameFallback || 'this runner' );
 	}
 
 	function frameAt( offset ) {
-		for ( var i = idx + offset; i >= 0 && i < frames.length; i += offset ) {
-			if ( frameVisible( frames[ i ] ) ) {
+		return stepFrom( frames, idx, offset );
+	}
+
+	function stepFrom( list, from, offset ) {
+		for ( var i = from + offset; i >= 0 && i < list.length; i += offset ) {
+			if ( frameVisible( list[ i ] ) ) {
 				return i;
 			}
 		}
@@ -185,20 +194,23 @@
 	}
 
 	function buildFrames() {
-		var nodes = Array.prototype.slice.call( pageEl.querySelectorAll( '.gfield' ) ).filter( function ( n ) {
+		frames = collectFrames( pageEl, ( C.frames || [] ).filter( function ( cfg ) {
+			return ( cfg.page || 1 ) === page;
+		} ), FID );
+	}
+
+	// Turn a container's GF fields into frames: configured ones first, then anything left over.
+	function collectFrames( container, cfgs, fid ) {
+		var nodes = Array.prototype.slice.call( container.querySelectorAll( '.gfield' ) ).filter( function ( n ) {
 			return fieldId( n ) !== null;
 		} );
-		var claimed = {};
+		var claimed = {}, frames = [];
 
-		frames = [];
-		( C.frames || [] ).forEach( function ( cfg ) {
-			if ( ( cfg.page || 1 ) !== page ) {
-				return;
-			}
+		cfgs.forEach( function ( cfg ) {
 			var fields = [];
 			( cfg.fields || [] ).forEach( function ( id ) {
-				var n = fieldEl( id );
-				if ( n && pageEl.contains( n ) ) {
+				var n = fieldEl( id, fid );
+				if ( n && container.contains( n ) ) {
 					fields.push( n );
 					claimed[ id ] = true;
 				}
@@ -239,6 +251,7 @@
 			n.classList.add( 'rx-parked' );
 			n.setAttribute( 'inert', '' );
 		} );
+		return frames;
 	}
 
 	// ---------- custom controls ----------
@@ -480,15 +493,155 @@
 			f.onEnter = function () {
 				el.widget.innerHTML = summaryHtml( f.cfg );
 			};
+		},
+
+		// The people added through a GP Nested Forms field, as cards with Edit / Remove, plus an Add button.
+		roster: function ( f ) {
+			var field = N ? fieldEl( N.field ) : null;
+			if ( ! field ) {
+				return;
+			}
+			field.classList.add( 'rx-has-widget', 'rx-nested' );
+			( N.controlled || [] ).forEach( function ( id ) {
+				var n = fieldEl( id );
+				if ( n ) {
+					n.classList.add( 'rx-controlled' );
+				}
+			} );
+
+			var wrap = document.createElement( 'div' ), confirming = null;
+			wrap.className = 'rx-roster';
+			wrap.setAttribute( 'aria-live', 'polite' );
+			field.appendChild( wrap );
+
+			function render() {
+				var list = nestedEntries(), inst = nestedInst(),
+					maxed = inst && inst.viewModel && inst.viewModel.isMaxed && inst.viewModel.isMaxed();
+				var cards = list.map( function ( e, i ) {
+					var who = entryText( e, N.nameField ) || ( cap( N.singular ) + ' ' + ( i + 1 ) ),
+						what = N.productField ? productName( entryText( e, N.productField ) ) : '',
+						price = toNumber( e.total ),
+						asking = confirming === String( e.id );
+					return '<div class="rx-person' + ( asking ? ' is-confirming' : '' ) + '" data-id="' + esc( e.id ) + '">' +
+						'<span class="rx-person-num" aria-hidden="true">' + ( i + 1 ) + '</span>' +
+						'<span class="rx-person-main"><strong>' + esc( who ) + '</strong>' +
+						'<span>' + esc( [ what, price ? niceMoney( price ) : '' ].filter( Boolean ).join( ' · ' ) ) + '</span></span>' +
+						( asking ?
+							'<span class="rx-person-acts"><span class="rx-person-ask">Remove ' + esc( who.split( ' ' )[0] ) + '?</span>' +
+							'<button type="button" class="rx-link is-danger" data-act="remove-yes">Remove</button>' +
+							'<button type="button" class="rx-link" data-act="remove-no">Keep</button></span>' :
+							'<span class="rx-person-acts">' +
+							'<button type="button" class="rx-link" data-act="edit" aria-label="Edit ' + esc( who ) + '">Edit</button>' +
+							'<button type="button" class="rx-link" data-act="remove" aria-label="Remove ' + esc( who ) + '">Remove</button></span>' ) +
+						'</div>';
+				} ).join( '' );
+				var addLabel = list.length ? ( N.addAnother || 'Add another ' + N.singular ) : ( N.addFirst || 'Add a ' + N.singular );
+				wrap.innerHTML = ( cards ? '<div class="rx-people">' + cards + '</div>' : '' ) +
+					( maxed ? '<p class="rx-roster-max">That’s the most you can register at once.</p>' :
+						'<button type="button" class="rx-add' + ( list.length ? '' : ' is-first' ) + '" data-act="add">' +
+						'<span class="rx-add-plus" aria-hidden="true">+</span> ' + esc( addLabel ) + '</button>' );
+			}
+
+			wrap.addEventListener( 'click', function ( e ) {
+				var b = e.target.closest( '[data-act]' ), inst = nestedInst();
+				if ( ! b || ! inst ) {
+					return;
+				}
+				var card = b.closest( '.rx-person' ), id = card ? card.dataset.id : null,
+					entry = id ? nestedEntries().filter( function ( x ) { return String( x.id ) === id; } )[0] : null;
+				clearFrameError();
+				switch ( b.dataset.act ) {
+					case 'add':
+						NF.editN = 0;
+						var add = field.querySelector( '.gpnf-add-entry' );
+						if ( add ) {
+							add.click();
+						}
+						break;
+					case 'edit':
+						NF.editN = nestedEntries().indexOf( entry ) + 1;
+						inst.editEntry( id, $( b ) );
+						break;
+					case 'remove':
+						confirming = id;
+						render();
+						break;
+					case 'remove-no':
+						confirming = null;
+						render();
+						break;
+					case 'remove-yes':
+						confirming = null;
+						if ( entry ) {
+							inst.deleteEntry( entry, $( b ) );
+						}
+						break;
+				}
+			} );
+
+			whenNested( function ( inst ) {
+				inst.viewModel.entries.subscribe( function () {
+					render();
+					recalc();
+				} );
+				render();
+			} );
+			render();
+
+			f.check = function () {
+				return nestedEntries().length >= ( N.min || 1 ) ? '' : ( N.minMessage || 'Add at least one ' + N.singular + ' to keep going.' );
+			};
 		}
 	};
 
 	// Plain option chips are the time chips without the day grouping.
 	widgets.chips = widgets.slots;
 
-	// "Half Marathon - $75" -> "Half Marathon"
+	// "Half Marathon - $75" or GPNF's "10k ($55.00)" -> "Half Marathon" / "10k"
 	function productName( text ) {
-		return String( text ).replace( /\s*[-\u2013\u2014:]\s*\$[\d.,]+\s*$/, '' );
+		return String( text ).replace( /\s*(?:[-\u2013\u2014:]\s*\$[\d.,]+|\(\s*\$[\d.,]+\s*\))\s*$/, '' );
+	}
+
+	function cap( s ) {
+		s = String( s || '' );
+		return s.charAt( 0 ).toUpperCase() + s.slice( 1 );
+	}
+
+	// ---------- GP Nested Forms ----------
+
+	var N = C.nested || null;
+
+	function nestedInst() {
+		return N ? window[ 'GPNestedForms_' + FID + '_' + N.field ] || null : null;
+	}
+
+	function nestedEntries() {
+		var inst = nestedInst();
+		return inst && inst.viewModel && inst.viewModel.entries ? inst.viewModel.entries() : [];
+	}
+
+	// An entry's display text for a child field (GPNF labels can hold HTML, e.g. mailto links).
+	function entryText( entry, id ) {
+		var v = entry ? entry[ id ] : null;
+		if ( ! v || v.label == null ) {
+			return '';
+		}
+		var d = document.createElement( 'div' );
+		d.innerHTML = String( v.label );
+		return d.textContent.trim();
+	}
+
+	// GPNF builds its instance after the form renders; wait for it (up to ~6s).
+	function whenNested( cb ) {
+		var tries = 0;
+		( function poll() {
+			var inst = nestedInst();
+			if ( inst && inst.viewModel && inst.viewModel.entries ) {
+				cb( inst );
+			} else if ( tries++ < 60 ) {
+				setTimeout( poll, 100 );
+			}
+		} )();
 	}
 
 	function readField( id ) {
@@ -523,15 +676,26 @@
 			}
 		} );
 		// Which frame each field belongs to, for 'needs' (skipped runners) and 'nameField' (whose item it is).
-		var owner = {};
+		var owner = {}, skip = {};
 		( C.frames || [] ).forEach( function ( cfg ) {
 			( cfg.fields || [] ).forEach( function ( id ) {
 				owner[ id ] = cfg;
 			} );
 		} );
+		// Nested entries are listed one line per person; the parent's subtotal product would double them.
+		if ( N ) {
+			( N.controlled || [] ).forEach( function ( id ) {
+				skip[ id ] = true;
+			} );
+			nestedEntries().forEach( function ( e, i ) {
+				var who = entryText( e, N.nameField ) || ( cap( N.singular ) + ' ' + ( i + 1 ) ),
+					what = N.productField ? productName( entryText( e, N.productField ) ) : '';
+				items.push( { label: what ? who + ' · ' + what : who, qty: 1, price: toNumber( e.total ) } );
+			} );
+		}
 		form.querySelectorAll( '.gfield--type-product' ).forEach( function ( n ) {
 			var id = fieldId( n ), cfg = owner[ id ] || {};
-			if ( ! isShown( n ) || ! counts( cfg ) ) {
+			if ( skip[ id ] || ! isShown( n ) || ! counts( cfg ) ) {
 				return;
 			}
 			var who = cfg.nameField ? readField( cfg.nameField ) : '',
@@ -583,9 +747,10 @@
 
 	var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-	function validateFrame( f ) {
+	// box: where frame-level messages go (the page's error area, or the nested modal's).
+	function validateFrame( f, box ) {
 		var firstBad = null;
-		clearFrameError();
+		clearFrameError( box );
 		f.fields.forEach( function ( n ) {
 			if ( ! isShown( n ) || n.classList.contains( 'rx-controlled' ) ) {
 				return;
@@ -599,7 +764,12 @@
 			}
 		} );
 		if ( ! firstBad && f.wantsShirts && f.wantsShirts() && f.shirtCount() === 0 ) {
-			showFrameError( 'Add at least one shirt, or choose No.' );
+			showFrameError( 'Add at least one shirt, or choose No.', box );
+			return false;
+		}
+		var custom = ! firstBad && f.check ? f.check() : '';
+		if ( custom ) {
+			showFrameError( custom, box );
 			return false;
 		}
 		if ( firstBad ) {
@@ -683,17 +853,19 @@
 		}
 	}
 
-	function showFrameError( msg ) {
-		el.error.textContent = msg;
-		el.error.hidden = false;
-		el.error.classList.remove( 'rx-shake' );
-		void el.error.offsetWidth;
-		el.error.classList.add( 'rx-shake' );
+	function showFrameError( msg, box ) {
+		box = box || el.error;
+		box.textContent = msg;
+		box.hidden = false;
+		box.classList.remove( 'rx-shake' );
+		void box.offsetWidth;
+		box.classList.add( 'rx-shake' );
 	}
 
-	function clearFrameError() {
-		el.error.hidden = true;
-		el.error.textContent = '';
+	function clearFrameError( box ) {
+		box = box || el.error;
+		box.hidden = true;
+		box.textContent = '';
 	}
 
 	// ---------- rendering ----------
@@ -981,6 +1153,337 @@
 		}
 	}
 
+	// ---------- GP Nested Forms modal: the child form, one question at a time ----------
+	//
+	// GPNF builds the modal (Tingle) once and swaps the child form's HTML in on every open; a
+	// server-side validation error re-renders just the form inside it. So the flow is rebuilt
+	// for every new <form> element, and our head/nav live beside the form so they survive.
+
+	var NF = { modal: null, form: null, frames: [], idx: 0, editN: 0, ui: null, timer: null };
+
+	function nestedModal() {
+		return N ? document.querySelector( '.gpnf-modal-' + FID + '-' + N.field ) : null;
+	}
+
+	function nfShell( modal ) {
+		var box = modal.querySelector( '.tingle-modal-box__content' );
+		if ( ! box ) {
+			return null;
+		}
+		var ui = NF.ui && box.contains( NF.ui.head ) ? NF.ui : null;
+		if ( ui ) {
+			return ui;
+		}
+		var head = document.createElement( 'div' );
+		head.className = 'rx-mtop';
+		head.innerHTML =
+			'<div class="rx-mbar"><span class="rx-mstep"></span><span class="rx-mprogress" aria-hidden="true"><span></span></span></div>' +
+			( N.art ? '<img class="rx-mart" alt="" src="' + esc( assetUrl( N.art ) ) + '">' : '' ) +
+			'<div class="rx-head" tabindex="-1"><div class="rx-kicker"></div><h2 class="rx-h2"></h2><p class="rx-lede"></p></div>';
+		var foot = document.createElement( 'div' );
+		foot.className = 'rx-mfoot';
+		foot.innerHTML =
+			'<div class="rx-tip" hidden><svg class="rx-tip-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-4.9 12 6.9 6.9 0 0 1 1.6 2.6l.1.4h6.4l.1-.4a6.9 6.9 0 0 1 1.6-2.6A7 7 0 0 0 12 2zm-2.5 17a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-.5h-5v.5zm1.5 3a1.5 1.5 0 0 0 2 0 1.6 1.6 0 0 0 .4-1h-2.8c0 .4.1.7.4 1z"/></svg><div class="rx-tip-body"></div></div>' +
+			'<div class="rx-error" role="alert" hidden></div>' +
+			'<div class="rx-nav rx-mnav">' +
+			'<button type="button" class="rx-back">&larr; Back</button>' +
+			'<button type="button" class="rx-link rx-msave" hidden>Save changes</button>' +
+			'<button type="button" class="rx-btn"><span class="rx-next-label">Continue</span> <span class="rx-arrow" aria-hidden="true">&rarr;</span></button>' +
+			'</div>';
+		box.insertBefore( head, box.firstChild );
+		box.appendChild( foot );
+
+		ui = {
+			head: head,
+			foot: foot,
+			step: head.querySelector( '.rx-mstep' ),
+			bar: head.querySelector( '.rx-mprogress > span' ),
+			focus: head.querySelector( '.rx-head' ),
+			kicker: head.querySelector( '.rx-kicker' ),
+			title: head.querySelector( '.rx-h2' ),
+			lede: head.querySelector( '.rx-lede' ),
+			tip: foot.querySelector( '.rx-tip' ),
+			tipBody: foot.querySelector( '.rx-tip-body' ),
+			error: foot.querySelector( '.rx-error' ),
+			back: foot.querySelector( '.rx-back' ),
+			save: foot.querySelector( '.rx-msave' ),
+			next: foot.querySelector( '.rx-btn' ),
+			nextLabel: foot.querySelector( '.rx-next-label' )
+		};
+		ui.next.addEventListener( 'click', nfNext );
+		ui.back.addEventListener( 'click', nfBack );
+		ui.save.addEventListener( 'click', nfSaveNow );
+		NF.ui = ui;
+		return ui;
+	}
+
+	function nfEditing() {
+		var inst = nestedInst();
+		return !! inst && typeof inst.getMode === 'function' && inst.getMode() === 'edit';
+	}
+
+	function nfInit() {
+		var modal = nestedModal();
+		if ( ! modal ) {
+			return;
+		}
+		// Inside #rx so the form styles and the parked-field rules apply to the child form too.
+		if ( modal.parentNode !== root ) {
+			root.appendChild( modal );
+		}
+		modal.classList.add( 'rx-modal' );
+		var form = modal.querySelector( '#gform_' + N.formId );
+		if ( ! form || form === NF.form || ! modal.classList.contains( 'tingle-modal--visible' ) ) {
+			return;
+		}
+		var rerender = !! NF.form && !! NF.ui && modal.contains( NF.ui.head );
+		NF.modal = modal;
+		NF.form = form;
+		nfLoading( false );
+
+		var ui = nfShell( modal );
+		if ( ! ui ) {
+			return;
+		}
+		var cfgs = ( N.frames || [] ).map( function ( cfg ) {
+			return $.extend( { fid: N.formId, nameField: N.nameField, nameFallback: N.nameFallback }, cfg );
+		} );
+		NF.frames = collectFrames( form, cfgs, N.formId );
+		NF.frames.forEach( function ( f ) {
+			if ( f.cfg.widget && widgets[ f.cfg.widget ] && f.cfg.widget !== 'roster' && f.cfg.widget !== 'summary' ) {
+				widgets[ f.cfg.widget ]( f );
+			}
+		} );
+
+		form.addEventListener( 'keydown', function ( e ) {
+			if ( e.key !== 'Enter' || e.isComposing ) {
+				return;
+			}
+			var t = e.target;
+			if ( t.tagName === 'TEXTAREA' || t.tagName === 'BUTTON' || t.type === 'submit' || t.type === 'button' ) {
+				return;
+			}
+			e.preventDefault();
+			e.stopPropagation();
+			nfNext();
+		}, true );
+		form.addEventListener( 'input', function ( e ) {
+			var n = e.target.closest( '.gfield' );
+			if ( n && n.classList.contains( 'rx-invalid' ) ) {
+				clearFieldError( n );
+			}
+		} );
+		form.addEventListener( 'change', function ( e ) {
+			var n = e.target.closest( '.gfield' );
+			if ( n && n.classList.contains( 'rx-invalid' ) && ! fieldProblem( n ) ) {
+				clearFieldError( n );
+			}
+		} );
+
+		// Land on the first screen, or on the first field GF rejected after a submit.
+		var land = 0;
+		if ( rerender ) {
+			NF.frames.some( function ( f, i ) {
+				if ( f.fields.some( function ( n ) { return n.classList.contains( 'gfield_error' ); } ) ) {
+					land = i;
+					return true;
+				}
+				return false;
+			} );
+		}
+		NF.idx = Math.max( 0, stepFrom( NF.frames, -1, 1 ) );
+		if ( land ) {
+			NF.idx = land;
+		}
+		nfPaint( 1 );
+		if ( rerender ) {
+			var gfMsg = form.querySelector( '.gform_validation_errors' );
+			if ( gfMsg && ! NF.frames[ NF.idx ].fields.some( function ( n ) { return n.querySelector( '.validation_message' ); } ) ) {
+				showFrameError( gfMsg.textContent.trim(), ui.error );
+			}
+		}
+	}
+
+	function nfPaint( dir ) {
+		var ui = NF.ui, f = NF.frames[ NF.idx ];
+		if ( ! ui || ! f ) {
+			return;
+		}
+		var cfg = f.cfg, editing = nfEditing(),
+			n = editing ? ( NF.editN || 1 ) : nestedEntries().length + 1;
+
+		NF.frames.forEach( function ( other ) {
+			if ( other !== f ) {
+				other.fields.forEach( function ( x ) {
+					x.classList.add( 'rx-parked' );
+					x.setAttribute( 'inert', '' );
+				} );
+			}
+		} );
+		f.fields.forEach( function ( x ) {
+			if ( ! x.classList.contains( 'rx-controlled' ) ) {
+				x.classList.remove( 'rx-parked' );
+				x.removeAttribute( 'inert' );
+			}
+		} );
+
+		var who = cap( N.singular ) + ' ' + n;
+		ui.kicker.textContent = ( cfg.kicker || '{who}' ).replace( /\{who\}/g, editing ? 'Editing ' + who.toLowerCase() : who );
+		ui.title.textContent = fill( cfg.title, cfg );
+		ui.lede.textContent = fill( cfg.lede, cfg );
+		ui.lede.hidden = ! cfg.lede;
+		ui.tip.hidden = ! cfg.tip;
+		ui.tipBody.innerHTML = cfg.tip || '';
+		clearFrameError( ui.error );
+
+		var shown = NF.frames.filter( frameVisible ), pos = shown.indexOf( f );
+		ui.step.textContent = 'Step ' + ( pos + 1 ) + ' of ' + shown.length;
+		ui.bar.style.width = Math.max( 4, Math.round( ( pos + 1 ) / shown.length * 100 ) ) + '%';
+
+		var last = stepFrom( NF.frames, NF.idx, 1 ) === -1;
+		ui.nextLabel.textContent = last ? ( editing ? ( N.saveLabel || 'Save changes' ) : ( N.addLabel || 'Add ' + N.singular ) ) : 'Continue';
+		ui.next.classList.toggle( 'is-submit', last );
+		ui.back.innerHTML = stepFrom( NF.frames, NF.idx, -1 ) === -1 ? 'Cancel' : '&larr; Back';
+		ui.save.hidden = ! editing || last;
+
+		NF.modal.classList.toggle( 'rx-solo', !! cfg.solo );
+		NF.modal.classList.toggle( 'rx-hide-desc', !! cfg.hideDesc );
+
+		var box = NF.modal.querySelector( '.tingle-modal-box' );
+		if ( box && ! reduceMotion ) {
+			box.classList.remove( 'is-entering-fwd', 'is-entering-back' );
+			void box.offsetWidth;
+			box.classList.add( dir < 0 ? 'is-entering-back' : 'is-entering-fwd' );
+		}
+		NF.modal.scrollTop = 0;
+		setTimeout( function () {
+			var first = null;
+			f.fields.some( function ( x ) {
+				if ( ! isShown( x ) || x.classList.contains( 'rx-controlled' ) ) {
+					return false;
+				}
+				var i = x.querySelector( 'input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea' );
+				if ( i && ! i.value ) {
+					first = i;
+				}
+				return true;
+			} );
+			if ( first && window.matchMedia( '(min-width: 721px)' ).matches ) {
+				first.focus( { preventScroll: true } );
+			} else {
+				ui.focus.focus( { preventScroll: true } );
+			}
+		}, reduceMotion ? 0 : 320 );
+	}
+
+	function nfLoading( on ) {
+		if ( ! NF.ui ) {
+			return;
+		}
+		NF.ui.next.classList.toggle( 'is-loading', on );
+		NF.ui.next.disabled = on;
+		NF.ui.back.disabled = on;
+		NF.ui.save.disabled = on;
+		clearTimeout( NF.timer );
+		if ( on ) {
+			// Nothing came back (network trouble): hand the buttons back.
+			NF.timer = setTimeout( function () { nfLoading( false ); }, 15000 );
+		}
+	}
+
+	function nfSubmit() {
+		var btn = NF.modal && NF.modal.querySelector( '.tingle-modal-box__footer .gpnf-btn-submit, .tingle-modal-box__footer .gpnf-btn-next' );
+		if ( ! btn ) {
+			return;
+		}
+		nfLoading( true );
+		btn.click(); // GPNF submits the child form; success closes the modal, an error re-renders it
+	}
+
+	function nfNext() {
+		var f = NF.frames[ NF.idx ];
+		if ( ! f || NF.ui.next.disabled || ! validateFrame( f, NF.ui.error ) ) {
+			return;
+		}
+		var j = stepFrom( NF.frames, NF.idx, 1 );
+		if ( j !== -1 ) {
+			NF.idx = j;
+			nfPaint( 1 );
+			return;
+		}
+		nfSubmit();
+	}
+
+	// Editing: check every screen, jump to the first one that needs attention, or save straight away.
+	function nfSaveNow() {
+		for ( var i = 0; i < NF.frames.length; i++ ) {
+			var f = NF.frames[ i ];
+			if ( frameVisible( f ) && f.fields.some( function ( n ) { return isShown( n ) && ! n.classList.contains( 'rx-controlled' ) && fieldProblem( n ); } ) ) {
+				NF.idx = i;
+				nfPaint( 1 );
+				validateFrame( f, NF.ui.error );
+				return;
+			}
+		}
+		nfSubmit();
+	}
+
+	function nfBack() {
+		var j = stepFrom( NF.frames, NF.idx, -1 );
+		if ( j !== -1 ) {
+			NF.idx = j;
+			nfPaint( -1 );
+			return;
+		}
+		var cancel = NF.modal && NF.modal.querySelector( '.tingle-modal-box__footer .gpnf-btn-cancel' );
+		if ( ! cancel ) {
+			return;
+		}
+		cancel.click();
+		// GPNF asks "Are you sure?" on its own button when the form has changes; show the same here.
+		setTimeout( function () {
+			if ( NF.ui && cancel.classList.contains( 'tingle-btn--danger' ) ) {
+				NF.ui.back.textContent = cancel.textContent;
+				NF.ui.back.classList.add( 'is-danger' );
+				setTimeout( function () {
+					if ( NF.ui ) {
+						NF.ui.back.textContent = 'Cancel';
+						NF.ui.back.classList.remove( 'is-danger' );
+					}
+				}, 3000 );
+			}
+		}, 0 );
+	}
+
+	function nfWire() {
+		if ( ! N ) {
+			return;
+		}
+		var later = function () { setTimeout( nfInit, 0 ); };
+		$( document ).on( 'gform_post_render gpnf_post_render', function ( e, formId ) {
+			if ( parseInt( formId, 10 ) === parseInt( N.formId, 10 ) ) {
+				later();
+			}
+		} );
+		if ( window.gform && typeof window.gform.addAction === 'function' ) {
+			window.gform.addAction( 'gpnf_modal_opened', later );
+			window.gform.addAction( 'gpnf_modal_closed', function () {
+				NF.form = null;
+				NF.ui = null;
+				NF.editN = 0;
+				clearTimeout( NF.timer );
+			} );
+		}
+		// The modal is built at page load; move it into #rx right away so it never flashes unstyled.
+		whenNested( function () {
+			var m = nestedModal();
+			if ( m && m.parentNode !== root ) {
+				m.classList.add( 'rx-modal' );
+				root.appendChild( m );
+			}
+		} );
+	}
+
 	// ---------- boot ----------
 
 	function wire() {
@@ -1087,6 +1590,7 @@
 			}
 		} );
 		wire();
+		nfWire();
 		readTotalField();
 		root.dataset.state = 'ready';
 

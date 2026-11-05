@@ -555,7 +555,10 @@ body.regx .site-content {
 }
 .rx.rx-solo .gfield:not(.gfield--type-checkbox):not(.gfield--type-consent) > .gfield_label,
 .rx.rx-solo .gfield:not(.gfield--type-checkbox):not(.gfield--type-consent) > legend.gfield_label,
-.rx.rx-hide-desc .gfield > .gfield_description {
+.rx.rx-hide-desc .gfield > .gfield_description,
+.rx .rx-modal.rx-solo .gfield:not(.gfield--type-checkbox):not(.gfield--type-consent) > .gfield_label,
+.rx .rx-modal.rx-solo .gfield:not(.gfield--type-checkbox):not(.gfield--type-consent) > legend.gfield_label,
+.rx .rx-modal.rx-hide-desc .gfield > .gfield_description {
 	position: absolute !important;
 	width: 1px;
 	height: 1px;
@@ -1158,6 +1161,257 @@ body.regx .site-content {
 	cursor: pointer;
 }
 
+/* ---------- nested forms: roster ---------- */
+
+/* GPNF's table and buttons sit inside the field; the roster stands in for them (the field itself stays display:block). */
+.rx .rx-nested > .gfield_label,
+.rx .rx-nested > legend.gfield_label {
+	display: none !important;
+}
+.rx-roster {
+	display: grid;
+	gap: 14px;
+}
+.rx-people {
+	display: grid;
+	gap: 10px;
+}
+.rx-person {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr) auto;
+	align-items: center;
+	gap: 16px;
+	padding: 14px 18px;
+	border-radius: var(--rx-radius);
+	background: var(--rx-panel);
+	border: 2px solid rgba(var(--rx-mint-rgb), 0.28);
+	animation: rxPopIn 0.45s var(--rx-ease-pop) both;
+}
+.rx-person.is-confirming { border-color: rgba(255, 155, 135, 0.6); }
+.rx-person-num {
+	display: grid;
+	place-items: center;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	font-family: var(--rx-font-head);
+	font-size: 1.1rem;
+	background: var(--rx-mint);
+	color: var(--rx-bg);
+}
+.rx-person-main {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+}
+.rx-person-main strong {
+	font-size: 1.12rem;
+	font-weight: 700;
+	color: var(--rx-text);
+	overflow-wrap: anywhere;
+}
+.rx-person-main span {
+	font-size: 0.95rem;
+	font-weight: 600;
+	color: var(--rx-muted);
+}
+.rx-person-acts {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 4px 14px;
+}
+.rx-person-ask {
+	font-weight: 700;
+	color: var(--rx-danger);
+}
+.rx .rx-link {
+	font-family: var(--rx-font-body);
+	font-size: 0.95rem;
+	font-weight: 700;
+	color: var(--rx-mint);
+	background: none;
+	border: 0;
+	padding: 6px 2px;
+	cursor: pointer;
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 3px;
+}
+.rx .rx-link:hover { color: var(--rx-text); }
+.rx .rx-link.is-danger,
+.rx .rx-back.is-danger { color: var(--rx-danger); }
+.rx .rx-link:focus-visible { outline: 3px solid var(--rx-mint); outline-offset: 2px; border-radius: 4px; }
+.rx .rx-add {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	width: 100%;
+	padding: 18px 20px;
+	font-family: var(--rx-font-head);
+	font-size: 1.15rem;
+	color: var(--rx-mint);
+	background: transparent;
+	border: 2px dashed rgba(var(--rx-mint-rgb), 0.55);
+	border-radius: var(--rx-radius);
+	cursor: pointer;
+	transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+.rx .rx-add:hover {
+	background: var(--rx-mint-soft);
+	border-style: solid;
+	transform: translateY(-2px);
+}
+.rx .rx-add:focus-visible { outline: 3px solid var(--rx-mint); outline-offset: 3px; }
+.rx .rx-add.is-first {
+	padding: 30px 20px;
+	font-size: 1.3rem;
+}
+.rx-add-plus {
+	display: grid;
+	place-items: center;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	font-size: 1.35rem;
+	line-height: 1;
+	background: var(--rx-mint);
+	color: var(--rx-bg);
+}
+.rx-roster-max {
+	margin: 0;
+	font-weight: 600;
+	color: var(--rx-muted);
+}
+
+/* ---------- nested forms: the child form as a full-screen flow ---------- */
+
+.rx .gpnf-modal.rx-modal {
+	z-index: 1000;
+	padding: 0 !important;
+	overflow-y: auto !important;
+	cursor: default;
+	background: radial-gradient(120% 90% at 50% 0%, var(--rx-bg-2) 0%, var(--rx-bg) 60%) !important;
+}
+.rx .rx-modal .tingle-modal-box {
+	width: 100% !important;
+	max-width: 680px !important;
+	margin: 0 auto !important;
+	padding: 84px clamp(16px, 4vw, 40px) 72px !important;
+	color: var(--rx-text);
+	background: transparent !important;
+	border-radius: 0 !important;
+	box-shadow: none !important;
+	/* any transform (or Tingle's will-change / scale-in animation) here would trap the fixed mobile nav inside the box */
+	transform: none !important;
+	will-change: auto !important;
+	animation: none !important;
+}
+.rx .rx-modal .tingle-modal-box__content {
+	padding: 0 !important;
+	color: inherit;
+	background: none !important;
+}
+.rx .rx-modal .gpnf-modal-header { display: none !important; }
+/* GPNF's footer buttons are what the flow clicks: off-screen, never display:none. */
+.rx .rx-modal .tingle-modal-box__footer {
+	position: absolute !important;
+	left: -10000px !important;
+	top: 0 !important;
+	width: 1px !important;
+	height: 1px !important;
+	overflow: hidden !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+}
+.rx .rx-modal .tingle-modal__close {
+	position: fixed;
+	top: 18px;
+	right: clamp(14px, 3vw, 28px);
+	left: auto !important;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	width: auto !important;
+	height: auto !important;
+	padding: 9px 14px;
+	color: var(--rx-muted);
+	background: var(--rx-panel-2);
+	border: 0;
+	border-radius: 999px;
+	cursor: pointer;
+}
+.rx .rx-modal .tingle-modal__close:hover { color: var(--rx-text); }
+.rx .rx-modal .tingle-modal__closeIcon {
+	display: block;
+	width: 12px;
+	height: 12px;
+	margin: 0;
+	font-size: 0;
+}
+.rx .rx-modal .tingle-modal__closeIcon svg { width: 12px; height: 12px; }
+.rx .rx-modal .tingle-modal__closeIcon svg path { fill: currentColor; }
+.rx .rx-modal .tingle-modal__closeLabel {
+	display: inline;
+	font-family: var(--rx-font-body);
+	font-size: 0.9rem;
+	font-weight: 700;
+	color: inherit;
+}
+.rx .rx-modal .gform_wrapper {
+	margin: 0 !important;
+	padding: 0 !important;
+	max-width: none !important;
+	background: none !important;
+}
+.rx .rx-modal .gfspinner { display: none; }
+.rx-mtop { margin-bottom: 6px; }
+.rx-mbar {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	margin-bottom: 22px;
+	font-size: 0.9rem;
+	font-weight: 700;
+	color: var(--rx-muted);
+}
+.rx-mprogress {
+	flex: 1 1 auto;
+	max-width: 220px;
+	height: 6px;
+	border-radius: 999px;
+	background: var(--rx-panel-2);
+	overflow: hidden;
+}
+.rx-mprogress > span {
+	display: block;
+	height: 100%;
+	border-radius: inherit;
+	background: var(--rx-mint);
+	transition: width 0.4s var(--rx-ease-out);
+}
+.rx-mart {
+	display: block;
+	width: 76px;
+	height: auto;
+	margin: 0 0 10px;
+}
+.rx .rx-mnav .rx-msave { margin-left: auto; }
+.rx .rx-modal .is-entering-fwd .gform_wrapper,
+.rx .rx-modal .is-entering-back .gform_wrapper {
+	animation: rxPopIn 0.55s var(--rx-ease-pop) 0.2s backwards;
+}
+
+@media (max-width: 720px) {
+	.rx .rx-modal .tingle-modal-box { padding: 70px 16px 140px !important; }
+	.rx .rx-modal .tingle-modal__closeLabel { display: none; }
+	.rx .rx-person { grid-template-columns: auto minmax(0, 1fr); }
+	.rx .rx-person-acts { grid-column: 1 / -1; justify-content: flex-start; padding-left: 54px; }
+}
+
 /* ---------- welcome ---------- */
 
 .rx-welcome-inner {
@@ -1452,4 +1706,189 @@ body.regx--eastbound .rx-welcome.is-in .rx-welcome-logo { animation-name: rxPopI
 
 @media (max-width: 720px) {
 	body.regx--eastbound .rx-art { max-width: 92px; }
+}
+
+/* ---------- theme: Shot in the Dark (disco ball on near-black; sand, plum, lavender) ---------- */
+
+html:has(body.regx--sitd),
+body.regx--sitd {
+	background: #070109;
+}
+body.regx--sitd .rx {
+	--rx-bg: #070109;
+	--rx-bg-2: #1b0b21;
+	--rx-bg-rgb: 7, 1, 9;
+	--rx-panel: rgba(237, 230, 221, 0.05);
+	--rx-panel-2: rgba(237, 230, 221, 0.1);
+	--rx-mint: #d5b792;
+	--rx-mint-rgb: 213, 183, 146;
+	--rx-mint-soft: rgba(213, 183, 146, 0.14);
+	--rx-orange: #d5b792;
+	--rx-orange-rgb: 213, 183, 146;
+	--rx-orange-deep: #c9a77c;
+	--rx-orange-shade: #6b5131;
+	--rx-text: #ede6dd;
+	--rx-muted: #b9abc1;
+	--rx-danger: #ffb4a6;
+	--rx-radius: 10px;
+	--rx-font-head: 'Barlow Condensed', 'Montserrat', sans-serif;
+	--rx-font-body: 'Barlow', 'Lato', sans-serif;
+	--rx-lav: #ac93d8;
+	--rx-plum: #7d3873;
+}
+
+/* twinkling four-point stars instead of the water contours */
+body.regx--sitd .rx-bg { opacity: 1; }
+body.regx--sitd .rx-contours { display: none; }
+body.regx--sitd .rx-bg::before,
+body.regx--sitd .rx-bg::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-repeat: repeat;
+	animation: rxTwinkle 4.8s ease-in-out infinite;
+}
+body.regx--sitd .rx-bg::before {
+	background-size: 520px 520px;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 520'%3E%3Cdefs%3E%3Cpath id='s' d='M0-12C1-4 4-1 12 0 4 1 1 4 0 12-1 4-4 1-12 0-4-1-1-4 0-12Z'/%3E%3C/defs%3E%3Cuse href='%23s' fill='%23d5b792' transform='translate(70 90) scale(1.1)'/%3E%3Cuse href='%23s' fill='%23ac93d8' transform='translate(300 50) scale(.6)'/%3E%3Cuse href='%23s' fill='%237d3873' transform='translate(450 220) scale(1.3)'/%3E%3Cuse href='%23s' fill='%23d5b792' transform='translate(210 300) scale(.45)'/%3E%3Cuse href='%23s' fill='%23ac93d8' transform='translate(90 430) scale(.8)'/%3E%3Cuse href='%23s' fill='%23d5b792' transform='translate(380 460) scale(.5)'/%3E%3C/svg%3E");
+}
+body.regx--sitd .rx-bg::after {
+	background-size: 760px 760px;
+	background-position: 180px 260px;
+	animation-delay: -2.4s;
+	animation-duration: 6.2s;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 760 760'%3E%3Cdefs%3E%3Cpath id='s' d='M0-12C1-4 4-1 12 0 4 1 1 4 0 12-1 4-4 1-12 0-4-1-1-4 0-12Z'/%3E%3C/defs%3E%3Cuse href='%23s' fill='%23ac93d8' transform='translate(120 160) scale(.9)'/%3E%3Cuse href='%23s' fill='%23d5b792' transform='translate(560 110) scale(1.4)'/%3E%3Cuse href='%23s' fill='%237d3873' transform='translate(330 420) scale(.7)'/%3E%3Cuse href='%23s' fill='%23d5b792' transform='translate(660 600) scale(.55)'/%3E%3Cuse href='%23s' fill='%23ac93d8' transform='translate(200 650) scale(1.1)'/%3E%3C/svg%3E");
+}
+@keyframes rxTwinkle {
+	0%, 100% { opacity: 0.22; }
+	50%      { opacity: 0.85; }
+}
+
+body.regx--sitd .rx .rx-h1 {
+	font-family: 'Saira Stencil One', var(--rx-font-head);
+	font-size: clamp(2.5rem, 6.2vw, 4.4rem);
+	line-height: 1;
+	letter-spacing: 0.01em;
+	text-transform: uppercase;
+	color: var(--rx-mint);
+}
+body.regx--sitd .rx .rx-h2 {
+	font-weight: 700;
+	font-size: clamp(2rem, 4.4vw, 3.1rem);
+	line-height: 1.02;
+	letter-spacing: 0.015em;
+	text-transform: uppercase;
+	color: var(--rx-mint);
+}
+body.regx--sitd .rx .rx-lede { font-weight: 500; }
+
+/* lavender kicker with a sparkle, like the stars around the ball */
+body.regx--sitd .rx-kicker,
+body.regx--sitd .rx-ready-title {
+	font-family: var(--rx-font-head);
+	font-weight: 700;
+	font-size: 0.95rem;
+	letter-spacing: 0.24em;
+	text-transform: uppercase;
+	color: var(--rx-lav);
+}
+body.regx--sitd .rx-kicker::before {
+	content: '';
+	display: inline-block;
+	width: 0.85em;
+	height: 0.85em;
+	margin-right: 0.6em;
+	vertical-align: -0.06em;
+	background: currentColor;
+	clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+	animation: rxGlint 2.6s ease-in-out infinite;
+}
+@keyframes rxGlint {
+	0%, 100% { transform: scale(0.8) rotate(0); opacity: 0.7; }
+	50%      { transform: scale(1.15) rotate(45deg); opacity: 1; }
+}
+
+body.regx--sitd .rx .rx-btn {
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #070109 !important;
+	background: var(--rx-mint);
+	border-radius: 8px;
+	box-shadow: 0 6px 0 var(--rx-orange-shade), 0 0 0 rgba(213, 183, 146, 0);
+}
+body.regx--sitd .rx .rx-btn:hover { box-shadow: 0 9px 0 var(--rx-orange-shade), 0 0 34px rgba(213, 183, 146, 0.35); }
+body.regx--sitd .rx .rx-btn:active { box-shadow: 0 3px 0 var(--rx-orange-shade), 0 0 18px rgba(213, 183, 146, 0.25); }
+body.regx--sitd .rx .rx-btn.is-loading .rx-arrow {
+	border-color: rgba(7, 1, 9, 0.25);
+	border-top-color: #070109;
+}
+body.regx--sitd .rx .rx-back,
+body.regx--sitd .rx .rx-add,
+body.regx--sitd .rx .rx-chip,
+body.regx--sitd .rx-card-title,
+body.regx--sitd .rx-progress-pct,
+body.regx--sitd .rx-sum-total {
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+}
+body.regx--sitd .rx .rx-chip,
+body.regx--sitd .rx-total,
+body.regx--sitd .rx .gform_wrapper.gravity-theme .gfield--type-radio .gchoice label,
+body.regx--sitd .rx .gform_wrapper.gravity-theme .ginput_container_coupon input[type="button"] {
+	border-radius: 8px !important;
+}
+body.regx--sitd .rx-tip { border-left-color: var(--rx-plum); }
+body.regx--sitd .rx-tip-icon { color: var(--rx-lav); }
+body.regx--sitd .rx-person-num { background: var(--rx-plum); color: var(--rx-text); }
+body.regx--sitd .rx-add-plus { background: var(--rx-mint); }
+body.regx--sitd .rx-progress-fill { box-shadow: 0 0 14px rgba(213, 183, 146, 0.55); }
+
+/* the disco ball hangs from its cord: drop in, then a slow sway, with a glint on the mirrors */
+body.regx--sitd .rx-art {
+	position: relative;
+	max-width: 230px;
+	filter: drop-shadow(0 0 42px rgba(125, 56, 115, 0.45));
+}
+body.regx--sitd .rx-art img,
+body.regx--sitd .rx-mart {
+	transform-origin: 50% 0;
+	animation: rxSway 5.6s ease-in-out infinite;
+}
+body.regx--sitd .is-entering-fwd .rx-art img,
+body.regx--sitd .is-entering-back .rx-art img {
+	animation: rxDrop 0.9s var(--rx-ease-pop) both, rxSway 5.6s ease-in-out 0.9s infinite;
+}
+body.regx--sitd .rx-art::after {
+	content: '';
+	position: absolute;
+	top: 52%;
+	left: 66%;
+	width: 30px;
+	height: 30px;
+	background: #fffaf2;
+	clip-path: polygon(50% 0, 58% 42%, 100% 50%, 58% 58%, 50% 100%, 42% 58%, 0 50%, 42% 42%);
+	filter: drop-shadow(0 0 8px #fff);
+	animation: rxFlash 3.4s ease-in-out infinite;
+	pointer-events: none;
+}
+@keyframes rxSway {
+	0%, 100% { transform: rotate(-2.5deg); }
+	50%      { transform: rotate(2.5deg); }
+}
+@keyframes rxDrop {
+	from { opacity: 0; transform: translateY(-70px) rotate(0); }
+	to   { opacity: 1; transform: translateY(0) rotate(-2.5deg); }
+}
+@keyframes rxFlash {
+	0%, 70%, 100% { opacity: 0; transform: scale(0.3) rotate(0); }
+	80%           { opacity: 1; transform: scale(1) rotate(30deg); }
+}
+body.regx--sitd .rx-welcome-logo { filter: drop-shadow(0 0 34px rgba(125, 56, 115, 0.4)); }
+body.regx--sitd .rx-welcome.is-in .rx-welcome-logo { animation-name: rxPopIn; }
+body.regx--sitd .rx-mart { width: 64px; filter: drop-shadow(0 0 22px rgba(125, 56, 115, 0.5)); }
+
+@media (max-width: 720px) {
+	body.regx--sitd .rx-art { max-width: 84px; }
+	body.regx--sitd .rx-art::after { width: 14px; height: 14px; }
 }
