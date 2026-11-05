@@ -643,7 +643,8 @@
 
 	// "Half Marathon - $75" or GPNF's "10k ($55.00)" -> "Half Marathon" / "10k"
 	function productName( text ) {
-		return String( text ).replace( /\s*(?:[-\u2013\u2014:]\s*\$[\d.,]+|\(\s*\$[\d.,]+\s*\))\s*$/, '' );
+		// also "Yes - ($14+Tax)" -> "Yes"
+		return String( text ).replace( /\s*(?:[-\u2013\u2014:]\s*\$[\d.,]+|[-\u2013\u2014:]?\s*\(\s*\$[\d.,]+(?:\s*\+\s*tax)?\s*\))\s*$/i, '' );
 	}
 
 	function cap( s ) {
