@@ -9,7 +9,8 @@
  *
  * 'nested' describes that field:
  *  field         the Nested Form field on the parent (its page-1 frame uses widget 'roster')
- *  formId        the child form
+ *  formId        the child form; read from the field at runtime, so this is only a fallback
+ *                (a duplicated parent pointing at a duplicated child still works)
  *  controlled    parent fields the roster stands in for (the calculated Sub-Total product);
  *                parked, never shown, and left out of the order summary
  *  nameField     child Name field: roster cards, {name} in child frames, summary lines

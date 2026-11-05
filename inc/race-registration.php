@@ -17,6 +17,13 @@
  *  - ?regx=1 on the registration URL previews it while 'enabled' is false.
  *  - ?regx=0 forces the classic form (handy for staff troubleshooting).
  *
+ * Next year's copy: staff duplicate last year's form, which gives it a new ID. A form
+ * with no config file of its own borrows the config of a configured form with the same
+ * title once years and "(Copy)" are ignored ("2027 A Shot in the Dark Charlotte ..." uses
+ * form-757.php), as long as most of the field IDs the config uses are still there.
+ * Logged-in staff see a note on such a page, since dates, prices and art in the borrowed
+ * config are last year's. Add form-{new ID}.php to give the new form its own.
+ *
  * @package bellaworks
  */
 
@@ -31,16 +38,132 @@ function bellaworks_regx_config( $form_id ) {
 	if ( ! $form_id ) {
 		return null;
 	}
-	$file = get_template_directory() . '/inc/race-registration/form-' . $form_id . '.php';
+	$config = bellaworks_regx_load_config_file( $form_id );
+	if ( $config ) {
+		$config['formId'] = $form_id;
+	} else {
+		$source = bellaworks_regx_inherited_source( $form_id );
+		if ( ! $source ) {
+			return null;
+		}
+		$config                  = bellaworks_regx_load_config_file( $source );
+		$config['formId']        = $form_id;
+		$config['inheritedFrom'] = $source;
+	}
+
+	// The child form comes from the Nested Form field itself, so a copied parent finds its own child.
+	if ( ! empty( $config['nested']['field'] ) && class_exists( 'GFAPI' ) ) {
+		$field = GFAPI::get_field( $form_id, $config['nested']['field'] );
+		if ( $field && ! empty( $field->gpnfForm ) ) {
+			$config['nested']['formId'] = (int) $field->gpnfForm;
+		}
+	}
+	return $config;
+}
+
+/**
+ * The config array in inc/race-registration/form-{ID}.php, or null.
+ *
+ * @param int $form_id
+ * @return array|null
+ */
+function bellaworks_regx_load_config_file( $form_id ) {
+	$file = get_template_directory() . '/inc/race-registration/form-' . absint( $form_id ) . '.php';
 	if ( ! file_exists( $file ) ) {
 		return null;
 	}
 	$config = include $file;
-	if ( ! is_array( $config ) ) {
-		return null;
+	return is_array( $config ) ? $config : null;
+}
+
+/**
+ * A form title without years, season ranges or "(Copy 1)", for matching a duplicate to its source.
+ * "2026 A Shot in the Dark Charlotte Race Registration (Registration)" and
+ * "A Shot in the Dark Charlotte Race Registration (Registration) 2027 (Copy 1)" both become
+ * "a shot in the dark charlotte race registration registration".
+ *
+ * @param string $title
+ * @return string
+ */
+function bellaworks_regx_title_key( $title ) {
+	$t = strtolower( wp_strip_all_tags( (string) $title ) );
+	$t = preg_replace( '/\(\s*copy(\s*\d+)?\s*\)|\bcopy\b/', ' ', $t );
+	$t = preg_replace( '/\b(?:19|20)?\d{2}\s*[-\x{2013}\/]\s*(?:19|20)?\d{2}\b/u', ' ', $t ); // 26-27, 2026-2027
+	$t = preg_replace( '/\b(?:19|20)\d{2}\b/', ' ', $t );
+	$t = preg_replace( '/[^a-z0-9]+/', ' ', $t );
+	return trim( $t );
+}
+
+/**
+ * The configured form a config-less form should borrow from, or 0.
+ *
+ * @param int $form_id
+ * @return int
+ */
+function bellaworks_regx_inherited_source( $form_id ) {
+	static $memo = array();
+	if ( isset( $memo[ $form_id ] ) ) {
+		return $memo[ $form_id ];
 	}
-	$config['formId'] = $form_id;
-	return $config;
+	$memo[ $form_id ] = 0;
+	if ( ! class_exists( 'GFAPI' ) ) {
+		return 0;
+	}
+	$form = GFAPI::get_form( $form_id );
+	$key  = $form ? bellaworks_regx_title_key( $form['title'] ) : '';
+	if ( '' === $key ) {
+		return 0;
+	}
+	$ids = array();
+	foreach ( (array) $form['fields'] as $field ) {
+		$ids[ (int) $field->id ] = true;
+	}
+
+	$best = 0;
+	$best_score = 0;
+	foreach ( (array) glob( get_template_directory() . '/inc/race-registration/form-*.php' ) as $file ) {
+		if ( ! preg_match( '/form-(\d+)\.php$/', $file, $m ) ) {
+			continue;
+		}
+		$source_id = (int) $m[1];
+		// A duplicate always gets a higher ID; older forms (last year's pages still published) never borrow.
+		if ( $source_id >= $form_id ) {
+			continue;
+		}
+		$source = GFAPI::get_form( $source_id );
+		if ( ! $source || bellaworks_regx_title_key( $source['title'] ) !== $key ) {
+			continue;
+		}
+		// Same race by name; make sure it's still the same form underneath.
+		$config = bellaworks_regx_load_config_file( $source_id );
+		$wanted = array();
+		foreach ( (array) ( $config['frames'] ?? array() ) as $frame ) {
+			foreach ( (array) ( $frame['fields'] ?? array() ) as $id ) {
+				$wanted[] = (int) $id;
+			}
+		}
+		if ( ! $wanted ) {
+			continue;
+		}
+		$found = 0;
+		foreach ( $wanted as $id ) {
+			$found += isset( $ids[ $id ] ) ? 1 : 0;
+		}
+		$score = $found / count( $wanted );
+		if ( ! empty( $config['nested']['field'] ) ) {
+			$nested = GFAPI::get_field( $form_id, $config['nested']['field'] );
+			if ( ! $nested || 'form' !== $nested->type ) {
+				$score = 0;
+			}
+		}
+		// Ties go to the newest source form (last year's over the year before).
+		if ( $score >= 0.75 && ( $score > $best_score || ( $score === $best_score && $source_id > $best ) ) ) {
+			$best       = $source_id;
+			$best_score = $score;
+		}
+	}
+	$memo[ $form_id ] = $best;
+	return $best;
 }
 
 /**
@@ -120,7 +243,7 @@ function bellaworks_regx_scripts() {
 	wp_enqueue_script( 'bellaworks-regx', $uri . '/race-reg.js', array( 'jquery' ), $ver( 'race-reg.js' ), true );
 
 	$client = $config;
-	unset( $client['enabled'], $client['fonts'] );
+	unset( $client['enabled'], $client['fonts'], $client['inheritedFrom'] );
 	$client['assets'] = $uri . '/' . sanitize_file_name( $config['theme'] ?? 'default' ) . '/';
 	// A POST means the visitor is mid-form (GF page change or validation), so skip the welcome screen.
 	$client['isPost'] = isset( $_SERVER['REQUEST_METHOD'] ) && 'POST' === $_SERVER['REQUEST_METHOD'];

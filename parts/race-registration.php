@@ -48,6 +48,15 @@ get_header();
 		</div>
 	</header>
 
+	<?php if ( ! empty( $regx['inheritedFrom'] ) && current_user_can( 'edit_posts' ) ) : ?>
+		<div class="rx-staff-note" role="note">
+			<strong>Staff only:</strong>
+			form <?php echo (int) $regx['formId']; ?> is using the registration setup from form <?php echo (int) $regx['inheritedFrom']; ?>
+			(<code>inc/race-registration/form-<?php echo (int) $regx['inheritedFrom']; ?>.php</code>).
+			Check its dates, prices and race art, then add <code>form-<?php echo (int) $regx['formId']; ?>.php</code> for this year.
+		</div>
+	<?php endif; ?>
+
 	<div class="rx-progress" id="rx-progress" aria-hidden="true">
 		<div class="rx-progress-fill"></div>
 	</div>

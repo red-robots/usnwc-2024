@@ -1174,6 +1174,28 @@ body.regx .site-content {
 	cursor: pointer;
 }
 
+/* ---------- staff note (a duplicated form borrowing last year's setup) ---------- */
+
+.rx-staff-note {
+	position: relative;
+	z-index: 30;
+	max-width: 760px;
+	margin: 0 auto 8px;
+	padding: 10px 16px;
+	font-size: 0.9rem;
+	font-weight: 600;
+	line-height: 1.45;
+	color: #1a1205;
+	background: #ffd66b;
+	border-radius: 10px;
+}
+.rx-staff-note code {
+	font-size: 0.85em;
+	padding: 1px 5px;
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 4px;
+}
+
 /* ---------- nested forms: roster ---------- */
 
 /* GPNF's table and buttons sit inside the field; the roster stands in for them (the field itself stays display:block). */
