@@ -525,7 +525,7 @@
 					maxed = inst && inst.viewModel && inst.viewModel.isMaxed && inst.viewModel.isMaxed();
 				var cards = list.map( function ( e, i ) {
 					var who = entryText( e, N.nameField ) || ( cap( N.singular ) + ' ' + ( i + 1 ) ),
-						what = N.productField ? productName( entryText( e, N.productField ) ) : '',
+						what = entryWhat( e ),
 						price = toNumber( e.total ),
 						asking = confirming === String( e.id );
 					return '<div class="rx-person' + ( asking ? ' is-confirming' : '' ) + '" data-id="' + esc( e.id ) + '">' +
@@ -637,6 +637,19 @@
 		return d.textContent.trim();
 	}
 
+	// What an entry is buying: "Half Marathon", plus any paid add-ons from config 'addons'
+	// ({ fieldId: 'hoodie' }) -> "Half Marathon + hoodie". The entry's total already includes them.
+	function entryWhat( e ) {
+		var what = N.productField ? productName( entryText( e, N.productField ) ) : '';
+		Object.keys( N.addons || {} ).forEach( function ( id ) {
+			var v = e[ id ] ? String( e[ id ].value == null ? '' : e[ id ].value ) : '';
+			if ( toNumber( v.split( '|' )[1] || 0 ) > 0 ) {
+				what = what ? what + ' + ' + N.addons[ id ] : cap( N.addons[ id ] );
+			}
+		} );
+		return what;
+	}
+
 	// GPNF builds its instance after the form renders; wait for it (up to ~6s).
 	function whenNested( cb ) {
 		var tries = 0;
@@ -695,7 +708,7 @@
 			} );
 			nestedEntries().forEach( function ( e, i ) {
 				var who = entryText( e, N.nameField ) || ( cap( N.singular ) + ' ' + ( i + 1 ) ),
-					what = N.productField ? productName( entryText( e, N.productField ) ) : '';
+					what = entryWhat( e );
 				items.push( { label: what ? who + ' · ' + what : who, qty: 1, price: toNumber( e.total ) } );
 			} );
 		}
@@ -1237,6 +1250,7 @@
 			step: head.querySelector( '.rx-mstep' ),
 			bar: head.querySelector( '.rx-mprogress > span' ),
 			focus: head.querySelector( '.rx-head' ),
+			art: head.querySelector( '.rx-mart' ),
 			kicker: head.querySelector( '.rx-kicker' ),
 			title: head.querySelector( '.rx-h2' ),
 			lede: head.querySelector( '.rx-lede' ),
@@ -1372,11 +1386,12 @@
 		ui.lede.hidden = ! cfg.lede;
 		ui.tip.hidden = ! cfg.tip;
 		ui.tipBody.innerHTML = cfg.tip || '';
+		if ( ui.art && ( cfg.art || N.art ) ) {
+			ui.art.src = assetUrl( cfg.art || N.art ); // a screen can swap the pop-up's image (e.g. the hoodie)
+		}
 		clearFrameError( ui.error );
 
-		var shown = NF.frames.filter( frameVisible ), pos = shown.indexOf( f );
-		ui.step.textContent = 'Step ' + ( pos + 1 ) + ' of ' + shown.length;
-		ui.bar.style.width = Math.max( 4, Math.round( ( pos + 1 ) / shown.length * 100 ) ) + '%';
+		nfStep();
 
 		var last = stepFrom( NF.frames, NF.idx, 1 ) === -1;
 		ui.nextLabel.textContent = last ? ( editing ? ( N.saveLabel || 'Save changes' ) : ( N.addLabel || 'Add ' + N.singular ) ) : 'Continue';
@@ -1412,6 +1427,19 @@
 				ui.focus.focus( { preventScroll: true } );
 			}
 		}, reduceMotion ? 0 : 320 );
+	}
+
+	// "Step 3 of 8" in the pop-up; rerun when GF's conditional logic adds or hides a screen.
+	function nfStep() {
+		var f = NF.frames[ NF.idx ];
+		if ( ! NF.ui || ! f ) {
+			return;
+		}
+		var shown = NF.frames.filter( frameVisible ), pos = Math.max( 0, shown.indexOf( f ) );
+		NF.ui.step.textContent = 'Step ' + ( pos + 1 ) + ' of ' + shown.length;
+		NF.ui.bar.style.width = Math.max( 4, Math.round( ( pos + 1 ) / shown.length * 100 ) ) + '%';
+		var last = stepFrom( NF.frames, NF.idx, 1 ) === -1, editing = nfEditing();
+		NF.ui.nextLabel.textContent = last ? ( editing ? ( N.saveLabel || 'Save changes' ) : ( N.addLabel || 'Add ' + N.singular ) ) : 'Continue';
 	}
 
 	function nfLoading( on ) {
@@ -1501,6 +1529,11 @@
 		$( document ).on( 'gform_post_render gpnf_post_render', function ( e, formId ) {
 			if ( parseInt( formId, 10 ) === parseInt( N.formId, 10 ) ) {
 				later();
+			}
+		} );
+		$( document ).on( 'gform_post_conditional_logic', function ( e, formId ) {
+			if ( parseInt( formId, 10 ) === parseInt( N.formId, 10 ) && NF.form ) {
+				nfStep();
 			}
 		} );
 		if ( window.gform && typeof window.gform.addAction === 'function' ) {

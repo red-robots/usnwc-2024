@@ -215,6 +215,9 @@ function bellaworks_regx_body_class( $classes ) {
 	if ( $config ) {
 		$classes[] = 'regx';
 		$classes[] = 'regx--' . sanitize_html_class( $config['theme'] ?? 'default' );
+		if ( ! empty( $config['light'] ) ) {
+			$classes[] = 'regx--light'; // light background: see "light themes" in race-reg.css
+		}
 	}
 	return $classes;
 }

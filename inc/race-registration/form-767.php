@@ -17,6 +17,7 @@ return array(
 	'enabled' => true,
 
 	'theme'   => 'hockey',
+	'light'   => true,
 	'fonts'   => 'https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Figtree:wght@500;600;700;800&family=Josefin+Sans:wght@600;700&display=swap',
 	'colors'  => array( 'bg' => '#e7e1d1' ),
 	'raceUrl' => 'https://whitewater.org/race/pond-hockey/',
