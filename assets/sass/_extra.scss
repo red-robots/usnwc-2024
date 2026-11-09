@@ -4487,3 +4487,18 @@ body.home {
   }
   .swiper-pagination.is-locked { display: none; }
 }
+
+/* Full-width Text on flexible content pages (e.g. an [interactive_map] on Whitewater Farms):
+   space it from the sections around it. The carousel already has 60px below it, and floated
+   sections don't collapse margins, so skip the top margin right after a carousel. */
+.flexibleContentWrap .fullwdith_text_section {
+  margin: 60px 0;
+}
+.flexibleContentWrap .carousel_fullwidth_section + .fullwdith_text_section {
+  margin-top: 0;
+}
+@media screen and (max-width:768px) {
+  .flexibleContentWrap .fullwdith_text_section {
+    margin: 40px 0;
+  }
+}

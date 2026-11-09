@@ -5649,6 +5649,8 @@ body.home.scrolled .site-header .navbar .right .navlink-today.today:after,body.h
 .cards_carousel_popup_section .cards-carousel-nav.swiper-button-disabled{opacity:.25;cursor:default}
 .cards_carousel_popup_section .cards-carousel-nav.is-locked{display:none}
 .cards_carousel_popup_section .swiper-pagination.is-locked{display:none}
+.flexibleContentWrap .fullwdith_text_section{margin:60px 0}
+.flexibleContentWrap .carousel_fullwidth_section+.fullwdith_text_section{margin-top:0}
 body.enchilada .banner-bottom svg{fill:#fef9e7}
 body.enchilada .main-description{color:#7f7c73}
 body.enchilada #pageTabs a,body.enchilada .title-w-icon h2,body.enchilada h2.stitle,body.enchilada .stitle,body.enchilada .text-and-image-blocks .textcol .mstitle,body.enchilada .sectionTitle,body.enchilada .information-tabs-wrap{font-family:novecento-sans-narrow}
@@ -7079,6 +7081,7 @@ body.page-id-292 #banner .static-banner .image-wrapper img.mobile-feat-image,bod
 #hero--single .banner-bottom{bottom:-1px}
 .site-header-mobile .mobileMenuToggle{top:0 !important}
 .site-header-mobile .site-logo-mobile{top:2px !important}
+.flexibleContentWrap .fullwdith_text_section{margin:40px 0}
 .bike-ranch-sections .section--buttons .section-buttons.buttons-per-row1 .button-wrap .button-traditional{width:100%}
 body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img3{width:100%}
 body.page-template-page-bike-ranch.subpage .bike-ranch-sections .content-gallery.multiple figure.img3 figcaption .image-text h3{font-family:"brandon-grotesque";font-size:22px}
