@@ -2,7 +2,7 @@
   $title = get_sub_field('title');
   $text = get_sub_field('text');
   if($title || $text) { ?>
-  <section id="fullwdith--text-<?php echo $ctr?>" class="fullwdith_text_section">
+  <section id="fullwdith--text-<?php echo $ctr?>" class="fullwdith_text_section fullwidth-float-left">
     <div class="wrapper">
       <?php if ($title) { ?>
         <h2 class="stitle"><?php echo $title ?></h2>
