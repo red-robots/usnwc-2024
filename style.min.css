@@ -5626,7 +5626,7 @@ body.home.scrolled .site-header .navbar .right .navlink-today.today:after,body.h
 .cards_carousel_popup_section .title-wrapper .text-wrap{margin-top:15px}
 .cards_carousel_popup_section .title-wrapper .text-wrap p:last-child{margin-bottom:0}
 .cards_carousel_popup_section .cards-carousel{position:relative}
-.cards_carousel_popup_section .cards-carousel-swiper{padding-bottom:40px}
+.cards_carousel_popup_section .cards-carousel-swiper{padding:20px 0 60px;margin:-20px 0 -20px}
 .cards_carousel_popup_section .swiper-slide{height:auto;display:-webkit-box;display:-ms-flexbox;display:flex}
 .cards_carousel_popup_section .ccard{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;width:100%;background:#fff;border-radius:10px;overflow:hidden}
 .cards_carousel_popup_section.bg-white .ccard{-webkit-box-shadow:0 2px 14px rgba(0,0,0,.12);box-shadow:0 2px 14px rgba(0,0,0,.12)}
@@ -5637,7 +5637,7 @@ body.home.scrolled .site-header .navbar .right .navlink-today.today:after,body.h
 .cards_carousel_popup_section .ccard-text{margin:0 0 20px;font-size:16px;line-height:1.4;color:#404040}
 .cards_carousel_popup_section .ccard-button{margin-top:auto}
 .cards_carousel_popup_section .ccard-button a{cursor:pointer}
-.cards_carousel_popup_section .swiper-pagination{bottom:0}
+.cards_carousel_popup_section .swiper-pagination{bottom:20px}
 .cards_carousel_popup_section .swiper-pagination-bullet-active{background:#191919}
 .cards_carousel_popup_section.bg-black .swiper-pagination-bullet-active{background:#fff}
 .cards_carousel_popup_section .cards-carousel-nav{display:none;position:absolute;top:50%;width:40px;height:60px;margin-top:-30px;padding:0;border:0;background:0;cursor:pointer}
@@ -6565,7 +6565,7 @@ body.subpage.single.single-activity .content-default.new-layout .pass-price-opti
 .section-cards_bottom_text .wrapper{max-width:85vw}
 .cardsContainer .infocard{width:33.333%}
 .cards_carousel_popup_section .cards-carousel{padding:0 50px}
-.cards_carousel_popup_section .cards-carousel-swiper{padding-bottom:0}
+.cards_carousel_popup_section .cards-carousel-swiper{padding:20px 15px;margin:-20px -15px}
 .cards_carousel_popup_section .swiper-pagination{display:none}
 .cards_carousel_popup_section .cards-carousel-nav{display:block}
 .page-template-page-winter .repeatable_carousel_section .section-intro p{max-width:780px;width:100%;margin:0 auto 20px}
